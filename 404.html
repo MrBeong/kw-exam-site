@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KW 기말 대비 사이트 - 경로 복구</title>
+  <script>
+    (function () {
+      var decoded = decodeURI(window.location.href);
+      var normalized = decoded.normalize("NFC");
+      if (normalized !== decoded) {
+        window.location.replace(encodeURI(normalized));
+      }
+    })();
+  </script>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #f5f7fb;
+      color: #111827;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", Segoe UI, sans-serif;
+    }
+    main {
+      width: min(92vw, 520px);
+      padding: 28px;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, .08);
+      text-align: center;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+    p {
+      margin: 0 0 18px;
+      color: #64748b;
+      line-height: 1.65;
+    }
+    a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>페이지 경로를 복구하는 중입니다</h1>
+    <p>잠시 후에도 이동하지 않으면 홈으로 돌아가서 다시 선택하세요.</p>
+    <a href="/kw-exam-site/">홈으로 이동</a>
+  </main>
+</body>
+</html>
