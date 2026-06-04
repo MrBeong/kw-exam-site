@@ -3571,10 +3571,13 @@ contribution graph를 만들 수 있다.<br />
 정답: O</p></li>
 <li><p>LIME은 설명 대상 주변을 perturbation하고 sparse linear
 surrogate를 학습해 local explanation을 만든다.<br />
-정답: O</p></li>
+정답: O 해설: LIME은 설명 대상 주변 sample을 교란하고, 그 주변에서
+단순한 surrogate model로 black-box 예측을 근사한다.</p></li>
 <li><p>LIME은 global fidelity를 보장하므로 전체 데이터 분포에서 원
 모델을 항상 정확히 대체한다.<br />
-정답: X. LIME은 설명 대상 주변의 local fidelity가 핵심이다.</p></li>
+정답: X. LIME은 설명 대상 주변의 local fidelity가 핵심이다. 해설: LIME은
+전체 분포를 대체하는 모델이 아니라 특정 관측치 주변의 예측 이유를
+설명한다.</p></li>
 <li><p>이미지 LIME에서는 superpixel을 설명 단위로 켜고 끌 수 있다.<br />
 정답: O</p></li>
 <li><p>LIME은 structured data뿐 아니라 text/image에도 적용 가능하다고
@@ -3617,7 +3620,8 @@ dependence를 무시할 수 있다.<br />
 정답: O</p></li>
 <li><p>TreeExplainer는 tree-based model의 local explanation에 활용될 수
 있다.<br />
-정답: O</p></li>
+정답: O 해설: TreeExplainer는 tree 계열 모델의 SHAP value 계산에
+특화되어 개별 예측의 feature contribution을 설명할 수 있다.</p></li>
 <li><p>SHAP은 LIME과 Shapley value를 연결하는 관점으로 설명된다.<br />
 정답: O</p></li>
 </ol>
