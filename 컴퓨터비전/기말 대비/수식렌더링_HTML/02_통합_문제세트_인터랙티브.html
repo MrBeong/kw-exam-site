@@ -239,8 +239,10 @@
     <span class="pill"><b id="progress">0 / 0</b></span>
     <span class="pill range-only">기본문제 107</span>
     <span class="pill range-only">변별력 76</span>
+    <span class="pill">푼 문제 <b id="solvedCount">0</b></span>
     <span class="pill">맞힌 객관/OX <b id="score">0</b></span>
     <span class="pill">오답 <b id="wrongCount">0</b></span>
+    <button class="action" id="solvedOnlyBtn" type="button">푼 문제만</button>
     <button class="action" id="wrongOnlyBtn" type="button">오답만</button>
     <button class="action" id="prevBtn" type="button">이전</button>
     <button class="action" id="nextBtn" type="button">다음</button>
@@ -252,18 +254,26 @@
 <script>
 const questions = JSON.parse(document.getElementById('question-data').textContent);
 const storageKey = 'examProblemState:' + location.pathname;
+function normalizeStateValue(v) {
+  if (v === true) return { status:'correct', answered:true };
+  if (v === false) return { status:'wrong', answered:true };
+  if (v && typeof v === 'object') return v;
+  return null;
+}
 function loadState() {
   try {
-    return new Map(Object.entries(JSON.parse(localStorage.getItem(storageKey) || '{}')));
+    return new Map(Object.entries(JSON.parse(localStorage.getItem(storageKey) || '{}')).map(([k, v]) => [k, normalizeStateValue(v)]).filter(([, v]) => v));
   } catch (_) {
     return new Map();
   }
 }
 const state = loadState();
 const list = document.getElementById('list');
+const solvedCountEl = document.getElementById('solvedCount');
 const scoreEl = document.getElementById('score');
 const progressEl = document.getElementById('progress');
 const wrongCountEl = document.getElementById('wrongCount');
+const solvedOnlyBtn = document.getElementById('solvedOnlyBtn');
 const wrongOnlyBtn = document.getElementById('wrongOnlyBtn');
 let activeQuestions = [];
 let currentIndex = 0;
@@ -280,13 +290,34 @@ function formatOptionText(s) {
   if (raw.includes('\\(') || raw.includes('\\[') || raw.includes('$')) return formatText(raw);
   return esc(raw).replace(/([^\s<>]{8})/g, '$1<wbr>');
 }
+function getEntry(id) {
+  return normalizeStateValue(state.get(id));
+}
+function isSolvedEntry(v) {
+  const entry = normalizeStateValue(v);
+  return !!entry?.answered;
+}
+function isCorrectEntry(v) {
+  const entry = normalizeStateValue(v);
+  return entry?.status === 'correct';
+}
+function isWrongEntry(v) {
+  const entry = normalizeStateValue(v);
+  return entry?.status === 'wrong';
+}
 function updateScore() {
+  let solved = 0;
   let score = 0;
   let wrong = 0;
-  for (const v of state.values()) if (v === true) score += 1;
-  for (const v of state.values()) if (v === false) wrong += 1;
+  for (const v of state.values()) if (isSolvedEntry(v)) solved += 1;
+  for (const v of state.values()) if (isCorrectEntry(v)) score += 1;
+  for (const v of state.values()) if (isWrongEntry(v)) wrong += 1;
+  solvedCountEl.textContent = solved;
   scoreEl.textContent = score;
   wrongCountEl.textContent = wrong;
+  solvedOnlyBtn.textContent = reviewMode === 'solved' ? '전체 보기' : '푼 문제만';
+  solvedOnlyBtn.classList.toggle('active', reviewMode === 'solved');
+  solvedOnlyBtn.disabled = solved === 0 && reviewMode !== 'solved';
   wrongOnlyBtn.textContent = reviewMode === 'wrong' ? '전체 보기' : '오답만';
   wrongOnlyBtn.classList.toggle('active', reviewMode === 'wrong');
   wrongOnlyBtn.disabled = wrong === 0 && reviewMode !== 'wrong';
@@ -320,7 +351,7 @@ function getFilteredQuestions() {
   const term = document.getElementById('search').value.trim().toLowerCase();
   const type = document.getElementById('typeFilter').value;
   const level = document.getElementById('levelFilter').value;
-  return questions.filter(q => (reviewMode !== 'wrong' || state.get(q.id) === false) && (type === 'all' || q.type === type) && (level === 'all' || q.level === level) && (!term || (q.title+' '+q.section+' '+q.question+' '+q.answer).toLowerCase().includes(term)));
+  return questions.filter(q => (reviewMode !== 'wrong' || isWrongEntry(state.get(q.id))) && (reviewMode !== 'solved' || isSolvedEntry(state.get(q.id))) && (type === 'all' || q.type === type) && (level === 'all' || q.level === level) && (!term || (q.title+' '+q.section+' '+q.question+' '+q.answer).toLowerCase().includes(term)));
 }
 function updateProgress() {
   const total = activeQuestions.length;
@@ -372,18 +403,72 @@ function advanceAfterCorrect() {
 function render() {
   activeQuestions = getFilteredQuestions();
   if (currentIndex >= activeQuestions.length) currentIndex = Math.max(0, activeQuestions.length - 1);
-  const emptyText = reviewMode === 'wrong' ? '현재 조건에 맞는 오답 문제가 없습니다.' : '조건에 맞는 문제가 없습니다.';
+  const emptyText = reviewMode === 'wrong' ? '현재 조건에 맞는 오답 문제가 없습니다.' : reviewMode === 'solved' ? '현재 조건에 맞는 풀이 완료 문제가 없습니다.' : '조건에 맞는 문제가 없습니다.';
   list.innerHTML = activeQuestions.length ? renderQuestion(activeQuestions[currentIndex]) : `<div class="empty">${emptyText}</div>`;
+  reviewLock = null;
+  if (activeQuestions.length) {
+    const card = list.querySelector('.card');
+    if (card) restoreCardState(card, activeQuestions[currentIndex]);
+  }
   updateProgress();
   updateScore();
   if (window.MathJax) MathJax.typesetPromise([list]).catch(() => {});
 }
-function grade(card, ok, selectedValue) {
+function restoreCardState(card, q) {
+  const entry = getEntry(q.id);
+  if (!entry) return;
   const fb = card.querySelector('.feedback');
-  state.set(card.dataset.id, ok);
+  if (q.type === 'mc') {
+    const selected = Number(entry.selected);
+    card.querySelectorAll('.option').forEach(btn => {
+      btn.dataset.done = '1';
+      const bidx = Number(btn.dataset.idx);
+      if (bidx === q.correctIndex) btn.classList.add('correct');
+      if (entry.status === 'wrong' && bidx === selected && bidx !== q.correctIndex) btn.classList.add('wrong');
+    });
+    if (entry.status === 'correct') {
+      fb.textContent = '정답으로 저장됨. 이미 맞힌 문제입니다.';
+      fb.className = 'feedback ok';
+    } else if (entry.status === 'wrong') {
+      fb.textContent = `오답으로 저장됨. 선택: ${Number.isFinite(selected) ? selected + 1 : '-'}`;
+      fb.className = 'feedback bad';
+      revealAnswerForReview(card);
+    }
+  } else if (q.type === 'ox') {
+    card.querySelectorAll('.ox-btn').forEach(btn => {
+      btn.disabled = true;
+      if (btn.dataset.ox === q.correctOX) btn.classList.add('correct');
+      if (entry.status === 'wrong' && btn.dataset.ox === entry.selected && btn.dataset.ox !== q.correctOX) btn.classList.add('wrong');
+    });
+    if (entry.status === 'correct') {
+      fb.textContent = '정답으로 저장됨. 이미 맞힌 문제입니다.';
+      fb.className = 'feedback ok';
+    } else if (entry.status === 'wrong') {
+      fb.textContent = `오답으로 저장됨. 선택: ${entry.selected ?? '-'}`;
+      fb.className = 'feedback bad';
+      revealAnswerForReview(card);
+    }
+  } else if (q.type === 'text') {
+    const textarea = card.querySelector('textarea');
+    if (textarea && entry.text) textarea.value = entry.text;
+    if (entry.answerShown) {
+      card.querySelector('.answer')?.classList.add('show');
+      const btn = card.querySelector('.show-answer');
+      if (btn) btn.textContent = '모범답안 숨기기';
+      card.querySelector('.review-next')?.classList.add('show');
+    }
+    if (entry.answered) {
+      fb.textContent = '풀이 완료로 저장된 문제입니다.';
+      fb.className = 'feedback ok';
+    }
+  }
+}
+function grade(card, ok, selectedRaw, selectedLabel) {
+  const fb = card.querySelector('.feedback');
+  state.set(card.dataset.id, { status: ok ? 'correct' : 'wrong', answered:true, selected:selectedRaw, type:card.dataset.type, ts:Date.now() });
   persistState();
   updateScore();
-  fb.textContent = ok ? '정답입니다.' : `오답입니다. 선택: ${selectedValue}`;
+  fb.textContent = ok ? '정답입니다.' : `오답입니다. 선택: ${selectedLabel}`;
   fb.className = 'feedback ' + (ok ? 'ok' : 'bad');
 }
 function revealAnswerForReview(card) {
@@ -412,7 +497,7 @@ document.addEventListener('click', (e) => {
       if (bidx === idx && bidx !== q.correctIndex) btn.classList.add('wrong');
     });
     const ok = idx === q.correctIndex;
-    grade(card, ok, idx + 1);
+    grade(card, ok, idx, idx + 1);
     if (ok) {
       setTimeout(advanceAfterCorrect, 520);
     } else {
@@ -428,7 +513,7 @@ document.addEventListener('click', (e) => {
       if (btn.dataset.ox === val && btn.dataset.ox !== q.correctOX) btn.classList.add('wrong');
     });
     const ok = val === q.correctOX;
-    grade(card, ok, val);
+    grade(card, ok, val, val);
     if (ok) {
       setTimeout(advanceAfterCorrect, 520);
     } else {
@@ -440,7 +525,16 @@ document.addEventListener('click', (e) => {
     const answer = card.querySelector('.answer');
     answer.classList.toggle('show');
     e.target.textContent = answer.classList.contains('show') ? '정답/해설 숨기기' : (q.type === 'text' ? '모범답안 보기' : '정답/해설 보기');
-    if (q.type === 'text' && answer.classList.contains('show')) card.querySelector('.review-next')?.classList.add('show');
+    if (q.type === 'text' && answer.classList.contains('show')) {
+      const textarea = card.querySelector('textarea');
+      state.set(card.dataset.id, { status:'text', answered:true, text:textarea ? textarea.value : '', answerShown:true, type:'text', ts:Date.now() });
+      persistState();
+      updateScore();
+      const fb = card.querySelector('.feedback');
+      fb.textContent = '풀이 완료로 저장했습니다.';
+      fb.className = 'feedback ok';
+      card.querySelector('.review-next')?.classList.add('show');
+    }
     if (window.MathJax) MathJax.typesetPromise([card]).catch(() => {});
   }
   if (e.target.matches('.review-next')) {
@@ -448,6 +542,11 @@ document.addEventListener('click', (e) => {
   }
   if (e.target.matches('.save-answer')) {
     const fb = card.querySelector('.feedback');
+    const textarea = card.querySelector('textarea');
+    const prev = getEntry(card.dataset.id) || {};
+    state.set(card.dataset.id, { ...prev, status:'text', answered:true, text:textarea ? textarea.value : '', type:'text', ts:Date.now() });
+    persistState();
+    updateScore();
     fb.textContent = '내 답안을 적었습니다. 모범답안과 비교하세요.';
     fb.className = 'feedback ok';
   }
@@ -460,6 +559,10 @@ function resetToFirstAndRender() {
 document.getElementById('search').addEventListener('input', resetToFirstAndRender);
 document.getElementById('typeFilter').addEventListener('change', resetToFirstAndRender);
 document.getElementById('levelFilter').addEventListener('change', resetToFirstAndRender);
+solvedOnlyBtn.addEventListener('click', () => {
+  reviewMode = reviewMode === 'solved' ? 'all' : 'solved';
+  resetToFirstAndRender();
+});
 wrongOnlyBtn.addEventListener('click', () => {
   reviewMode = reviewMode === 'wrong' ? 'all' : 'wrong';
   resetToFirstAndRender();
