@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-label="Hough accumulator grid guide">
+  <rect width="760" height="420" fill="#fbfaf7"/>
+  <text x="60" y="48" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="24" fill="#111">Binary image → Hough accumulator</text>
+  <text x="60" y="80" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="16" fill="#555">edge pixel (x,y)는 θ마다 r = x cosθ + y sinθ에 vote</text>
+  <g transform="translate(80 125)">
+    <text x="55" y="-18" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="18" fill="#111">binary 3×3</text>
+    <rect x="0" y="0" width="180" height="180" fill="#fff" stroke="#333" stroke-width="2"/>
+    <line x1="60" y1="0" x2="60" y2="180" stroke="#333"/>
+    <line x1="120" y1="0" x2="120" y2="180" stroke="#333"/>
+    <line x1="0" y1="60" x2="180" y2="60" stroke="#333"/>
+    <line x1="0" y1="120" x2="180" y2="120" stroke="#333"/>
+    <text x="30" y="38" text-anchor="middle" font-family="Arial" font-size="26">0</text>
+    <text x="90" y="38" text-anchor="middle" font-family="Arial" font-size="26" fill="#dc2626">1</text>
+    <text x="150" y="38" text-anchor="middle" font-family="Arial" font-size="26">0</text>
+    <text x="30" y="98" text-anchor="middle" font-family="Arial" font-size="26">0</text>
+    <text x="90" y="98" text-anchor="middle" font-family="Arial" font-size="26" fill="#dc2626">1</text>
+    <text x="150" y="98" text-anchor="middle" font-family="Arial" font-size="26">0</text>
+    <text x="30" y="158" text-anchor="middle" font-family="Arial" font-size="26">0</text>
+    <text x="90" y="158" text-anchor="middle" font-family="Arial" font-size="26" fill="#dc2626">1</text>
+    <text x="150" y="158" text-anchor="middle" font-family="Arial" font-size="26">0</text>
+    <text x="90" y="214" text-anchor="middle" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="15" fill="#555">edge points: (1,0), (1,1), (1,2)</text>
+  </g>
+  <path d="M300 215 L400 215" stroke="#444" stroke-width="2"/>
+  <polygon points="400,215 388,209 388,221" fill="#444"/>
+  <g transform="translate(435 125)">
+    <text x="80" y="-18" text-anchor="middle" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="18" fill="#111">θ = 0 → r = x</text>
+    <rect x="0" y="0" width="260" height="180" fill="#fff" stroke="#333" stroke-width="2"/>
+    <line x1="0" y1="45" x2="260" y2="45" stroke="#333"/>
+    <line x1="0" y1="90" x2="260" y2="90" stroke="#333"/>
+    <line x1="0" y1="135" x2="260" y2="135" stroke="#333"/>
+    <text x="45" y="30" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="20">r = 0</text>
+    <text x="45" y="75" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="20">r = 1</text>
+    <text x="45" y="120" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="20">r = 2</text>
+    <text x="170" y="30" font-family="Arial" font-size="20">vote 0</text>
+    <text x="170" y="75" font-family="Arial" font-size="20" fill="#dc2626">vote 3</text>
+    <text x="170" y="120" font-family="Arial" font-size="20">vote 0</text>
+    <text x="18" y="165" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="15" fill="#555">가장 큰 vote → vertical line x=1</text>
+  </g>
+</svg>

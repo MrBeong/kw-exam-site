@@ -1,0 +1,3395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>기계학습 01_통합_핵심노트</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">기계학습 01_통합_핵심노트</h1>
+</header>
+<h1 id="기계학습-통합-핵심노트">기계학습 통합 핵심노트</h1>
+<h3 id="기계학습-기말-시험-대비">기계학습 기말 시험 대비</h3>
+<p>기계학습 기말 범위는 <code>회귀 및 분류의 평가척도</code>,
+<code>앙상블 수업 I, II</code>, <code>XAI I, II, III, IV</code>,
+<code>기계학습 최적화</code>이다.</p>
+<h2 id="시험-범위">시험 범위</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>항목</th>
+<th>정리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시험일시</td>
+<td>2026-06-10 수요일 오전 10시 30분부터, 50분</td>
+</tr>
+<tr>
+<td>준비물</td>
+<td>펜 또는 연필</td>
+</tr>
+<tr>
+<td>반입 제한</td>
+<td>Cheat sheet 및 전자기기 불가</td>
+</tr>
+<tr>
+<td>포함 범위</td>
+<td>회귀/분류 평가척도, 앙상블 I-II, XAI I-IV, 기계학습 최적화</td>
+</tr>
+<tr>
+<td>제외 범위</td>
+<td>실습자료, 특강자료, 교안 내 최근연구/논문 소개자료</td>
+</tr>
+</tbody>
+</table>
+<p>따라서 XAI IV의 SHAP variants까지는 시험 범위로 보되,
+bioinformatics/computer vision 등 최근연구 적용 사례와 논문 소개 자체는
+암기 대상에서 제외한다.</p>
+<h2 id="앙상블-함정-포인트">앙상블 함정 포인트</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>포인트</th>
+<th>정답 방향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Random Forest diversity</td>
+<td>Bootstrapping, Random Subspace Method가 핵심</td>
+</tr>
+<tr>
+<td>Random Forest 성능 개선</td>
+<td>algorithm fine tuning, adding more data, feature selection 가능</td>
+</tr>
+<tr>
+<td>Random Forest와 decision tree</td>
+<td>독립적인 tree 여러 개를 만들되, 단순한 동일 tree 집합이라고 하면
+부정확</td>
+</tr>
+<tr>
+<td>지도/비지도</td>
+<td>Random Forest는 supervised learning manner</td>
+</tr>
+<tr>
+<td>Bias-Variance</td>
+<td>variance는 추정값 간 변동, bias는 평균 예측과 참값 사이의 체계적
+차이</td>
+</tr>
+<tr>
+<td>No Free Lunch</td>
+<td>모든 데이터에서 항상 우월한 알고리즘은 없고, 문제별 적합성이
+다름</td>
+</tr>
+<tr>
+<td>Ensemble 그림 해석</td>
+<td>병렬 예측, weak learners가 strong learner를 구성, training에서
+majority voting이라고 하면 부정확</td>
+</tr>
+<tr>
+<td>CatBoost</td>
+<td>ordered target statistics는 target leakage와 prediction shift 완화
+목적</td>
+</tr>
+<tr>
+<td>Heterogeneous stacking</td>
+<td>서로 다른 모델의 오류 패턴 차이로 보완 가능</td>
+</tr>
+</tbody>
+</table>
+<h2 id="답안-작성-기준">답안 작성 기준</h2>
+<ul>
+<li>객관식/주관식 혼합</li>
+<li>객관식 문항 수가 많고, 선지 하나하나를 점수화할 가능성</li>
+<li>말장난/개념 혼동 선지 주의</li>
+<li>의사코드와 알고리즘 절차 이해 중요</li>
+<li>단순 정의보다 “왜/어떻게 학습되는가”를 묻는 유형 대비</li>
+</ul>
+<h2 id="핵심-슬라이드로-외우는-구조">핵심 슬라이드로 외우는 구조</h2>
+<figure>
+<img src="../assets/slides/ml_p10_p20_metrics_overview.png"
+alt="평가척도 전체 구조" />
+<figcaption aria-hidden="true">평가척도 전체 구조</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>10._회귀_및_분류문제의_성능평가_지표_설명.pdf</code>, p.20.</p>
+<ul>
+<li>회귀 평가는 error 크기, 분류 평가는 confusion matrix 기반 비율로
+정리한다.</li>
+<li>Metric은 문제 목적에 맞춰 고른다. 불균형 데이터에서 accuracy만
+믿으면 위험하다.</li>
+<li>시험에서는 metric 이름과 분자/분모를 정확히 연결해야 한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_eval_p22_confusion_metrics.png"
+alt="Confusion matrix 기반 평가척도" />
+<figcaption aria-hidden="true">Confusion matrix 기반
+평가척도</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>10._회귀_및_분류문제의_성능평가_지표_설명.pdf</code>, p.22.</p>
+<ul>
+<li>Classification metric은 TP, FP, FN, TN을 정확히 놓고 시작한다.</li>
+<li>Accuracy는 전체 중 맞춘 비율, precision은 positive라고 예측한 것 중
+진짜 positive 비율, recall은 실제 positive 중 잡아낸 비율이다.</li>
+<li>F1 score는 precision과 recall의 조화평균이므로 둘 중 하나만 높으면
+크게 올라가지 않는다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p10_p23_sensitivity.png"
+alt="Sensitivity / Recall" />
+<figcaption aria-hidden="true">Sensitivity / Recall</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>10._회귀_및_분류문제의_성능평가_지표_설명.pdf</code>, p.23.</p>
+<ul>
+<li>Sensitivity 또는 recall은 실제 positive 중 모델이 positive로 맞춘
+비율이다.</li>
+<li>질병 진단처럼 놓치면 큰 문제가 되는 경우 recall이 중요하다.</li>
+<li>식은 <span class="math inline">\(\frac{TP}{TP+FN}\)</span>이다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p10_p24_precision.png" alt="Precision" />
+<figcaption aria-hidden="true">Precision</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>10._회귀_및_분류문제의_성능평가_지표_설명.pdf</code>, p.24.</p>
+<ul>
+<li>Precision은 positive라고 예측한 것 중 실제 positive 비율이다.</li>
+<li>False positive를 줄이는 것이 중요한 문제에서 precision이
+중요하다.</li>
+<li>식은 <span class="math inline">\(\frac{TP}{TP+FP}\)</span>이다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p10_p29_roc.png" alt="ROC curve" />
+<figcaption aria-hidden="true">ROC curve</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>10._회귀_및_분류문제의_성능평가_지표_설명.pdf</code>, p.29.</p>
+<ul>
+<li>ROC는 threshold 변화에 따른 TPR과 FPR의 관계를 본다.</li>
+<li>AUC가 클수록 positive와 negative를 잘 구분한다.</li>
+<li>ROC는 threshold 하나가 아니라 전체 threshold 성능을 요약한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p10_p36_cross_validation.png"
+alt="Cross validation" />
+<figcaption aria-hidden="true">Cross validation</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>10._회귀_및_분류문제의_성능평가_지표_설명.pdf</code>, p.36.</p>
+<ul>
+<li>K-fold cross validation은 데이터를 K개 fold로 나누고 validation
+fold를 바꿔가며 평가한다.</li>
+<li>한 번의 train/test split보다 성능 추정이 안정적이다.</li>
+<li>Stratified K-fold는 classification에서 class 비율을 fold마다
+유지한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p09_p03_bias_variance.png"
+alt="Bias-variance trade-off" />
+<figcaption aria-hidden="true">Bias-variance trade-off</figcaption>
+</figure>
+<p>출처: 강의자료 <code>9._Ensemble_II_updated_20250429.pdf</code>,
+p.3.</p>
+<ul>
+<li>Bias는 모델 평균 예측과 참값 사이의 체계적 차이다.</li>
+<li>Variance는 학습데이터가 바뀔 때 모델 예측이 흔들리는 정도다.</li>
+<li>Ensemble은 여러 모델을 조합해 특히 variance를 줄이는 데 자주
+쓰인다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p09_p09_ensemble_diversity.png"
+alt="Ensemble diversity" />
+<figcaption aria-hidden="true">Ensemble diversity</figcaption>
+</figure>
+<p>출처: 강의자료 <code>9._Ensemble_II_updated_20250429.pdf</code>,
+p.9.</p>
+<ul>
+<li>Ensemble이 효과를 내려면 base learner들이 어느 정도 서로 다른 오류를
+내야 한다.</li>
+<li>Bootstrapping, random subspace, 서로 다른 알고리즘 조합이
+diversity를 만든다.</li>
+<li>같은 모델을 완전히 똑같은 데이터로 반복하면 ensemble 효과가
+작다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p09_p11_random_forest.png"
+alt="Random Forest" />
+<figcaption aria-hidden="true">Random Forest</figcaption>
+</figure>
+<p>출처: 강의자료 <code>9._Ensemble_II_updated_20250429.pdf</code>,
+p.11.</p>
+<ul>
+<li>Random Forest는 bootstrapped sample과 random feature subset으로 여러
+decision tree를 만든다.</li>
+<li>Classification은 voting, regression은 averaging으로 예측한다.</li>
+<li>OOB sample로 일반화 성능과 feature importance를 추정할 수 있다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p09_p25_adaboost_algorithm.png"
+alt="AdaBoost algorithm" />
+<figcaption aria-hidden="true">AdaBoost algorithm</figcaption>
+</figure>
+<p>출처: 강의자료 <code>9._Ensemble_II_updated_20250429.pdf</code>,
+p.25.</p>
+<ul>
+<li>AdaBoost는 이전 learner가 틀린 sample의 weight를 키워 다음 learner가
+더 집중하게 한다.</li>
+<li>Weak learner를 순차적으로 더해 strong learner를 만든다.</li>
+<li>Bagging은 병렬/variance 감소, boosting은 순차/error correction으로
+구분한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p09_p45_xgboost.png" alt="XGBoost" />
+<figcaption aria-hidden="true">XGBoost</figcaption>
+</figure>
+<p>출처: 강의자료 <code>9._Ensemble_II_updated_20250429.pdf</code>,
+p.45.</p>
+<ul>
+<li>XGBoost는 gradient boosting tree를 효율화하고 regularization을
+포함한 모델이다.</li>
+<li>목적함수는 loss와 regularization term을 함께 최소화한다.</li>
+<li>Missing value 처리, shrinkage, column subsampling 같은 실용 기능도
+중요하다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p09_p55_lightgbm.png" alt="LightGBM" />
+<figcaption aria-hidden="true">LightGBM</figcaption>
+</figure>
+<p>출처: 강의자료 <code>9._Ensemble_II_updated_20250429.pdf</code>,
+p.55.</p>
+<ul>
+<li>LightGBM은 GOSS와 EFB로 학습 속도와 메모리 효율을 높인다.</li>
+<li>Leaf-wise growth를 사용해 빠르게 loss를 줄이지만 과적합 주의가
+필요하다.</li>
+<li>큰 데이터, 고차원 sparse feature에서 강점이 있다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p09_p59_catboost.png" alt="CatBoost" />
+<figcaption aria-hidden="true">CatBoost</figcaption>
+</figure>
+<p>출처: 강의자료 <code>9._Ensemble_II_updated_20250429.pdf</code>,
+p.59.</p>
+<ul>
+<li>CatBoost는 categorical feature 처리에 강하고 ordered target
+statistics를 사용한다.</li>
+<li>Ordered 방식은 target leakage와 prediction shift를 줄이기 위한
+장치다.</li>
+<li>퀴즈에서 CatBoost의 핵심 장점으로 자주 확인된 포인트다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p09_p87_bagging_boosting_stacking.png"
+alt="Bagging, Boosting, Stacking 비교" />
+<figcaption aria-hidden="true">Bagging, Boosting, Stacking
+비교</figcaption>
+</figure>
+<p>출처: 강의자료 <code>9._Ensemble_II_updated_20250429.pdf</code>,
+p.87.</p>
+<ul>
+<li>Bagging은 같은 계열 모델을 병렬로 학습해 averaging/voting한다.</li>
+<li>Boosting은 순차적으로 약한 학습기를 보완한다.</li>
+<li>Stacking은 여러 base model의 예측을 meta model이 다시 학습한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p11_p30_when_xai.png"
+alt="XAI를 언제 적용하는가" />
+<figcaption aria-hidden="true">XAI를 언제 적용하는가</figcaption>
+</figure>
+<p>출처: 강의자료 <code>11._XAI_I.pdf</code>, p.30.</p>
+<ul>
+<li>Pre-model은 EDA처럼 모델 전 데이터 설명이다.</li>
+<li>In-model은 decision tree, attention처럼 모델 내부에 설명 단서가 있는
+경우다.</li>
+<li>Post-hoc은 학습된 black-box 모델을 별도 방법으로 설명한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p11_p31_intrinsic_posthoc.png"
+alt="Intrinsic vs Post-hoc" />
+<figcaption aria-hidden="true">Intrinsic vs Post-hoc</figcaption>
+</figure>
+<p>출처: 강의자료 <code>11._XAI_I.pdf</code>, p.31.</p>
+<ul>
+<li>Intrinsic interpretability는 모델 자체가 설명 가능하도록 설계된
+경우다.</li>
+<li>Post-hoc interpretability는 예측 모델을 만든 뒤 별도 설명 방법을
+붙인다.</li>
+<li>복잡한 모델일수록 post-hoc XAI가 중요해진다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_xai1_p32_accuracy_explainability.png"
+alt="정확도와 설명가능성 trade-off" />
+<figcaption aria-hidden="true">정확도와 설명가능성
+trade-off</figcaption>
+</figure>
+<p>출처: 강의자료 <code>11._XAI_I.pdf</code>, p.32.</p>
+<ul>
+<li>Decision tree와 linear model은 해석이 쉽지만 복잡한 패턴 표현이 약할
+수 있다.</li>
+<li>Deep learning은 예측력이 높을 수 있지만 black-box 성격이 강해 XAI가
+필요하다.</li>
+<li>기말에서는 “모델 성능이 좋다”와 “설명 가능하다”를 같은 말로 보면 안
+된다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p11_p42_model_agnostic.png"
+alt="Model-agnostic methods" />
+<figcaption aria-hidden="true">Model-agnostic methods</figcaption>
+</figure>
+<p>출처: 강의자료 <code>11._XAI_I.pdf</code>, p.42.</p>
+<ul>
+<li>Model-agnostic method는 모델 종류와 상관없이 입력과 출력 반응을
+이용해 설명한다.</li>
+<li>PDP, ICE, permutation importance, LIME, SHAP을 이 범주로 묶어
+외운다.</li>
+<li>핵심은 “모델 내부 구조를 몰라도 설명을 시도한다”이다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p12_p07_pdp.png" alt="PDP 기본 개념" />
+<figcaption aria-hidden="true">PDP 기본 개념</figcaption>
+</figure>
+<p>출처: 강의자료 <code>12._XAI_II.pdf</code>, p.7.</p>
+<ul>
+<li>PDP는 특정 feature 값을 변화시키고 나머지 feature를 marginalize해
+평균 예측 변화를 본다.</li>
+<li>평균 효과를 보므로 global interpretation에 가깝다.</li>
+<li>Feature 간 강한 상관이 있으면 비현실적인 조합이 생길 수 있다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_xai2_p26_pdp_ice.png"
+alt="PDP와 ICE plot 비교" />
+<figcaption aria-hidden="true">PDP와 ICE plot 비교</figcaption>
+</figure>
+<p>출처: 강의자료 <code>12._XAI_II.pdf</code>, p.26.</p>
+<ul>
+<li>PDP는 특정 feature 변화가 평균 예측값에 주는 영향을 본다.</li>
+<li>ICE는 sample별 곡선을 모두 그려서 개별 관측치의 반응 차이를
+본다.</li>
+<li>PDP는 global interpretation, ICE는 local pattern까지 더 잘
+드러낸다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p12_p27_centered_ice.png"
+alt="Centered ICE" />
+<figcaption aria-hidden="true">Centered ICE</figcaption>
+</figure>
+<p>출처: 강의자료 <code>12._XAI_II.pdf</code>, p.27.</p>
+<ul>
+<li>Centered ICE는 sample별 시작점 차이를 제거하고 feature 변화에 따른
+반응 형태를 비교한다.</li>
+<li>절대 예측값보다 변화 패턴을 보고 싶을 때 유용하다.</li>
+<li>Sample 수가 많으면 곡선이 겹쳐 해석이 어려울 수 있다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_xai2_p38_morris.png"
+alt="Morris sensitivity analysis" />
+<figcaption aria-hidden="true">Morris sensitivity analysis</figcaption>
+</figure>
+<p>출처: 강의자료 <code>12._XAI_II.pdf</code>, p.38.</p>
+<ul>
+<li>Morris screening은 한 번에 하나의 변수만 변화시키고 나머지는 고정해
+민감도를 본다.</li>
+<li>평균 효과 <span class="math inline">\(\mu\)</span>가 크면 평균적으로
+중요한 변수이고, 표준편차 <span class="math inline">\(\sigma\)</span>가
+크면 변수 효과가 상황에 따라 크게 흔들린다.</li>
+<li><span class="math inline">\(\mu\)</span>와 <span
+class="math inline">\(\sigma\)</span>가 모두 작은 변수는 모델 예측에
+영향이 작다고 해석한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p12_p43_permutation_importance.png"
+alt="Permutation feature importance" />
+<figcaption aria-hidden="true">Permutation feature
+importance</figcaption>
+</figure>
+<p>출처: 강의자료 <code>12._XAI_II.pdf</code>, p.43.</p>
+<ul>
+<li>특정 feature를 shuffle했을 때 성능이 크게 떨어지면 중요한
+feature다.</li>
+<li>모델 내부 구조와 무관하게 적용 가능하다.</li>
+<li>Feature 간 상관이 강하면 중요도가 왜곡될 수 있다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p13_p16_lime.png" alt="LIME" />
+<figcaption aria-hidden="true">LIME</figcaption>
+</figure>
+<p>출처: 강의자료 <code>13._XAI_III.pdf</code>, p.16.</p>
+<ul>
+<li>LIME은 특정 sample 주변을 perturbation하고 local surrogate model을
+학습한다.</li>
+<li>Local explanation이므로 “이 한 sample이 왜 이렇게 예측됐는가”를
+설명한다.</li>
+<li>주변성 weighting과 단순 설명 모델이 핵심이다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p14_p13_shap_formula.png"
+alt="SHAP formula" />
+<figcaption aria-hidden="true">SHAP formula</figcaption>
+</figure>
+<p>출처: 강의자료 <code>14._XAI_IV.pdf</code>, p.13.</p>
+<ul>
+<li>SHAP은 Shapley value를 이용해 feature 기여도를 공정하게
+배분한다.</li>
+<li>모든 feature subset에서의 marginal contribution을 평균하는
+개념이다.</li>
+<li>Additivity, consistency, local accuracy가 핵심 성질이다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_xai4_p22_shap_summary.png"
+alt="SHAP summary plot" />
+<figcaption aria-hidden="true">SHAP summary plot</figcaption>
+</figure>
+<p>출처: 강의자료 <code>14._XAI_IV.pdf</code>, p.22.</p>
+<ul>
+<li>SHAP은 feature가 예측값을 baseline에서 얼마나 밀어 올리거나 내렸는지
+기여도로 해석한다.</li>
+<li>Summary plot은 feature importance와 feature value 방향성을 동시에
+보여준다.</li>
+<li>빨간 점과 파란 점의 위치를 함께 봐야 “값이 클수록 예측을
+올리는지/내리는지”를 말할 수 있다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p15_p20_overfitting_regularization.png"
+alt="Overfitting과 regularization" />
+<figcaption aria-hidden="true">Overfitting과 regularization</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>15._인공지능_최적화_및_메타휴리스틱스.pdf</code>, p.20.</p>
+<ul>
+<li>Training loss만 낮추면 overfitting이 생길 수 있다.</li>
+<li>Regularization은 큰 계수나 복잡한 모델을 penalty로 억제한다.</li>
+<li><span class="math inline">\(\lambda\)</span>가 너무 크면
+underfitting, 너무 작으면 overfitting 위험이 있다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p15_p56_minibatch.png"
+alt="Batch, SGD, mini-batch" />
+<figcaption aria-hidden="true">Batch, SGD, mini-batch</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>15._인공지능_최적화_및_메타휴리스틱스.pdf</code>, p.56.</p>
+<ul>
+<li>Batch gradient descent는 전체 데이터를 사용한다.</li>
+<li>SGD는 sample 하나씩, mini-batch는 일부 묶음으로 gradient를
+계산한다.</li>
+<li>Mini-batch는 계산 효율과 gradient 안정성 사이의 절충이다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_opt_p70_gradient_descent.png"
+alt="Gradient descent 흐름" />
+<figcaption aria-hidden="true">Gradient descent 흐름</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>15._인공지능_최적화_및_메타휴리스틱스.pdf</code>, p.70.</p>
+<ul>
+<li>Gradient descent는 목적함수 <span
+class="math inline">\(J(w)\)</span>가 감소하는 방향으로 <span
+class="math inline">\(w\leftarrow w-\eta\nabla J(w)\)</span>를
+반복한다.</li>
+<li>Learning rate가 너무 크면 overshooting, 너무 작으면 수렴 지연이
+생긴다.</li>
+<li>Batch, SGD, mini-batch는 gradient를 계산하는 데이터 범위가
+다르다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p15_p72_gradient_descent_algorithm.png"
+alt="Gradient descent algorithm" />
+<figcaption aria-hidden="true">Gradient descent algorithm</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>15._인공지능_최적화_및_메타휴리스틱스.pdf</code>, p.72.</p>
+<ul>
+<li>초기 파라미터 설정, gradient 계산, learning rate만큼 이동, 수렴까지
+반복 순서다.</li>
+<li>업데이트 식은 <span
+class="math inline">\(\theta\leftarrow\theta-\eta\nabla
+J(\theta)\)</span>다.</li>
+<li>목적함수 최소화에서는 gradient 반대방향으로 움직인다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/ml_p15_p86_grid_random.png"
+alt="Grid search와 random search" />
+<figcaption aria-hidden="true">Grid search와 random search</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>15._인공지능_최적화_및_메타휴리스틱스.pdf</code>, p.86.</p>
+<ul>
+<li>Grid search는 지정한 모든 조합을 체계적으로 탐색한다.</li>
+<li>Random search는 임의 조합을 뽑아 탐색하므로 중요한 hyperparameter가
+일부일 때 효율적일 수 있다.</li>
+<li>Hyperparameter optimization은 validation 성능 기준으로
+선택한다.</li>
+</ul>
+<h2 id="기계학습-최적화-핵심">기계학습 최적화 핵심</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>개념</th>
+<th>시험용 핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>최적화 문제</td>
+<td>목적함수 <span class="math inline">\(J(\theta)\)</span>를
+최소화하거나 최대화하는 파라미터 <span
+class="math inline">\(\theta\)</span> 조합 탐색</td>
+</tr>
+<tr>
+<td>기계학습 최적화</td>
+<td>학습데이터의 loss를 줄이는 파라미터 <span
+class="math inline">\(W,b\)</span>를 찾는 training phase</td>
+</tr>
+<tr>
+<td>순수 최적화와 차이</td>
+<td>순수 최적화는 목적함수 값 자체가 목표지만, 기계학습은 학습 loss
+감소가 unseen data 성능 향상으로 이어져야 함</td>
+</tr>
+<tr>
+<td>ERM</td>
+<td>Unknown data-generating distribution 대신 학습데이터의 empirical
+risk를 최소화하는 접근</td>
+</tr>
+<tr>
+<td>과적합</td>
+<td>학습데이터 loss만 과도하게 줄여 test/generalization 성능이 나빠지는
+문제</td>
+</tr>
+<tr>
+<td>정규화</td>
+<td>loss에 penalty term을 추가해 계수가 과도하게 커지는 것을 억제</td>
+</tr>
+<tr>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td>regularization strength. 너무 크면 underfitting, 너무 작으면
+overfitting 위험</td>
+</tr>
+<tr>
+<td>convex function</td>
+<td>지역 최소해가 전역 최소해와 연결되기 쉬워 최적화가 상대적으로
+쉬움</td>
+</tr>
+<tr>
+<td>non-convex function</td>
+<td>local minima, saddle point, cliffs 등으로 최적화가 어려움</td>
+</tr>
+<tr>
+<td>least squares</td>
+<td>회귀에서 squared error를 최소화해 계수 추정</td>
+</tr>
+<tr>
+<td>MLE</td>
+<td>관측 데이터가 가장 그럴듯해지는 파라미터를 찾는 maximum likelihood
+관점</td>
+</tr>
+<tr>
+<td>MAP</td>
+<td>likelihood에 prior를 함께 반영해 posterior probability가 최대가 되는
+파라미터를 찾는 관점</td>
+</tr>
+<tr>
+<td>Bayesian estimator</td>
+<td>파라미터를 하나의 점으로만 고정하지 않고 posterior distribution
+전체를 고려하는 관점</td>
+</tr>
+<tr>
+<td>logistic regression 최적화</td>
+<td>log-likelihood를 최대화해야 하며 명시해가 어려워 gradient descent 등
+수치 최적화 사용</td>
+</tr>
+<tr>
+<td>EM algorithm</td>
+<td>latent variable 또는 missing value 때문에 log likelihood 계산이
+어려울 때 E-step과 M-step을 반복</td>
+</tr>
+<tr>
+<td>full batch</td>
+<td>전체 데이터를 한 번에 이용해 gradient를 계산. 안정적이지만 큰
+데이터/GPU 메모리 제약에서는 비현실적일 수 있음</td>
+</tr>
+<tr>
+<td>online/SGD</td>
+<td>샘플 1개마다 업데이트. 빠르고 즉각적이지만 업데이트가 noisy할 수
+있음</td>
+</tr>
+<tr>
+<td>minibatch</td>
+<td>full batch와 online의 중간. sample size가 클 때 현실적인 학습
+방식이며 보통 <span class="math inline">\(8,16,32,64,128\)</span>처럼
+2의 거듭제곱 크기를 자주 사용</td>
+</tr>
+<tr>
+<td>learning rate <span class="math inline">\(\eta\)</span></td>
+<td>업데이트 폭. 너무 크면 overshooting, 너무 작으면 수렴이 느리거나
+local minima에 갇힐 수 있음</td>
+</tr>
+<tr>
+<td>learning rate decay</td>
+<td>학습 후반부에 loss가 튀거나 진동할 때 learning rate를 줄여 수렴을
+안정화하는 전략</td>
+</tr>
+<tr>
+<td>gradient descent</td>
+<td><span class="math inline">\(w \leftarrow w-\eta\nabla J(w)\)</span>
+형태로 목적함수가 감소하는 방향으로 이동</td>
+</tr>
+<tr>
+<td>Hessian matrix</td>
+<td>목적함수를 파라미터들에 대해 두 번 편미분한 2차 미분 행렬. 곡률
+정보를 담지만 파라미터가 많으면 계산량이 커짐</td>
+</tr>
+<tr>
+<td>Newton method</td>
+<td>Hessian과 Hessian inverse를 활용해 빠른 탐색을 시도하지만
+ill-conditioning, saddle point, singular problem에 민감</td>
+</tr>
+<tr>
+<td>ill-conditioning</td>
+<td>방향에 따라 목적함수 기울기/곡률 차이가 커서 zig-zag하며 수렴이
+어려워지는 문제</td>
+</tr>
+<tr>
+<td>momentum</td>
+<td>이전 이동 방향을 반영해 local optimum 탈출을 도울 수 있지만 지나치면
+좋은 local optimum도 지나칠 수 있음</td>
+</tr>
+<tr>
+<td>Adagrad/RMSProp/Adam</td>
+<td>gradient의 크기, 이동 방향, adaptive learning rate 등을 반영하는 SGD
+계열 optimizer. 세부 수식 암기보다 왜 쓰는지 구분</td>
+</tr>
+<tr>
+<td>gradient clipping</td>
+<td>cliffs처럼 gradient가 폭발적으로 커지는 구간에서 gradient 방향은
+유지하되 norm을 threshold 이하로 제한</td>
+</tr>
+<tr>
+<td>early stopping</td>
+<td>validation 성능을 모니터링해 과적합 전에 학습 종료</td>
+</tr>
+<tr>
+<td>parameter</td>
+<td>모델이 학습으로 추정하는 값. 예: neural network의 weight, bias</td>
+</tr>
+<tr>
+<td>hyperparameter</td>
+<td>사용자가 학습 전에 정하거나 validation으로 선택하는 값. 예: ridge의
+<span class="math inline">\(\lambda\)</span>, SVM의 <span
+class="math inline">\(C,\gamma\)</span>, neural network의 batch size,
+epoch, learning rate, hidden layer 수, node 수, activation</td>
+</tr>
+<tr>
+<td>hyperparameter optimization</td>
+<td><span class="math inline">\(\lambda\)</span>, hidden layer 수, node
+수, activation 등 사용자가 정하는 값의 최적 조합 탐색</td>
+</tr>
+<tr>
+<td>grid search</td>
+<td>모든 격자 조합을 탐색. 차원이 커지면 계산량 폭증</td>
+</tr>
+<tr>
+<td>random search</td>
+<td>임의 조합 탐색. grid보다 효율적일 수 있으나 최적 보장 없음</td>
+</tr>
+<tr>
+<td>Bayesian optimization</td>
+<td>Gaussian process 같은 surrogate model과 acquisition function으로
+다음 탐색 지점을 고르는 hyperparameter 탐색 방식</td>
+</tr>
+<tr>
+<td>heuristic</td>
+<td>시간/자원 제약에서 충분히 좋은 approximate solution을 찾는 규칙 기반
+접근</td>
+</tr>
+<tr>
+<td>metaheuristic</td>
+<td>특정 문제에 종속되지 않는 상위 탐색 전략. global optimum 보장보다
+제한 시간 내 근사해가 목표</td>
+</tr>
+<tr>
+<td>trajectory-based</td>
+<td>하나의 해를 이동시키며 탐색. hill climbing, tabu search, simulated
+annealing 등</td>
+</tr>
+<tr>
+<td>population-based</td>
+<td>여러 후보해 집단을 함께 탐색. genetic algorithm, ant colony,
+particle swarm 등</td>
+</tr>
+<tr>
+<td>termination criterion</td>
+<td>반복 탐색 종료 조건. 예: 정해진 iteration 수 도달, gradient/개선폭이
+충분히 작아짐</td>
+</tr>
+<tr>
+<td>simulated annealing</td>
+<td>나쁜 해도 확률적으로 받아들이며 온도 <span
+class="math inline">\(T\)</span>를 낮춰 전역 탐색에서 국소 탐색으로
+전환</td>
+</tr>
+<tr>
+<td>genetic algorithm</td>
+<td>parameter set을 chromosome으로 보고 fitness 평가, mutation,
+crossover, replacement를 반복</td>
+</tr>
+</tbody>
+</table>
+<h3 id="최적화-단원-시험-함정">최적화 단원 시험 함정</h3>
+<ul>
+<li><code>최적화 = training loss 최소화</code>라고만 쓰면 부족하다.
+기계학습에서는 training data의 loss가 줄어도 unseen/test data 성능이
+좋아진다는 보장이 없으므로 generalization을 같이 봐야 한다.</li>
+<li><code>ERM</code>은 학습데이터에서의 empirical risk를 줄이는
+방식이지만, 이 자체가 과적합 방지책은 아니다.</li>
+<li>작은 데이터에서 과적합을 줄이는 대표 전략은 label data 추가 확보,
+regularization, early stopping, cross-validation, Bayesian approach,
+data augmentation 등이다.</li>
+<li><code>Global minimum</code>은 전체 탐색공간에서 가장 좋은 해이고,
+<code>local minimum</code>은 주변에서는 좋지만 전체 최선은 아닐 수
+있다.</li>
+<li><code>Convex</code>에서는 최적화가 상대적으로 쉽지만, 신경망처럼
+non-convex한 문제에서는 ill-conditioning, local minima, saddle point,
+cliffs가 문제가 된다.</li>
+<li><code>Batch size</code>는 한 번 업데이트할 때 쓰는 샘플 수이고,
+<code>epoch</code>는 전체 데이터를 몇 번 반복했는지이다.</li>
+<li><code>Full batch</code>, <code>mini-batch</code>,
+<code>online/SGD</code>를 구분해야 한다. 전체 데이터를 한 번에 쓰면 full
+batch, 일부 묶음이면 mini-batch, 샘플 1개마다 업데이트하면 online/SGD에
+가깝다.</li>
+<li><code>Learning rate</code>가 크면 빠르지만 overshooting 위험이 있고,
+작으면 안정적이지만 느리며 local minima에 갇힐 수 있다.</li>
+<li>loss curve가 초반에는 잘 내려가다가 후반에 튀면 learning rate
+decay를 고려할 수 있다.</li>
+<li><code>Early stopping</code>은 training 성능이 아니라 validation
+성능을 모니터링해 과적합 전에 멈추는 전략이다.</li>
+<li>Hyperparameter tuning을 validation set에 반복하면 validation set에도
+과적합될 수 있으므로, k-fold cross-validation 같은 방식이 언급된다.</li>
+<li><code>Least squares</code>는 회귀에서 squared error를 최소화하는
+방식이고, Gaussian noise 가정에서는 MLE와 연결된다.</li>
+<li><code>Probability</code>는 파라미터가 주어졌을 때 데이터/사건이 나올
+확률이고, <code>likelihood</code>는 관측 데이터가 주어졌을 때 파라미터가
+얼마나 그럴듯한지를 보는 함수이다.</li>
+<li>MLE에서 여러 sample의 likelihood는 곱 형태가 되므로, log
+likelihood를 쓰면 곱을 합으로 바꿔 계산과 최적화를 쉽게 만든다.</li>
+<li><code>MLE</code>, <code>MAP</code>,
+<code>Bayesian estimator</code>는 모두 파라미터 추정 관점이지만, MLE는
+likelihood, MAP는 prior까지 반영한 posterior mode, Bayesian estimator는
+posterior distribution/expectation 관점이다.</li>
+<li>MLE는 학습데이터가 적으면 관측된 샘플에 민감하게 치우칠 수 있다.
+이때 prior를 반영한 MAP나 Bayesian approach가 과적합 완화 관점에서
+언급된다.</li>
+<li><code>EM</code>은 E-step에서 log likelihood의 기댓값을 계산하고,
+M-step에서 이를 최대화하는 절차를 수렴할 때까지 반복한다.</li>
+<li><code>Parameter</code>와 <code>hyperparameter</code>를 구분해야
+한다. Weight/bias는 학습되는 parameter이고, learning rate, batch size,
+epoch, hidden layer 수, node 수, activation, <span
+class="math inline">\(\lambda\)</span>는 사용자가 정하거나
+validation으로 고르는 hyperparameter이다.</li>
+<li><code>Grid search</code>는 격자 전체 탐색이라 차원이 늘면 계산량이
+폭증한다. <code>Random search</code>는 전체 보장은 약하지만 제한된
+자원에서 효율적일 수 있다.</li>
+<li>일반적으로 <code>heuristic/metaheuristic</code>은 제한 시간 내
+충분히 좋은 근사해를 찾는 전략이다. 단, Kruskal/Dijkstra처럼 특정
+문제에서는 heuristic하게 보이는 알고리즘도 최적해를 보장할 수 있으므로
+“heuristic은 절대 최적해를 못 찾는다”는 선지는 틀릴 수 있다.</li>
+</ul>
+<h3 id="최적화-주요-수식">최적화 주요 수식</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>상황</th>
+<th>수식</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>일반 최적화</td>
+<td><span class="math inline">\(\min_{\theta} J(\theta)\)</span> 또는
+<span class="math inline">\(\max_{\theta} J(\theta)\)</span></td>
+<td>목적함수를 최소/최대화하는 파라미터 탐색</td>
+</tr>
+<tr>
+<td>기계학습 학습</td>
+<td><span class="math inline">\(\arg\min_{W,b}\sum_i
+L(Y_i,F(X_i;W,b))\)</span></td>
+<td>학습데이터 기준 loss가 작아지는 <span
+class="math inline">\(W,b\)</span> 탐색</td>
+</tr>
+<tr>
+<td>Polynomial fitting</td>
+<td><span
+class="math inline">\(f(x,w)=\sum_{j=0}^{M}w_jx^j\)</span></td>
+<td><span class="math inline">\(x\)</span>에는 비선형이지만 계수 <span
+class="math inline">\(w\)</span>에는 선형</td>
+</tr>
+<tr>
+<td>Squared error</td>
+<td><span
+class="math inline">\(E(w)=\frac{1}{N}\sum_{n=1}^{N}\{f(x_n,w)-t_n\}^2\)</span></td>
+<td>회귀의 기본 error function</td>
+</tr>
+<tr>
+<td>Regularized loss</td>
+<td><span
+class="math inline">\(L(\beta)=\sum_i(y_i-\hat{y}_i)^2+\lambda\sum_j\beta_j^2\)</span></td>
+<td>MSE에 penalty를 더해 큰 계수 억제</td>
+</tr>
+<tr>
+<td>Logistic function</td>
+<td><span
+class="math inline">\(\pi(x)=\frac{e^{\beta_0+\beta_1x}}{1+e^{\beta_0+\beta_1x}}\)</span></td>
+<td>입력을 0~1 확률로 변환</td>
+</tr>
+<tr>
+<td>Log odds</td>
+<td><span
+class="math inline">\(\log\frac{\pi(x)}{1-\pi(x)}=\beta_0+\beta_1x\)</span></td>
+<td><span class="math inline">\(x\)</span> 1단위 증가 시 log-odds
+변화량이 <span class="math inline">\(\beta_1\)</span></td>
+</tr>
+<tr>
+<td>MLE</td>
+<td><span
+class="math inline">\(\theta_{\text{MLE}}=\arg\max_{\theta}P(X|\theta)\)</span></td>
+<td>관측 데이터가 가장 그럴듯한 파라미터</td>
+</tr>
+<tr>
+<td>Gradient descent</td>
+<td><span class="math inline">\(w\leftarrow w-\eta\nabla
+J(w)\)</span></td>
+<td>gradient 반대 방향으로 이동</td>
+</tr>
+<tr>
+<td>Newton method</td>
+<td><span class="math inline">\(w\leftarrow w-H^{-1}\nabla
+J(w)\)</span></td>
+<td>Hessian을 활용한 더 큰 폭의 탐색</td>
+</tr>
+<tr>
+<td>Gradient clipping</td>
+<td><span class="math inline">\(g \leftarrow \tau \frac{g}{\lVert
+g\rVert}\quad(\lVert g\rVert&gt;\tau)\)</span></td>
+<td>gradient 방향은 유지하고 크기만 threshold <span
+class="math inline">\(\tau\)</span>로 제한</td>
+</tr>
+<tr>
+<td>Hyperparameter search</td>
+<td><span class="math inline">\(\min_{\lambda\in\Lambda}
+L(M_{\lambda},D_{\text{train}},D_{\text{valid}})\)</span></td>
+<td>validation 성능 기준으로 하이퍼파라미터 선택</td>
+</tr>
+</tbody>
+</table>
+<h3 id="온라인-강의-최적화-전사-핵심-요약">온라인 강의 최적화 전사 핵심
+요약</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>영상</th>
+<th>반복 강조점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>기계학습 최적화1</code></td>
+<td>수리 최적화와 기계학습 최적화의 차이, ERM, training loss와
+test/generalization loss의 차이, polynomial fitting으로 본 overfitting,
+regularization과 <span class="math inline">\(\lambda\)</span>,
+probability와 likelihood, MLE/MAP/Bayesian estimator, log likelihood,
+EM의 역할</td>
+</tr>
+<tr>
+<td><code>기계학습 최적화2</code></td>
+<td>parameter와 hyperparameter 구분, full batch/mini-batch/online
+업데이트, ill-conditioning/local minima/saddle point/cliffs, Hessian과
+Newton method의 한계, gradient clipping, learning rate와 decay,
+momentum/Adam 계열, hyperparameter search, heuristic/metaheuristic,
+trajectory-based/population-based 탐색</td>
+</tr>
+</tbody>
+</table>
+<p>시험에 쓰기 좋은 한 줄 요약은 다음과 같다. 기계학습 최적화는
+<code>train data에서 보이는 loss</code>를 줄이지만 실제 목표는
+<code>보지 못한 data에서의 성능</code>이다. 따라서 train loss만 낮추는
+답안은 불완전하고, validation/generalization/overfitting까지 연결해야
+한다.</p>
+<h3 id="답안선지-판단-전략">답안/선지 판단 전략</h3>
+<h2 id="선지-함정-대비">선지 함정 대비</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>특징</th>
+<th>대비</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문항 수가 많고 객관식 선지가 촘촘함</td>
+<td>정의만 외우지 말고 틀린 선지의 이유를 표시</td>
+</tr>
+<tr>
+<td>의사코드/절차형 강조</td>
+<td>AdaBoost, LIME, SHAP, GBM 과정을 단계별로 암기</td>
+</tr>
+<tr>
+<td>개념 비교형 선호</td>
+<td>Bagging/Boosting/Stacking, PDP/ICE/LIME/SHAP 비교</td>
+</tr>
+<tr>
+<td>알고리즘의 이유를 물음</td>
+<td>왜 sequential인지, 왜 residual을 줄이는지, 왜 SHAP이 이론적으로
+강한지 설명</td>
+</tr>
+<tr>
+<td>말장난 선지 가능</td>
+<td><code>항상</code>, <code>반드시</code>, <code>독립적</code>,
+<code>병렬</code>, <code>global/local</code> 같은 표현 주의</td>
+</tr>
+</tbody>
+</table>
+<h2 id="앙상블-선지-판단-기준">앙상블 선지 판단 기준</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>확인된 성향</th>
+<th>대비</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단순 키워드보다 “그림/문장만 보고 알 수 있는가”를 따짐</td>
+<td>boosting 그림에서 random subspace처럼 그림에 없는 정보를 끌어오지
+않기</td>
+</tr>
+<tr>
+<td>이론적 배경과 실무 실험을 구분함</td>
+<td>Random Forest pruning처럼 “실험상 좋아질 수 있음”과 “이론상 핵심은
+아님”을 분리</td>
+</tr>
+<tr>
+<td><code>독립적</code>이라는 말을 엄밀하게 봄</td>
+<td>bootstrap 시행/트리 생성 과정은 독립적이지만 같은 원 데이터 분포를
+지향한다는 식으로 설명</td>
+</tr>
+<tr>
+<td><code>training 단계</code>와 <code>inference/test 단계</code>를
+구분함</td>
+<td>majority voting은 분류 inference에서 결합할 때 쓰며 training 과정
+자체가 아님</td>
+</tr>
+<tr>
+<td><code>해결</code>보다 <code>완화</code> 표현을 선호함</td>
+<td>CatBoost ordered target statistics는 target leakage/prediction
+shift를 완화한다고 쓰기</td>
+</tr>
+<tr>
+<td>알고리즘별 bias/variance 목표를 자주 연결함</td>
+<td>Bagging은 variance 감소, Boosting은 bias 감소 경향으로 바로
+매칭</td>
+</tr>
+<tr>
+<td>“No Free Lunch를 딥러닝/앙상블이 해결했다”류 선지를 배척함</td>
+<td>어떤 알고리즘도 모든 데이터에서 항상 우월하지 않다는 원문 취지를
+유지</td>
+</tr>
+</tbody>
+</table>
+<h2 id="우선순위">우선순위</h2>
+<ol>
+<li>AdaBoost 수도코드와 각 변수 의미</li>
+<li>Boosting vs Bagging vs Stacking</li>
+<li>Gradient Boosting의 residual/function 추가 관점</li>
+<li>XGBoost/LightGBM/CatBoost의 차이</li>
+<li>Random Forest의 bootstrap, random subspace, implicit diversity,
+pruning 함정</li>
+<li>회귀/분류 성능평가지표와 confusion matrix 방향 확인</li>
+<li>Cross-validation의 목적과 validation overfitting</li>
+<li>XAI 도입부: 정확도만으로 부족한 이유, overconfidence/calibration,
+local explanation</li>
+<li>PDP/ICE/LIME/SHAP 비교</li>
+<li>SHAP의 Shapley value, local/global, 세 가지 특성</li>
+</ol>
+<h2 id="답안-전략">답안 전략</h2>
+<ul>
+<li>객관식: 키워드 하나만 보고 찍지 말고 반대 개념을 같이 떠올린다.</li>
+<li>주관식: 알고리즘 목적 -&gt; 핵심 절차 -&gt; 장단점 순서로 짧게
+쓴다.</li>
+<li>의사코드: 변수명보다 흐름을 맞춘다.</li>
+<li>계산형: confusion matrix는 먼저 행/열이 actual인지 predicted인지
+확인한다.</li>
+<li>그림형: 축 이름과 흐름 방향을 먼저 보고, 그림에서 직접 읽히지 않는
+설명은 선지에서 의심한다.</li>
+</ul>
+<h3 id="범위-핵심개념-암기표">범위 핵심개념 암기표</h3>
+<h2 id="앙상블">1. 앙상블</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>개념</th>
+<th>핵심</th>
+<th>함정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ensemble</td>
+<td>여러 모델을 결합해 오류를 줄임</td>
+<td>같은 모델을 그대로 복제하면 효과 작음</td>
+</tr>
+<tr>
+<td>Diversity</td>
+<td>개별 모델이 서로 달라야 앙상블 효과 발생</td>
+<td>성능만 좋고 모두 같은 모델이면 부족</td>
+</tr>
+<tr>
+<td>Bagging</td>
+<td>bootstrap sample로 독립적 weak learner 구성, variance 감소</td>
+<td>이전 모델의 오답에 순차 집중하지 않음</td>
+</tr>
+<tr>
+<td>Boosting</td>
+<td>이전 모델이 틀린 샘플에 더 집중, sequential weak learner, bias 감소
+경향</td>
+<td>병렬 학습이 쉽다고 하면 틀림</td>
+</tr>
+<tr>
+<td>Stacking</td>
+<td>여러 base learner의 예측을 meta learner가 다시 학습</td>
+<td>단순 평균 aggregation과 다름</td>
+</tr>
+<tr>
+<td>Majority voting</td>
+<td>여러 분류 모델의 예측을 투표로 결합하는 inference/test 단계 결합
+방식</td>
+<td>training 단계에서 majority voting을 한다고 하면 틀림</td>
+</tr>
+<tr>
+<td>Heterogeneous stacking</td>
+<td>서로 다른 알고리즘의 base learner를 쌓아 meta learner가 결합</td>
+<td>유리한 이유는 같은 실수를 할 가능성이 낮고 상호 보완을 기대하기
+때문</td>
+</tr>
+</tbody>
+</table>
+<h2 id="random-forest-퀴즈-함정">1-1. Random Forest 퀴즈 함정</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>개념</th>
+<th>핵심</th>
+<th>함정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Random Forest</td>
+<td>decision tree ensemble이지만 단순히 tree를 모은 것만은 아님</td>
+<td>bootstrap sampling과 random subspace/feature subsampling이 빠지면
+불충분</td>
+</tr>
+<tr>
+<td>Bootstrap/Bagging</td>
+<td>복원추출로 여러 training subset을 만들고 tree를 학습</td>
+<td>Bagging은 Random Forest의 핵심 배경</td>
+</tr>
+<tr>
+<td>Random subspace method</td>
+<td>feature 일부를 무작위로 선택해 tree/split 다양성을 확보</td>
+<td>Random Forest의 핵심 알고리즘 중 하나</td>
+</tr>
+<tr>
+<td>Implicit diversity</td>
+<td>bootstrap/random sampling 때문에 learner가 암묵적으로 달라짐</td>
+<td>“명시적으로 다양성을 요구한다”는 표현은 boosting 쪽과 혼동 주의</td>
+</tr>
+<tr>
+<td>독립적인 decision tree</td>
+<td>각 tree 생성 과정이 독립 시행에 가깝다는 뜻</td>
+<td>같은 원 데이터 분포를 따르므로 완전히 무관한 모델이라는 뜻은
+아님</td>
+</tr>
+<tr>
+<td>Pruning in RF</td>
+<td>이론적으로는 tree를 강하게 pruning하지 않고 충분히 깊게 키운 뒤
+aggregate하는 배경</td>
+<td>실무 하이퍼파라미터로 pruning 수준을 조절할 수는 있으나 핵심 원리는
+아님</td>
+</tr>
+<tr>
+<td>Loss regularization</td>
+<td>Random Forest는 boosting처럼 loss를 반복 최적화하는 구조가 아님</td>
+<td>loss regularization을 추가한다는 설명은 부적절</td>
+</tr>
+<tr>
+<td>변수 선택법</td>
+<td>Random Forest는 random subspace로 변수 선택 효과를 내부에 가짐</td>
+<td>별도 변수 선택 후 RF에 넣는 것이 일반적 핵심이라는 선지 주의</td>
+</tr>
+<tr>
+<td>정확도 향상</td>
+<td>데이터가 충분하고 비용이 허용되면 학습 데이터 추가 확보는 일반적으로
+도움</td>
+<td>변동성 방지를 위해 학습 데이터를 줄인다는 표현은 틀림</td>
+</tr>
+<tr>
+<td>Supervised learning</td>
+<td>Random Forest는 label을 이용해 classification/regression을 학습</td>
+<td>unsupervised라고 하면 틀림</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bias-variance와-no-free-lunch">1-2. Bias-Variance와 No Free
+Lunch</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>개념</th>
+<th>핵심</th>
+<th>함정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bias</td>
+<td>모델 예측의 평균이 실제 정답에서 체계적으로 벗어나는 정도</td>
+<td>단순 모델은 보통 high bias</td>
+</tr>
+<tr>
+<td>Variance</td>
+<td>training data가 바뀔 때 모델 예측이 흔들리는 정도</td>
+<td>복잡 모델은 보통 high variance</td>
+</tr>
+<tr>
+<td>낮은 복잡도 모델</td>
+<td>linear regression 같은 단순 모델은 일반적으로 high bias, low
+variance</td>
+<td>항상 나쁘다는 뜻은 아님</td>
+</tr>
+<tr>
+<td>높은 복잡도 모델</td>
+<td>deep neural network 같은 모델은 상대적으로 low bias, high variance
+경향</td>
+<td>데이터/정규화/학습법에 따라 일반화 가능</td>
+</tr>
+<tr>
+<td>Optimal complexity</td>
+<td>bias와 variance의 단순 교차점이 아니라 전체 expected error가 최소가
+되는 지점</td>
+<td>“교차점에서 최적” 선지 주의</td>
+</tr>
+<tr>
+<td>Bagging 효과</td>
+<td>여러 고분산 모델을 평균/투표해 variance 감소</td>
+<td>bias 감소가 주목적이라는 설명은 부정확</td>
+</tr>
+<tr>
+<td>Boosting 효과</td>
+<td>약한 모델을 순차 보완해 bias 감소 경향</td>
+<td>learner가 너무 강하면 boosting 취지와 안 맞을 수 있음</td>
+</tr>
+<tr>
+<td>No Free Lunch</td>
+<td>모든 데이터/문제에서 항상 우월한 단일 알고리즘은 없음</td>
+<td>딥러닝이나 앙상블이 NFL을 해결했다는 선지는 틀림</td>
+</tr>
+</tbody>
+</table>
+<h2 id="boosting-계열">2. Boosting 계열</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>개념</th>
+<th>핵심</th>
+<th>시험 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weak learner</td>
+<td>개별적으로 약하지만 앙상블로 strong learner 구성</td>
+<td>너무 약하면 못 풀고 너무 강하면 과적합</td>
+</tr>
+<tr>
+<td>AdaBoost</td>
+<td>오분류 샘플 가중치를 높이고 learner 신뢰도 alpha로 결합</td>
+<td>error rate, alpha, final sign aggregation</td>
+</tr>
+<tr>
+<td>AdaBoost discard</td>
+<td>binary classification에서 error가 0.5 이상이면 랜덤보다 못함</td>
+<td>T번 반복해도 실제 모델 수가 T보다 작을 수 있음</td>
+</tr>
+<tr>
+<td>Gradient Boosting</td>
+<td>residual/loss를 줄이는 방향으로 새 weak learner 추가</td>
+<td>Functional Gradient Descent</td>
+</tr>
+<tr>
+<td>Learning rate/alpha</td>
+<td>각 weak learner 또는 gradient 방향을 얼마나 반영할지 결정</td>
+<td>너무 작으면 수렴이 느리거나 local minimum에 머물 수 있고, 너무 크면
+최적점을 지나쳐 불안정</td>
+</tr>
+<tr>
+<td>GBM hyperparameter</td>
+<td>weak learner 수, learning rate, max depth, feature 수, leaf/min
+split 샘플 수</td>
+<td>과적합 제어와 일반화 성능 조절</td>
+</tr>
+<tr>
+<td>Max depth in GBM</td>
+<td>tree weak learner의 복잡도 제한</td>
+<td>Random Forest처럼 무작정 깊게 두면 과적합 위험</td>
+</tr>
+<tr>
+<td>XGBoost</td>
+<td>GBM 기반, regularization과 parallelism을 강화한 extreme
+boosting</td>
+<td>GBM의 과적합/일반화 약점 보완, 병렬화/캐시/메모이제이션 같은 계산
+효율도 포함</td>
+</tr>
+<tr>
+<td>XGBoost objective</td>
+<td>loss term + regularization term</td>
+<td>단순히 residual만 줄이는 GBM과 구분</td>
+</tr>
+<tr>
+<td>XGBoost regularization</td>
+<td>leaf 수를 제한하는 gamma*T 항 + leaf weight의 L2 regularization
+항</td>
+<td>tree가 너무 깊어지거나 leaf weight가 과도하게 커지는 것을 억제</td>
+</tr>
+<tr>
+<td>Similarity score</td>
+<td>residual을 leaf 단위로 모아 split/pruning 판단에 활용</td>
+<td>residual 부호가 한쪽으로 몰리면 과적합 위험 신호</td>
+</tr>
+<tr>
+<td>Gamma pruning</td>
+<td>split gain이 gamma보다 작으면 더 분기하지 않음</td>
+<td>gamma는 XGBoost의 pruning/일반화 제어 하이퍼파라미터</td>
+</tr>
+<tr>
+<td>XGBoost parallelism</td>
+<td>sorted feature value, gradient statistics 재사용, cache-aware block
+structure</td>
+<td>단순 GPU 사용만 의미하는 것이 아니라 병렬 계산 구조 개선</td>
+</tr>
+<tr>
+<td>XGBoost hyperparameter</td>
+<td>n_estimators, learning rate, max depth, max features, min child/min
+split, reg_alpha, reg_lambda</td>
+<td>L1/L2 penalty를 objective에 넣어 조절 가능</td>
+</tr>
+<tr>
+<td>LightGBM</td>
+<td>학습 속도 개선 중심의 light GBM</td>
+<td>정확도만이 아니라 효율성이 핵심</td>
+</tr>
+<tr>
+<td>Leaf-wise growth</td>
+<td>의미 있는 leaf를 depth 방향으로 먼저 확장</td>
+<td>level-wise/BFS 방식과 구분</td>
+</tr>
+<tr>
+<td>GOSS</td>
+<td>gradient가 큰 중요한 샘플은 유지하고, gradient가 작은 샘플은 일부만
+랜덤 샘플링</td>
+<td>Gradient-based One-sided Sampling</td>
+</tr>
+<tr>
+<td>EFB</td>
+<td>상호 배타적인 sparse feature를 하나의 bundle로 묶어 feature 수를
+줄임</td>
+<td>일반 PCA 같은 차원축소와 구분</td>
+</tr>
+<tr>
+<td>CatBoost</td>
+<td>categorical feature 처리, target leakage/prediction shift 완화</td>
+<td>ordered target statistics, ordered boosting</td>
+</tr>
+<tr>
+<td>Target encoding</td>
+<td>category별 target 평균으로 범주형 변수를 연속값화</td>
+<td>target leakage 위험</td>
+</tr>
+<tr>
+<td>Target leakage</td>
+<td>아직 모르는 y 정보를 feature 생성에 써버리는 문제</td>
+<td>test label을 아는 것처럼 쓰면 안 됨</td>
+</tr>
+<tr>
+<td>Ordered Target Statistics</td>
+<td>현재 순서 이전의 target 정보만 이용해 target encoding</td>
+<td>미래/미관측 target 정보가 섞이지 않게 함</td>
+</tr>
+<tr>
+<td>Ordered Boosting</td>
+<td>train/test 또는 시간 흐름에 따른 prediction shift 완화</td>
+<td>데이터 분포가 조금 달라질 때의 문제와 연결</td>
+</tr>
+<tr>
+<td>XGBoost vs LightGBM vs CatBoost</td>
+<td>XGBoost는 성능/정규화, LightGBM은 속도, CatBoost는 categorical
+feature에 강점</td>
+<td>실제 데이터에서는 셋 다 비교해보는 것이 일반적</td>
+</tr>
+</tbody>
+</table>
+<h2 id="회귀-성능평가지표">2-1. 회귀 성능평가지표</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>지표</th>
+<th>핵심</th>
+<th>함정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAE</td>
+<td><span class="math inline">\(|y-\hat{y}|\)</span>의 평균, 원래 단위
+유지</td>
+<td>큰 오차를 MSE만큼 강하게 벌주지는 않음</td>
+</tr>
+<tr>
+<td>MSE</td>
+<td>오차 제곱의 평균</td>
+<td>큰 오차에 민감하고 단위가 제곱됨</td>
+</tr>
+<tr>
+<td>RMSE</td>
+<td>MSE의 제곱근, 원래 단위로 해석 쉬움</td>
+<td>여전히 큰 오차에 민감</td>
+</tr>
+<tr>
+<td>MAPE</td>
+<td>실제값 대비 절대 percentage error 평균</td>
+<td>실제값이 0 또는 0에 가까우면 불안정</td>
+</tr>
+<tr>
+<td>MASE</td>
+<td>naive forecast 대비 MAE 비율</td>
+<td>1보다 작으면 naive보다 좋다고 해석 가능</td>
+</tr>
+<tr>
+<td>R square</td>
+<td>전체 변동 중 모델이 설명한 비율</td>
+<td>무조건 0~1이라고만 외우면 위험, 나쁜 모델은 음수도 가능</td>
+</tr>
+</tbody>
+</table>
+<h2 id="분류-성능평가지표">2-2. 분류 성능평가지표</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>지표</th>
+<th>식</th>
+<th>핵심/함정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accuracy</td>
+<td><span
+class="math inline">\(\frac{TP+TN}{\mathrm{전체}}\)</span></td>
+<td>class imbalance에서 착시 가능</td>
+</tr>
+<tr>
+<td>Recall/Sensitivity/TPR</td>
+<td><span class="math inline">\(\frac{TP}{TP+FN}\)</span></td>
+<td>실제 positive를 얼마나 잡았는가</td>
+</tr>
+<tr>
+<td>Specificity/TNR</td>
+<td><span class="math inline">\(\frac{TN}{TN+FP}\)</span></td>
+<td>실제 negative를 얼마나 잘 걸렀는가</td>
+</tr>
+<tr>
+<td>Precision/PPV</td>
+<td><span class="math inline">\(\frac{TP}{TP+FP}\)</span></td>
+<td>positive라고 예측한 것 중 실제 positive 비율</td>
+</tr>
+<tr>
+<td>F1 score</td>
+<td><span class="math inline">\(\frac{2PR}{P+R}\)</span></td>
+<td>precision과 recall의 조화평균</td>
+</tr>
+<tr>
+<td>False Positive</td>
+<td>실제 negative를 positive라고 예측</td>
+<td>Type 1 error, false alarm</td>
+</tr>
+<tr>
+<td>False Negative</td>
+<td>실제 positive를 negative라고 예측</td>
+<td>Type 2 error, 질병/임신 예시처럼 더 치명적일 수 있음</td>
+</tr>
+<tr>
+<td>ROC curve</td>
+<td>x축 <code>1 - specificity</code>(FPR), y축 sensitivity(TPR)</td>
+<td>축을 sensitivity/specificity로 잘못 읽는 함정 주의</td>
+</tr>
+<tr>
+<td>AUC</td>
+<td>ROC 아래 면적</td>
+<td>1에 가까울수록 좋고, 대각선은 랜덤 수준</td>
+</tr>
+<tr>
+<td>Confusion matrix</td>
+<td>actual/predicted 방향을 먼저 확인</td>
+<td>라이브러리마다 행/열 배치가 달라질 수 있음</td>
+</tr>
+</tbody>
+</table>
+<h2 id="검증과-교차검증">2-3. 검증과 교차검증</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>개념</th>
+<th>핵심</th>
+<th>함정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Train/Validation/Test</td>
+<td>train으로 학습, validation으로 모델 선택, test로 최종 평가</td>
+<td>test set을 학습/선택에 쓰면 안 됨</td>
+</tr>
+<tr>
+<td>Validation overfitting</td>
+<td>validation set에 맞춰 하이퍼파라미터를 반복 선택하면 validation에도
+과적합 가능</td>
+<td>train overfitting만 문제라고 보면 부족</td>
+</tr>
+<tr>
+<td>K-fold cross validation</td>
+<td>validation fold를 돌아가며 여러 번 평가해 특정 validation split
+의존을 줄임</td>
+<td>test set을 여러 fold로 학습에 섞는다는 뜻이 아님</td>
+</tr>
+<tr>
+<td>Deep learning과 CV</td>
+<td>일반적으로 시간/비용 때문에 cross validation을 잘 하지 않음</td>
+<td>“하면 안 된다”가 아니라 실무상 자주 안 한다는 뉘앙스</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xai">3. XAI</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>개념</th>
+<th>핵심</th>
+<th>함정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XAI</td>
+<td>사람이 모델 결과를 이해하고 신뢰할 수 있게 설명</td>
+<td>성능 향상 알고리즘 자체와 구분</td>
+</tr>
+<tr>
+<td>XAI 필요성</td>
+<td>정확도만으로는 현장 적용/책임/설득/편향 점검이 어려움</td>
+<td>“잘 맞추면 충분하다”는 선지 주의</td>
+</tr>
+<tr>
+<td>AI 예측 vs 예언</td>
+<td>AI 예측은 validation과 정량적 평가가 필수</td>
+<td>한두 번 맞췄다고 신뢰하는 방식과 구분</td>
+</tr>
+<tr>
+<td>Overconfidence</td>
+<td>최신 고성능 모델이 틀려도 높은 confidence로 말하는 경향</td>
+<td>accuracy만 높으면 충분하다는 선지 주의</td>
+</tr>
+<tr>
+<td>Calibration</td>
+<td>confidence와 실제 정답률이 맞도록 조정/완화</td>
+<td>overconfidence를 줄이는 관점</td>
+</tr>
+<tr>
+<td>XAI key idea</td>
+<td>fairness, robustness, reliability, causality, trust</td>
+<td>용어 의미를 한국어로 설명 가능해야 함</td>
+</tr>
+<tr>
+<td>Interpretability 정의</td>
+<td>예측/결정의 원인을 사람이 이해할 수 있게 설명하는 과정</td>
+<td>모델 내부를 전부 완벽히 공개한다는 뜻은 아님</td>
+</tr>
+<tr>
+<td>Simulatability</td>
+<td>사람이 모델 전체 추론 과정을 머릿속으로 따라갈 수 있는 정도</td>
+<td>모델이 작고 단순할수록 유리</td>
+</tr>
+<tr>
+<td>Algorithmic transparency</td>
+<td>알고리즘이 어떻게 작동하는지 이해 가능한 정도</td>
+<td>black-box 성능이 높아도 투명성이 낮을 수 있음</td>
+</tr>
+<tr>
+<td>Exact vs Approximate explanation</td>
+<td>정확한 설명은 원 모델/생성함수에 가깝지만 복잡할 수 있고, 근사
+설명은 이해하기 쉽지만 부정확할 수 있음</td>
+<td>설명의 안정성과 정확성 trade-off</td>
+</tr>
+<tr>
+<td><span class="math inline">\(f(x)\)</span> vs <code>g(x)</code></td>
+<td><span class="math inline">\(f(x)\)</span>는 예측 모델,
+<code>g(x)</code>는 설명 모델</td>
+<td>둘을 같은 모델이라고 쓰면 틀림</td>
+</tr>
+<tr>
+<td>Black box를 여는 시점</td>
+<td>모델 전 EDA, 모델 중 intrinsic 설계, 모델 후 post-hoc 해석</td>
+<td>XAI가 항상 모델 학습 후에만 가능하다는 선지 주의</td>
+</tr>
+<tr>
+<td>Intrinsic interpretability</td>
+<td>모델 자체가 해석 가능한 경우, 예: linear regression, decision
+tree</td>
+<td>예측 성능이 낮거나 bias가 높을 수 있음</td>
+</tr>
+<tr>
+<td>Post-hoc interpretability</td>
+<td>이미 학습된 black-box 모델을 별도 설명 모델로 해석</td>
+<td>예측 모델과 설명 모델을 구분</td>
+</tr>
+<tr>
+<td>Surrogate model</td>
+<td>원 모델 f의 예측을 단순 모델 g로 근사해 설명</td>
+<td>원 모델 자체를 바꾸는 것이 아님</td>
+</tr>
+<tr>
+<td>Global explanation</td>
+<td>모델 전체 경향 설명</td>
+<td>한 관측치의 이유와 구분</td>
+</tr>
+<tr>
+<td>Local explanation</td>
+<td>특정 관측치의 예측 이유 설명</td>
+<td>전체 평균 경향과 구분</td>
+</tr>
+<tr>
+<td>Model-specific explanation</td>
+<td>특정 모델 구조에 의존하는 해석</td>
+<td>decision tree rule, attention score</td>
+</tr>
+<tr>
+<td>Model-agnostic explanation</td>
+<td>모델 종류와 무관하게 적용 가능한 설명</td>
+<td>PDP, ICE, permutation, LIME 등</td>
+</tr>
+<tr>
+<td>Interpretability level</td>
+<td>high는 단순/명확, low는 복잡/세부 패턴 반영</td>
+<td>설명 명확성과 세부 정확도 사이 trade-off</td>
+</tr>
+<tr>
+<td>High interpretability</td>
+<td>linear/monotonic 모델처럼 변화 방향과 크기가 직관적</td>
+<td>복잡한 local pattern을 놓칠 수 있음</td>
+</tr>
+<tr>
+<td>Medium interpretability</td>
+<td>nonlinear이지만 monotonic 제약 등으로 방향 해석 가능</td>
+<td>하나의 계수로 전체 변화를 설명하기 어려움</td>
+</tr>
+<tr>
+<td>Low interpretability</td>
+<td>nonlinear/nonmonotonic 모델, 변화 방향과 속도가 불안정</td>
+<td>해석이 가장 어렵지만 복잡 패턴 반영 가능</td>
+</tr>
+<tr>
+<td>Linear regression 해석</td>
+<td>beta 값으로 변수 영향 방향/크기를 직관적으로 해석</td>
+<td>비선형 패턴과 다중공선성에 약함</td>
+</tr>
+<tr>
+<td>Decision tree 해석</td>
+<td>rule extraction 가능, 축 기준 split로 설명 가능</td>
+<td>axis-aligned split이어도 선형 모델은 아님</td>
+</tr>
+<tr>
+<td>Random Forest 해석</td>
+<td>permutation feature importance로 global importance 확인</td>
+<td>관측치별 local explanation은 약함</td>
+</tr>
+<tr>
+<td>PDP</td>
+<td>관심 feature만 남기고 나머지를 marginalize해 평균적 효과 확인</td>
+<td>feature interaction/heterogeneity를 가릴 수 있음</td>
+</tr>
+<tr>
+<td>ICE</td>
+<td>instance별 curve를 보여 PDP보다 heterogeneous relation 확인
+가능</td>
+<td>feature 하나만 보기 쉽고 sample 많으면 복잡</td>
+</tr>
+<tr>
+<td>Centered ICE</td>
+<td>시작점을 맞춰 feature 변화에 따른 상대 변화 확인</td>
+<td>절대 수준보다 변화량 해석에 유리</td>
+</tr>
+<tr>
+<td>Morris sensitivity</td>
+<td>나머지 feature 고정 후 하나씩 변화시키는 one-at-a-time 민감도
+분석</td>
+<td><span class="math inline">\(\mu\)</span>와 <span
+class="math inline">\(\sigma\)</span> 의미 구분</td>
+</tr>
+<tr>
+<td>Morris <span class="math inline">\(\mu\)</span></td>
+<td>평균적 영향력</td>
+<td>값이 크면 평균적으로 중요</td>
+</tr>
+<tr>
+<td>Morris <span class="math inline">\(\sigma\)</span></td>
+<td>영향의 변동성, interaction/nonlinearity 가능성</td>
+<td>단순 중요도와 혼동 주의</td>
+</tr>
+<tr>
+<td>Permutation importance</td>
+<td>feature를 섞어 성능 감소로 중요도 평가</td>
+<td>계산량 크고 상관된 feature에서 해석 주의</td>
+</tr>
+<tr>
+<td>Correlation coefficient</td>
+<td>선형 관계 중심</td>
+<td>correlation 낮아도 비선형 관계가 없다는 뜻은 아님</td>
+</tr>
+<tr>
+<td>Mutual Information</td>
+<td>확률분포 기반으로 변수 관계 측정</td>
+<td>비선형 관계도 포착 가능</td>
+</tr>
+<tr>
+<td>KL divergence</td>
+<td>두 분포의 차이/정보 손실을 보는 개념</td>
+<td>거리 metric처럼 대칭이라고 보면 위험</td>
+</tr>
+<tr>
+<td>OOB permutation</td>
+<td>OOB 성능과 feature permutation 후 성능 하락으로 중요도 계산</td>
+<td>OOB는 bootstrap에 뽑히지 않은 sample</td>
+</tr>
+<tr>
+<td>EBM</td>
+<td>GAM+boosting 기반, 해석 가능한 glass-box 모델</td>
+<td>black-box 설명법과 다름</td>
+</tr>
+<tr>
+<td>GAM</td>
+<td>feature별 변환 함수의 additive combination으로 예측</td>
+<td>feature interaction을 기본적으로 놓칠 수 있음</td>
+</tr>
+<tr>
+<td>GA2M/EBM</td>
+<td>pairwise interaction을 일부 반영하고, 변환 함수를 gradient
+boosting으로 학습</td>
+<td>모든 고차 interaction을 자동으로 완벽히 설명한다고 하면 과장</td>
+</tr>
+<tr>
+<td>EBM 학습</td>
+<td>feature 하나씩만 쓰는 tree를 반복적으로 학습하고 feature-wise
+contribution graph로 집계</td>
+<td>XGBoost보다 iteration이 많아 train은 느릴 수 있으나 inference는
+빠름</td>
+</tr>
+<tr>
+<td>EBM 활용</td>
+<td>새 지식 발견, 데이터 디버깅, 데이터 이해에 도움</td>
+<td>단순 post-hoc 장식이 아니라 glass-box 모델 자체</td>
+</tr>
+<tr>
+<td>LIME</td>
+<td>local perturbation + surrogate sparse linear model</td>
+<td>random sampling 안정성/일관성 한계</td>
+</tr>
+<tr>
+<td>LIME image</td>
+<td>segmentation으로 superpixel을 만들고 영역을 켜고 끄는 perturbation
+구성</td>
+<td>superpixel 자체가 설명 단위</td>
+</tr>
+<tr>
+<td>LIME text</td>
+<td>단어/토큰을 켜고 끄는 perturbation으로 local surrogate를 학습</td>
+<td>전체 언어 모델 구조를 직접 해부하는 것이 아님</td>
+</tr>
+<tr>
+<td>LIME objective</td>
+<td>black-box f와 surrogate g의 local loss를 줄이되 complexity penalty로
+단순성 유지</td>
+<td>g가 너무 복잡하면 설명 가능성이 떨어짐</td>
+</tr>
+<tr>
+<td>LIME local fidelity</td>
+<td>설명 대상 주변 neighborhood에서는 f를 잘 근사해야 함</td>
+<td>global fidelity를 보장한다고 하면 틀림</td>
+</tr>
+<tr>
+<td>LIME 한계</td>
+<td>true neighborhood 정의, discretization, 충분한 perturbation, 시간
+비용 문제가 있음</td>
+<td>항상 안정적인 유일 설명을 준다고 하면 틀림</td>
+</tr>
+<tr>
+<td>SHAP</td>
+<td>Shapley value 기반 additive explanation</td>
+<td>계산량 크고 KernelSHAP/TreeSHAP 등 근사 사용</td>
+</tr>
+<tr>
+<td>XAI 디버깅</td>
+<td>잘못된 예측에서 모델이 어디를 보고 판단했는지 확인해 데이터/학습
+편향을 찾음</td>
+<td>설명은 예측을 합리화하는 장식이 아니라 개선 포인트를 찾는 도구</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shap">4. SHAP</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>개념</th>
+<th>핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shapley value</td>
+<td>협력 게임에서 각 player의 공정한 기여도</td>
+</tr>
+<tr>
+<td>Feature as player</td>
+<td>각 feature를 게임의 player로 보고 prediction 기여도를 계산</td>
+</tr>
+<tr>
+<td>Coalition vector <code>z'</code></td>
+<td>feature가 coalition에 포함되는지 0/1로 표시</td>
+</tr>
+<tr>
+<td>Baseline/base value</td>
+<td>평균 예측 또는 기준값과 비교해 각 feature contribution을 더해
+설명</td>
+</tr>
+<tr>
+<td>Local accuracy</td>
+<td>feature contribution 합이 원 모델 예측과 일치</td>
+</tr>
+<tr>
+<td>Missingness</td>
+<td>존재하지 않는 feature는 기여도 0</td>
+</tr>
+<tr>
+<td>Consistency</td>
+<td>feature의 기여가 증가하면 attribution이 줄어들지 않아야 함</td>
+</tr>
+<tr>
+<td>Summary plot</td>
+<td>feature importance와 값의 high/low, 영향 방향, 분포를 함께 확인</td>
+</tr>
+<tr>
+<td>Dependence plot</td>
+<td>feature value와 SHAP value 관계 확인</td>
+</tr>
+<tr>
+<td>SHAP clustering</td>
+<td>Shapley value 유사성으로 관측치를 군집화</td>
+</tr>
+<tr>
+<td>KernelSHAP</td>
+<td>model-agnostic이나 느림</td>
+</tr>
+<tr>
+<td>KernelSHAP 한계</td>
+<td>data point 수가 많으면 느리고 permutation에서 feature dependence를
+무시할 수 있음</td>
+</tr>
+<tr>
+<td>TreeSHAP</td>
+<td>tree-based model에서 빠른 구현</td>
+</tr>
+<tr>
+<td>TreeSHAP 한계</td>
+<td>빠르지만 직관적이지 않은 attribution이 나올 수 있음</td>
+</tr>
+<tr>
+<td>DeepSHAP</td>
+<td>deep learning/image 설명에 활용</td>
+</tr>
+<tr>
+<td>Integrated Gradient SHAP</td>
+<td>image/deep model 설명 예시로 등장</td>
+</tr>
+<tr>
+<td>TreeExplainer</td>
+<td>tree-based model의 local explanation에 쓰임</td>
+</tr>
+</tbody>
+</table>
+<h3 id="추가-암기-포인트">추가 암기 포인트</h3>
+<h2 id="random-forest와-앙상블-함정-요약">Random Forest와 앙상블 함정
+요약</h2>
+<ul>
+<li>Random Forest는 bagging/bootstrap과 random subspace method가
+핵심이다.</li>
+<li>Random Forest는 단순 decision tree 집합이 아니며, pruning을 강하게
+적용하는 것이 이론적 핵심은 아님.</li>
+<li>Bagging은 variance 감소, Boosting은 bias 감소 경향으로 연결해서
+설명.</li>
+<li>Random Forest에서 loss regularization을 반복 학습에 추가한다는
+설명은 부적절하며, 앙상블 구조 자체가 regularization 효과를 가짐.</li>
+<li>Random Forest 정확도 향상 문항에서는 학습 데이터 추가 확보가 가장
+안정적인 정답으로 설명됨. 변수 선택법, 변동성 방지를 위한 데이터 축소,
+pretraining/fine-tuning식 미세튜닝 선지는 부정확.</li>
+<li>Bias-Variance 문항에서 낮은 복잡도 선형 모델은 high bias/low
+variance, 신경망은 상대적으로 low bias/high variance 경향이라고
+설명.</li>
+<li>Optimal model complexity는 bias와 variance의 단순 교차점이 아니라
+전체 예측 오류가 최소화되는 지점으로 봐야 함.</li>
+<li>No Free Lunch theorem은 어떤 알고리즘도 모든 데이터에서 항상 우월할
+수 없다는 의미이며, 딥러닝이나 앙상블이 이를 해결했다는 선지는
+틀림.</li>
+<li>Boosting 그림 해석에서는 병렬 bagging이 아니라 sequential/iterative
+보완 구조를 읽어야 하며, majority voting은 training이 아니라 inference
+결합 방식이라고 강조.</li>
+<li>CatBoost Ordered Target Statistics는 target encoding의 target
+leakage와 prediction shift를 완화하기 위한 방법으로 설명.</li>
+<li>Heterogeneous stacking의 장점은 서로 다른 알고리즘들이 같은 실수를
+할 가능성이 낮아 상호 보완을 기대할 수 있다는 점.</li>
+<li>AI 예측은 예언과 달리 정량적 validation과 정확도 평가가 필수라고
+설명.</li>
+<li>정확도만 높이는 것이 전부가 아니며, 최신 모델의 overconfidence와
+calibration 문제가 중요하다고 설명.</li>
+<li>회귀 지표 MAE, MSE/RMSE, MAPE, MASE, R square와 분류 지표 confusion
+matrix, recall/sensitivity/TPR, specificity/TNR, precision/PPV, F1,
+ROC/AUC를 기말 기본기로 언급.</li>
+<li>Confusion matrix는 라이브러리마다 actual/predicted 행열 방향이
+달라질 수 있으므로 먼저 축을 확인해야 한다고 강조.</li>
+<li>Cross-validation은 validation set에 과적합되는 문제를 줄이기 위해
+validation fold를 바꿔가며 평가하는 방식으로 설명.</li>
+<li>딥러닝에서는 시간과 비용 때문에 cross-validation을 일반적으로 많이
+하지 않지만, 일반화 문제의식 자체는 여전히 중요하다고 설명.</li>
+<li>XAI는 특정 예측 결과가 왜 그렇게 나왔는지를 사람이 이해할 수 있게
+설명하는 과정으로 정의.</li>
+<li>법률, 금융, 의학, 제어/로봇처럼 추론 결과가 의사결정이나 행동으로
+이어지는 분야에서 해석 가능성이 특히 중요하다고 설명.</li>
+</ul>
+<h2 id="ssmovie-7.mp4-핵심-요약"><code>ssmovie (7).mp4</code> 핵심
+요약</h2>
+<ul>
+<li>SHAP은 Shapley Additive Explanations이며 Shapley value를 이용한 설명
+기법.</li>
+<li>각 feature를 cooperative game theory의 player로 보고 예측에 대한
+contribution을 계산.</li>
+<li>LIME처럼 surrogate/additive linear explanation 관점을 가지지만,
+Shapley value 기반이라 이론적 기반이 더 강함.</li>
+<li>택시 합승 예시로 Shapley value의 공정한 기여도 분배를 설명.</li>
+<li>SHAP의 대표 성질: local accuracy, missingness, consistency.</li>
+<li>SHAP summary plot은 feature importance뿐 아니라 feature value
+high/low, 영향 방향, 관측치별 분포까지 보여줌.</li>
+<li>SHAP dependence plot은 PDP/ICE와 비교해 feature value와 SHAP value
+관계를 보여줌.</li>
+<li>Shapley value 유사성으로 관측치 clustering 가능.</li>
+<li>이미지에서는 DeepSHAP, Integrated Gradient SHAP 등으로 픽셀/영역
+기여를 볼 수 있음.</li>
+<li>TreeSHAP은 tree-based model에서 빠른 구현으로 많이 쓰임.</li>
+</ul>
+<h2 id="ssmovie-6.mp4-핵심-요약"><code>ssmovie (6).mp4</code> 핵심
+요약</h2>
+<ul>
+<li>Boosting은 이전 모델이 틀린 샘플이나 residual을 다음 weak learner가
+보완하는 순차 학습 구조.</li>
+<li>GBM은 Gradient Descent와 Boosting을 결합한 형태이며, 숫자 weight가
+아니라 function/weak learner를 추가하는 Functional Gradient Descent
+관점으로 설명됨.</li>
+<li>Learning rate/alpha는 새 weak learner를 얼마나 반영할지 결정하며,
+너무 작으면 느리고 너무 크면 최적점을 지나칠 수 있음.</li>
+<li>GBM의 주요 하이퍼파라미터: weak learner 수, learning rate, max
+depth, feature 수, leaf/min split 샘플 수.</li>
+<li>XGBoost는 GBM에 regularization과 parallelism을 강화한 모델로
+설명됨.</li>
+<li>XGBoost 목적식은 loss term과 regularization term으로 구성됨.</li>
+<li>XGBoost regularization은 leaf 수에 대한 gamma penalty와 leaf
+weight의 L2 regularization을 포함함.</li>
+<li>split gain이 gamma보다 작으면 pruning 대상으로 보고, 이를 통해
+과적합을 줄임.</li>
+<li>XGBoost는 sorted feature value와 gradient statistics 재사용,
+cache-aware block structure 등으로 병렬 처리 효율을 높임.</li>
+<li>LightGBM은 정확도뿐 아니라 학습 속도 개선을 목표로 하는 light
+GBM으로 설명됨.</li>
+<li>LightGBM의 leaf-wise growth는 의미 있는 leaf를 depth 방향으로 먼저
+확장하는 방식이며, 기존 level-wise/BFS식 확장과 구분됨.</li>
+<li>GOSS는 gradient가 큰 중요한 샘플은 유지하고, gradient가 작은 샘플은
+일부만 랜덤 샘플링해 학습 효율을 높임.</li>
+<li>EFB는 상호 배타적인 sparse feature들을 bundle로 묶어 feature 수를
+줄이고 학습 속도를 개선함.</li>
+<li>CatBoost는 categorical feature가 많을 때 target encoding의 target
+leakage 문제를 줄이는 데 초점을 둠.</li>
+<li>high-cardinality categorical feature에 one-hot encoding을 그대로
+쓰면 sparse matrix와 차원 증가 문제가 생길 수 있음.</li>
+<li>Ordered Target Statistics는 현재 시점 이전 target 정보만 써서
+encoding하여 미래/미관측 y 정보가 섞이지 않게 함.</li>
+<li>Ordered Boosting은 train/test 또는 시간 흐름에 따른 prediction shift
+문제를 완화하는 CatBoost의 또 다른 특징으로 설명됨.</li>
+<li>사용 감각: XGBoost는 예측 성능/정규화, LightGBM은 학습 속도,
+CatBoost는 categorical feature 처리에 강점.</li>
+</ul>
+<h2 id="screen.mp4-핵심-요약"><code>screen.mp4</code> 핵심 요약</h2>
+<ul>
+<li>앙상블의 두 핵심 질문은 모델 다양성을 어떻게 확보할지, 여러 예측
+결과를 어떻게 결합할지이다.</li>
+<li>Bagging은 bootstrap 기반으로 implicit diversity를 확보하고, 모델들을
+대체로 독립적으로 학습하므로 병렬화가 가능하다.</li>
+<li>Boosting은 앞 모델이 틀린 샘플이나 residual을 뒤 모델이 보완하도록
+explicit하게 learner를 구성한다.</li>
+<li>Random Forest는 bagging에 feature subsampling/random subspace를
+추가한 방식이다.</li>
+<li>Boosting은 training error를 계속 줄일 수 있지만, 지나치면
+overfitting 문제가 생길 수 있다.</li>
+<li>AdaBoost는 초기 sample weight를 uniform distribution으로 두고,
+learner error와 alpha를 이용해 다음 weight distribution을 갱신한다.</li>
+<li>binary AdaBoost 의사코드에서는 y가 -1 또는 +1로 표현되며, error가
+0.5보다 큰 learner는 랜덤 추측보다 못하므로 버린다.</li>
+<li>맞춘 샘플의 weight는 낮아지고, 틀린 샘플의 weight는 올라가 다음
+learner가 더 많이 보게 된다.</li>
+</ul>
+<h2 id="ssmovie-5.mp4-핵심-요약"><code>ssmovie (5).mp4</code> 핵심
+요약</h2>
+<ul>
+<li>XAI가 필요한 이유는 높은 정확도만으로는 실제 현장에서 신뢰, 설득,
+책임, 편향 점검이 어렵기 때문.</li>
+<li>stakeholder마다 설명을 요구하는 이유가 다르며, XAI는 사람이 예측
+결과를 이해할 수 있게 만드는 것이 핵심.</li>
+<li>XAI의 key idea로 fairness, robustness, reliability, causality,
+trust를 설명.</li>
+<li>intrinsic interpretability는 모델 자체가 해석 가능한 경우이고,
+post-hoc interpretability는 black-box 모델을 별도 설명 모델로 해석하는
+경우.</li>
+<li>Linear regression은 beta로 해석이 쉽지만 비선형 패턴과 다중공선성에
+약함.</li>
+<li>Decision Tree는 rule extraction이 가능하고 비선형 모델이며, 축에
+평행한 split을 쓴다고 선형 모델은 아님.</li>
+<li>Random Forest는 permutation feature importance로 global
+interpretation이 가능하지만 관측치별 local explanation에는 약함.</li>
+<li>PDP는 관심 feature의 평균적 marginal effect를 보여주며, feature
+interaction이나 heterogeneity를 가릴 수 있음.</li>
+<li>ICE는 관측치별 조건부 예측 곡선을 보여 PDP보다 heterogeneous
+relation을 더 잘 드러냄.</li>
+<li>LIME은 local perturbation sample을 만들고 단순 surrogate model로
+black-box model의 local behavior를 근사함.</li>
+<li>이미지 LIME에서는 segmentation으로 superpixel을 만들고, 각 영역을
+켜고 끄는 방식으로 perturbation sample을 구성함.</li>
+<li>LIME 목적식은 black-box f와 surrogate g의 local loss를 줄이되,
+complexity penalty로 설명 모델이 너무 복잡해지는 것을 막음.</li>
+</ul>
+<h3 id="앙상블-변별-포인트">앙상블 변별 포인트</h3>
+<h2 id="선지-판단-기준">1. 선지 판단 기준</h2>
+<p>보기 문장은 아래 기준으로 판단한다.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>출제 포인트</th>
+<th>시험장에서의 판단 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Random Forest</td>
+<td><code>bootstrap/bagging</code> + <code>random subspace</code>가
+핵심. 단순 decision tree 집합이라고 하면 불충분</td>
+</tr>
+<tr>
+<td>Pruning</td>
+<td>Random Forest의 이론적 배경은 weak learner tree를 강하게 pruning하는
+쪽이 아님</td>
+</tr>
+<tr>
+<td>Regularization</td>
+<td>Random Forest는 loss를 반복 최적화하는 boosting식 regularization이
+아니라 ensemble 구조 자체가 일반화 효과를 냄</td>
+</tr>
+<tr>
+<td>Fine-tuning</td>
+<td>pretraining 이후 fine-tuning이라는 딥러닝식 표현을 Random Forest
+정확도 향상법으로 쓰는 선지는 부적절</td>
+</tr>
+<tr>
+<td>데이터 추가</td>
+<td>비용/시간 제약이 없다면 학습 데이터 추가 확보는 일반적으로 성능
+향상에 가장 안정적</td>
+</tr>
+<tr>
+<td>변수 선택</td>
+<td>Random Forest는 random subspace로 변수 선택 효과가 내부에 있으므로
+별도 변수 선택을 핵심 향상법으로 보기 어려움</td>
+</tr>
+<tr>
+<td>Implicit diversity</td>
+<td>bootstrap/random sampling으로 모델이 암묵적으로 다양해짐. explicit
+diversity라고 쓰면 함정</td>
+</tr>
+<tr>
+<td>독립적 tree</td>
+<td>tree 생성 과정은 독립 시행이지만 같은 원 데이터 분포를 따르므로
+완전히 무관하다는 뜻은 아님</td>
+</tr>
+<tr>
+<td>Bias-Variance</td>
+<td>Bagging은 variance 감소, Boosting은 bias 감소 경향</td>
+</tr>
+<tr>
+<td>No Free Lunch</td>
+<td>딥러닝/앙상블이 모든 문제를 해결한다는 선지는 틀림</td>
+</tr>
+<tr>
+<td>그림 해석</td>
+<td>boosting 그림이면 sequential/iterative 흐름을 읽어야 하며, 병렬
+학습이나 random subspace를 그림만으로 끌어오면 안 됨</td>
+</tr>
+<tr>
+<td>Majority voting</td>
+<td>training 과정이 아니라 inference/test 단계 결합 방식</td>
+</tr>
+<tr>
+<td>CatBoost</td>
+<td>Ordered Target Statistics는 target leakage와 prediction shift를
+<code>해결</code>보다 <code>완화</code>한다고 표현</td>
+</tr>
+<tr>
+<td>Heterogeneous stacking</td>
+<td>서로 다른 알고리즘이 같은 실수를 할 가능성이 낮아 상호 보완을
+기대</td>
+</tr>
+</tbody>
+</table>
+<h2 id="오늘-수업-핵심-정리">2. 오늘 수업 핵심 정리</h2>
+<h3 id="random-forest와-앙상블">Random Forest와 앙상블</h3>
+<ul>
+<li>Random Forest는 supervised learning이다.</li>
+<li>핵심은 decision tree 여러 개가 아니라
+<code>bootstrap sampling</code>과
+<code>random subspace/feature subsampling</code>으로 다양성을 만드는
+구조다.</li>
+<li>Bagging은 고분산 모델을 여러 개 만들어 aggregate하면서 variance를
+줄이는 데 초점이 있다.</li>
+<li>Boosting은 앞 learner의 오답이나 residual을 뒤 learner가 보완해
+bias를 줄이는 데 초점이 있다.</li>
+<li>Bagging 쪽 weak learner는 깊고 강하게 만들어도 aggregate로
+안정화하는 방향이고, Boosting 쪽 weak learner는 너무 강하면 순차 보완
+구조의 장점이 줄어든다.</li>
+</ul>
+<h3 id="bias-variance와-no-free-lunch-1">Bias-Variance와 No Free
+Lunch</h3>
+<ul>
+<li>낮은 복잡도 모델, 예: 선형모델은 일반적으로 high bias, low
+variance.</li>
+<li>높은 복잡도 모델, 예: 인공신경망은 상대적으로 low bias, high
+variance 경향.</li>
+<li>최적 모델 복잡도는 bias와 variance가 교차하는 지점이 아니라 전체
+예측오류가 최소가 되는 지점이다.</li>
+<li>No Free Lunch theorem은 어떤 알고리즘도 모든 데이터와 문제에서 항상
+우월할 수 없다는 뜻이다.</li>
+<li>딥러닝이 최근 강력하더라도 No Free Lunch theorem을 무효화한 것은
+아니다.</li>
+</ul>
+<h3 id="성능평가지표">성능평가지표</h3>
+<ul>
+<li>AI 예측은 예언과 달리 validation과 정량적 평가가 필수다.</li>
+<li>회귀 기본 지표: MAE, MSE, RMSE, MAPE, MASE, R square.</li>
+<li>분류 기본 지표: accuracy, recall/sensitivity/TPR, specificity/TNR,
+precision/PPV, F1, ROC/AUC.</li>
+<li>Confusion matrix는 라이브러리마다 actual/predicted 축 배치가 다를 수
+있으므로 식을 계산하기 전에 행과 열을 먼저 확인해야 한다.</li>
+<li>Precision과 Recall은 trade-off 관계로 함께 보는 것이 일반적이며, F1
+score는 둘의 조화평균이다.</li>
+<li>ROC curve는 x축이 <code>1 - specificity</code> 또는 FPR, y축이
+sensitivity 또는 TPR이다.</li>
+</ul>
+<h3 id="교차검증">교차검증</h3>
+<ul>
+<li>Train set에 과적합되는 문제를 막기 위해 validation set을 둔다.</li>
+<li>그런데 validation set으로 하이퍼파라미터를 계속 고르면 validation
+set에도 과적합될 수 있다.</li>
+<li>Cross-validation은 validation fold를 바꿔가며 여러 번 평가해 특정
+split에 대한 의존을 줄이는 방법이다.</li>
+<li>딥러닝에서는 시간/비용 문제와 다른 일반화 전략 때문에
+cross-validation을 일반적으로 많이 하지 않는다.</li>
+</ul>
+<h3 id="xai-도입">XAI 도입</h3>
+<ul>
+<li>정확도만 높이는 것이 전부가 아니다. 최신 모델은 틀려도 confidence를
+매우 높게 내는 overconfidence 문제가 생길 수 있다.</li>
+<li>Calibration은 confidence와 실제 정답률이 더 잘 맞도록 조정하는
+관점이다.</li>
+<li>XAI는 어떤 예측이 왜 나왔는지 사람이 이해할 수 있게 설명하는
+과정이다.</li>
+<li>법률, 금융, 의학, 로봇/제어처럼 예측이 의사결정이나 행동으로
+연결되는 분야에서 특히 중요하다.</li>
+<li>잘못된 이미지 분류 예시처럼, 설명은 모델이 어디를 보고 판단했는지
+보여주고 데이터 편향이나 학습 문제를 찾는 데 쓰인다.</li>
+</ul>
+<h2 id="기말-대비-우선순위">3. 기말 대비 우선순위</h2>
+<ol>
+<li>Random Forest 퀴즈 함정: bootstrap, random subspace, implicit
+diversity, pruning 부정</li>
+<li>Bagging/Boosting/Stacking 비교: 목적, learner 관계, 결합 방식</li>
+<li>Bias-Variance와 No Free Lunch 선지 판별</li>
+<li>Confusion matrix 기반 지표 계산</li>
+<li>ROC/AUC 축과 의미</li>
+<li>Cross-validation의 이유와 validation overfitting</li>
+<li>XAI 필요성: accuracy, overconfidence, calibration,
+human-understandable explanation</li>
+<li>기존 범위: XGBoost, LightGBM, CatBoost, LIME, SHAP</li>
+</ol>
+<h2 id="실전-예상문제">4. 실전 예상문제</h2>
+<h3 id="문제-1">문제 1</h3>
+<p>Random Forest의 핵심 구성으로 가장 적절한 것은?</p>
+<ol>
+<li>단일 decision tree를 pruning 없이 한 번 학습한다.</li>
+<li>bootstrap sampling과 random subspace를 이용해 여러 tree를
+학습한다.</li>
+<li>이전 tree의 오분류 샘플 weight만 계속 증가시킨다.</li>
+<li>loss function에 L2 regularization을 직접 추가해 gradient descent로
+학습한다.</li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-2">문제 2</h3>
+<p>Random Forest에 대한 설명으로 틀린 것은?</p>
+<ol>
+<li>supervised learning에 사용할 수 있다.</li>
+<li>bootstrap을 통해 learner 다양성을 만들 수 있다.</li>
+<li>random subspace method가 핵심 아이디어 중 하나다.</li>
+<li>decision tree의 과적합 방지를 위해 강한 pruning이 이론적으로
+필수다.</li>
+</ol>
+<p>정답: 4</p>
+<h3 id="문제-3">문제 3</h3>
+<p>Bagging과 Boosting의 일반적 목적 연결로 옳은 것은?</p>
+<ol>
+<li>Bagging: bias 감소, Boosting: variance 증가</li>
+<li>Bagging: variance 감소, Boosting: bias 감소 경향</li>
+<li>Bagging: target leakage 완화, Boosting: categorical encoding</li>
+<li>둘 다 training 단계에서 majority voting만 수행</li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-4">문제 4</h3>
+<p>No Free Lunch theorem의 의미로 가장 적절한 것은?</p>
+<ol>
+<li>딥러닝은 모든 데이터에서 항상 최고 성능을 보장한다.</li>
+<li>앙상블은 어떤 문제에서도 다른 모든 알고리즘보다 우월하다.</li>
+<li>모든 문제에서 항상 우월한 단일 알고리즘은 없다.</li>
+<li>알고리즘 비교는 수학적으로 불가능하므로 평가하지 않아도 된다.</li>
+</ol>
+<p>정답: 3</p>
+<h3 id="문제-5">문제 5</h3>
+<p>Boosting 그림을 보고 판단할 때 틀린 설명은?</p>
+<ol>
+<li>weak learner들이 순차적으로 보완된다.</li>
+<li>iterative fashion으로 strong learner를 만든다.</li>
+<li>모든 ensemble member가 완전히 병렬로 독립 예측을 만든다.</li>
+<li>여러 weak learner가 하나의 strong learner를 구성한다.</li>
+</ol>
+<p>정답: 3</p>
+<h3 id="문제-6">문제 6</h3>
+<p>Majority voting에 대한 설명으로 옳은 것은?</p>
+<ol>
+<li>분류 앙상블의 inference 단계에서 예측을 결합하는 방식이다.</li>
+<li>Boosting의 training loss를 계산하는 전용 방법이다.</li>
+<li>target encoding의 leakage를 없애는 방식이다.</li>
+<li>ROC curve의 x축을 의미한다.</li>
+</ol>
+<p>정답: 1</p>
+<h3 id="문제-7">문제 7</h3>
+<p>CatBoost의 Ordered Target Statistics가 주로 완화하려는 문제는?</p>
+<ol>
+<li>target encoding의 target leakage와 prediction shift</li>
+<li>CNN의 convolution 연산량</li>
+<li>Random Forest의 bootstrap 부재</li>
+<li>SHAP value 계산의 local accuracy</li>
+</ol>
+<p>정답: 1</p>
+<h3 id="문제-8">문제 8</h3>
+<p>Confusion matrix에서 반드시 먼저 확인해야 할 것은?</p>
+<ol>
+<li>행과 열 중 무엇이 actual이고 predicted인지</li>
+<li>모델이 반드시 neural network인지</li>
+<li>feature가 모두 categorical인지</li>
+<li>train accuracy가 100점인지</li>
+</ol>
+<p>정답: 1</p>
+<h3 id="문제-9">문제 9</h3>
+<p>Recall/Sensitivity/TPR의 식으로 옳은 것은?</p>
+<ol>
+<li><span class="math inline">\(\frac{TP}{TP+FN}\)</span></li>
+<li><span class="math inline">\(\frac{TN}{TN+FP}\)</span></li>
+<li><span class="math inline">\(\frac{TP}{TP+FP}\)</span></li>
+<li><span
+class="math inline">\(\frac{TP+TN}{\mathrm{전체}}\)</span></li>
+</ol>
+<p>정답: 1</p>
+<h3 id="문제-10">문제 10</h3>
+<p>Precision/PPV의 식으로 옳은 것은?</p>
+<ol>
+<li><span class="math inline">\(\frac{TP}{TP+FN}\)</span></li>
+<li><span class="math inline">\(\frac{TP}{TP+FP}\)</span></li>
+<li><span class="math inline">\(\frac{TN}{TN+FP}\)</span></li>
+<li><span class="math inline">\(\frac{FP}{FP+TN}\)</span></li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-11">문제 11</h3>
+<p>ROC curve의 축 설명으로 옳은 것은?</p>
+<ol>
+<li>x축: sensitivity, y축: specificity</li>
+<li>x축: <code>1 - specificity</code> 또는 FPR, y축: sensitivity 또는
+TPR</li>
+<li>x축: MAE, y축: RMSE</li>
+<li>x축: precision, y축: R square</li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-12">문제 12</h3>
+<p>Cross-validation을 사용하는 이유로 가장 적절한 것은?</p>
+<ol>
+<li>test label을 학습에 포함하기 위해</li>
+<li>validation set 하나에 과적합되는 문제를 줄이기 위해</li>
+<li>모든 모델을 unsupervised learning으로 바꾸기 위해</li>
+<li>confusion matrix 계산을 생략하기 위해</li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-13">문제 13</h3>
+<p>XAI가 필요한 이유로 가장 적절한 것은?</p>
+<ol>
+<li>정확도만 높으면 항상 신뢰할 수 있기 때문이다.</li>
+<li>예측 결과가 왜 나왔는지 사람이 이해해야 의사결정, 책임, 편향 점검이
+가능하기 때문이다.</li>
+<li>모든 black-box 모델을 decision tree 하나로 바꾸기 위해서다.</li>
+<li>No Free Lunch theorem을 완전히 해결하기 위해서다.</li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-14">문제 14</h3>
+<p>Overconfidence 문제에 대한 설명으로 옳은 것은?</p>
+<ol>
+<li>모델이 틀린 예측에도 지나치게 높은 confidence를 주는 문제다.</li>
+<li>모델의 accuracy가 낮으면 항상 confidence도 낮다는 법칙이다.</li>
+<li>Random Forest에서 bootstrap을 쓰지 않는 문제다.</li>
+<li>precision과 recall이 완전히 같아지는 현상이다.</li>
+</ol>
+<p>정답: 1</p>
+<h3 id="문제-15">문제 15</h3>
+<p>Heterogeneous stacking이 homogeneous stacking보다 유리할 수 있는
+근거는?</p>
+<ol>
+<li>meta model은 heterogeneous stacking에서만 존재하기 때문이다.</li>
+<li>서로 다른 알고리즘들이 같은 실수를 할 가능성이 낮아 상호 보완을
+기대할 수 있기 때문이다.</li>
+<li>모든 base learner가 반드시 같은 decision boundary를 만들기
+때문이다.</li>
+<li>target label 없이도 항상 더 높은 accuracy를 보장하기 때문이다.</li>
+</ol>
+<p>정답: 2</p>
+<h2 id="주관식-답안-틀">5. 주관식 답안 틀</h2>
+<h3 id="random-forest를-설명하시오.">Random Forest를 설명하시오.</h3>
+<p>Random Forest는 여러 decision tree를 결합하는 supervised
+ensemble이다. 단순히 tree를 많이 모으는 것이 아니라 bootstrap
+sampling으로 sample 다양성을 만들고, random subspace 또는 feature
+subsampling으로 feature 선택의 무작위성을 더해 tree 간 diversity를
+확보한다. Bagging 계열이므로 주된 효과는 variance 감소다.</p>
+<h3 id="precision과-recall을-비교하시오.">Precision과 Recall을
+비교하시오.</h3>
+<p>Recall은 실제 positive 중 모델이 positive로 잡은 비율이고 <span
+class="math inline">\(\frac{TP}{TP+FN}\)</span>이다. Precision은
+positive라고 예측한 것 중 실제 positive인 비율이고 <span
+class="math inline">\(\frac{TP}{TP+FP}\)</span>이다. 둘은 trade-off가
+생길 수 있어 함께 확인하며, F1 score는 precision과 recall의
+조화평균이다.</p>
+<h3 id="cross-validation의-목적을-설명하시오.">Cross-validation의 목적을
+설명하시오.</h3>
+<p>Train set에 과적합되지 않도록 validation set을 두지만, 하이퍼파라미터
+선택을 반복하면 validation set에도 과적합될 수 있다. Cross-validation은
+validation fold를 여러 번 바꿔 평가함으로써 특정 validation split에 대한
+의존을 줄이고 일반화 성능 추정을 안정화한다.</p>
+<h3 id="xai가-정확도와-별개로-필요한-이유를-설명하시오.">XAI가 정확도와
+별개로 필요한 이유를 설명하시오.</h3>
+<p>정확도가 높아도 모델이 왜 그런 예측을 했는지 모르면 법률, 금융, 의료,
+제어처럼 의사결정이 중요한 분야에서 신뢰와 책임을 확보하기 어렵다. 또한
+최신 모델은 틀린 예측에도 높은 confidence를 줄 수 있어 overconfidence와
+calibration 문제가 생긴다. XAI는 특정 예측의 근거를 사람이 이해할 수
+있게 보여주고, 데이터 편향이나 모델 오류를 찾는 데 도움을 준다.</p>
+<h3 id="xai-i-ii">XAI I-II</h3>
+<h2 id="오늘-강의-한줄-요약">0. 오늘 강의 한줄 요약</h2>
+<p>XAI는 모델이 왜 그런 예측을 했는지 설명하기 위한 방법이다. 오늘은
+설명을 언제/어떻게 붙일지, <span class="math inline">\(f(x)\)</span>
+예측 모델과 <code>g(x)</code> 설명 모델의 차이, global/local 및
+model-specific/agnostic 구분, 그리고 PDP, ICE, Morris, Permutation
+Importance를 다뤘다.</p>
+<h2 id="xai가-필요한-이유">1. XAI가 필요한 이유</h2>
+<p>AI 모델이 아무리 성능이 좋아도, 실제 현장에서는 “왜 그렇게
+판단했는가”를 설명해야 한다.</p>
+<p>예:</p>
+<ul>
+<li>은행 대출 거절: 고객에게 어떤 요인 때문에 거절됐는지 설명해야
+함.</li>
+<li>의료 AI: 환자에게 어떤 feature 때문에 위험하다고 판단했는지 설명해야
+함.</li>
+<li>자동화 시스템: 잘못된 행동이 발생했을 때 책임과 원인을 추적해야
+함.</li>
+</ul>
+<p>주의:</p>
+<pre class="text"><code>XAI는 내부 parameter 작동을 전부 완벽히 해부한다는 뜻이 아니다.
+입력 feature와 예측 결과 사이의 관계를 사람이 이해할 수 있게 설명하는 것이다.</code></pre>
+<h2 id="black-box를-여는-시점">2. Black box를 여는 시점</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>시점</th>
+<th>의미</th>
+<th>예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>모델 전</td>
+<td>데이터 자체를 먼저 설명</td>
+<td>EDA, visualization, label별 분포 확인</td>
+</tr>
+<tr>
+<td>모델 중</td>
+<td>해석 가능한 구조를 모델에 내장</td>
+<td>linear regression, decision tree, attention score</td>
+</tr>
+<tr>
+<td>모델 후</td>
+<td>학습된 모델을 별도 방법으로 설명</td>
+<td>PDP, ICE, Permutation, LIME, SHAP</td>
+</tr>
+</tbody>
+</table>
+<p>데이터 자체의 intrinsic pattern을 먼저 이해하는 EDA가 중요하다.</p>
+<h2 id="intrinsic-vs-post-hoc">3. Intrinsic vs Post-hoc</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>구분</th>
+<th>핵심</th>
+<th>예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intrinsic interpretability</td>
+<td>모델 자체가 해석 가능</td>
+<td>linear regression, decision tree</td>
+</tr>
+<tr>
+<td>Post-hoc interpretability</td>
+<td>예측 모델 학습 후 별도 설명</td>
+<td>PDP, ICE, Morris, Permutation, LIME, SHAP</td>
+</tr>
+</tbody>
+</table>
+<p>시험용 문장:</p>
+<pre class="text"><code>Post-hoc interpretation은 black-box model f를 먼저 학습한 뒤, 별도의 설명 방법이나 설명 모델 g로 f의 예측을 해석하는 방식이다.</code></pre>
+<h2 id="fx와-gx">4. <span class="math inline">\(f(x)\)</span>와
+<code>g(x)</code></h2>
+<table>
+<thead>
+<tr>
+<th>기호</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(f(x)\)</span></td>
+<td>prediction model, black-box 예측 모델</td>
+</tr>
+<tr>
+<td><code>g(x)</code></td>
+<td>explanation model, 설명 모델</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(f(x)\)</span>는 예측을 잘하는 것이
+목적이고, <code>g(x)</code>는 그 예측을 사람이 이해할 수 있도록 설명하는
+것이 목적이다.</p>
+<h2 id="설명-가능성-수준">5. 설명 가능성 수준</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>수준</th>
+<th>특징</th>
+<th>장점</th>
+<th>단점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High interpretability</td>
+<td>linear, monotonic</td>
+<td>설명이 명확</td>
+<td>복잡한 local pattern 놓침</td>
+</tr>
+<tr>
+<td>Medium interpretability</td>
+<td>일부 비선형 반영</td>
+<td>균형</td>
+<td>완전 단순하지 않음</td>
+</tr>
+<tr>
+<td>Low interpretability</td>
+<td>복잡한 패턴까지 근사</td>
+<td>세부 패턴 설명 가능</td>
+<td>설명이 길고 모호해짐</td>
+</tr>
+</tbody>
+</table>
+<p>핵심 trade-off:</p>
+<pre class="text"><code>간단한 설명은 명쾌하지만 부정확할 수 있고,
+정교한 설명은 정확하지만 사람이 이해하기 어려울 수 있다.</code></pre>
+<h2 id="globallocal-model-specificmodel-agnostic">6. Global/Local,
+Model-specific/Model-agnostic</h2>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>구분</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>설명 대상</td>
+<td>Global</td>
+<td>모델 전체/평균 경향 설명</td>
+</tr>
+<tr>
+<td>설명 대상</td>
+<td>Local</td>
+<td>특정 관측치 하나의 예측 이유 설명</td>
+</tr>
+<tr>
+<td>모델 의존성</td>
+<td>Model-specific</td>
+<td>특정 모델 구조에 의존</td>
+</tr>
+<tr>
+<td>모델 의존성</td>
+<td>Model-agnostic</td>
+<td>모델 종류와 무관하게 적용</td>
+</tr>
+</tbody>
+</table>
+<p>예:</p>
+<ul>
+<li>Random Forest feature importance: global explanation.</li>
+<li>특정 환자가 왜 위험군인지 설명: local explanation.</li>
+<li>Decision tree rule: model-specific.</li>
+<li>PDP/ICE/Permutation/LIME: model-agnostic 성격.</li>
+</ul>
+<h2 id="모델별-해석-특징">7. 모델별 해석 특징</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>모델</th>
+<th>해석 장점</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear regression</td>
+<td>beta coefficient로 방향/크기 설명 가능</td>
+<td>비선형 패턴 약함</td>
+</tr>
+<tr>
+<td>Decision tree</td>
+<td>rule extraction 가능</td>
+<td>bias/overfitting 가능</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>평균적 feature importance 가능</td>
+<td>개별 샘플 local explanation은 약함</td>
+</tr>
+<tr>
+<td>Deep learning</td>
+<td>예측 성능 높음</td>
+<td>기본적으로 black-box, 별도 XAI 필요</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pdp">8. PDP</h2>
+<p>PDP는 관심 feature를 변화시킬 때 모델 예측이 평균적으로 어떻게
+변하는지 본다.</p>
+<pre class="text"><code>관심 feature: x_s
+나머지 feature: x_c</code></pre>
+<p>나머지 feature는 marginalization하여 없애고, <span
+class="math inline">\(x_s\)</span> 변화에 따른 평균 예측 변화를
+본다.</p>
+<h3 id="시험-답안">시험 답안</h3>
+<pre class="text"><code>PDP는 특정 feature의 marginal effect를 보여주는 global model-agnostic explanation이다.</code></pre>
+<h3 id="장단점">장단점</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>장점</th>
+<th>단점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>직관적이고 평균적 경향을 명확히 보여줌</td>
+<td>개별 샘플 차이와 feature interaction을 가릴 수 있음</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ice">9. ICE</h2>
+<p>ICE는 PDP를 sample별로 쪼개서 보여준다.</p>
+<pre class="text"><code>PDP: 평균 curve 1개
+ICE: instance별 curve 여러 개</code></pre>
+<h3 id="시험-답안-1">시험 답안</h3>
+<pre class="text"><code>ICE는 각 관측치마다 관심 feature 변화에 따른 prediction 변화를 보여주므로 heterogeneous relation을 확인할 수 있다.</code></pre>
+<h3 id="장단점-1">장단점</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>장점</th>
+<th>단점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sample-wise pattern 확인 가능</td>
+<td>샘플이 많으면 overcrowded되어 해석 어려움</td>
+</tr>
+</tbody>
+</table>
+<h2 id="centered-ice">10. Centered ICE</h2>
+<p>ICE curve가 서로 다른 시작값을 가지면, feature 변화 효과보다 절대
+수준 차이가 더 커 보일 수 있다.</p>
+<p>Centered ICE는 기준점에서 curve를 맞춰 상대적 변화량을 본다.</p>
+<pre class="text"><code>절대 예측값 차이보다 feature 변화에 따른 변화량을 보고 싶을 때 사용</code></pre>
+<h2 id="morris-sensitivity-analysis">11. Morris Sensitivity
+Analysis</h2>
+<p>Morris는 one-at-a-time 방식의 sensitivity analysis다.</p>
+<pre class="text"><code>나머지 feature 고정
+관심 feature 하나만 변화
+prediction 변화량 측정</code></pre>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>값</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(\mu\)</span></td>
+<td>feature의 평균적 영향력</td>
+</tr>
+<tr>
+<td><span class="math inline">\(\sigma\)</span></td>
+<td>영향이 얼마나 흔들리는지, interaction/nonlinearity 가능성</td>
+</tr>
+</tbody>
+</table>
+<p>해석:</p>
+<ul>
+<li><span class="math inline">\(\mu\)</span>와 <span
+class="math inline">\(\sigma\)</span>가 모두 작음: 거의 무시 가능.</li>
+<li><span class="math inline">\(\mu\)</span>가 큼: 평균적으로 중요한
+feature.</li>
+<li><span class="math inline">\(\sigma\)</span>가 큼: feature effect가
+상황에 따라 크게 달라짐.</li>
+</ul>
+<h2 id="permutation-importance">12. Permutation Importance</h2>
+<p>Permutation importance는 feature 값을 섞어서 해당 feature의 정보를
+깨뜨리고, 성능 하락을 본다.</p>
+<pre class="text"><code>feature shuffle 후 성능이 많이 떨어지면 중요한 feature</code></pre>
+<p>장점:</p>
+<ul>
+<li>모델 종류와 무관하게 적용 가능.</li>
+<li>직관적.</li>
+</ul>
+<p>주의:</p>
+<ul>
+<li>상관된 feature가 있으면 중요도 해석이 왜곡될 수 있음.</li>
+<li>보통 global importance로 많이 쓰지만, 특정 샘플 기준으로 변형하면
+local interpretation도 가능하다.</li>
+</ul>
+<h2 id="correlation-vs-mutual-information">13. Correlation vs Mutual
+Information</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>개념</th>
+<th>의미</th>
+<th>한계/장점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correlation coefficient</td>
+<td>선형 관계 측정</td>
+<td>비선형 관계를 놓칠 수 있음</td>
+</tr>
+<tr>
+<td>Mutual Information</td>
+<td>확률분포 기반 관계 측정</td>
+<td>선형/비선형 관계를 더 일반적으로 포착</td>
+</tr>
+<tr>
+<td>KL divergence</td>
+<td>분포 차이 측정</td>
+<td>MI 설명에 연결되는 정보이론 개념</td>
+</tr>
+</tbody>
+</table>
+<p>시험 함정:</p>
+<pre class="text"><code>correlation이 낮다고 해서 관계가 전혀 없다고 단정하면 안 된다.
+선형 관계가 약할 뿐, 비선형 관계가 있을 수 있다.</code></pre>
+<h2 id="oob와-permutation">14. OOB와 Permutation</h2>
+<p>Random Forest에서 OOB sample은 bootstrap에 뽑히지 않은
+sample이다.</p>
+<p>OOB 기반 permutation importance 흐름:</p>
+<pre class="text"><code>OOB 성능 측정
+특정 feature를 permutation
+다시 OOB 성능 측정
+성능 하락량 = feature importance</code></pre>
+<h2 id="xai-한계">15. XAI 한계</h2>
+<p>핵심 한계:</p>
+<pre class="text"><code>XAI는 인과적 root cause를 완벽하게 찾아주는 마법이 아니다.
+대부분은 어떤 feature가 prediction에 크게 기여했는지를 보여주는 수준이다.</code></pre>
+<p>따라서 XAI 결과는 domain knowledge와 함께 해석해야 한다.</p>
+<h2 id="바로-외울-단답">16. 바로 외울 단답</h2>
+<ol>
+<li><span class="math inline">\(f(x)\)</span>는 예측 모델,
+<code>g(x)</code>는 설명 모델이다.</li>
+<li>Intrinsic interpretability는 모델 자체가 해석 가능한 경우다.</li>
+<li>Post-hoc interpretability는 모델 학습 후 별도 방법으로 설명하는
+방식이다.</li>
+<li>Global explanation은 전체 평균 경향, local explanation은 특정 샘플
+예측 이유다.</li>
+<li>Model-agnostic method는 모델 종류와 무관하게 적용 가능한 설명
+방법이다.</li>
+<li>PDP는 특정 feature의 평균적 marginal effect를 보여준다.</li>
+<li>ICE는 각 instance별 prediction curve를 보여준다.</li>
+<li>Centered ICE는 시작점을 맞춰 상대적 변화량을 본다.</li>
+<li>Morris는 one-at-a-time sensitivity analysis다.</li>
+<li>Permutation importance는 feature를 섞었을 때 성능 하락량으로
+중요도를 본다.</li>
+<li>Correlation은 선형 관계만 주로 본다.</li>
+<li>Mutual information은 확률분포 기반으로 비선형 관계도 포착할 수
+있다.</li>
+</ol>
+<h2 id="그래프-해석형-최종-암기">17. 그래프 해석형 최종 암기</h2>
+<p>그래프 해석형은 먼저 <code>축</code>, <code>색</code>,
+<code>점/선 하나의 의미</code>,
+<code>오른쪽/왼쪽 또는 위/아래의 의미</code>를 읽는다.</p>
+<h3 id="shap-summary-plot">SHAP summary plot</h3>
+<figure>
+<img src="../assets/slides/ml_xai4_p22_shap_summary.png"
+alt="SHAP summary plot" />
+<figcaption aria-hidden="true">SHAP summary plot</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>요소</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>y축 feature 순서</td>
+<td>평균 <span class="math inline">\(|\mathrm{SHAP\ value}|\)</span>가
+큰 feature가 위쪽</td>
+</tr>
+<tr>
+<td>x축 SHAP value</td>
+<td>오른쪽은 prediction을 키우는 방향, 왼쪽은 prediction을 낮추는
+방향</td>
+</tr>
+<tr>
+<td>점 1개</td>
+<td>한 sample에서 해당 feature의 기여도</td>
+</tr>
+<tr>
+<td>빨간색</td>
+<td>해당 feature 값이 큰 sample</td>
+</tr>
+<tr>
+<td>파란색</td>
+<td>해당 feature 값이 작은 sample</td>
+</tr>
+<tr>
+<td>빨간 점이 오른쪽에 몰림</td>
+<td>feature 값이 클수록 positive class 또는 예측값을 증가</td>
+</tr>
+<tr>
+<td>빨간 점이 왼쪽에 몰림</td>
+<td>feature 값이 클수록 positive class 또는 예측값을 감소</td>
+</tr>
+<tr>
+<td>점들이 좌우로 넓게 퍼짐</td>
+<td>sample마다 영향이 크고 중요도가 큼</td>
+</tr>
+<tr>
+<td>점들이 0 근처에 몰림</td>
+<td>예측에 거의 영향이 작음</td>
+</tr>
+</tbody>
+</table>
+<p>시험장에서 가장 중요한 문장:</p>
+<pre class="text"><code>SHAP summary plot의 오른쪽은 feature 값이 큰 쪽이 아니라 SHAP value가 양수인 쪽이다.
+오른쪽은 예측을 올리는 기여, 왼쪽은 예측을 낮추는 기여다.
+색상은 feature value high/low를 뜻한다.</code></pre>
+<h3 id="pdp-ice-centered-ice">PDP, ICE, Centered ICE</h3>
+<figure>
+<img src="../assets/slides/ml_xai2_p26_pdp_ice.png"
+alt="PDP와 ICE plot 비교" />
+<figcaption aria-hidden="true">PDP와 ICE plot 비교</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>그래프</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PDP</td>
+<td>x축 feature 값 변화에 따른 평균 prediction 변화</td>
+</tr>
+<tr>
+<td>PDP가 오른쪽으로 갈수록 상승</td>
+<td>feature 값이 커질수록 평균 예측값 증가</td>
+</tr>
+<tr>
+<td>PDP가 오른쪽으로 갈수록 하락</td>
+<td>feature 값이 커질수록 평균 예측값 감소</td>
+</tr>
+<tr>
+<td>PDP가 평평함</td>
+<td>평균적으로 해당 feature 영향이 작음</td>
+</tr>
+<tr>
+<td>ICE</td>
+<td>선 하나가 sample 하나의 prediction 변화</td>
+</tr>
+<tr>
+<td>ICE 선들이 서로 평행</td>
+<td>대부분 sample에서 비슷한 효과</td>
+</tr>
+<tr>
+<td>ICE 선들이 교차하거나 부채꼴</td>
+<td>interaction 또는 heterogeneous effect 가능성</td>
+</tr>
+<tr>
+<td>Centered ICE</td>
+<td>시작점을 맞춰 feature 변화에 따른 상대 변화만 비교</td>
+</tr>
+</tbody>
+</table>
+<h3 id="morris-sensitivity-plot">Morris sensitivity plot</h3>
+<figure>
+<img src="../assets/slides/ml_xai2_p38_morris.png"
+alt="Morris sensitivity analysis" />
+<figcaption aria-hidden="true">Morris sensitivity analysis</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>위치</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(\mu\)</span> 큼</td>
+<td>평균적으로 중요한 feature</td>
+</tr>
+<tr>
+<td><span class="math inline">\(\sigma\)</span> 큼</td>
+<td>효과가 sample/조건에 따라 크게 흔들림, interaction 또는 nonlinear
+가능성</td>
+</tr>
+<tr>
+<td><span class="math inline">\(\mu\)</span>, <span
+class="math inline">\(\sigma\)</span> 모두 작음</td>
+<td>거의 무시 가능한 feature</td>
+</tr>
+<tr>
+<td><span class="math inline">\(\mu\)</span> 작고 <span
+class="math inline">\(\sigma\)</span> 큼</td>
+<td>평균 효과는 작아도 특정 조건에서 영향이 클 수 있음</td>
+</tr>
+</tbody>
+</table>
+<h3 id="permutation-importance-1">Permutation importance</h3>
+<figure>
+<img src="../assets/slides/ml_p12_p43_permutation_importance.png"
+alt="Permutation feature importance" />
+<figcaption aria-hidden="true">Permutation feature
+importance</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>그래프 패턴</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bar가 길거나 오른쪽으로 큼</td>
+<td>feature를 섞었을 때 성능이 크게 떨어짐, 중요 feature</td>
+</tr>
+<tr>
+<td>0 근처</td>
+<td>섞어도 성능 변화가 작음, 중요도 낮음</td>
+</tr>
+<tr>
+<td>음수</td>
+<td>섞었더니 오히려 성능이 좋아진 경우로 noise 또는 불안정 가능성</td>
+</tr>
+</tbody>
+</table>
+<h3 id="roc-curve와-pr-curve">ROC curve와 PR curve</h3>
+<figure>
+<img src="../assets/slides/ml_p10_p29_roc.png" alt="ROC curve" />
+<figcaption aria-hidden="true">ROC curve</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>그래프</th>
+<th>축</th>
+<th>좋은 방향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ROC</td>
+<td>x축 FPR 또는 <span
+class="math inline">\(1-\mathrm{specificity}\)</span>, y축 TPR 또는
+recall</td>
+<td>왼쪽 위에 가까울수록 좋음</td>
+</tr>
+<tr>
+<td>AUC</td>
+<td>ROC curve 아래 면적</td>
+<td>1에 가까울수록 좋고, 대각선은 random 수준</td>
+</tr>
+<tr>
+<td>PR curve</td>
+<td>x축 recall, y축 precision</td>
+<td>오른쪽 위에 가까울수록 좋음</td>
+</tr>
+<tr>
+<td>PR curve 사용</td>
+<td>class imbalance가 심할 때 ROC보다 informative할 수 있음</td>
+<td>positive class 성능 확인</td>
+</tr>
+</tbody>
+</table>
+<h3 id="분포-그래프-histogram-box-plot">분포 그래프, histogram, box
+plot</h3>
+<table>
+<thead>
+<tr>
+<th>그래프 형태</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>오른쪽 꼬리 김</td>
+<td>right-skewed, 큰 값 쪽 outlier 가능</td>
+</tr>
+<tr>
+<td>왼쪽 꼬리 김</td>
+<td>left-skewed, 작은 값 쪽 outlier 가능</td>
+</tr>
+<tr>
+<td>분포가 오른쪽에 몰림</td>
+<td>값이 큰 sample이 많음</td>
+</tr>
+<tr>
+<td>분포가 왼쪽에 몰림</td>
+<td>값이 작은 sample이 많음</td>
+</tr>
+<tr>
+<td>box plot의 중앙선</td>
+<td>median</td>
+</tr>
+<tr>
+<td>box가 큼</td>
+<td>IQR이 크고 중앙 50% spread가 큼</td>
+</tr>
+<tr>
+<td>whisker 밖 점</td>
+<td>outlier 후보</td>
+</tr>
+</tbody>
+</table>
+<h2 id="의사코드-작성형-답안-틀">18. 의사코드 작성형 답안 틀</h2>
+<p>의사코드는 변수명보다
+<code>초기화 → 반복 → 평가/업데이트 → 출력</code> 순서를 맞추는 것이
+핵심이다.</p>
+<h3 id="adaboost">AdaBoost</h3>
+<pre class="text"><code>Input: training data, weak learner, number of learners T
+Initialize sample weights D_i = 1/n
+For t = 1 to T:
+    Train weak learner h_t using weights D
+    Compute weighted error epsilon_t
+    Compute learner weight alpha_t
+    Increase weights of misclassified samples
+    Decrease weights of correctly classified samples
+    Normalize D
+Output: weighted majority vote of weak learners</code></pre>
+<p>핵심 암기:</p>
+<p><span class="math display">\[
+\alpha_t=\frac{1}{2}\ln\frac{1-\epsilon_t}{\epsilon_t}
+\]</span></p>
+<h3 id="gradient-boosting">Gradient Boosting</h3>
+<pre class="text"><code>Initialize model F_0
+For m = 1 to M:
+    Compute residual or negative gradient of loss
+    Fit weak learner h_m to that residual
+    Find step size or learner weight
+    Update F_m = F_{m-1} + learning_rate × h_m
+Output: final additive model F_M</code></pre>
+<p>핵심 암기:</p>
+<pre class="text"><code>AdaBoost는 sample weight를 바꾸고,
+Gradient Boosting은 loss의 residual/negative gradient를 줄이는 learner를 더한다.</code></pre>
+<h3 id="permutation-importance-2">Permutation Importance</h3>
+<pre class="text"><code>Train model
+Measure baseline validation score
+For each feature j:
+    Copy validation data
+    Shuffle only feature j
+    Measure new validation score
+    Importance_j = baseline score - shuffled score
+Rank features by importance</code></pre>
+<h3 id="pdp-1">PDP</h3>
+<pre class="text"><code>Choose target feature s
+Choose grid values for feature s
+For each grid value z:
+    Replace feature s of all samples with z
+    Predict using trained model
+    Average predictions
+Plot z versus averaged prediction</code></pre>
+<h3 id="ice-1">ICE</h3>
+<pre class="text"><code>Choose target feature s
+For each sample i:
+    For each grid value z:
+        Replace feature s of sample i with z
+        Predict using trained model
+    Plot the prediction curve for sample i</code></pre>
+<h3 id="lime">LIME</h3>
+<pre class="text"><code>Choose target sample x
+Generate perturbed samples around x
+Get black-box model predictions for perturbed samples
+Weight samples by proximity to x
+Fit simple interpretable model g
+Explain x using coefficients or rules of g</code></pre>
+<h3 id="shap-1">SHAP</h3>
+<pre class="text"><code>Treat features as players in a cooperative game
+For each feature:
+    Compare model output with and without that feature over feature coalitions
+    Average marginal contribution as Shapley value
+Explain prediction as base value plus feature contributions</code></pre>
+<p>핵심 암기:</p>
+<p><span class="math display">\[
+f(x)=\phi_0+\sum_{j=1}^{p}\phi_j
+\]</span></p>
+<h3 id="mini-batch-gradient-descent">Mini-batch Gradient Descent</h3>
+<pre class="text"><code>Initialize parameters w
+For each epoch:
+    Shuffle training data
+    Split data into mini-batches
+    For each mini-batch:
+        Compute average gradient on mini-batch
+        Update w = w - learning_rate × gradient
+Output trained parameters</code></pre>
+<h3 id="early-stopping">Early Stopping</h3>
+<pre class="text"><code>Initialize best validation score
+For each epoch:
+    Train model for one epoch
+    Evaluate validation score
+    If validation score improves:
+        Save current model
+        Reset patience counter
+    Else:
+        Increase patience counter
+    Stop if patience counter reaches limit
+Output best saved model</code></pre>
+<h3 id="grid-search와-random-search">Grid Search와 Random Search</h3>
+<pre class="text"><code>Grid search:
+    Define fixed candidate values for each hyperparameter
+    Evaluate every combination
+    Choose best validation score
+
+Random search:
+    Define search distribution for each hyperparameter
+    Randomly sample combinations within budget
+    Choose best validation score</code></pre>
+<h3 id="genetic-algorithm">Genetic Algorithm</h3>
+<pre class="text"><code>Initialize population of candidate solutions
+Evaluate fitness of each candidate
+Repeat:
+    Select strong candidates
+    Apply crossover
+    Apply mutation
+    Replace population
+Output best candidate</code></pre>
+<h3 id="simulated-annealing">Simulated Annealing</h3>
+<pre class="text"><code>Initialize current solution and temperature T
+Repeat:
+    Generate neighbor solution
+    If neighbor is better, accept it
+    If neighbor is worse, accept it with probability depending on T
+    Decrease T
+Output best solution</code></pre>
+<p>핵심 암기:</p>
+<pre class="text"><code>초반에는 탐색을 넓게 하고, 온도가 낮아질수록 나쁜 해를 덜 받아들인다.</code></pre>
+<h2 id="그래프-해석-문제-답안-문장">19. 그래프 해석 문제 답안 문장</h2>
+<ol>
+<li>SHAP plot에서 x축 오른쪽은 예측값을 증가시키는 양의 기여, 왼쪽은
+예측값을 감소시키는 음의 기여다.</li>
+<li>SHAP plot에서 색은 feature value의 크기다. 빨간색은 feature 값이 큰
+sample, 파란색은 feature 값이 작은 sample이다.</li>
+<li>SHAP plot에서 빨간 점이 오른쪽에 많으면 feature 값이 클수록 positive
+class 또는 예측값을 증가시킨다.</li>
+<li>SHAP plot에서 빨간 점이 왼쪽에 많으면 feature 값이 클수록 positive
+class 또는 예측값을 감소시킨다.</li>
+<li>PDP에서 오른쪽으로 갈수록 y가 증가하면 feature 값 증가가 평균
+prediction을 증가시킨다.</li>
+<li>ICE 선들이 많이 교차하면 sample마다 feature effect가 다르므로
+interaction 또는 heterogeneous relation 가능성이 있다.</li>
+<li>Morris plot에서 <span class="math inline">\(\mu\)</span>가 크면
+평균적으로 중요하고, <span class="math inline">\(\sigma\)</span>가 크면
+효과가 일정하지 않다.</li>
+<li>ROC는 왼쪽 위에 가까울수록 좋고, AUC가 1에 가까울수록 좋다.</li>
+<li>PR curve는 class imbalance가 심할 때 positive class 성능을 보기
+좋다.</li>
+<li>Permutation importance가 크다는 것은 해당 feature 정보를 깨뜨렸을 때
+성능 하락이 크다는 뜻이다.</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>고분자공학 03_암기형_예상문답_종합본</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">고분자공학 03_암기형_예상문답_종합본</h1>
+</header>
+<h1 id="고분자공학-암기형-예상문답-종합본">고분자공학 암기형 예상문답
+종합본</h1>
+<p>한 줄 요약: 고분자공학 기말은 비슷한 개념을 섞은 객관식과 짧은
+서술형이 중심이므로 용액, 사슬 차원, morphology, 탄성체, 점탄성을
+비교표처럼 바로 구분할 수 있어야 한다.</p>
+<h2 id="polymer-solution-기본">1. Polymer Solution 기본</h2>
+<p>Q. 고분자 용액이 저분자 용액과 다르게 거동하는 이유는?<br />
+A. 고분자는 사슬 길이가 길고 coil을 형성하며, 분자량과 사슬 얽힘 때문에
+용액 점도와 혼합 entropy가 저분자와 다르다.</p>
+<p>Q. 혼합이 자발적이기 위한 자유에너지 조건은?<br />
+A.</p>
+<p><span class="math display">\[
+\Delta G_m=\Delta H_m-T\Delta S_m&lt;0
+\]</span></p>
+<p>Q. Ideal solution은 어떤 가정인가?<br />
+A. Solvent와 solute 크기가 같고 모든 분자 간 interaction이 동일하다고
+보는 가정이다.</p>
+<p>Q. Athermal mixing은 무엇인가?<br />
+A. <span class="math inline">\(\Delta H_m=0\)</span>이고 주로 entropy
+증가 때문에 혼합이 유리한 경우이다.</p>
+<p>Q. 고분자 용액에서 mole fraction보다 volume fraction을 더 중요하게
+보는 이유는?<br />
+A. 고분자는 한 분자가 많은 segment를 차지하므로 몰수보다 실제 차지
+부피가 혼합과 상호작용을 더 잘 설명한다.</p>
+<h2 id="dilute-semidilute-concentrated">2. Dilute, Semidilute,
+Concentrated</h2>
+<p>Q. Dilute polymer solution은?<br />
+A. Polymer coil들이 서로 거의 겹치지 않고 독립적으로 존재하는
+상태이다.</p>
+<p>Q. Semidilute polymer solution은?<br />
+A. Coil들이 서로 겹치기 시작하지만 용매가 아직 상당히 존재하는
+상태이다.</p>
+<p>Q. Concentrated polymer solution은?<br />
+A. Polymer 사슬 간 상호작용과 entanglement가 강해지고 집단 거동이 중요한
+상태이다.</p>
+<p>Q. Overlap concentration은?<br />
+A. Polymer coil들이 서로 겹치기 시작하는 경계 농도이다.</p>
+<p>함정: Concentrated solution은 단순히 농도 숫자만 높은 것이 아니라
+사슬 간 상호작용과 얽힘이 중요해진다.</p>
+<h2 id="coil-크기와-용매-품질">3. Coil 크기와 용매 품질</h2>
+<p>Q. Random coil은?<br />
+A. 단일결합 회전 때문에 고분자 사슬이 용액에서 불규칙하게 말린 평균
+형태이다.</p>
+<p>Q. End-to-end distance는?<br />
+A. 사슬 한쪽 끝과 다른 끝 사이의 거리이다.</p>
+<p>Q. Radius of gyration은?<br />
+A. 사슬 전체가 차지하는 평균적 공간 크기이다.</p>
+<p>Q. Good solvent에서 polymer chain은?<br />
+A. Polymer-solvent interaction이 좋아 사슬이 팽창한다.</p>
+<p>Q. Poor solvent에서 polymer chain은?<br />
+A. Polymer-solvent interaction이 나빠 사슬이 수축하고 심하면
+침전된다.</p>
+<p>Q. <span class="math inline">\(\theta\)</span> solvent는?<br />
+A. Polymer-polymer interaction과 polymer-solvent interaction이 균형을
+이루어 excluded volume effect가 상쇄되는 조건이다.</p>
+<p>Q. Good, <span class="math inline">\(\theta\)</span>, poor solvent를
+<span class="math inline">\(\chi\)</span>로 구분하면?<br />
+A. 일반적으로 good solvent는 <span
+class="math inline">\(\chi&lt;1/2\)</span>, <span
+class="math inline">\(\theta\)</span> solvent는 <span
+class="math inline">\(\chi=1/2\)</span>, poor solvent는 <span
+class="math inline">\(\chi&gt;1/2\)</span>이다.</p>
+<h2 id="flory-huggins">4. Flory-Huggins</h2>
+<p>Q. Flory-Huggins theory는 무엇을 설명하는가?<br />
+A. Polymer를 segment chain으로 보고 solvent와 polymer의 혼합
+자유에너지를 설명한다.</p>
+<p>Q. Flory-Huggins interaction parameter <span
+class="math inline">\(\chi\)</span>는 무엇인가?<br />
+A. Solvent-polymer interaction의 유리함 또는 불리함을 나타내는
+parameter이다.</p>
+<p>Q. <span class="math inline">\(\chi\)</span>가 크면 어떤 일이
+쉬워지는가?<br />
+A. Polymer와 solvent의 interaction이 불리해져 상분리가 쉬워진다.</p>
+<p>Q. <span class="math inline">\(\chi\)</span>가 작으면 어떤 일이
+쉬워지는가?<br />
+A. 혼합이 쉬워지고 용해성이 좋아진다.</p>
+<p>Q. Flory-Huggins 혼합 자유에너지의 대표 형태는?<br />
+A.</p>
+<p><span class="math display">\[
+\Delta G_m=RT\left(n_1\ln\phi_1+n_2\ln\phi_2+n_1\phi_2\chi\right)
+\]</span></p>
+<p>Q. Solvent chemical potential 변화식으로 activity를 연결하면?<br />
+A.</p>
+<p><span class="math display">\[
+\Delta\mu_1=RT\ln a_1
+\]</span></p>
+<p>Q. 문제에 주어진 solvent activity로 <span
+class="math inline">\(\chi\)</span>를 구할 때 쓰는 관계는?<br />
+A.</p>
+<p><span class="math display">\[
+\ln a_1=-\frac{\phi_2}{x}+\left(\chi-\frac{1}{2}\right)\phi_2^2
+\]</span></p>
+<p>Q. 위 식에서 <span class="math inline">\(x\)</span>는 무엇인가?<br />
+A. Polymer chain 하나가 solvent-sized segment 몇 개로 이루어졌는지를
+나타내는 polymerization 또는 segment number이다.</p>
+<p>Q. <span class="math inline">\(\phi_2\)</span>는 무엇인가?<br />
+A. Polymer volume fraction이다.</p>
+<p>함정: <span class="math inline">\(\chi\)</span>는 concentration
+자체가 아니라 interaction parameter이다.</p>
+<h2 id="chemical-potential과-activity">5. Chemical Potential과
+Activity</h2>
+<p>Q. Chemical potential은 무엇인가?<br />
+A. Partial molar Gibbs free energy이다.</p>
+<p>Q. Activity는 무엇인가?<br />
+A. 비이상성을 포함한 유효 농도 개념이다.</p>
+<p>Q. Ideal solution에서 activity는 무엇과 가까운가?<br />
+A. Mole fraction에 가까워진다.</p>
+<p>Q. Activity coefficient는?<br />
+A.</p>
+<p><span class="math display">\[
+a_i=\gamma_i x_i
+\]</span></p>
+<p>Q. Activity coefficient가 1이면?<br />
+A. 이상용액 거동에 가깝다.</p>
+<h2 id="solubility-parameter">6. Solubility Parameter</h2>
+<p>Q. Hildebrand solubility parameter <span
+class="math inline">\(\delta\)</span>는 무엇인가?<br />
+A. Cohesive energy density의 제곱근으로, 분자 간 인력과 용해성을
+판단하는 parameter이다.</p>
+<p><span class="math display">\[
+\delta=\sqrt{\frac{\Delta H_{\mathrm{vap}}-RT}{V}}
+\]</span></p>
+<p>Q. CED는 무엇인가?<br />
+A. Cohesive energy density, 즉 단위 부피당 분자 간 인력 에너지이다.</p>
+<p>Q. “Like dissolves like”의 뜻은?<br />
+A. <span class="math inline">\(\delta\)</span> 값이 비슷한 물질끼리 잘
+녹거나 잘 섞인다는 뜻이다.</p>
+<p>Q. Polymer의 <span class="math inline">\(\delta\)</span>를 직접
+증발엔탈피로 구하기 어려운 이유는?<br />
+A. 고분자는 비휘발성이어서 저분자 액체처럼 <span
+class="math inline">\(\Delta H_{\mathrm{vap}}\)</span>를 직접 측정하기
+어렵다.</p>
+<p>Q. Hansen solubility parameter는 <span
+class="math inline">\(\delta\)</span>를 어떻게 나누는가?<br />
+A. 분산력, 극성 상호작용, 수소결합 항으로 나눈다.</p>
+<p>Q. Solubility parameter가 쓰이는 곳은?<br />
+A. Polymer blend, coating, adhesive, membrane, nanocomposite, drug
+delivery, 3D printing, battery separator 등에 쓰인다.</p>
+<h2 id="entanglement와-reptation">7. Entanglement와 Reptation</h2>
+<p>Q. Entanglement는 무엇인가?<br />
+A. 긴 고분자 사슬들이 물리적으로 얽혀 움직임이 제한되는 현상이다.</p>
+<p>Q. Entanglement와 chemical crosslink는 같은가?<br />
+A. 아니다. Entanglement는 물리적 얽힘이고, crosslink는 사슬 사이
+결합이다.</p>
+<p>Q. Kuhn segment는?<br />
+A. 실제 제한회전 사슬을 자유연결 사슬처럼 다루기 위한 등가
+segment이다.</p>
+<p>Q. Rouse-Buche theory는 어떤 조건에 적합한가?<br />
+A. Entanglement가 거의 없는 매우 묽은 용액의 bead-spring 사슬 거동
+설명에 적합하다.</p>
+<p>Q. Rouse-Buche theory의 한계는?<br />
+A. Entanglement가 큰 melt나 concentrated solution의 거동을 잘 설명하지
+못한다.</p>
+<p>Q. Reptation model은 무엇인가?<br />
+A. 얽힌 사슬이 주변 사슬 때문에 tube 안에서 뱀처럼 제한적으로 움직인다고
+보는 모델이다.</p>
+<p>Q. Entanglement molecular weight <span
+class="math inline">\(M_e\)</span>는?<br />
+A. 이 분자량 이상에서 entanglement 효과가 본격적으로 중요해지는
+기준이다.</p>
+<h2 id="amorphous-crystalline-semi-crystalline">8. Amorphous,
+Crystalline, Semi-Crystalline</h2>
+<p>Q. Amorphous polymer의 특징은?<br />
+A. 무질서 배열, 큰 free volume, 유연성, 대체로 투명, <span
+class="math inline">\(T_g\)</span> 중심이다.</p>
+<p>Q. Crystalline polymer의 특징은?<br />
+A. 규칙 배열, 높은 밀도, 높은 강도, 높은 내열성, 대체로 불투명, <span
+class="math inline">\(T_m\)</span> 중심이다.</p>
+<p>Q. Semi-crystalline polymer는?<br />
+A. Amorphous region과 crystalline region이 함께 존재하는
+polymer이다.</p>
+<p>Q. Semi-crystalline polymer에서 관찰될 수 있는 전이온도는?<br />
+A. <span class="math inline">\(T_g\)</span>, <span
+class="math inline">\(T_m\)</span>, <span
+class="math inline">\(T_c\)</span>가 모두 관찰될 수 있다.</p>
+<p>Q. XRD에서 amorphous는 어떻게 보이는가?<br />
+A. 넓고 broad한 amorphous halo가 나타난다.</p>
+<p>Q. XRD에서 crystalline은 어떻게 보이는가?<br />
+A. 날카로운 sharp crystalline peak가 나타난다.</p>
+<p>Q. Crystallinity가 높아지면 일반적으로 증가하는 것은?<br />
+A. 밀도, 강도, 내열성, 내화학성이다.</p>
+<p>Q. Crystallinity가 높아지면 일반적으로 감소하는 것은?<br />
+A. 투명도와 유연성이다.</p>
+<h2 id="t_g-t_m-t_c">9. <span class="math inline">\(T_g\)</span>, <span
+class="math inline">\(T_m\)</span>, <span
+class="math inline">\(T_c\)</span></h2>
+<p>Q. <span class="math inline">\(T_g\)</span>는 무엇인가?<br />
+A. Glass transition temperature이다. Glassy하고 딱딱한 상태에서
+rubbery하고 부드러운 상태로 바뀌는 온도이다.</p>
+<p>Q. <span class="math inline">\(T_g\)</span>는 melting인가?<br />
+A. 아니다. Amorphous 영역의 segment mobility 변화이다.</p>
+<p>Q. <span class="math inline">\(T_m\)</span>은 무엇인가?<br />
+A. Crystalline lamellae가 무너져 amorphous melt가 되는 melting
+temperature이다.</p>
+<p>Q. <span class="math inline">\(T_c\)</span>는 무엇인가?<br />
+A. 냉각 중 amorphous melt에서 결정이 다시 형성되는 crystallization
+temperature이다.</p>
+<p>Q. 일반적으로 <span class="math inline">\(T_c&lt;T_m\)</span>인
+이유는?<br />
+A. 결정화에는 nucleation과 growth가 필요하고 supercooling이 요구되기
+때문이다.</p>
+<p>Q. Free volume은 <span class="math inline">\(T_g\)</span>와 어떤
+관계인가?<br />
+A. 온도가 올라가 free volume이 증가하면 segment가 움직일 수 있어 rubbery
+상태가 된다.</p>
+<h2 id="crystallinity와-t_g-영향-인자">10. Crystallinity와 <span
+class="math inline">\(T_g\)</span> 영향 인자</h2>
+<p>Q. Tacticity가 crystallinity에 미치는 영향은?<br />
+A. Isotactic과 syndiotactic은 규칙 배열이 쉬워 crystallinity가 증가하고,
+atactic은 amorphous 경향이 크다.</p>
+<p>Q. Symmetry가 높으면 crystallinity는?<br />
+A. 증가하기 쉽다. Packing이 쉬워지기 때문이다.</p>
+<p>Q. Branching이 많으면 crystallinity는?<br />
+A. 감소하기 쉽다. 조밀 packing을 방해하기 때문이다.</p>
+<p>Q. Interchain interaction이 강하면 <span
+class="math inline">\(T_g\)</span>는?<br />
+A. 증가한다. 사슬 이동이 어려워지기 때문이다.</p>
+<p>Q. Backbone flexibility가 커지면 <span
+class="math inline">\(T_g\)</span>는?<br />
+A. 낮아진다. 사슬이 더 쉽게 움직이기 때문이다.</p>
+<p>Q. Bulky side group은 <span class="math inline">\(T_g\)</span>를
+어떻게 바꾸는가?<br />
+A. 대체로 사슬 회전을 방해해 <span class="math inline">\(T_g\)</span>를
+높일 수 있지만, packing을 방해해 free volume 효과도 함께 고려해야
+한다.</p>
+<p>Q. Fox equation은 무엇을 계산하는가?<br />
+A. Polymer blend의 <span class="math inline">\(T_g\)</span>를 weight
+fraction과 각 성분 <span class="math inline">\(T_g\)</span>로
+추정한다.</p>
+<p><span class="math display">\[
+\frac{1}{T_g}=\frac{w_1}{T_{g,1}}+\frac{w_2}{T_{g,2}}
+\]</span></p>
+<p>함정: Fox equation에서 온도는 Kelvin으로 넣는다.</p>
+<h2 id="열가소성-탄성체-열경화성">11. 열가소성, 탄성체, 열경화성</h2>
+<p>Q. Thermoplastic은 무엇인가?<br />
+A. Crosslink가 거의 없어 열을 가하면 녹아 재가공이 가능한
+polymer이다.</p>
+<p>Q. Elastomer는 무엇인가?<br />
+A. 적당한 crosslink가 있어 늘어났다가 힘을 제거하면 원래 형태로 돌아오는
+polymer이다.</p>
+<p>Q. Thermoset은 무엇인가?<br />
+A. Crosslink가 매우 많아 열을 가해도 녹지 않고 분해되며 재가공이 어려운
+polymer이다.</p>
+<p>Q. Crosslink density가 증가하면 일반적으로 어떻게 되는가?<br />
+A. 강도, 내열성, 내화학성이 증가하고 재가공성은 감소한다.</p>
+<p>Q. Chemical crosslink와 physical crosslink 차이는?<br />
+A. Chemical crosslink는 공유결합 같은 화학 결합이고, physical
+crosslink는 수소결합, 이온결합, 결정영역 같은 물리적 결합이다.</p>
+<p>Q. Elastomer에서 crosslink가 필요한 이유는?<br />
+A. 사슬이 늘어난 뒤 완전히 흘러가 버리지 않고 원래 형태로 복원되게 하기
+위해서다.</p>
+<h2 id="탄성-modulus-stress-strain">12. 탄성, Modulus,
+Stress-Strain</h2>
+<p>Q. 탄성이란?<br />
+A. 외부 힘으로 변형된 뒤 힘을 제거하면 원래 상태로 돌아오는
+성질이다.</p>
+<p>Q. 저장 탄성률은 무엇을 나타내는가?<br />
+A. 저장된 에너지가 다시 회복되는 elastic 성분을 나타낸다.</p>
+<p>Q. 손실 탄성률은 무엇을 나타내는가?<br />
+A. 변형 중 열 등으로 소산되어 회복되지 않는 viscous 성분을 나타낸다.</p>
+<p>Q. Young’s modulus는?<br />
+A. Stress-strain curve의 선형 elastic 구간 기울기이다.</p>
+<p><span class="math display">\[
+E=\frac{\sigma}{\varepsilon}
+\]</span></p>
+<p>Q. Modulus가 크면 어떤 물질인가?<br />
+A. 딱딱하고 변형이 작다.</p>
+<p>Q. Modulus가 작으면 어떤 물질인가?<br />
+A. 부드럽고 잘 늘어난다.</p>
+<p>Q. Elastic region을 넘으면 어떤 일이 생기는가?<br />
+A. 원래 상태로 돌아오지 않는 plastic deformation 또는 파괴가 생긴다.</p>
+<h2 id="대표-polymer">13. 대표 Polymer</h2>
+<p>Q. Polyethylene의 기본 특징은?<br />
+A. Ethylene 중합체이며 branching과 density에 따라 LDPE, LLDPE, HDPE 등이
+나뉜다.</p>
+<p>Q. HDPE가 LDPE보다 강한 이유는?<br />
+A. Branching이 적어 packing과 crystallinity가 높기 때문이다.</p>
+<p>Q. PP의 tacticity 중 결정성이 큰 것은?<br />
+A. Isotactic PP와 syndiotactic PP이다.</p>
+<p>Q. PVC의 특징은?<br />
+A. 염소를 포함해 내화학성과 난연성이 좋지만 연소 시 HCl 발생 문제가
+있다.</p>
+<p>Q. PS의 특징은?<br />
+A. Styrene 기반 polymer이며 케이스, 포장재 등에 쓰인다.</p>
+<p>Q. PET의 특징은?<br />
+A. 병, 필름, 섬유에 쓰이는 대표적인 thermoplastic polyester이다.</p>
+<p>Q. Engineering plastic은?<br />
+A. 일반 플라스틱보다 내열성, 충격강도, 기계적 성능을 높인 고성능
+플라스틱이다.</p>
+<p>Q. PDMS는 어떤 계열인가?<br />
+A. Silicone 기반 non-diene elastomer이다. 투명하고 생체적합성이 좋고
+유연하다.</p>
+<p>Q. Polyurethane의 hard segment와 soft segment 역할은?<br />
+A. Hard segment는 물리적 crosslink와 강도, soft segment는 유연성과
+신축성을 담당한다.</p>
+<p>Q. Epoxy resin은 어떤 계열인가?<br />
+A. Thermoset이다. 접착력, 화학저항성, 경화 후 치수 안정성이 좋아
+접착제와 coating에 쓰인다.</p>
+<p>Q. Novolac resin은 어디에 쓰일 수 있는가?<br />
+A. Photoresist 등 미세 패턴 형성 재료로 쓰일 수 있다.</p>
+<h2 id="chain-dimension과-chain-model">14. Chain Dimension과 Chain
+Model</h2>
+<p>Q. Contour length는 무엇인가?<br />
+A. 고분자 사슬을 완전히 편 상태에서 backbone을 따라 잰 최대
+길이이다.</p>
+<p>Q. End-to-end distance <span class="math inline">\(R\)</span>는
+무엇인가?<br />
+A. 사슬의 한쪽 끝과 다른 끝을 직선으로 이은 거리이다.</p>
+<p>Q. End-to-end distance는 왜 평균값을 바로 쓰기 어려운가?<br />
+A. Random coil은 방향이 계속 바뀌므로 벡터 평균 <span
+class="math inline">\(\langle R\rangle\)</span>은 0에 가까워지고, 보통
+<span class="math inline">\(\langle R^2\rangle\)</span> 또는 <span
+class="math inline">\(R_{\mathrm{rms}}\)</span>를 쓴다.</p>
+<p>Q. Freely-jointed chain의 가정은?<br />
+A. 모든 bond 길이는 같고 각 bond 방향은 서로 독립적으로 자유롭게
+정해진다고 본다.</p>
+<p>Q. Freely-jointed chain의 평균 제곱 end-to-end distance는?<br />
+A.</p>
+<p><span class="math display">\[
+\langle R^2\rangle=nl^2
+\]</span></p>
+<p>Q. Freely-jointed chain의 root-mean-square distance는?<br />
+A.</p>
+<p><span class="math display">\[
+R_{\mathrm{rms}}=l\sqrt{n}
+\]</span></p>
+<p>Q. Freely-jointed chain이 실제 고분자를 과하게 단순화하는
+이유는?<br />
+A. 실제 사슬은 bond angle과 회전 장벽 때문에 완전히 자유롭게 꺾이지
+않는다.</p>
+<p>Q. Freely-rotating chain은 freely-jointed chain과 무엇이
+다른가?<br />
+A. Bond angle은 고정되어 있고 단일결합 회전만 자유롭다고 본다.</p>
+<p>Q. Kuhn length는 무엇인가?<br />
+A. 실제 사슬을 같은 end-to-end distance를 갖는 자유연결 사슬로 바꿨을
+때의 등가 segment 길이이다.</p>
+<p>Q. Persistence length는 무엇인가?<br />
+A. 사슬이 기존 방향성을 얼마나 오래 유지하는지를 나타내는 길이
+척도이다.</p>
+<p>Q. Radius of gyration <span class="math inline">\(R_g\)</span>는
+무엇인가?<br />
+A. 사슬 전체 segment가 질량중심 주변에 얼마나 퍼져 있는지를 나타내는
+평균 크기이다.</p>
+<p>Q. Ideal chain에서 <span class="math inline">\(R_g\)</span>와 <span
+class="math inline">\(R\)</span>의 관계는?<br />
+A.</p>
+<p><span class="math display">\[
+R_g^2=\frac{\langle R^2\rangle}{6}
+\]</span></p>
+<p>함정: <span class="math inline">\(R\)</span>는 양 끝 사이 거리이고,
+<span class="math inline">\(R_g\)</span>는 사슬 전체가 차지하는 coil
+크기이다.</p>
+<h2 id="chain-expansion-viscosity-diffusion">15. Chain Expansion,
+Viscosity, Diffusion</h2>
+<p>Q. Excluded volume effect는 무엇인가?<br />
+A. 실제 segment가 같은 공간을 동시에 차지할 수 없어 사슬이 ideal
+chain보다 팽창하는 효과이다.</p>
+<p>Q. Expansion parameter <span class="math inline">\(\alpha\)</span>는
+무엇인가?<br />
+A. 실제 사슬 크기가 ideal chain 크기보다 얼마나 커졌는지를 나타내는
+값이다.</p>
+<p>Q. Good solvent에서 <span
+class="math inline">\(\alpha\)</span>는?<br />
+A. Polymer-solvent interaction이 좋아 사슬이 팽창하므로 <span
+class="math inline">\(\alpha&gt;1\)</span>이다.</p>
+<p>Q. <span class="math inline">\(\theta\)</span> condition에서 <span
+class="math inline">\(\alpha\)</span>는?<br />
+A. Excluded volume effect가 상쇄되어 ideal chain처럼 거동하므로 <span
+class="math inline">\(\alpha=1\)</span>이다.</p>
+<p>Q. Ideal chain과 good solvent chain의 크기 스케일링은?<br />
+A. Ideal chain은 대략 <span class="math inline">\(R\propto
+n^{0.5}\)</span>, good solvent의 real chain은 대략 <span
+class="math inline">\(R\propto n^{0.6}\)</span>이다.</p>
+<p>Q. Free-draining model은?<br />
+A. 용매가 coil 내부를 자유롭게 통과하여 각 segment가 거의 독립적으로
+friction을 받는다고 보는 모델이다.</p>
+<p>Q. Free-draining coil의 friction coefficient는?<br />
+A.</p>
+<p><span class="math display">\[
+f_{\mathrm{coil}}\approx nf
+\]</span></p>
+<p>Q. Non-draining model은?<br />
+A. Coil이 하나의 입자처럼 움직여 용매가 coil 내부를 자유롭게 통과하지
+못한다고 보는 모델이다.</p>
+<p>Q. Non-draining coil의 Stokes friction은?<br />
+A.</p>
+<p><span class="math display">\[
+f=6\pi\eta_sR_h
+\]</span></p>
+<p>Q. Einstein viscosity equation은 무엇인가?<br />
+A. 묽은 hard sphere 분산계에서 부피분율이 점도를 얼마나 올리는지 나타낸
+식이다.</p>
+<p><span class="math display">\[
+\eta=\eta_s\left(1+\frac{5}{2}\phi\right)
+\]</span></p>
+<p>Q. Specific viscosity는?<br />
+A.</p>
+<p><span class="math display">\[
+\eta_{\mathrm{sp}}=\frac{\eta-\eta_s}{\eta_s}
+\]</span></p>
+<p>Q. Intrinsic viscosity는?<br />
+A. 무한희석 조건에서 고분자 하나가 용액 점도에 기여하는 정도이다.</p>
+<p><span class="math display">\[
+[\eta]=\lim_{c\to0}\frac{\eta_{\mathrm{sp}}}{c}
+\]</span></p>
+<p>Q. Mark-Houwink-Sakurada equation은?<br />
+A. Intrinsic viscosity와 분자량의 관계를 나타낸 경험식이다.</p>
+<p><span class="math display">\[
+[\eta]=KM^a
+\]</span></p>
+<p>Q. Mark-Houwink 지수 <span class="math inline">\(a\)</span>가
+의미하는 것은?<br />
+A. 사슬 형태와 용매 품질을 나타낸다. Good solvent에서는 사슬 팽창 때문에
+<span class="math inline">\(a\)</span>가 커진다.</p>
+<p>Q. Stokes-Einstein equation은?<br />
+A. 입자 또는 coil의 diffusion coefficient와 hydrodynamic radius의
+관계식이다.</p>
+<p><span class="math display">\[
+D=\frac{k_BT}{6\pi\eta_sR_h}
+\]</span></p>
+<p>함정: 점도는 polymer coil이 용매 흐름을 방해하는 정도이고,
+diffusion은 coil이 용액 속에서 이동하는 정도이다.</p>
+<h2 id="대표-polymer-세부-암기">16. 대표 Polymer 세부 암기</h2>
+<p>Q. HDPE와 LDPE의 구조 차이는?<br />
+A. HDPE는 branching이 적어 packing과 crystallinity가 높고, LDPE는
+branching이 많아 density와 crystallinity가 낮다.</p>
+<p>Q. Isotactic PP와 syndiotactic PP가 결정화되기 쉬운 이유는?<br />
+A. Side group 배열이 규칙적이라 chain packing이 쉽기 때문이다.</p>
+<p>Q. Atactic PP가 amorphous 성향을 갖는 이유는?<br />
+A. Side group 배열이 불규칙해 규칙 packing이 어렵기 때문이다.</p>
+<p>Q. CPVC가 PVC보다 내열성과 난연성이 좋은 이유는?<br />
+A. 추가 chlorination으로 chlorine 함량이 증가해 열과 화염에 대한
+저항성이 증가하기 때문이다.</p>
+<p>Q. PVC와 CPVC의 공통 주의점은?<br />
+A. 연소 또는 열분해 시 HCl이 발생할 수 있다.</p>
+<p>Q. General purpose polystyrene은 어떤 구조인가?<br />
+A. Free radical polymerization으로 얻기 쉬운 amorphous PS이다.</p>
+<p>Q. Isotactic polystyrene은 왜 일반 PS보다 특성이 다른가?<br />
+A. 규칙적인 tacticity 때문에 crystallinity를 가질 수 있고, melting
+temperature가 나타난다.</p>
+<p>Q. PET가 많이 쓰이는 형태는?<br />
+A. Fiber, bottle, film이다.</p>
+<p>Q. Engineering plastic이 일반 plastic보다 강조하는 성질은?<br />
+A. 높은 내열성, 내화학성, 충격강도, 인장강도, 낮은 creep이다.</p>
+<p>Q. Diene elastomer의 대표 예시는?<br />
+A. Polybutadiene, polyisoprene, polychloroprene, SBR, NBR이다.</p>
+<p>Q. Diene elastomer가 sulfur vulcanization이 쉬운 이유는?<br />
+A. Chain에 double bond가 있어 sulfur crosslink 형성이 가능하기
+때문이다.</p>
+<p>Q. SBR은 어떤 elastomer인가?<br />
+A. Styrene과 butadiene의 random copolymer이며 타이어, 신발 밑창 등 마모
+저항이 필요한 곳에 쓰인다.</p>
+<p>Q. SBR에서 styrene의 역할은?<br />
+A. 비용을 낮추고 abrasion resistance와 adhesion을 높인다.</p>
+<p>Q. NBR은 어떤 elastomer인가?<br />
+A. Butadiene과 acrylonitrile의 copolymer이며 oil resistance가 좋아
+glove, gasket, tubing, O-ring, fuel hose 등에 쓰인다.</p>
+<p>Q. PDMS는 왜 wearable device와 bio-device에 자주 쓰이는가?<br />
+A. 투명하고 유연하며 생체적합성이 좋고 저온 유연성, 산화 안정성, 전기
+절연성이 좋기 때문이다.</p>
+<p>Q. PDMS crosslinking에서 자주 언급되는 반응은?<br />
+A. Hydrosilylation이다.</p>
+<p>Q. Polyurethane에서 hard segment와 soft segment의 역할은?<br />
+A. Hard segment는 수소결합과 물리적 crosslink로 강도와 형태 유지를
+담당하고, soft segment는 유연성과 신축성을 담당한다.</p>
+<p>Q. TPE는 무엇인가?<br />
+A. Thermoplastic elastomer이다. 고무처럼 탄성을 가지면서 열가소성
+플라스틱처럼 가공과 재활용이 가능한 polymer이다.</p>
+<p>Q. Styrenic block copolymer TPE의 구조적 핵심은?<br />
+A. Hard styrene domain과 soft rubbery domain이 함께 존재해 물리적
+crosslink처럼 작동한다.</p>
+<p>Q. Epoxy resin의 대표 특성은?<br />
+A. 접착력, 화학저항성, 부식저항성, 낮은 curing shrinkage이다.</p>
+<p>Q. Phenolic resin의 대표 종류는?<br />
+A. Novolac과 resol이다.</p>
+<p>Q. Novolac resin이 반도체 공정에서 언급되는 이유는?<br />
+A. Photoresist 같은 미세 패턴 형성 재료로 쓰일 수 있기 때문이다.</p>
+<h2 id="elasticity-핵심">17. Elasticity 핵심</h2>
+<p>Q. 탄성에서 가장 중요한 조건은?<br />
+A. 잘 늘어나는 것만이 아니라 힘을 제거했을 때 원래 상태로 돌아오는
+것이다.</p>
+<p>Q. Elastomer가 thermoplastic처럼 계속 흘러가지 않는 이유는?<br />
+A. 적당한 crosslink가 사슬 이동을 묶어 복원력을 제공하기 때문이다.</p>
+<p>Q. Crosslink가 너무 많아지면 어떤 재료가 되는가?<br />
+A. Thermoset처럼 딱딱해지고 재가공이 어려워진다.</p>
+<p>Q. Physical crosslink의 예시는?<br />
+A. 수소결합, 이온결합, 결정영역, hard domain이다.</p>
+<p>Q. Chemical crosslink의 예시는?<br />
+A. 공유결합으로 연결된 sulfur crosslink, cured epoxy network 등이다.</p>
+<p>Q. Affine network model은 elastomer를 어떻게 보는가?<br />
+A. Crosslink point들이 macroscopic deformation과 함께 균일하게
+이동한다고 보는 모델이다.</p>
+<p>Q. Hooke’s law 형태로 stress와 strain을 쓰면?<br />
+A.</p>
+<p><span class="math display">\[
+\sigma=E\varepsilon
+\]</span></p>
+<p>Q. Young’s modulus <span class="math inline">\(E\)</span>가 큰
+재료는?<br />
+A. 작은 strain에도 큰 stress가 필요하므로 딱딱한 재료이다.</p>
+<p>Q. Young’s modulus <span class="math inline">\(E\)</span>가 작은
+재료는?<br />
+A. 작은 stress에도 잘 늘어나는 부드러운 재료이다.</p>
+<p>Q. Stress-strain curve에서 elastic region은?<br />
+A. Stress와 strain이 거의 선형이고 힘 제거 후 원래 상태로 돌아가는
+구간이다.</p>
+<p>Q. Plastic deformation은?<br />
+A. Elastic limit을 넘어 힘을 제거해도 원래 상태로 완전히 돌아오지 않는
+변형이다.</p>
+<p>Q. Amorphous polymer, semi-crystalline polymer, elastomer의
+stress-strain 곡선 차이는?<br />
+A. Elastomer는 낮은 modulus와 큰 reversible strain을 보이고, glassy
+amorphous polymer는 높은 modulus와 작은 strain에서 파괴되기 쉽고,
+semi-crystalline polymer는 결정영역 때문에 강도와 항복 거동이
+나타난다.</p>
+<h2 id="viscoelasticity">18. Viscoelasticity</h2>
+<p>Q. 점탄성이란?<br />
+A. Elastic solid처럼 에너지를 저장하는 성질과 viscous liquid처럼
+에너지를 소산하는 성질을 동시에 갖는 시간 의존적 거동이다.</p>
+<p>Q. 점도와 탄성의 단위 차이는?<br />
+A. 점도는 <span class="math inline">\(\mathrm{Pa\cdot s}\)</span>,
+탄성률은 <span class="math inline">\(\mathrm{Pa}\)</span>이다.</p>
+<p>Q. Newtonian fluid의 전단응력 관계식은?<br />
+A.</p>
+<p><span class="math display">\[
+\tau=\mu\frac{\partial u}{\partial y}
+\]</span></p>
+<p>Q. Shear thinning은?<br />
+A. Shear rate가 증가할수록 viscosity가 감소하는 거동이다. Ketchup,
+toothpaste, ink, blood가 예시이다.</p>
+<p>Q. Shear thickening은?<br />
+A. Shear rate가 증가할수록 viscosity가 증가하는 거동이다. Cornstarch
+slurry가 대표 예시이다.</p>
+<p>Q. Bingham plastic은?<br />
+A. Yield stress를 넘기 전에는 거의 흐르지 않고, 넘긴 뒤 흐르는
+재료이다.</p>
+<p>Q. Creep test는 무엇인가?<br />
+A. 일정 stress를 가했을 때 strain이 시간에 따라 증가하는지를 보는
+시험이다.</p>
+<p>Q. Creep compliance는?<br />
+A.</p>
+<p><span class="math display">\[
+J(t)=\frac{\varepsilon(t)}{\sigma_0}
+\]</span></p>
+<p>Q. Stress relaxation test는 무엇인가?<br />
+A. 일정 strain을 유지했을 때 stress가 시간에 따라 감소하는지를 보는
+시험이다.</p>
+<p>Q. Relaxation modulus는?<br />
+A.</p>
+<p><span class="math display">\[
+E(t)=\frac{\sigma(t)}{\varepsilon_0}
+\]</span></p>
+<p>Q. Boltzmann superposition principle은?<br />
+A. 선형 점탄성 범위에서 과거에 가해진 여러 하중의 효과를 시간 지연을
+고려해 더할 수 있다는 원리이다.</p>
+<p>Q. Maxwell model의 구성과 특징은?<br />
+A. Spring과 dashpot이 직렬로 연결된 모델이다. Stress relaxation 설명에
+적합하다.</p>
+<p>Q. Maxwell model의 직렬 조건은?<br />
+A.</p>
+<p><span class="math display">\[
+\sigma=\sigma_s=\sigma_d,\qquad \varepsilon=\varepsilon_s+\varepsilon_d
+\]</span></p>
+<p>Q. Kelvin-Voigt model의 구성과 특징은?<br />
+A. Spring과 dashpot이 병렬로 연결된 모델이다. Creep 설명에 적합하다.</p>
+<p>Q. Kelvin-Voigt model의 병렬 조건은?<br />
+A.</p>
+<p><span class="math display">\[
+\sigma=\sigma_s+\sigma_d,\qquad \varepsilon=\varepsilon_s=\varepsilon_d
+\]</span></p>
+<p>Q. Storage modulus <span
+class="math inline">\(E&#39;\)</span>는?<br />
+A. 변형 에너지를 저장하고 회복하는 elastic 성분이다.</p>
+<p>Q. Loss modulus <span
+class="math inline">\(E&#39;&#39;\)</span>는?<br />
+A. 변형 에너지를 열이나 진동으로 잃는 viscous 성분이다.</p>
+<p>Q. <span class="math inline">\(E&#39;&gt;E&#39;&#39;\)</span>이면
+어떤 성격이 강한가?<br />
+A. Solid-like 또는 elastic 성격이 강하다.</p>
+<p>Q. <span class="math inline">\(E&#39;&lt;E&#39;&#39;\)</span>이면
+어떤 성격이 강한가?<br />
+A. Liquid-like 또는 viscous 성격이 강하다.</p>
+<p>Q. 복소 탄성률은?<br />
+A.</p>
+<p><span class="math display">\[
+E^*=E&#39;+iE&#39;&#39;
+\]</span></p>
+<p>Q. Dynamic test에서 phase lag <span
+class="math inline">\(\delta\)</span>와 modulus 관계는?<br />
+A.</p>
+<p><span class="math display">\[
+E&#39;=E^*\cos\delta,\qquad E&#39;&#39;=E^*\sin\delta
+\]</span></p>
+<p>Q. Loss tangent는?<br />
+A.</p>
+<p><span class="math display">\[
+\tan\delta=\frac{E&#39;&#39;}{E&#39;}
+\]</span></p>
+<p>Q. DMA에서 <span class="math inline">\(T_g\)</span>는 어떻게
+잡는가?<br />
+A. Storage modulus가 급격히 감소하고 loss modulus 또는 <span
+class="math inline">\(\tan\delta\)</span> peak가 나타나는 온도 부근으로
+판단한다.</p>
+<p>함정: <span class="math inline">\(E&#39;\)</span>는 저장, <span
+class="math inline">\(E&#39;&#39;\)</span>는 손실이다. Prime 하나가
+elastic, double prime이 viscous라고 외우면 된다.</p>
+<h2 id="빈칸형-최종-암기">19. 빈칸형 최종 암기</h2>
+<ul>
+<li><span class="math inline">\(\Delta G_m=\Delta H_m-T\Delta
+S_m\)</span></li>
+<li>Good solvent: <span class="math inline">\(\chi&lt;1/2\)</span></li>
+<li><span class="math inline">\(\theta\)</span> solvent: <span
+class="math inline">\(\chi=1/2\)</span></li>
+<li>Poor solvent: <span class="math inline">\(\chi&gt;1/2\)</span></li>
+<li><span class="math inline">\(\Delta\mu_1=RT\ln a_1\)</span></li>
+<li><span class="math inline">\(\ln
+a_1=-\dfrac{\phi_2}{x}+\left(\chi-\dfrac{1}{2}\right)\phi_2^2\)</span></li>
+<li><span class="math inline">\(\delta=\sqrt{\dfrac{\Delta
+H_{\mathrm{vap}}-RT}{V}}\)</span></li>
+<li><span class="math inline">\(M_e\)</span>: entanglement molecular
+weight</li>
+<li>Amorphous: broad halo, <span class="math inline">\(T_g\)</span></li>
+<li>Crystalline: sharp peak, <span
+class="math inline">\(T_m\)</span></li>
+<li>Semi-crystalline: <span class="math inline">\(T_g\)</span>, <span
+class="math inline">\(T_m\)</span>, <span
+class="math inline">\(T_c\)</span></li>
+<li><span class="math inline">\(T_c&lt;T_m\)</span></li>
+<li><span
+class="math inline">\(\dfrac{1}{T_g}=\dfrac{w_1}{T_{g,1}}+\dfrac{w_2}{T_{g,2}}\)</span></li>
+<li><span
+class="math inline">\(E=\dfrac{\sigma}{\varepsilon}\)</span></li>
+<li><span class="math inline">\(\langle R^2\rangle=nl^2\)</span></li>
+<li><span class="math inline">\(R_{\mathrm{rms}}=l\sqrt{n}\)</span></li>
+<li><span class="math inline">\(R_g^2=\dfrac{\langle
+R^2\rangle}{6}\)</span></li>
+<li><span class="math inline">\(f_{\mathrm{coil}}\approx
+nf\)</span></li>
+<li><span class="math inline">\(f=6\pi\eta_sR_h\)</span></li>
+<li><span
+class="math inline">\(\eta=\eta_s\left(1+\dfrac{5}{2}\phi\right)\)</span></li>
+<li><span
+class="math inline">\(\eta_{\mathrm{sp}}=\dfrac{\eta-\eta_s}{\eta_s}\)</span></li>
+<li><span
+class="math inline">\([\eta]=\lim_{c\to0}\dfrac{\eta_{\mathrm{sp}}}{c}\)</span></li>
+<li><span class="math inline">\([\eta]=KM^a\)</span></li>
+<li><span
+class="math inline">\(D=\dfrac{k_BT}{6\pi\eta_sR_h}\)</span></li>
+<li><span class="math inline">\(\sigma=E\varepsilon\)</span></li>
+<li><span class="math inline">\(\tau=\mu\dfrac{\partial u}{\partial
+y}\)</span></li>
+<li><span
+class="math inline">\(J(t)=\dfrac{\varepsilon(t)}{\sigma_0}\)</span></li>
+<li><span
+class="math inline">\(E(t)=\dfrac{\sigma(t)}{\varepsilon_0}\)</span></li>
+<li>Maxwell model: spring + dashpot series, stress relaxation</li>
+<li>Kelvin-Voigt model: spring + dashpot parallel, creep</li>
+<li><span class="math inline">\(E^*=E&#39;+iE&#39;&#39;\)</span></li>
+<li><span class="math inline">\(E&#39;=E^*\cos\delta\)</span></li>
+<li><span class="math inline">\(E&#39;&#39;=E^*\sin\delta\)</span></li>
+<li><span
+class="math inline">\(\tan\delta=\dfrac{E&#39;&#39;}{E&#39;}\)</span></li>
+<li>Thermoplastic: no crosslink, melt and reprocess</li>
+<li>Elastomer: light crosslink, reversible stretch</li>
+<li>Thermoset: dense crosslink, no remelting</li>
+<li>SBR: styrene-butadiene rubber</li>
+<li>NBR: acrylonitrile-butadiene rubber, oil resistance</li>
+<li>PDMS: silicone elastomer, transparent and biocompatible</li>
+<li>PU: hard segment gives strength, soft segment gives elasticity</li>
+</ul>
+<h2 id="마지막-강의-viscoelasticity-최종-찍기">20. 마지막 강의
+Viscoelasticity 최종 찍기</h2>
+<p>Q. 마지막 강의 한 줄 핵심은?<br />
+A. 고분자는 점성과 탄성을 동시에 가져서 시간에 따라 변형과 응력이
+달라지는 점탄성 거동을 보인다.</p>
+<p>Q. 점성은?<br />
+A. 흐름을 방해하는 내부 저항이다. 점도가 클수록 잘 흐르지 않는다.</p>
+<p>Q. 탄성은?<br />
+A. 외력으로 변형된 뒤 원래 상태로 돌아가려는 성질이다.</p>
+<p>Q. 점탄성은?<br />
+A. Elastic solid처럼 에너지를 저장하고 viscous liquid처럼 에너지를
+소산하는 시간 의존적 거동이다.</p>
+<p>Q. Newtonian fluid는?<br />
+A. Shear rate가 변해도 viscosity가 일정하고, shear stress와 shear rate가
+선형 관계인 유체다.</p>
+<p>Q. Non-Newtonian 세 가지 대표 유형은?<br />
+A. Shear thickening, shear thinning, Bingham plastic.</p>
+<p>Q. Shear thickening은?<br />
+A. Shear rate가 증가할수록 viscosity가 증가한다. 옥수수 전분 현탁액이
+대표 예시다.</p>
+<p>Q. Shear thinning은?<br />
+A. Shear rate가 증가할수록 viscosity가 감소한다. 케첩, 치약, 잉크,
+혈액이 예시다.</p>
+<p>Q. Bingham plastic은?<br />
+A. Yield stress 이상에서 흐르기 시작한다. 마요네즈, paste, 치약이
+예시다.</p>
+<p>Q. Creep과 stress relaxation을 한 줄로 구분하면?<br />
+A. Creep은 stress 고정, strain 증가이고 stress relaxation은 strain 고정,
+stress 감소다.</p>
+<p>Q. Maxwell model과 Kelvin-Voigt model을 한 줄로 구분하면?<br />
+A. Maxwell은 직렬과 stress relaxation, Kelvin-Voigt는 병렬과
+creep이다.</p>
+<p>Q. 직렬 Maxwell model에서 같은 것과 더해지는 것은?<br />
+A. Stress는 같고 strain은 더해진다.</p>
+<p>Q. 병렬 Kelvin-Voigt model에서 같은 것과 더해지는 것은?<br />
+A. Strain은 같고 stress는 더해진다.</p>
+<p>Q. Storage modulus <span
+class="math inline">\(E&#39;\)</span>는?<br />
+A. 저장되는 탄성 성분이다.</p>
+<p>Q. Loss modulus <span
+class="math inline">\(E&#39;&#39;\)</span>는?<br />
+A. 소산되는 점성 성분이다.</p>
+<p>Q. <span
+class="math inline">\(E&#39;&gt;E&#39;&#39;\)</span>이면?<br />
+A. Elastic 또는 solid-like 성격이 강하다.</p>
+<p>Q. <span
+class="math inline">\(E&#39;&lt;E&#39;&#39;\)</span>이면?<br />
+A. Viscous 또는 liquid-like 성격이 강하다.</p>
+<p>Q. Phase angle 판정은?<br />
+A. <span class="math inline">\(0^\circ\)</span>는 이상 탄성체, <span
+class="math inline">\(90^\circ\)</span>는 Newtonian fluid, 그 사이는
+viscoelastic material이다.</p>
+<p>Q. DMA에서 <span class="math inline">\(T_g\)</span>는 어떻게
+보이나?<br />
+A. Storage modulus가 급격히 감소하고 loss modulus 또는 <span
+class="math inline">\(\tan\delta\)</span> peak가 나타나는 온도
+부근이다.</p>
+<p>Q. 점탄성 소재 응용은?<br />
+A. 충격 흡수, 진동 감쇠, 방음, 쿠션, 웨어러블/의료센서, 인공피부에
+쓴다.</p>
+</body>
+</html>

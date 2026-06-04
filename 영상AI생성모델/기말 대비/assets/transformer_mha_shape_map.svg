@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Multi-Head Attention shape map</title>
+  <desc id="desc">Shape flow for X, Q K V projections, attention score, concat, output projection.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#233142"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#14213d" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" fill="#f4f1e8"/>
+  <g opacity=".22" stroke="#c8c0ad" stroke-width="1">
+    <path d="M80 0v720M160 0v720M240 0v720M320 0v720M400 0v720M480 0v720M560 0v720M640 0v720M720 0v720M800 0v720M880 0v720M960 0v720M1040 0v720M1120 0v720M1200 0v720"/>
+    <path d="M0 80h1280M0 160h1280M0 240h1280M0 320h1280M0 400h1280M0 480h1280M0 560h1280M0 640h1280"/>
+  </g>
+  <text x="70" y="72" font-family="Georgia, serif" font-size="38" font-weight="700" fill="#17202a">Multi-Head Attention shape flow</text>
+  <text x="72" y="112" font-family="Arial, sans-serif" font-size="22" fill="#516070">Example: T=7, d_model=4, h=2, d_k=d_v=2</text>
+
+  <g filter="url(#shadow)" font-family="Arial, sans-serif">
+    <rect x="72" y="184" width="170" height="104" rx="8" fill="#fffdf7" stroke="#233142" stroke-width="3"/>
+    <text x="104" y="226" font-size="30" font-weight="700" fill="#17202a">X</text>
+    <text x="104" y="262" font-size="25" fill="#2c6e91">7 x 4</text>
+    <text x="104" y="280" font-size="17" fill="#69737d">tokens x d_model</text>
+
+    <rect x="338" y="126" width="184" height="88" rx="8" fill="#e7f0ff" stroke="#2f5f98" stroke-width="3"/>
+    <rect x="338" y="238" width="184" height="88" rx="8" fill="#e7f0ff" stroke="#2f5f98" stroke-width="3"/>
+    <rect x="338" y="350" width="184" height="88" rx="8" fill="#e7f0ff" stroke="#2f5f98" stroke-width="3"/>
+    <text x="366" y="163" font-size="25" font-weight="700" fill="#17202a">WQ_i</text>
+    <text x="366" y="194" font-size="22" fill="#2f5f98">4 x 2</text>
+    <text x="366" y="275" font-size="25" font-weight="700" fill="#17202a">WK_i</text>
+    <text x="366" y="306" font-size="22" fill="#2f5f98">4 x 2</text>
+    <text x="366" y="387" font-size="25" font-weight="700" fill="#17202a">WV_i</text>
+    <text x="366" y="418" font-size="22" fill="#2f5f98">4 x 2</text>
+
+    <rect x="592" y="126" width="132" height="88" rx="8" fill="#fff3c4" stroke="#a16b00" stroke-width="3"/>
+    <rect x="592" y="238" width="132" height="88" rx="8" fill="#fff3c4" stroke="#a16b00" stroke-width="3"/>
+    <rect x="592" y="350" width="132" height="88" rx="8" fill="#fff3c4" stroke="#a16b00" stroke-width="3"/>
+    <text x="630" y="163" font-size="28" font-weight="700" fill="#17202a">Q_i</text>
+    <text x="625" y="194" font-size="22" fill="#8a5c00">7 x 2</text>
+    <text x="630" y="275" font-size="28" font-weight="700" fill="#17202a">K_i</text>
+    <text x="625" y="306" font-size="22" fill="#8a5c00">7 x 2</text>
+    <text x="630" y="387" font-size="28" font-weight="700" fill="#17202a">V_i</text>
+    <text x="625" y="418" font-size="22" fill="#8a5c00">7 x 2</text>
+
+    <rect x="792" y="178" width="168" height="104" rx="8" fill="#f8e5ec" stroke="#9b3151" stroke-width="3"/>
+    <text x="824" y="215" font-size="28" font-weight="700" fill="#17202a">Q_i K_i^T</text>
+    <text x="838" y="249" font-size="24" fill="#9b3151">7 x 7</text>
+    <text x="815" y="280" font-size="17" fill="#69737d">score matrix</text>
+
+    <rect x="792" y="350" width="168" height="104" rx="8" fill="#e1f3ea" stroke="#24734d" stroke-width="3"/>
+    <text x="815" y="388" font-size="27" font-weight="700" fill="#17202a">head_i</text>
+    <text x="838" y="421" font-size="24" fill="#24734d">7 x 2</text>
+    <text x="820" y="450" font-size="17" fill="#69737d">score x V_i</text>
+
+    <rect x="1030" y="230" width="178" height="104" rx="8" fill="#ecedf9" stroke="#4f58a8" stroke-width="3"/>
+    <text x="1062" y="268" font-size="27" font-weight="700" fill="#17202a">Concat</text>
+    <text x="1073" y="302" font-size="24" fill="#4f58a8">7 x 4</text>
+    <text x="1050" y="331" font-size="17" fill="#69737d">2 heads x 2 dim</text>
+
+    <rect x="1030" y="410" width="178" height="104" rx="8" fill="#fffdf7" stroke="#233142" stroke-width="3"/>
+    <text x="1062" y="448" font-size="27" font-weight="700" fill="#17202a">W^O</text>
+    <text x="1073" y="482" font-size="24" fill="#233142">4 x 4</text>
+    <text x="1060" y="508" font-size="17" fill="#69737d">mix heads</text>
+  </g>
+
+  <g stroke="#233142" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M242 236 C282 236 296 170 337 170"/>
+    <path d="M242 236 C282 236 296 282 337 282"/>
+    <path d="M242 236 C282 236 296 394 337 394"/>
+    <path d="M522 170 H590"/>
+    <path d="M522 282 H590"/>
+    <path d="M522 394 H590"/>
+    <path d="M724 170 C760 170 760 205 792 220"/>
+    <path d="M724 282 C760 282 760 245 792 232"/>
+    <path d="M876 282 V350"/>
+    <path d="M724 394 H792"/>
+    <path d="M960 402 C1000 402 1000 282 1030 282"/>
+    <path d="M1119 334 V410"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#17202a">
+    <rect x="74" y="584" width="1134" height="82" rx="8" fill="#fffdf7" stroke="#d0c6b4" stroke-width="2"/>
+    <text x="100" y="621" font-size="24" font-weight="700">Parameter count for this example</text>
+    <text x="100" y="654" font-size="21">2 heads x 3 matrices x (4 x 2) + W^O(4 x 4) = 48 + 16 = 64 weights</text>
+  </g>
+</svg>

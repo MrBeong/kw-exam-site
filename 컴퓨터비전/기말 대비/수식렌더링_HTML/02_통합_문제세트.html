@@ -1,0 +1,2638 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>02_통합_문제세트</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1 id="컴퓨터비전-통합-문제세트">컴퓨터비전 통합 문제세트</h1>
+<h3 id="기말-예상문제-세트">기말 예상문제 세트</h3>
+<p>현재 범위인 template matching, geometric transformations, homogeneous
+coordinates/projective space를 반영한다.</p>
+<p>통합 업데이트:</p>
+<ul>
+<li>Template matching, geometric transformation, homogeneous
+coordinates, projective transformation, perspective projection,
+homography, image warping, top-view/around-view, eigendecomposition/SVD
+문제를 한 파일에 모았다.</li>
+</ul>
+<h2 id="a.-ox">A. OX</h2>
+<ol>
+<li>Template matching은 template image를 reference image 위에서
+sliding하며 겹치는 pixel 값을 비교한다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><code>TM_SQDIFF</code>는 값이 클수록 더 좋은 matching이다.
+<ul>
+<li>정답: X</li>
+<li>해설: difference 계열은 작을수록 좋다.</li>
+</ul></li>
+<li><code>TM_CCORR_NORMED</code>는 normalized cross-correlation
+계열이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><code>matchTemplate</code>의 result는 single-channel 32-bit
+floating-point map이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Template은 source image보다 커도 된다.
+<ul>
+<li>정답: X</li>
+<li>해설: template은 source image보다 크면 안 된다.</li>
+</ul></li>
+<li>Cross-correlation은 convolution과 달리 template/kernel을 뒤집지
+않는다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Linear transformation은 항상 translation을 포함한다.
+<ul>
+<li>정답: X</li>
+<li>해설: translation을 일반 matrix 곱으로 포함하려면 homogeneous
+coordinates를 쓰거나 affine transformation으로 본다.</li>
+</ul></li>
+<li>Euclidean transformation은 rotation과 translation을 포함하며 거리와
+각도를 보존한다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Similarity transformation은 scale을 포함하므로 거리는 보통 원래와
+같지 않고 s배가 될 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Affine transformation은 평행한 직선을 평행하게 유지한다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+</ol>
+<h2 id="b.-객관식">B. 객관식</h2>
+<ol>
+<li>Template matching의 기본 수행 순서로 가장 적절한 것은?
+<ol>
+<li>Gradient 계산 -&gt; Thresholding -&gt; Hysteresis</li>
+<li>Template sliding -&gt; 겹친 pixel 비교 -&gt; 가장 유사한 위치
+선택</li>
+<li>Random sample 추출 -&gt; Inlier 계산 -&gt; 반복</li>
+<li>Fourier transform -&gt; Frequency masking -&gt; Inverse
+transform</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li><code>TM_SQDIFF</code>, <code>TM_SQDIFF_NORMED</code>에서 best
+matching 위치를 고르는 기준은?
+<ol>
+<li>가장 큰 값</li>
+<li>가장 작은 값</li>
+<li>항상 중앙값</li>
+<li>첫 번째 위치</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li><code>TM_CCORR</code>, <code>TM_CCORR_NORMED</code>,
+<code>TM_CCOEFF</code>, <code>TM_CCOEFF_NORMED</code>에서 일반적인 best
+matching 기준은?
+<ol>
+<li>가장 큰 값</li>
+<li>가장 작은 값</li>
+<li>0에 가장 가까운 값</li>
+<li>음수 중 가장 작은 값</li>
+</ol>
+<ul>
+<li>정답: 1</li>
+</ul></li>
+<li><code>matchTemplate</code>에서 image가 <span
+class="math inline">\(W\times H\)</span>, template이 <span
+class="math inline">\(w\times h\)</span>일 때 result 크기는?
+<ol>
+<li><span class="math inline">\(W\times H\)</span></li>
+<li><span class="math inline">\(w\times h\)</span></li>
+<li><span class="math inline">\((W-w)\times(H-h)\)</span></li>
+<li><span class="math inline">\((W-w+1)\times(H-h+1)\)</span></li>
+</ol>
+<ul>
+<li>정답: 4</li>
+</ul></li>
+<li>Affine transformation에서 일반적으로 보존되는 것은?
+<ol>
+<li>거리</li>
+<li>각도</li>
+<li>평행성</li>
+<li>원의 모양</li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li>다음 중 Euclidean transformation의 식으로 가장 적절한 것은?
+<ol>
+<li><span class="math inline">\(x&#39;=Ax\)</span></li>
+<li><span class="math inline">\(x&#39;=Rx+t\)</span></li>
+<li><span class="math inline">\(x&#39;=sRx+t\)</span></li>
+<li><span class="math inline">\(x&#39;=Ax+b\)</span>, 단 A는 임의
+행렬</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>다음 중 similarity transformation에 포함되는 요소는?
+<ol>
+<li>Rotation, translation, uniform scale</li>
+<li>Only translation</li>
+<li>Projective division only</li>
+<li>Histogram equalization</li>
+</ol>
+<ul>
+<li>정답: 1</li>
+</ul></li>
+<li>Translation을 matrix multiplication 형태로 표현하기 위해 주로
+사용하는 좌표계는?
+<ol>
+<li>Polar coordinates</li>
+<li>Homogeneous coordinates</li>
+<li>RGB coordinates</li>
+<li>Frequency coordinates</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+</ol>
+<h2 id="c.-단답형">C. 단답형</h2>
+<ol>
+<li>Template matching의 기본 수행 과정을 쓰시오.
+<ul>
+<li>모범답안: template을 reference image 위에 sliding시키고, 겹치는
+부분의 pixel 값을 비교한 뒤 가장 유사한 위치를 물체 위치로
+판단한다.</li>
+</ul></li>
+<li>SSD와 SAD를 각각 풀어 쓰시오.
+<ul>
+<li>모범답안: SSD는 Sum of Squared Differences, SAD는 Sum of Absolute
+Differences.</li>
+</ul></li>
+<li>NCC를 풀어 쓰고 의미를 간단히 쓰시오.
+<ul>
+<li>모범답안: Normalized Cross-Correlation. 정규화된 상관값으로
+template과 image patch의 유사도를 비교한다.</li>
+</ul></li>
+<li><code>matchTemplate</code>의 <code>templ</code> 조건을 쓰시오.
+<ul>
+<li>모범답안: source image보다 크면 안 되고, source image와 같은 data
+type이어야 한다.</li>
+</ul></li>
+<li><code>matchTemplate</code> result map의 크기 공식을 쓰시오.
+<ul>
+<li>모범답안: image가 <span class="math inline">\(W\times H\)</span>,
+template이 <span class="math inline">\(w\times h\)</span>이면 result는
+<span class="math inline">\((W-w+1)\times(H-h+1)\)</span>.</li>
+</ul></li>
+<li>Linear transformation의 두 조건을 쓰시오.
+<ul>
+<li>모범답안: <span
+class="math inline">\(f(x_1+x_2)=f(x_1)+f(x_2)\)</span>, <span
+class="math inline">\(f(cx)=cf(x)\)</span>.</li>
+</ul></li>
+<li>Euclidean transformation과 similarity transformation의 차이를
+쓰시오.
+<ul>
+<li>모범답안: Euclidean은 rotation과 translation으로 거리와 각도를
+보존하고, similarity는 여기에 uniform scale이 포함되어 각도는 보존하지만
+거리는 s배가 될 수 있다.</li>
+</ul></li>
+<li>Translation이 일반적인 의미의 linear transformation이 아닌 이유를
+쓰시오.
+<ul>
+<li>모범답안: <span class="math inline">\(f(0)=0\)</span>을 만족하지
+않고, 원점을 다른 곳으로 이동시키기 때문이다.</li>
+</ul></li>
+</ol>
+<h2 id="d.-계산형">D. 계산형</h2>
+<ol>
+<li>image 크기 <span class="math inline">\(640\times480\)</span>,
+template 크기 <span class="math inline">\(100\times80\)</span>일 때
+<code>matchTemplate</code> result 크기를 쓰시오.
+<ul>
+<li>정답: <span class="math inline">\(541\times401\)</span></li>
+</ul></li>
+<li>image 크기 <span class="math inline">\(10\times8\)</span>, template
+크기 <span class="math inline">\(3\times2\)</span>일 때 result 크기를
+쓰시오.
+<ul>
+<li>정답: <span class="math inline">\(8\times7\)</span></li>
+</ul></li>
+<li><code>TM_SQDIFF</code> result에서 값이
+<code>[12, 5, 30, 8]</code>이면 best index는?
+<ul>
+<li>정답: 값 5의 위치.</li>
+</ul></li>
+<li><code>TM_CCORR_NORMED</code> result에서 값이
+<code>[0.2, 0.85, 0.4, 0.1]</code>이면 best index는?
+<ul>
+<li>정답: 값 0.85의 위치.</li>
+</ul></li>
+</ol>
+<h2 id="e.-과정서술형">E. 과정/서술형</h2>
+<ol>
+<li>Template matching의 장점과 한계를 설명하시오.
+<ul>
+<li>모범답안: 구현이 직관적이고 template과 유사한 위치를 찾기 쉽다.
+하지만 물체의 scale, rotation, illumination, deformation이 달라지면 단순
+pixel 비교 성능이 떨어질 수 있다.</li>
+</ul></li>
+<li>Convolution과 cross-correlation의 차이를 template matching 관점에서
+설명하시오.
+<ul>
+<li>모범답안: convolution은 kernel을 뒤집고 이동하지만
+cross-correlation은 뒤집지 않고 template을 image 위에서 이동시키며
+유사도를 계산한다. Template matching은 보통 cross-correlation 또는
+difference 기반 비교로 이해할 수 있다.</li>
+</ul></li>
+<li>Similarity transformation과 affine transformation의 차이를
+설명하시오.
+<ul>
+<li>모범답안: similarity는 scale, rotation, translation으로 구성되어
+각도와 모양을 보존한다. affine은 일반 행렬 <code>A</code>와
+translation을 포함해 shear 등도 가능하므로 평행성은 보존하지만 각도와
+거리는 일반적으로 보존하지 않는다.</li>
+</ul></li>
+<li>Homogeneous coordinates를 쓰는 이유를 설명하시오.
+<ul>
+<li>모범답안: 직교 좌표에서 translation은 단순한 <code>Ax</code> 꼴로
+표현되지 않는다. Homogeneous coordinates를 쓰면 rotation, scale, affine
+변환과 translation을 하나의 matrix multiplication 형태로 표현할 수
+있다.</li>
+</ul></li>
+</ol>
+<h2 id="f.-github-코드-추가-범위">F. GitHub 코드 추가 범위</h2>
+<ol>
+<li><p><code>resize(img_orig, img_half, Size(), 0.5, 0.5, INTER_AREA);</code>에서
+<code>Size()</code>를 비워 둔 이유를 설명하시오.</p>
+<ul>
+<li>정답: 출력 크기를 직접 지정하지 않고 <span
+class="math inline">\(fx=0.5\)</span>, <span
+class="math inline">\(fy=0.5\)</span> 배율로 결정하게 하기
+위해서다.</li>
+</ul></li>
+<li><p>다음 보간법을 빠른 순서와 품질 관점에서 비교하시오:
+<code>INTER_NEAREST</code>, <code>INTER_LINEAR</code>,
+<code>INTER_CUBIC</code>.</p>
+<ul>
+<li>정답: nearest는 가장 빠르지만 blocky artifact가 크다.
+linear/bilinear는 주변 픽셀을 선형 보간해 더 부드럽다. cubic/bicubic은
+더 넓은 주변 픽셀을 사용해 더 부드럽지만 계산량이 더 크다.</li>
+</ul></li>
+<li><p>Translation을 수행하는 2x3 affine matrix를 쓰시오. x방향 100,
+y방향 50 이동.</p>
+<ul>
+<li>정답: <code>[1 0 100; 0 1 50]</code>.</li>
+</ul></li>
+<li><p>다음 코드의 빈칸을 채우시오.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Mat M <span class="op">=</span> ____________<span class="op">(</span>Point2f<span class="op">(</span>img<span class="op">.</span>cols<span class="op">/</span><span class="fl">2.</span><span class="bu">f</span><span class="op">,</span> img<span class="op">.</span>rows<span class="op">/</span><span class="fl">2.</span><span class="bu">f</span><span class="op">),</span> <span class="dv">90</span><span class="op">,</span> <span class="fl">1.0</span><span class="op">);</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warpAffine<span class="op">(</span>img<span class="op">,</span> dst<span class="op">,</span> M<span class="op">,</span> img<span class="op">.</span>size<span class="op">());</span></span></code></pre></div>
+<ul>
+<li>정답: <code>getRotationMatrix2D</code></li>
+</ul></li>
+<li><p><code>getAffineTransform(pts1, pts2)</code>에 필요한 대응점 수는
+몇 개인가?</p>
+<ul>
+<li>정답: 3쌍. Affine transform은 2D에서 3개 점 대응으로 결정할 수
+있다.</li>
+</ul></li>
+<li><p>Hidden picture puzzle 코드에서 회전된 template의 새 width와
+height를 계산하는 이유를 설명하시오.</p>
+<ul>
+<li>정답: 회전 후 template이 잘리지 않도록 전체를 담을 수 있는 bounding
+canvas 크기를 만들기 위해서다.</li>
+</ul></li>
+<li><p><code>matchTemplate(..., TM_SQDIFF_NORMED, mask)</code>를
+사용했을 때 best matching 위치는 <code>minLoc</code>과
+<code>maxLoc</code> 중 무엇인가?</p>
+<ul>
+<li>정답: <code>minLoc</code>. SQDIFF 계열은 차이가 작을수록 좋은
+matching이다.</li>
+</ul></li>
+<li><p>Template matching에서 mask를 쓰는 이유를 hidden picture puzzle
+코드 기준으로 설명하시오.</p>
+<ul>
+<li>정답: 회전/스케일된 template의 흰 배경을 matching에서 제외하고 실제
+물체 영역만 비교하기 위해서다.</li>
+</ul></li>
+<li><p>다음 코드가 만드는 mask의 의미를 쓰시오.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>threshold<span class="op">(</span>img_template_transformed_gray<span class="op">,</span> mask<span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="dv">255</span><span class="op">,</span> THRESH_BINARY_INV<span class="op">);</span></span></code></pre></div>
+<ul>
+<li>정답: 밝은 흰 배경은 0으로, 어두운 실제 template 영역은 255로 만들어
+matching에 사용할 영역을 지정한다.</li>
+</ul></li>
+</ol>
+<h2 id="g.-온라인-강의-2-3-수학-배경">G. 온라인 강의 2-3 수학 배경</h2>
+<ol>
+<li>Matrix를 column vector 관점에서 해석할 때 <code>Ax</code>는 무엇을
+의미하는가?
+<ul>
+<li>정답: <code>A</code>의 column vector들을 <code>x</code>의 각
+성분만큼 가중합한 결과이다.</li>
+</ul></li>
+<li>Linear transformation에서 행렬의 각 column vector는 기하적으로
+무엇을 나타내는가?
+<ul>
+<li>정답: 기존 basis vector가 변환 후 어디로 이동하는지를 나타내는 새
+basis 방향이다.</li>
+</ul></li>
+<li>Singular matrix가 geometric transformation에서 문제가 되는 이유를
+설명하시오.
+<ul>
+<li>정답: 한 차원이 collapse되어 역변환이 불가능하거나 정보가 사라질 수
+있기 때문이다.</li>
+</ul></li>
+<li>Euclidean 또는 rigid transformation이 보존하는 성질을 쓰시오.
+<ul>
+<li>정답: 거리와 각도를 보존한다. 2D에서는 rotation과 translation으로
+구성된다.</li>
+</ul></li>
+<li>Similarity transformation이 euclidean transformation과 다른 점은
+무엇인가?
+<ul>
+<li>정답: uniform scale이 추가된다. 각도와 모양은 보존하지만 길이는
+scale만큼 변한다.</li>
+</ul></li>
+<li>Affine transformation이 보존하는 성질과 보존하지 않는 성질을 쓰시오.
+<ul>
+<li>정답: 직선성과 평행성은 보존하지만, 길이와 각도는 일반적으로
+보존하지 않는다.</li>
+</ul></li>
+<li>Homogeneous coordinate에서 2D 점 <code>(x, y)</code>를 어떻게
+표현하는가?
+<ul>
+<li>정답: <code>(x, y, 1)</code>로 표현한다.</li>
+</ul></li>
+<li>Transformation을 여러 개 적용할 때 matrix multiplication 순서가
+중요한 이유를 쓰시오.
+<ul>
+<li>정답: 행렬 곱은 일반적으로 교환법칙이 성립하지 않아서 rotation 후
+translation과 translation 후 rotation의 결과가 달라질 수 있다.</li>
+</ul></li>
+</ol>
+<h2 id="h.-homogeneous-coordinates-projective-space-cross-product">H.
+Homogeneous Coordinates / Projective Space / Cross Product</h2>
+<h3 id="ox">OX</h3>
+<ol>
+<li><span class="math inline">\(\mathbb{P}^2\)</span>의 유효한 점 <span
+class="math inline">\((x,y,w)\)</span>와 <code>(2x,2y,2w)</code>는 같은
+점이다.
+<ul>
+<li>정답: O</li>
+<li>해설: 2는 0이 아닌 scalar이므로 같은 projective point를
+나타낸다.</li>
+</ul></li>
+<li><span class="math inline">\(w\ne0\)</span>인 동차좌표 <span
+class="math inline">\((x,y,w)\)</span>는 직교좌표 <span
+class="math inline">\(\left(\frac{x}{w},\frac{y}{w}\right)\)</span>에
+대응된다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\(w=0\)</span>인 동차좌표 점은 일반적인
+<span class="math inline">\(\mathbb{R}^2\)</span> 점으로 복원할 수 있다.
+<ul>
+<li>정답: X</li>
+<li>해설: <span class="math inline">\(w=0\)</span>이면 나눌 수 없으므로
+point at infinity로 해석한다.</li>
+</ul></li>
+<li>Projective space에서는 평행한 두 직선도 point at infinity에서
+만난다고 본다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Cross product의 결과는 scalar이다.
+<ul>
+<li>정답: X</li>
+<li>해설: cross product의 결과는 3차원 벡터이다.</li>
+</ul></li>
+<li><span class="math inline">\(a\times b = b\times a\)</span>이다.
+<ul>
+<li>정답: X</li>
+<li>해설: <span class="math inline">\(a\times b = -(b\times
+a)\)</span>이다.</li>
+</ul></li>
+<li><span class="math inline">\(a\times a = 0\)</span>이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\(a\cdot(b\times c)\)</span>는 세 벡터가
+만드는 평행육면체의 부피와 관련된다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+</ol>
+<h3 id="단답형">단답형</h3>
+<ol>
+<li>2D 점 <code>(x,y)</code>를 동차좌표로 표현하시오.
+<ul>
+<li>정답: <code>(x,y,1)</code>.</li>
+</ul></li>
+<li>동차좌표 <code>(6,9,3)</code>에 대응되는 직교좌표를 구하시오.
+<ul>
+<li>정답: <code>(2,3)</code>.</li>
+</ul></li>
+<li>동차좌표 <code>(4,5,0)</code>은 무엇을 의미하는가?
+<ul>
+<li>정답: <span class="math inline">\(w=0\)</span>이므로 point at
+infinity이다.</li>
+</ul></li>
+<li>2D 직선 <span class="math inline">\(ax+by+c=0\)</span>을 벡터로
+어떻게 표현하는가?
+<ul>
+<li>정답: <span class="math inline">\(l=(a,b,c)^{\top}\)</span>.</li>
+</ul></li>
+<li><span class="math inline">\(2x+3y-1=0\)</span>과 <span
+class="math inline">\(4x+6y-2=0\)</span>은 같은 직선인가?
+<ul>
+<li>정답: 같다. 두 번째 식은 첫 번째 식에 2를 곱한 것이다.</li>
+</ul></li>
+<li>Cross product가 정의되는 차원과 결과 타입을 쓰시오.
+<ul>
+<li>정답: 3차원 벡터 사이에서 정의되며 결과는 3차원 벡터이다.</li>
+</ul></li>
+<li><span class="math inline">\(\lVert a\times b\rVert\)</span>의
+기하학적 의미를 쓰시오.
+<ul>
+<li>정답: 두 벡터가 만드는 평행사변형의 넓이이다.</li>
+</ul></li>
+<li><span class="math inline">\(a\times b\)</span>의 방향을 설명하시오.
+<ul>
+<li>정답: <span class="math inline">\(a\)</span>와 <span
+class="math inline">\(b\)</span>에 모두 수직이고, 오른손 법칙으로
+정해진다.</li>
+</ul></li>
+</ol>
+<h3 id="계산형">계산형</h3>
+<ol>
+<li><span class="math inline">\((1,2,3)\times(4,5,6)\)</span>을
+구하시오.
+<ul>
+<li>정답: <span class="math inline">\((-3,6,-3)\)</span>.</li>
+<li>풀이:
+<ul>
+<li>x성분: <span class="math inline">\(2\cdot6-3\cdot5=-3\)</span></li>
+<li>y성분: <span class="math inline">\(3\cdot4-1\cdot6=6\)</span></li>
+<li>z성분: <span class="math inline">\(1\cdot5-2\cdot4=-3\)</span></li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">\(a=(1,0,0)\)</span>, <span
+class="math inline">\(b=(0,1,0)\)</span>일 때 <span
+class="math inline">\(a\times b\)</span>를 구하시오.
+<ul>
+<li>정답: <span class="math inline">\((0,0,1)\)</span> 또는 <span
+class="math inline">\(k\)</span>.</li>
+</ul></li>
+<li><span class="math inline">\(b\times a\)</span>는 위 문제의 답과 어떤
+관계인가?
+<ul>
+<li>정답: 부호가 반대이므로 <code>(0,0,-1)</code>이다.</li>
+</ul></li>
+<li>동차좌표 <span class="math inline">\(p=(2,4,2)\)</span>와 <span
+class="math inline">\(q=(1,2,1)\)</span>은 같은 점인가?
+<ul>
+<li>정답: 같다. <span class="math inline">\(p=2q\)</span>이다.</li>
+</ul></li>
+<li>동차좌표 <span class="math inline">\(p=(3,6,3)\)</span>의 직교좌표를
+구하시오.
+<ul>
+<li>정답: <code>(1,2)</code>.</li>
+</ul></li>
+</ol>
+<h3 id="서술형">서술형</h3>
+<ol>
+<li>왜 projective geometry를 도입하는지 설명하시오.
+<ul>
+<li>모범답안: Euclidean geometry에서는 평행한 두 직선이 만나지 않는
+예외가 생긴다. Projective geometry는 Euclidean space에 points at
+infinity를 추가해 평행선도 무한원점에서 만난다고 해석하므로, 두 직선은
+항상 만난다는 식으로 기하 관계를 더 일관되게 다룰 수 있다.</li>
+</ul></li>
+<li>동차좌표에서 0이 아닌 scalar 배를 같은 점으로 보는 이유를 pinhole
+camera 관점에서 설명하시오.
+<ul>
+<li>모범답안: pinhole camera에서는 카메라 중심을 지나는 같은 ray 위의
+모든 3D 점이 이미지 평면의 같은 위치로 투영된다. <code>(x,y,1)</code>,
+<code>(2x,2y,2)</code> 같은 점들은 같은 ray 위에 있으므로 image
+point로는 구분되지 않는다. 그래서 projective space에서는 0이 아닌 scalar
+배를 같은 점으로 본다.</li>
+</ul></li>
+<li><span class="math inline">\(\mathbb{R}^2\)</span>, <span
+class="math inline">\(\mathbb{P}^2\)</span>, <span
+class="math inline">\(\mathbb{R}^3\)</span>의 관계를 설명하시오.
+<ul>
+<li>모범답안: <span class="math inline">\(\mathbb{R}^2\)</span>는 일반
+2D 유클리드 공간이고, <span
+class="math inline">\(\mathbb{P}^2\)</span>는 <span
+class="math inline">\(\mathbb{R}^2\)</span>에 point at infinity를 추가한
+사영공간이다. <span class="math inline">\(\mathbb{P}^2\)</span>의 점은
+세 성분으로 표현되지만 <span
+class="math inline">\(\mathbb{R}^3\)</span>와 같은 공간은 아니다. 다만
+<span class="math inline">\(\mathbb{P}^2\)</span>를 시각화하기 위해
+<span class="math inline">\(\mathbb{R}^3\)</span>의 ray 그림을 사용할 수
+있다.</li>
+</ul></li>
+<li>Cross product의 정의와 기하학적 의미를 설명하시오.
+<ul>
+<li>모범답안: Cross product는 3차원 벡터 두 개에 대해 정의되며 결과는
+다시 3차원 벡터이다. 결과 벡터는 두 입력 벡터에 모두 수직이고, 그 크기는
+두 벡터가 만드는 평행사변형의 넓이이다. 방향은 오른손 법칙으로
+결정된다.</li>
+</ul></li>
+<li>세 벡터가 coplanar인지 판단하는 방법을 쓰시오.
+<ul>
+<li>모범답안: scalar triple product <span
+class="math inline">\(a\cdot(b\times c)\)</span>를 계산한다. 값이 0이면
+세 벡터가 만드는 평행육면체의 부피가 0이므로 한 평면 위에 있다고 판단할
+수 있다.</li>
+</ul></li>
+</ol>
+<h3 id="ox-퀴즈-컴퓨터비전-기말-개념-전수점검">O/X 퀴즈: 컴퓨터비전 기말
+개념 전수점검</h3>
+<p>목표: 핵심 개념을 O/X로 빠르게 확인한다. 헷갈리는 단어와 보존 성질,
+함수 인자, min/max 방향을 일부러 섞었다.</p>
+<h2 id="a.-template-matching">A. Template Matching</h2>
+<ol>
+<li>Template matching은 template을 reference image 위에서 sliding하면서
+겹치는 pixel 값을 비교한다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><code>TM_SQDIFF</code>와 <code>TM_SQDIFF_NORMED</code>는 값이 클수록
+좋은 matching이다.
+<ul>
+<li>정답: X</li>
+<li>해설: Difference 계열은 작을수록 좋다.</li>
+</ul></li>
+<li><code>TM_CCORR</code>, <code>TM_CCOEFF</code> 계열은 일반적으로 값이
+클수록 좋은 matching이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><code>matchTemplate</code>의 result map은 원본 image와 항상 같은
+크기다.
+<ul>
+<li>정답: X</li>
+<li>해설: <span
+class="math inline">\((W-w+1)\times(H-h+1)\)</span>이다.</li>
+</ul></li>
+<li>Template은 source image보다 커도 OpenCV가 자동으로 padding해서
+처리한다.
+<ul>
+<li>정답: X</li>
+</ul></li>
+<li>Cross-correlation은 convolution과 달리 template/kernel을 뒤집지
+않는다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>대칭 kernel을 쓰면 convolution과 cross-correlation의 결과가 같을 수
+있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><code>TM_CCOEFF_NORMED</code>는 평균을 제거한 normalized 계열로 볼
+수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Hidden picture puzzle에서 <code>TM_SQDIFF_NORMED</code>를 쓰면
+<code>maxLoc</code>이 best location이다.
+<ul>
+<li>정답: X</li>
+<li>해설: SQDIFF 계열은 <code>minLoc</code>.</li>
+</ul></li>
+<li>회전/스케일이 바뀐 template은 단순 template matching 성능이 떨어질
+수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+</ol>
+<h2 id="b.-geometric-transformation-code">B. Geometric Transformation /
+Code</h2>
+<ol start="19">
+<li>Translation은 일반적인 <span
+class="math inline">\(x&#39;=Ax\)</span> 꼴의 linear transformation이다.
+<ul>
+<li>정답: X</li>
+</ul></li>
+<li>Homogeneous coordinate를 쓰면 translation도 matrix
+multiplication으로 표현할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Rigid transformation은 rotation과 translation으로 구성되며 길이와
+각도를 보존한다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Similarity transformation은 rigid transformation에 uniform scale을
+추가한 것이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Similarity transformation은 scale이 있으므로 각도도 일반적으로
+깨진다.
+<ul>
+<li>정답: X</li>
+<li>해설: uniform scale은 각도를 보존한다.</li>
+</ul></li>
+<li>Affine transformation은 평행성을 보존하지만 길이와 각도는 일반적으로
+보존하지 않는다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><code>warpAffine</code>에 들어가는 변환 matrix는 3x3이다.
+<ul>
+<li>정답: X</li>
+<li>해설: OpenCV <code>warpAffine</code>의 matrix는 2x3이다.</li>
+</ul></li>
+<li><code>getRotationMatrix2D(center, angle, scale)</code>은 2x3
+matrix를 반환한다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><code>getAffineTransform</code>은 2D affine transform을 구하기 위해
+3쌍의 대응점을 사용한다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Backward warping은 output pixel이 source의 어디에서 왔는지
+역변환으로 찾는 방식이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+</ol>
+<h2 id="c.-homogeneous-coordinates-projective-space">C. Homogeneous
+Coordinates / Projective Space</h2>
+<ol start="29">
+<li><span class="math inline">\(\mathbb{P}^2\)</span>에서 <span
+class="math inline">\((x,y,w)\)</span>와 <span
+class="math inline">\((kx,ky,kw)\)</span>는 <span
+class="math inline">\(k\ne0\)</span>이면 같은 점이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\((6,9,3)\)</span>은 직교좌표 <span
+class="math inline">\((2,3)\)</span>에 대응된다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\(w=0\)</span>인 동차좌표는 일반 <span
+class="math inline">\(\mathbb{R}^2\)</span> 좌표로 복원할 수 있다.
+<ul>
+<li>정답: X</li>
+</ul></li>
+<li><span class="math inline">\((2,1,0)\)</span>은 방향 <span
+class="math inline">\((2,1)\)</span>의 point at infinity로 해석할 수
+있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Line at infinity는 <span class="math inline">\(\mathbb{R}^2\)</span>
+평면 안에 실제로 보이는 직선이다.
+<ul>
+<li>정답: X</li>
+<li>해설: <span class="math inline">\(\mathbb{R}^2\)</span>에는 없는
+projective space의 가상 직선이다.</li>
+</ul></li>
+<li>동차좌표에서 점 <span class="math inline">\(p\)</span>가 직선 <span
+class="math inline">\(l\)</span> 위에 있다는 조건은 <span
+class="math inline">\(l^{\top}p=0\)</span>이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>두 점 <span class="math inline">\(p,q\)</span>를 지나는 직선은 <span
+class="math inline">\(p\times q\)</span>로 구할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>두 직선 <span class="math inline">\(l_1,l_2\)</span>의 교점은 <span
+class="math inline">\(l_1\times l_2\)</span>로 구할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>평행한 두 직선의 교점은 projective space에서 <span
+class="math inline">\(w=0\)</span>인 점이 될 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\(\mathbb{R}^2\)</span>, <span
+class="math inline">\(\mathbb{P}^2\)</span>, <span
+class="math inline">\(\mathbb{R}^3\)</span>는 모두 같은 공간을 다른
+이름으로 부르는 것이다.
+<ul>
+<li>정답: X</li>
+</ul></li>
+</ol>
+<h2 id="d.-cross-product">D. Cross Product</h2>
+<ol start="39">
+<li>Cross product의 결과는 scalar이다.
+<ul>
+<li>정답: X</li>
+</ul></li>
+<li><span class="math inline">\(a\times b = -(b\times a)\)</span>이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\(a\times a = 0\)</span>이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\((a\times b) x c = a x (b\times
+c)\)</span>가 항상 성립한다.
+<ul>
+<li>정답: X</li>
+</ul></li>
+<li><span class="math inline">\(\lVert a\times b\rVert\)</span>는 두
+벡터가 만드는 평행사변형의 넓이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\(a · (b\times c)=0\)</span>이면 세 벡터는
+coplanar일 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+</ol>
+<h2 id="e.-projective-perspective-transformation">E. Projective /
+Perspective Transformation</h2>
+<ol start="45">
+<li>Projective transformation은 일반적으로 직선성을 보존한다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Projective transformation은 길이, 각도, 평행성을 모두 보존한다.
+<ul>
+<li>정답: X</li>
+</ul></li>
+<li>Affine transformation은 projective transformation보다 더 일반적인
+변환이다.
+<ul>
+<li>정답: X</li>
+<li>해설: Projective가 더 일반적이다.</li>
+</ul></li>
+<li>3x3 homography matrix는 원소가 9개이므로 자유도도 9다.
+<ul>
+<li>정답: X</li>
+<li>해설: scale equivalence 때문에 자유도는 8이다.</li>
+</ul></li>
+<li><code>H</code>와 <code>2H</code>는 같은 homography를 나타낼 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\(h33 \ne  0\)</span>이면 homography
+matrix를 <span class="math inline">\(h33=1\)</span>로 정규화할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\(h33=0\)</span>인 homography도 projective
+transformation의 일반형에는 포함될 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Projective division은 <span
+class="math inline">\((x&#39;,y&#39;,w&#39;)\)</span>를 <span
+class="math inline">\(\left(\frac{x&#39;}{w&#39;},\frac{y&#39;}{w&#39;}\right)\)</span>로
+바꾸는 과정이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+</ol>
+<h2 id="f.-perspective-projection-vanishing-point">F. Perspective
+Projection / Vanishing Point</h2>
+<ol start="53">
+<li>3D point를 image point로 보내는 perspective projection은 <span
+class="math inline">\(\mathbb{P}^3\to\mathbb{P}^2\)</span>로 볼 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><span class="math inline">\(\mathbb{P}^3\to\mathbb{P}^2\)</span>
+perspective projection matrix는 3x3이다.
+<ul>
+<li>정답: X</li>
+<li>해설: 3x4이다.</li>
+</ul></li>
+<li>3D 점 <span class="math inline">\((X,Y,Z)\)</span>는 동차좌표에서
+<span class="math inline">\((X,Y,Z,1)\)</span>로 쓸 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Projection 결과 <span class="math inline">\((u,v,w)\)</span>에서
+image coordinate는 <span class="math inline">\(w\ne0\)</span>일 때 <span
+class="math inline">\(\left(\frac{u}{w},\frac{v}{w}\right)\)</span>이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Vanishing point는 3D 공간의 평행선들이 image에서 만나는 점이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Vanishing point는 3D 실제 공간 <span
+class="math inline">\(\mathbb{R}^3\)</span>에 반드시 존재하는 유한한
+점이다.
+<ul>
+<li>정답: X</li>
+<li>해설: 방향의 point at infinity가 image에 투영된 것으로 볼 수
+있다.</li>
+</ul></li>
+<li>같은 방향벡터를 가진 3D 평행선들은 같은 vanishing point를 공유할 수
+있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>직선 <span class="math inline">\(X(c)=X_0+cT\)</span>를 <span
+class="math inline">\(c\to\infty\)</span>로 보내면 projection 결과는
+시작점 <span class="math inline">\(X_0\)</span>보다 방향 <span
+class="math inline">\(T\)</span>에 의해 결정된다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+</ol>
+<h2 id="g.-homography-image-warping-응용">G. Homography / Image Warping
+/ 응용</h2>
+<ol start="61">
+<li>Homography는 <span
+class="math inline">\(\mathbb{P}^2\to\mathbb{P}^2\)</span>
+image-to-image projective mapping이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Homography matrix는 2x3 matrix이다.
+<ul>
+<li>정답: X</li>
+<li>해설: 3x3이다.</li>
+</ul></li>
+<li>같은 camera center에서 virtual image plane만 다르면 두 image 사이에
+homography가 성립할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Camera가 center를 고정하고 회전만 한 경우 두 이미지 사이에
+homography가 성립할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>서로 다른 두 camera가 같은 평면을 찍으면 그 평면 위 점들에 대해
+homography가 성립할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>서로 다른 깊이를 가진 일반 3D 장면 전체에는 하나의 homography가 항상
+정확히 성립한다.
+<ul>
+<li>정답: X</li>
+</ul></li>
+<li><code>warpPerspective</code>는 3x3 homography를 이용해 image를 다른
+view로 변환한다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Top-view 변환은 도로를 하나의 평면으로 가정할 때 잘 맞는다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>Around-view monitoring에서 차선은 잘 보정되지만 사람이나 차가 누워
+보일 수 있는 이유는, homography가 ground plane을 가정하기 때문이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>바닥 착시 그림은 평면에 왜곡된 그림을 그려 특정 viewpoint에서
+정상적인 3D 물체처럼 보이게 하는 현상으로 설명할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+</ol>
+<h2 id="h.-ssmovie-3-hidden-picture-affine-보강">H. ssmovie (3) Hidden
+Picture / Affine 보강</h2>
+<ol start="71">
+<li>기본 template matching은 template의 회전과 scale 변화에 자동으로
+강하다.
+<ul>
+<li>정답: X</li>
+<li>해설: 기본 sliding 방식은 주로 평행이동 탐색이다. 회전/스케일 후보는
+따로 만들어야 한다.</li>
+</ul></li>
+<li><code>getRotationMatrix2D(center, angle, scale)</code>은 2x3 affine
+matrix를 반환한다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>회전된 template이 잘리지 않게 하려면 새 bounding canvas 크기를
+계산할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>회전 후 새 width/height 계산에서 <span
+class="math inline">\(|\cos\theta|\)</span>, <span
+class="math inline">\(|\sin\theta|\)</span>를 쓰는 이유는 이미지 크기가
+음수가 될 수 없기 때문이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>canvas를 키운 뒤 중심을 맞추려면 affine matrix의 translation
+column을 보정할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><code>warpAffine</code>에서
+<code>BORDER_CONSTANT, Scalar(255)</code>는 새로 생긴 배경을 검정색으로
+채우라는 뜻이다.
+<ul>
+<li>정답: X</li>
+<li>해설: grayscale 기준 255는 흰색이다.</li>
+</ul></li>
+<li><code>THRESH_BINARY_INV</code>로 mask를 만들면 어두운 객체 선을
+255로, 흰 배경을 0으로 만들 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li><code>TM_SQDIFF_NORMED</code>를 쓰면 <code>minVal</code>,
+<code>minLoc</code>이 best matching 기준이다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>2D affine transform은 일반적으로 non-collinear 3쌍의 대응점으로
+결정할 수 있다.
+<ul>
+<li>정답: O</li>
+</ul></li>
+<li>대응점 3개가 모두 한 직선 위에 있어도
+<code>getAffineTransform</code>으로 안정적인 affine matrix를 항상 구할
+수 있다.
+<ul>
+<li>정답: X</li>
+<li>해설: collinear이면 면적이 없어 변환이 특이해질 수 있다.</li>
+</ul></li>
+</ol>
+<h3 id="객관식-퀴즈-컴퓨터비전-기말-개념-전수점검">객관식 퀴즈:
+컴퓨터비전 기말 개념 전수점검</h3>
+<p>비슷한 개념 구분과 함수 인자/반환 형태를 중심으로 만들었다.</p>
+<h2 id="a.-template-기존-범위">A. Template / 기존 범위</h2>
+<ol>
+<li><code>TM_SQDIFF_NORMED</code>를 사용한 template matching에서 best
+location 선택 기준은?
+<ol>
+<li><code>maxLoc</code></li>
+<li><code>minLoc</code></li>
+<li>항상 image center</li>
+<li>result map의 평균값 위치</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li><code>matchTemplate</code>에서 image가 <span
+class="math inline">\(640\times480\)</span>, template이 <span
+class="math inline">\(100\times80\)</span>일 때 result 크기는?
+<ol>
+<li><span class="math inline">\(640\times480\)</span></li>
+<li><span class="math inline">\(100\times80\)</span></li>
+<li><span class="math inline">\(540\times400\)</span></li>
+<li><span class="math inline">\(541\times401\)</span></li>
+</ol>
+<ul>
+<li>정답: 4</li>
+</ul></li>
+<li>다음 중 correlation 계열이라 값이 클수록 best matching인 것은?
+<ol>
+<li><code>TM_SQDIFF</code></li>
+<li><code>TM_SQDIFF_NORMED</code></li>
+<li><code>TM_CCORR_NORMED</code></li>
+<li><code>THRESH_BINARY</code></li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li><code>warpAffine</code>에 대한 설명으로 맞는 것은?
+<ol>
+<li>3x4 projection matrix를 입력한다.</li>
+<li>3x3 homography matrix를 입력한다.</li>
+<li>2x3 affine matrix를 입력한다.</li>
+<li>matrix 없이 항상 자동 변환한다.</li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li><code>getAffineTransform(pts1, pts2)</code>에 필요한 점 대응 수는?
+<ol>
+<li>1쌍</li>
+<li>2쌍</li>
+<li>3쌍</li>
+<li>8쌍</li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+</ol>
+<h2 id="b.-변환-계층">B. 변환 계층</h2>
+<ol start="9">
+<li>Rigid/Euclidean transformation의 자유도와 보존 성질로 맞는 것은?
+<ol>
+<li>자유도 2, 길이만 보존</li>
+<li>자유도 3, 길이와 각도 보존</li>
+<li>자유도 4, 평행성만 보존</li>
+<li>자유도 8, 직선성만 보존</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>Similarity transformation에 포함되는 요소는?
+<ol>
+<li>Rotation, translation, uniform scale</li>
+<li>Translation only</li>
+<li>Projective division only</li>
+<li>Nonlinear radial distortion only</li>
+</ol>
+<ul>
+<li>정답: 1</li>
+</ul></li>
+<li>Affine transformation이 일반적으로 보존하는 것은?
+<ol>
+<li>길이</li>
+<li>각도</li>
+<li>평행성</li>
+<li>원의 모양</li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li>Projective transformation에서 일반적으로 유지되는 성질은?
+<ol>
+<li>길이</li>
+<li>각도</li>
+<li>평행성</li>
+<li>직선성</li>
+</ol>
+<ul>
+<li>정답: 4</li>
+</ul></li>
+<li>다음 중 자유도 연결이 맞는 것은?
+<ol>
+<li>Rigid 8, Affine 3</li>
+<li>Similarity 6, Homography 4</li>
+<li>Rigid 3, Similarity 4, Affine 6, Homography 8</li>
+<li>Rigid 4, Similarity 3, Affine 8, Homography 6</li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li>Affine matrix의 마지막 행이 <code>[0 0 1]</code>인 이유로 가장
+적절한 것은?
+<ol>
+<li>항상 <span class="math inline">\(w&#39;=1\)</span>이 되어 projective
+division이 필요 없기 때문이다.</li>
+<li>항상 모든 점을 point at infinity로 보내기 때문이다.</li>
+<li>translation을 금지하기 때문이다.</li>
+<li>line at infinity를 삭제하기 때문이다.</li>
+</ol>
+<ul>
+<li>정답: 1</li>
+</ul></li>
+</ol>
+<h2 id="c.-homogeneous-projective-space">C. Homogeneous / Projective
+Space</h2>
+<ol start="15">
+<li><code>(12, 18, 6)</code>에 대응되는 <span
+class="math inline">\(\mathbb{R}^2\)</span> 좌표는?
+<ol>
+<li><code>(12,18)</code></li>
+<li><code>(6,9)</code></li>
+<li><code>(2,3)</code></li>
+<li><code>(18,24)</code></li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li><code>(4, -2, 0)</code>의 의미로 가장 적절한 것은?
+<ol>
+<li>원점</li>
+<li>일반 <span class="math inline">\(\mathbb{R}^2\)</span> 좌표
+<code>(4,-2)</code></li>
+<li>방향 <code>(4,-2)</code>의 point at infinity</li>
+<li>잘못된 좌표라서 항상 무시</li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li>Line at infinity <span
+class="math inline">\(l_{\mathrm{inf}}=(0,0,1)^{\top}\)</span> 위에 있는
+점은?
+<ol>
+<li><code>(1,2,1)</code></li>
+<li><code>(1,2,0)</code></li>
+<li><code>(0,0,1)</code></li>
+<li><code>(3,4,5)</code></li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>동차좌표에서 점 <span class="math inline">\(p\)</span>가 직선 <span
+class="math inline">\(l\)</span> 위에 있는 조건은?
+<ol>
+<li><span class="math inline">\(p+l=0\)</span></li>
+<li><span class="math inline">\(l^{\top}p=0\)</span></li>
+<li><span class="math inline">\(p\times l = 1\)</span></li>
+<li><span class="math inline">\(||p||=||l||\)</span></li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>두 점 <span class="math inline">\(p\)</span>와 <span
+class="math inline">\(q\)</span>를 지나는 직선을 구하는 공식은?
+<ol>
+<li><span class="math inline">\(p+q\)</span></li>
+<li><span class="math inline">\(p\cdot q\)</span></li>
+<li><span class="math inline">\(p\times q\)</span></li>
+<li><span class="math inline">\(p/q\)</span></li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li>두 직선 <span class="math inline">\(l_1\)</span>, <span
+class="math inline">\(l_2\)</span>의 교점을 구하는 공식은?
+<ol>
+<li><span class="math inline">\(l_1\times l_2\)</span></li>
+<li><span class="math inline">\(l_1\cdot l_2\)</span></li>
+<li><span class="math inline">\(l_1+l_2\)</span></li>
+<li><span class="math inline">\(l_1-l_2\)</span></li>
+</ol>
+<ul>
+<li>정답: 1</li>
+</ul></li>
+</ol>
+<h2 id="d.-perspective-projection-vanishing-point">D. Perspective
+Projection / Vanishing Point</h2>
+<ol start="21">
+<li>3D point를 image point로 보내는 perspective projection matrix의
+크기는?
+<ol>
+<li>2x3</li>
+<li>3x3</li>
+<li>3x4</li>
+<li>4x4</li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li>3D point <span class="math inline">\((X,Y,Z)\)</span>의 동차좌표
+표현은?
+<ol>
+<li><code>(X,Y,1)</code></li>
+<li><span class="math inline">\((X,Y,Z,1)\)</span></li>
+<li><span
+class="math inline">\(\left(\frac{X}{Z},\frac{Y}{Z}\right)\)</span></li>
+<li><code>(X,Y,Z,0)</code>만 가능</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>Projection 결과가 <span class="math inline">\((u,v,w)\)</span>일 때
+image coordinate는?
+<ol>
+<li><code>(u,v)</code></li>
+<li><code>(u+w,v+w)</code></li>
+<li><span
+class="math inline">\(\left(\frac{u}{w},\frac{v}{w}\right)\)</span>,
+<span class="math inline">\(w\ne0\)</span></li>
+<li><span
+class="math inline">\(\left(\frac{w}{u},\frac{w}{v}\right)\)</span></li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li>Vanishing point를 가장 정확히 설명한 것은?
+<ol>
+<li>모든 곡선이 만나는 점</li>
+<li>3D 평행선 방향의 point at infinity가 image에 투영된 점</li>
+<li><span class="math inline">\(\mathbb{R}^2\)</span>의 원점</li>
+<li><code>matchTemplate</code> result map의 최댓값 위치</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>3D 직선 <span class="math inline">\(X(c)=X_0+cT\)</span>에서 <span
+class="math inline">\(c\to\infty\)</span>로 보낼 때 vanishing point를
+결정하는 핵심은?
+<ol>
+<li>시작점 <span class="math inline">\(X_0\)</span>만</li>
+<li>방향벡터 <span class="math inline">\(T\)</span></li>
+<li>image의 색상 평균</li>
+<li>template 크기</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>서로 평행한 두 기차길이 image에서 한 점에 만나는 것처럼 보이는
+이유는?
+<ol>
+<li>실제 3D 공간에서도 반드시 만난다.</li>
+<li>같은 방향의 point at infinity가 camera projection으로 같은 image
+point가 되기 때문이다.</li>
+<li>affine transformation이 평행성을 깨지 않기 때문이다.</li>
+<li>histogram equalization 때문이다.</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+</ol>
+<h2 id="e.-homography">E. Homography</h2>
+<ol start="27">
+<li>Homography의 기본 식은?
+<ol>
+<li><span class="math inline">\(x&#39;=Ax+b\)</span>, <code>A</code> is
+2x2</li>
+<li><code>x' ~ Hx</code>, <code>H</code> is 3x3</li>
+<li><span class="math inline">\(x&#39; = Px\)</span>, <span
+class="math inline">\(P\)</span> is 3x4 only</li>
+<li><span class="math inline">\(x&#39; = Rx\)</span>, <code>R</code> is
+2x2 rotation only</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>Homography의 자유도가 8인 이유는?
+<ol>
+<li>matrix 원소가 8개라서</li>
+<li>9개 원소 중 하나는 항상 0이라서</li>
+<li>3x3 matrix의 scale equivalence로 전체 scalar 하나가 의미 없어서</li>
+<li>8개의 이미지 채널을 사용해서</li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li>Homography가 성립하는 경우가 아닌 것은?
+<ol>
+<li>같은 camera center에서 image plane만 다르게 잡은 경우</li>
+<li>camera center를 고정하고 pure rotation한 경우</li>
+<li>서로 다른 두 camera가 같은 physical plane을 보는 경우</li>
+<li>서로 다른 깊이의 3D 물체가 섞인 장면 전체를 하나의 H로 정확히
+매핑하는 경우</li>
+</ol>
+<ul>
+<li>정답: 4</li>
+</ul></li>
+<li><code>warpPerspective</code>에 대한 설명으로 맞는 것은?
+<ol>
+<li>2x3 matrix만 받는다.</li>
+<li>3x3 homography로 image를 변환한다.</li>
+<li>원근 변환 행렬을 검출한다.</li>
+<li>template matching score만 계산한다.</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>Bird’s-eye/top-view 변환이 도로 차선에 잘 맞는 이유는?
+<ol>
+<li>차선이 보통 도로 평면 위에 있기 때문이다.</li>
+<li>차선이 항상 camera center에 있기 때문이다.</li>
+<li>차선이 point at infinity라서</li>
+<li>차선은 homography 영향을 받지 않아서</li>
+</ol>
+<ul>
+<li>정답: 1</li>
+</ul></li>
+<li>Around view에서 사람이 누워 보이는 이유로 가장 적절한 것은?
+<ol>
+<li>사람이 실제로 누워 있어서</li>
+<li>homography가 ground plane을 가정해 높이를 가진 물체도 평면 그림처럼
+warp하기 때문</li>
+<li><code>TM_SQDIFF</code>를 사용해서</li>
+<li>affine matrix가 2x3이기 때문에</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>Backward warping의 설명으로 맞는 것은?
+<ol>
+<li>source pixel을 destination으로 던져 빈 pixel을 일부러 만든다.</li>
+<li>destination pixel마다 source에서 어디서 왔는지 inverse transform으로
+찾는다.</li>
+<li>output pixel에서 source 좌표를 역으로 찾는다.</li>
+<li>template을 회전하지 않는다.</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>Homography를 구할 때 4점 대응이 자주 언급되는 이유는?
+<ol>
+<li>4점이 8개의 좌표 방정식을 주어 8 자유도를 결정할 수 있기
+때문이다.</li>
+<li>4점이면 affine 자유도 3을 결정하기 때문이다.</li>
+<li>4점은 항상 collinear해야 하기 때문이다.</li>
+<li>4점은 affine 변환의 최소 조건이기 때문이다.</li>
+</ol>
+<ul>
+<li>정답: 1</li>
+</ul></li>
+<li>평면 착시 그림을 homography 관점에서 설명한 것으로 맞는 것은?
+<ol>
+<li>바닥 평면에 왜곡된 그림을 그려 특정 viewpoint에서 정상 형태처럼
+보이게 한다.</li>
+<li>모든 viewpoint에서 똑같은 3D 형태로 보인다.</li>
+<li>camera projection과 무관하다.</li>
+<li>line at infinity가 사라져서 생긴다.</li>
+</ol>
+<ul>
+<li>정답: 1</li>
+</ul></li>
+</ol>
+<h2 id="f.-통합-비교-문제">F. 통합 비교 문제</h2>
+<ol start="36">
+<li>다음 중 matrix 크기 연결이 맞는 것은?
+<ol>
+<li><code>warpAffine</code>: <span
+class="math inline">\(3\times3\)</span>, <code>warpPerspective</code>:
+<span class="math inline">\(2\times3\)</span>, <span
+class="math inline">\(\mathbb{P}^{3}\to\mathbb{P}^{2}\)</span>: <span
+class="math inline">\(4\times4\)</span></li>
+<li><code>warpAffine</code>: <span
+class="math inline">\(2\times3\)</span>, <code>warpPerspective</code>:
+<span class="math inline">\(3\times3\)</span>, perspective projection:
+<span class="math inline">\(3\times4\)</span></li>
+<li><code>warpAffine</code>: <span
+class="math inline">\(3\times4\)</span>, <code>warpPerspective</code>:
+<span class="math inline">\(2\times2\)</span>, perspective projection:
+<span class="math inline">\(3\times3\)</span></li>
+<li>모두 <span class="math inline">\(3\times3\)</span></li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>다음 중 평행성을 보존하지 않을 수 있는 변환은?
+<ol>
+<li>Rigid</li>
+<li>Similarity</li>
+<li>Affine</li>
+<li>Projective</li>
+</ol>
+<ul>
+<li>정답: 4</li>
+</ul></li>
+<li>다음 중 <span class="math inline">\(\mathbb{P}^2\)</span>의 point at
+infinity로 볼 수 있는 것은?
+<ol>
+<li><span class="math inline">\((3,4,1)\)</span></li>
+<li><span class="math inline">\((3,4,2)\)</span></li>
+<li><span class="math inline">\((3,4,0)\)</span></li>
+<li><span class="math inline">\((0,0,0)\)</span></li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li>동차좌표 <span class="math inline">\((0,0,0)\)</span>에 대한
+설명으로 맞는 것은?
+<ol>
+<li>원점이다.</li>
+<li>line at infinity이다.</li>
+<li>projective point로 유효하지 않다.</li>
+<li>모든 점과 같다.</li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+<li>시험 답안에서 “homography는 모든 물체를 top view에서 정확하게
+보여준다”라고 쓰면 틀리는 이유는?
+<ol>
+<li>homography는 색상만 바꾸기 때문에</li>
+<li>homography는 평면 가정이므로 높이가 다른 3D 물체에는 왜곡이 생기기
+때문</li>
+<li>homography는 line을 curve로 바꾸기 때문에</li>
+<li>homography는 <span
+class="math inline">\(\mathbb{R}^{1}\)</span>에서만 정의되기 때문에</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+</ol>
+<h2 id="g.-ssmovie-3-hidden-picture-affine-보강">G. ssmovie (3) Hidden
+Picture / Affine 보강</h2>
+<ol start="41">
+<li>회전된 template의 새 width를 구하는 식으로 가장 적절한 것은?
+<ol>
+<li><span
+class="math inline">\(w&#39;=w\cos\theta-h\sin\theta\)</span></li>
+<li><span
+class="math inline">\(w&#39;=w|\cos\theta|+h|\sin\theta|\)</span></li>
+<li><span class="math inline">\(w&#39;=w+h+\theta\)</span></li>
+<li><span class="math inline">\(w&#39;=wh\cos\theta\)</span></li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>canvas를 키운 뒤 template 중심을 새 canvas 중심으로 옮기기 위해
+보정해야 하는 affine matrix 위치는?
+<ol>
+<li>2x2 linear block의 diagonal</li>
+<li>마지막 column의 translation 성분</li>
+<li>마지막 row <code>[0 0 1]</code></li>
+<li>모든 원소</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>hidden picture puzzle에서
+<code>BORDER_CONSTANT, Scalar(255)</code>를 쓴 이유는?
+<ol>
+<li>새로 생긴 배경을 흰색으로 채우기 위해</li>
+<li>template을 검정색으로 반전하기 위해</li>
+<li>affine matrix를 3x3으로 만들기 위해</li>
+<li><code>minMaxLoc</code>을 생략하기 위해</li>
+</ol>
+<ul>
+<li>정답: 1</li>
+</ul></li>
+<li><code>threshold(transformed, mask, 200, 255, THRESH_BINARY_INV)</code>의
+mask 의미로 가장 적절한 것은?
+<ol>
+<li>흰 배경을 255로 만들어 배경만 비교한다.</li>
+<li>어두운 객체 영역을 255로 만들어 그 영역을 비교에 사용한다.</li>
+<li>모든 pixel을 0으로 만든다.</li>
+<li>result map의 크기를 줄인다.</li>
+</ol>
+<ul>
+<li>정답: 2</li>
+</ul></li>
+<li>2D affine transform을 <code>getAffineTransform</code>으로 구할 때
+필요한 대응점 조건은?
+<ol>
+<li>1쌍이면 충분하다.</li>
+<li>2쌍이면 항상 충분하다.</li>
+<li>non-collinear 3쌍이 필요하다.</li>
+<li>homography처럼 8쌍이 필요하다.</li>
+</ol>
+<ul>
+<li>정답: 3</li>
+</ul></li>
+</ol>
+<h3
+id="서술형단답형계산형-문제-컴퓨터비전-기말-개념-전수점검">서술형/단답형/계산형
+문제: 컴퓨터비전 기말 개념 전수점검</h3>
+<p>단답은 정확한 용어와 수식, 서술은 비교와 이유, 계산은 직접 손으로 풀
+수 있는 수준으로 구성했다.</p>
+<h2 id="a.-단답형">A. 단답형</h2>
+<ol>
+<li><code>matchTemplate</code> result map 크기 공식을 쓰시오.
+<ul>
+<li>정답: image가 <span class="math inline">\(W\times H\)</span>,
+template이 <span class="math inline">\(w\times h\)</span>이면 <span
+class="math inline">\((W-w+1)\times(H-h+1)\)</span>.</li>
+</ul></li>
+<li><code>TM_SQDIFF_NORMED</code>에서 best location은
+<code>minLoc</code>과 <code>maxLoc</code> 중 무엇인가?
+<ul>
+<li>정답: <code>minLoc</code>.</li>
+</ul></li>
+<li><code>warpAffine</code>과 <code>warpPerspective</code>가 사용하는
+matrix 크기를 각각 쓰시오.
+<ul>
+<li>정답: <code>warpAffine</code>은 2x3, <code>warpPerspective</code>는
+3x3.</li>
+</ul></li>
+<li>2D 점 <code>(x,y)</code>의 동차좌표 표현을 쓰시오.
+<ul>
+<li>정답: <code>(x,y,1)</code>.</li>
+</ul></li>
+<li><span class="math inline">\((x,y,w)\)</span>가 일반 <span
+class="math inline">\(\mathbb{R}^2\)</span> 좌표로 복원되는 조건과
+복원식을 쓰시오.
+<ul>
+<li>정답: <span class="math inline">\(w\ne0\)</span>, <span
+class="math inline">\(\left(\frac{x}{w},\frac{y}{w}\right)\)</span>.</li>
+</ul></li>
+<li><span class="math inline">\(w=0\)</span>인 동차좌표 점의 이름을
+쓰시오.
+<ul>
+<li>정답: point at infinity.</li>
+</ul></li>
+<li>2D 직선 <span class="math inline">\(ax+by+c=0\)</span>을 동차좌표
+벡터로 표현하시오.
+<ul>
+<li>정답: <span class="math inline">\(l=(a,b,c)^{\top}\)</span>.</li>
+</ul></li>
+<li>점 <span class="math inline">\(p\)</span>가 직선 <span
+class="math inline">\(l\)</span> 위에 있을 조건을 쓰시오.
+<ul>
+<li>정답: <span class="math inline">\(l^{\top}p=0\)</span>.</li>
+</ul></li>
+<li>두 점 <span class="math inline">\(p\)</span>, <span
+class="math inline">\(q\)</span>를 지나는 직선 공식과 두 직선 <span
+class="math inline">\(l_1\)</span>, <span
+class="math inline">\(l_2\)</span>의 교점 공식을 쓰시오.
+<ul>
+<li>정답: <span class="math inline">\(l=p\times q\)</span>, <span
+class="math inline">\(p=l_1\times l_2\)</span>.</li>
+</ul></li>
+<li>Homography의 기본 식과 matrix 크기를 쓰시오.
+<ul>
+<li>정답: <span class="math inline">\(\tilde{x}_2\sim
+H\tilde{x}_1\)</span>, <span class="math inline">\(H\)</span>는 <span
+class="math inline">\(3\times3\)</span>.</li>
+</ul></li>
+<li>Homography의 자유도는 몇 개인가? 이유도 한 줄로 쓰시오.
+<ul>
+<li>정답: 8개. 3x3 matrix는 원소가 9개지만 전체 scalar 배가 같은
+변환이기 때문이다.</li>
+</ul></li>
+<li>Perspective projection의 mapping 공간과 matrix 크기를 쓰시오.
+<ul>
+<li>정답: <span
+class="math inline">\(\mathbb{P}^3\to\mathbb{P}^2\)</span>, projection
+matrix는 3x4.</li>
+</ul></li>
+<li>Vanishing point를 한 줄로 정의하시오.
+<ul>
+<li>정답: 3D 평행선의 방향에 해당하는 point at infinity가 image에
+투영되어 만나는 점.</li>
+</ul></li>
+<li>Homography가 성립하는 대표 경우 3가지를 쓰시오.
+<ul>
+<li>정답: 같은 camera center의 다른 image plane, camera center 고정 pure
+rotation, 서로 다른 camera가 같은 physical plane을 보는 경우.</li>
+</ul></li>
+<li>Around view에서 사람이나 차가 늘어져 보이는 이유를 한 줄로 쓰시오.
+<ul>
+<li>정답: homography가 ground plane 위 점을 가정하므로 높이를 가진 3D
+물체도 평면 그림처럼 변환되기 때문이다.</li>
+</ul></li>
+</ol>
+<h2 id="b.-서술형">B. 서술형</h2>
+<ol>
+<li>Homogeneous coordinates를 사용하는 이유를 affine transformation
+관점에서 설명하시오.
+<ul>
+<li>모범답안: 직교좌표에서 affine transformation은 <span
+class="math inline">\(y=Ax+b\)</span>처럼 translation 항이 따로 붙어
+단순 matrix multiplication <span class="math inline">\(Ax\)</span>로
+표현되지 않는다. 좌표를 <span class="math inline">\((x,y,1)\)</span>처럼
+한 차원 늘리면 <span
+class="math inline">\(\begin{bmatrix}A&amp;b\\0&amp;1\end{bmatrix}\)</span>
+형태의 matrix multiplication으로 rotation, scale, shear, translation을
+하나의 식으로 처리할 수 있다.</li>
+</ul></li>
+<li><span class="math inline">\(\mathbb{R}^2\)</span>, <span
+class="math inline">\(\mathbb{P}^2\)</span>, <span
+class="math inline">\(\mathbb{R}^3\)</span>의 관계를 설명하시오.
+<ul>
+<li>모범답안: <span class="math inline">\(\mathbb{R}^2\)</span>는 일반
+2D 유클리드 평면이고, <span
+class="math inline">\(\mathbb{P}^2\)</span>는 <span
+class="math inline">\(\mathbb{R}^2\)</span>에 point at infinity를 추가한
+projective space이다. <span
+class="math inline">\(\mathbb{P}^2\)</span>의 점은 3성분 동차좌표로
+표현되지만 <span class="math inline">\(\mathbb{R}^3\)</span>와 같은
+공간은 아니다. <span class="math inline">\(\mathbb{R}^3\)</span>의 ray
+그림은 <span class="math inline">\(\mathbb{P}^2\)</span>를 설명하기 위한
+시각화로 이해해야 한다.</li>
+</ul></li>
+<li>Projective transformation이 보존하는 성질과 보존하지 않는 성질을
+설명하시오.
+<ul>
+<li>모범답안: Projective transformation은 직선을 직선으로 보내는
+직선성은 보존한다. 하지만 길이, 각도, 평행성, 일반적인 거리 비율은
+보존하지 않는다. 그래서 실제 3D의 원이 이미지에서 타원처럼 보이고,
+평행한 기찻길이 이미지에서 한 점으로 모일 수 있다.</li>
+</ul></li>
+<li>Rigid, similarity, affine, projective transformation을 보존 성질
+중심으로 비교하시오.
+<ul>
+<li>모범답안: Rigid는 rotation과 translation으로 거리와 각도를 보존한다.
+Similarity는 여기에 uniform scale이 추가되어 각도와 모양은 보존하지만
+길이는 scale만큼 변한다. Affine은 직선성과 평행성은 보존하지만 길이와
+각도는 일반적으로 깨진다. Projective는 직선성만 일반적으로 보존하고
+평행성도 깨질 수 있다.</li>
+</ul></li>
+<li>Perspective projection에서 3D 평행선이 image에서 vanishing point로
+만나는 이유를 설명하시오.
+<ul>
+<li>모범답안: 3D 직선을 <span
+class="math inline">\(X(c)=X_0+cT\)</span>로 쓰고 <span
+class="math inline">\(c\)</span>를 무한대로 보내면 projection 후
+좌표에서 시작점 <span class="math inline">\(X_0\)</span>의 영향은
+사라지고 방향벡터 <span class="math inline">\(T\)</span>만 남는다.
+따라서 같은 방향을 가진 평행선들은 같은 image point로 투영된다.
+동차좌표로는 방향 <span class="math inline">\(T\)</span>의 point at
+infinity <span class="math inline">\((t_x,t_y,t_z,0)\)</span>이
+projection matrix에 의해 image의 vanishing point로 투영된다고 볼 수
+있다.</li>
+</ul></li>
+<li>Homography가 아무 3D 장면 전체에 항상 성립하지 않는 이유를
+설명하시오.
+<ul>
+<li>모범답안: Homography는 한 projective plane에서 다른 projective
+plane으로 가는 3x3 변환이다. 두 카메라가 같은 평면을 보거나 camera
+center가 같아 ray 관계가 유지되는 경우에는 성립하지만, 깊이가 서로 다른
+3D 물체들이 섞인 장면 전체에는 하나의 평면 가정이 맞지 않는다. 그래서
+도로 차선은 top view에서 잘 맞아도, 사람이나 차처럼 높이를 가진 물체는
+늘어지거나 누워 보인다.</li>
+</ul></li>
+<li><code>warpPerspective</code>의 backward warping 과정을 설명하시오.
+<ul>
+<li>모범답안: output image의 각 pixel 위치를 기준으로 inverse
+homography를 적용해 source image의 어느 위치에서 온 pixel인지 계산한다.
+그 source 위치가 정수 좌표가 아니면 주변 4개 pixel을 이용해 bilinear
+interpolation으로 색을 정한다. 이 방식은 source pixel을 forward로 뿌릴
+때 생길 수 있는 빈 pixel 문제를 줄인다.</li>
+</ul></li>
+<li>자동차 around view monitoring system을 homography 관점에서
+설명하시오.
+<ul>
+<li>모범답안: 자동차의 전방, 후방, 좌우 카메라는 각각 다른 viewpoint에서
+ground plane을 본다. 각 camera image와 가상의 top-view ground plane
+사이에 homography를 미리 구해두고, 각 image를 top view로
+<code>warpPerspective</code>한 뒤 하나로 이어 붙이면 위에서 내려다본 것
+같은 around view가 된다. 단, ground plane 위에 있지 않은 물체는
+왜곡된다.</li>
+</ul></li>
+</ol>
+<h2 id="c.-계산형">C. 계산형</h2>
+<ol>
+<li>image 크기 <span class="math inline">\(800\times600\)</span>,
+template 크기 <span class="math inline">\(120\times80\)</span>일 때
+<code>matchTemplate</code> result 크기를 구하시오.
+<ul>
+<li>풀이: <span
+class="math inline">\((800-120+1)\times(600-80+1)\)</span></li>
+<li>정답: <span class="math inline">\(681\times521\)</span></li>
+</ul></li>
+<li>동차좌표 <span class="math inline">\((15,-10,5)\)</span>의
+직교좌표를 구하시오.
+<ul>
+<li>풀이: <span
+class="math inline">\(\left(\frac{15}{5},-\frac{10}{5}\right)\)</span></li>
+<li>정답: <span class="math inline">\((3,-2)\)</span></li>
+</ul></li>
+<li>동차좌표 <span class="math inline">\((2,4,0)\)</span>은 직교좌표로
+복원 가능한가? 의미는 무엇인가?
+<ul>
+<li>정답: 복원 불가능. 방향 <span class="math inline">\((2,4)\)</span>의
+point at infinity이다.</li>
+</ul></li>
+<li><span class="math inline">\(p=(1,2,1)\)</span>, <span
+class="math inline">\(q=(3,4,1)\)</span>을 지나는 직선 <span
+class="math inline">\(l=p\times q\)</span>를 구하시오.
+<ul>
+<li>풀이:
+<ul>
+<li><span class="math inline">\(p\times
+q=(2\cdot1-1\cdot4,\;1\cdot3-1\cdot1,\;1\cdot4-2\cdot3)\)</span></li>
+<li><span class="math inline">\(=(-2, 2, -2)\)</span></li>
+</ul></li>
+<li>정답: <span class="math inline">\((-2,2,-2)\)</span> 또는 scalar
+배인 <span class="math inline">\((1,-1,1)\)</span>.</li>
+</ul></li>
+<li>위 직선이 점 <span class="math inline">\((1,2,1)\)</span>을 지나는지
+<span class="math inline">\(l^{\top} p\)</span>로 확인하시오. <span
+class="math inline">\(l=(1,-1,1)\)</span>.
+<ul>
+<li>풀이: <span
+class="math inline">\(1\cdot1+(-1)\cdot2+1\cdot1=0\)</span></li>
+<li>정답: 지난다.</li>
+</ul></li>
+<li>두 직선 <span class="math inline">\(l_1=(1,0,-2)\)</span>, <span
+class="math inline">\(l_2=(0,1,-3)\)</span>의 교점 <span
+class="math inline">\(p=l_1\times l_2\)</span>를 구하고 직교좌표로
+바꾸시오.
+<ul>
+<li>풀이:
+<ul>
+<li><span class="math inline">\(l_1\times
+l_2=(0\cdot(-3)-(-2)\cdot1,\;(-2)\cdot0-1\cdot(-3),\;1\cdot1-0\cdot0)\)</span></li>
+<li><span class="math inline">\(=(2,3,1)\)</span></li>
+</ul></li>
+<li>정답: 동차좌표 <span class="math inline">\((2,3,1)\)</span>,
+직교좌표 <span class="math inline">\((2,3)\)</span>.</li>
+</ul></li>
+<li>평행한 두 직선 <span class="math inline">\(l_1=(1,0,-2)\)</span>,
+<span class="math inline">\(l_2=(1,0,-5)\)</span>의 교점 <span
+class="math inline">\(p=l_1\times l_2\)</span>를 구하고 의미를 쓰시오.
+<ul>
+<li>풀이:
+<ul>
+<li><span class="math inline">\(l_1\times
+l_2=(0\cdot(-5)-(-2)\cdot0,\;(-2)\cdot1-1\cdot(-5),\;1\cdot0-0\cdot1)\)</span></li>
+<li><span class="math inline">\(=(0,3,0)\)</span></li>
+</ul></li>
+<li>정답: <span class="math inline">\((0,3,0)\)</span>, <span
+class="math inline">\(w=0\)</span>이므로 <span
+class="math inline">\(y\)</span>방향 point at infinity. 두 수직선은
+무한원점에서 만난다.</li>
+</ul></li>
+<li><span
+class="math inline">\(H=\begin{bmatrix}2&amp;0&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;1\end{bmatrix}\)</span>이고
+<span class="math inline">\(p=(3,4,1)^{\top}\)</span>일 때 <span
+class="math inline">\(Hp\)</span>와 직교좌표를 구하시오.
+<ul>
+<li>풀이: <span class="math inline">\(Hp=(6,8,1)^{\top}\)</span></li>
+<li>정답: <span class="math inline">\((6,8)\)</span>.</li>
+</ul></li>
+<li><span
+class="math inline">\(H=\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0.1&amp;0&amp;1\end{bmatrix}\)</span>이고
+<span class="math inline">\(p=(10,5,1)^{\top}\)</span>일 때 변환 후
+직교좌표를 구하시오.
+<ul>
+<li>풀이:
+<ul>
+<li><span
+class="math inline">\(Hp=(10,5,0.1\cdot10+1)^{\top}=(10,5,2)^{\top}\)</span></li>
+<li><span class="math inline">\(w=2\)</span>로 나눈다.</li>
+</ul></li>
+<li>정답: <span class="math inline">\((5,2.5)\)</span>.</li>
+</ul></li>
+<li>3D 방향벡터 <span class="math inline">\(T=(1,0,0)\)</span>의 point
+at infinity를 <span class="math inline">\(\mathbb{P}^3\)</span>
+동차좌표로 쓰시오.
+<ul>
+<li>정답: <span class="math inline">\((1,0,0,0)^{\top}\)</span>.</li>
+</ul></li>
+<li>Projection matrix <span
+class="math inline">\(P=\begin{bmatrix}1&amp;0&amp;0&amp;0\\0&amp;1&amp;0&amp;0\\0&amp;0&amp;1&amp;0\end{bmatrix}\)</span>이고
+3D 점 <span class="math inline">\(X=(2,4,2,1)^{\top}\)</span>일 때 image
+coordinate를 구하시오.
+<ul>
+<li>풀이:
+<ul>
+<li><span class="math inline">\(PX=(2,4,2)^{\top}\)</span></li>
+<li><span class="math inline">\(w=2\)</span>로 나눈다.</li>
+</ul></li>
+<li>정답: <span class="math inline">\((1,2)\)</span>.</li>
+</ul></li>
+<li>같은 <span class="math inline">\(P\)</span>에서 방향 point <span
+class="math inline">\((1,2,1,0)^{\top}\)</span>의 image point를
+구하시오.
+<ul>
+<li>풀이:
+<ul>
+<li><span class="math inline">\(P(1,2,1,0)^{\top} =
+(1,2,1)^{\top}\)</span></li>
+</ul></li>
+<li>정답: <code>(1,2)</code>. 이 방향의 vanishing point.</li>
+</ul></li>
+<li>Homography matrix가 왜 4쌍의 point correspondence로 결정될 수 있는지
+설명하시오.
+<ul>
+<li>풀이: 한 점 대응은 image coordinate에서 2개의 독립 방정식을
+제공한다. homography 자유도는 8이므로 4쌍이면 8개 방정식이 되어 결정
+가능하다. 단, 점들이 특이 배치이면 문제가 생길 수 있다.</li>
+<li>정답: 자유도 8, 한 대응점당 2식, 총 4쌍 필요.</li>
+</ul></li>
+<li><code>warpAffine</code>으로 표현 가능한 변환인데
+<code>warpPerspective</code>로도 표현할 수 있는가?
+<ul>
+<li>정답: 가능. affine은 projective transformation의 특수한 경우이므로
+2x3 affine matrix를 마지막 행 <code>[0 0 1]</code>을 붙인 3x3 matrix로
+볼 수 있다.</li>
+</ul></li>
+<li>다음 statement의 오류를 고치시오: “Top-view homography를 적용하면
+도로 위 차선뿐 아니라 사람과 자동차도 실제 위에서 본 모양으로 정확히
+복원된다.”
+<ul>
+<li>모범답안: “Top-view homography는 road plane 위 점에는 잘 맞지만,
+사람과 자동차처럼 높이를 가진 3D 물체는 ground plane에 붙은 그림처럼
+처리되어 늘어지거나 누워 보일 수 있다.”</li>
+</ul></li>
+</ol>
+<h2 id="d.-ssmovie-3-hidden-picture-affine-보강">D. ssmovie (3) Hidden
+Picture / Affine 보강</h2>
+<ol>
+<li>template 크기가 <span class="math inline">\(w=100\)</span>, <span
+class="math inline">\(h=50\)</span>이고 <span
+class="math inline">\(\theta=90^\circ\)</span>일 때 회전 후 bounding
+canvas의 <span class="math inline">\(w&#39;\)</span>, <span
+class="math inline">\(h&#39;\)</span>를 구하시오.
+<ul>
+<li>풀이: <span class="math inline">\(\cos90^\circ=0\)</span>, <span
+class="math inline">\(\sin90^\circ=1\)</span>.</li>
+<li><span
+class="math inline">\(w&#39;=100\cdot0+50\cdot1=50\)</span></li>
+<li><span
+class="math inline">\(h&#39;=100\cdot1+50\cdot0=100\)</span></li>
+<li>정답: <span class="math inline">\(w&#39;=50\)</span>, <span
+class="math inline">\(h&#39;=100\)</span>.</li>
+</ul></li>
+<li>원래 template 크기 <span class="math inline">\(100\times50\)</span>,
+새 canvas 크기 <span class="math inline">\(130\times110\)</span>일 때
+중심 보정량 <span class="math inline">\(\delta_x\)</span>, <span
+class="math inline">\(\delta_y\)</span>를 구하시오.
+<ul>
+<li>풀이:
+<ul>
+<li><span class="math inline">\(\delta_x = 130/2 - 100/2 = 65 - 50 =
+15\)</span></li>
+<li><span class="math inline">\(\delta_y = 110/2 - 50/2 = 55 - 25 =
+30\)</span></li>
+</ul></li>
+<li>정답: <span class="math inline">\(\delta_x=15\)</span>, <span
+class="math inline">\(\delta_y=30\)</span>.</li>
+</ul></li>
+<li><code>warpAffine</code>에서 새로 생긴 배경을 흰색으로 채우는 인자
+조합을 쓰시오.
+<ul>
+<li>정답: <code>BORDER_CONSTANT, Scalar(255)</code>.</li>
+</ul></li>
+<li><code>TM_SQDIFF_NORMED</code>를 이용해 scale/angle 후보를 모두
+비교할 때 best 후보를 갱신하는 기준을 쓰시오.
+<ul>
+<li>정답: <code>minMaxLoc</code>으로 얻은 현재 <code>minVal</code>이
+기존 best score보다 작으면 <code>minVal</code>, <code>minLoc</code>,
+scale, angle을 갱신한다.</li>
+</ul></li>
+<li><code>getAffineTransform</code>에서 3쌍의 대응점이 필요한 이유를
+자유도 관점으로 설명하시오.
+<ul>
+<li>모범답안: 2D affine matrix는 2x3으로 6개의 미지수를 가진다. 한 점
+대응은 x’, y’ 두 개의 독립 방정식을 제공하므로 3쌍이면 6개의 방정식이
+된다. 단, 세 점이 한 직선 위에 있으면 특이 배치라 안정적으로 결정할 수
+없다.</li>
+</ul></li>
+</ol>
+<h2 id="e.-기말-범위-계산형-변형-예상문제">E. 기말 범위 계산형 변형
+예상문제</h2>
+<h3 id="문제-1.-homography-point-mapping">문제 1. Homography point
+mapping</h3>
+<p>다음 homography <span class="math inline">\(H\)</span>와 동차좌표 점
+<span class="math inline">\(p\)</span>가 주어졌다. <span
+class="math inline">\(p&#39;=Hp\)</span>를 구하고 Cartesian coordinate로
+정규화하시오.</p>
+<p><span class="math display">\[
+H=
+\begin{bmatrix}
+2&amp;0&amp;1\\
+0&amp;2&amp;3\\
+0&amp;0&amp;1
+\end{bmatrix},
+\qquad
+p=
+\begin{bmatrix}
+1\\
+2\\
+1
+\end{bmatrix}
+\]</span></p>
+<p>풀이:</p>
+<p>동차좌표에서는 먼저 행렬곱 <span class="math inline">\(Hp\)</span>를
+계산한 뒤, 마지막 성분 <span class="math inline">\(w&#39;\)</span>로
+앞의 두 성분을 나누어 Cartesian coordinate로 바꾼다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+p&#39;&amp;=Hp\\
+&amp;=
+\begin{bmatrix}
+2&amp;0&amp;1\\
+0&amp;2&amp;3\\
+0&amp;0&amp;1
+\end{bmatrix}
+\begin{bmatrix}
+1\\
+2\\
+1
+\end{bmatrix}\\
+&amp;=
+\begin{bmatrix}
+2\cdot1+0\cdot2+1\cdot1\\
+0\cdot1+2\cdot2+3\cdot1\\
+0\cdot1+0\cdot2+1\cdot1
+\end{bmatrix}
+=
+\begin{bmatrix}
+3\\
+7\\
+1
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+<p>여기서 <span class="math inline">\(w&#39;=1\)</span>이므로 정규화해도
+값이 그대로다.</p>
+<p><span class="math display">\[
+(x&#39;,y&#39;)=\left(\frac{3}{1},\frac{7}{1}\right)=(3,7)
+\]</span></p>
+<p>정답: <span class="math inline">\((3,7)\)</span></p>
+<h3 id="문제-2.-projective-normalization">문제 2. Projective
+normalization</h3>
+<p>다음 결과 동차좌표를 Cartesian coordinate로 바꾸시오.</p>
+<p><span class="math display">\[
+p&#39;=
+\begin{bmatrix}
+1\\
+2\\
+4
+\end{bmatrix}
+\]</span></p>
+<p>풀이:</p>
+<p>동차좌표 <span class="math inline">\((X,Y,W)^T\)</span>는 Cartesian
+coordinate에서 <span class="math inline">\((X/W,Y/W)\)</span>로 바꾼다.
+여기서는 <span class="math inline">\(W=4\)</span>이므로 앞의 두 성분을
+4로 나눈다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+(x,y)=\left(\frac{1}{4},\frac{2}{4}\right)
+=\left(\frac{1}{4},\frac{1}{2}\right)
+\end{aligned}
+\]</span></p>
+<p>정답: <span
+class="math inline">\(\left(\frac{1}{4},\frac{1}{2}\right)\)</span></p>
+<h3 id="문제-3.-homography-scale-equivalence">문제 3. Homography scale
+equivalence</h3>
+<p>다음 두 homography가 같은 변환을 나타내는지 설명하시오.</p>
+<p><span class="math display">\[
+H=
+\begin{bmatrix}
+1&amp;0&amp;2\\
+0&amp;1&amp;3\\
+0&amp;0&amp;1
+\end{bmatrix},
+\qquad
+2H=
+\begin{bmatrix}
+2&amp;0&amp;4\\
+0&amp;2&amp;6\\
+0&amp;0&amp;2
+\end{bmatrix}
+\]</span></p>
+<p>풀이:</p>
+<p>Homography는 동차좌표에서 scale이 의미가 없다. 어떤 점 <span
+class="math inline">\(p\)</span>에 대해 <span
+class="math inline">\(H\)</span>를 적용하면 <span
+class="math inline">\(Hp\)</span>가 나오고, <span
+class="math inline">\(2H\)</span>를 적용하면 다음처럼 결과 동차좌표
+전체가 2배가 될 뿐이다.</p>
+<p><span class="math display">\[
+(2H)p=2(Hp)
+\]</span></p>
+<p>동차좌표는 마지막에 <span class="math inline">\(w\)</span>로 나누어
+Cartesian coordinate로 바꾸므로, 전체가 2배가 되어도 같은 점이 된다.</p>
+<p><span class="math display">\[
+\left(\frac{2X}{2W},\frac{2Y}{2W}\right)
+=
+\left(\frac{X}{W},\frac{Y}{W}\right)
+\]</span></p>
+<p>정답: 같다. Projective space에서는 0이 아닌 scalar를 곱한 동차좌표
+또는 homography가 같은 기하학적 대상을 나타낸다.</p>
+<h3 id="문제-4.-두-점을-지나는-직선">문제 4. 두 점을 지나는 직선</h3>
+<p>동차좌표 점 <span class="math inline">\(p=(1,0,1)^T\)</span>, <span
+class="math inline">\(q=(0,1,1)^T\)</span>를 지나는 직선 <span
+class="math inline">\(l\)</span>을 cross product로 구하시오.</p>
+<p>풀이:</p>
+<p>두 점을 지나는 직선은 두 동차좌표 점의 외적 <span
+class="math inline">\(p\times q\)</span>로 구한다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+l&amp;=p\times q\\
+&amp;=
+\begin{bmatrix}
+p_2q_3-p_3q_2\\
+p_3q_1-p_1q_3\\
+p_1q_2-p_2q_1
+\end{bmatrix}\\
+&amp;=
+\begin{bmatrix}
+0\cdot1-1\cdot1\\
+1\cdot0-1\cdot1\\
+1\cdot1-0\cdot0
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1\\
+-1\\
+1
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+<p>따라서 직선 방정식은</p>
+<p><span class="math display">\[
+-x-y+1=0
+\]</span></p>
+<p>양변에 <span class="math inline">\(-1\)</span>을 곱하면 <span
+class="math inline">\(x+y-1=0\)</span>, 즉 <span
+class="math inline">\(x+y=1\)</span>이다.</p>
+<p>정답: <span class="math inline">\(x+y=1\)</span></p>
+<h3 id="문제-5.-두-직선의-교점">문제 5. 두 직선의 교점</h3>
+<p>동차좌표 직선 <span class="math inline">\(l_1=(1,0,-2)^T\)</span>,
+<span class="math inline">\(l_2=(0,1,-3)^T\)</span>의 교점 <span
+class="math inline">\(p\)</span>를 cross product로 구하시오.</p>
+<p>풀이:</p>
+<p>두 직선의 교점도 외적으로 구한다. 직선 <span
+class="math inline">\(l=(a,b,c)^T\)</span>는 <span
+class="math inline">\(ax+by+c=0\)</span>을 의미한다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+p&amp;=l_1\times l_2\\
+&amp;=
+\begin{bmatrix}
+b_1c_2-c_1b_2\\
+c_1a_2-a_1c_2\\
+a_1b_2-b_1a_2
+\end{bmatrix}\\
+&amp;=
+\begin{bmatrix}
+0\cdot(-3)-(-2)\cdot1\\
+(-2)\cdot0-1\cdot(-3)\\
+1\cdot1-0\cdot0
+\end{bmatrix}
+=
+\begin{bmatrix}
+2\\
+3\\
+1
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+<p>마지막 성분이 <span class="math inline">\(1\)</span>이므로 Cartesian
+coordinate로 정규화해도 <span
+class="math inline">\((2,3)\)</span>이다.</p>
+<p>정답: <span class="math inline">\((2,3)\)</span></p>
+<h3 id="문제-6.-inverse-warping-source-coordinate">문제 6. Inverse
+warping source coordinate</h3>
+<p>Homography가 source 좌표 <span class="math inline">\((x,y)\)</span>를
+output 좌표 <span class="math inline">\((x+2,y+1)\)</span>로 보낸다.
+Output pixel <span class="math inline">\((5,4)\)</span>의 값을 채우기
+위해 inverse warping에서 참조해야 할 source coordinate를 구하시오.</p>
+<p>풀이:</p>
+<p>Forward mapping은 source 좌표를 output 좌표로 보낸다.</p>
+<p><span class="math display">\[
+(x,y)\mapsto (x+2,y+1)
+\]</span></p>
+<p>Inverse warping은 반대로 output pixel 하나가 어느 source
+coordinate에서 값을 가져와야 하는지 찾는다. 따라서 output 좌표에서
+translation만큼 빼면 된다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+x_s&amp;=5-2=3\\
+y_s&amp;=4-1=3
+\end{aligned}
+\]</span></p>
+<p>정답: source coordinate는 <span
+class="math inline">\((3,3)\)</span>이다.</p>
+<h3 id="문제-7.-warpperspective와-warpaffine-코드-판단">문제 7.
+<code>warpPerspective</code>와 <code>warpAffine</code> 코드 판단</h3>
+<p>다음 중 projective transformation을 적용해야 하는 경우 적절한 OpenCV
+함수는?</p>
+<ol>
+<li><code>warpAffine(src, dst, M2x3, size)</code></li>
+<li><code>warpPerspective(src, dst, H3x3, size)</code></li>
+<li><code>matchTemplate(src, templ, result, method)</code></li>
+<li><code>warpAffine(src, dst, H, dsize)</code></li>
+</ol>
+<p>정답: 2. Homography는 <span class="math inline">\(3\times3\)</span>
+projective transformation이므로 <code>warpPerspective</code>를
+사용한다.</p>
+<h3 id="문제-8.-matchtemplate-result-map-크기-변형">문제 8.
+<code>matchTemplate</code> result map 크기 변형</h3>
+<p>Image 크기가 <span class="math inline">\(6\times5\)</span>, template
+크기가 <span class="math inline">\(3\times2\)</span>일 때
+<code>matchTemplate</code> result map 크기를 구하시오.</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+\begin{aligned}
+(W-w+1)\times(H-h+1)
+=(6-3+1)\times(5-2+1)=4\times4
+\end{aligned}
+\]</span></p>
+<p>정답: <span class="math inline">\(4\times4\)</span></p>
+<h3 id="문제-9.-3x3-normalized-box-filter">문제 9. 3x3 normalized box
+filter</h3>
+<p>다음 <span class="math inline">\(3\times3\)</span> window의
+normalized box filter 출력값을 구하시오.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+10&amp;20&amp;30\\
+40&amp;50&amp;60\\
+70&amp;80&amp;90
+\end{bmatrix}
+\]</span></p>
+<p>풀이:</p>
+<p><span class="math display">\[
+\begin{aligned}
+I&#39;=\frac{10+20+30+40+50+60+70+80+90}{9}
+=50
+\end{aligned}
+\]</span></p>
+<p>정답: <span class="math inline">\(50\)</span></p>
+<h2
+id="f.-2026-06-02-대면강의-quadratic-form-psd-gram-singular-value-예상문제">F.
+2026-06-02 대면강의: Quadratic Form / PSD / Gram / Singular Value
+예상문제</h2>
+<h3 id="문제-1.-psd의-의미-ox">문제 1. PSD의 의미 OX</h3>
+<p>Positive semidefinite matrix는 matrix의 모든 원소가 0 이상인
+matrix라는 뜻이다.</p>
+<p>정답: X. Positive semidefinite는 모든 nonzero vector <span
+class="math inline">\(x\)</span>에 대해 <span
+class="math inline">\(x^{\top}Ax\ge0\)</span>이라는 quadratic form
+조건이다. Matrix entry가 모두 양수일 필요는 없다.</p>
+<h3 id="문제-2.-gram-matrix-성질-ox">문제 2. Gram matrix 성질 OX</h3>
+<p>임의의 <span class="math inline">\(A\in\mathbb{R}^{m\times
+n}\)</span>에 대해 <span class="math inline">\(A^{\top}A\)</span>와
+<span class="math inline">\(AA^{\top}\)</span>는 모두 symmetric positive
+semidefinite이다.</p>
+<p>정답: O. 두 matrix는 각각 자기 자신의 transpose와 같고, <span
+class="math inline">\(x^{\top}A^{\top}Ax=\lVert Ax\rVert^2\ge0\)</span>,
+<span class="math inline">\(y^{\top}AA^{\top}y=\lVert
+A^{\top}y\rVert^2\ge0\)</span>이다.</p>
+<h3 id="문제-3.-gram-matrix-크기-ox">문제 3. Gram matrix 크기 OX</h3>
+<p><span class="math inline">\(A\in\mathbb{R}^{m\times n}\)</span>이면
+<span class="math inline">\(A^{\top}A\)</span>와 <span
+class="math inline">\(AA^{\top}\)</span>는 항상 같은 크기의
+matrix이다.</p>
+<p>정답: X. <span class="math inline">\(A^{\top}A\)</span>는 <span
+class="math inline">\(n\times n\)</span>, <span
+class="math inline">\(AA^{\top}\)</span>는 <span
+class="math inline">\(m\times m\)</span>이다. <span
+class="math inline">\(m=n\)</span>일 때만 크기가 같다.</p>
+<h3 id="문제-4.-singular-value-부호-ox">문제 4. Singular value 부호
+OX</h3>
+<p>Singular value는 <span class="math inline">\(A^{\top}A\)</span>의
+eigenvalue의 제곱근으로 정의되므로 항상 0 이상이다.</p>
+<p>정답: O. <span
+class="math inline">\(\sigma_i=\sqrt{\lambda_i}\)</span>이고 <span
+class="math inline">\(A^{\top}A\)</span>는 positive semidefinite이므로
+<span class="math inline">\(\lambda_i\ge0\)</span>이다.</p>
+<h3 id="문제-5.-quadratic-form-matrix-구성-객관식">문제 5. Quadratic
+form matrix 구성 객관식</h3>
+<p><span class="math inline">\(3x^{2}+2y^{2}+4xy\)</span>를 다음 형태로
+쓸 때 가운데 matrix로 맞는 것은?</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+x &amp; y
+\end{bmatrix}
+M
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+\]</span></p>
+<ol>
+<li><span
+class="math inline">\(\begin{bmatrix}3&amp;2\\2&amp;2\end{bmatrix}\)</span></li>
+<li><span
+class="math inline">\(\begin{bmatrix}3&amp;4\\4&amp;2\end{bmatrix}\)</span></li>
+<li><span
+class="math inline">\(\begin{bmatrix}3&amp;0\\4&amp;2\end{bmatrix}\)</span></li>
+<li><span
+class="math inline">\(\begin{bmatrix}4&amp;3\\2&amp;2\end{bmatrix}\)</span></li>
+</ol>
+<p>정답: 1. 교차항 <span class="math inline">\(4xy\)</span>는
+off-diagonal에 <span class="math inline">\(2\)</span>, <span
+class="math inline">\(2\)</span>로 나누어 넣어야 한다.</p>
+<h3 id="문제-6.-positive-semidefinite-정의-객관식">문제 6. Positive
+semidefinite 정의 객관식</h3>
+<p>다음 중 positive semidefinite matrix의 핵심 정의로 가장 적절한
+것은?</p>
+<ol>
+<li>모든 entry가 양수인 matrix</li>
+<li>모든 nonzero vector <span class="math inline">\(x\)</span>에 대해
+<span class="math inline">\(x^{\top}Ax\ge0\)</span>인 symmetric square
+matrix</li>
+<li>모든 eigenvalue가 음수인 matrix</li>
+<li>determinant가 항상 1인 matrix</li>
+</ol>
+<p>정답: 2. Positive semidefinite는 quadratic form이 항상 0 이상인 대칭
+정방행렬로 외운다.</p>
+<h3 id="문제-7.-gram-matrix-크기-객관식">문제 7. Gram matrix 크기
+객관식</h3>
+<p><span class="math inline">\(A\in\mathbb{R}^{4\times 2}\)</span>일 때
+<span class="math inline">\(A^{\top}A\)</span>, <span
+class="math inline">\(AA^{\top}\)</span>의 크기로 맞는 것은?</p>
+<ol>
+<li><span
+class="math inline">\(A^{\top}A:4\times4,\;AA^{\top}:2\times2\)</span></li>
+<li><span
+class="math inline">\(A^{\top}A:2\times2,\;AA^{\top}:4\times4\)</span></li>
+<li>둘 다 <span class="math inline">\(4\times2\)</span></li>
+<li>둘 다 <span class="math inline">\(2\times4\)</span></li>
+</ol>
+<p>정답: 2. <span
+class="math inline">\(A^{\top}\in\mathbb{R}^{2\times4}\)</span>이므로
+<span class="math inline">\(A^{\top}A\in\mathbb{R}^{2\times2}\)</span>,
+<span
+class="math inline">\(AA^{\top}\in\mathbb{R}^{4\times4}\)</span>이다.</p>
+<h3 id="문제-8.-singular-vector-관계-객관식">문제 8. Singular vector
+관계 객관식</h3>
+<p><span class="math inline">\(A^{\top}Av_i=\lambda_i v_i\)</span>,
+<span class="math inline">\(\lambda_i&gt;0\)</span>일 때 <span
+class="math inline">\(u_i\)</span>와 <span
+class="math inline">\(\sigma_i\)</span>의 정의로 맞는 것은?</p>
+<ol>
+<li><span class="math inline">\(u_i=A v_i\)</span>, <span
+class="math inline">\(\sigma_i=\lambda_i\)</span></li>
+<li><span
+class="math inline">\(u_i=\frac{Av_i}{\sqrt{\lambda_i}}\)</span>, <span
+class="math inline">\(\sigma_i=\sqrt{\lambda_i}\)</span></li>
+<li><span class="math inline">\(u_i=A^{\top}v_i\)</span>, <span
+class="math inline">\(\sigma_i=\frac{1}{\lambda_i}\)</span></li>
+<li><span class="math inline">\(u_i=\lambda_i A v_i\)</span>, <span
+class="math inline">\(\sigma_i=\lambda_i^{2}\)</span></li>
+</ol>
+<p>정답: 2. <span class="math inline">\(Av_i=\sigma_i u_i\)</span>가
+되도록 <span class="math inline">\(u_i\)</span>를 단위벡터로 만들고,
+<span class="math inline">\(\sigma_i=\sqrt{\lambda_i}\)</span>로
+둔다.</p>
+<h3 id="문제-9.-quadratic-form-단답형">문제 9. Quadratic form
+단답형</h3>
+<p>Quadratic form <span class="math inline">\(x^{\top}Ax\)</span>에서
+일반 matrix <span class="math inline">\(A\)</span> 대신 어떤 대칭행렬을
+사용해도 같은 값을 얻는가?</p>
+<p>정답: <span class="math inline">\(\frac{A+A^{\top}}{2}\)</span>.
+Quadratic form에서는 skew-symmetric 부분이 사라지고 대칭 부분만
+남는다.</p>
+<h3 id="문제-10.-psd-eigenvalue-증명-단답형">문제 10. PSD eigenvalue
+증명 단답형</h3>
+<p>Positive semidefinite matrix <span class="math inline">\(A\)</span>의
+eigenvalue가 0 이상임을 보이는 핵심 식을 쓰시오.</p>
+<p>정답:</p>
+<p><span class="math display">\[
+Ax=\lambda x
+\Rightarrow
+x^{\top}Ax=\lambda x^{\top}x
+\]</span></p>
+<p><span class="math inline">\(x^{\top}Ax\ge0\)</span>, <span
+class="math inline">\(x^{\top}x&gt;0\)</span>이므로 <span
+class="math inline">\(\lambda\ge0\)</span>이다.</p>
+<h3 id="문제-11.-rank-관계-단답형">문제 11. Rank 관계 단답형</h3>
+<p>임의의 matrix <span class="math inline">\(A\)</span>에 대해 rank
+관계식을 쓰시오.</p>
+<p>정답:</p>
+<p><span class="math display">\[
+\operatorname{rank}(A)
+=
+\operatorname{rank}(A^{\top}A)
+=
+\operatorname{rank}(AA^{\top})
+\]</span></p>
+<h3 id="문제-12.-singular-value-계산형">문제 12. Singular value
+계산형</h3>
+<p><span class="math inline">\(A^{\top}Av=9v\)</span>이고 <span
+class="math inline">\(\lVert v\rVert=1\)</span>, <span
+class="math inline">\(Av\neq0\)</span>이다. Singular value <span
+class="math inline">\(\sigma\)</span>와 left singular vector <span
+class="math inline">\(u\)</span>를 쓰시오.</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+\lambda=9,\qquad \sigma=\sqrt{9}=3
+\]</span></p>
+<p><span class="math display">\[
+u=\frac{Av}{\sqrt{9}}=\frac{Av}{3}
+\]</span></p>
+<p>정답: <span class="math inline">\(\sigma=3\)</span>, <span
+class="math inline">\(u=\frac{Av}{3}\)</span>.</p>
+<h3 id="문제-13.-psd-판정-계산형">문제 13. PSD 판정 계산형</h3>
+<p>다음 matrix가 positive semidefinite인지 eigenvalue로 판정하시오.</p>
+<p><span class="math display">\[
+A=
+\begin{bmatrix}
+1&amp;-1\\
+-1&amp;1
+\end{bmatrix}
+\]</span></p>
+<p>풀이:</p>
+<p><span class="math display">\[
+\det(A-\lambda I)=
+\begin{vmatrix}
+1-\lambda&amp;-1\\
+-1&amp;1-\lambda
+\end{vmatrix}
+=(1-\lambda)^2-1
+\]</span></p>
+<p><span class="math display">\[
+=(1-\lambda-1)(1-\lambda+1)
+=-\lambda(2-\lambda)
+\]</span></p>
+<p>Eigenvalue는 <span class="math inline">\(0\)</span>, <span
+class="math inline">\(2\)</span>이다.</p>
+<p>정답: 두 eigenvalue가 모두 0 이상이고 matrix가 symmetric이므로
+positive semidefinite이다.</p>
+<h3 id="문제-14.-gram-matrix-증명-서술형">문제 14. Gram matrix 증명
+서술형</h3>
+<p><span class="math inline">\(A^{\top}A\)</span>가 positive
+semidefinite임을 짧게 설명하시오.</p>
+<p>모범답안: 임의의 vector <span class="math inline">\(x\)</span>에 대해
+<span class="math inline">\(x^{\top}A^{\top}Ax=(Ax)^{\top}(Ax)=\lVert
+Ax\rVert^2\ge0\)</span>이다. 또한 <span
+class="math inline">\((A^{\top}A)^{\top}=A^{\top}A\)</span>이므로
+symmetric이다. 따라서 <span class="math inline">\(A^{\top}A\)</span>는
+positive semidefinite이다.</p>
+<h3 id="문제-15.-singular-valuevector-연결-서술형">문제 15. Singular
+value/vector 연결 서술형</h3>
+<p><span class="math inline">\(A^{\top}Av_i=\lambda_i v_i\)</span>에서
+<span class="math inline">\(Av_i=\sigma_i u_i\)</span>가 나오는 과정을
+설명하시오.</p>
+<p>모범답안: 양변에 <span class="math inline">\(A\)</span>를 곱하면
+<span class="math inline">\(AA^{\top}(Av_i)=\lambda_i(Av_i)\)</span>가
+되어 <span class="math inline">\(Av_i\)</span>가 <span
+class="math inline">\(AA^{\top}\)</span>의 eigenvector 방향임을 알 수
+있다. <span class="math inline">\(\lambda_i&gt;0\)</span>일 때 <span
+class="math inline">\(u_i=\frac{Av_i}{\sqrt{\lambda_i}}\)</span>로
+단위벡터를 만들고 <span
+class="math inline">\(\sigma_i=\sqrt{\lambda_i}\)</span>로 두면 <span
+class="math inline">\(Av_i=\sigma_i u_i\)</span>가 된다.</p>
+<h3 id="문제-16.-homography-계산과-svd-연결-서술형">문제 16. Homography
+계산과 SVD 연결 서술형</h3>
+<p>Homography 계산에서 왜 eigenvalue decomposition 다음에 singular value
+decomposition을 배우는지 설명하시오.</p>
+<p>모범답안: Homography의 unknown 9개를 vector로 놓으면 대응점 방정식은
+homogeneous linear system이 된다. 이때 <span
+class="math inline">\(h=0\)</span>이라는 trivial solution은 의미가
+없으므로, constraint 아래에서 가장 적절한 해 방향을 찾아야 한다. SVD는
+Gram matrix와 singular value/vector 관계를 이용해 이런 해 방향을
+안정적으로 찾는 도구이므로 homography 계산과 연결된다.</p>
+<h2
+id="g.-2026-06-02-온라인강의-svd-homogeneous-system-homography-계산-예상문제">G.
+2026-06-02 온라인강의: SVD / Homogeneous System / Homography 계산
+예상문제</h2>
+<h3 id="문제-1.-svd-존재성-ox">문제 1. SVD 존재성 OX</h3>
+<p>임의의 <span class="math inline">\(m\times n\)</span> matrix <span
+class="math inline">\(A\)</span>에 대해 singular value decomposition
+<span class="math inline">\(A=U\Sigma V^{\top}\)</span>는 존재한다.</p>
+<p>정답: O. SVD는 정방행렬에만 가능한 eigendecomposition과 달리 일반
+rectangular matrix에도 적용된다.</p>
+<h3 id="문제-2.-singular-value-부호-ox">문제 2. Singular value 부호
+OX</h3>
+<p>Singular value는 eigenvalue처럼 음수가 될 수 있다.</p>
+<p>정답: X. Singular value는 <span
+class="math inline">\(A^{\top}A\)</span>의 eigenvalue의 제곱근 <span
+class="math inline">\(\sigma_i=\sqrt{\lambda_i}\)</span>이므로 항상 0
+이상이다.</p>
+<h3 id="문제-3.-homography-대응점-독립식-ox">문제 3. Homography 대응점
+독립식 OX</h3>
+<p>Homography 추정에서 한 점 대응쌍은 cross product에서 식 3개가
+나오므로 독립 방정식 3개를 제공한다.</p>
+<p>정답: X. <span class="math inline">\(\tilde{x}&#39;\times
+H\tilde{x}=0\)</span>은 3개 식처럼 보이지만 동차좌표 scale 때문에
+독립식은 2개다.</p>
+<h3 id="문제-4.-homography-자유도-ox">문제 4. Homography 자유도 OX</h3>
+<p>Homography matrix는 원소가 9개이지만 전체 scalar 배가 같은 변환이므로
+자유도는 8이다.</p>
+<p>정답: O. <span class="math inline">\(H\sim
+kH\,(k\neq0)\)</span>이므로 <span
+class="math inline">\(9-1=8\)</span>이다.</p>
+<h3 id="문제-5.-full-svd-크기-객관식">문제 5. Full SVD 크기 객관식</h3>
+<p><span class="math inline">\(A\in\mathbb{R}^{3\times2}\)</span>일 때
+full SVD <span class="math inline">\(A=U\Sigma V^{\top}\)</span>의
+크기로 맞는 것은?</p>
+<ol>
+<li><span
+class="math inline">\(U:3\times3,\;\Sigma:3\times2,\;V^{\top}:2\times2\)</span></li>
+<li><span
+class="math inline">\(U:2\times2,\;\Sigma:2\times3,\;V^{\top}:3\times3\)</span></li>
+<li><span
+class="math inline">\(U:3\times2,\;\Sigma:2\times2,\;V^{\top}:2\times2\)</span></li>
+<li><span
+class="math inline">\(U:3\times3,\;\Sigma:2\times3,\;V^{\top}:3\times3\)</span></li>
+</ol>
+<p>정답: 1. Full SVD에서는 <span class="math inline">\(U\)</span>가
+<span class="math inline">\(m\times m\)</span>, <span
+class="math inline">\(\Sigma\)</span>가 <span
+class="math inline">\(m\times n\)</span>, <span
+class="math inline">\(V^{\top}\)</span>가 <span
+class="math inline">\(n\times n\)</span>이다.</p>
+<h3 id="문제-6.-compact-svd-크기-객관식">문제 6. Compact SVD 크기
+객관식</h3>
+<p><span class="math inline">\(A\in\mathbb{R}^{5\times4}\)</span>, <span
+class="math inline">\(\operatorname{rank}(A)=2\)</span>일 때 compact
+SVD의 크기로 맞는 것은?</p>
+<ol>
+<li><span
+class="math inline">\(U_r:5\times4,\;\Sigma_r:4\times4,\;V_r^{\top}:4\times4\)</span></li>
+<li><span
+class="math inline">\(U_r:5\times2,\;\Sigma_r:2\times2,\;V_r^{\top}:2\times4\)</span></li>
+<li><span
+class="math inline">\(U_r:2\times5,\;\Sigma_r:5\times4,\;V_r^{\top}:4\times2\)</span></li>
+<li><span
+class="math inline">\(U_r:5\times5,\;\Sigma_r:5\times4,\;V_r^{\top}:4\times4\)</span></li>
+</ol>
+<p>정답: 2. Compact SVD는 rank <span class="math inline">\(r\)</span>개
+성분만 남기므로 <span class="math inline">\(U_r\in\mathbb{R}^{m\times
+r}\)</span>, <span class="math inline">\(\Sigma_r\in\mathbb{R}^{r\times
+r}\)</span>, <span
+class="math inline">\(V_r^{\top}\in\mathbb{R}^{r\times
+n}\)</span>이다.</p>
+<h3 id="문제-7.-singular-vector-관계-객관식">문제 7. Singular vector
+관계 객관식</h3>
+<p><span class="math inline">\(A^{\top}Av_i=\lambda_i v_i\)</span>,
+<span class="math inline">\(\lambda_i&gt;0\)</span>일 때 <span
+class="math inline">\(u_i\)</span>와 <span
+class="math inline">\(\sigma_i\)</span>로 맞는 것은?</p>
+<ol>
+<li><span
+class="math inline">\(u_i=Av_i,\;\sigma_i=\lambda_i\)</span></li>
+<li><span
+class="math inline">\(u_i=A^{\top}v_i,\;\sigma_i=\lambda_i^2\)</span></li>
+<li><span
+class="math inline">\(u_i=\frac{Av_i}{\sqrt{\lambda_i}},\;\sigma_i=\sqrt{\lambda_i}\)</span></li>
+<li><span class="math inline">\(u_i=\lambda_i
+Av_i,\;\sigma_i=\frac{1}{\lambda_i}\)</span></li>
+</ol>
+<p>정답: 3. <span class="math inline">\(Av_i=\sigma_i u_i\)</span>가
+되도록 <span class="math inline">\(u_i\)</span>를 단위벡터로 만들고
+<span class="math inline">\(\sigma_i=\sqrt{\lambda_i}\)</span>로
+둔다.</p>
+<h3 id="문제-8.-homography-최소-대응점-객관식">문제 8. Homography 최소
+대응점 객관식</h3>
+<p>Homography <span class="math inline">\(H\)</span>를 일반적으로
+추정하기 위한 최소 point correspondence 수는?</p>
+<ol>
+<li>1쌍</li>
+<li>2쌍</li>
+<li>3쌍</li>
+<li>4쌍</li>
+</ol>
+<p>정답: 4. Homography 자유도는 8이고, 점 대응 1쌍이 독립 방정식 2개를
+제공하므로 4쌍이 필요하다.</p>
+<h3 id="문제-9.-opencv-함수-역할-객관식">문제 9. OpenCV 함수 역할
+객관식</h3>
+<p>문서 네 꼭짓점 대응점으로 <span class="math inline">\(H\)</span>를
+구한 뒤 이미지를 직사각형으로 펴는 코드 흐름으로 가장 적절한 것은?</p>
+<ol>
+<li><code>matchTemplate</code>로 <span class="math inline">\(H\)</span>
+계산 후 <code>warpAffine</code>으로 변환</li>
+<li><code>getAffineTransform</code>으로 <span
+class="math inline">\(3\times3\)</span> <span
+class="math inline">\(H\)</span> 계산 후 <code>warpAffine</code></li>
+<li><code>warpPerspective</code>로 <span
+class="math inline">\(H\)</span> 계산 후 <code>findHomography</code>로
+적용</li>
+<li><code>findHomography(srcPts, dstPts)</code>로 <span
+class="math inline">\(H\)</span> 계산 후
+<code>warpPerspective(src, dst, H, size)</code>로 적용</li>
+</ol>
+<p>정답: 4. <code>findHomography</code>는 대응점으로 homography matrix를
+계산하고, <code>warpPerspective</code>는 그 matrix를 이미지에
+적용한다.</p>
+<h3 id="문제-10.-ax0-해-방향-계산형">문제 10. <span
+class="math inline">\(Ax=0\)</span> 해 방향 계산형</h3>
+<p>다음 동차 연립방정식의 비영 해 방향을 구하시오.</p>
+<p><span class="math display">\[
+x+y+z=0,\qquad x-y=0
+\]</span></p>
+<p>풀이:</p>
+<p><span class="math display">\[
+x-y=0\Rightarrow x=y
+\]</span></p>
+<p><span class="math display">\[
+x+y+z=0\Rightarrow 2x+z=0\Rightarrow z=-2x
+\]</span></p>
+<p>정답:</p>
+<p><span class="math display">\[
+\begin{bmatrix}x\\y\\z\end{bmatrix}
+=
+t
+\begin{bmatrix}
+1\\
+1\\
+-2
+\end{bmatrix}
+\]</span></p>
+<h3 id="문제-11.-homography-선형시스템-크기-단답형">문제 11. Homography
+선형시스템 크기 단답형</h3>
+<p>4쌍의 point correspondence로 homography를 추정할 때 <span
+class="math inline">\(Ah=0\)</span>에서 <span
+class="math inline">\(A\)</span>와 <span
+class="math inline">\(h\)</span>의 대표 크기를 쓰시오.</p>
+<p>정답: <span class="math inline">\(A\in\mathbb{R}^{8\times9}\)</span>,
+<span class="math inline">\(h\in\mathbb{R}^{9}\)</span>. 대응점 1쌍이
+독립식 2개를 제공하므로 4쌍이면 8행이 된다.</p>
+<h3 id="문제-12.-homography-해-vector-단답형">문제 12. Homography 해
+vector 단답형</h3>
+<p>Homography 추정에서 <span class="math inline">\(Ah=0\)</span>을 SVD로
+풀 때 <span class="math inline">\(h\)</span>는 <span
+class="math inline">\(V\)</span>의 어떤 column을 사용하는가?</p>
+<p>정답: 가장 작은 singular value에 대응하는 마지막 right singular
+vector를 사용한다. 4쌍으로 만든 <span
+class="math inline">\(8\times9\)</span> 행렬이면 보통 <span
+class="math inline">\(v_9\)</span> 방향이다.</p>
+<h3 id="문제-13.-scale-ambiguity-서술형">문제 13. Scale ambiguity
+서술형</h3>
+<p>Homography에서 <span class="math inline">\(H\)</span>와 <span
+class="math inline">\(2H\)</span>가 같은 변환으로 취급되는 이유를
+설명하시오.</p>
+<p>모범답안: Homography는 동차좌표 변환이므로 결과 좌표는 마지막에 <span
+class="math inline">\(w\)</span>로 나누어 Cartesian coordinate로
+복원한다. 따라서 <span class="math inline">\(H\)</span> 전체에 0이 아닌
+scalar를 곱해도 변환 결과는 같은 동차좌표 방향이 되고, normalize 후 같은
+점이 된다.</p>
+<h3 id="문제-14.-cross-product-식-서술형">문제 14. Cross product 식
+서술형</h3>
+<p>Homography 추정에서 <span class="math inline">\(\tilde{x}&#39;\sim
+H\tilde{x}\)</span>를 바로 선형방정식으로 쓰지 않고 <span
+class="math inline">\(\tilde{x}&#39;\times H\tilde{x}=0\)</span>을 쓰는
+이유를 설명하시오.</p>
+<p>모범답안: 동차좌표에서는 두 벡터가 정확히 같은 값일 필요가 없고 같은
+방향이면 같은 점을 의미한다. 같은 방향인 두 3D 동차벡터는 cross
+product가 0이므로, scale ambiguity를 제거하면서 <span
+class="math inline">\(H\)</span>의 원소에 대한 선형 방정식을 만들 수
+있다.</p>
+<h3 id="문제-15.-코드-빈칸-문제">문제 15. 코드 빈칸 문제</h3>
+<p>다음 코드에서 빈칸 A, B에 들어갈 OpenCV 함수를 쓰시오.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>Mat H <span class="op">=</span> cv<span class="op">::</span>____A____<span class="op">(</span>srcPts<span class="op">,</span> dstPts<span class="op">);</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>____B____<span class="op">(</span>src<span class="op">,</span> dst<span class="op">,</span> H<span class="op">,</span> cv<span class="op">::</span>Size<span class="op">(</span>width<span class="op">,</span> height<span class="op">));</span></span></code></pre></div>
+<p>정답: A는 <code>findHomography</code>, B는
+<code>warpPerspective</code>이다.</p>
+<h3 id="문제-16.-svd와-eigendecomposition-비교-서술형">문제 16. SVD와
+eigendecomposition 비교 서술형</h3>
+<p>대칭행렬 고유값분해 <span class="math inline">\(S=Q\Lambda
+Q^{\top}\)</span>와 SVD <span class="math inline">\(A=U\Sigma
+V^{\top}\)</span>의 차이를 설명하시오.</p>
+<p>모범답안: 대칭행렬 고유값분해는 대칭 정방행렬에서 같은 orthogonal
+basis <span class="math inline">\(Q\)</span>를 앞뒤에 사용한다. SVD는
+일반 <span class="math inline">\(m\times n\)</span> matrix에도 가능하며,
+input 쪽 right singular basis <span class="math inline">\(V\)</span>와
+output 쪽 left singular basis <span class="math inline">\(U\)</span>가
+보통 다르다. Singular value는 scale 역할을 하며 음수가 아니다.</p>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>02_통합_문제세트</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1 id="영상ai생성모델-퀴즈-대비-통합-문제세트">영상AI생성모델 퀴즈 대비
+통합 문제세트</h1>
+<h2 id="transformer-mha-vit-기본-문제">1. Transformer, MHA, ViT 기본
+문제</h2>
+<ol type="1">
+<li><p>표준 multi-head attention에서 <span
+class="math inline">\(d_{\mathrm{model}}=512\)</span>, head 수 <span
+class="math inline">\(h=8\)</span>이면 한 head의 <span
+class="math inline">\(d_k,d_v\)</span>는?</p></li>
+<li><p><span class="math inline">\(d_k=d_v=32\)</span></p></li>
+<li><p><span class="math inline">\(d_k=d_v=64\)</span></p></li>
+<li><p><span class="math inline">\(d_k=512,\ d_v=64\)</span></p></li>
+<li><p><span class="math inline">\(d_k=64,\ d_v=512\)</span></p></li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: 표준 MHA에서는 <span
+class="math inline">\(d_k=d_v=d_{\mathrm{model}}/h=512/8=64\)</span>이다.</p>
+<ol start="2" type="1">
+<li>표준 MHA의 weight 수는 bias 제외 시 <span
+class="math inline">\(4d_{\mathrm{model}}^2\)</span>이다.</li>
+</ol>
+<p>정답: O</p>
+<p>풀이: <span class="math inline">\(W^Q,W^K,W^V,W^O\)</span> 네
+projection weight를 세므로 <span
+class="math inline">\(4d^2\)</span>이다.</p>
+<ol start="3" type="1">
+<li><span class="math inline">\(d=12\)</span>, <span
+class="math inline">\(h=3\)</span>, <span
+class="math inline">\(d_k=5\)</span>, <span
+class="math inline">\(d_v=4\)</span>인 variant MHA의 weight 수를 구하라.
+Bias 제외.</li>
+</ol>
+<p>정답: <span class="math inline">\(648\)</span></p>
+<p>풀이: Variant MHA는 <span
+class="math inline">\(h\,d(2d_k+2d_v)=3\times12\times(10+8)=648\)</span>이다.</p>
+<ol start="4" type="1">
+<li><p>Padding mask와 causal mask의 설명으로 맞는 것은?</p></li>
+<li><p>Padding mask는 미래 token을 막고 causal mask는 PAD token을
+막는다.</p></li>
+<li><p>둘 다 학습되는 parameter이므로 parameter count에
+포함한다.</p></li>
+<li><p>Padding mask는 PAD token을 무시하고 causal mask는 미래 token을
+보지 못하게 한다.</p></li>
+<li><p>Causal mask는 encoder self-attention에서만 사용한다.</p></li>
+</ol>
+<p>정답: 3</p>
+<p>풀이: Padding mask는 PAD 위치를 attention에서 제외하고, causal mask는
+autoregressive decoding에서 미래 token을 차단한다.</p>
+<ol start="5" type="1">
+<li>Image가 <span class="math inline">\(224\times224\times3\)</span>,
+patch가 <span class="math inline">\(16\times16\)</span>이면 ViT patch
+token 수는? Class token 제외.</li>
+</ol>
+<p>정답: <span class="math inline">\(196\)</span></p>
+<p>풀이: <span
+class="math inline">\((224/16)\times(224/16)=14\times14=196\)</span>이다.</p>
+<ol start="6" type="1">
+<li><p>Patch embedding projection weight shape으로 맞는 것은? Image
+channel <span class="math inline">\(C\)</span>, patch size <span
+class="math inline">\(P\)</span>, model 차원 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>이다.</p></li>
+<li><p><span class="math inline">\(P^2C\times
+d_{\mathrm{model}}\)</span></p></li>
+<li><p><span class="math inline">\(d_{\mathrm{model}}\times
+P\)</span></p></li>
+<li><p><span class="math inline">\(C\times P\times
+d_{\mathrm{model}}\)</span></p></li>
+<li><p><span class="math inline">\(N_{\mathrm{patch}}\times
+P^2C\)</span></p></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: Patch 하나를 flatten하면 <span
+class="math inline">\(P^2C\)</span>차원이고 이를 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>로 projection한다.</p>
+<ol start="7" type="1">
+<li>ViT에서 positional embedding이 필요한 이유를 쓰시오.</li>
+</ol>
+<p>정답: Transformer는 patch token의 2D 위치를 자동으로 알지 못하므로 각
+patch의 위치 정보를 더하기 위해 필요하다.</p>
+<p>풀이: Self-attention은 token 집합의 관계를 보지만 이미지상의 공간
+위치를 별도 입력 없이 알 수 없다.</p>
+<h2 id="diffusion-ddpm-ddim">2. Diffusion, DDPM, DDIM</h2>
+<ol start="8" type="1">
+<li><p>Diffusion model의 forward process 설명으로 맞는 것은?</p></li>
+<li><p>Noise에서 시작해 image를 바로 decode한다.</p></li>
+<li><p>원본 image에 timestep별 noise를 점점 더한다.</p></li>
+<li><p>Text embedding만 학습하고 image는 쓰지 않는다.</p></li>
+<li><p>Classifier gradient로 class를 분류한다.</p></li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: Forward process는 깨끗한 sample에 noise를 추가해 random noise에
+가까운 상태로 만드는 과정이다.</p>
+<ol start="9" type="1">
+<li><p>Diffusion reverse process에서 neural network가 흔히 예측하는
+것은?</p></li>
+<li><p>제거해야 할 noise</p></li>
+<li><p>Dataset의 caption 개수</p></li>
+<li><p>Patch token 수</p></li>
+<li><p>RGB channel 순서</p></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: DDPM 계열은 noisy sample <span
+class="math inline">\(x_t\)</span>에 섞인 noise <span
+class="math inline">\(\epsilon\)</span>을 예측하도록 학습하는 방식으로
+이해하면 된다.</p>
+<ol start="10" type="1">
+<li>Diffusion model에 timestep <span class="math inline">\(t\)</span>를
+넣는 이유를 쓰시오.</li>
+</ol>
+<p>정답: Timestep마다 noise level이 다르므로 모델이 현재 입력에서 어느
+정도의 noise를 제거해야 하는지 알게 하기 위해서다.</p>
+<p>풀이: 같은 구조의 U-Net이라도 <span class="math inline">\(t\)</span>
+정보가 없으면 약한 noise와 강한 noise 상태를 구분하기 어렵다.</p>
+<ol start="11" type="1">
+<li><p>DDPM의 practical 단점으로 가장 적절한 것은?</p></li>
+<li><p>Text prompt를 절대 사용할 수 없다.</p></li>
+<li><p>Sampling step이 많아 생성 속도가 느리다.</p></li>
+<li><p>Forward process가 학습되지 않는다.</p></li>
+<li><p>Image를 patch로 나눌 수 없다.</p></li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: DDPM은 많은 timestep을 순차적으로 거쳐야 해서 sampling이
+느리다.</p>
+<ol start="12" type="1">
+<li>DDIM은 DDPM의 모든 timestep을 그대로 촘촘히 따라가므로 sampling
+속도가 느려진다.</li>
+</ol>
+<p>정답: X</p>
+<p>풀이: DDIM은 일부 timestep을 건너뛰어 더 적은 step으로 sampling하는
+것이 핵심이다.</p>
+<ol start="13" type="1">
+<li>DDIM에서 timestep을 무작정 <span
+class="math inline">\(1,2,3,\dots,19,1000\)</span>처럼 크게 건너뛰면
+문제가 되는 이유는?</li>
+</ol>
+<p>정답: 마지막 큰 jump에서 noise 분포의 variance가 과도하게 커져
+Gaussian transition 가정이 깨지고 sampling이 불안정해질 수 있다.</p>
+<p>풀이: Step 수를 줄이더라도 timestep 간격과 noise schedule이 분포를
+유지할 정도로 설계되어야 한다.</p>
+<h2 id="clip과-조건-정보">3. CLIP과 조건 정보</h2>
+<ol start="14" type="1">
+<li><p>CLIP 학습의 핵심으로 맞는 것은?</p></li>
+<li><p>Image만 autoencoding한다.</p></li>
+<li><p>맞는 image-text pair의 similarity를 키우고 틀린 pair의
+similarity를 줄인다.</p></li>
+<li><p>Text token을 causal mask로만 생성한다.</p></li>
+<li><p>Classifier gradient를 diffusion step에 더한다.</p></li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: CLIP은 image encoder와 text encoder를 contrastive learning으로
+같은 의미 공간에 맞춘다.</p>
+<ol start="15" type="1">
+<li><p>CLIP similarity matrix에서 diagonal이 의미하는 것은?</p></li>
+<li><p>틀린 image-text pair</p></li>
+<li><p>같은 image끼리의 pixel distance</p></li>
+<li><p>정답 image-text pair</p></li>
+<li><p>U-Net skip connection</p></li>
+</ol>
+<p>정답: 3</p>
+<p>풀이: Batch 안에서 diagonal은 서로 맞는 image-text pair이고
+off-diagonal은 negative pair다.</p>
+<ol start="16" type="1">
+<li>CLIP에서 hard negative가 중요한 이유를 쓰시오.</li>
+</ol>
+<p>정답: 서로 다른 pair라도 의미가 비슷해 similarity가 높게 나올 수
+있으므로 모델이 더 세밀한 구분을 학습하게 만들기 때문이다.</p>
+<p>풀이: 쉬운 pair만 있으면 diagonal만 크게 만드는 문제가 너무 쉬워져
+표현 학습이 약해질 수 있다.</p>
+<ol start="17" type="1">
+<li>Text-to-image diffusion에서 CLIP/text encoder의 출력은 생성 모델의
+condition으로 쓰일 수 있다.</li>
+</ol>
+<p>정답: O</p>
+<p>풀이: Text embedding은 U-Net의 cross-attention 등으로 들어가 prompt
+의미를 denoising 과정에 제공한다.</p>
+<h2 id="classifier-guidance와-cfg">4. Classifier Guidance와 CFG</h2>
+<ol start="18" type="1">
+<li><p>Classifier guidance 설명으로 맞는 것은?</p></li>
+<li><p>별도 classifier의 gradient로 원하는 class 방향을 준다.</p></li>
+<li><p>Classifier 없이 null condition만 사용한다.</p></li>
+<li><p>VAE decoder만 학습하는 방법이다.</p></li>
+<li><p>Timestep을 제거하는 방법이다.</p></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: Classifier guidance는 diffusion model 외에 classifier를 두고 그
+gradient를 reverse process에 사용한다.</p>
+<ol start="19" type="1">
+<li><p>Classifier-free guidance 설명으로 맞는 것은?</p></li>
+<li><p>별도 classifier를 반드시 학습한다.</p></li>
+<li><p>Conditional prediction과 unconditional prediction을 섞어
+condition 반영 강도를 조절한다.</p></li>
+<li><p>Text encoder를 사용하면 안 된다.</p></li>
+<li><p>Forward process에서만 사용된다.</p></li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: CFG는 별도 classifier 없이 diffusion model의
+conditional/unconditional 예측 차이를 이용한다.</p>
+<ol start="20" type="1">
+<li>CFG가 classifier-free라고 불리는 이유를 쓰시오.</li>
+</ol>
+<p>정답: Guidance를 위해 별도 classifier를 쓰지 않고 diffusion model
+자체가 만든 conditional prediction과 unconditional prediction을 사용하기
+때문이다.</p>
+<p>풀이: Classifier guidance와 달리 별도 분류기의 gradient가 필요
+없다.</p>
+<ol start="21" type="1">
+<li><p>CFG에서 null condition을 학습하는 목적은?</p></li>
+<li><p>Patch 수를 줄이기 위해서</p></li>
+<li><p>Unconditional prediction을 얻기 위해서</p></li>
+<li><p>VAE decoder를 제거하기 위해서</p></li>
+<li><p>CLIP similarity matrix를 만들기 위해서</p></li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: Sampling 때 condition 없는 예측과 condition 있는 예측을
+비교해야 하므로 null condition 학습이 필요하다.</p>
+<ol start="22" type="1">
+<li>CFG 대표 식에서 <span class="math inline">\(s\)</span>가 의미하는
+것은?</li>
+</ol>
+<p><span class="math display">\[
+\hat{\epsilon}
+=\epsilon_{\theta}(x_t,\varnothing,t)
++s\left(\epsilon_{\theta}(x_t,c,t)-\epsilon_{\theta}(x_t,\varnothing,t)\right)
+\]</span></p>
+<p>정답: Guidance scale</p>
+<p>풀이: <span class="math inline">\(s\)</span>가 클수록 condition
+방향을 더 강하게 반영한다.</p>
+<ol start="23" type="1">
+<li>CFG scale이 너무 크면 어떤 문제가 생길 수 있는가?</li>
+</ol>
+<p>정답: Prompt 반영은 강해지지만 이미지가 과하게 조형화되고
+자연스러움이나 다양성이 줄어들 수 있다.</p>
+<p>풀이: 조건 방향을 너무 세게 밀면 unconditional prior와의 균형이 깨질
+수 있다.</p>
+<ol start="24" type="1">
+<li>CFG scale이 너무 작으면 prompt 영향이 약해져 unconditional 생성에
+가까워질 수 있다.</li>
+</ol>
+<p>정답: O</p>
+<p>풀이: <span class="math inline">\(s\)</span>가 작으면 conditional
+prediction과 unconditional prediction의 차이를 거의 밀어주지 않는다.</p>
+<h2 id="stable-diffusion과-ldm-구조">5. Stable Diffusion과 LDM 구조</h2>
+<ol start="25" type="1">
+<li><p>Stable Diffusion에서 diffusion이 주로 일어나는 공간은?</p></li>
+<li><p>Raw pixel space</p></li>
+<li><p>VAE latent space</p></li>
+<li><p>Text token vocabulary</p></li>
+<li><p>Classifier output space</p></li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: Stable Diffusion은 VAE가 만든 latent map에서 denoising을
+수행하는 latent diffusion 계열이다.</p>
+<ol start="26" type="1">
+<li><p>Stable Diffusion 구조에서 VAE encoder의 역할은?</p></li>
+<li><p>Prompt를 token으로 나눈다.</p></li>
+<li><p>Image를 latent map으로 압축한다.</p></li>
+<li><p>Noise schedule을 삭제한다.</p></li>
+<li><p>최종 class label을 분류한다.</p></li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: VAE encoder는 image pixel을 더 작은 latent representation으로
+보낸다.</p>
+<ol start="27" type="1">
+<li>Stable Diffusion 구조에서 VAE decoder의 역할을 쓰시오.</li>
+</ol>
+<p>정답: Denoising이 끝난 latent map을 다시 image로 복원한다.</p>
+<p>풀이: Latent space에서 생성된 결과는 decoder를 지나야 사람이 보는
+image가 된다.</p>
+<ol start="28" type="1">
+<li><p>Stable Diffusion에서 U-Net이 받는 입력으로 가장 적절한
+조합은?</p></li>
+<li><p>Noisy latent, timestep, text condition</p></li>
+<li><p>Text token만</p></li>
+<li><p>최종 image와 정답 class만</p></li>
+<li><p>Patch index와 FFN hidden dimension만</p></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: U-Net은 <span class="math inline">\(z_t\)</span>, timestep
+embedding, text embedding condition을 이용해 noise를 예측한다.</p>
+<ol start="29" type="1">
+<li>Stable Diffusion에서 cross-attention은 prompt 정보와 image latent
+feature를 연결하는 데 쓰인다.</li>
+</ol>
+<p>정답: O</p>
+<p>풀이: Text embedding이 key/value 역할을 하고 image latent feature가
+prompt 의미를 참고하도록 만든다.</p>
+<ol start="30" type="1">
+<li>Pixel-space diffusion보다 latent diffusion이 효율적인 이유는?</li>
+</ol>
+<p>정답: 고해상도 pixel 전체가 아니라 압축된 latent map에서
+denoising하므로 계산해야 할 공간이 작아지기 때문이다.</p>
+<p>풀이: 예를 들어 <span class="math inline">\(512\times512\)</span>
+image를 <span class="math inline">\(64\times64\)</span> latent map처럼
+줄이면 denoising 비용이 크게 감소한다.</p>
+<ol start="31" type="1">
+<li>Stable Diffusion에서 latent channel은 반드시 RGB 3채널과 같아야
+한다.</li>
+</ol>
+<p>정답: X</p>
+<p>풀이: Latent channel 수는 모델 설계에 따라 달라지며 4채널 이상이 될
+수 있다.</p>
+<ol start="32" type="1">
+<li><p>Stable Diffusion 전체 흐름으로 맞는 것은?</p></li>
+<li><p>Prompt → VAE decoder → classifier → image</p></li>
+<li><p>Prompt → text encoder → U-Net condition, latent denoising → VAE
+decoder → image</p></li>
+<li><p>Image → causal mask → CLIP 삭제 → image</p></li>
+<li><p>Patch embedding → MHA parameter count → image</p></li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: Prompt는 text embedding이 되어 U-Net condition으로 들어가고,
+denoising된 latent는 VAE decoder로 image가 된다.</p>
+<h2 id="dit-lora-fine-tuning">6. DiT, LoRA, fine-tuning</h2>
+<ol start="33" type="1">
+<li><p>DiT 설명으로 맞는 것은?</p></li>
+<li><p>Diffusion process 자체를 없애는 모델이다.</p></li>
+<li><p>Denoising backbone에 Transformer 계열 block을 쓰는 diffusion
+구조다.</p></li>
+<li><p>CLIP의 text encoder만 의미한다.</p></li>
+<li><p>VAE decoder를 classifier로 바꾼 구조다.</p></li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: DiT는 diffusion process보다 denoising network backbone을
+Transformer화하는 관점으로 외운다.</p>
+<ol start="34" type="1">
+<li>DiT는 U-Net과 무관하게 forward noise process를 completely
+제거한다.</li>
+</ol>
+<p>정답: X</p>
+<p>풀이: DiT도 diffusion framework 안에서 denoising network 구조를
+바꾸는 쪽에 가깝다.</p>
+<ol start="35" type="1">
+<li><p>LoRA를 diffusion model에 쓰는 이유로 맞는 것은?</p></li>
+<li><p>전체 U-Net을 처음부터 다시 학습하지 않고 작은 adapter만 학습하기
+위해서</p></li>
+<li><p>Noise schedule을 없애기 위해서</p></li>
+<li><p>VAE latent를 RGB pixel로 고정하기 위해서</p></li>
+<li><p>Causal mask를 padding mask로 바꾸기 위해서</p></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: LoRA는 기존 큰 weight는 유지하고 작은 low-rank adapter를 학습해
+style/domain adaptation 비용을 줄인다.</p>
+<ol start="36" type="1">
+<li>특정 style에 맞춘 image generation을 만들 때 LoRA가 유리한 이유를
+쓰시오.</li>
+</ol>
+<p>정답: 거대한 diffusion model 전체를 재학습하지 않고 작은 추가
+weight만 학습해 원하는 style이나 domain을 반영할 수 있기 때문이다.</p>
+<p>풀이: 비용과 시간이 큰 full fine-tuning 대신 lightweight
+fine-tuning을 수행하는 방식이다.</p>
+</body>
+</html>

@@ -1,0 +1,3378 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>열역학 01_통합_핵심노트</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">열역학 01_통합_핵심노트</h1>
+</header>
+<h1 id="열역학-통합-핵심노트">열역학 통합 핵심노트</h1>
+<h3 id="공학열역학-기말-핵심">공학열역학 기말 핵심</h3>
+<ul>
+<li>객관식은 1~6장 전체 개념, 식의 의미, 단위, 부호, 가능/불가능 판정을
+본다.</li>
+<li>계산형은 5장, 6장 PPT 예제 수준을 우선 본다.</li>
+<li>개념식은 엔트로피, 엔트로피 생성, lost work, 제3법칙, Boltzmann
+log를 문장으로 설명할 수 있어야 한다.</li>
+</ul>
+<h2 id="핵심-슬라이드로-외우는-구조">핵심 슬라이드로 외우는 구조</h2>
+<figure>
+<img src="../assets/slides/thermo_ppt_p06_heat_engine.png"
+alt="Heat engine 기본 구조" />
+<figcaption aria-hidden="true">Heat engine 기본 구조</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.6.</p>
+<ul>
+<li>열기관은 고온 열원에서 <span class="math inline">\(Q_H\)</span>를
+받고 일부를 <span class="math inline">\(W\)</span>로 바꾸며 나머지 <span
+class="math inline">\(Q_C\)</span>를 저온 열원으로 버린다.</li>
+<li>제1법칙만 보면 <span class="math inline">\(Q_H=W+Q_C\)</span>이지만,
+제2법칙 때문에 <span class="math inline">\(Q_C=0\)</span>인 기관은
+불가능하다.</li>
+<li>효율은 <span
+class="math inline">\(\eta=\frac{W}{Q_H}=1-\frac{Q_C}{Q_H}\)</span>다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p08_second_law_statements.png"
+alt="열역학 제2법칙 서술" />
+<figcaption aria-hidden="true">열역학 제2법칙 서술</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.8.</p>
+<ul>
+<li>Kelvin-Planck 서술: 단일 열원에서 받은 열을 완전히 일로 바꾸는
+순환기관은 불가능하다.</li>
+<li>Clausius 서술: 열은 외부 일 없이 저온에서 고온으로 이동하지
+않는다.</li>
+<li>두 서술은 서로 등가이며, 하나를 위배하면 다른 하나도 위배된다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p13_entropy_definition.png"
+alt="Entropy 정의" />
+<figcaption aria-hidden="true">Entropy 정의</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.13.</p>
+<ul>
+<li>엔트로피는 가역 열전달에 대해 <span
+class="math inline">\(dS=\frac{\delta Q_{\mathrm{rev}}}{T}\)</span>로
+정의되는 상태함수다.</li>
+<li>비가역 과정의 <span class="math inline">\(\delta Q/T\)</span>를
+그대로 <span class="math inline">\(dS\)</span>로 쓰면 안 되고, 같은 두
+상태를 잇는 가역 경로로 계산한다.</li>
+<li>온도 <span class="math inline">\(T\)</span>는 반드시 Kelvin을
+사용한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p14_entropy_state_function.png"
+alt="Entropy는 상태함수" />
+<figcaption aria-hidden="true">Entropy는 상태함수</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.14.</p>
+<ul>
+<li><span class="math inline">\(S\)</span>는 상태함수라서 경로가 달라도
+초기/최종 상태가 같으면 <span class="math inline">\(\Delta S\)</span>는
+같다.</li>
+<li>가역 cycle에서는 <span class="math inline">\(\oint \frac{\delta
+Q_{\mathrm{rev}}}{T}=0\)</span>이다.</li>
+<li>비가역 cycle에서는 Clausius 부등식 <span class="math inline">\(\oint
+\frac{\delta Q}{T}\le 0\)</span>을 쓴다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p17_ideal_gas_entropy.png"
+alt="이상기체 엔트로피 변화" />
+<figcaption aria-hidden="true">이상기체 엔트로피 변화</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.17.</p>
+<ul>
+<li>이상기체는 <span class="math inline">\(\Delta
+S=C_p\ln\frac{T_2}{T_1}-R\ln\frac{P_2}{P_1}\)</span> 또는 <span
+class="math inline">\(\Delta
+S=C_v\ln\frac{T_2}{T_1}+R\ln\frac{V_2}{V_1}\)</span>를 쓴다.</li>
+<li>온도와 압력이 주어지면 <span class="math inline">\(C_p\)</span>식,
+온도와 부피가 주어지면 <span class="math inline">\(C_v\)</span>식을 먼저
+떠올린다.</li>
+<li>등온이면 온도항이 사라지고 압력/부피 로그항만 남는다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p18_constant_process_entropy.png"
+alt="정압, 정적, 등온 entropy 특수식" />
+<figcaption aria-hidden="true">정압, 정적, 등온 entropy
+특수식</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.18.</p>
+<ul>
+<li>정압: <span class="math inline">\(\Delta
+S=C_p\ln\frac{T_2}{T_1}\)</span></li>
+<li>정적: <span class="math inline">\(\Delta
+S=C_v\ln\frac{T_2}{T_1}\)</span></li>
+<li>등온 이상기체: <span class="math inline">\(\Delta
+S=R\ln\frac{V_2}{V_1}=-R\ln\frac{P_2}{P_1}\)</span></li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p22_carnot_efficiency.png"
+alt="Carnot 효율" />
+<figcaption aria-hidden="true">Carnot 효율</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.22.</p>
+<ul>
+<li>Carnot 효율은 두 열원 사이에서 가능한 최대 효율이다.</li>
+<li>식은 <span
+class="math inline">\(\eta_C=1-\frac{T_C}{T_H}\)</span>이고 온도는
+Kelvin이다.</li>
+<li>실제 효율이 Carnot 효율보다 크면 제2법칙 위배다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p24_refrigerator_heatpump.png"
+alt="냉동기와 히트펌프" />
+<figcaption aria-hidden="true">냉동기와 히트펌프</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.24.</p>
+<ul>
+<li>냉동기는 <span class="math inline">\(Q_C\)</span>를 목적값으로
+보므로 <span
+class="math inline">\(\mathrm{COP_R}=\frac{Q_C}{W}\)</span>다.</li>
+<li>히트펌프는 <span class="math inline">\(Q_H\)</span>를 목적값으로
+보므로 <span
+class="math inline">\(\mathrm{COP_{HP}}=\frac{Q_H}{W}\)</span>다.</li>
+<li>두 장치는 같은 장치라도 관심 출력이 다르다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p27_entropy_generation.png"
+alt="Entropy generation" />
+<figcaption aria-hidden="true">Entropy generation</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.27.</p>
+<ul>
+<li><span class="math inline">\(S_{\mathrm{gen}}\)</span>은 공정의
+비가역성 때문에 생성되는 엔트로피다.</li>
+<li>가역이면 <span class="math inline">\(S_{\mathrm{gen}}=0\)</span>,
+비가역이면 <span class="math inline">\(S_{\mathrm{gen}}&gt;0\)</span>,
+<span class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>이면
+불가능하다.</li>
+<li>에너지 balance가 맞아도 entropy balance가 틀리면 실제 장치가 될 수
+없다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p30_entropy_balance_cv.png"
+alt="Control volume entropy balance" />
+<figcaption aria-hidden="true">Control volume entropy
+balance</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.30.</p>
+<ul>
+<li>열린계 entropy balance는 유입/유출, 열전달, 축적, 생성항을 함께
+본다.</li>
+<li><span class="math inline">\(T_{\sigma}\)</span>는 계 내부 온도가
+아니라 열이 출입하는 주변/열저장고 온도다.</li>
+<li>정상상태이면 control volume 내부 축적항은 0이다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p35_inventor_entropy_check.png"
+alt="발명 장치 entropy 검증" />
+<figcaption aria-hidden="true">발명 장치 entropy 검증</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.35.</p>
+<ul>
+<li>장치 검증은 먼저 energy balance를 세우고, 그 다음 entropy balance를
+세운다.</li>
+<li><span class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>이 나오면
+에너지는 맞아도 제2법칙상 불가능한 장치다.</li>
+<li>시험 서술형에서는 “1법칙 가능, 2법칙 불가능” 구조를 자주 물을 수
+있다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p36_max_heat_possible.png"
+alt="최대 가능한 열전달" />
+<figcaption aria-hidden="true">최대 가능한 열전달</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.36.</p>
+<ul>
+<li>최대 가능값은 <span
+class="math inline">\(S_{\mathrm{gen}}=0\)</span>으로 놓고
+계산한다.</li>
+<li>실제 비가역 장치에서는 고온 열원으로 보낼 수 있는 열이 이 최대값보다
+작아진다.</li>
+<li>가능한지 묻는 문제와 최대값을 묻는 문제를 구분한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p37_ideal_work.png"
+alt="Ideal work" />
+<figcaption aria-hidden="true">Ideal work</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.37.</p>
+<ul>
+<li>Ideal work는 같은 상태 변화에서 <span
+class="math inline">\(S_{\mathrm{gen}}=0\)</span>일 때 가능한 최대 출력
+일 또는 최소 입력 일이다.</li>
+<li>흐름계에서 속도/위치에너지 변화가 작으면 <span
+class="math inline">\(\Delta H-T_{\sigma}\Delta S\)</span> 구조가
+나온다.</li>
+<li>압축기와 터빈은 ideal/actual 방향이 반대이므로 효율식 분모를
+조심한다.</li>
+</ul>
+<figure>
+<img
+src="../assets/slides/thermo_ppt_p41_efficiency_compressor_turbine.png"
+alt="압축기와 터빈 효율" />
+<figcaption aria-hidden="true">압축기와 터빈 효율</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.41.</p>
+<ul>
+<li>압축기는 실제 필요한 일이 이상보다 크므로 <span
+class="math inline">\(\eta=\frac{W_{\mathrm{ideal}}}{W_{\mathrm{actual}}}\)</span>이다.</li>
+<li>터빈은 실제 얻는 일이 이상보다 작으므로 <span
+class="math inline">\(\eta=\frac{W_{\mathrm{actual}}}{W_{\mathrm{ideal}}}\)</span>이다.</li>
+<li>효율이 1 이하가 되도록 식을 잡으면 실수를 줄일 수 있다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p43_lost_work.png"
+alt="Lost work 식" />
+<figcaption aria-hidden="true">Lost work 식</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.43.</p>
+<ul>
+<li>Lost work는 비가역성 때문에 잃어버린 일 가능량이다.</li>
+<li>핵심식은 <span
+class="math inline">\(W_{\mathrm{lost}}=T_{\sigma}S_{\mathrm{gen}}\)</span>이다.</li>
+<li><span class="math inline">\(S_{\mathrm{gen}}\)</span>이 클수록 같은
+주변 온도에서 lost work가 커진다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p44_lost_work_diagram.png"
+alt="Lost work 선도" />
+<figcaption aria-hidden="true">Lost work 선도</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.44.</p>
+<ul>
+<li>선도에서 실제 과정은 비가역성 때문에 이상 과정보다 더 많은 entropy를
+만든다.</li>
+<li>실제 압축은 이상 압축보다 일이 더 필요하고, 실제 팽창은 이상
+팽창보다 일을 덜 얻는다.</li>
+<li>회색 면적처럼 보이는 손실 부분을 lost work로 해석한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p48_heat_exchanger.png"
+alt="열교환기 흐름 비교" />
+<figcaption aria-hidden="true">열교환기 흐름 비교</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.48.</p>
+<ul>
+<li>Co-current는 입구에서 온도차가 크고 출구에서 작아져 구동력이 빨리
+약해진다.</li>
+<li>Counter-current는 전체 길이에서 온도차를 유지해 열교환 효율이
+좋다.</li>
+<li>같은 목적이면 counter-current가 entropy generation과 lost work를
+줄이는 방향이다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p56_third_law.png"
+alt="열역학 제3법칙" />
+<figcaption aria-hidden="true">열역학 제3법칙</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.56.</p>
+<ul>
+<li>제3법칙은 완전결정의 <span
+class="math inline">\(T\to0\,\mathrm{K}\)</span>에서 <span
+class="math inline">\(S\to0\)</span>이라는 기준을 둔다.</li>
+<li>실제로는 절대영도에 도달할 수 없고, 접근만 가능하다.</li>
+<li><span class="math inline">\(S=k\ln\Omega\)</span>에서 <span
+class="math inline">\(\Omega=1\)</span>이면 <span
+class="math inline">\(\ln1=0\)</span>이 되어 기준과 연결된다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/thermo_ppt_p58_absolute_zero_unattainable.png"
+alt="절대영도 도달 불가능성" />
+<figcaption aria-hidden="true">절대영도 도달 불가능성</figcaption>
+</figure>
+<p>출처: 강의자료 <code>05_2법칙_kyh_8th.pdf</code>, p.58.</p>
+<ul>
+<li>온도가 낮아질수록 추가 냉각에 필요한 조건이 급격히 어려워진다.</li>
+<li>절대영도는 유한한 과정으로 도달할 수 없는 한계다.</li>
+<li>제3법칙 서술형은 “엔트로피 하한”과 “도달 불가능성”을 같이 써야
+안전하다.</li>
+</ul>
+<h2 id="절-엔트로피-개념-포인트">5.1절 엔트로피 개념 포인트</h2>
+<ul>
+<li>열역학 제2법칙의 핵심은 처음부터 엔트로피 공식이 아니라
+<code>방향성</code>과 <code>불가능성의 선언</code>이다.</li>
+<li>1법칙은 에너지의 양적 보존, 2법칙은 에너지 변환의 질과 방향을
+제한한다.</li>
+<li>Kelvin-Planck 서술: 단일 열원에서 받은 열을 아무 다른 효과 없이 100%
+일로 바꾸는 기관은 불가능하다.</li>
+<li>Clausius 서술: 저온에서 고온으로 열이 자발적으로 이동하는 과정은
+불가능하다. 냉장고/히트펌프에는 외부 일이 필요하다.</li>
+<li>Kelvin 위배와 Clausius 위배는 서로 등가다. 한쪽 위배 장치를 가정하면
+다른 쪽 위배 장치를 구성할 수 있다.</li>
+<li>등온 팽창은 수식상 <span class="math inline">\(Q = W\)</span>처럼
+보여도 부피 변화와 엔트로피 증가라는 다른 효과가 있으므로 2법칙 위배가
+아니다.</li>
+<li>엔트로피 증가는 고립계 또는 전체 계 기준이다. 얼음 생성, 응축,
+생명체의 조직화처럼 부분계 엔트로피는 감소할 수 있다.</li>
+<li>같은 열량을 넣어도 낮은 온도에서의 엔트로피 변화가 더 크다. 핵심식은
+<span class="math inline">\(dS = dQ_{\mathrm{rev}} / T\)</span>.</li>
+<li>냉장고는 냉매가 내부보다 더 낮은 온도에서 열을 흡수하고, 압축기로
+온도와 압력을 올린 뒤, 응축기에서 외부로 열을 방출하고, 줄-톰슨 밸브로
+다시 냉각한다.</li>
+<li>열교환기는 같은 방향 흐름보다 향류(counter-current)가 전체 열교환
+효율이 좋다.</li>
+<li>영구기관 또는 지하철 환기구 발전처럼 겉으로 에너지를 얻는 장치는
+숨은 입력 일이 있는지 1법칙/2법칙 관점에서 검토해야 한다.</li>
+<li>열전달, 물질전달, 운동량전달 모두 엔트로피를 만들 수 있고, 방향성이
+강한 운동량전달이 상대적으로 엔트로피 생성이 작다.</li>
+</ul>
+<h2 id="절-추가-개념-포인트">5.1-5.2절 추가 개념 포인트</h2>
+<ul>
+<li>뜨거운 물과 차가운 상판의 온도차만으로 작동하는 시연 장치는 외부에서
+열을 받는 외연기관/스털링 엔진 관점으로 본다. 온도차가 사라지면 작동이
+멈춘다.</li>
+<li>엔트로피는 <code>무질서도</code>만으로 외우면 부족하고,
+<code>미시상태 수</code>, <code>존재 확률</code>,
+<code>필요 정보량</code> 관점까지 연결해야 한다.</li>
+<li>잉크 확산, 주사위 합, 숨바꼭질 부피 증가 예시는 모두 가능한
+미시상태가 많아질수록 더 자연스럽고 엔트로피가 큰 상태가 된다는
+설명이다.</li>
+<li>국소적으로 엔트로피가 감소하는 생명체/진화/변태는 외부로 더 많은
+엔트로피를 배출하므로 전체 엔트로피 증가와 모순되지 않는다.</li>
+<li>프리고진의 소산 구조 예시: 큰 온도/압력 구배가 생기면 태풍 같은 질서
+구조가 만들어져 구배를 해소한다. 질서는 생기지만 전체적으로는 엔트로피
+생성 과정이다.</li>
+<li>Shannon 정보 엔트로피는 예측 불가능성과 필요한 정보량으로 설명한다.
+<code>QWERTY</code>, <code>FAMILY</code>, 무작위 문자열의 차이는 사전
+지식/제약조건 때문에 생긴다.</li>
+<li>열기관은 고온 열원에서 저온 열원으로 자발적으로 열이 흐르는 동안
+일부를 일로 바꾸는 장치다.</li>
+<li>냉동기/히트펌프는 저온 열원에서 고온 열원으로 열을 옮기므로 외부
+일이 반드시 필요하다.</li>
+<li>열기관 효율은 <span class="math inline">\(\eta = W/Q_H = 1 -
+Q_C/Q_H\)</span>, Carnot 기관의 최대 효율은 <span
+class="math inline">\(\eta_C = 1 - T_C/T_H\)</span>다. 온도는 반드시
+Kelvin을 쓴다.</li>
+<li>Carnot 효율식 <span class="math inline">\(1 - T_C/T_H\)</span>는
+최대 효율/상한값 계산용이다. 실제 효율은 열량 기준 <span
+class="math inline">\(1 - Q_C/Q_H\)</span>로 봐야 한다.</li>
+<li>냉동기 성능계수는 <span
+class="math inline">\(\mathrm{COP}_R=\frac{Q_C}{W}\)</span>, 히트펌프
+성능계수는 <span
+class="math inline">\(\mathrm{COP}_{\mathrm{HP}}=\frac{Q_H}{W}\)</span>로
+구분한다.</li>
+<li>같은 온도차 관점에서 수학적으로는 <span
+class="math inline">\(T_C\)</span>를 낮추는 것이 효율 증가가 커 보일 수
+있으나, 현실적으로 냉각은 어렵고 고온 열원 확보가 더 실용적이다.</li>
+<li>Carnot보다 효율이 높은 기관을 가정하면 역 Carnot 기관과 결합했을 때
+저온에서 고온으로 열이 저절로 이동하는 Clausius 위배가 생긴다.</li>
+<li>Carnot cycle은 두 등온 과정과 두 단열 과정으로 구성된다. <span
+class="math inline">\(T-S\)</span> 선도에서는 직사각형으로 표현되어
+열량/일 계산이 편하다.</li>
+<li>실제 발전 사이클은 완전한 Carnot 직사각형이 아니라 비가역성과
+엔트로피 생성 때문에 휘어진 형태가 되며, 현실적인 증기동력 사이클은
+Rankine cycle로 연결된다.</li>
+<li><span class="math inline">\(dS = \delta Q_{\mathrm{rev}} /
+T\)</span>는 Clausius가 순환 과정에서 <span class="math inline">\(\oint
+\frac{\delta Q_{\mathrm{rev}}}{T}=0\)</span>이 되는 상태함수로 정의한
+것이다.</li>
+</ul>
+<h2 id="절-엔트로피-수식-포인트">5.5절 엔트로피 수식 포인트</h2>
+<ul>
+<li>이번 강의는 엔트로피를 <span class="math inline">\(dS = \delta
+Q_{\mathrm{rev}} / T\)</span>의 계산식으로 끝내지 않고, 거시적 소산열과
+미시적 평균 운동에너지, 미시상태 수, 시간의 화살까지 연결했다.</li>
+<li><span class="math inline">\(T\)</span>는 개별 분자 평균 운동에너지에
+가까운 미시적 척도이고, <span class="math inline">\(\delta Q\)</span>는
+계 전체가 주고받는 거시적 열량/소산열이다. 그래서 같은 열량도 낮은
+온도에서 더 큰 엔트로피 변화를 만든다.</li>
+<li>볼츠만 식 <span class="math inline">\(S = k \ln \Omega\)</span>에서
+<span class="math inline">\(\Omega\)</span>는 가능한 미시상태 수다.
+확산, 기체 혼합, 잉크 퍼짐, 주사위/수능 예시는 모두 경우의 수가
+압도적으로 큰 상태로 간다는 설명이다.</li>
+<li>시간의 화살은 질서 상태에서 무질서 상태로 갈 가능성이 훨씬 크다는
+통계적 비가역성으로 설명한다. 미시 법칙은 대체로 시간 대칭이지만, 큰
+입자 수의 거시계에서는 비대칭성이 나타난다.</li>
+<li>에르고딕은 충분히 긴 시간 평균과 충분히 많은 앙상블 평균이 같아지는
+조건이다. 비균질 확산 초기는 아직 에르고딕하지 않고, 완전히 섞인 뒤에
+가까워진다.</li>
+<li>이상적 진공은 국소적으로 엔트로피가 낮은 상태다. 자연은 입자가 특정
+공간에 모두 몰려 한쪽을 비우는 배열보다 골고루 퍼진 배열을 훨씬 더 자주
+만든다. 우주 전체 엔트로피의 큰 몫은 블랙홀 엔트로피로 설명했다.</li>
+<li>영구기관/오버유닛은 1법칙 또는 2법칙 위배다. 지하철 환풍구 발전은
+수확 에너지보다 터빈이 만드는 추가 저항/부하가 더 커지는 숨은 입력
+문제가 핵심이다.</li>
+<li>마시는 새는 영구기관이 아니라 증발 냉각으로 상부 압력이 낮아지고
+내부 액체가 이동하는 열기관이다. 외부 수분 증발과 주변 열이 에너지
+공급원이다.</li>
+<li>5.5절 계산 핵심은 이상기체 엔트로피 변화식이다. <span
+class="math inline">\(ds = C_p dT/T - R dP/P\)</span>, <span
+class="math inline">\(ds = C_v dT/T + R dV/V\)</span>, 정압/정적/등온
+특수식, <span class="math inline">\(\Delta S_{\mathrm{total}}
+\ge  0\)</span>, Clausius 부등식 <span
+class="math inline">\(\oint_{\mathrm{cycle}} \frac{\delta Q}{T}\le
+0\)</span>를 바로 꺼낼 수 있어야 한다.</li>
+</ul>
+<h2 id="엔트로피-생성-lost-work-제3법칙-핵심">엔트로피 생성, lost work,
+제3법칙 핵심</h2>
+<ul>
+<li>이번 강의의 핵심은 <span
+class="math inline">\(S_{\mathrm{gen}}\)</span>과 <span
+class="math inline">\(W_{\mathrm{lost}}\)</span>다. 에너지 balance가
+맞아도 entropy balance에서 <span class="math inline">\(S_{\mathrm{gen}}
+&lt; 0\)</span>이면 불가능한 장치다.</li>
+<li><span class="math inline">\(S_{\mathrm{gen}}\)</span>은 공정의
+비가역성 때문에 생성되는 엔트로피다. 가역이면 0, 비가역이면 양수,
+음수이면 제2법칙 위배다.</li>
+<li>엔트로피 balance에서 <span
+class="math inline">\(T_{\sigma}\)</span>는 계의 온도가 아니라 열이
+출입하는 주변/경계/열저장고 온도다.</li>
+<li>비가역 열전달 예시: <span
+class="math inline">\(4000\,\mathrm{J}\)</span>가 <span
+class="math inline">\(600\,\mathrm{K}\)</span>에서 <span
+class="math inline">\(250\,\mathrm{K}\)</span>로 전달되면 <span
+class="math inline">\(S_{\mathrm{gen}}=-\frac{4000}{600}+\frac{4000}{250}=9.33\,\mathrm{J/K}\)</span>.</li>
+<li>같은 예시에서 주변 온도 <span
+class="math inline">\(100\,\mathrm{K}\)</span>이면 <span
+class="math inline">\(W_{\mathrm{lost}}=T_{\sigma}S_{\mathrm{gen}}=933\,\mathrm{J}\)</span>,
+따라서 <span class="math inline">\(3333\,\mathrm{J}\)</span> Carnot 일이
+<span class="math inline">\(2400\,\mathrm{J}\)</span> 실제 가능일로
+줄어든다.</li>
+<li>Lost work 식은 <span class="math inline">\(W_{\mathrm{lost}} =
+T_{\sigma} S_{\mathrm{gen}}\)</span>이다. 비가역성이 만든 엔트로피가
+일을 할 수 있는 능력의 손실로 나타난다.</li>
+<li>압축기 효율은 <span
+class="math inline">\(\frac{W_{\mathrm{ideal}}}{W_{\mathrm{actual}}}\)</span>,
+터빈/팽창기 효율은 <span
+class="math inline">\(\frac{W_{\mathrm{actual}}}{W_{\mathrm{ideal}}}\)</span>이다.
+효율이 1 이하가 되도록 분모/분자를 잡으면 부호 실수를 줄일 수 있다.</li>
+<li>제2법칙 효율은 <span class="math inline">\(\eta_{II} =
+\eta_{\mathrm{actual}} / \eta_{\mathrm{Carnot}}\)</span>이다.</li>
+<li>Co-current 열교환기는 입구에서만 열교환이 크고 끝에서 약해져
+엔트로피 생성과 lost work가 커진다. Counter-current는 전체 길이에서
+온도차를 유지하므로 더 효율적이다.</li>
+<li>배터리 수명은 방전 깊이와 엔트로피 증가로 해석한다. 완전 방전 후
+충전보다 적당히 남기고 충전하는 쪽이 수명이 길다.</li>
+<li>제3법칙은 완전 결정의 <span
+class="math inline">\(T\to0\,\mathrm{K}\)</span>에서 <span
+class="math inline">\(S\to0\)</span>이라는 하한 설정과, 절대영도 도달
+불가능성을 함께 말한다.</li>
+<li>Boltzmann entropy에서 왜 <span class="math inline">\(S = k
+\Omega\)</span>가 아니라 <span class="math inline">\(S = k \ln
+\Omega\)</span>인지 설명할 수 있어야 한다. 핵심은 <span
+class="math inline">\(\Omega_{\mathrm{total}} = \Omega_A
+\Omega_B\)</span>인데 엔트로피는 더해져야 하므로 로그가 곱셈을 덧셈으로
+바꾼다는 점, 그리고 <span class="math inline">\(\ln 1 = 0\)</span>이라
+3법칙 기준과 맞는다는 점이다.</li>
+</ul>
+<h2 id="오픈북-계산개념-포인트">오픈북 계산/개념 포인트</h2>
+<ul>
+<li>객관식은 문장과 보기 표현이 바뀔 수 있으므로 키워드보다 개념 관계를
+외운다.</li>
+<li>계산기는 로그와 지수승 계산이 되는 것을 가져가야 한다. <span
+class="math inline">\(PV^{\gamma} = \mathrm{constant}\)</span> 같은
+식에서 지수승 계산이 필요할 수 있다.</li>
+<li>오픈북이지만 인터넷은 안 된다. 자료는 미리 저장하고 시험장에서는
+파일만 확인한다.</li>
+<li>개념식은 엔트로피 중심이다. 이번 강의는 <span
+class="math inline">\(S_{\mathrm{gen}}\)</span>, ideal work, lost work,
+heat exchanger, 제3법칙, Boltzmann log 이유를 전부 이어서 설명했다.</li>
+<li><span class="math inline">\(S_{\mathrm{gen}}\)</span>은 계의 고유
+상태량이라기보다 공정의 비가역성을 나타내는 값이라고 강조했다. <span
+class="math inline">\(S_{\mathrm{gen}} &lt; 0\)</span>이면 에너지수지가
+맞아도 불가능한 공정이다.</li>
+<li>엔트로피 수지에서 <span class="math inline">\(T_{\sigma}\)</span>는
+계 내부 온도가 아니라 주변/경계/열저장고 온도다.</li>
+<li>Ideal work는 <span class="math inline">\(S_{\mathrm{gen}} =
+0\)</span>인 가역 한계의 최대일이다. Lost work는 <span
+class="math inline">\(W_{\mathrm{lost}} = T_{\sigma}
+S_{\mathrm{gen}}\)</span>으로 계산한다.</li>
+<li>압축기는 <span
+class="math inline">\(\frac{W_{\mathrm{ideal}}}{W_{\mathrm{actual}}}\)</span>,
+터빈은 <span
+class="math inline">\(\frac{W_{\mathrm{actual}}}{W_{\mathrm{ideal}}}\)</span>로
+효율을 잡는다. 실제 압축은 일을 더 먹고, 실제 팽창은 일을 덜 생산한다고
+생각하면 된다.</li>
+<li>Heat exchanger는 counter-current가 co-current보다 효율적이다. 전체
+길이에서 온도차를 유지하므로 냉매 유량, 엔트로피 생성, lost work가
+작아진다.</li>
+<li>Maxwell 도깨비와 역삼투는 국소적 엔트로피 감소처럼 보이지만,
+측정/정보처리/외부일/주변까지 포함하면 전체 엔트로피는 증가한다.</li>
+<li>제3법칙은 완전결정의 절대영도 엔트로피 기준과 절대영도 도달
+불가능성을 함께 설명해야 한다. <span
+class="math inline">\(0\,\mathrm{K}\)</span>에서 모든 입자가 그냥
+멈춘다는 식으로 쓰면 약하다.</li>
+<li>Boltzmann entropy에서 log를 취하는 이유를 준비한다. 경우의 수는
+곱해지고 엔트로피는 더해져야 하므로 log가 필요하다.</li>
+</ul>
+<h2 id="계산형-대비-축-5장-6장-ppt-중심">계산형 대비 축: 5장, 6장 PPT
+중심</h2>
+<p>계산형은 5장, 6장 PPT 중심으로만 만든다. 1~4장 계산형은 더 이상
+예상문제에 넣지 않는다.</p>
+<h3 id="장-계산형">5장 계산형</h3>
+<ul>
+<li>열기관 실제 효율 <span class="math inline">\(\eta = W/Q_H = 1 -
+Q_C/Q_H\)</span></li>
+<li>Carnot 효율 <span class="math inline">\(\eta_C = 1 -
+T_C/T_H\)</span>, 반드시 Kelvin 사용</li>
+<li>냉동기/히트펌프 COP: <span
+class="math inline">\(\mathrm{COP}_R=\frac{Q_C}{W}\)</span>, <span
+class="math inline">\(COP_{\mathrm{HP}} = Q_H/W = COP_R +
+1\)</span></li>
+<li>Carnot 냉동기/히트펌프 COP: <span class="math inline">\(COP_R,Carnot
+= T_C/(T_H - T_C)\)</span>, <span
+class="math inline">\(COP_{\mathrm{HP}},Carnot = T_H/(T_H -
+T_C)\)</span></li>
+<li>Carnot cycle의 등온/단열 과정과 <span
+class="math inline">\(T-S\)</span> 선도 면적 해석</li>
+<li>엔트로피 변화 <span class="math inline">\(dS = \delta
+Q_{\mathrm{rev}}/T\)</span>, 상변화 또는 열전달에서 <span
+class="math inline">\(\Delta S = Q_{\mathrm{rev}}/T\)</span></li>
+<li>비가역 열전달의 엔트로피 생성: <span
+class="math inline">\(S_{\mathrm{gen}} = -Q/T_H + Q/T_C\)</span></li>
+<li>가능성 판정: <span class="math inline">\(S_{\mathrm{gen}}
+\ge  0\)</span>, <span class="math inline">\(S_{\mathrm{gen}} &lt;
+0\)</span>이면 불가능</li>
+<li>Lost work: <span class="math inline">\(W_{\mathrm{lost}} =
+T_{\sigma} S_{\mathrm{gen}}\)</span></li>
+<li>Ideal work와 actual work 관계: 생산 장치는 실제 생산일이 줄고, 압축
+장치는 실제 필요일이 늘어남</li>
+<li>Heat exchanger 에너지수지/엔트로피수지/lost work, co-current vs
+counter-current 비교</li>
+<li>제3법칙 관련 <span class="math inline">\(\Delta S = integral C_p/T
+dT\)</span> 해석은 계산보다 개념형 중심</li>
+</ul>
+<h3 id="장-계산형-1">6장 계산형</h3>
+<ul>
+<li>자유에너지 정의와 간단 계산: <span class="math inline">\(A = U -
+TS\)</span>, <span class="math inline">\(G = H - TS\)</span></li>
+<li>자발성 판단: <span class="math inline">\(\Delta G = \Delta H - T
+\Delta S\)</span>, <span class="math inline">\(\Delta G &lt; 0\)</span>,
+<span class="math inline">\(=0\)</span>, <code>&gt;0</code></li>
+<li>온도 조건 판단: <span class="math inline">\(\Delta H\)</span>와
+<span class="math inline">\(\Delta S\)</span> 부호에 따른 자발성,
+경계온도 <span class="math inline">\(T = \Delta H/\Delta S\)</span></li>
+<li>Fundamental property relations: <code>dU</code>, <code>dH</code>,
+<code>dA</code>, <code>dG</code>에서 자연변수와 부호 확인</li>
+<li>Maxwell 관계식은 수치 계산보다 대응식/부호 확인 중심</li>
+<li>잔류성질: <span class="math inline">\(M^{R} = M - M^{ig}\)</span>,
+비리얼/Pitzer 상관식은 PPT 예제 수준에서만</li>
+<li>Fugacity: <span class="math inline">\(f = \phi P\)</span>, <span
+class="math inline">\(\phi = f/P\)</span>, <span
+class="math inline">\(dG = RT d \ln f\)</span></li>
+<li>상평형: <span class="math inline">\(\mu_{\mathrm{alpha}} =
+\mu_{\mathrm{beta}}\)</span>, 순수물질에서 몰 Gibbs 자유에너지 같음,
+<span class="math inline">\(\Delta G = 0\)</span></li>
+<li>Mollier chart / table lookup: 주어진 <code>T,P</code>에서
+<code>H,S</code> 찾기</li>
+<li>등엔트로피 팽창 예제: <span class="math inline">\(S_2 =
+S_1\)</span>, 포화표와 비교해 기액상태 판정 및 필요 시 quality 보간</li>
+</ul>
+<h3 id="절-정리">5.1-5.2절 정리</h3>
+<h2 id="오늘-강의-흐름">1. 오늘 강의 흐름</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>구간</th>
+<th>핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시연</td>
+<td>뜨거운 물과 차가운 상판의 온도차로 작동하는 외연기관/스털링
+엔진</td>
+</tr>
+<tr>
+<td>5.1 보강</td>
+<td>엔트로피를 무질서도뿐 아니라 미시상태 수, 존재 확률, 정보량으로
+해석</td>
+</tr>
+<tr>
+<td>생명체/진화</td>
+<td>국소 질서 증가는 외부 엔트로피 배출을 동반하므로 2법칙과 모순되지
+않음</td>
+</tr>
+<tr>
+<td>소산 구조</td>
+<td>큰 구배가 생기면 태풍 같은 질서 구조가 생겨 구배를 해소</td>
+</tr>
+<tr>
+<td>5.2 시작</td>
+<td>열기관, 냉동기, 히트펌프, Carnot 효율, COP, T-S 선도</td>
+</tr>
+</tbody>
+</table>
+<h2 id="절-엔트로피-보강">2. 5.1절 엔트로피 보강</h2>
+<h3 id="엔트로피-해석">엔트로피 해석</h3>
+<ul>
+<li>Clausius: 거시적 소산열 관점에서 엔트로피를 도입.</li>
+<li>Boltzmann/Gibbs: 미시상태 수, 존재 확률 관점으로 확장.</li>
+<li>Shannon: 정보량/불확실성 관점의 엔트로피.</li>
+</ul>
+<p>시험에서는 “엔트로피 = 무질서도” 하나만 쓰면 부족하다.
+<code>경우의 수</code>, <code>존재 확률</code>,
+<code>필요 정보량</code>까지 연결한다.</p>
+<h3 id="예시-정리">예시 정리</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>예시</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>잉크 방울 확산</td>
+<td>퍼진 상태의 미시상태 수가 압도적으로 많아 자연스럽다</td>
+</tr>
+<tr>
+<td>퍼진 잉크를 다시 모음</td>
+<td>흡착/필터링/선택성 같은 외부 에너지 공급이 필요</td>
+</tr>
+<tr>
+<td>주사위 두 개</td>
+<td>같은 거시상태라도 가능한 미시상태 수가 많을수록 더 자주 나온다</td>
+</tr>
+<tr>
+<td>숨바꼭질 부피 증가</td>
+<td>부피가 커질수록 위치를 특정하기 위해 더 많은 정보가 필요</td>
+</tr>
+<tr>
+<td>생명체</td>
+<td>내부 질서를 만들지만 외부로 열/폐기물을 배출해 전체 엔트로피는
+증가</td>
+</tr>
+<tr>
+<td>태풍</td>
+<td>큰 온도/압력 구배가 만든 질서 구조지만 결국 에너지를 소산</td>
+</tr>
+<tr>
+<td>QWERTY/FAMILY/무작위 문자열</td>
+<td>사전 지식과 제약조건이 있으면 예측 가능성이 달라져 정보 엔트로피
+해석도 달라짐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="절-열기관-냉동기-히트펌프">3. 5.2절 열기관, 냉동기,
+히트펌프</h2>
+<h3 id="열기관">열기관</h3>
+<p>열기관은 고온 열원에서 받은 열 <span
+class="math inline">\(Q_H\)</span> 중 일부를 일 <code>W</code>로 바꾸고
+나머지 <span class="math inline">\(Q_C\)</span>를 저온 열원으로
+버린다.</p>
+<p>열 흐름:</p>
+<ul>
+<li>고온 열원 <span class="math inline">\(T_H\)</span>에서 <span
+class="math inline">\(Q_H\)</span>를 받는다.</li>
+<li>열기관은 <span class="math inline">\(W\)</span>를 생산한다.</li>
+<li>남은 열 <span class="math inline">\(Q_C\)</span>는 저온 열원 <span
+class="math inline">\(T_C\)</span>로 방출된다.</li>
+</ul>
+<p>크기 기준:</p>
+<p><span class="math display">\[
+\begin{aligned}
+W &amp;= Q_H - Q_C\\
+\eta &amp;= W / Q_H = 1 - Q_C / Q_H
+\end{aligned}
+\]</span></p>
+<h3 id="냉동기와-히트펌프">냉동기와 히트펌프</h3>
+<p>냉동기/히트펌프는 저온에서 고온으로 열을 올려 보내야 하므로 외부 일이
+필요하다.</p>
+<p>열 흐름:</p>
+<ul>
+<li>외부에서 일 <span class="math inline">\(W\)</span>를 공급한다.</li>
+<li>저온부에서 <span class="math inline">\(Q_C\)</span>를 흡수한다.</li>
+<li>고온부로 <span class="math inline">\(Q_H\)</span>를 방출한다.</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+COP_R &amp;= Q_C / W = Q_C / (Q_H - Q_C)\\
+COP_{\mathrm{HP}} &amp;= Q_H / W = Q_H / (Q_H - Q_C)
+\end{aligned}
+\]</span></p>
+<p>열기관은 고온에서 저온으로 흐르는 자연스러운 낙차에서 일을 얻는
+장치이고, 냉동기/히트펌프는 저온에서 고온으로 억지로 열을 보내기 때문에
+일을 공급해야 하는 장치다.</p>
+<h2 id="carnot-효율">4. Carnot 효율</h2>
+<p>Carnot 기관은 두 등온 과정과 두 단열 과정으로 구성된 가역
+열기관이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\eta_C &amp;= 1 - T_C / T_H
+\end{aligned}
+\]</span></p>
+<p>주의:</p>
+<ul>
+<li><span class="math inline">\(T_H\)</span>, <span
+class="math inline">\(T_C\)</span>는 Kelvin 온도다.</li>
+<li>이 식은 실제 효율이 아니라 해당 온도 구간에서 가능한 최대 효율, 즉
+상한값이다.</li>
+<li>실제 기관은 열손실과 비가역성 때문에 Carnot 효율보다 낮다.</li>
+<li>실제 효율은 기본적으로 <span class="math inline">\(\eta = 1 -
+Q_C/Q_H\)</span>로 계산한다.</li>
+</ul>
+<h3 id="왜-carnot보다-좋은-기관은-불가능한가">왜 Carnot보다 좋은 기관은
+불가능한가</h3>
+<p>Carnot보다 효율이 더 좋은 기관이 있다고 가정한다. 이 기관을 역 Carnot
+기관과 결합하면 외부 효과 없이 저온 열원에서 고온 열원으로 열이 이동하는
+장치를 만들 수 있다. 이는 Clausius 서술, 즉 저온에서 고온으로 열이
+자발적으로 이동할 수 없다는 2법칙을 위배한다. 따라서 Carnot 효율은 최대
+효율이다.</p>
+<h2 id="t-s-선도와-rankine-cycle">5. T-S 선도와 Rankine cycle</h2>
+<p>Carnot cycle은 <code>P-V</code> 선도에서는 곡선 면적을 해석해야 해서
+계산이 불편하지만, <span class="math inline">\(T-S\)</span> 선도에서는
+두 등온선과 두 등엔트로피선으로 직사각형처럼 표현된다.</p>
+<ul>
+<li>한 cycle 후 <span class="math inline">\(\Delta U = 0\)</span>, <span
+class="math inline">\(\Delta S = 0\)</span>.</li>
+<li>단열 가역 과정은 등엔트로피 과정.</li>
+<li><span class="math inline">\(T-S\)</span> 선도에서 면적은 열량/일
+해석과 연결된다.</li>
+<li>실제 cycle은 비가역성 때문에 완전한 직사각형이 아니며, 현실적인
+증기동력 cycle은 Rankine cycle로 다룬다.</li>
+</ul>
+<h2 id="기말-대비-우선순위">6. 기말 대비 우선순위</h2>
+<ol>
+<li><span class="math inline">\(\eta = 1 - Q_C/Q_H\)</span>와 <span
+class="math inline">\(\eta_C = 1 - T_C/T_H\)</span> 구분</li>
+<li>Carnot 식에는 Kelvin만 사용</li>
+<li>냉동기 COP와 히트펌프 COP 구분</li>
+<li>열기관과 냉동기/히트펌프의 열 흐름 방향과 일 입력/출력 구분</li>
+<li>Carnot cycle의 2등온+2단열 구성</li>
+<li><span class="math inline">\(dS = \delta Q_{\mathrm{rev}}/T\)</span>,
+cycle에서 <span class="math inline">\(\Delta S=0\)</span>이지만 열/일은
+남는다는 점</li>
+<li>엔트로피를 미시상태 수/확률/정보량으로 설명하는 서술형 대비</li>
+<li>생명체/진화/태풍 같은 국소 질서 형성이 전체 2법칙과 모순되지 않는
+이유</li>
+</ol>
+<h2 id="실전-예상문제">7. 실전 예상문제</h2>
+<h3 id="문제-1">문제 1</h3>
+<p>열기관의 효율식으로 옳은 것은?</p>
+<ol>
+<li><span class="math inline">\(\eta = Q_H / W\)</span></li>
+<li><span class="math inline">\(\eta = W / Q_H = 1 -
+Q_C/Q_H\)</span></li>
+<li><span class="math inline">\(\eta = Q_C / W\)</span></li>
+<li><span class="math inline">\(\eta = 1 - T_H/T_C\)</span></li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-2">문제 2</h3>
+<p>Carnot 효율을 계산할 때 반드시 지켜야 하는 것은?</p>
+<ol>
+<li>Celsius 온도를 그대로 쓴다.</li>
+<li>Kelvin 온도를 사용한다.</li>
+<li>실제 기관에서도 항상 <span class="math inline">\(Q_C/Q_H =
+T_H/T_C\)</span>를 쓴다.</li>
+<li>냉동기 COP와 같은 식으로 계산한다.</li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-3">문제 3</h3>
+<p>냉동기의 COP로 옳은 것은?</p>
+<ol>
+<li><span class="math inline">\(COP_R = W/Q_C\)</span></li>
+<li><span
+class="math inline">\(\mathrm{COP}_R=\frac{Q_C}{W}\)</span></li>
+<li><span class="math inline">\(COP_R = W/Q_H\)</span></li>
+<li><span class="math inline">\(COP_R = 1 - Q_C/Q_H\)</span></li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-4">문제 4</h3>
+<p>열기관과 냉동기 설명으로 옳은 것은?</p>
+<ol>
+<li>열기관은 외부 일을 받아 저온에서 고온으로 열을 옮긴다.</li>
+<li>냉동기는 자발적 열 흐름에서 일을 생산한다.</li>
+<li>열기관은 고온에서 저온으로 열이 흐르는 동안 일을 생산한다.</li>
+<li>냉동기는 외부 일이 없어도 저온에서 고온으로 열을 옮긴다.</li>
+</ol>
+<p>정답: 3</p>
+<h3 id="문제-5">문제 5</h3>
+<p>Carnot cycle의 구성으로 옳은 것은?</p>
+<ol>
+<li>두 등온 과정과 두 단열 과정</li>
+<li>두 등압 과정과 두 등적 과정</li>
+<li>한 등온 과정과 세 등압 과정</li>
+<li>네 등적 과정</li>
+</ol>
+<p>정답: 1</p>
+<h3 id="문제-6">문제 6</h3>
+<p>Carnot보다 효율이 높은 열기관이 불가능한 이유로 가장 적절한 것은?</p>
+<ol>
+<li>1법칙의 에너지 보존만으로는 설명되지 않는다.</li>
+<li>역 Carnot 기관과 결합하면 저온에서 고온으로 열이 자발적으로 이동하는
+2법칙 위배 장치를 만들 수 있기 때문이다.</li>
+<li>모든 실제 기관의 효율은 항상 100%이기 때문이다.</li>
+<li>냉동기 COP가 항상 1보다 작기 때문이다.</li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-7">문제 7</h3>
+<p>엔트로피가 큰 상태를 미시적 관점에서 설명한 것으로 옳은 것은?</p>
+<ol>
+<li>가능한 미시상태 수가 더 많은 상태</li>
+<li>항상 온도가 0 K인 상태</li>
+<li>반드시 부피가 0인 상태</li>
+<li>에너지 보존이 깨진 상태</li>
+</ol>
+<p>정답: 1</p>
+<h3 id="문제-8">문제 8</h3>
+<p>생명체의 조직화와 열역학 제2법칙의 관계로 옳은 것은?</p>
+<ol>
+<li>생명체 내부 엔트로피가 감소하면 2법칙은 무조건 틀린다.</li>
+<li>생명체는 내부 질서를 만들 수 있지만 외부로 열과 폐기물을 배출하므로
+전체 엔트로피 증가와 모순되지 않는다.</li>
+<li>생명체는 에너지를 전혀 쓰지 않고 질서를 만든다.</li>
+<li>생명체는 고립계이므로 외부와 에너지 교환이 없다.</li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-9">문제 9</h3>
+<p>다음 중 <span class="math inline">\(dS = \delta
+Q_{\mathrm{rev}}/T\)</span>에 대한 설명으로 옳은 것은?</p>
+<ol>
+<li>비가역 열전달의 실제 열량을 아무 조건 없이 넣는 식이다.</li>
+<li>가역 열전달에 대해 엔트로피 변화를 정의하는 식이다.</li>
+<li>일의 정의식이다.</li>
+<li>열기관 효율이 항상 1임을 뜻한다.</li>
+</ol>
+<p>정답: 2</p>
+<h3 id="문제-10">문제 10</h3>
+<p>T-S 선도에서 Carnot cycle이 계산상 편한 이유로 적절한 것은?</p>
+<ol>
+<li>두 등온선과 두 등엔트로피선으로 직사각형처럼 표현되어 면적 해석이
+쉽기 때문이다.</li>
+<li>압력과 부피를 전혀 고려하지 않기 때문이다.</li>
+<li>모든 실제 기관이 완벽한 Carnot cycle이기 때문이다.</li>
+<li>냉동기에는 T-S 선도를 사용할 수 없기 때문이다.</li>
+</ol>
+<p>정답: 1</p>
+<h2 id="서술형-답안-틀">8. 서술형 답안 틀</h2>
+<h3 id="엔트로피를-미시상태-관점에서-설명하시오.">엔트로피를 미시상태
+관점에서 설명하시오.</h3>
+<p>엔트로피가 크다는 것은 가능한 미시상태 수가 많아 그 거시상태가 존재할
+확률이 크다는 뜻으로 해석할 수 있다. 잉크가 물에 퍼진 상태는 다시 한
+점에 모인 상태보다 가능한 배치가 훨씬 많기 때문에 자연스럽다. 다시 질서
+있는 상태로 만들려면 외부에서 에너지를 공급해야 한다.</p>
+<h3 id="carnot-효율과-실제-효율의-차이를-설명하시오.">Carnot 효율과 실제
+효율의 차이를 설명하시오.</h3>
+<p>실제 열기관 효율은 공급받은 열 중 일이 된 비율이므로 <span
+class="math inline">\(\eta = W/Q_H = 1 - Q_C/Q_H\)</span>로 계산한다.
+Carnot 효율 <span class="math inline">\(\eta_C = 1 - T_C/T_H\)</span>는
+두 열원 사이에서 가역기관이 가질 수 있는 최대 효율이며, 실제 기관은
+비가역성과 열손실 때문에 이보다 낮다. Carnot 식에는 반드시 Kelvin 온도를
+사용한다.</p>
+<h3 id="냉동기와-히트펌프의-차이를-설명하시오.">냉동기와 히트펌프의
+차이를 설명하시오.</h3>
+<p>둘 다 외부 일 <code>W</code>를 공급해 저온 열원에서 고온 열원으로
+열을 옮기는 장치다. 냉동기는 저온부에서 제거한 열 <span
+class="math inline">\(Q_C\)</span>가 목적이므로 <span
+class="math inline">\(\mathrm{COP}_R=\frac{Q_C}{W}\)</span>를 쓰고,
+히트펌프는 고온부에 공급한 열 <span class="math inline">\(Q_H\)</span>가
+목적이므로 <span
+class="math inline">\(\mathrm{COP}_{\mathrm{HP}}=\frac{Q_H}{W}\)</span>를
+쓴다.</p>
+<h3 id="절-정리-1">5.5절 정리</h3>
+<h2 id="핵심-개념">핵심 개념</h2>
+<h3 id="clausius-엔트로피와-미시거시-연결">1. Clausius 엔트로피와
+미시/거시 연결</h3>
+<ul>
+<li>Clausius는 처음에 엔트로피를 존재확률이나 경우의 수가 아니라 <span
+class="math inline">\(dS = \delta Q_{\mathrm{rev}} / T\)</span>라는
+거시적 열역학 상태함수로 도입했다.</li>
+<li><span class="math inline">\(T\)</span>는 개별 분자의 평균
+운동에너지에 가까운 미시적 척도다.</li>
+<li><span class="math inline">\(\delta Q\)</span>는 계가 주고받는 열량
+또는 소산열처럼 전체 계의 거시적 변화다.</li>
+<li>따라서 <span class="math inline">\(dS\)</span>는 거시적 열량을
+미시적 온도 척도로 나눈 값으로 볼 수 있다.</li>
+<li>같은 열량이 들어가도 낮은 온도에서는 <code>1/T</code>가 커서
+엔트로피 증가가 더 크다. 강의의 도서관/명동 비유가 이 부분이다.</li>
+</ul>
+<h3 id="에너지-분포와-손실열">2. 에너지 분포와 손실열</h3>
+<ul>
+<li>평균 운동에너지가 같아도 분포가 넓고 오른쪽 꼬리가 길면, 활성화
+에너지를 훨씬 넘는 잉여 에너지가 손실열로 흩어진다.</li>
+<li>문턱값을 못 넘는 에너지는 반응이나 일을 만들지 못하고 내부 무질서도
+증가에 기여한다.</li>
+<li>그래서 강의에서는 <span class="math inline">\(dS\)</span>를 내부
+무질서도 기여 <code>1/T</code>와 외부 손실열 기여 <span
+class="math inline">\(\delta Q\)</span>가 함께 들어간 식으로
+해석했다.</li>
+</ul>
+<h3 id="시간의-화살">3. 시간의 화살</h3>
+<ul>
+<li>미시적인 Newton 역학은 대체로 시간 대칭이다. <code>t</code>를
+<code>-t</code>로 바꿔도 법칙 자체는 성립한다.</li>
+<li>열역학은 거대한 입자 수를 다루므로 시간 비대칭성이 나타난다.</li>
+<li>계란이 깨진 뒤 저절로 원래 계란으로 돌아오지 않는 이유는 가능성이
+0이라서가 아니라, 원래 상태로 돌아갈 경우의 수가 압도적으로 작기
+때문이다.</li>
+<li>시간의 방향은 엔트로피가 증가하는 쪽으로 정의할 수 있다.</li>
+</ul>
+<h3 id="boltzmann-엔트로피와-경우의-수">4. Boltzmann 엔트로피와 경우의
+수</h3>
+<ul>
+<li>핵심식: <span class="math inline">\(S = k \ln \Omega\)</span></li>
+<li><span class="math inline">\(\Omega\)</span>는 특정 거시상태를 만들
+수 있는 미시상태 수다.</li>
+<li>잉크 확산, 기체 혼합, 큐브 무작위 배열, 기체 분자가 한쪽에만 몰릴
+확률은 모두 <span class="math inline">\(\Omega\)</span>가 큰 상태가
+압도적으로 잘 나타난다는 설명이다.</li>
+<li>Poincare 회귀처럼 원래 상태로 돌아갈 가능성은 원리적으로 있을 수
+있지만, 입자 수가 커지면 사실상 불가능한 시간 규모가 된다.</li>
+</ul>
+<h3 id="에르고딕">5. 에르고딕</h3>
+<ul>
+<li>에르고딕은 충분히 긴 시간 평균과 충분히 많은 앙상블 평균이 같아지는
+성질이다.</li>
+<li>주사위 한 번은 개인의 시간 평균처럼 우연성이 크지만, 주사위를 매우
+많이 던지거나 많은 주사위를 동시에 던지면 통계 평균으로 수렴한다.</li>
+<li>잉크가 아직 국소적으로 뭉쳐 있을 때는 위치별 평균이 다르므로
+에르고딕하지 않다. 충분히 섞이면 어느 지점에서도 평균 농도가
+비슷해진다.</li>
+<li>시험/수능 비유는 한 번의 시험점수가 개인의 진짜 시간 평균을 대표하지
+못할 수 있다는 통계적 오류를 설명한다.</li>
+</ul>
+<h3 id="진공-우주-블랙홀">6. 진공, 우주, 블랙홀</h3>
+<ul>
+<li>이상적 진공은 입자가 없는 상태이므로 국소적으로 가능한 미시상태 수가
+작다.</li>
+<li>자연은 한쪽 공간을 완전히 비워 두기보다 입자가 골고루 퍼진 상태로 갈
+확률이 훨씬 높다.</li>
+<li>우주가 대부분 진공인데 엔트로피가 증가한다는 점은 겉으로 모순처럼
+보일 수 있다.</li>
+<li>강의의 답: 우주의 대부분은 빈 공간이지만, 전체 엔트로피의 큰 몫은
+블랙홀에 있으며 블랙홀 엔트로피는 사건의 지평선 면적과 연결된다.</li>
+<li>진공에서도 양자 요동, 쌍생성/쌍소멸이 가능하다는 설명이 나왔다.</li>
+</ul>
+<h3 id="영구기관과-오버유닛">7. 영구기관과 오버유닛</h3>
+<ul>
+<li>1종 영구기관은 외부 에너지 유입 없이 일을 계속 생산하려 하므로 1법칙
+위배다.</li>
+<li>2종 영구기관은 단일 열원의 열을 100% 일로 바꾸려 하므로 2법칙
+위배다.</li>
+<li>오버유닛은 효율이 1을 넘는다는 주장이고, 자연법칙 위배 장치로
+본다.</li>
+<li>지하철 환풍구 발전은 바람을 이용하는 것처럼 보이지만, 터빈이 공기
+통로를 막아 지하철/환기팬이 극복해야 하는 추가 부하를 만든다. 수확
+전력보다 추가 소비 전력이 더 크다.</li>
+<li>마시는 새는 영구기관이 아니다. 물 증발로 머리 쪽이 냉각되고 압력이
+낮아져 내부 액체가 올라가며 무게중심이 바뀌는 열기관이다.</li>
+</ul>
+<h2 id="절-계산-공식">5.5절 계산 공식</h2>
+<h3 id="일반-이상기체-엔트로피-변화">일반 이상기체 엔트로피 변화</h3>
+<p>온도와 압력으로 계산:</p>
+<p><span class="math display">\[
+\begin{aligned}
+ds &amp;= C_p dT/T - R dP/P\\
+\Delta s &amp;= C_p \ln\left(\frac{T_2}{T_1}\right) - R \ln(P2/P1)
+\end{aligned}
+\]</span></p>
+<p>온도와 부피로 계산:</p>
+<p><span class="math display">\[
+\begin{aligned}
+ds &amp;= C_v dT/T + R dV/V\\
+\Delta s &amp;= C_v \ln\left(\frac{T_2}{T_1}\right) + R
+\ln\left(\frac{V_2}{V_1}\right)
+\end{aligned}
+\]</span></p>
+<p>이때 <span class="math inline">\(C_p\)</span>, <span
+class="math inline">\(C_v\)</span>가 온도에 따라 변하면 단순 로그식이
+아니라 <span class="math inline">\(\int \frac{C_p(T)}{T}\,dT\)</span>,
+<span class="math inline">\(\int \frac{C_v(T)}{T}\,dT\)</span>로
+계산한다.</p>
+<h3 id="특수-공정">특수 공정</h3>
+<p>정압:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta s_p &amp;= C_p \ln\left(\frac{T_2}{T_1}\right)
+\end{aligned}
+\]</span></p>
+<p>정적:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta s_v &amp;= C_v \ln\left(\frac{T_2}{T_1}\right)
+\end{aligned}
+\]</span></p>
+<p>등온:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta s_T &amp;= R \ln\left(\frac{V_2}{V_1}\right) = -R \ln(P2/P1)
+\end{aligned}
+\]</span></p>
+<p>같은 <span class="math inline">\(T_1\to T_2\)</span> 가열이면 <span
+class="math inline">\(C_p &gt; C_v\)</span>이므로 정압 과정의 엔트로피
+증가가 정적 과정보다 크다. 정압 과정은 부피 팽창으로 가능한 미시상태
+수가 더 늘어나기 때문이다.</p>
+<h3 id="부호-판정">부호 판정</h3>
+<ul>
+<li>등온 팽창: <code>V2 &gt; V1</code>, <span
+class="math inline">\(\Delta s &gt; 0\)</span></li>
+<li>등온 압축: <code>V2 &lt; V1</code>, <span
+class="math inline">\(\Delta s &lt; 0\)</span></li>
+<li>정적 가압: 부피 일정, 압력 증가, 온도 증가이므로 <span
+class="math inline">\(\Delta s &gt; 0\)</span></li>
+<li>등온 가압: 압력 증가, 부피 감소이므로 <span
+class="math inline">\(\Delta s &lt; 0\)</span></li>
+<li>계의 엔트로피는 양수/음수/0 모두 가능하다.</li>
+<li>전체 엔트로피는 <span class="math inline">\(\Delta
+S_{\mathrm{total}} = \Delta S_{\mathrm{system}} + \Delta
+S_{\mathrm{surroundings}} \ge  0\)</span>이어야 한다.</li>
+</ul>
+<h3 id="등엔트로피단열-가역">등엔트로피/단열 가역</h3>
+<p><span class="math inline">\(\Delta s = 0\)</span>인 이상기체 가역
+단열 과정에서 다음 관계가 나온다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+PV^{\gamma} &amp;= \mathrm{constant}\\
+TV^(\gamma-1) &amp;= \mathrm{constant}\\
+T P^((1-\gamma)/\gamma) &amp;= \mathrm{constant}
+\end{aligned}
+\]</span></p>
+<p>여기서 <span class="math inline">\(\gamma = C_p/C_v\)</span>다.
+외우기보다 <span class="math inline">\(\Delta s = C_v
+\ln\left(\frac{T_2}{T_1}\right) + R \ln\left(\frac{V_2}{V_1}\right) =
+0\)</span>에서 유도할 수 있어야 한다.</p>
+<h3 id="clausius-부등식">Clausius 부등식</h3>
+<p><span class="math display">\[
+\begin{aligned}
+integral_{\mathrm{cycle}}(\delta Q_{\mathrm{rev}}/T) &amp;= 0\\
+integral_{\mathrm{cycle}}(\delta Q/T) \le  0
+\end{aligned}
+\]</span></p>
+<ul>
+<li>가역 사이클은 0이다.</li>
+<li>비가역 사이클은 0보다 작다.</li>
+<li>어떤 계산에서 고립계 또는 전체계의 <span
+class="math inline">\(\Delta S_{\mathrm{total}} &lt; 0\)</span>이 나오면
+불가능 공정이거나 부호/열원 설정이 틀린 것이다.</li>
+</ul>
+<h2 id="gemini-5.5절-퀴즈-10문항-핵심-답">Gemini 5.5절 퀴즈 10문항 핵심
+답</h2>
+<ol>
+<li><span class="math inline">\(dS = dQ/T\)</span>에서 <span
+class="math inline">\(T\)</span>: 개별 분자들의 평균 운동 에너지</li>
+<li>시간의 화살: 질서 상태보다 무질서 상태의 경우의 수가 압도적으로 많기
+때문</li>
+<li><span class="math inline">\(S = k \ln \Omega\)</span>: <span
+class="math inline">\(\Omega\)</span>는 배열 가능한 경우의 수, 확산은
+<span class="math inline">\(\Omega\)</span>가 큰 평형상태로 이동</li>
+<li>이상적 진공 유지가 어려운 이유: 물질/에너지가 균일하게 퍼진 상태의
+경우의 수가 진공보다 압도적으로 큼</li>
+<li>영구기관 불가능: 1법칙과 2법칙 위배</li>
+<li>지하철 환풍구 발전 비효율: 터빈이 추가 저항/기생 부하를 만들어 수확
+에너지보다 더 큰 전력 소모 유발</li>
+<li>마시는 새: 부리 물의 증발 냉각으로 내부 증기압이 바뀌는 열기관</li>
+<li>등온 엔트로피 변화: 부피 또는 압력의 변화 비율</li>
+<li>T-S 선도에서 등적 경로 기울기가 더 가파른 이유: <span
+class="math inline">\(C_v &lt; C_p\)</span>, 정적은 팽창 일이 없고
+엔트로피 증가폭이 작음</li>
+<li>비가역 공정: <code>integral_cycle dQ/T &lt; 0</code>, <span
+class="math inline">\(\Delta S_{\mathrm{total}} &gt; 0\)</span></li>
+</ol>
+<h2 id="계산서술-예상-포인트">계산/서술 예상 포인트</h2>
+<ul>
+<li>계산형: 이상기체가 <code>T1, P1</code>에서 <code>T2, P2</code>로
+변할 때 <span class="math inline">\(\Delta s\)</span> 계산.</li>
+<li>계산형: 정압/정적/등온 과정의 엔트로피 변화 부호와 크기 비교.</li>
+<li>계산형: <span class="math inline">\(\Delta S_{\mathrm{system}} &lt;
+0\)</span>인 등온 압축에서 주변 엔트로피까지 더해 가능/불가능 판정.</li>
+<li>유도형: <span class="math inline">\(\Delta s = 0\)</span>에서 <span
+class="math inline">\(PV^{\gamma} = \mathrm{constant}\)</span>
+유도.</li>
+<li>단답형: <span class="math inline">\(T\)</span>, <span
+class="math inline">\(\delta Q\)</span>, <span
+class="math inline">\(\Omega\)</span>, 에르고딕, 시간의 화살 정의.</li>
+<li>서술형: 우주는 대부분 진공인데 왜 엔트로피 증가와 모순이 아닌지
+설명.</li>
+<li>서술형: 지하철 환풍구 발전 또는 마시는 새가 영구기관이 아닌 이유를
+1법칙/2법칙으로 설명.</li>
+</ul>
+<h3 id="엔트로피-생성-lost-work-제3법칙">엔트로피 생성, lost work,
+제3법칙</h3>
+<h2 id="한-줄-요약">한 줄 요약</h2>
+<p>핵심은 “에너지 balance만 맞아도 장치가 가능한 것은 아니며, <span
+class="math inline">\(S_{\mathrm{gen}} \ge  0\)</span>과 <span
+class="math inline">\(W_{\mathrm{lost}} = T_{\sigma}
+S_{\mathrm{gen}}\)</span>으로 비가역 손실을 판정해야 한다”이다.
+<code>볼츠만 엔트로피에서 왜 log를 쓰는가</code>는 개념식 답안으로
+준비한다.</p>
+<h2 id="반드시-외울-식">반드시 외울 식</h2>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta S_{\mathrm{total}} &amp;= \Delta S_{\mathrm{system}} + \Delta
+S_{\mathrm{surroundings}} \ge  0\\
+S_{\mathrm{gen}} \ge  0\\
+W_{\mathrm{lost}} &amp;= T_{\sigma} S_{\mathrm{gen}}\\
+\eta_C &amp;= 1 - T_C/T_H\\
+\eta_{II} &amp;= \eta_{\mathrm{actual}} / \eta_C\\
+S &amp;= k \ln \Omega
+\end{aligned}
+\]</span></p>
+<p>여기서 <span class="math inline">\(T_{\sigma}\)</span>는 계의 온도가
+아니라 주변/열저장고/경계의 온도다.</p>
+<h2 id="carnot-최대일과-실제-일의-차이">1. Carnot 최대일과 실제 일의
+차이</h2>
+<p>가역 Carnot 기관은 주어진 두 열원 사이에서 만들 수 있는 최대 일을
+준다.</p>
+<p>예시:</p>
+<p><span class="math display">\[
+\begin{aligned}
+T_H &amp;= 600 K\\
+T_C &amp;= 100 K\\
+Q_H &amp;= 4000 J
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\eta_C &amp;= 1 - 100/600 = 0.833\\
+W_{\mathrm{Carnot}} &amp;= 0.833\times 4000 = 3333 J
+\end{aligned}
+\]</span></p>
+<p>그런데 실제 엔진에서는 연소/열전달/배기가스/소리/마찰 등으로 열이
+먼저 비가역적으로 손실된다. 강의 예시처럼 <span
+class="math inline">\(600\,\mathrm{K}\)</span> 열이 먼저 <span
+class="math inline">\(250\,\mathrm{K}\)</span> 수준으로 비가역 전달된 뒤
+엔진을 돌리면,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\eta_\mathrm{actual\ upper\ limit} &amp;= 1 - 100/250 = 0.6\\
+W_{\mathrm{actual}} &amp;= 0.6\times 4000 = 2400 J
+\end{aligned}
+\]</span></p>
+<p>즉 실제 최대일은 Carnot 최대일보다 작다.</p>
+<h2 id="비가역-열전달과-lost-work">2. 비가역 열전달과 lost work</h2>
+<p><span class="math inline">\(4000\,\mathrm{J}\)</span>의 열이 <span
+class="math inline">\(600\,\mathrm{K}\)</span>에서 <span
+class="math inline">\(250\,\mathrm{K}\)</span>로 직접 전달되면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Delta S_{\mathrm{total}} &amp;= -4000/600 + 4000/250\\
+&amp;= 9.33 J/K
+\end{aligned}
+\]</span></p>
+<p>이 엔트로피 생성이 일을 못 하게 만든다. 저온 열원 또는 주변 온도가
+<span class="math inline">\(100\,\mathrm{K}\)</span>이면</p>
+<p><span class="math display">\[
+\begin{aligned}
+W_{\mathrm{lost}} &amp;= T_{\sigma} S_{\mathrm{gen}}\\
+&amp;= 100\times 9.33\\
+&amp;= 933 J
+\end{aligned}
+\]</span></p>
+<p>따라서</p>
+<p><span class="math display">\[
+\begin{aligned}
+W_{\mathrm{actual}} &amp;= W_{\mathrm{Carnot}} - W_{\mathrm{lost}}\\
+&amp;= 3333 - 933\\
+&amp;= 2400 J
+\end{aligned}
+\]</span></p>
+<p>이 계산은 숫자가 딱 떨어져 계산형으로 유력하다.</p>
+<h2 id="엔트로피-balance">3. 엔트로피 balance</h2>
+<p>Control volume의 일반형은 다음 구조다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\mathrm{d}S_{\mathrm{CV}}}{\mathrm{d}t}
+&amp;= \sum_{\mathrm{in}}\dot{m}s_{\mathrm{in}}
+- \sum_{\mathrm{out}}\dot{m}s_{\mathrm{out}}\\
+&amp;\quad + \sum_j \frac{\dot{Q}_j}{T_{\sigma,j}}
++ \dot{S}_{\mathrm{gen}}
+\end{aligned}
+\]</span></p>
+<p>정상 상태이면 <span
+class="math inline">\(\mathrm{d}S_{\mathrm{CV}}/\mathrm{d}t =
+0\)</span>으로 둘 수 있다. 질량 흐름이 없는 단순 계라면 핵심은 다음으로
+줄어든다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+S_{\mathrm{gen}} &amp;= \Delta S_{\mathrm{system}} + \Delta
+S_{\mathrm{surroundings}}
+\end{aligned}
+\]</span></p>
+<p>판정:</p>
+<ul>
+<li><span class="math inline">\(S_{\mathrm{gen}} = 0\)</span>: 가역
+한계</li>
+<li><span class="math inline">\(S_{\mathrm{gen}} &gt; 0\)</span>: 실제
+가능한 비가역 공정</li>
+<li><span class="math inline">\(S_{\mathrm{gen}} &lt; 0\)</span>: 불가능
+공정</li>
+</ul>
+<h2 id="발명-장치-가능성-판정">4. 발명 장치 가능성 판정</h2>
+<p>강의 예시에서는 발명가가 포화수증기를 0도 물로 만들면서 200도
+열원으로 큰 열을 전달하는 장치를 주장했다.</p>
+<p>에너지 balance만 보면 열량이 맞아 떨어져 가능해 보인다.</p>
+<p>하지만 entropy balance를 세우면 강의 결과가</p>
+<p><span class="math display">\[
+\begin{aligned}
+S_{\mathrm{gen}} &amp;= -0.6 &lt; 0
+\end{aligned}
+\]</span></p>
+<p>로 나와 불가능 장치다.</p>
+<p>가능한 최대 열전달량은 <span class="math inline">\(S_{\mathrm{gen}} =
+0\)</span>으로 두고 구한다. 강의 결과:</p>
+<p><span class="math display">\[
+\begin{aligned}
+Q_{\mathrm{hot}},max &amp;= 1577\\
+Q_{\mathrm{cold}} &amp;= 1099
+\end{aligned}
+\]</span></p>
+<p>시험 답안 포인트: “1법칙으로는 가능해 보여도 2법칙에서 <span
+class="math inline">\(S_{\mathrm{gen}} &lt; 0\)</span>이면
+불가능하다.”</p>
+<h2 id="ideal-work와-gibbs-자유에너지-꼴">5. Ideal work와 Gibbs
+자유에너지 꼴</h2>
+<p>최대일은 가역 조건, 즉 <span class="math inline">\(S_{\mathrm{gen}} =
+0\)</span>에서 얻는다. 정상 흐름계에서 운동에너지/위치에너지 변화를
+무시하면 강의 흐름은 다음 꼴로 정리된다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+W_{\mathrm{ideal}} &amp;= \Delta H - T_{\sigma} \Delta S
+\end{aligned}
+\]</span></p>
+<p>이 식은 <span class="math inline">\(\Delta G = \Delta H - T \Delta
+S\)</span>와 같은 꼴이다. 즉 엔탈피 중에서 주변 온도 기준으로 엔트로피
+증가에 묶이는 부분은 일로 못 쓰고, 남는 부분만 유효일이 된다.</p>
+<h2 id="압축기와-터빈-효율">6. 압축기와 터빈 효율</h2>
+<p>압축기는 일을 넣는 장치다. 이상적으로 100이 필요해도 실제로는 마찰
+때문에 130을 넣어야 할 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\eta_{\mathrm{compressor}} &amp;= W_{\mathrm{ideal}} /
+W_{\mathrm{actual}}
+\end{aligned}
+\]</span></p>
+<p>터빈/팽창기는 일을 생산하는 장치다. 이상적으로 100을 생산할 수 있어도
+실제는 70만 나온다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\eta_{\mathrm{turbine}} &amp;= W_{\mathrm{actual}} / W_{\mathrm{ideal}}
+\end{aligned}
+\]</span></p>
+<p>둘 다 효율이 1보다 작아야 한다. 식을 외우기보다 “분모가 더 커야
+효율이 1 이하”가 되도록 잡으면 실수할 가능성이 줄어든다.</p>
+<h2 id="법칙-효율">7. 2법칙 효율</h2>
+<p>Carnot 효율은 온도만으로 정해지는 최대 효율이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\eta_C &amp;= 1 - T_C/T_H
+\end{aligned}
+\]</span></p>
+<p>실제 효율은 실제 열량으로 구한다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\eta_{\mathrm{actual}} &amp;= W_{\mathrm{actual}}/Q_H = 1 - Q_C/Q_H
+\end{aligned}
+\]</span></p>
+<p>2법칙 효율은 실제 효율이 Carnot 한계의 몇 %인지 보는 값이다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\eta_{II} &amp;= \eta_{\mathrm{actual}}/\eta_C
+\end{aligned}
+\]</span></p>
+<p>예:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\eta_{\mathrm{actual}} &amp;= 0.6\\
+\eta_C &amp;= 0.8\\
+\eta_{II} &amp;= 0.75
+\end{aligned}
+\]</span></p>
+<h2 id="열교환기-향류가-더-좋다">8. 열교환기: 향류가 더 좋다</h2>
+<p>Co-current, 나란 흐름:</p>
+<ul>
+<li>고온 유체와 저온 유체가 같은 방향으로 흐른다.</li>
+<li>입구에서만 열교환이 크고 끝으로 갈수록 약해진다.</li>
+<li>열충격이 크고, 냉매 유량이 더 많이 필요하다.</li>
+<li><span class="math inline">\(S_{\mathrm{gen}}\)</span>, <span
+class="math inline">\(W_{\mathrm{lost}}\)</span>가 커진다.</li>
+</ul>
+<p>Counter-current, 향류:</p>
+<ul>
+<li>고온 유체와 저온 유체가 반대 방향으로 흐른다.</li>
+<li>관 전체에서 온도차가 비교적 고르게 유지된다.</li>
+<li>더 적은 냉매로 더 큰 열교환을 한다.</li>
+<li><span class="math inline">\(S_{\mathrm{gen}}\)</span>, <span
+class="math inline">\(W_{\mathrm{lost}}\)</span>가 작다.</li>
+</ul>
+<p>강의 예시에서 co-current는 counter-current보다 몰유량, 엔트로피 생성,
+lost work가 대략 2배 정도 컸다.</p>
+<h2 id="배터리-수명도-엔트로피로-본다">9. 배터리 수명도 엔트로피로
+본다</h2>
+<p>배터리의 수명은 완전 방전 후 충전보다, 어느 정도 남겨 놓고 자주
+충전할 때 길어진다.</p>
+<p>이유:</p>
+<ul>
+<li>충방전은 화학 반응이다.</li>
+<li>반복 반응과 열로 전극/전해질 구조가 노화된다.</li>
+<li>덴드라이트 같은 불규칙 구조가 생긴다.</li>
+<li>이온 이동이 어려워지고 내부 저항이 증가한다.</li>
+</ul>
+<p>초기 질서 구조가 비가역적으로 무질서해지는 과정이므로 엔트로피 증가로
+해석할 수 있다.</p>
+<h2 id="제3법칙">10. 제3법칙</h2>
+<p>제3법칙의 시험 답안은 두 층으로 쓴다.</p>
+<ol>
+<li>하한 설정: 완전 결정의 엔트로피는 <span
+class="math inline">\(T\to0\,\mathrm{K}\)</span>에서 0으로 간다.</li>
+<li>도달 불가능성: 유한한 공정으로 절대영도에 도달할 수 없다.</li>
+</ol>
+<p>완전 결정에서 미시상태 수를 하나로 보면</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Omega &amp;= 1\\
+S &amp;= k \ln \Omega = k \ln 1 = 0
+\end{aligned}
+\]</span></p>
+<p>다만 실제 물질은 영점 에너지, 불확정성 원리, 초전도/초유동/유리 상태
+같은 극저온 현상 때문에 “아무것도 움직이지 않는 완전 정지”라고
+단순화하면 안 된다.</p>
+<h2 id="볼츠만-엔트로피에서-왜-log를-쓰는가">11. 볼츠만 엔트로피에서 왜
+log를 쓰는가</h2>
+<p>핵심 답안은 아래 순서로 쓰면 깔끔하다.</p>
+<ol>
+<li>엔트로피는 extensive property라서 독립적인 두 계를 합치면 더해져야
+한다.</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+S_{\mathrm{total}} &amp;= S_A + S_B
+\end{aligned}
+\]</span></p>
+<ol start="2">
+<li>하지만 경우의 수는 독립계 결합에서 곱해진다.</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+\Omega_{\mathrm{total}} &amp;= \Omega_A \Omega_B
+\end{aligned}
+\]</span></p>
+<ol start="3">
+<li>곱셈을 덧셈으로 바꾸는 함수가 로그다.</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+\ln(\Omega_A \Omega_B) &amp;= \ln \Omega_A + \ln \Omega_B
+\end{aligned}
+\]</span></p>
+<ol start="4">
+<li>절대영도 완전 결정에서 가능한 미시상태가 하나라면 <span
+class="math inline">\(\Omega = 1\)</span>이다. 이때 엔트로피는 0이어야
+한다.</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+\ln 1 &amp;= 0
+\end{aligned}
+\]</span></p>
+<ol start="5">
+<li>그냥 <span class="math inline">\(S = \Omega\)</span>라고 쓰면 <span
+class="math inline">\(\Omega = 1\)</span>일 때 <span
+class="math inline">\(S = 1\)</span>이 되어 3법칙의 기준과 맞지
+않는다.</li>
+<li><span class="math inline">\(\Omega\)</span>는 아보가드로 수 규모의
+엄청 큰 수라서 로그를 취해야 거시 열역학에서 다룰 수 있는 크기가
+된다.</li>
+<li>그래서 <span class="math inline">\(S = k \ln \Omega\)</span>가 되고,
+<span class="math inline">\(k\)</span>는 미시적 경우의 수를 거시적
+엔트로피 단위와 맞추는 Boltzmann constant다.</li>
+</ol>
+<h2 id="단답-암기">12. 단답 암기</h2>
+<ul>
+<li><span class="math inline">\(S_{\mathrm{gen}}\)</span>은 공정
+비가역성 때문에 생기는 엔트로피다.</li>
+<li><span class="math inline">\(S_{\mathrm{gen}} &lt; 0\)</span>이면
+불가능 공정이다.</li>
+<li><span class="math inline">\(T_{\sigma}\)</span>는 계의 온도가 아니라
+주변/열저장고 온도다.</li>
+<li><span class="math inline">\(W_{\mathrm{lost}} = T_{\sigma}
+S_{\mathrm{gen}}\)</span>.</li>
+<li>압축기 효율은 <span
+class="math inline">\(\frac{W_{\mathrm{ideal}}}{W_{\mathrm{actual}}}\)</span>.</li>
+<li>터빈 효율은 <span
+class="math inline">\(\frac{W_{\mathrm{actual}}}{W_{\mathrm{ideal}}}\)</span>.</li>
+<li>2법칙 효율은 <span
+class="math inline">\(\frac{\eta_{\mathrm{actual}}}{\eta_{\mathrm{Carnot}}}\)</span>.</li>
+<li>향류 열교환기는 나란 흐름보다 엔트로피 생성이 작다.</li>
+<li>3법칙은 <span class="math inline">\(T\to0\)</span>에서 완전결정
+<span class="math inline">\(S\to0\)</span>, 그리고 절대영도 도달
+불가능성이다.</li>
+<li>볼츠만 엔트로피의 로그는 곱셈 경우의 수를 덧셈 엔트로피로 바꾸기
+위해 필요하다.</li>
+</ul>
+<h3 id="공학열역학-기말-오픈북-통합-필기노트">공학열역학 기말 오픈북
+통합 필기노트</h3>
+<h2 id="시험장에서-먼저-볼-것">시험장에서 먼저 볼 것</h2>
+<p>객관식과 개념식의 성격이 다르다. 객관식은 1~6장 전체에서 넓게 나오고,
+계산 문제는 5장과 6장 PPT 중심에서만 나온다. 개념식은 엔트로피 중심이다.
+그래서 노트도 두 층으로 봐야 한다.</p>
+<p>객관식은 식을 길게 유도하는 문제가 아니라, 어떤 조건에서 어떤 식을
+쓰는지, 무엇이 상태함수이고 무엇이 경로함수인지, 단위와 부호를 헷갈리지
+않는지가 중요하다. 결국 “이 현상이 1법칙인가 2법칙인가”, “가능한가
+불가능한가”, “가역이면 어떤 값이 0인가”, “상평형이면 어떤 자유에너지가
+같은가”를 판단한다.</p>
+<p>개념식은 엔트로피를 단순히 무질서도라고 쓰면 약하다. 엔트로피를
+소산열, 미시상태 수, 존재 확률, 정보량, 시간의 화살, 엔트로피 생성, lost
+work, 제3법칙, Boltzmann log까지 연결해 문장으로 설명할 수 있어야
+한다.</p>
+<h2 id="객관식-함정-정리">객관식 함정 정리</h2>
+<p>공식 암기 하나로 끝나는 문제보다 “이 식이 왜 이 상황에 맞는가”를 묻는
+포인트를 조심한다.</p>
+<ul>
+<li>객관식은 기존 퀴즈 문장과 보기 표현이 바뀔 수 있으므로 같은 문장을
+찾는 방식보다 개념 관계로 푼다.</li>
+<li>계산기는 로그와 지수승 계산이 되는 것으로 가져가야 한다. <span
+class="math inline">\(PV^\gamma=\mathrm{constant}\)</span> 같은 식에서
+지수승 계산이 필요할 수 있다.</li>
+<li>계산형은 5장, 6장 PPT 중심이다. 1~4장은 객관식/개념 확인용으로 보되,
+계산형 연습은 5장/6장 공식과 PPT 예제에 집중한다.</li>
+<li>오픈북이지만 인터넷은 안 된다. 자료는 미리 내려받고, 문장 그대로
+검색하는 방식보다 단원별 위치를 익힌다.</li>
+<li>에너지 보존만 맞으면 가능한 장치라고 착각하는 문제. 반드시 2법칙,
+<span class="math inline">\(S_{\mathrm{gen}}\ge0\)</span>까지 봐야
+한다.</li>
+<li>Carnot 효율과 실제 효율을 섞는 문제. <span
+class="math inline">\(\eta=1-Q_C/Q_H\)</span>와 <span
+class="math inline">\(\eta_C=1-T_C/T_H\)</span>를 구분한다.</li>
+<li>Celsius를 Carnot 식에 넣는 실수. 열기관, COP, 엔트로피 계산의 온도는
+기본적으로 K다.</li>
+<li><span class="math inline">\(dS=\delta
+Q_{\mathrm{rev}}/T\)</span>에서 실제 비가역 열량을 그대로 넣는 실수.
+엔트로피 변화는 가역 경로로 계산한다.</li>
+<li>상태함수와 경로함수 구분. U, H, S, G, A는 상태함수이고 Q, W는
+경로함수다.</li>
+<li>closed system 일과 open system 기술적 일을 섞는 문제. 닫힌계
+경계일은 -∫ P dV, 흐름계 기술적 일은 ∫ V dP로 본다.</li>
+<li>이상기체 식을 아무 조건에나 쓰는 문제. 저압, 고온에서는 잘 맞고,
+임계점 근처나 고압에서는 Z, 비리얼, cubic EOS가 필요하다.</li>
+<li>상변화에서 온도가 왜 일정한지, 잠열이 어디에 쓰이는지 묻는
+문제.</li>
+<li>상평형에서 ΔG = 0, μ_α = μ_β를 설명하는 문제.</li>
+<li>Boltzmann 엔트로피에서 왜 <span
+class="math inline">\(\ln\Omega\)</span>인지 묻는 문제는 개념식으로 따로
+외운다.</li>
+</ul>
+<h2 id="부호와-기본-약속">부호와 기본 약속</h2>
+<p>이 수업 자료는 보통 Smith 계열 표기처럼 제1법칙을 다음 식으로
+쓴다.</p>
+<p><span class="math display">\[
+\mathrm{d}U=\delta Q+\delta W
+\]</span></p>
+<p>여기서 W는 계에 가해진 일 기준이다. 가역 팽창이면 계가 바깥에 일을
+하므로 계 입장에서 일은 음수다.</p>
+<p><span class="math display">\[
+\delta W_{\mathrm{rev}}=-P\,\mathrm{d}V
+\]</span></p>
+<p>따라서 팽창이면 <span class="math inline">\(\mathrm{d}V&gt;0,\
+W&lt;0\)</span>이다. 압축이면 <span
+class="math inline">\(\mathrm{d}V&lt;0,\ W&gt;0\)</span>이다.</p>
+<p>문제에서 “계가 한 일”을 양수로 쓰는 표기를 사용하면 식은 <span
+class="math inline">\(\Delta U=Q-W_{\mathrm{by\ system}}\)</span>처럼
+바뀐다. 시험장에서는 문제의 부호 약속을 먼저 확인한다.</p>
+<h2 id="장-서론-단위-상태량">1장 서론, 단위, 상태량</h2>
+<h3 id="열역학이-보는-것">열역학이 보는 것</h3>
+<p>열역학은 에너지의 저장, 전달, 변환을 다룬다. 미시적으로는 분자의
+운동과 상호작용이지만, 열역학 계산에서는 압력, 온도, 부피, 엔탈피,
+엔트로피 같은 거시적 성질로 정리한다.</p>
+<p>계는 내가 관심 있게 보는 영역이고, 주위는 그 밖이다. 계와 주위를
+합치면 우주라고 부른다.</p>
+<p>system + surroundings = universe</p>
+<p>계의 종류:</p>
+<ul>
+<li>열린계: 질량과 에너지 모두 출입 가능. 터빈, 압축기, 노즐,
+열교환기.</li>
+<li>닫힌계: 질량 출입은 없고 에너지만 출입 가능. 피스톤-실린더.</li>
+<li>고립계: 질량과 에너지 모두 출입 없음. 이상적인 보온상자.</li>
+</ul>
+<h3 id="단위와-단위-변환">단위와 단위 변환</h3>
+<p>열역학 계산은 단위가 절반이다. SI 기본 단위는 m, kg, s, K, mol, A,
+cd이고, 공학열역학에서는 특히 kg, mol, K, Pa, J를 자주 쓴다.</p>
+<p>자주 쓰는 연결:</p>
+<p><span class="math inline">\(1\,\mathrm{J}=1\,\mathrm{N\,m}\)</span>
+<span class="math inline">\(1\,\mathrm{Pa}=1\,\mathrm{N/m^2}\)</span>
+<span class="math inline">\(1\,\mathrm{kPa\,m^3}=1\,\mathrm{kJ}\)</span>
+<span class="math inline">\(1\,\mathrm{bar}=100\,\mathrm{kPa}\)</span>
+<span
+class="math inline">\(1\,\mathrm{atm}=101.325\,\mathrm{kPa}\)</span>
+<span
+class="math inline">\(1\,\mathrm{cal}=4.186\,\mathrm{J}\)</span></p>
+<p>온도 차이는 K와 °C의 크기가 같지만, 절대온도가 들어가는 식에는 반드시
+K를 써야 한다.</p>
+<p>분자량 <span class="math inline">\(M\)</span>은 <span
+class="math inline">\(\mathrm{kg/kmol}\)</span> 또는 <span
+class="math inline">\(\mathrm{g/mol}\)</span>로 자주 쓰이며, 질량과 몰수
+관계는 <span class="math inline">\(n=m/M\)</span>이다. <span
+class="math inline">\(R_u\)</span>를 쓸지, 물질별 <span
+class="math inline">\(R\)</span>을 쓸지 먼저 정한다.</p>
+<h3 id="성질의-분류">성질의 분류</h3>
+<p>강도성질은 계의 크기와 무관하다.</p>
+<p><span class="math inline">\(T,\ P,\ \rho,\ v,\ V_m\)</span>, specific
+volume, molar volume</p>
+<p>크기성질은 계의 양에 비례한다.</p>
+<p><span class="math inline">\(U,\ H,\ S,\ G,\ V\)</span>, mass,
+mole</p>
+<p>크기성질을 질량이나 몰수로 나누면 강도성질이 된다.</p>
+<p>specific volume은 <span class="math inline">\(v=V/m\)</span>, molar
+volume은 <span class="math inline">\(V_m=V/n\)</span>이다.</p>
+<p>상태함수는 현재 상태만 알면 정해진다.</p>
+<p><span class="math inline">\(U,\ H,\ S,\ G,\ A,\ T,\ P,\
+V\)</span></p>
+<p>경로함수는 어떤 경로로 왔는지에 따라 달라진다.</p>
+<p><span class="math inline">\(Q,\ W\)</span></p>
+<p>비유로는, 산 정상의 고도는 어느 길로 올라가도 같지만 올라가며 쓴
+에너지는 길에 따라 달라진다. 고도는 상태함수, 소모한 일은
+경로함수다.</p>
+<h3 id="평형과-상태">평형과 상태</h3>
+<p>상태는 계의 성질들이 정해진 순간이다. 평형은 시간이 지나도 거시적
+변화가 더 이상 나타나지 않는 상태다.</p>
+<p>평형의 종류:</p>
+<ul>
+<li>열적 평형: 온도 차이가 없어서 열이 더 이상 흐르지 않음.</li>
+<li>기계적 평형: 압력 불균형이 없어서 경계가 움직이지 않음.</li>
+<li>상평형: 서로 다른 상 사이 이동 경향이 같음.</li>
+<li>화학평형: 정반응과 역반응의 구동력이 같음.</li>
+</ul>
+<p>열역학 제0법칙은 온도의 의미를 만든다. A와 C가 열평형이고 B와 C가
+열평형이면 A와 B도 열평형이다. 그래서 온도계가 가능하다.</p>
+<h3 id="온도">온도</h3>
+<p>온도는 열이 흐르는 방향을 정하는 성질이다. 열은 자발적으로 높은
+온도에서 낮은 온도로 흐른다.</p>
+<p>온도 변환:</p>
+<p>T(K) = t(°C) + 273.15 T(R) = 1.8 T(K) t(°F) = 1.8 t(°C) + 32</p>
+<p>절대온도는 반드시 K를 쓴다. Carnot 효율, COP, 엔트로피 계산에서
+섭씨를 넣으면 틀린다.</p>
+<h3 id="압력">압력</h3>
+<p>압력은 단위 면적당 힘이다.</p>
+<p>P = F/A</p>
+<p>자주 쓰는 단위:</p>
+<p>1 bar = 100 kPa 1 atm = 101.325 kPa = 1.01325 bar 1 atm = 14.7
+psi</p>
+<p>절대압과 게이지압을 구분한다.</p>
+<p><span class="math display">\[P_abs = P_gauge + P_atm\]</span></p>
+<p>기체 상태방정식에는 절대압을 써야 한다.</p>
+<h3 id="양-밀도-비체적">양, 밀도, 비체적</h3>
+<p><span class="math display">\[
+n=\frac{m}{M},\qquad \rho=\frac{m}{V},\qquad
+v=\frac{V}{m}=\frac{1}{\rho},\qquad V_m=\frac{V}{n}
+\]</span></p>
+<p>기체상수:</p>
+<p>PV = n Rᵤ T PV = m R T R = Rᵤ/M Rᵤ = 8.314 J/mol K</p>
+<p>Rᵤ는 보편기체상수라 물질과 무관하고, 질량 기준 R은 분자량에 따라
+달라진다.</p>
+<h3 id="상-임계점-삼중점">상, 임계점, 삼중점</h3>
+<p>상은 고체, 액체, 기체처럼 물질의 균일한 물리적 상태다. 순수물질은 P,
+T에 따라 상이 정해진다.</p>
+<p>삼중점은 고체, 액체, 기체가 동시에 평형으로 존재하는 점이다. 물의
+삼중점은 약 273.16 K, 6.1 mbar이다.</p>
+<p>임계점 이상에서는 액체와 기체의 구분이 사라진다. 이때는 포화액체,
+포화증기 경계가 없어지고 초임계 유체가 된다.</p>
+<p>포화상태:</p>
+<ul>
+<li>포화액체: 끓기 직전의 액체.</li>
+<li>포화증기: 응축되기 직전의 증기.</li>
+<li>과열증기: 포화온도보다 더 높은 온도의 증기.</li>
+<li>압축액체 또는 과냉액체: 주어진 압력에서 포화온도보다 낮은 액체.</li>
+</ul>
+<p>물은 특이하게 0°C에서 3.984°C까지 가열하면 밀도가 증가한다. 그래서
+얼음은 물보다 밀도가 작아 뜨고, 호수는 표면부터 언다.</p>
+<h3 id="열-일-에너지의-구분">열, 일, 에너지의 구분</h3>
+<p>에너지는 계에 저장될 수 있지만, 열 <span
+class="math inline">\(Q\)</span>와 일 <span
+class="math inline">\(W\)</span>는 저장되는 물건이 아니라 경계를
+통과하는 에너지 전달 방식이다. 그래서 <span
+class="math inline">\(U,H,S,G\)</span>는 상태함수이고 <span
+class="math inline">\(Q,W\)</span>는 경로함수다.</p>
+<p>일은 힘과 변위가 있을 때 생기는 에너지 전달이다.</p>
+<p><span class="math display">\[
+W=\int F\,\mathrm{d}x
+\]</span></p>
+<p>열은 온도 차이 때문에 경계를 넘어 이동하는 에너지다. 미시적으로는
+분자 운동, Brownian motion, 충돌을 통해 에너지가 전달된다고 볼 수
+있다.</p>
+<p>PPT의 큰 구분:</p>
+<ul>
+<li>Work: shaft, piston처럼 질서 있는 거시적 에너지 전달.</li>
+<li>Heat: 온도 차이로 인한 무질서한 미시적 에너지 전달.</li>
+<li>Energy: 계 안에 저장된 총량. 내부에너지, 운동에너지, 위치에너지로
+나눈다.</li>
+</ul>
+<h2 id="장-제1법칙과-기본-법칙">2장 제1법칙과 기본 법칙</h2>
+<h3 id="joule의-실험">Joule의 실험</h3>
+<p>Joule의 실험은 열과 일이 서로 변환 가능한 에너지라는 것을 보였다.
+물을 기계적으로 저어 주면 온도가 올라간다. 즉 일은 내부에너지로 저장될
+수 있고, 열과 일은 에너지 전달 방식이다.</p>
+<p>1 cal = 4.186 J</p>
+<p>열은 저장되는 물질이 아니라 경계를 통해 이동하는 에너지다. 일도
+저장되는 물질이 아니라 힘과 변위를 통해 전달되는 에너지다. 저장되는 것은
+내부에너지 같은 상태량이다.</p>
+<h3 id="내부에너지">내부에너지</h3>
+<p>내부에너지 U는 분자 운동에너지, 분자 간 위치에너지, 진동/회전/전자
+에너지 등을 모두 포함한 계 내부의 에너지다.</p>
+<p>이상기체에서는 분자 간 위치에너지를 무시하므로 내부에너지는 온도만의
+함수다.</p>
+<p><span class="math display">\[
+U=U(T)\quad(\mathrm{ideal\ gas}),\qquad \Delta U=\int C_v\,\mathrm{d}T
+\]</span></p>
+<p>실제기체나 액체에서는 분자 간 상호작용 때문에 U가 온도뿐 아니라
+부피나 압력에도 영향을 받는다.</p>
+<h3 id="제1법칙">제1법칙</h3>
+<p>에너지는 생성되거나 소멸되지 않고 형태만 변한다.</p>
+<p>닫힌계:</p>
+<p><span class="math display">\[
+\mathrm{d}U=\delta Q+\delta W,\qquad \delta
+W_{\mathrm{rev}}=-P\,\mathrm{d}V
+\]</span></p>
+<p>운동에너지와 위치에너지를 포함하면:</p>
+<p><span class="math display">\[
+\mathrm{d}E=\mathrm{d}U+\mathrm{d}E_k+\mathrm{d}E_p=\delta Q+\delta W
+\]</span></p>
+<p>팽창하는 피스톤에서는 계가 주위에 일을 하므로 W가 음수다. 압축은
+주위가 계에 일을 하므로 W가 양수다.</p>
+<h3 id="엔탈피">엔탈피</h3>
+<p>엔탈피는 다음처럼 정의한다.</p>
+<p>H = U + PV</p>
+<p>정압 과정에서 열량은 엔탈피 변화와 연결된다.</p>
+<p><span class="math display">\[Q_P = ΔH\]</span></p>
+<p>이상기체에서는 엔탈피도 온도만의 함수다.</p>
+<p>H = H(T) ΔH = ∫ Cₚ dT</p>
+<p>정압 가열에서는 투입된 열이 내부에너지 증가와 팽창일에 함께 쓰이므로,
+전체 열량은 ΔH로 보는 것이 편하다.</p>
+<h3 id="열용량">열용량</h3>
+<p>정적 열용량:</p>
+<p>Cᵥ = (∂ U / ∂ T)_V ΔU = ∫ Cᵥ dT</p>
+<p>정압 열용량:</p>
+<p>Cₚ = (∂ H / ∂ T)_P ΔH = ∫ Cₚ dT</p>
+<p>이상기체에서는:</p>
+<p>Cₚ - Cᵥ = R γ = Cₚ/Cᵥ</p>
+<p>온도 변화가 크면 평균 열용량이나 온도 함수 형태의 열용량을 써야
+한다.</p>
+<p>ΔH = ∫ from T1 to T2 Cₚ(T) dT ΔU = ∫ from T1 to T2 Cᵥ(T) dT</p>
+<h3 id="대표-과정-정리">대표 과정 정리</h3>
+<p>등온 과정:</p>
+<p>T = constant ΔU = 0 ideal gas ΔH = 0 ideal gas</p>
+<p>등압 과정:</p>
+<p>P = constant <span class="math display">\[Q_P = ΔH\]</span></p>
+<p>등적 과정:</p>
+<p>V = constant W = 0 <span class="math display">\[Q_V = ΔU\]</span></p>
+<p>단열 과정:</p>
+<p>Q = 0</p>
+<p>가역 단열 과정은 등엔트로피 과정이다.</p>
+<p>reversible adiabatic → ΔS = 0</p>
+<p>비가역 단열 과정은 열교환이 없더라도 엔트로피가 생성될 수 있다.</p>
+<p>irreversible adiabatic → ΔS &gt; 0</p>
+<h3 id="가역과-비가역">가역과 비가역</h3>
+<p>가역 과정은 계와 주위가 모두 원래 상태로 돌아올 수 있는 이상적
+과정이다. 실제 공정은 마찰, 유한한 온도차 열전달, 급격한 팽창, 혼합,
+전기저항 때문에 비가역성을 가진다.</p>
+<p>준정적 과정은 계가 거의 평형상태를 지나간다는 뜻이고, 가역 과정이
+되려면 준정적일 뿐 아니라 마찰 같은 소산도 없어야 한다.</p>
+<p>대표 비가역 원인:</p>
+<ul>
+<li>sudden expansion, free expansion</li>
+<li>마찰과 점성 소산</li>
+<li>유한한 온도 차이의 열전달</li>
+<li>서로 다른 유체의 혼합</li>
+<li>전기저항 발열</li>
+</ul>
+<p>비가역성이 있으면 같은 초기/최종 상태라도 얻을 수 있는 일은 줄고,
+필요한 일은 늘어난다.</p>
+<h3 id="이상기체-가역-과정-공식">이상기체 가역 과정 공식</h3>
+<p>닫힌계 가역 등온:</p>
+<p><span class="math display">\[
+W=-nRT\ln\frac{V_2}{V_1}=nRT\ln\frac{P_2}{P_1},\qquad Q=-W,\qquad \Delta
+U=0,\qquad \Delta H=0
+\]</span></p>
+<p>닫힌계 가역 단열:</p>
+<p><span class="math display">\[
+PV^\gamma=\mathrm{constant},\qquad
+TV^{\gamma-1}=\mathrm{constant},\qquad
+TP^{(1-\gamma)/\gamma}=\mathrm{constant}
+\]</span></p>
+<p>폴리트로픽 과정:</p>
+<p><span class="math display">\[PV^delta = constant\]</span></p>
+<p>특수값:</p>
+<p>delta = 0 등압 delta = 1 등온 delta = γ 가역 단열 delta → ∞ 등적</p>
+<p>폴리트로픽 과정의 일:</p>
+<p>W = -(P2 V2 - P1 V1)/(1 - delta) delta ≠ 1</p>
+<p>단, 부호는 W를 계에 가해진 일로 둘 때다.</p>
+<h3 id="열린계-에너지수지">열린계 에너지수지</h3>
+<p>정상 흐름계에서 질량, 열, 일, 엔탈피, 운동에너지, 위치에너지를 함께
+본다.</p>
+<p>일반적인 정상상태 에너지수지:</p>
+<p><span class="math display">\[
+\dot{Q}+\dot{W}_s
++\sum_{\mathrm{in}}\dot{m}\left(H+\frac{v^2}{2}+gz\right)
+-\sum_{\mathrm{out}}\dot{m}\left(H+\frac{v^2}{2}+gz\right)=0
+\]</span></p>
+<p>입구와 출구가 하나씩이면:</p>
+<p><span class="math display">\[
+Q+W_s=\Delta H+\Delta\left(\frac{v^2}{2}\right)+g\Delta z
+\]</span></p>
+<p>부호는 교재 표기에 맞춰 조심한다. 핵심은 터빈, 압축기, 노즐, 밸브,
+열교환기마다 사라지는 항이 다르다는 것이다.</p>
+<p>장치별 근사:</p>
+<ul>
+<li>터빈: 단열, 운동/위치에너지 무시. 엔탈피 감소로 축일 생산.</li>
+<li>압축기/펌프: 단열 근사, 축일 입력, 엔탈피 증가.</li>
+<li>노즐: 축일 없음, 단열, 엔탈피 감소가 운동에너지 증가.</li>
+<li>throttle valve: 축일 없음, 열교환 없음, 운동/위치에너지 무시. H1 =
+H2.</li>
+<li>열교환기: 축일 없음, 외부와 단열이면 한 유체가 잃은 열을 다른 유체가
+얻음.</li>
+</ul>
+<h3 id="닫힌계-일과-열린계-기술적-일">닫힌계 일과 열린계 기술적 일</h3>
+<p>닫힌계 가역 경계일:</p>
+<p>δW = -P dV</p>
+<p>열린계 가역 기술적 일:</p>
+<p><span class="math display">\[δW_t = V dP\]</span></p>
+<p>P-V 선도에서 닫힌계 일은 곡선 아래 면적, 열린계 기술적 일은 곡선 왼쪽
+면적으로 구분한다.</p>
+<h2 id="장-순수유체의-부피-특성">3장 순수유체의 부피 특성</h2>
+<h3 id="pvt-거동">PVT 거동</h3>
+<p>순수물질의 상태는 보통 P, V, T 중 두 독립 성질로 정해진다. 단, 두
+상이 공존하는 포화영역에서는 자유도가 줄어든다.</p>
+<p>Gibbs phase rule:</p>
+<p>F = 2 - π + N</p>
+<p>순수물질이면 N = 1이다.</p>
+<ul>
+<li>일반 단일상: F = 2. P와 T를 정하면 상태가 정해진다.</li>
+<li>액체-증기 2상 평형: F = 1. T를 정하면 P 또는 T 하나만 독립적으로
+정할 수 있다.</li>
+<li>삼중점: F = 0. P와 T가 동시에 고정된다.</li>
+<li>임계점도 순수물질의 특수한 고정 상태로 본다.</li>
+</ul>
+<p>상도표에서 중요한 것:</p>
+<ul>
+<li>포화액체선</li>
+<li>포화증기선</li>
+<li>임계점</li>
+<li>삼중점</li>
+<li>압축액체</li>
+<li>과열증기</li>
+<li>액체-증기 2상 영역</li>
+</ul>
+<p>품질 또는 건도:</p>
+<p>x = vapor mass / total mass</p>
+<p>PPT에서는 dryness fraction을 y, wetness fraction을 1-y처럼 표시하기도
+했다. 말은 달라도 핵심은 “기상 비율과 액상 비율”이다.</p>
+<p>2상 혼합물의 성질:</p>
+<p><span class="math display">\[M = (1-x) M^L + x M^V\]</span> <span
+class="math display">\[M = M^L + x(M^V - M^L)\]</span></p>
+<p>M은 V, U, H, S 같은 성질에 적용할 수 있다.</p>
+<h3 id="증기압-습도-용질효과">증기압, 습도, 용질효과</h3>
+<p>증기압은 액체가 기체가 되려는 성향을 압력으로 표현한 값이다. 같은
+온도에서 증기압이 크면 액상보다 기상에 있으려는 경향이 크고, 액화시키기
+어렵다.</p>
+<p>증기압의 방향:</p>
+<ul>
+<li>온도 증가 → 증기압 증가.</li>
+<li>분자 간 인력 증가 → 증기압 감소, 끓는점 증가.</li>
+<li>비휘발성 용질 첨가 → 용매의 증기압 감소.</li>
+</ul>
+<p>상대습도는 현재 수증기압이 해당 온도의 포화수증기압에 비해 얼마나
+찼는지를 나타낸다.</p>
+<p>relative humidity = water vapor partial pressure / saturation vapor
+pressure</p>
+<p>온도가 올라가면 포화수증기량이 늘어나므로 같은 수분량에서도
+상대습도는 낮아질 수 있다. 이슬점은 공기를 냉각했을 때 상대습도 100%가
+되어 응축이 시작되는 온도다. 에어컨 제습은 공기를 이슬점 이하로 내려
+물을 응축시키는 원리다.</p>
+<p>절대습도는 공기 중 수분의 실제 양이고, 상대습도는 포화량 대비
+비율이다. 물의 분자량은 18이고 건조공기 주요 성분 N2, O2는 28, 32라서
+습한 공기는 같은 T, P, V에서 더 가볍다.</p>
+<p>비휘발성 용질효과:</p>
+<ul>
+<li>증기압 내림</li>
+<li>끓는점 오름</li>
+<li>어는점 내림</li>
+<li>삼투압 증가</li>
+</ul>
+<p>어는점 내림은 용질 입자가 액체의 무질서도를 키우고 고체 격자 형성을
+방해하기 때문에 생긴다. 부동액, 제설제, 소금물, 아이스크림 예시는 모두
+이 원리와 연결된다.</p>
+<h3 id="subcool-supercool-superheat">Subcool, supercool, superheat</h3>
+<p>Subcooled liquid는 주어진 압력에서 포화온도보다 낮은 온도의 액체다.
+그냥 끓기 전의 안정한 액체라고 보면 된다.</p>
+<p>Superheated vapor는 주어진 압력에서 포화온도보다 높은 온도의 증기다.
+과열 수증기는 100°C보다 훨씬 높은 온도를 가질 수 있고, 공정 가열이나
+에어프라이어 원리 설명에 쓰였다.</p>
+<p>Supercooling 또는 과냉각은 어는점보다 낮은데도 핵생성이 억제되어
+액체가 유지되는 상태다. 충격, 씨앗 결정, 표면 결함이 생기면 급격히
+결정화할 수 있다.</p>
+<p>Subcooling과 supercooling은 다르다.</p>
+<ul>
+<li>Subcooling: 포화온도보다 낮은 액체. 보통 안정 상태.</li>
+<li>Supercooling: 응고점보다 낮은데도 액체로 남은 준안정 상태.</li>
+</ul>
+<p>Hot pack의 아세트산나트륨은 과냉각수가 아니라 과포화 용액의 결정화
+열을 이용한다.</p>
+<h3 id="부피팽창률과-등온압축률">부피팽창률과 등온압축률</h3>
+<p>상태방정식은 P, V, T를 연결한다.</p>
+<p>EOS = f(P, V, T)</p>
+<p>부피팽창률은 온도 변화에 대한 부피 민감도다.</p>
+<p>β = (1/V)(∂V/∂T)_P</p>
+<p>등온압축률은 압력 변화에 대한 부피 민감도다.</p>
+<p>κ_T = -(1/V)(∂V/∂P)_T</p>
+<p>일반적으로 T가 증가하면 V가 증가하고, P가 증가하면 V가 감소한다.
+물처럼 일부 물질은 특정 온도 범위에서 음의 열팽창 같은 예외를 보일 수
+있다.</p>
+<h3 id="이상기체">이상기체</h3>
+<p>이상기체는 분자 자체 부피와 분자 간 인력/척력을 무시한 모델이다.</p>
+<p>PV = n Rᵤ T PV = m R T Z = PV/(n Rᵤ T)</p>
+<p>이상기체이면:</p>
+<p>Z = 1</p>
+<p>고온, 저압에서 이상기체 근사가 잘 맞는다. 물 증기도 대략 1 bar 미만,
+100°C 이상처럼 충분히 과열된 조건에서는 이상기체처럼 쓸 수 있다. 임계점
+근처, 고압, 포화영역에서는 이상기체 오차가 커진다.</p>
+<h3 id="압축인자-z">압축인자 Z</h3>
+<p>실제기체는 이상기체에서 벗어나므로 압축인자 Z를 쓴다.</p>
+<p>PV = Z n Rᵤ T Z = PV/(n Rᵤ T)</p>
+<p>해석:</p>
+<ul>
+<li>Z = 1: 이상기체</li>
+<li>Z &lt; 1: 인력 우세, 실제 부피가 이상기체보다 작음</li>
+<li>Z &gt; 1: 척력/배제부피 우세, 실제 부피가 이상기체보다 큼</li>
+</ul>
+<p>대응상태 원리:</p>
+<p><span class="math display">\[
+T_r=\frac{T}{T_c},\qquad P_r=\frac{P}{P_c},\qquad V_r=\frac{V}{V_c}
+\]</span></p>
+<p>여러 물질은 같은 <span class="math inline">\(T_r\)</span>, <span
+class="math inline">\(P_r\)</span>에서 비슷한 <span
+class="math inline">\(Z\)</span>를 보인다는 근사다. 더 정확히 하려면
+이심인자 <span class="math inline">\(\omega\)</span>까지 고려한다.</p>
+<p>수소, 헬륨 같은 양자 기체는 일반 대응상태 원리에서 벗어나 보정이
+필요할 수 있다.</p>
+<h3 id="virial-eos">Virial EOS</h3>
+<p>비리얼 방정식은 실제기체의 비이상성을 계수로 보정한다.</p>
+<p>부피형:</p>
+<p>Z = 1 + B/V + C/V^2 + …</p>
+<p>압력형:</p>
+<p>Z = 1 + B’P + C’P^2 + …</p>
+<p>2차 비리얼 계수 B는 분자 간 상호작용을 반영한다.</p>
+<ul>
+<li>B &lt; 0: 인력 우세</li>
+<li>B &gt; 0: 척력 우세</li>
+<li>B = 0: Boyle temperature 근처, 이상기체에 가까운 거동</li>
+</ul>
+<p>저압에서는 2차 항까지만 써도 비교적 잘 맞는다. 고압에서는 3차 이상
+항이나 cubic EOS가 필요하다.</p>
+<h3 id="cubic-eos">Cubic EOS</h3>
+<p>Cubic EOS는 액체와 기체를 함께 다룰 수 있도록 만든 3차
+상태방정식이다. 대표적으로 van der Waals, Redlich-Kwong,
+Soave-Redlich-Kwong, Peng-Robinson이 있다.</p>
+<p>van der Waals:</p>
+<p><span class="math display">\[P = RT/(V-b) - a/V^2\]</span></p>
+<p>의미:</p>
+<ul>
+<li>a: 분자 간 인력 보정</li>
+<li>b: 분자 자체 부피, 배제부피 보정</li>
+</ul>
+<p>Redlich-Kwong:</p>
+<p><span class="math display">\[P = RT/(V-b) - a/(T^0.5
+V(V+b))\]</span></p>
+<p>SRK, PR은 온도 의존성과 이심인자를 더 넣어 실제 물질의 증기압, 액체
+부피, 상평형을 더 잘 맞춘다.</p>
+<p>Cubic EOS를 풀면 특정 T, P에서 부피 근이 여러 개 나올 수 있다.</p>
+<ul>
+<li>큰 근: 기체상 근</li>
+<li>작은 근: 액체상 근</li>
+<li>중간 근: 불안정한 근</li>
+</ul>
+<p>액체상 근을 반복계산할 때는 액체가 압축성이 작고 분자 자체 부피에
+가까우므로 b 근처를 초기값으로 잡는 것이 자연스럽다. 기체상 근은
+이상기체 부피 RT/P 근처에서 시작하기 좋다.</p>
+<h3 id="액체-부피">액체 부피</h3>
+<p>액체는 압축성이 작아 압력에 따른 부피 변화가 작다. 그래도 고압에서는
+보정이 필요하다.</p>
+<p>대표 상관식:</p>
+<ul>
+<li>Rackett equation</li>
+<li>Lydersen-Greenkorn-Hougen 상관식</li>
+<li>대응상태 액체 밀도/부피 상관식</li>
+</ul>
+<p>액체 부피는 임계성질, 환산온도, 환산밀도 같은 무차원 값으로 추산한다.
+정확 계산보다는 “액체는 기체보다 훨씬 작고 압축성이 낮다”는 물리적
+감각이 중요하다.</p>
+<h3 id="이상기체-과정과-3장-계산-함정">이상기체 과정과 3장 계산
+함정</h3>
+<p>이상기체에서:</p>
+<p>ΔU = ∫ Cᵥ dT ΔH = ∫ Cₚ dT</p>
+<p>등온이면:</p>
+<p>ΔU = 0 ΔH = 0</p>
+<p>단열이면 반드시 등엔트로피라는 뜻은 아니다. 가역 단열일 때만
+등엔트로피다.</p>
+<p>adiabatic: Q = 0 isentropic: ΔS = 0 reversible adiabatic → isentropic
+<span class="math display">\[irreversible adiabatic → S_gen &gt;
+0\]</span></p>
+<h2 id="장-열효과">4장 열효과</h2>
+<h3 id="현열과-잠열">현열과 잠열</h3>
+<p>현열은 온도 변화에 쓰이는 열이다.</p>
+<p>Q = m Cₚ ΔT Q = ∫ Cₚ dT</p>
+<p>잠열은 상변화에 쓰이는 열이다. 상변화 중에는 온도가 일정하게
+유지되며, 공급되거나 제거된 열이 분자 간 상호작용을 바꾸는 데
+사용된다.</p>
+<p><span class="math display">\[Q = m ΔH_phase\]</span></p>
+<p>상변화에서 온도가 변하지 않는 이유:</p>
+<p>열을 넣으면 평소에는 분자의 운동에너지 증가로 온도가 오른다. 하지만
+상변화 시점에는 공급된 열이 분자 간 결합이나 응집력을 끊는 위치에너지
+변화에 우선 사용된다. 그래서 운동에너지가 바로 증가하지 않고 온도가
+일정하게 보인다.</p>
+<h3 id="상변화와-열의-방향">상변화와 열의 방향</h3>
+<p>융해 S → L 흡열 응고 L → S 발열 기화 L → G 흡열 응축 G → L 발열 승화
+S → G 흡열 증착 G → S 발열</p>
+<p>물 기준 대표값:</p>
+<p>융해열 약 333 J/g 기화열 약 2260 J/g</p>
+<p>기화열이 크기 때문에 땀 증발, 물 뿌리기, 냉매 증발이 냉각에
+효과적이다.</p>
+<p>응고는 발열 과정이지만 너무 낮은 온도에서는 분자 운동이 느려져 규칙적
+격자를 만드는 속도가 늦어질 수 있다. 그래서 열역학적 구동력과 실제
+속도는 다를 수 있다.</p>
+<h3 id="joule-thomson-효과">Joule-Thomson 효과</h3>
+<p>Throttle valve나 다공성 플러그를 통과하면서 압력이 떨어질 때 온도가
+변하는 현상이다.</p>
+<p>μ_JT = (∂ T / ∂ P)_H</p>
+<p>Throttle 과정은 보통 다음처럼 본다.</p>
+<p>H1 = H2</p>
+<p>대부분의 기체는 상온에서 압력강하 시 냉각되지만, 모든 기체가 항상
+냉각되는 것은 아니다. inversion temperature를 기준으로 팽창 시 냉각 또는
+가열이 달라질 수 있다. He 같은 기체는 조건에 따라 팽창 시 온도가 올라갈
+수 있다.</p>
+<p>일상 예:</p>
+<ul>
+<li>스프레이 캔이 차가워짐</li>
+<li>캔음료 개봉 시 수증기 응축</li>
+<li>냉장고와 에어컨의 팽창밸브</li>
+<li>Linde 액화 공정</li>
+</ul>
+<h3 id="clapeyron-equation">Clapeyron equation</h3>
+<p>상평형에서 압력과 온도의 관계를 준다.</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}P_{\mathrm{sat}}}{\mathrm{d}T}
+=\frac{\Delta H}{T\Delta V}
+\]</span></p>
+<p>증발에서는 <span class="math inline">\(\Delta V=V^V-V^L\)</span>이고,
+보통 기체 부피가 액체보다 훨씬 크다.</p>
+<p>얼음-물 평형에서는 압력이 증가하면 녹는점이 약간 내려간다. 물은 얼 때
+부피가 커지는 특이한 물질이라 이런 부호가 나온다.</p>
+<h3 id="clausius-clapeyron-equation">Clausius-Clapeyron equation</h3>
+<p>기체 부피가 액체 부피보다 훨씬 크고, 증기를 이상기체로 보면:</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}\ln P_{\mathrm{sat}}}{\mathrm{d}T}
+=\frac{\Delta H_{\mathrm{vap}}}{RT^2}
+\]</span></p>
+<p>증발잠열이 온도 범위에서 거의 일정하다고 보면 적분형:</p>
+<p><span class="math display">\[
+\ln\left(\frac{P_2}{P_1}\right)
+=-\frac{\Delta H_{\mathrm{vap}}}{R}
+\left(\frac{1}{T_2}-\frac{1}{T_1}\right)
+\]</span></p>
+<p>증기압 식:</p>
+<p><span class="math display">\[August:  ln P_sat = A - B/T\]</span>
+<span class="math display">\[Antoine: ln P_sat = A - B/(T +
+C)\]</span></p>
+<p>Antoine 식은 상수의 단위, 로그의 종류, 온도 단위를 반드시 확인해야
+한다. 적용 온도 범위를 벗어나면 오차가 커진다.</p>
+<h3 id="반응열">반응열</h3>
+<p>표준반응열은 표준상태에서 반응이 일어날 때의 엔탈피 변화다.</p>
+<p><span class="math display">\[
+\Delta H_{\mathrm{rxn}}^\circ
+=\sum_i \nu_i \Delta H_{f,i}^\circ(\mathrm{products})
+-\sum_i \nu_i \Delta H_{f,i}^\circ(\mathrm{reactants})
+\]</span></p>
+<p>PPT에서 표준상태는 보통 1 bar를 기준으로 설명했다. 온도는 원칙적으로
+임의의 T에서 정의할 수 있지만, 표 데이터는 298.15 K 기준이 많다.</p>
+<p>표준상태 감각:</p>
+<ul>
+<li>기체: 1 bar의 이상기체 기준.</li>
+<li>순수 고체/액체: 1 bar의 순수 성분 기준.</li>
+<li>용액: 보통 1 M 같은 기준상태가 따로 주어진다.</li>
+<li>원소: 기준상태의 원소는 <span class="math inline">\(\Delta
+H_f^\circ=0\)</span>.</li>
+</ul>
+<p>표준상태에서 원소의 표준생성엔탈피는 0이다. 예를 들어 O2(g), H2(g),
+N2(g), graphite C는 기준상태에서 0으로 둔다.</p>
+<p>발열반응:</p>
+<p><span class="math display">\[ΔH_rxn &lt; 0\]</span></p>
+<p>흡열반응:</p>
+<p><span class="math display">\[ΔH_rxn &gt; 0\]</span></p>
+<p>결합엔탈피로도 반응열을 대략 계산할 수 있다.</p>
+<p><span class="math display">\[ΔH_rxn = energy for bond breaking -
+energy from bond forming\]</span></p>
+<p>결합을 끊는 것은 흡열, 결합을 만드는 것은 발열이다. 평균 결합엔탈피는
+주로 기체 반응에서 근사적으로 쓴다. 생성물이 액체 물이면 기체 물 기준
+계산 후 응축잠열 보정이 필요할 수 있다.</p>
+<h3 id="hess-법칙">Hess 법칙</h3>
+<p>엔탈피는 상태함수이므로 반응 경로와 무관하다.</p>
+<p><span class="math display">\[ΔH_total = sum ΔH_steps\]</span></p>
+<p>직접 측정하기 어려운 반응열은 여러 알려진 반응을 더하고 빼서 구한다.
+실제 반응이 그 경로로 일어난다는 뜻은 아니다. “처음과 끝이 같으면 엔탈피
+변화는 같다”는 뜻이다.</p>
+<h3 id="연소열">연소열</h3>
+<p>표준연소열은 물질 1 mol이 산소와 완전히 연소할 때의 엔탈피
+변화다.</p>
+<p>완전연소 생성물:</p>
+<p>C → CO2 H → H2O S → SO2</p>
+<p>산소가 부족하면 불완전연소가 되어 CO, soot 등이 생기고 발열량도
+달라진다. 연소에는 연료, 산소, 유지 온도가 필요하다.</p>
+<h3 id="반응열의-온도-의존성">반응열의 온도 의존성</h3>
+<p>표준반응열이 298 K에서 주어졌고 다른 온도에서 알고 싶으면 Kirchhoff
+법칙을 쓴다.</p>
+<p><span class="math display">\[ΔH_rxn(T2) = ΔH_rxn(T1)\]</span> + ∫
+from T1 to T2 ΔCₚ dT</p>
+<p><span class="math display">\[ΔCₚ = sum nu_i Cₚ,i(products)\]</span> -
+sum nu_i Cₚ,i(reactants)</p>
+<p>열용량이 다항식이면 각 항을 적분한다.</p>
+<p>반응온도는 반응속도와 반응열을 구분해서 봐야 한다. 온도를 올리면
+Arrhenius 식에 따라 속도상수 k가 커져 반응속도는 대체로 빨라지지만,
+반응의 자발성이나 반응열 부호가 자동으로 바뀐다는 뜻은 아니다.</p>
+<p>Arrhenius 형태:</p>
+<p><span class="math display">\[k = A exp(-E_a/(R T))\]</span></p>
+<p>촉매는 활성화에너지를 낮춰 속도를 바꾸지만, 같은 초기/최종 상태의 ΔH
+자체를 바꾸지는 않는다.</p>
+<h3 id="단열-반응과-이론-화염온도">단열 반응과 이론 화염온도</h3>
+<p>단열 반응에서는 외부와 열교환이 없으므로 반응열이 생성물의 온도
+상승에 쓰인다.</p>
+<p>계산 흐름:</p>
+<ol>
+<li>기준온도에서 반응열을 구한다.</li>
+<li>생성물 조성을 정한다.</li>
+<li>생성물 현열 ∫ Cₚ dT가 반응열을 흡수한다고 놓는다.</li>
+<li>미지의 최종온도를 반복계산으로 찾는다.</li>
+</ol>
+<p>산업반응에서는 주반응, 부반응, 미반응물, 과량 반응물이 함께 있으므로
+양론 계산이 먼저다.</p>
+<h2 id="장-제2법칙과-엔트로피">5장 제2법칙과 엔트로피</h2>
+<h3 id="제2법칙의-핵심">제2법칙의 핵심</h3>
+<p>제1법칙은 에너지의 양을 말한다. 에너지는 보존된다. 그러나
+제1법칙만으로는 어떤 과정이 실제로 가능한지 알 수 없다.</p>
+<p>제2법칙은 방향성과 가능성을 말한다.</p>
+<p>자연 과정은 전체 엔트로피가 증가하는 방향으로 진행된다. <span
+class="math display">\[
+\Delta S_{\mathrm{universe}} \ge 0
+\]</span></p>
+<p>고립계에서:</p>
+<p><span class="math display">\[
+\Delta S \ge 0
+\]</span></p>
+<p>가역이면:</p>
+<p><span class="math display">\[
+\Delta S_{\mathrm{universe}} = 0
+\]</span></p>
+<p>비가역이면:</p>
+<p><span class="math display">\[
+\Delta S_{\mathrm{universe}} &gt; 0
+\]</span></p>
+<p>불가능한 과정:</p>
+<p><span class="math display">\[
+\Delta S_{\mathrm{universe}} &lt; 0
+\]</span></p>
+<h3 id="kelvin-planck-서술">Kelvin-Planck 서술</h3>
+<p>단일 열원에서 열을 받아 아무 다른 효과 없이 전부 일로 바꾸는 열기관은
+불가능하다. 즉 열효율 100%의 열기관은 불가능하다.</p>
+<p><span class="math display">\[
+Q_H\to W\quad(100\%)
+\]</span></p>
+<p>이런 장치는 제2종 영구기관이다.</p>
+<h3 id="clausius-서술">Clausius 서술</h3>
+<p>외부 일이 없는데 열이 저온에서 고온으로 자발적으로 이동하는 것은
+불가능하다.</p>
+<p>냉장고와 히트펌프는 저온에서 고온으로 열을 옮기지만, 반드시 외부 일이
+들어간다.</p>
+<p>Kelvin-Planck 서술과 Clausius 서술은 서로 등가다. 하나를 위반하는
+장치를 만들 수 있다면 다른 하나도 위반하는 장치를 구성할 수 있다.</p>
+<h3 id="열기관-1">열기관</h3>
+<p>열기관은 고온 열원에서 열을 받아 일부를 일로 바꾸고 나머지를 저온
+열원으로 버린다.</p>
+<p><span class="math display">\[
+Q_H=W+Q_C,\qquad W=Q_H-Q_C,\qquad \eta=\frac{W}{Q_H}=1-\frac{Q_C}{Q_H}
+\]</span></p>
+<p><span class="math inline">\(\eta\)</span>는 실제 열량 기준
+효율이다.</p>
+<h3 id="냉동기와-히트펌프-1">냉동기와 히트펌프</h3>
+<p>냉동기와 히트펌프는 외부 일을 써서 저온부의 열을 고온부로 옮긴다.</p>
+<p><span class="math display">\[
+Q_H=Q_C+W
+\]</span></p>
+<p>냉동기 성능계수:</p>
+<p><span class="math display">\[
+\mathrm{COP}_R=\frac{Q_C}{W}=\frac{Q_C}{Q_H-Q_C}
+\]</span></p>
+<p>히트펌프 성능계수:</p>
+<p><span class="math display">\[
+\mathrm{COP}_{\mathrm{HP}}=\frac{Q_H}{W}=\frac{Q_H}{Q_H-Q_C}
+\]</span></p>
+<p>관계:</p>
+<p><span class="math display">\[
+\mathrm{COP}_{\mathrm{HP}}=\mathrm{COP}_R+1
+\]</span></p>
+<p>냉동기는 제거한 열 <span class="math inline">\(Q_C\)</span>가
+목적이고, 히트펌프는 공급한 열 <span
+class="math inline">\(Q_H\)</span>가 목적이다.</p>
+<h3 id="carnot-기관">Carnot 기관</h3>
+<p>Carnot 기관은 두 등온 과정과 두 단열 과정으로 이루어진 가역
+열기관이다.</p>
+<p>등온 팽창 단열 팽창 등온 압축 단열 압축</p>
+<p>Carnot 효율:</p>
+<p><span class="math display">\[η_C = 1 - T_C/T_H\]</span></p>
+<p>온도는 K다. Carnot 효율은 실제 효율이 아니라 주어진 두 열원 사이에서
+가능한 최대 효율이다.</p>
+<p>Carnot보다 효율이 높은 기관이 있다고 가정하면, 역 Carnot 기관과
+결합하여 외부 효과 없이 저온에서 고온으로 열을 보내는 장치를 만들 수
+있다. 이는 Clausius 서술 위반이다. 따라서 Carnot 효율은 최대
+효율이다.</p>
+<p>Carnot 냉동기:</p>
+<p><span class="math display">\[COP_R,Carnot = T_C/(T_H - T_C)\]</span>
+<span class="math display">\[COP_HP,Carnot = T_H/(T_H -
+T_C)\]</span></p>
+<p>역시 K를 쓴다.</p>
+<h3 id="엔트로피-정의">엔트로피 정의</h3>
+<p>Clausius는 가역 열전달에 대해 엔트로피를 정의했다.</p>
+<p><span class="math display">\[dS = δQ_rev / T\]</span></p>
+<p>중요한 점:</p>
+<ul>
+<li>엔트로피 S는 상태함수다.</li>
+<li>열량 Q는 경로함수다.</li>
+<li>실제 과정이 비가역이어도 <span class="math inline">\(\Delta
+S_{\mathrm{system}}\)</span>은 같은 처음과 끝을 잇는 가역 경로로 계산할
+수 있다.</li>
+<li>δQ_rev는 실제 비가역 과정의 열량을 아무렇게나 넣으라는 뜻이
+아니다.</li>
+</ul>
+<p>사이클에서는 상태가 원래로 돌아오므로:</p>
+<p><span class="math display">\[ΔS_cycle = 0\]</span></p>
+<p>하지만 사이클 동안 열과 일은 오갈 수 있다.</p>
+<p>Clausius 부등식:</p>
+<p>∫_cycle δQ/T ≤ 0</p>
+<p>가역 사이클이면 등호, 비가역 사이클이면 부등호다.</p>
+<h3 id="이상기체-엔트로피-변화">이상기체 엔트로피 변화</h3>
+<p>이상기체의 기본식:</p>
+<p>ds = Cₚ dT/T - R dP/P ds = Cᵥ dT/T + R dV/V</p>
+<p>상수 열용량이면:</p>
+<p>ΔS = Cₚ ln(T2/T1) - R ln(P2/P1) ΔS = Cᵥ ln(T2/T1) + R ln(V2/V1)</p>
+<p>특수 과정:</p>
+<p>등온:</p>
+<p>ΔS = R ln(V2/V1) = -R ln(P2/P1)</p>
+<p>정압:</p>
+<p>ΔS = Cₚ ln(T2/T1)</p>
+<p>정적:</p>
+<p>ΔS = Cᵥ ln(T2/T1)</p>
+<p>가역 단열:</p>
+<p>ΔS = 0</p>
+<p>정적 가열은 온도가 올라가므로 엔트로피가 증가한다. 등온 압축은 온도는
+같지만 부피가 줄어 가능한 미시상태 수가 감소하므로 엔트로피가
+감소한다.</p>
+<h3 id="상변화-엔트로피">상변화 엔트로피</h3>
+<p>상변화가 일정한 T, P에서 가역적으로 일어나면:</p>
+<p><span class="math display">\[ΔS_phase = ΔH_phase / T\]</span></p>
+<p>기화는 흡열이고 무질서도가 증가하므로 ΔS &gt; 0.</p>
+<p>응축, 응고는 계의 엔트로피가 감소할 수 있다. 그러나 주변으로 열을
+방출하므로 전체 엔트로피는 증가하거나 가역 한계에서 0이다.</p>
+<h3 id="엔트로피-생성">엔트로피 생성</h3>
+<p>실제 비가역성은 엔트로피를 생성한다.</p>
+<p><span class="math display">\[
+S_{\mathrm{gen}}\ge0
+\]</span></p>
+<p>전체 엔트로피 변화:</p>
+<p><span class="math display">\[
+\Delta S_{\mathrm{total}}=\Delta S_{\mathrm{system}}+\Delta
+S_{\mathrm{surroundings}}
+\]</span></p>
+<p>판정:</p>
+<ul>
+<li><span class="math inline">\(S_{\mathrm{gen}}=0\)</span>: 가역</li>
+<li><span class="math inline">\(S_{\mathrm{gen}}&gt;0\)</span>: 가능한
+비가역 과정</li>
+<li><span class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>:
+불가능</li>
+</ul>
+<p>에너지수지가 맞아도 <span
+class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>이면 불가능한
+장치다.</p>
+<p>정상 control volume 엔트로피 수지:</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}S_{\mathrm{CV}}}{\mathrm{d}t}
+=\sum_{\mathrm{in}}\dot{m}s-\sum_{\mathrm{out}}\dot{m}s+\sum_j\frac{\dot{Q}_j}{T_{\sigma,j}}+\dot{S}_{\mathrm{gen}}
+\]</span></p>
+<p>정상상태면 <span
+class="math inline">\(\mathrm{d}S_{\mathrm{CV}}/\mathrm{d}t=0\)</span>이다.</p>
+<p>여기서 <span class="math inline">\(T_{\sigma}\)</span>는 계의 온도가
+아니라 열이 드나드는 경계, 주변, 열저장고 온도다.</p>
+<p>추가 강조:</p>
+<ul>
+<li><span class="math inline">\(S_{\mathrm{gen}}\)</span>은 계의 단순한
+상태량이 아니라 공정의 비가역성을 나타내는 값이다.</li>
+<li>에너지수지가 맞아도 <span
+class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>이면 불가능한
+장치다.</li>
+<li>엔트로피 수지에서 <span class="math inline">\(T_\sigma\)</span>는 계
+내부 온도가 아니라 주변, 경계, 열저장고 온도다. 이 차이를 반드시
+구분한다.</li>
+<li>정상 control volume에서는 축적항이 0이지만, mass flow에 의한
+엔트로피 출입, 열전달 <span
+class="math inline">\(\dot{Q}/T_\sigma\)</span>, 생성항 <span
+class="math inline">\(\dot{S}_{\mathrm{gen}}\)</span>은 남는다.</li>
+</ul>
+<p>발명가 장치 예시의 핵심:</p>
+<p>1법칙 에너지수지로는 열이 맞아 떨어져 장치가 가능한 것처럼 보일 수
+있다. 그러나 엔트로피 수지를 세웠을 때 <span
+class="math inline">\(S_{\mathrm{gen}}\)</span>이 음수이면 자연적으로
+불가능한 장치다. 제2법칙 검사는 “에너지 양”이 아니라 “그 방향으로 과정이
+가능한가”를 판정한다.</p>
+<h3 id="lost-work">Lost work</h3>
+<p>비가역성 때문에 잃어버린 일:</p>
+<p><span class="math display">\[
+W_{\mathrm{lost}}=T_{\sigma}S_{\mathrm{gen}}
+\]</span></p>
+<p>예:</p>
+<p>4000 J가 600 K에서 250 K로 비가역 전달 <span class="math display">\[
+S_{\mathrm{gen}}=-\frac{4000}{600}+\frac{4000}{250}=9.33\,\mathrm{J/K}
+\]</span> <span
+class="math inline">\(T_{\sigma}=100\,\mathrm{K}\)</span> <span
+class="math inline">\(W_{\mathrm{lost}}=100\times9.33=933\,\mathrm{J}\)</span></p>
+<p>Carnot 최대일이 3333 J라면 실제 가능일은:</p>
+<p><span class="math display">\[
+W_{\mathrm{actual}}=W_{\mathrm{Carnot}}-W_{\mathrm{lost}}=2400\,\mathrm{J}
+\]</span></p>
+<p>이 숫자 예시는 계산형으로 매우 좋다.</p>
+<p>이 예시는 Carnot 최대일과 실제 가능일 차이로 연결된다.</p>
+<ul>
+<li>4000 J가 600 K에서 250 K로 비가역 열전달되면 <span
+class="math inline">\(S_{\mathrm{gen}}=9.33\,\mathrm{J/K}\)</span>.</li>
+<li>주변 온도 <span
+class="math inline">\(T_{\sigma}=100\,\mathrm{K}\)</span>라면 <span
+class="math inline">\(W_{\mathrm{lost}}=933\,\mathrm{J}\)</span>.</li>
+<li>Carnot 최대일이 3333 J이면 실제 가능일은 3333 - 933 = 2400 J.</li>
+</ul>
+<p>따라서 lost work는 그냥 “손실된 열”이 아니라 비가역성 때문에 원래
+일로 바꿀 수 있었는데 못 쓰게 된 일이다.</p>
+<h3 id="효율">효율</h3>
+<p>압축기:</p>
+<p><span class="math display">\[
+\eta_{\mathrm{compressor}}=\frac{W_{\mathrm{ideal}}}{W_{\mathrm{actual}}}
+\]</span></p>
+<p>실제 압축기는 비가역성 때문에 이상보다 더 많은 일이 필요하다.</p>
+<p>터빈:</p>
+<p><span class="math display">\[
+\eta_{\mathrm{turbine}}=\frac{W_{\mathrm{actual}}}{W_{\mathrm{ideal}}}
+\]</span></p>
+<p>실제 터빈은 이상보다 더 적은 일을 생산한다.</p>
+<p>제2법칙 효율:</p>
+<p><span class="math display">\[
+\eta_{II}=\frac{\eta_{\mathrm{actual}}}{\eta_{\mathrm{Carnot}}}
+\]</span></p>
+<p>감각:</p>
+<ul>
+<li>압축기는 일을 먹는 장치다. 이상적으로 100만 넣으면 되는 압축이
+실제로는 130이 필요할 수 있다. 그래서 <span
+class="math inline">\(\eta_{\mathrm{compressor}}=\frac{W_{\mathrm{ideal}}}{W_{\mathrm{actual}}}\)</span>이다.</li>
+<li>터빈은 일을 생산하는 장치다. 이상적으로 100을 만들 수 있어도
+실제로는 70만 생산할 수 있다. 그래서 <span
+class="math inline">\(\eta_{\mathrm{turbine}}=\frac{W_{\mathrm{actual}}}{W_{\mathrm{ideal}}}\)</span>이다.</li>
+<li>어느 경우든 효율은 1보다 작아야 한다. 분자와 분모가 헷갈리면 “실제로
+더 먹는가, 실제로 덜 생산하는가”로 판단한다.</li>
+</ul>
+<h3 id="열교환기와-엔트로피-생성">열교환기와 엔트로피 생성</h3>
+<p>병류, co-current는 뜨거운 유체와 차가운 유체가 같은 방향으로 흐른다.
+입구에서는 온도차가 커서 열교환이 급격하지만, 출구로 갈수록 온도차가
+작아져 구동력이 약해진다. 입구 쪽 열충격도 크다.</p>
+<p>향류, counter-current는 두 유체가 반대 방향으로 흐른다. 관 전체에서
+비교적 일정한 온도차를 유지하므로 열교환이 더 잘 된다. 같은 열교환을
+위해 필요한 냉매 유량이 더 적고, 엔트로피 생성과 lost work도 더
+작다.</p>
+<p>단증류 실험의 냉각수 흐름도 향류로 잡는 것이 열교환 효율상
+유리하다.</p>
+<p>보결기와 재생기:</p>
+<ul>
+<li>보결기: 라디에이터처럼 두 유체가 직접 섞이지 않고 벽을 사이에 두고
+열교환한다.</li>
+<li>재생기: 매체가 먼저 열을 저장했다가 다른 시간이나 위치에서
+방출한다.</li>
+</ul>
+<h3 id="엔트로피의-미시적-해석">엔트로피의 미시적 해석</h3>
+<p>엔트로피는 무질서도라고만 외우면 부족하다. 더 정확히는 가능한
+미시상태 수와 관련된다.</p>
+<p>S = k ln Ω</p>
+<ul>
+<li>k: Boltzmann constant</li>
+<li>Ω: 가능한 미시상태 수</li>
+</ul>
+<p>잉크가 물에 퍼지는 이유는 퍼진 상태의 가능한 배치 수가 한 점에 모인
+상태보다 압도적으로 많기 때문이다. 주사위 합도 가능한 조합이 많은 값이
+더 자주 나온다.</p>
+<p>부피가 커지면 입자가 있을 수 있는 위치 경우의 수가 증가한다. 그래서
+기체 자유팽창은 엔트로피가 증가한다.</p>
+<p>정보 관점에서는, 가능한 경우가 많을수록 상태를 특정하기 위해 더 많은
+정보가 필요하다. Shannon 엔트로피와 연결된다.</p>
+<p>Maxwell 도깨비:</p>
+<p>빠른 분자와 느린 분자를 골라 한쪽을 뜨겁게, 다른 쪽을 차갑게 만들면
+엔트로피가 감소하는 것처럼 보인다. 그러나 실제로는 분자의 속도와 위치를
+측정하고, 정보를 저장하고, 지우는 과정에 에너지 비용이 든다. 정보 삭제도
+열을 발생시키므로 주변까지 포함하면 전체 엔트로피는 증가한다.</p>
+<p>역삼투:</p>
+<p>역삼투에서는 소금물에서 물만 분리하므로 계 내부 엔트로피는 감소할 수
+있다. 그러나 압력을 가하기 위해 외부 일이 들어가고 주변 엔트로피가
+증가한다. 그래서 전체로 보면 제2법칙과 모순되지 않는다.</p>
+<h3 id="생명체와-국소-질서">생명체와 국소 질서</h3>
+<p>생명체는 내부적으로 질서를 만든다. 하지만 고립계가 아니다. 외부에서
+에너지와 물질을 받아들이고 열과 폐기물을 배출한다.</p>
+<p>따라서 생명체 내부의 엔트로피가 국소적으로 감소해도, 주변 엔트로피
+증가까지 포함하면 전체 엔트로피는 증가한다. 2법칙과 모순되지 않는다.</p>
+<p>태풍 같은 소산 구조도 마찬가지다. 겉보기에는 질서 있는 구조가
+생기지만, 큰 온도/압력 구배를 해소하며 전체 엔트로피를 증가시키는
+과정이다.</p>
+<h3 id="시간의-화살-1">시간의 화살</h3>
+<p>미시 법칙은 대체로 시간 대칭처럼 보일 수 있지만, 거시적으로는 질서
+있는 상태에서 가능한 경우의 수가 많은 무질서 상태로 가는 방향이 훨씬
+압도적이다. 그래서 시간은 엔트로피 증가 방향으로 흐르는 것처럼
+보인다.</p>
+<p>깨진 컵이 저절로 붙지 않는 이유는 에너지 보존이 안 되어서가 아니라,
+그런 미시상태 배열이 일어날 확률이 극도로 작기 때문이다.</p>
+<h3 id="제3법칙-1">제3법칙</h3>
+<p>제3법칙은 완전 결정의 엔트로피가 절대영도에서 0으로 간다는 기준을
+준다.</p>
+<p>T → 0 K, perfect crystal → S → 0</p>
+<p>또한 유한한 과정으로 절대영도에 도달할 수 없다는 의미도 함께
+가진다.</p>
+<p>완전 결정에서 가능한 미시상태 수가 하나라면:</p>
+<p>Ω = 1 S = k ln 1 = 0</p>
+<p>극저온에서는 영점 에너지, 불확정성, 초전도, 초유동 같은 현상이 있어
+“분자가 완전히 멈춘다”고 단순화하면 안 된다.</p>
+<p>추가 암기:</p>
+<ul>
+<li>제3법칙은 Nernst가 절대영도에서 완전결정의 엔트로피를 0으로 두자는
+기준을 잡은 것이다.</li>
+<li>더 중요한 해석은 절대영도에 유한한 과정으로 도달할 수 없다는
+점이다.</li>
+<li>T가 0에 가까워지면 Cp도 0에 접근하고, 냉각으로 더 낮출 수 있는 온도
+변화가 극도로 작아진다.</li>
+<li>0 K를 “모든 입자가 완전히 멈춘 상태”라고만 쓰면 약하다. 불확정성
+원리, 영점 에너지, 전자 확률분포 때문에 그렇게 단순화하면 안 된다.</li>
+<li>극저온에서는 초전도, 초유동, 유리상, 과냉각 액체 같은 특이 현상이
+나타날 수 있다.</li>
+</ul>
+<h3 id="왜-boltzmann-식은-log인가">왜 Boltzmann 식은 log인가</h3>
+<p>핵심 암기 포인트.</p>
+<p>엔트로피는 크기성질이므로 독립적인 두 계를 합치면 더해져야 한다.</p>
+<p><span class="math display">\[S_total = S_A + S_B\]</span></p>
+<p>하지만 미시상태 수는 독립계 결합에서 곱해진다.</p>
+<p>Ω_total = Ω_A Ω_B</p>
+<p>곱셈을 덧셈으로 바꾸는 함수가 로그다.</p>
+<p>ln(Ω_A Ω_B) = ln Ω_A + ln Ω_B</p>
+<p>그래서 S = k ln Ω 형태가 된다. 또 완전 결정에서 Ω = 1이면 ln 1 =
+0이라 제3법칙과 맞는다. 만약 S = k Ω였다면 Ω = 1일 때 0이 되지
+않는다.</p>
+<p>답안 포인트:</p>
+<ol>
+<li>경우의 수 Ω는 독립계를 결합하면 곱해진다.</li>
+<li>엔트로피는 크기성질이므로 독립계를 결합하면 더해져야 한다.</li>
+<li>곱셈을 덧셈으로 바꾸는 함수가 log다.</li>
+<li>Ω = 1이면 ln 1 = 0이므로 완전결정의 절대영도 엔트로피 기준과
+맞다.</li>
+<li>Ω는 분자 수만큼 다루면 너무 큰 수가 되므로 log가 큰 수를 다루기 쉽게
+줄여 주는 역할도 한다.</li>
+<li>Boltzmann 상수 k는 분자 하나 수준의 미시적 경우의 수를 거시적
+엔트로피 단위와 연결하는 스케일 상수다.</li>
+</ol>
+<h2 id="장-유체의-열역학적-성질">6장 유체의 열역학적 성질</h2>
+<h3 id="기본-성질-관계식">기본 성질 관계식</h3>
+<p>제1법칙과 제2법칙을 결합하면 기본 관계식이 나온다.</p>
+<p><span class="math display">\[
+\mathrm{d}U=T\,\mathrm{d}S-P\,\mathrm{d}V
+\]</span></p>
+<p>엔탈피:</p>
+<p><span class="math display">\[
+H=U+PV,\qquad \mathrm{d}H=T\,\mathrm{d}S+V\,\mathrm{d}P
+\]</span></p>
+<p>Helmholtz 자유에너지:</p>
+<p>A = U - TS dA = -S dT - P dV</p>
+<p>Gibbs 자유에너지:</p>
+<p>G = H - TS dG = -S dT + V dP</p>
+<p>자연변수:</p>
+<p>U = U(S,V) H = H(S,P) A = A(T,V) G = G(T,P)</p>
+<p>화학공정은 보통 T, P 조건에서 다루기 때문에 Gibbs 자유에너지가
+중요하다.</p>
+<p>Max Born의 magic square 또는 thermodynamic square는 U, A, H, G와 T,
+P, V, S를 외우기 위한 도식이다. 핵심만 기억하면 된다.</p>
+<ul>
+<li>U의 자연변수: S, V</li>
+<li>H의 자연변수: S, P</li>
+<li>A의 자연변수: T, V</li>
+<li>G의 자연변수: T, P</li>
+</ul>
+<p>자연변수를 보면 미분형의 부호와 Maxwell 관계식이 따라온다.</p>
+<p>PPT의 generating function 관점에서는 측정이 쉬운 P, T의 함수인
+G(T,P)를 알면 V, S, H, U를 미분으로 끌어낼 수 있다. 실제 물성 계산에서는
+G/RT처럼 무차원화한 생성함수를 쓰기도 한다.</p>
+<h3 id="자유에너지와-자발성">자유에너지와 자발성</h3>
+<p>Helmholtz 자유에너지:</p>
+<p>A = U - TS</p>
+<p>주로 일정 T, V 조건에서 유용하다.</p>
+<p>Gibbs 자유에너지:</p>
+<p>G = H - TS</p>
+<p>주로 일정 T, P 조건에서 유용하다.</p>
+<p>일정 T, P에서:</p>
+<p>ΔG &lt; 0 정방향 자발 ΔG = 0 평형 ΔG &gt; 0 역방향 자발</p>
+<p>자유에너지는 전체 에너지 중에서 엔트로피 때문에 일로 쓸 수 없는 부분
+TS를 뺀, 활용 가능한 에너지로 볼 수 있다. Exergy, 가용에너지와
+연결된다.</p>
+<p>일정 T, V에서 Helmholtz 자유에너지 감소는 얻을 수 있는 최대 유용일과
+연결된다.</p>
+<p>constant T, V: maximum useful work ↔︎ ΔA</p>
+<p>일정 T, P에서 Gibbs 자유에너지 감소는 비팽창일 또는 화학반응에서 얻을
+수 있는 최대 유용일과 연결된다.</p>
+<p>constant T, P: maximum non-expansion work ↔︎ ΔG</p>
+<p>등호는 이상적인 가역 과정에서 최대일에 도달한다는 뜻이고, 실제 비가역
+과정에서는 얻는 일이 줄어든다.</p>
+<h3 id="exothermic과-exergonic">Exothermic과 exergonic</h3>
+<p>발열:</p>
+<p><span class="math display">\[
+\Delta H &lt; 0
+\]</span></p>
+<p>자유에너지 감소:</p>
+<p><span class="math display">\[
+\Delta G &lt; 0
+\]</span></p>
+<p>발열이라고 항상 자발적인 것은 아니다. 자발성은 <span
+class="math inline">\(\Delta G\)</span>가 결정한다.</p>
+<p>ΔG = ΔH - T ΔS</p>
+<p>가능한 경우:</p>
+<ul>
+<li>ΔH &lt; 0, ΔS &gt; 0: 항상 자발적.</li>
+<li>ΔH &gt; 0, ΔS &lt; 0: 항상 비자발적.</li>
+<li>ΔH &lt; 0, ΔS &lt; 0: 낮은 온도에서 자발적.</li>
+<li>ΔH &gt; 0, ΔS &gt; 0: 높은 온도에서 자발적.</li>
+</ul>
+<p>평형상수와 연결:</p>
+<p>ΔG = ΔG° + R T ln Q</p>
+<p>평형에서는 ΔG = 0, Q = K이므로:</p>
+<p>ΔG° = -R T ln K</p>
+<p>따라서 K &gt; 1이면 ΔG° &lt; 0이고 정반응 쪽이 유리하다. K &lt; 1이면
+ΔG° &gt; 0이고 역반응 쪽이 유리하다.</p>
+<p>전기화학에서는 최대 전기일과 연결되어:</p>
+<p>ΔG = -n F E</p>
+<p>전압 E가 양수이면 ΔG가 음수라 자발적 전지 반응으로 해석한다.</p>
+<p>열역학적 자발성은 속도를 보장하지 않는다. 다이아몬드가 흑연보다
+열역학적으로 불안정해도 상온에서 바로 흑연으로 변하지 않는 이유는
+활성화에너지 장벽 때문이다.</p>
+<p>Ellingham diagram은 금속 산화물 환원에서 ΔG°가 온도에 따라 어떻게
+변하는지 보는 도표다. 금속 산화물이 자발적으로 금속과 산소로 분해되지
+않을 때, C 또는 CO의 산화처럼 ΔG가 더 낮은 반응을 이용해 산소를
+제거한다. 제련 문제는 “자발성은 ΔG, 필요한 온도는 Ellingham 선의 위치”로
+읽는다.</p>
+<h3 id="maxwell-관계식">Maxwell 관계식</h3>
+<p>기본 관계식에서 혼합 2차 미분이 같다는 성질로 Maxwell 관계식이
+나온다.</p>
+<p>대표식:</p>
+<p>(∂ T/∂ V)_S = -(∂ P/∂ S)_V (∂ T/∂ P)_S = (∂ V/∂ S)_P (∂ S/∂ V)_T = (∂
+P/∂ T)_V (∂ S/∂ P)_T = -(∂ V/∂ T)_P</p>
+<p>Maxwell 관계식은 직접 측정하기 어려운 엔트로피, 내부에너지, 엔탈피
+변화를 PVT 측정값으로 바꿔 계산하기 위해 쓴다.</p>
+<p>Gibbs 자유에너지의 기울기 해석:</p>
+<p>S = -(∂G/∂T)_P V = (∂G/∂P)_T</p>
+<p>온도가 올라가면 엔트로피가 큰 상일수록 G가 더 크게 감소한다. 그래서
+높은 온도에서는 기체상이 안정해지기 쉽다. 압력이 올라가면 부피가 큰 상의
+G가 더 크게 증가하므로, 높은 압력에서는 작은 부피의 상이 유리해진다.</p>
+<h3 id="내부에너지와-엔탈피의-pvt-관계">내부에너지와 엔탈피의 PVT
+관계</h3>
+<p>내부에너지 변화:</p>
+<p><span class="math display">\[
+\mathrm{d}U=C_v\,\mathrm{d}T+\left[T\left(\frac{\partial P}{\partial
+T}\right)_V-P\right]\mathrm{d}V
+\]</span></p>
+<p>엔탈피 변화:</p>
+<p><span class="math display">\[
+\mathrm{d}H=C_p\,\mathrm{d}T+\left[V-T\left(\frac{\partial V}{\partial
+T}\right)_P\right]\mathrm{d}P
+\]</span></p>
+<p>이상기체에서는:</p>
+<p>(∂ P/∂ T)_V = R/V P = RT/V</p>
+<p>그래서 내부에너지 식의 두 번째 항이 0이 된다.</p>
+<p>U = U(T) H = H(T)</p>
+<p>실제유체에서는 압력, 부피 변화에 따른 보정이 필요하다.</p>
+<h3 id="잔류성질과-과잉성질">잔류성질과 과잉성질</h3>
+<p>잔류성질 residual property는 같은 T, P에서 실제기체 성질과 이상기체
+성질의 차이다.</p>
+<p><span class="math display">\[M^R = M - M^ig\]</span></p>
+<p>예:</p>
+<p><span class="math display">\[H^R = H - H^ig\]</span> <span
+class="math display">\[S^R = S - S^ig\]</span> <span
+class="math display">\[G^R = G - G^ig\]</span></p>
+<p>실제기체의 비이상성, 즉 분자 간 인력/척력 보정이다.</p>
+<p>과잉성질 excess property는 실제용액과 이상용액의 차이다.</p>
+<p><span class="math display">\[M^E = M - M^ideal solution\]</span></p>
+<p>이번 범위에서는 용액보다 실제기체 잔류성질이 더 직접적이다.</p>
+<p>P → 0은 진공이라는 뜻보다, 분자 사이 거리가 무한히 멀어져 상호작용이
+사라지고 이상기체화된다는 뜻으로 이해한다.</p>
+<h3 id="비리얼-eos에서-잔류성질">비리얼 EOS에서 잔류성질</h3>
+<p>비리얼 방정식으로 Z를 알면 잔류성질을 계산할 수 있다. 그래프 계산이
+번거로우므로 일반화된 식이나 상관식을 쓴다.</p>
+<p>저밀도에서는 2차 비리얼 계수 B(T)가 중요하다. 대부분 물질에서 B는
+온도에 따라 비슷한 경향을 보이며, 어떤 환산온도 부근에서 0이 된다.</p>
+<p>잔류성질의 부호는 인력/척력 우세와 연결된다. 인력이 우세하면
+실제기체는 이상기체보다 더 안정한 방향으로 가고, 엔탈피/깁스 자유에너지
+잔류값의 부호가 달라질 수 있다.</p>
+<h3 id="pitzer-상관식과-대응상태">Pitzer 상관식과 대응상태</h3>
+<p>일반화된 기체 성질 상관식은 임계성질과 이심인자를 이용한다.</p>
+<p><span class="math display">\[T_r = T/T_c\]</span> <span
+class="math display">\[P_r = P/P_c\]</span></p>
+<p>Pitzer 형태:</p>
+<p><span class="math display">\[M^R = M^R0 + omega M^R1\]</span></p>
+<p>omega는 이심인자이며 분자의 비구형성, 극성, 증기압 거동 차이를
+반영한다.</p>
+<p>혼합기체는 pseudocritical parameter를 써서 근사할 수 있다. 이론적
+근거가 완벽하다기보다 계산용 근사다.</p>
+<h3 id="fugacity-퓨가시티">Fugacity, 퓨가시티</h3>
+<p>실제기체에서는 압력 대신 화학퍼텐셜을 잘 반영하는 유효압력으로
+fugacity를 쓴다.</p>
+<p>이상기체:</p>
+<p>f = P</p>
+<p>실제기체:</p>
+<p>f = phi P</p>
+<p>phi는 fugacity coefficient다.</p>
+<p>phi = f/P</p>
+<p>Gibbs 자유에너지와 연결:</p>
+<p>dG = RT d ln f constant T</p>
+<p>실제기체가 이상기체에서 얼마나 벗어나는지 보는 또 다른 방법이다.</p>
+<h3 id="두-상계와-상평형">두 상계와 상평형</h3>
+<p>상변화는 일정 T, P에서 일어나며, 상평형에서는 두 상의 화학퍼텐셜이
+같다.</p>
+<p>μ_α = μ_β</p>
+<p>순수물질 1 mol 기준으로 화학퍼텐셜은 몰 Gibbs 자유에너지와 같다.</p>
+<p><span class="math display">\[mu = G_m\]</span></p>
+<p>따라서 상평형에서는:</p>
+<p>G_α = G_β ΔG = 0</p>
+<p>상변화에서는:</p>
+<p>ΔH ≠ 0 ΔS ≠ 0 ΔV ≠ 0 ΔG = ΔH - T ΔS = 0</p>
+<p>상변화가 일정 T, P 평형에서 일어나면 ΔG = 0이지만, ΔH, ΔS, ΔV는 0이
+아니다. 또한 Helmholtz 자유에너지 A는 자연변수가 T, V이므로 같은
+설명에서 ΔA가 0이라고 일반화하면 안 된다.</p>
+<p>그래서 평형 상변화에서는:</p>
+<p>ΔH = T ΔS</p>
+<p>왜 ΔG = 0인가:</p>
+<p>같은 T, P에서 액체가 기체가 되려는 경향과 기체가 액체가 되려는 경향이
+같으면 상평형이다. 이때 두 상의 화학퍼텐셜이 같아 더 이상 한쪽으로 가는
+순구동력이 없다.</p>
+<p>온도가 오르면 G = H - TS에서 TS 항이 커지므로 보통 Gibbs 자유에너지는
+감소한다. 기체는 엔트로피가 커서 온도 상승에 따른 G 감소가 더 크다.
+그래서 높은 온도에서는 기체상이 안정해진다.</p>
+<h3 id="증기압-상관식과-물성표">증기압 상관식과 물성표</h3>
+<p>포화증기압은 여러 경험식으로 표현한다.</p>
+<p><span class="math display">\[August:  ln P_sat = A - B/T\]</span>
+<span class="math display">\[Antoine: ln P_sat = A -
+B/(T+C)\]</span></p>
+<p>경험식은 반드시 적용 온도 범위를 확인한다. Antoine 상수는 로그 밑,
+압력 단위, 온도 단위가 자료마다 다르다.</p>
+<p>DIPPR 식은 산업 물성 데이터베이스에서 쓰는 경험식이다. 정확
+계산보다는 어떤 물성을 어떤 식으로 상관하는지 아는 것이 객관식에
+중요하다.</p>
+<p>PPT에서 나온 상관식 구분:</p>
+<ul>
+<li>August equation: 2-parameter vapor-pressure equation.</li>
+<li>Antoine equation: 3-parameter vapor-pressure equation.</li>
+<li>Wagner equation: 임계점 근처까지 더 넓은 범위의 증기압 상관에
+쓰임.</li>
+<li>DIPPR equation: AIChE의 물성 DB 프로젝트에서 쓰는 산업용 경험식.
+증기압, 표면장력, 열용량, 점도, 밀도 등에 적용.</li>
+<li>Lee-Kesler corresponding-states correlation: 환산 정상 끓는점, 환산
+증기압 등을 이용한 대응상태 상관.</li>
+</ul>
+<p>같은 물성식이라도 적용 온도 범위가 다르면 답이 달라진다. 객관식에서는
+“상수만 있으면 모든 온도에 적용 가능” 같은 문장을 틀린 말로 잡는다.</p>
+<h3 id="mollier-chart와-물성표">Mollier chart와 물성표</h3>
+<p>Mollier chart는 보통 H-S 선도다. 주어진 T, P 조건에서 엔탈피와
+엔트로피를 찾고, 액체/2상/증기/과열증기 영역을 판단하는 데 쓴다.</p>
+<p>증기표 사용 기본:</p>
+<ol>
+<li>주어진 P 또는 T에서 포화표를 확인한다.</li>
+<li>포화온도/포화압력과 비교해 압축액체, 2상, 과열증기인지
+판단한다.</li>
+<li>2상이면 건도 x로 성질을 계산한다.</li>
+<li>과열증기이면 과열증기표에서 T, P로 찾는다.</li>
+<li>압축액체는 근사적으로 같은 온도의 포화액체 성질을 쓸 수 있다.</li>
+</ol>
+<p>2상에서:</p>
+<p><span class="math display">\[H = H^L + x(H^V - H^L)\]</span> <span
+class="math display">\[S = S^L + x(S^V - S^L)\]</span> <span
+class="math display">\[V = V^L + x(V^V - V^L)\]</span></p>
+<p>엔트로피 계산으로 기체/액체 상태를 예측할 수 있다는 말은, 주어진 H,
+S, P, T 값을 표나 선도와 비교하여 어느 영역인지 판단할 수 있다는
+뜻이다.</p>
+<h2 id="엔트로피-개념식-답안-틀">엔트로피 개념식 답안 틀</h2>
+<h3 id="엔트로피를-설명하시오">1. 엔트로피를 설명하시오</h3>
+<p>엔트로피는 거시적으로는 가역 열전달에 대해 <span
+class="math inline">\(\mathrm{d}S=\delta Q_{\mathrm{rev}}/T\)</span>로
+정의되는 상태함수이다. 같은 열량이라도 낮은 온도에서 들어오면 <span
+class="math inline">\(\Delta S\)</span>가 더 크게 변한다. 미시적으로는
+가능한 미시상태 수와 관련되며 <span
+class="math inline">\(S=k\ln\Omega\)</span>로 표현된다. 가능한 배열이
+많은 상태일수록 존재 확률이 크고 엔트로피가 크다. 따라서 잉크가 물에
+퍼지는 것처럼 자연 과정은 보통 가능한 경우의 수가 많은 방향으로
+진행된다.</p>
+<h3 id="제2법칙을-설명하시오">2. 제2법칙을 설명하시오</h3>
+<p>제1법칙은 에너지가 보존된다는 법칙이고, 제2법칙은 과정의 방향성과
+가능성을 제한하는 법칙이다. 고립계의 엔트로피는 감소하지 않으며, 가역
+과정에서는 전체 엔트로피 변화가 0이고 비가역 과정에서는 양수이다.
+에너지수지가 맞더라도 <span
+class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>이면 실제로 불가능한
+과정이다.</p>
+<h3 id="carnot-효율과-실제-효율의-차이">3. Carnot 효율과 실제 효율의
+차이</h3>
+<p>실제 열기관 효율은 공급받은 열 중 일이 된 비율이므로 <span
+class="math inline">\(\eta=W/Q_H=1-Q_C/Q_H\)</span>로 계산한다. Carnot
+효율 <span class="math inline">\(\eta_C=1-T_C/T_H\)</span>는 두 열원
+사이에서 가역기관이 가질 수 있는 최대 효율이다. 실제 기관은 마찰, 유한
+온도차 열전달, 열손실 때문에 Carnot 효율보다 낮다. Carnot 식의 온도는
+반드시 K를 사용한다.</p>
+<h3 id="냉동기와-히트펌프-2">4. 냉동기와 히트펌프</h3>
+<p>냉동기와 히트펌프는 모두 외부 일을 공급해 저온부에서 고온부로 열을
+옮기는 장치다. 냉동기는 저온부에서 제거한 열 <span
+class="math inline">\(Q_C\)</span>가 목적이므로 <span
+class="math inline">\(\mathrm{COP}_R=Q_C/W\)</span>를 쓰고, 히트펌프는
+고온부에 공급한 열 <span class="math inline">\(Q_H\)</span>가 목적이므로
+<span class="math inline">\(\mathrm{COP}_{\mathrm{HP}}=Q_H/W\)</span>를
+쓴다. 에너지수지 <span class="math inline">\(Q_H=Q_C+W\)</span> 때문에
+<span
+class="math inline">\(\mathrm{COP}_{\mathrm{HP}}=\mathrm{COP}_R+1\)</span>이다.</p>
+<h3 id="엔트로피-생성과-lost-work">5. 엔트로피 생성과 lost work</h3>
+<p>엔트로피 생성 <span class="math inline">\(S_{\mathrm{gen}}\)</span>은
+계의 단순한 상태량이라기보다 공정의 비가역성 때문에 새로 생기는
+엔트로피다. 가역이면 <span
+class="math inline">\(S_{\mathrm{gen}}=0\)</span>, 실제 가능한 비가역
+과정이면 <span class="math inline">\(S_{\mathrm{gen}}&gt;0\)</span>,
+불가능한 과정이면 <span
+class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>이다. 따라서
+에너지수지가 맞더라도 <span
+class="math inline">\(S_{\mathrm{gen}}\)</span>이 음수로 나오면 그
+장치는 실제로 존재할 수 없다. 비가역성은 일을 할 수 있는 능력을 잃게
+만들며, 그 손실은 <span class="math inline">\(W_{\mathrm{lost}}=T_\sigma
+S_{\mathrm{gen}}\)</span>으로 표현한다. 여기서 <span
+class="math inline">\(T_\sigma\)</span>는 계의 온도가 아니라 주변, 경계,
+열저장고 온도다.</p>
+<h3 id="boltzmann-엔트로피에서-log를-쓰는-이유">6. Boltzmann
+엔트로피에서 log를 쓰는 이유</h3>
+<p>엔트로피는 크기성질이므로 독립적인 두 계를 합치면 더해져야 한다.
+그러나 가능한 미시상태 수는 독립계를 합칠 때 곱해진다. 즉 Ω_total = Ω_A
+Ω_B이다. 곱셈을 덧셈으로 바꾸는 함수가 로그이므로 S = k ln Ω 형태가
+필요하다. 또한 완전 결정의 절대영도에서 Ω = 1이면 ln 1 = 0이 되어
+제3법칙의 S → 0과 맞는다. 분자 수 수준의 Ω는 너무 큰 수이므로 log는 큰
+수를 다루기 쉽게 줄여 주는 역할도 한다.</p>
+<h3 id="생명체와-제2법칙">7. 생명체와 제2법칙</h3>
+<p>생명체는 내부적으로 질서 있는 구조를 만들 수 있으므로 계 내부만 보면
+엔트로피가 감소하는 것처럼 보일 수 있다. 하지만 생명체는 고립계가
+아니며, 외부에서 에너지와 물질을 받아들이고 열과 폐기물을 배출한다.
+주변의 엔트로피 증가까지 포함하면 전체 엔트로피는 증가하므로 제2법칙과
+모순되지 않는다.</p>
+<h3 id="상평형에서-δg가-0인-이유">8. 상평형에서 ΔG가 0인 이유</h3>
+<p>일정한 T, P에서 자발성은 Gibbs 자유에너지 변화로 판단한다.
+상평형에서는 액체가 기체가 되려는 경향과 기체가 액체가 되려는 경향이
+같아서 순구동력이 없다. 따라서 두 상의 화학퍼텐셜이 같고 μ_α = μ_β,
+순수물질에서는 몰 Gibbs 자유에너지가 같으므로 ΔG = 0이다.</p>
+<h3 id="maxwell-도깨비와-제2법칙">9. Maxwell 도깨비와 제2법칙</h3>
+<p>Maxwell 도깨비는 빠른 분자와 느린 분자를 골라 한쪽은 뜨겁게, 다른
+쪽은 차갑게 만들 수 있다면 엔트로피가 감소하는 것처럼 보인다는
+사고실험이다. 그러나 실제로 분자의 속도와 위치를 측정하고, 정보를
+저장하고, 그 정보를 지우는 과정에는 에너지 비용이 든다. 정보 삭제도 열을
+발생시키므로 도깨비와 주변까지 포함하면 전체 엔트로피는 증가한다. 따라서
+국소적인 엔트로피 감소처럼 보여도 제2법칙과 모순되지 않는다.</p>
+<h3 id="제3법칙과-절대영도">10. 제3법칙과 절대영도</h3>
+<p>제3법칙은 완전결정의 엔트로피가 절대영도에서 0으로 접근한다는 기준을
+준다. 하지만 절대영도는 유한한 과정으로 도달할 수 없다. T가 0에
+가까워지면 Cp도 0에 접근하고, 제거할 수 있는 열량과 냉각 구동력이 극도로
+작아진다. 또한 영점 에너지와 불확정성 때문에 0 K를 모든 입자가 완전히
+멈춘 상태라고만 설명하면 부족하다.</p>
+<h3 id="병류와-향류-열교환기">11. 병류와 향류 열교환기</h3>
+<p>병류는 뜨거운 유체와 차가운 유체가 같은 방향으로 흐르는 방식이다.
+입구에서는 온도차가 커서 열교환이 급격하지만 출구로 갈수록 온도차가
+작아져 열교환 구동력이 약해진다. 향류는 두 유체가 반대 방향으로 흐르므로
+관 전체에서 비교적 일정한 온도차를 유지한다. 그래서 같은 열교환을 더
+적은 냉매 유량으로 만들 수 있고, 엔트로피 생성과 lost work도 작다.</p>
+<h2 id="객관식-빠른-공식표">객관식 빠른 공식표</h2>
+<p>주의: 아래 표에는 1~6장 객관식에서 식의 의미를 확인하기 위한 공식도
+포함되어 있다. 계산형 예상문제는 5장, 6장 PPT 중심으로만 낸다.</p>
+<h3 id="상태방정식-자유에너지">상태방정식, 자유에너지</h3>
+<table>
+<thead>
+<tr>
+<th>내용</th>
+<th>식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이상기체</td>
+<td><span class="math inline">\(PV=nR_uT=mRT\)</span></td>
+</tr>
+<tr>
+<td>질량 기준 기체상수</td>
+<td><span class="math inline">\(R=R_u/M\)</span></td>
+</tr>
+<tr>
+<td>압축인자</td>
+<td><span class="math inline">\(Z=PV/(nR_uT)\)</span></td>
+</tr>
+<tr>
+<td>엔탈피</td>
+<td><span class="math inline">\(H=U+PV\)</span></td>
+</tr>
+<tr>
+<td>Helmholtz 자유에너지</td>
+<td><span class="math inline">\(A=U-TS\)</span></td>
+</tr>
+<tr>
+<td>Gibbs 자유에너지</td>
+<td><span class="math inline">\(G=H-TS\)</span></td>
+</tr>
+<tr>
+<td>자발성 판단</td>
+<td><span class="math inline">\(\Delta G=\Delta H-T\Delta
+S\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="내부에너지-엔탈피-열용량">내부에너지, 엔탈피, 열용량</h3>
+<table>
+<thead>
+<tr>
+<th>내용</th>
+<th>식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이상기체 내부에너지</td>
+<td><span class="math inline">\(\Delta U=\int
+C_v\,\mathrm{d}T\)</span></td>
+</tr>
+<tr>
+<td>이상기체 엔탈피</td>
+<td><span class="math inline">\(\Delta H=\int
+C_p\,\mathrm{d}T\)</span></td>
+</tr>
+<tr>
+<td>이상기체 열용량 관계</td>
+<td><span class="math inline">\(C_p-C_v=R\)</span></td>
+</tr>
+<tr>
+<td>비열비</td>
+<td><span class="math inline">\(\gamma=C_p/C_v\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="일과-폴리트로픽-과정">일과 폴리트로픽 과정</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>내용</th>
+<th>식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>닫힌계 가역 경계일</td>
+<td><span class="math inline">\(\delta
+W_{\mathrm{rev}}=-P\,\mathrm{d}V\)</span></td>
+</tr>
+<tr>
+<td>열린계 가역 기술적 일</td>
+<td><span class="math inline">\(\delta
+W_{t,\mathrm{rev}}=V\,\mathrm{d}P\)</span></td>
+</tr>
+<tr>
+<td>폴리트로픽 과정</td>
+<td><span
+class="math inline">\(PV^\delta=\mathrm{constant}\)</span></td>
+</tr>
+<tr>
+<td>폴리트로픽 지수</td>
+<td><span class="math inline">\(\delta=0\)</span> 등압, <span
+class="math inline">\(\delta=1\)</span> 등온, <span
+class="math inline">\(\delta=\gamma\)</span> 가역단열, <span
+class="math inline">\(\delta\to\infty\)</span> 등적</td>
+</tr>
+</tbody>
+</table>
+<h3 id="열기관-냉동기-히트펌프">열기관, 냉동기, 히트펌프</h3>
+<table>
+<thead>
+<tr>
+<th>내용</th>
+<th>식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>실제 열기관 효율</td>
+<td><span class="math inline">\(\eta=W/Q_H=1-Q_C/Q_H\)</span></td>
+</tr>
+<tr>
+<td>Carnot 효율</td>
+<td><span class="math inline">\(\eta_C=1-T_C/T_H\)</span></td>
+</tr>
+<tr>
+<td>냉동기 COP</td>
+<td><span class="math inline">\(\mathrm{COP}_R=Q_C/W\)</span></td>
+</tr>
+<tr>
+<td>히트펌프 COP</td>
+<td><span
+class="math inline">\(\mathrm{COP}_{\mathrm{HP}}=Q_H/W=\mathrm{COP}_R+1\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="엔트로피">엔트로피</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>내용</th>
+<th>식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>엔트로피 정의</td>
+<td><span class="math inline">\(\mathrm{d}S=\delta
+Q_{\mathrm{rev}}/T\)</span></td>
+</tr>
+<tr>
+<td>이상기체 엔트로피 1</td>
+<td><span class="math inline">\(\Delta
+S_{\mathrm{ig}}=C_p\ln(T_2/T_1)-R\ln(P_2/P_1)\)</span></td>
+</tr>
+<tr>
+<td>이상기체 엔트로피 2</td>
+<td><span class="math inline">\(\Delta
+S_{\mathrm{ig}}=C_v\ln(T_2/T_1)+R\ln(V_2/V_1)\)</span></td>
+</tr>
+<tr>
+<td>상변화 엔트로피</td>
+<td><span class="math inline">\(\Delta S_{\mathrm{phase}}=\Delta
+H_{\mathrm{phase}}/T\)</span></td>
+</tr>
+<tr>
+<td>가능성 판정</td>
+<td><span class="math inline">\(S_{\mathrm{gen}}\ge0\)</span></td>
+</tr>
+<tr>
+<td>Lost work</td>
+<td><span class="math inline">\(W_{\mathrm{lost}}=T_\sigma
+S_{\mathrm{gen}}\)</span></td>
+</tr>
+<tr>
+<td>Boltzmann entropy</td>
+<td><span class="math inline">\(S=k\ln\Omega\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="상변화-증기압-반응열">상변화, 증기압, 반응열</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>내용</th>
+<th>식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clapeyron</td>
+<td><span
+class="math inline">\(\mathrm{d}P_{\mathrm{sat}}/\mathrm{d}T=\Delta
+H/(T\Delta V)\)</span></td>
+</tr>
+<tr>
+<td>Clausius-Clapeyron</td>
+<td><span class="math inline">\(\ln(P_2/P_1)=-(\Delta
+H_{\mathrm{vap}}/R)(1/T_2-1/T_1)\)</span></td>
+</tr>
+<tr>
+<td>Antoine</td>
+<td><span class="math inline">\(\ln
+P_{\mathrm{sat}}=A-B/(T+C)\)</span></td>
+</tr>
+<tr>
+<td>표준반응열</td>
+<td><span class="math inline">\(\Delta
+H^\circ_{\mathrm{rxn}}=\sum\nu\Delta
+H^\circ_f(\mathrm{products})-\sum\nu\Delta
+H^\circ_f(\mathrm{reactants})\)</span></td>
+</tr>
+<tr>
+<td>반응열 온도보정</td>
+<td><span class="math inline">\(\Delta H_{\mathrm{rxn}}(T_2)=\Delta
+H_{\mathrm{rxn}}(T_1)+\int\Delta C_p\,\mathrm{d}T\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="기본-성질-관계식-1">기본 성질 관계식</h3>
+<table>
+<thead>
+<tr>
+<th>내용</th>
+<th>식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>내부에너지</td>
+<td><span
+class="math inline">\(\mathrm{d}U=T\,\mathrm{d}S-P\,\mathrm{d}V\)</span></td>
+</tr>
+<tr>
+<td>엔탈피</td>
+<td><span
+class="math inline">\(\mathrm{d}H=T\,\mathrm{d}S+V\,\mathrm{d}P\)</span></td>
+</tr>
+<tr>
+<td>Helmholtz</td>
+<td><span
+class="math inline">\(\mathrm{d}A=-S\,\mathrm{d}T-P\,\mathrm{d}V\)</span></td>
+</tr>
+<tr>
+<td>Gibbs</td>
+<td><span
+class="math inline">\(\mathrm{d}G=-S\,\mathrm{d}T+V\,\mathrm{d}P\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="자주-틀리는-말">자주 틀리는 말</h2>
+<p>“단열이면 엔트로피 변화가 0이다”는 틀렸다. 가역 단열일 때만
+등엔트로피다.</p>
+<p>“상변화 중 열이 안 들어간다”는 틀렸다. 열은 들어가거나 나가지만
+온도가 일정할 뿐이다.</p>
+<p>“발열이면 무조건 자발적이다”는 틀렸다. 자발성은 ΔG로 본다.</p>
+<p>“Carnot 효율은 실제 효율이다”는 틀렸다. Carnot 효율은 최대
+한계다.</p>
+<p>“냉동기 COP는 효율이라서 1보다 작아야 한다”는 틀렸다. COP는 효율이
+아니라 성능계수라 1보다 클 수 있다.</p>
+<p>“엔트로피는 항상 계에서 증가한다”는 틀렸다. 부분계 엔트로피는 감소할
+수 있고, 전체 또는 고립계 기준으로 증가한다.</p>
+<p>“상평형에서 엔탈피 변화가 0이다”는 틀렸다. 상변화에는 잠열이 있으므로
+ΔH는 보통 0이 아니다. 평형에서 0인 것은 ΔG다.</p>
+<p>“P가 0으로 간다는 것은 그냥 아무것도 없다는 뜻이다”는 약하다.
+실제기체 계산에서는 분자 사이 거리가 커져 상호작용이 사라지고 이상기체
+상태로 접근한다는 뜻이다.</p>
+<h3 id="장-후반-개념식-대비">5장 후반 개념식 대비</h3>
+<h2 id="시험-방식">시험 방식</h2>
+<p>객관식은 1~6장에서 넓게 나오며, 기존 퀴즈 문장과 보기 순서는 바뀔 수
+있다. 변별력 문제는 개념 관계를 이해해야 풀 수 있다.</p>
+<p>오픈북이지만 인터넷 사용은 안 된다. 문장 그대로 검색하는 방식보다
+단원별 위치와 식의 의미를 익힌다.</p>
+<p>계산기는 반드시 로그, 지수승 계산이 되는 것으로 가져가야 한다. 특히
+<span class="math inline">\(PV^\gamma=\mathrm{constant}\)</span> 같은
+식에서 지수승을 계산할 수 있어야 하므로 단순 사칙연산 계산기는
+부족하다.</p>
+<p>개념식은 6월 15일 월요일 13:30~14:45이고, 주로 엔트로피 문제라고 다시
+말했다. 이 강의 전체가 엔트로피 생성, lost work, 제3법칙, Boltzmann 로그
+이유까지 이어졌으므로 개념식 대비 핵심 강의로 봐야 한다.</p>
+<h2 id="boltzmann-log-답안-포인트">Boltzmann log 답안 포인트</h2>
+<p>가장 직접적으로 찍은 것은 “왜 Boltzmann 엔트로피에서 log를
+취하는가”이다. 강의 끝에서 이걸 두 번 더 이야기할 것이고, 왜 말하고
+있는지 생각하라고 했다. 사실상 개념식 후보로 봐도 된다.</p>
+<p>답안에는 다음 세 가지를 같이 넣는 게 좋다.</p>
+<ol>
+<li>미시상태 수 Ω는 독립계를 합치면 곱해진다.</li>
+<li>엔트로피는 크기성질이라 독립계를 합치면 더해져야 한다.</li>
+<li>곱셈을 덧셈으로 바꾸는 함수가 log이므로 <span
+class="math inline">\(S=k\ln\Omega\)</span> 형태가 필요하다.</li>
+</ol>
+<p>추가로, Ω = 1인 완전결정의 절대영도에서 ln 1 = 0이 되어 제3법칙과도
+맞고, Ω처럼 너무 큰 수를 다루기 위해 log가 큰 수를 줄여 주는 역할도
+한다. Boltzmann 상수 k가 매우 작은 이유도 분자 1개 수준의 엄청난 경우의
+수를 거시적 엔트로피 단위에 맞추기 위한 스케일 조정으로 설명할 수
+있다.</p>
+<h2 id="엔트로피-생성-s_mathrmgen">엔트로피 생성 <span
+class="math inline">\(S_{\mathrm{gen}}\)</span></h2>
+<p><span class="math inline">\(S_{\mathrm{gen}}\)</span>은 계의 단순
+상태량이 아니라 공정의 비가역성 때문에 생기는 값이다. “<span
+class="math inline">\(S_{\mathrm{gen}}\)</span>은 공정의 비가역성을
+나타내는 척도”라고 쓴다.</p>
+<p>판정은 다음처럼 쓴다.</p>
+<p><span class="math inline">\(S_{\mathrm{gen}}=0\)</span>: 가역</p>
+<p><span class="math inline">\(S_{\mathrm{gen}}&gt;0\)</span>: 가능한
+비가역 공정</p>
+<p><span class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>: 불가능한
+공정</p>
+<p>핵심: 에너지수지가 맞아도 <span
+class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>이면 실제로 존재할
+수 없는 장치다. 발명가 장치 예시는 energy balance만으로는 부족하고
+entropy balance까지 봐야 함을 보여준다.</p>
+<p>정상 control volume의 엔트로피 수지는 다음 구조로 잡는다.</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}S_{\mathrm{CV}}}{\mathrm{d}t}
+=\sum_{\mathrm{in}}\dot{m}s-\sum_{\mathrm{out}}\dot{m}s+\sum_j\frac{\dot{Q}_j}{T_{\sigma,j}}+\dot{S}_{\mathrm{gen}}
+\]</span></p>
+<p>정상상태면 왼쪽은 0이다.</p>
+<p>여기서 <span class="math inline">\(T_\sigma\)</span>는 계 내부 온도가
+아니라 열이 드나드는 주변, 경계, 열저장고 온도다.</p>
+<h2 id="lost-work와-ideal-work">Lost work와 ideal work</h2>
+<p>Ideal work는 엔트로피 생성이 0인 가역 한계에서 가능한 최대일이다.
+반대로 실제 공정은 비가역성 때문에 일을 덜 생산하거나, 압축기처럼 일을
+더 많이 먹는다.</p>
+<p>Lost work는 다음 식으로 정리한다.</p>
+<p><span class="math display">\[
+W_{\mathrm{lost}}=T_\sigma S_{\mathrm{gen}}
+\]</span></p>
+<p>여기서도 <span class="math inline">\(T_\sigma\)</span>는 주변
+온도다.</p>
+<p>예시:</p>
+<p>4000 J가 600 K에서 250 K로 비가역 열전달된다면</p>
+<p><span class="math display">\[
+S_{\mathrm{gen}}=-\frac{4000}{600}+\frac{4000}{250}=9.33\,\mathrm{J/K}
+\]</span></p>
+<p>주변 온도 <span
+class="math inline">\(T_{\sigma}=100\,\mathrm{K}\)</span>이면</p>
+<p><span
+class="math inline">\(W_{\mathrm{lost}}=100\times9.33=933\,\mathrm{J}\)</span></p>
+<p>Carnot 최대일이 3333 J라면 실제 가능일은</p>
+<p><span class="math display">\[
+W_{\mathrm{actual}}=W_{\mathrm{Carnot}}-W_{\mathrm{lost}}=2400\,\mathrm{J}
+\]</span></p>
+<p>이 숫자 흐름은 계산형 객관식으로도 좋고, 개념식에서 lost work를
+설명할 때도 쓰기 좋다.</p>
+<h2 id="압축기-터빈-제2법칙-효율">압축기, 터빈, 제2법칙 효율</h2>
+<p>압축기는 일을 넣는 장치다. 이상적으로는 100만 넣으면 되는 압축이
+실제로는 마찰과 비가역성 때문에 130이 필요할 수 있다. 그래서 압축기
+효율은 다음처럼 이상일이 분자, 실제일이 분모다.</p>
+<p><span
+class="math inline">\(\eta_{\mathrm{compressor}}=\frac{W_{\mathrm{ideal}}}{W_{\mathrm{actual}}}\)</span></p>
+<p>터빈은 일을 생산하는 장치다. 이상적으로 100을 생산할 수 있어도
+실제로는 70만 나올 수 있다. 그래서 터빈 효율은 실제일이 분자, 이상일이
+분모다.</p>
+<p><span
+class="math inline">\(\eta_{\mathrm{turbine}}=\frac{W_{\mathrm{actual}}}{W_{\mathrm{ideal}}}\)</span></p>
+<p>제2법칙 효율은 실제 효율을 Carnot 효율로 나눈 값이다.</p>
+<p><span
+class="math inline">\(\eta_{II}=\frac{\eta_{\mathrm{actual}}}{\eta_{\mathrm{Carnot}}}\)</span></p>
+<p>압축기와 터빈은 분자/분모가 반대처럼 보여도, 효율은 항상 1보다 작아야
+한다는 감각으로 판단하면 된다.</p>
+<h2 id="열교환기-병류와-향류">열교환기: 병류와 향류</h2>
+<p>병류, co-current는 뜨거운 유체와 차가운 유체가 같은 방향으로 흐른다.
+입구에서는 온도차가 커서 열교환이 급격하지만, 출구로 갈수록 온도차가
+줄어 열교환 구동력이 약해진다. 입구 쪽 열충격도 크다.</p>
+<p>향류, counter-current는 두 유체가 반대 방향으로 흐른다. 관 전체에서
+비교적 일정한 온도차를 유지하므로 열교환이 더 잘 된다. 더 적은 냉매
+유량으로 같은 열교환을 만들 수 있고, 엔트로피 생성과 lost work도
+작다.</p>
+<p>단증류 실험의 냉각수도 향류로 잡는 것이 열교환 효율상 유리하다.</p>
+<p>보결기와 재생기도 구분했다.</p>
+<p>보결기: 두 유체가 직접 섞이지 않고 벽을 사이에 두고 열교환한다.
+라디에이터가 예시다.</p>
+<p>재생기: 어떤 매체를 먼저 데운 뒤 다른 곳에서 그 열을 내놓게 하는
+식으로, 시간적으로 번갈아 열을 저장하고 방출한다.</p>
+<h2 id="maxwell-도깨비-정보-엔트로피">Maxwell 도깨비, 정보,
+엔트로피</h2>
+<p>Maxwell 도깨비는 빠른 분자와 느린 분자를 골라 한쪽을 뜨겁게, 다른
+쪽을 차갑게 만들 수 있다면 엔트로피가 감소하는 것처럼 보인다는
+사고실험이다. 하지만 실제로는 분자의 속도와 위치를 알아내고 저장하고
+지우는 과정에 에너지 비용이 든다. 정보 삭제도 열을 발생시키므로 전체
+엔트로피는 증가한다.</p>
+<p>따라서 “국소적으로 엔트로피가 감소하는 것처럼 보여도, 측정 장치와
+정보 처리와 주변까지 포함하면 전체 엔트로피는 증가한다”라고 설명하면
+된다.</p>
+<p>역삼투도 같은 구조다. 소금물에서 물만 분리하면 계 내부의 엔트로피는
+감소할 수 있지만, 압력을 가하기 위해 외부 일이 들어가고 주변까지
+포함하면 전체 엔트로피는 증가한다.</p>
+<h2 id="제3법칙과-절대영도-1">제3법칙과 절대영도</h2>
+<p>제3법칙은 완전결정의 엔트로피가 절대영도에서 0으로 간다는
+기준이다.</p>
+<p><span class="math display">\[
+T\to0\,\mathrm{K},\ \mathrm{perfect\ crystal}\to S\to0
+\]</span></p>
+<p>단순히 “0 K에서 분자가 멈춘다”라고 쓰면 약하다. 불확정성 원리, 영점
+에너지, 전자의 확률적 분포 때문에 절대영도를 아무 운동도 없는 상태로
+단순화하면 안 된다.</p>
+<p>더 중요한 해석은 절대영도에 유한한 과정으로 도달할 수 없다는 점이다.
+냉각으로 온도를 낮출수록 Cp도 0에 접근하고, 제거할 수 있는 열량과 냉각
+구동력이 극단적으로 작아진다. 따라서 절대영도는 기준점이지만 실제로 도달
+가능한 상태가 아니다.</p>
+<p>상변화에서는 엔트로피가 점프한다. 온도를 올리면 Cp/T 적분 때문에
+엔트로피가 누적되어 증가하고, 융해나 기화 같은 상변화에서는 잠열 때문에
+엔트로피가 급격히 증가한다.</p>
+<h2 id="배터리와-엔트로피-예시">배터리와 엔트로피 예시</h2>
+<p>배터리 수명은 depth of discharge, 즉 얼마나 깊게 방전하느냐와
+관련된다. 완전 방전 후 충전하는 습관은 수명을 크게 줄이고, 어느 정도
+남긴 상태에서 충전하면 수명이 길어진다.</p>
+<p>배터리 노화는 리튬 이온 이동이 점점 어려워지고, 전해질과 전극 구조가
+불규칙해지는 과정으로 볼 수 있다. 이 부분은 계산보다 엔트로피 증가 개념
+예시로 기억한다.</p>
+<h2 id="개념식-답안에-바로-쓸-문장">개념식 답안에 바로 쓸 문장</h2>
+<p>엔트로피 생성은 계가 단순히 많이 무질서해졌다는 뜻이 아니라, 공정의
+비가역성 때문에 새로 생기는 엔트로피이다. 따라서 <span
+class="math inline">\(S_{\mathrm{gen}}=0\)</span>이면 가역이고, <span
+class="math inline">\(S_{\mathrm{gen}}&gt;0\)</span>이면 가능한 비가역
+공정이며, <span class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>이면
+에너지수지가 맞아도 실제로 불가능한 공정이다.</p>
+<p>Lost work는 비가역성 때문에 잃어버린 일이다. 가역 한계에서는 <span
+class="math inline">\(S_{\mathrm{gen}}=0\)</span>이므로 ideal work가
+최대가 되고, 실제 공정에서는 <span
+class="math inline">\(S_{\mathrm{gen}}&gt;0\)</span>이라 <span
+class="math inline">\(W_{\mathrm{lost}}=T_\sigma
+S_{\mathrm{gen}}\)</span>만큼 일을 잃는다. 여기서 <span
+class="math inline">\(T_\sigma\)</span>는 계 내부 온도가 아니라 주변
+또는 열저장고 온도이다.</p>
+<p>Boltzmann 식에서 log가 나오는 이유는 엔트로피가 크기성질이라 더해져야
+하는 반면, 독립계의 미시상태 수는 곱해지기 때문이다. log는 곱셈을
+덧셈으로 바꾸므로 <span class="math inline">\(S=k\ln\Omega\)</span>
+형태가 자연스럽다. 또 완전결정에서 <span
+class="math inline">\(\Omega=1\)</span>이면 <span
+class="math inline">\(\ln 1=0\)</span>이 되어 제3법칙의 기준과도
+맞는다.</p>
+<p>제3법칙은 완전결정의 엔트로피가 절대영도에서 0으로 접근한다는 기준을
+준다. 그러나 절대영도는 유한한 과정으로 도달할 수 없고, 극저온에서는
+영점 에너지, 불확정성, 초전도, 초유동 같은 현상 때문에 단순히 모든
+입자가 멈춘다고 말할 수 없다.</p>
+<h2 id="개념식-4문제-대비">개념식 4문제 대비</h2>
+<p>오늘 강의 한 줄 요약: 개념식은 Boltzmann log 이유, entropy 서술,
+entropy가 아닌 자유에너지/실제기체 개념, 서비스형 답안 구조로
+대비한다.</p>
+<h3 id="번-핵심-boltzmann-entropy의-log">1번 핵심: Boltzmann entropy의
+log</h3>
+<p>반드시 네 가지를 쓴다.</p>
+<ol>
+<li><span class="math inline">\(\Omega\)</span>는 가능한 미시상태
+수이다.</li>
+<li>독립계를 합치면 미시상태 수는 <span
+class="math inline">\(\Omega_{\mathrm{total}}=\Omega_A\Omega_B\)</span>처럼
+곱해진다.</li>
+<li>entropy는 크기성질이므로 <span
+class="math inline">\(S_{\mathrm{total}}=S_A+S_B\)</span>처럼 더해져야
+한다.</li>
+<li>로그는 곱셈을 덧셈으로 바꾼다.</li>
+<li><span class="math inline">\(\Omega=1\)</span>이면 <span
+class="math inline">\(\ln1=0\)</span>이므로 완전결정의 절대영도에서
+<span class="math inline">\(S=0\)</span>이라는 제3법칙과 맞다.</li>
+<li>아보가드로 수 규모의 큰 경우의 수를 log가 거시적으로 다룰 수 있는
+크기로 줄인다.</li>
+</ol>
+<h3 id="번-핵심-entropy">2번 핵심: entropy</h3>
+<p>Entropy 답안은 다음 중 하나로 나온다고 보고 준비한다.</p>
+<ul>
+<li>entropy는 <span class="math inline">\(dS=\delta
+Q_{\mathrm{rev}}/T\)</span>로 정의되는 상태량이다.</li>
+<li>Boltzmann 관점에서는 <span
+class="math inline">\(S=k_{\mathrm{B}}\ln\Omega\)</span>이고, <span
+class="math inline">\(\Omega\)</span>가 큰 상태가 더 존재확률이
+높다.</li>
+<li>계의 entropy는 감소할 수 있지만 전체 entropy는 <span
+class="math inline">\(\Delta S_{\mathrm{system}}+\Delta
+S_{\mathrm{surroundings}}\ge0\)</span>이어야 한다.</li>
+<li><span class="math inline">\(S_{\mathrm{gen}}\)</span>은 공정의
+비가역성 때문에 생성되는 entropy이며, <span
+class="math inline">\(S_{\mathrm{gen}}&lt;0\)</span>이면 불가능
+공정이다.</li>
+<li>Maxwell demon, 역삼투, 배터리 노화는 국소 질서화와 전체 entropy
+증가를 구분하는 예시로 쓴다.</li>
+</ul>
+<h3 id="번-핵심-entropy가-아닌-개념">3번 핵심: entropy가 아닌 개념</h3>
+<p>가장 가능성 높은 비-entropy 서술형은 자유에너지와 실제기체이다.</p>
+<ul>
+<li>Exothermic/endothermic은 <span class="math inline">\(\Delta
+H\)</span> 기준이고, exergonic/endogonic은 <span
+class="math inline">\(\Delta G\)</span> 기준이다.</li>
+<li>자발성은 <span class="math inline">\(\Delta G=\Delta H-T\Delta
+S\)</span>로 판단한다.</li>
+<li><span class="math inline">\(\Delta G&lt;0\)</span>이면 자발, <span
+class="math inline">\(\Delta G=0\)</span>이면 평형, <span
+class="math inline">\(\Delta G&gt;0\)</span>이면 비자발이다.</li>
+<li>Maxwell 관계식은 직접 측정하기 어려운 entropy 관련 미분량을 측정
+가능한 <span class="math inline">\(P,V,T\)</span> 미분량으로 바꾸는
+도구다.</li>
+<li>잔류성질은 <span class="math inline">\(M^R=M-M^{ig}\)</span>이며,
+실제기체 물성을 이상기체 기준에서 보정하기 위해 쓴다.</li>
+<li>상평형에서는 같은 성분의 chemical potential이 같고, 순수물질
+기준으로 <span class="math inline">\(\Delta G=0\)</span>이다.</li>
+</ul>
+<h3 id="번-서비스형-답안-틀">4번 서비스형 답안 틀</h3>
+<p>“열역학은 에너지의 양과 방향을 같이 보는 학문”이라고 시작한다.
+제1법칙은 energy balance이고, 제2법칙은 <span
+class="math inline">\(S_{\mathrm{gen}}\ge0\)</span>으로 가능성을
+판정한다. 실제 공정은 비가역성이 있으므로 <span
+class="math inline">\(W_{\mathrm{lost}}=T_{\sigma}S_{\mathrm{gen}}\)</span>만큼
+일을 할 수 있는 능력을 잃는다. 따라서 에너지가 보존된다고 해서 모든
+장치가 가능한 것은 아니며, entropy balance까지 만족해야 한다.</p>
+</body>
+</html>

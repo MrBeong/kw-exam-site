@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>03_암기형_예상문답_종합본</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1 id="컴퓨터비전-암기형-예상문답-종합본">컴퓨터비전 암기형 예상문답
+종합본</h1>
+<p>한 줄 요약: 컴퓨터비전 기말은 함수 이름, 인자, matrix 크기, 좌표계
+의미, 코드 빈칸을 빠르게 고르는 시험이므로
+<code>무엇을 넣어야 하는가</code>와 <code>왜 그 함수인가</code>를 같이
+외운다.</p>
+<h2 id="template-matching">1. Template Matching</h2>
+<p>Q. Template matching은 무엇을 찾는 방법인가?<br />
+A. Source image 안에서 template image와 가장 비슷한 위치를 sliding
+window 방식으로 찾는 방법이다.</p>
+<p>Q. Source image 크기가 <span class="math inline">\(W\times
+H\)</span>, template 크기가 <span class="math inline">\(w\times
+h\)</span>이면 <code>matchTemplate</code> 결과 크기는?<br />
+A. <span class="math inline">\((W-w+1)\times(H-h+1)\)</span>이다.</p>
+<p>Q. <code>cv::matchTemplate(image, templ, result, method)</code>에서
+<code>result</code>의 의미는?<br />
+A. 각 위치마다 template과 image patch의 유사도 또는 차이를 저장한 score
+map이다.</p>
+<p>Q. <code>TM_SQDIFF</code>, <code>TM_SQDIFF_NORMED</code>는 최솟값과
+최댓값 중 무엇을 고르는가?<br />
+A. 최솟값을 고른다. 차이 제곱합이 작을수록 template과 더 비슷하기
+때문이다.</p>
+<p>Q. <code>TM_CCORR</code>, <code>TM_CCOEFF</code> 계열은 최솟값과
+최댓값 중 무엇을 고르는가?<br />
+A. 최댓값을 고른다. correlation 또는 평균 제거 correlation이 클수록
+template과 더 비슷하기 때문이다.</p>
+<p>Q. Template matching 위치를 찾는 대표 코드 흐름은?<br />
+A.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>matchTemplate<span class="op">(</span>image<span class="op">,</span> templ<span class="op">,</span> result<span class="op">,</span> cv<span class="op">::</span>TM_CCOEFF_NORMED<span class="op">);</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>minMaxLoc<span class="op">(</span>result<span class="op">,</span> <span class="op">&amp;</span>minVal<span class="op">,</span> <span class="op">&amp;</span>maxVal<span class="op">,</span> <span class="op">&amp;</span>minLoc<span class="op">,</span> <span class="op">&amp;</span>maxLoc<span class="op">);</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>Point matchLoc <span class="op">=</span> maxLoc<span class="op">;</span></span></code></pre></div>
+<p>Q. <code>TM_SQDIFF_NORMED</code>를 쓸 때 위 코드에서 바뀌어야 하는
+줄은?<br />
+A.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>Point matchLoc <span class="op">=</span> minLoc<span class="op">;</span></span></code></pre></div>
+<p>함정: <code>matchTemplate</code>은 bounding box를 자동으로 그리는
+함수가 아니다. Score map을 만든 뒤 <code>minMaxLoc</code>으로 위치를
+찾고 직접 rectangle을 그린다.</p>
+<h2 id="geometric-transformation">2. Geometric Transformation</h2>
+<p>Q. Linear transformation의 식은?<br />
+A.</p>
+<p><span class="math display">\[
+y=Ax
+\]</span></p>
+<p>Q. Affine transformation의 식은?<br />
+A.</p>
+<p><span class="math display">\[
+y=Ax+b
+\]</span></p>
+<p>Q. Affine transformation을 동차좌표 matrix 하나로 쓰면?<br />
+A.</p>
+<p><span class="math display">\[
+\begin{bmatrix}y\\1\end{bmatrix}
+=
+\begin{bmatrix}A&amp;b\\0&amp;1\end{bmatrix}
+\begin{bmatrix}x\\1\end{bmatrix}
+\]</span></p>
+<p>Q. Rigid transformation이 보존하는 것은?<br />
+A. 길이, 각도, 평행성, 직선성을 보존한다.</p>
+<p>Q. Similarity transformation이 rigid와 다른 점은?<br />
+A. Rotation, translation에 uniform scaling이 추가된다. 길이 자체는 바뀔
+수 있지만 길이 비율과 각도는 보존된다.</p>
+<p>Q. Affine transformation이 보존하는 것은?<br />
+A. 직선성과 평행성을 보존한다. 길이와 각도는 일반적으로 보존하지
+않는다.</p>
+<p>Q. Projective transformation이 보존하는 것은?<br />
+A. 직선성은 보존하지만 평행성, 길이, 각도는 일반적으로 보존하지
+않는다.</p>
+<p>Q. <code>cv::resize</code>는 어떤 변환에 대응하는가?<br />
+A. Image scaling이다. 크기를 직접 지정하거나 <span
+class="math inline">\(f_x,f_y\)</span> scale factor를 쓴다.</p>
+<p>Q. <code>cv::warpAffine</code>이 요구하는 matrix 크기는?<br />
+A. <span class="math inline">\(2\times3\)</span>이다.</p>
+<p>Q. <code>cv::warpPerspective</code>가 요구하는 matrix 크기는?<br />
+A. <span class="math inline">\(3\times3\)</span>이다.</p>
+<p>Q. <code>cv::getAffineTransform(srcPts, dstPts)</code>에 필요한
+대응점 수는?<br />
+A. 3쌍이다. Affine matrix의 자유도는 6이고, 점 1쌍이 식 2개를 주기
+때문이다.</p>
+<p>Q. <code>cv::getPerspectiveTransform(srcPts, dstPts)</code>에 필요한
+대응점 수는?<br />
+A. 4쌍이다. Homography 자유도는 scale을 제외하고 8이고, 점 1쌍이 식
+2개를 주기 때문이다.</p>
+<p>Q. <code>cv::getRotationMatrix2D(center, angle, scale)</code>의
+return matrix 크기는?<br />
+A. <span class="math inline">\(2\times3\)</span>이다.</p>
+<p>Q. <code>cv::warpAffine(src, dst, M, dsize)</code>에서
+<code>dsize</code>의 의미는?<br />
+A. 출력 image의 크기이다.</p>
+<p>Q. <code>WARP_INVERSE_MAP</code> flag의 의미는?<br />
+A. 주어진 matrix를 destination 좌표에서 source 좌표로 가는 inverse
+mapping으로 해석하라는 뜻이다.</p>
+<p>빈칸:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>Mat M <span class="op">=</span> cv<span class="op">::</span>getRotationMatrix2D<span class="op">(</span>center<span class="op">,</span> angle<span class="op">,</span> scale<span class="op">);</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>warpAffine<span class="op">(</span>src<span class="op">,</span> dst<span class="op">,</span> M<span class="op">,</span> src<span class="op">.</span>size<span class="op">());</span></span></code></pre></div>
+<p>빈칸:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>Mat H <span class="op">=</span> cv<span class="op">::</span>getPerspectiveTransform<span class="op">(</span>srcPts<span class="op">,</span> dstPts<span class="op">);</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>warpPerspective<span class="op">(</span>src<span class="op">,</span> dst<span class="op">,</span> H<span class="op">,</span> dstSize<span class="op">);</span></span></code></pre></div>
+<p>함정: <code>warpAffine</code>에 <span
+class="math inline">\(3\times3\)</span> homography를 넣는 선지는 틀리고,
+<code>warpPerspective</code>에 <span
+class="math inline">\(2\times3\)</span> affine matrix를 넣는 선지도
+틀린다.</p>
+<h2 id="homogeneous-coordinates">3. Homogeneous Coordinates</h2>
+<p>Q. 2D Cartesian point <span class="math inline">\((x,y)\)</span>를
+homogeneous coordinate로 쓰면?<br />
+A.</p>
+<p><span class="math display">\[
+\tilde{x}=
+\begin{bmatrix}x\\y\\1\end{bmatrix}
+\]</span></p>
+<p>Q. Homogeneous coordinate에서 같은 점으로 보는 조건은?<br />
+A. 0이 아닌 scalar 배는 같은 점이다.</p>
+<p><span class="math display">\[
+\begin{bmatrix}x\\y\\w\end{bmatrix}
+\sim
+\begin{bmatrix}kx\\ky\\kw\end{bmatrix}
+\quad(k\ne0)
+\]</span></p>
+<p>Q. <span class="math inline">\(\tilde{x}=(x,y,w)^\top\)</span>에서
+<span class="math inline">\(w\ne0\)</span>이면 Cartesian
+coordinate는?<br />
+A. <span class="math inline">\((x/w,\;y/w)\)</span>이다.</p>
+<p>Q. <span class="math inline">\(w=0\)</span>인 homogeneous point는
+무엇인가?<br />
+A. Point at infinity이다.</p>
+<p>Q. Projective space에서 평행한 두 직선은 어떻게 해석하는가?<br />
+A. 무한원점에서 만난다고 해석한다.</p>
+<p>Q. <span class="math inline">\(\mathbb{P}^{2}\)</span>와 <span
+class="math inline">\(\mathbb{R}^{3}\)</span>는 같은 공간인가?<br />
+A. 아니다. <span class="math inline">\(\mathbb{P}^{2}\)</span>의 점을
+3개 숫자로 표현하고 시각화할 때 <span
+class="math inline">\(\mathbb{R}^{3}\)</span>를 이용할 뿐이다.</p>
+<p>함정: <span class="math inline">\((1,2,1)\)</span>과 <span
+class="math inline">\((2,4,2)\)</span>는 <span
+class="math inline">\(\mathbb{R}^{3}\)</span>에서는 다른 점이지만 <span
+class="math inline">\(\mathbb{P}^{2}\)</span>에서는 같은 점이다.</p>
+<h2 id="point와-line">4. Point와 Line</h2>
+<p>Q. Projective line <span
+class="math inline">\(l=(a,b,c)^\top\)</span>가 뜻하는 Cartesian
+직선은?<br />
+A.</p>
+<p><span class="math display">\[
+ax+by+c=0
+\]</span></p>
+<p>Q. 점 <span class="math inline">\(\tilde{x}\)</span>가 직선 <span
+class="math inline">\(l\)</span> 위에 있을 조건은?<br />
+A.</p>
+<p><span class="math display">\[
+l^\top\tilde{x}=0
+\]</span></p>
+<p>Q. 두 점 <span
+class="math inline">\(\tilde{x}_1,\tilde{x}_2\)</span>를 지나는
+직선은?<br />
+A.</p>
+<p><span class="math display">\[
+l=\tilde{x}_1\times\tilde{x}_2
+\]</span></p>
+<p>Q. 두 직선 <span class="math inline">\(l_1,l_2\)</span>의
+교점은?<br />
+A.</p>
+<p><span class="math display">\[
+\tilde{x}=l_1\times l_2
+\]</span></p>
+<p>Q. 평행한 두 직선의 교점은 어떤 형태가 되는가?<br />
+A. <span class="math inline">\(w=0\)</span>인 point at infinity가
+된다.</p>
+<h2 id="cross-product">5. Cross Product</h2>
+<p>Q. Cross product는 몇 차원 벡터에서 쓰는가?<br />
+A. 3차원 벡터 두 개의 외적에서 쓴다.</p>
+<p>Q. <span class="math inline">\(a\times b\)</span>의 방향은?<br />
+A. <span class="math inline">\(a\)</span>와 <span
+class="math inline">\(b\)</span>가 이루는 평면에 수직이고, 오른손 법칙
+방향이다.</p>
+<p>Q. <span class="math inline">\(a\times b\)</span>의 크기는?<br />
+A.</p>
+<p><span class="math display">\[
+\lVert a\times b\rVert=\lVert a\rVert\lVert b\rVert|\sin\theta|
+\]</span></p>
+<p>Q. <span class="math inline">\(a\times b\)</span>의 기하학적
+의미는?<br />
+A. <span class="math inline">\(a,b\)</span>가 만드는 평행사변형의 넓이를
+크기로 갖고, 두 벡터에 수직한 방향을 갖는 벡터이다.</p>
+<p>Q. <span class="math inline">\(a\times b\)</span>와 <span
+class="math inline">\(b\times a\)</span>의 관계는?<br />
+A.</p>
+<p><span class="math display">\[
+a\times b=-(b\times a)
+\]</span></p>
+<p>Q. 같은 방향 또는 같은 직선상에 있는 두 벡터의 cross product는?<br />
+A. 0벡터이다.</p>
+<h2 id="homography">6. Homography</h2>
+<p>Q. Homography는 어떤 변환인가?<br />
+A. 2D projective point를 2D projective point로 보내는 <span
+class="math inline">\(3\times3\)</span> projective
+transformation이다.</p>
+<p>Q. Homography 식은?<br />
+A.</p>
+<p><span class="math display">\[
+\tilde{x}&#39;\sim H\tilde{x}
+\]</span></p>
+<p>Q. Homography matrix의 자유도는?<br />
+A. 8이다. <span class="math inline">\(3\times3\)</span> matrix는 원소
+9개지만 전체 scale은 같은 변환으로 보므로 1개가 빠진다.</p>
+<p>Q. Homography를 계산하려면 최소 대응점이 몇 쌍 필요한가?<br />
+A. 4쌍이다.</p>
+<p>Q. Image warping에서 forward mapping보다 inverse mapping을 자주 쓰는
+이유는?<br />
+A. Forward mapping은 destination에 hole이 생길 수 있다. Inverse
+mapping은 destination pixel마다 source 위치를 찾아 값을 채우므로 빈
+pixel 문제를 줄인다.</p>
+<p>Q. Top view 또는 bird-eye view를 만들 때 쓰는 대표 함수는?<br />
+A. <code>cv::getPerspectiveTransform</code>으로 <span
+class="math inline">\(H\)</span>를 구하고
+<code>cv::warpPerspective</code>로 image를 변환한다.</p>
+<h2 id="eigenvalue-decomposition">7. Eigenvalue Decomposition</h2>
+<p>Q. Eigenvalue와 eigenvector의 정의는?<br />
+A.</p>
+<p><span class="math display">\[
+Ax=\lambda x
+\]</span></p>
+<p>Q. Eigenvalue는 어떤 방정식으로 구하는가?<br />
+A.</p>
+<p><span class="math display">\[
+\det(A-\lambda I)=0
+\]</span></p>
+<p>Q. Symmetric matrix의 eigenvalue decomposition 형태는?<br />
+A.</p>
+<p><span class="math display">\[
+S=Q\Lambda Q^\top
+\]</span></p>
+<p>Q. <span class="math inline">\(Q\)</span>와 <span
+class="math inline">\(\Lambda\)</span>의 의미는?<br />
+A. <span class="math inline">\(Q\)</span>는 orthonormal eigenvector를
+column으로 모은 matrix이고, <span
+class="math inline">\(\Lambda\)</span>는 eigenvalue를 대각성분으로 갖는
+diagonal matrix이다.</p>
+<p>Q. Symmetric matrix에서 <span class="math inline">\(Q^{-1}\)</span>은
+무엇과 같은가?<br />
+A. <span class="math inline">\(Q^\top\)</span>와 같다. Orthogonal
+matrix이기 때문이다.</p>
+<h2 id="짝짓기형-최종-암기">8. 짝짓기형 최종 암기</h2>
+<table>
+<thead>
+<tr>
+<th>보기</th>
+<th>바로 연결할 답</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matchTemplate</code></td>
+<td>template 위치별 score map</td>
+</tr>
+<tr>
+<td><code>minMaxLoc</code></td>
+<td>score map의 최소/최대 위치 찾기</td>
+</tr>
+<tr>
+<td><code>TM_SQDIFF</code></td>
+<td>최솟값 선택</td>
+</tr>
+<tr>
+<td><code>TM_CCOEFF_NORMED</code></td>
+<td>최댓값 선택</td>
+</tr>
+<tr>
+<td><code>warpAffine</code></td>
+<td><span class="math inline">\(2\times3\)</span> matrix</td>
+</tr>
+<tr>
+<td><code>warpPerspective</code></td>
+<td><span class="math inline">\(3\times3\)</span> homography</td>
+</tr>
+<tr>
+<td><code>getAffineTransform</code></td>
+<td>대응점 3쌍</td>
+</tr>
+<tr>
+<td><code>getPerspectiveTransform</code></td>
+<td>대응점 4쌍</td>
+</tr>
+<tr>
+<td><code>Point at infinity</code></td>
+<td><span class="math inline">\(w=0\)</span></td>
+</tr>
+<tr>
+<td><code>Line equation</code></td>
+<td><span class="math inline">\(l^\top\tilde{x}=0\)</span></td>
+</tr>
+<tr>
+<td><code>두 점의 직선</code></td>
+<td><span
+class="math inline">\(\tilde{x}_1\times\tilde{x}_2\)</span></td>
+</tr>
+<tr>
+<td><code>두 직선의 교점</code></td>
+<td><span class="math inline">\(l_1\times l_2\)</span></td>
+</tr>
+<tr>
+<td><code>Eigenvalue</code></td>
+<td><span class="math inline">\(Ax=\lambda x\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="손계산형-최종-암기">9. 손계산형 최종 암기</h2>
+<p>Q. <code>matchTemplate</code> result map 크기는?</p>
+<p>A. Image가 <span class="math inline">\(W\times H\)</span>, template이
+<span class="math inline">\(w\times h\)</span>이면 <span
+class="math inline">\((W-w+1)\times(H-h+1)\)</span>이다.</p>
+<p>Q. Raw SQDIFF score 식은?</p>
+<p>A.</p>
+<p><span class="math display">\[
+\mathrm{SQDIFF}=\sum_{x,y}(I(x,y)-T(x,y))^2
+\]</span></p>
+<p>Q. SQDIFF 계열에서 best location은?</p>
+<p>A. score가 작을수록 잘 맞으므로 <code>minLoc</code>이다.</p>
+<p>Q. Raw CCORR score 식은?</p>
+<p>A.</p>
+<p><span class="math display">\[
+\mathrm{CCORR}=\sum_{x,y}I(x,y)T(x,y)
+\]</span></p>
+<p>Q. <span class="math inline">\(3\times3\)</span> normalized box
+filter 계산은?</p>
+<p>A. 중심 pixel 주변 <span class="math inline">\(3\times3\)</span> 값
+9개를 모두 더한 뒤 9로 나눈다.</p>
+<h2 id="quadratic-form-psd-gram-matrix-singular-value">10. Quadratic
+Form, PSD, Gram Matrix, Singular Value</h2>
+<p>Q. Quadratic form의 기본 형태는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+x^{\top}Ax
+\]</span></p>
+<p>Q. <span class="math inline">\(ax^{2}+by^{2}+cxy\)</span>를 matrix
+quadratic form으로 쓰면?</p>
+<p>A.</p>
+<p><span class="math display">\[
+ax^{2}+by^{2}+cxy
+=
+\begin{bmatrix}
+x &amp; y
+\end{bmatrix}
+\begin{bmatrix}
+a &amp; \frac{c}{2}\\
+\frac{c}{2} &amp; b
+\end{bmatrix}
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+\]</span></p>
+<p>Q. Quadratic form에서 교차항 <span
+class="math inline">\(cxy\)</span>는 matrix 어디에 들어가는가?</p>
+<p>A. Off-diagonal 두 위치에 <span
+class="math inline">\(\frac{c}{2}\)</span>, <span
+class="math inline">\(\frac{c}{2}\)</span>로 나누어 들어간다.</p>
+<p>Q. Quadratic form의 가운데 matrix를 symmetric matrix로 생각해도 되는
+이유는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+x^{\top}Ax
+=
+x^{\top}\left(\frac{A+A^{\top}}{2}\right)x
+\]</span></p>
+<p>이므로 대칭 부분만 quadratic form에 기여한다.</p>
+<p>Q. Positive definite의 정의는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+x^{\top}Ax&gt;0
+\qquad (x\neq0)
+\]</span></p>
+<p>Q. Positive semidefinite의 정의는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+x^{\top}Ax\ge0
+\qquad (x\neq0)
+\]</span></p>
+<p>Q. Positive semidefinite matrix는 모든 entry가 양수인 matrix이다.</p>
+<p>A. X. Entry가 아니라 모든 nonzero vector에 대한 <span
+class="math inline">\(x^{\top}Ax\ge0\)</span> 조건이다.</p>
+<p>Q. Positive semidefinite matrix의 eigenvalue 부호는?</p>
+<p>A. 모두 0 이상이다.</p>
+<p>Q. Positive semidefinite matrix의 eigenvalue가 0 이상임을 보이는 한
+줄 증명은?</p>
+<p>A.</p>
+<p><span class="math display">\[
+Ax=\lambda x
+\Rightarrow
+x^{\top}Ax=\lambda x^{\top}x
+\]</span></p>
+<p><span class="math inline">\(x^{\top}Ax\ge0\)</span>, <span
+class="math inline">\(x^{\top}x&gt;0\)</span>이므로 <span
+class="math inline">\(\lambda\ge0\)</span>이다.</p>
+<p>Q. 임의의 <span class="math inline">\(A\in\mathbb{R}^{m\times
+n}\)</span>에 대해 <span class="math inline">\(A^{\top}A\)</span>의
+크기는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+A^{\top}A\in\mathbb{R}^{n\times n}
+\]</span></p>
+<p>Q. 임의의 <span class="math inline">\(A\in\mathbb{R}^{m\times
+n}\)</span>에 대해 <span class="math inline">\(AA^{\top}\)</span>의
+크기는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+AA^{\top}\in\mathbb{R}^{m\times m}
+\]</span></p>
+<p>Q. <span class="math inline">\(A^{\top}A\)</span>와 <span
+class="math inline">\(AA^{\top}\)</span>는 항상 symmetric positive
+semidefinite이다.</p>
+<p>A. O.</p>
+<p>Q. <span class="math inline">\(A^{\top}A\)</span>가 positive
+semidefinite인 이유는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+x^{\top}A^{\top}Ax
+=(Ax)^{\top}(Ax)
+=\lVert Ax\rVert^{2}\ge0
+\]</span></p>
+<p>Q. Rank 관계로 외울 식은?</p>
+<p>A.</p>
+<p><span class="math display">\[
+\operatorname{rank}(A)
+=
+\operatorname{rank}(A^{\top}A)
+=
+\operatorname{rank}(AA^{\top})
+\]</span></p>
+<p>Q. <span class="math inline">\(\operatorname{rank}(A)=r\)</span>이면
+Gram matrix의 양수 eigenvalue는 몇 개인가?</p>
+<p>A. <span class="math inline">\(r\)</span>개이다. 나머지 eigenvalue는
+0이다.</p>
+<p>Q. <span class="math inline">\(A^{\top}A v_i=\lambda_i
+v_i\)</span>에서 singular value는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+\sigma_i=\sqrt{\lambda_i}
+\]</span></p>
+<p>Q. <span class="math inline">\(A^{\top}A v_i=\lambda_i v_i\)</span>일
+때 left singular vector <span class="math inline">\(u_i\)</span>는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+u_i=\frac{Av_i}{\sqrt{\lambda_i}}
+\qquad (\lambda_i&gt;0)
+\]</span></p>
+<p>Q. Singular value/vector의 핵심 관계식은?</p>
+<p>A.</p>
+<p><span class="math display">\[
+Av_i=\sigma_i u_i
+\]</span></p>
+<p>Q. <span class="math inline">\(v_i\)</span>, <span
+class="math inline">\(u_i\)</span>, <span
+class="math inline">\(\sigma_i\)</span>의 이름은?</p>
+<p>A. <span class="math inline">\(v_i\)</span>는 right singular vector,
+<span class="math inline">\(u_i\)</span>는 left singular vector, <span
+class="math inline">\(\sigma_i\)</span>는 singular value이다.</p>
+<p>Q. <span class="math inline">\(A^{\top}A\)</span>와 <span
+class="math inline">\(AA^{\top}\)</span>는 크기가 항상 같다.</p>
+<p>A. X. <span class="math inline">\(A\in\mathbb{R}^{m\times
+n}\)</span>이면 <span class="math inline">\(A^{\top}A\)</span>는 <span
+class="math inline">\(n\times n\)</span>, <span
+class="math inline">\(AA^{\top}\)</span>는 <span
+class="math inline">\(m\times m\)</span>이다.</p>
+<p>Q. <span class="math inline">\(A^{\top}A\)</span>와 <span
+class="math inline">\(AA^{\top}\)</span>의 양수 eigenvalue는 서로
+같다.</p>
+<p>A. O.</p>
+<p>Q. Singular value는 음수가 될 수 있다.</p>
+<p>A. X. Singular value는 eigenvalue의 제곱근이므로 0 이상이다.</p>
+<p>Q. Homography 계산과 SVD가 연결되는 이유는?</p>
+<p>A. Homography의 unknown을 vector로 놓으면 homogeneous linear system이
+되고, trivial solution이 아닌 해 방향을 안정적으로 찾기 위해 SVD를
+사용한다.</p>
+<h2 id="최종-온라인-강의-svd-homography-계산">11. 최종 온라인 강의: SVD
+/ Homography 계산</h2>
+<p>Q. SVD의 기본 분해식은?</p>
+<p>A.</p>
+<p><span class="math display">\[
+A=U\Sigma V^{\top}
+\]</span></p>
+<p>Q. <span class="math inline">\(A\in\mathbb{R}^{m\times n}\)</span>일
+때 full SVD의 matrix 크기는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+U\in\mathbb{R}^{m\times m},\quad
+\Sigma\in\mathbb{R}^{m\times n},\quad
+V\in\mathbb{R}^{n\times n}
+\]</span></p>
+<p>Q. Singular value와 Gram matrix eigenvalue의 관계는?</p>
+<p>A.</p>
+<p><span class="math display">\[
+\sigma_i=\sqrt{\lambda_i}
+\]</span></p>
+<p><span class="math inline">\(\lambda_i\)</span>는 <span
+class="math inline">\(A^{\top}A\)</span> 또는 <span
+class="math inline">\(AA^{\top}\)</span>의 양수 eigenvalue다.</p>
+<p>Q. Right singular vector는 어느 matrix의 eigenvector인가?</p>
+<p>A. <span class="math inline">\(A^{\top}A\)</span>의
+eigenvector다.</p>
+<p>Q. Left singular vector는 어느 matrix의 eigenvector인가?</p>
+<p>A. <span class="math inline">\(AA^{\top}\)</span>의
+eigenvector다.</p>
+<p>Q. Singular vector의 핵심 관계식은?</p>
+<p>A.</p>
+<p><span class="math display">\[
+Av_i=\sigma_i u_i
+\]</span></p>
+<p>Q. <span class="math inline">\(\lambda_i&gt;0\)</span>일 때 <span
+class="math inline">\(u_i\)</span>를 <span
+class="math inline">\(v_i\)</span>로부터 구하는 식은?</p>
+<p>A.</p>
+<p><span class="math display">\[
+u_i=\frac{Av_i}{\sqrt{\lambda_i}}
+\]</span></p>
+<p>Q. Compact SVD의 크기는?</p>
+<p>A. Rank가 <span class="math inline">\(r\)</span>이면</p>
+<p><span class="math display">\[
+A=U_r\Sigma_rV_r^{\top}
+\]</span></p>
+<p><span class="math display">\[
+U_r\in\mathbb{R}^{m\times r},\quad
+\Sigma_r\in\mathbb{R}^{r\times r},\quad
+V_r^{\top}\in\mathbb{R}^{r\times n}
+\]</span></p>
+<p>Q. SVD를 오른쪽부터 해석하면 어떤 순서인가?</p>
+<p>A. <span class="math inline">\(V^{\top}\)</span>로 input basis를
+바꾸고, <span class="math inline">\(\Sigma\)</span>로 축별 scale을 하고,
+<span class="math inline">\(U\)</span>로 output basis를 바꾼다.</p>
+<p>Q. 동차 선형시스템 <span class="math inline">\(Ax=0\)</span>의 비영
+해는 SVD에서 무엇으로 찾는가?</p>
+<p>A. Singular value가 0이거나 가장 작은 값에 대응하는 right singular
+vector로 찾는다.</p>
+<p>Q. Homography의 점 대응식은?</p>
+<p>A.</p>
+<p><span class="math display">\[
+\tilde{x}&#39;\sim H\tilde{x}
+\]</span></p>
+<p>Q. Homography 추정에서 cross product를 쓰는 이유는?</p>
+<p>A. <span class="math inline">\(\tilde{x}&#39;\)</span>와 <span
+class="math inline">\(H\tilde{x}\)</span>가 같은 동차좌표 방향이어야
+하므로 다음 식을 세운다.</p>
+<p><span class="math display">\[
+\tilde{x}&#39;\times H\tilde{x}=0
+\]</span></p>
+<p>Q. Homography 점 대응 1쌍은 독립 방정식 몇 개를 제공하는가?</p>
+<p>A. 2개다. Cross product는 3개 식처럼 보이지만 독립식은 2개뿐이다.</p>
+<p>Q. Homography를 구하는 최소 대응점 수는?</p>
+<p>A. 4쌍이다.</p>
+<p>Q. Homography 추정에서 <span class="math inline">\(A\)</span>
+matrix와 <span class="math inline">\(h\)</span> vector의 대표
+크기는?</p>
+<p>A. 4점 대응 기준으로</p>
+<p><span class="math display">\[
+Ah=0,\qquad A\in\mathbb{R}^{8\times9},\quad h\in\mathbb{R}^{9}
+\]</span></p>
+<p>Q. Homography 추정에서 <span class="math inline">\(h\)</span>는 SVD의
+어떤 vector인가?</p>
+<p>A. <span class="math inline">\(A=U\Sigma V^{\top}\)</span>에서 가장
+작은 singular value에 대응하는 마지막 right singular vector다.</p>
+<p>Q. <code>findHomography</code>와 <code>warpPerspective</code>의
+차이는?</p>
+<p>A. <code>findHomography</code>는 대응점으로 <span
+class="math inline">\(H\)</span>를 계산하고,
+<code>warpPerspective</code>는 <span class="math inline">\(H\)</span>를
+이미지에 적용한다.</p>
+<p>Q. 문서 스캔 또는 명함 펴기 코드 순서는?</p>
+<p>A.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>Mat H <span class="op">=</span> cv<span class="op">::</span>findHomography<span class="op">(</span>srcPts<span class="op">,</span> dstPts<span class="op">);</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>warpPerspective<span class="op">(</span>src<span class="op">,</span> dst<span class="op">,</span> H<span class="op">,</span> cv<span class="op">::</span>Size<span class="op">(</span>width<span class="op">,</span> height<span class="op">));</span></span></code></pre></div>
+</body>
+</html>

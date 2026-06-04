@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Encoder decoder parameter and QKV map</title>
+  <desc id="desc">Encoder self attention, decoder masked self attention, decoder cross attention, and parameter formulas.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#233142"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#14213d" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="760" fill="#f5f6f1"/>
+  <text x="64" y="70" font-family="Georgia, serif" font-size="38" font-weight="700" fill="#17202a">Encoder / Decoder attention map</text>
+  <text x="66" y="110" font-family="Arial, sans-serif" font-size="22" fill="#516070">Standard Transformer, weights only unless a problem says otherwise</text>
+
+  <g filter="url(#shadow)" font-family="Arial, sans-serif">
+    <rect x="72" y="156" width="342" height="242" rx="8" fill="#fffdf7" stroke="#233142" stroke-width="3"/>
+    <text x="104" y="202" font-size="30" font-weight="700" fill="#17202a">Encoder block</text>
+    <rect x="104" y="232" width="278" height="58" rx="8" fill="#e7f0ff" stroke="#2f5f98" stroke-width="3"/>
+    <text x="132" y="258" font-size="22" font-weight="700" fill="#17202a">Self MHA</text>
+    <text x="132" y="280" font-size="18" font-weight="700" fill="#17202a">Q,K,V: source</text>
+    <rect x="104" y="312" width="278" height="58" rx="8" fill="#e1f3ea" stroke="#24734d" stroke-width="3"/>
+    <text x="132" y="338" font-size="22" font-weight="700" fill="#17202a">FFN</text>
+    <text x="132" y="360" font-size="18" font-weight="700" fill="#17202a">d_model -> d_ff -> d_model</text>
+
+    <rect x="470" y="156" width="342" height="322" rx="8" fill="#fffdf7" stroke="#233142" stroke-width="3"/>
+    <text x="502" y="202" font-size="30" font-weight="700" fill="#17202a">Decoder block</text>
+    <rect x="502" y="232" width="278" height="58" rx="8" fill="#fff3c4" stroke="#a16b00" stroke-width="3"/>
+    <text x="530" y="258" font-size="22" font-weight="700" fill="#17202a">Masked MHA</text>
+    <text x="530" y="280" font-size="18" font-weight="700" fill="#17202a">Q,K,V: target</text>
+    <rect x="502" y="312" width="278" height="58" rx="8" fill="#f8e5ec" stroke="#9b3151" stroke-width="3"/>
+    <text x="530" y="338" font-size="22" font-weight="700" fill="#17202a">Cross MHA</text>
+    <text x="530" y="360" font-size="18" font-weight="700" fill="#17202a">Q: target / K,V: source</text>
+    <rect x="502" y="392" width="278" height="58" rx="8" fill="#e1f3ea" stroke="#24734d" stroke-width="3"/>
+    <text x="530" y="418" font-size="22" font-weight="700" fill="#17202a">FFN</text>
+    <text x="530" y="440" font-size="18" font-weight="700" fill="#17202a">d_model -> d_ff -> d_model</text>
+
+    <rect x="868" y="156" width="338" height="322" rx="8" fill="#17202a" stroke="#17202a" stroke-width="3"/>
+    <text x="902" y="204" font-size="30" font-weight="700" fill="#fffdf7">Parameter formulas</text>
+    <text x="902" y="252" font-size="24" font-weight="700" fill="#fff3c4">MHA = 4 d_model^2</text>
+    <text x="902" y="292" font-size="24" font-weight="700" fill="#e1f3ea">FFN = 2 d_model d_ff</text>
+    <text x="902" y="350" font-size="24" fill="#fffdf7">Encoder block</text>
+    <text x="902" y="383" font-size="24" font-weight="700" fill="#9fd3ff">4d^2 + 2dd_ff</text>
+    <text x="902" y="431" font-size="24" fill="#fffdf7">Decoder block</text>
+    <text x="902" y="464" font-size="24" font-weight="700" fill="#ffb7ca">8d^2 + 2dd_ff</text>
+  </g>
+
+  <g stroke="#233142" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M414 276 C442 276 442 276 470 276"/>
+    <path d="M414 356 C442 356 442 436 470 436"/>
+    <path d="M812 340 C840 340 840 292 868 292"/>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="72" y="552" width="1134" height="126" rx="8" fill="#fffdf7" stroke="#d0c6b4" stroke-width="2"/>
+    <text x="104" y="594" font-size="26" font-weight="700" fill="#17202a">Cross-attention shape rule</text>
+    <text x="104" y="635" font-size="22" fill="#17202a">source length S, target length U, one head dim d_k=d_v</text>
+    <text x="104" y="666" font-size="22" fill="#17202a">Q: U x d_k, K: S x d_k, V: S x d_v, QK^T: U x S, head output: U x d_v</text>
+  </g>
+</svg>

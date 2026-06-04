@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>기계학습 03_암기형_예상문답_종합본</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">기계학습 03_암기형_예상문답_종합본</h1>
+</header>
+<h1 id="기계학습-암기형-예상문답-종합본">기계학습 암기형 예상문답
+종합본</h1>
+<p>한 줄 요약: 기계학습 기말은 평가척도, 앙상블, XAI, 최적화를 강의자료
+문장 그대로 바꾼 O/X·객관식으로 묻기 쉬우므로 정의, 절차, 비교, 함정
+표현을 함께 외운다.</p>
+<h2 id="회귀-평가척도">1. 회귀 평가척도</h2>
+<p>Q. 회귀 문제에서 residual은 무엇인가?<br />
+A. 실제값과 예측값의 차이이다.</p>
+<p><span class="math display">\[
+e_i=y_i-\hat{y}_i
+\]</span></p>
+<p>Q. MSE는 무엇인가?<br />
+A. 오차 제곱의 평균이다. 큰 오차에 더 큰 penalty를 준다.</p>
+<p><span class="math display">\[
+\mathrm{MSE}=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2
+\]</span></p>
+<p>Q. RMSE는 무엇인가?<br />
+A. MSE에 제곱근을 취해 단위를 원래 target과 맞춘 지표이다.</p>
+<p><span class="math display">\[
+\mathrm{RMSE}=\sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}
+\]</span></p>
+<p>Q. MAE는 무엇인가?<br />
+A. 오차 절댓값의 평균이다. MSE보다 outlier에 덜 민감하다.</p>
+<p><span class="math display">\[
+\mathrm{MAE}=\frac{1}{n}\sum_{i=1}^{n}|y_i-\hat{y}_i|
+\]</span></p>
+<p>Q. <span class="math inline">\(R^2\)</span>의 의미는?<br />
+A. 전체 변동 중 model이 설명한 비율이다.</p>
+<p><span class="math display">\[
+R^2=1-\frac{\sum_i(y_i-\hat{y}_i)^2}{\sum_i(y_i-\bar{y})^2}
+\]</span></p>
+<p>함정: <span class="math inline">\(R^2\)</span>는 클수록 좋지만,
+feature를 많이 넣으면 무조건 올라갈 수 있으므로 model generalization을
+보장하지 않는다.</p>
+<h2 id="분류-평가척도">2. 분류 평가척도</h2>
+<p>Q. Confusion matrix에서 TP는 무엇인가?<br />
+A. 실제 positive를 positive로 맞힌 경우이다.</p>
+<p>Q. FP는 무엇인가?<br />
+A. 실제 negative를 positive로 잘못 예측한 경우이다.</p>
+<p>Q. FN은 무엇인가?<br />
+A. 실제 positive를 negative로 잘못 예측한 경우이다.</p>
+<p>Q. TN은 무엇인가?<br />
+A. 실제 negative를 negative로 맞힌 경우이다.</p>
+<p>Q. Accuracy 공식은?<br />
+A.</p>
+<p><span class="math display">\[
+\mathrm{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
+\]</span></p>
+<p>Q. Precision 공식과 의미는?<br />
+A. Positive라고 예측한 것 중 실제 positive 비율이다.</p>
+<p><span class="math display">\[
+\mathrm{Precision}=\frac{TP}{TP+FP}
+\]</span></p>
+<p>Q. Recall 공식과 의미는?<br />
+A. 실제 positive 중 model이 positive로 잡아낸 비율이다.</p>
+<p><span class="math display">\[
+\mathrm{Recall}=\frac{TP}{TP+FN}
+\]</span></p>
+<p>Q. Specificity 공식과 의미는?<br />
+A. 실제 negative 중 negative로 잘 맞힌 비율이다.</p>
+<p><span class="math display">\[
+\mathrm{Specificity}=\frac{TN}{TN+FP}
+\]</span></p>
+<p>Q. F1 score 공식과 의미는?<br />
+A. Precision과 recall의 조화평균이다.</p>
+<p><span class="math display">\[
+F_1=\frac{2\cdot \mathrm{Precision}\cdot
+\mathrm{Recall}}{\mathrm{Precision}+\mathrm{Recall}}
+\]</span></p>
+<p>Q. Precision과 recall은 어떤 관계인가?<br />
+A. Threshold를 바꾸면 보통 trade-off 관계가 생긴다.</p>
+<p>Q. ROC curve의 축은?<br />
+A. X축은 false positive rate, Y축은 true positive rate이다.</p>
+<p><span class="math display">\[
+\mathrm{FPR}=\frac{FP}{FP+TN},\qquad \mathrm{TPR}=\frac{TP}{TP+FN}
+\]</span></p>
+<p>Q. AUC의 의미는?<br />
+A. ROC curve 아래 면적이다. 1에 가까울수록 좋고, 대각선 수준은 random
+classifier에 가깝다.</p>
+<p>함정: Class imbalance가 큰 문제에서는 accuracy만 높아도 좋은
+model이라고 단정하면 안 된다.</p>
+<h2 id="cross-validation">3. Cross-Validation</h2>
+<p>Q. Train, validation, test set의 역할은?<br />
+A. Train은 model fitting, validation은 hyperparameter 선택, test는
+마지막 일반화 성능 평가에 쓴다.</p>
+<p>Q. K-fold cross-validation은 무엇인가?<br />
+A. 데이터를 <span class="math inline">\(K\)</span>개 fold로 나누고, 각
+fold를 한 번씩 validation set으로 쓰며 평균 성능을 계산한다.</p>
+<p>Q. Validation set에 과도하게 맞추면 어떤 문제가 생기는가?<br />
+A. Validation overfitting이 생길 수 있다. 그래서 최종 평가는 test set을
+따로 둔다.</p>
+<h2 id="ensemble-기본">4. Ensemble 기본</h2>
+<p>Q. Ensemble learning의 핵심은?<br />
+A. 여러 learner를 결합해 단일 model보다 안정적이고 좋은 예측을 얻는
+것이다.</p>
+<p>Q. Ensemble 효과의 핵심 조건은?<br />
+A. 개별 model들이 어느 정도 성능을 가지면서 서로 다른 오류 패턴을 가져야
+한다.</p>
+<p>Q. Bagging의 목적은?<br />
+A. Bootstrap sample로 여러 model을 만들고 결합해 variance를 줄이는
+것이다.</p>
+<p>Q. Boosting의 목적은?<br />
+A. 이전 model이 잘 맞히지 못한 부분을 다음 model이 보완하게 하여 bias를
+줄이는 방향으로 학습하는 것이다.</p>
+<p>Q. Stacking의 핵심은?<br />
+A. 여러 base learner의 예측값을 다시 meta learner가 학습해 결합한다.</p>
+<p>Q. Majority voting은 언제 쓰는가?<br />
+A. 분류 ensemble에서 여러 model의 예측을 결합할 때 쓴다.</p>
+<p>함정: Majority voting은 training 과정 자체가 아니라 prediction 결합
+방식이다.</p>
+<h2 id="random-forest">5. Random Forest</h2>
+<p>Q. Random Forest의 핵심 두 가지는?<br />
+A. Bootstrap sampling과 random subspace method이다.</p>
+<p>Q. Bootstrap sampling은 무엇인가?<br />
+A. 원 데이터에서 복원추출로 sample set을 만드는 방법이다.</p>
+<p>Q. Random subspace method는 무엇인가?<br />
+A. Tree split마다 일부 feature subset만 후보로 사용해 tree 간 상관을
+줄이는 방법이다.</p>
+<p>Q. Random Forest는 supervised learning인가?<br />
+A. 일반적인 Random Forest 분류/회귀는 supervised learning이다.</p>
+<p>Q. OOB sample은 무엇인가?<br />
+A. 특정 tree의 bootstrap sample에 뽑히지 않은 sample이다.</p>
+<p>Q. OOB error의 용도는?<br />
+A. 별도 validation 없이 ensemble 성능 추정이나 feature importance 계산에
+활용할 수 있다.</p>
+<p>Q. Random Forest의 feature importance 기본 아이디어는?<br />
+A. 특정 feature를 섞었을 때 OOB error가 얼마나 증가하는지 보거나,
+impurity 감소량을 집계한다.</p>
+<p>함정: Random Forest는 loss를 gradient descent로 직접 반복 최적화하는
+model이 아니다.</p>
+<p>함정: Random Forest의 tree들이 “완전히 독립적인 data-generating
+process”에서 온다는 뜻이 아니다. 같은 데이터에서 bootstrap과 feature
+sampling으로 다양성을 만든다는 뜻이다.</p>
+<h2 id="adaboost">6. AdaBoost</h2>
+<p>Q. AdaBoost는 어떤 ensemble인가?<br />
+A. Sequential boosting 알고리즘이다. 이전 weak learner가 틀린 sample의
+weight를 높여 다음 learner가 더 집중하게 한다.</p>
+<p>Q. AdaBoost 초기 sample weight는?<br />
+A. <span class="math inline">\(N\)</span>개 sample이면 각 sample의
+weight를 <span class="math inline">\(1/N\)</span>으로 둔다.</p>
+<p>Q. Weighted error는?<br />
+A. 잘못 분류한 sample들의 weight 합이다.</p>
+<p><span class="math display">\[
+\epsilon_t=\sum_{i:h_t(x_i)\ne y_i}w_i
+\]</span></p>
+<p>Q. Weak learner의 weight <span
+class="math inline">\(\alpha_t\)</span>는 error가 작을수록 어떻게
+되는가?<br />
+A. 커진다.</p>
+<p><span class="math display">\[
+\alpha_t=\frac{1}{2}\ln\frac{1-\epsilon_t}{\epsilon_t}
+\]</span></p>
+<p>Q. AdaBoost에서 틀린 sample의 weight는 다음 단계에서 어떻게
+되는가?<br />
+A. 증가한다.</p>
+<p>Q. AdaBoost 최종 예측은?<br />
+A. Weak learner들의 weighted vote 또는 weighted sum으로 결정한다.</p>
+<p><span class="math display">\[
+H(x)=\operatorname{sign}\left(\sum_{t=1}^{T}\alpha_t h_t(x)\right)
+\]</span></p>
+<p>함정: AdaBoost는 tree를 서로 독립적으로 병렬 학습한다고 하면 틀리다.
+앞 learner의 오류가 다음 learner에 영향을 준다.</p>
+<h2 id="gradient-boosting-xgboost-lightgbm-catboost">7. Gradient
+Boosting, XGBoost, LightGBM, CatBoost</h2>
+<p>Q. Gradient Boosting을 한 줄로 쓰면?<br />
+A. Gradient descent와 boosting을 결합해 loss를 줄이는 방향의 새
+learner를 순차적으로 더하는 방법이다.</p>
+<p>Q. Squared loss에서 Gradient Boosting이 맞추는 것은?<br />
+A. Residual이다.</p>
+<p>Q. Functional Gradient Descent 관점이란?<br />
+A. Parameter 하나가 아니라 function 자체를 loss가 줄어드는 방향으로
+순차적으로 더하는 관점이다.</p>
+<p>Q. XGBoost는 무엇을 보완한 GBM인가?<br />
+A. Regularization과 효율적인 계산 구조를 추가해 과적합과 학습속도 문제를
+보완한 gradient boosting 계열이다.</p>
+<p>Q. XGBoost의 핵심 식 방향은?<br />
+A. Loss와 regularization term을 함께 최소화한다.</p>
+<p><span class="math display">\[
+\mathcal{L}=\sum_i l(y_i,\hat{y}_i)+\sum_k\Omega(f_k)
+\]</span></p>
+<p>Q. LightGBM의 핵심은?<br />
+A. 대용량 tabular data에서 빠른 학습을 위해 GOSS와 EFB 같은 전략을
+사용한다.</p>
+<p>Q. GOSS는 무엇인가?<br />
+A. Gradient가 큰 sample은 유지하고, gradient가 작은 sample은 일부만
+샘플링해 효율을 높이는 방법이다.</p>
+<p>Q. EFB는 무엇인가?<br />
+A. 상호 배타적으로 나타나는 sparse feature들을 bundle로 묶어 feature
+수를 줄이는 방법이다.</p>
+<p>Q. CatBoost의 핵심은?<br />
+A. Categorical feature 처리와 ordered target statistics로 target
+leakage와 prediction shift를 완화하는 것이다.</p>
+<p>함정: CatBoost의 ordered target statistics는 target leakage를 완전히
+없앤다고 하기보다 완화한다고 표현한다.</p>
+<h2 id="xai-기본-분류">8. XAI 기본 분류</h2>
+<p>Q. XAI가 필요한 이유는?<br />
+A. Model이 왜 그런 예측을 했는지 설명해 신뢰성, 투명성, 책임성, 오류
+분석을 가능하게 하기 위해서다.</p>
+<p>Q. Pre-model explanation은 무엇인가?<br />
+A. Model을 만들기 전에 데이터의 구조와 설명력을 EDA, visualization
+등으로 파악하는 것이다.</p>
+<p>Q. In-model explanation은 무엇인가?<br />
+A. Model 자체가 설명 가능한 구조를 갖거나 학습 중 importance를 제공하는
+방식이다. 예: decision tree, attention score.</p>
+<p>Q. Post-hoc explanation은 무엇인가?<br />
+A. 이미 학습된 black-box model을 두고, 별도 설명 방법으로 예측을
+해석하는 방식이다.</p>
+<p>Q. Model-specific method는?<br />
+A. 특정 model 구조에 의존하는 설명 방법이다.</p>
+<p>Q. Model-agnostic method는?<br />
+A. Model 종류와 무관하게 input-output 관계를 이용해 설명하는
+방법이다.</p>
+<p>Q. Global explanation은?<br />
+A. 전체 데이터에서 평균적으로 어떤 feature가 중요한지 설명한다.</p>
+<p>Q. Local explanation은?<br />
+A. 특정 sample 하나의 예측 이유를 설명한다.</p>
+<p>Q. Interpretability 수준이 높을수록 보통 어떤 장단점이 있는가?<br />
+A. 설명은 단순하고 명확하지만 local pattern을 놓칠 수 있다.</p>
+<p>Q. Exact한 설명에 가까워질수록 보통 어떤 장단점이 있는가?<br />
+A. 특정 pattern을 더 잘 설명하지만 사람이 이해하기 어려워질 수 있다.</p>
+<h2 id="pdp-ice-centered-ice">9. PDP, ICE, Centered ICE</h2>
+<p>Q. PDP는 무엇을 보여주는가?<br />
+A. 특정 feature 값 변화가 model prediction에 평균적으로 어떤 영향을
+주는지 보여준다.</p>
+<p>Q. PDP에서 관심 없는 feature들은 어떻게 처리되는가?<br />
+A. Marginalization, 평균화, 적분 관점으로 제거한다.</p>
+<p>Q. PDP의 장점은?<br />
+A. 한 feature의 평균적인 영향 방향을 직관적으로 볼 수 있다.</p>
+<p>Q. PDP의 단점은?<br />
+A. Sample별 heterogeneity를 평균이 숨길 수 있고, feature correlation이
+강하면 비현실적 조합을 만들 수 있다.</p>
+<p>Q. ICE는 무엇인가?<br />
+A. 각 sample마다 feature 변화에 따른 prediction curve를 그린 것이다.</p>
+<p>Q. ICE가 PDP보다 잘 보여주는 것은?<br />
+A. Sample-wise heterogeneity이다.</p>
+<p>Q. Centered ICE는 왜 쓰는가?<br />
+A. Curve들의 시작 수준 차이를 제거하고 feature 변화에 따른 상대적 변화만
+보기 위해 쓴다.</p>
+<p>함정: PDP는 개별 sample 설명이 아니라 평균적인 global pattern 설명에
+가깝다.</p>
+<h2 id="morris-sensitivity와-permutation-importance">10. Morris
+Sensitivity와 Permutation Importance</h2>
+<p>Q. Morris sensitivity analysis의 기본 방식은?<br />
+A. 한 번에 하나의 feature만 변화시키고 나머지는 고정하여 prediction
+변화량을 본다.</p>
+<p>Q. Morris에서 <span class="math inline">\(\mu\)</span>는 무엇을
+의미하는가?<br />
+A. Feature가 평균적으로 output에 미치는 영향 크기이다.</p>
+<p>Q. Morris에서 <span class="math inline">\(\sigma\)</span>는 무엇을
+의미하는가?<br />
+A. Feature effect의 변동성, interaction 또는 nonlinear effect 가능성을
+뜻한다.</p>
+<p>Q. Permutation importance의 핵심은?<br />
+A. 특정 feature 값을 섞어 그 feature 정보를 망가뜨렸을 때 model 성능이
+얼마나 떨어지는지 본다.</p>
+<p>Q. Feature를 섞었는데 성능이 크게 떨어지면?<br />
+A. 그 feature가 중요하다는 뜻이다.</p>
+<p>Q. Feature를 섞어도 성능이 거의 변하지 않으면?<br />
+A. 그 feature가 model prediction에 크게 쓰이지 않았다는 뜻이다.</p>
+<p>Q. Random Forest의 OOB error와 permutation importance는 어떻게
+연결되는가?<br />
+A. OOB sample에서 원래 error와 특정 feature를 섞은 후 error를 비교해
+importance를 계산할 수 있다.</p>
+<p>함정: Permutation importance는 feature correlation이 강할 때 중요도를
+왜곡할 수 있다.</p>
+<h2 id="mutual-information">11. Mutual Information</h2>
+<p>Q. Correlation coefficient가 주로 보는 관계는?<br />
+A. 선형적 관계이다.</p>
+<p>Q. Correlation이 0이면 X와 Y가 독립이라고 단정할 수 있는가?<br />
+A. 아니다. 선형 관계가 약하다는 뜻일 수 있고, nonlinear dependence가
+남아 있을 수 있다.</p>
+<p>Q. Mutual information은 무엇을 측정하는가?<br />
+A. 한 random variable을 관측했을 때 다른 random variable에 대해 얻는
+정보량이다.</p>
+<p>Q. Mutual information과 entropy 관계는?<br />
+A.</p>
+<p><span class="math display">\[
+I(X;Y)=H(X)-H(X|Y)
+\]</span></p>
+<p>Q. Mutual information이 0이면?<br />
+A. 두 random variable 사이에 공유 정보가 없다는 뜻이다.</p>
+<h2 id="lime">12. LIME</h2>
+<p>Q. LIME은 무엇인가?<br />
+A. Local Interpretable Model-agnostic Explanations이다. 특정 sample
+근처에서 black-box model을 simple surrogate model로 근사한다.</p>
+<p>Q. LIME 절차는?<br />
+A. 설명할 sample 선택 → 주변 perturbation 생성 → black-box prediction
+얻기 → 원 sample과 가까운 perturbation에 큰 weight 부여 → sparse linear
+surrogate model 학습 → local feature importance 제시.</p>
+<p>Q. LIME이 model-agnostic인 이유는?<br />
+A. 내부 parameter를 보지 않고 input과 output prediction만 사용하기
+때문이다.</p>
+<p>Q. Image LIME에서 superpixel을 쓰는 이유는?<br />
+A. Pixel 하나하나보다 사람이 이해하기 쉬운 영역 단위로 perturbation과
+설명을 하기 위해서다.</p>
+<p>Q. LIME의 장점은?<br />
+A. 이해하기 쉽고 다양한 model에 적용 가능하다.</p>
+<p>Q. LIME의 단점은?<br />
+A. Perturbation 방식과 locality 정의에 민감하고, 같은 model도 설정에
+따라 설명이 달라질 수 있다.</p>
+<h2 id="shap">13. SHAP</h2>
+<p>Q. SHAP은 무엇인가?<br />
+A. Shapley value를 이용해 각 feature가 특정 prediction에 얼마나
+기여했는지 계산하는 설명 방법이다.</p>
+<p>Q. SHAP의 이론적 기반은?<br />
+A. Coalitional game theory의 Shapley value이다.</p>
+<p>Q. SHAP의 local explanation 식은?<br />
+A. Base value에 feature별 SHAP value를 더해 prediction을 설명한다.</p>
+<p><span class="math display">\[
+f(x)=\phi_0+\sum_{j=1}^{M}\phi_j
+\]</span></p>
+<p>Q. SHAP에서 <span class="math inline">\(\phi_0\)</span>는
+무엇인가?<br />
+A. Average prediction 또는 base value이다.</p>
+<p>Q. SHAP에서 <span class="math inline">\(\phi_j\)</span>는
+무엇인가?<br />
+A. Feature <span class="math inline">\(j\)</span>가 base value에서 해당
+sample prediction으로 이동시키는 기여도이다.</p>
+<p>Q. SHAP의 세 가지 핵심 성질은?<br />
+A. Local accuracy, missingness, consistency이다.</p>
+<p>Q. SHAP summary plot은 무엇을 보여주는가?<br />
+A. 전체 sample에서 feature importance와 feature value가 prediction에
+미치는 방향을 함께 보여준다.</p>
+<p>Q. SHAP dependence plot은 무엇을 보여주는가?<br />
+A. 특정 feature 값과 SHAP value의 관계를 보여주며 interaction도 볼 수
+있다.</p>
+<p>Q. KernelSHAP의 단점은?<br />
+A. 느리고 feature dependence를 무시할 수 있다.</p>
+<p>Q. TreeSHAP의 장점은?<br />
+A. Tree-based model에서 빠르게 SHAP value를 계산할 수 있다.</p>
+<p>함정: SHAP은 local explanation과 global explanation을 모두 만들 수
+있다. Local 전용이라고만 하면 부족하다.</p>
+<h2 id="기계학습-최적화">14. 기계학습 최적화</h2>
+<p>Q. 기계학습 최적화의 목표는?<br />
+A. 학습데이터의 loss를 줄이는 parameter를 찾되, 최종적으로 unseen
+data에서도 좋은 성능을 얻는 것이다.</p>
+<p>Q. 순수 최적화와 기계학습 최적화의 차이는?<br />
+A. 순수 최적화는 목적함수 값 자체가 목표이고, 기계학습은 training loss
+감소가 generalization으로 이어져야 한다.</p>
+<p>Q. ERM은 무엇인가?<br />
+A. Unknown true risk 대신 training data에서 계산한 empirical risk를
+최소화하는 접근이다.</p>
+<p><span class="math display">\[
+\hat{\theta}=\arg\min_\theta
+\frac{1}{n}\sum_{i=1}^{n}L(y_i,f(x_i;\theta))
+\]</span></p>
+<p>Q. Regularization은 왜 쓰는가?<br />
+A. Parameter가 과도하게 커지는 것을 막아 overfitting을 줄이기 위해
+쓴다.</p>
+<p>Q. <span class="math inline">\(\lambda\)</span>가 너무 크면?<br />
+A. Underfitting 위험이 커진다.</p>
+<p>Q. <span class="math inline">\(\lambda\)</span>가 너무 작으면?<br />
+A. Overfitting 위험이 커진다.</p>
+<p>Q. MLE는 무엇인가?<br />
+A. 관측 data가 가장 그럴듯해지는 parameter를 찾는 방법이다.</p>
+<p><span class="math display">\[
+\theta_{\mathrm{MLE}}=\arg\max_\theta P(X|\theta)
+\]</span></p>
+<p>Q. MAP는 무엇인가?<br />
+A. Likelihood에 prior까지 고려해 posterior가 최대가 되는 parameter를
+찾는 방법이다.</p>
+<p>Q. Bayesian estimator는 무엇이 다른가?<br />
+A. Parameter 하나만 고정하지 않고 posterior distribution 전체를
+고려한다.</p>
+<p>Q. EM algorithm은 언제 쓰는가?<br />
+A. Latent variable이나 missing data 때문에 likelihood 최적화가 어려울 때
+E-step과 M-step을 반복한다.</p>
+<p>Q. Full batch gradient descent는?<br />
+A. 전체 training data를 한 번에 사용해 gradient를 계산한다. 안정적이지만
+큰 데이터에서는 느리다.</p>
+<p>Q. SGD 또는 online update는?<br />
+A. Sample 1개마다 update한다. 빠르지만 noisy하다.</p>
+<p>Q. Mini-batch는?<br />
+A. 일부 sample 묶음으로 update한다. 안정성과 계산 효율의 절충이다.</p>
+<p>Q. Gradient descent update 식은?<br />
+A.</p>
+<p><span class="math display">\[
+w\leftarrow w-\eta\nabla J(w)
+\]</span></p>
+<p>Q. Learning rate가 너무 크면?<br />
+A. Overshooting 또는 발산 위험이 있다.</p>
+<p>Q. Learning rate가 너무 작으면?<br />
+A. 수렴이 느리고 local minimum 근처에서 오래 머물 수 있다.</p>
+<p>Q. Learning rate decay는 언제 쓰는가?<br />
+A. 학습 후반에 loss 진동을 줄이고 안정적으로 수렴시키기 위해 쓴다.</p>
+<p>Q. Hessian은 무엇인가?<br />
+A. 목적함수를 parameter에 대해 두 번 미분한 곡률 matrix이다.</p>
+<p>Q. Newton method의 장점과 단점은?<br />
+A. 곡률 정보를 써 빠를 수 있지만 Hessian 계산과 inverse가 비싸고
+ill-conditioning에 민감하다.</p>
+<p>Q. Gradient clipping은 무엇인가?<br />
+A. Gradient norm이 너무 클 때 방향은 유지하고 크기만 threshold 이하로
+줄이는 방법이다.</p>
+<p>Q. Early stopping은 무엇을 보고 멈추는가?<br />
+A. Training loss가 아니라 validation performance를 보고 과적합 전에
+멈춘다.</p>
+<p>Q. Parameter와 hyperparameter의 차이는?<br />
+A. Parameter는 학습으로 추정되는 값이고, hyperparameter는 사용자가
+정하거나 validation으로 선택하는 값이다.</p>
+<p>Q. Parameter 예시는?<br />
+A. Neural network의 weight와 bias이다.</p>
+<p>Q. Hyperparameter 예시는?<br />
+A. Learning rate, batch size, epoch, hidden layer 수, node 수,
+activation, regularization strength이다.</p>
+<p>Q. Grid search의 장단점은?<br />
+A. 정해진 격자를 모두 탐색해 단순하지만 차원이 커지면 계산량이
+폭증한다.</p>
+<p>Q. Random search의 장단점은?<br />
+A. 제한 자원에서 효율적일 수 있지만 최적 조합 보장은 약하다.</p>
+<p>Q. Bayesian optimization의 핵심은?<br />
+A. Surrogate model과 acquisition function으로 다음 탐색 지점을
+고른다.</p>
+<p>Q. Metaheuristic은 무엇인가?<br />
+A. 특정 문제에 고정되지 않는 상위 탐색 전략으로, 제한 시간 안에 충분히
+좋은 근사해를 찾는 데 목적이 있다.</p>
+<p>Q. Trajectory-based metaheuristic 예시는?<br />
+A. Hill climbing, tabu search, simulated annealing이다.</p>
+<p>Q. Population-based metaheuristic 예시는?<br />
+A. Genetic algorithm, ant colony optimization, particle swarm
+optimization이다.</p>
+<p>Q. Simulated annealing의 핵심은?<br />
+A. 초반에는 나쁜 해도 확률적으로 받아들이고, 온도 <span
+class="math inline">\(T\)</span>를 낮추며 점점 local search로
+전환한다.</p>
+<p>Q. Genetic algorithm 절차는?<br />
+A. Population 생성 → fitness 평가 → selection → crossover → mutation →
+replacement를 반복한다.</p>
+<h2 id="ox-빠른-판별">15. O/X 빠른 판별</h2>
+<p>Q. Random Forest는 bootstrap과 random subspace로 tree diversity를
+만든다.<br />
+A. O.</p>
+<p>Q. Boosting은 모든 weak learner를 완전히 병렬로 독립 학습한다.<br />
+A. X. 순차적으로 이전 오류를 보완한다.</p>
+<p>Q. AUC는 ROC curve 아래 면적이다.<br />
+A. O.</p>
+<p>Q. Precision은 실제 positive 중 맞힌 비율이다.<br />
+A. X. 그것은 recall이다.</p>
+<p>Q. PDP는 평균적인 feature effect를 보여준다.<br />
+A. O.</p>
+<p>Q. ICE는 sample별 curve를 보여준다.<br />
+A. O.</p>
+<p>Q. LIME은 특정 sample 근처를 simple model로 근사한다.<br />
+A. O.</p>
+<p>Q. SHAP은 Shapley value 기반이다.<br />
+A. O.</p>
+<p>Q. Early stopping은 training loss가 계속 감소하면 무조건 끝까지
+학습하는 전략이다.<br />
+A. X. Validation 성능을 보고 멈춘다.</p>
+<p>Q. MLE는 prior를 반드시 포함한다.<br />
+A. X. Prior를 포함하면 MAP이다.</p>
+<h2 id="그래프-해석형">16. 그래프 해석형</h2>
+<p>Q. SHAP summary plot에서 x축 오른쪽은 무엇인가?<br />
+A. SHAP value가 양수인 영역이다. 해당 feature가 예측값 또는 positive
+class score를 올리는 방향으로 기여한다.</p>
+<p>Q. SHAP summary plot에서 x축 왼쪽은 무엇인가?<br />
+A. SHAP value가 음수인 영역이다. 해당 feature가 예측값 또는 positive
+class score를 낮추는 방향으로 기여한다.</p>
+<p>Q. SHAP summary plot에서 빨간색과 파란색은?<br />
+A. 빨간색은 feature value가 큰 sample, 파란색은 feature value가 작은
+sample이다.</p>
+<p>Q. SHAP summary plot에서 빨간 점이 오른쪽에 많으면?<br />
+A. feature 값이 클수록 예측값 또는 positive class score를
+증가시킨다.</p>
+<p>Q. SHAP summary plot에서 빨간 점이 왼쪽에 많으면?<br />
+A. feature 값이 클수록 예측값 또는 positive class score를
+감소시킨다.</p>
+<p>Q. SHAP summary plot에서 y축 위쪽 feature는?<br />
+A. 평균 <span class="math inline">\(|\mathrm{SHAP\ value}|\)</span>가
+커서 global importance가 큰 feature이다.</p>
+<p>Q. PDP가 오른쪽으로 갈수록 올라가면?<br />
+A. 해당 feature 값이 증가할수록 평균 prediction이 증가한다.</p>
+<p>Q. PDP가 거의 평평하면?<br />
+A. 평균적으로 해당 feature의 영향이 작다.</p>
+<p>Q. ICE plot에서 선 하나는 무엇인가?<br />
+A. sample 하나의 prediction curve이다.</p>
+<p>Q. ICE 선들이 많이 교차하면?<br />
+A. sample마다 feature effect가 다르므로 heterogeneous effect 또는
+interaction 가능성이 있다.</p>
+<p>Q. Centered ICE는 왜 쓰는가?<br />
+A. sample별 시작 prediction 차이를 제거하고 feature 변화에 따른 상대
+변화량을 보기 위해 쓴다.</p>
+<p>Q. Morris plot에서 <span class="math inline">\(\mu\)</span>가
+크면?<br />
+A. 평균적으로 중요한 feature이다.</p>
+<p>Q. Morris plot에서 <span class="math inline">\(\sigma\)</span>가
+크면?<br />
+A. feature effect가 조건에 따라 크게 흔들리므로 interaction 또는
+nonlinear 가능성이 있다.</p>
+<p>Q. Permutation importance bar가 크면?<br />
+A. 해당 feature를 섞었을 때 성능 하락이 크므로 중요한 feature이다.</p>
+<p>Q. ROC curve는 어느 방향이 좋은가?<br />
+A. 왼쪽 위에 가까울수록 좋고 AUC가 1에 가까울수록 좋다.</p>
+<p>Q. PR curve는 언제 특히 유용한가?<br />
+A. class imbalance가 심할 때 positive class의 precision과 recall
+trade-off를 보기 좋다.</p>
+<p>Q. right-skewed distribution은?<br />
+A. 오른쪽 꼬리가 긴 분포이며 큰 값 쪽 outlier 가능성이 있다.</p>
+<p>Q. left-skewed distribution은?<br />
+A. 왼쪽 꼬리가 긴 분포이며 작은 값 쪽 outlier 가능성이 있다.</p>
+<h2 id="의사코드-작성형">17. 의사코드 작성형</h2>
+<p>Q. 의사코드 답안의 기본 순서는?<br />
+A. Input 정의 → 초기화 → 반복문 → 평가/업데이트 → 출력 순서다.</p>
+<p>Q. AdaBoost 의사코드 핵심은?<br />
+A. sample weight 초기화 → weak learner 학습 → weighted error 계산 →
+learner weight 계산 → 오분류 sample weight 증가 → 정규화 → weighted vote
+출력.</p>
+<p>Q. AdaBoost에서 learner weight 식은?<br />
+A.</p>
+<p><span class="math display">\[
+\alpha_t=\frac{1}{2}\ln\frac{1-\epsilon_t}{\epsilon_t}
+\]</span></p>
+<p>Q. Gradient Boosting 의사코드 핵심은?<br />
+A. 현재 model의 residual 또는 negative gradient를 계산하고, 그 값을
+맞추는 weak learner를 순차적으로 더한다.</p>
+<p>Q. AdaBoost와 Gradient Boosting 절차 차이는?<br />
+A. AdaBoost는 sample weight를 바꾸고, Gradient Boosting은 loss의
+residual 또는 negative gradient를 줄인다.</p>
+<p>Q. Permutation importance 의사코드 핵심은?<br />
+A. baseline validation score 측정 → feature 하나만 shuffle → 새 score
+측정 → score 하락량을 importance로 계산.</p>
+<p>Q. PDP 의사코드 핵심은?<br />
+A. 관심 feature의 grid 값을 정하고, 모든 sample의 해당 feature를 그
+값으로 바꾼 뒤 평균 prediction을 계산한다.</p>
+<p>Q. ICE 의사코드 핵심은?<br />
+A. 각 sample마다 관심 feature를 grid 값으로 바꾸며 prediction curve를
+따로 그린다.</p>
+<p>Q. LIME 의사코드 핵심은?<br />
+A. target sample 주변 perturbation 생성 → black-box prediction 획득 →
+proximity weighting → simple interpretable model <span
+class="math inline">\(g\)</span> fitting → coefficient/rule로 설명.</p>
+<p>Q. SHAP 의사코드 핵심은?<br />
+A. feature를 player로 보고 coalition별 marginal contribution을 평균하여
+Shapley value를 계산한다.</p>
+<p>Q. SHAP 예측값 분해 식은?<br />
+A.</p>
+<p><span class="math display">\[
+f(x)=\phi_0+\sum_{j=1}^{p}\phi_j
+\]</span></p>
+<p>Q. Mini-batch gradient descent 의사코드 핵심은?<br />
+A. data shuffle → mini-batch 분할 → batch 평균 gradient 계산 → <span
+class="math inline">\(w\leftarrow w-\eta\nabla J(w)\)</span> update
+반복.</p>
+<p>Q. Early stopping 의사코드 핵심은?<br />
+A. validation score가 개선되면 model 저장, 개선되지 않으면 patience
+counter 증가, counter가 한계에 도달하면 중단한다.</p>
+<p>Q. Grid search 의사코드 핵심은?<br />
+A. 정해진 hyperparameter grid의 모든 조합을 평가하고 validation score가
+가장 좋은 조합을 선택한다.</p>
+<p>Q. Random search 의사코드 핵심은?<br />
+A. 탐색공간에서 조합을 무작위로 뽑아 제한된 budget 안에서 validation
+score가 가장 좋은 조합을 선택한다.</p>
+<p>Q. Genetic algorithm 의사코드 핵심은?<br />
+A. population 초기화 → fitness 평가 → selection → crossover → mutation →
+replacement 반복 → best candidate 출력.</p>
+<p>Q. Simulated annealing 의사코드 핵심은?<br />
+A. neighbor solution을 만들고 더 좋으면 accept, 더 나빠도 온도 <span
+class="math inline">\(T\)</span>에 따른 확률로 accept하며 <span
+class="math inline">\(T\)</span>를 점점 낮춘다.</p>
+</body>
+</html>

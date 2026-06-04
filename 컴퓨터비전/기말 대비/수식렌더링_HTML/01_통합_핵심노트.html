@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>01_통합_핵심노트</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1 id="컴퓨터비전-기말-암기-종합본">컴퓨터비전 기말 암기 종합본</h1>
+<p>오늘 강의 한 줄 요약: Homography는 <span
+class="math inline">\(\mathbb{P}^{2}\to\mathbb{P}^{2}\)</span>의 <span
+class="math inline">\(3\times 3\)</span> 사영변환이고, 동차좌표의 외적과
+고유값분해를 같이 알아야 점, 직선, warping 계산을 안정적으로 이해할 수
+있다.</p>
+<h2 id="시험-직전-한-장-요약">1. 시험 직전 한 장 요약</h2>
+<ul>
+<li><code>matchTemplate</code> 결과 영상 크기: <span
+class="math inline">\((W-w+1)\times(H-h+1)\)</span>.</li>
+<li><code>TM_SQDIFF</code>, <code>TM_SQDIFF_NORMED</code>: 값이 작을수록
+좋은 매칭이다.</li>
+<li><code>TM_CCORR</code>, <code>TM_CCORR_NORMED</code>,
+<code>TM_CCOEFF</code>, <code>TM_CCOEFF_NORMED</code>: 값이 클수록 좋은
+매칭이다.</li>
+<li><code>warpAffine</code>: <span class="math inline">\(2\times
+3\)</span> matrix를 사용한다.</li>
+<li><code>warpPerspective</code>: <span class="math inline">\(3\times
+3\)</span> homography matrix를 사용한다.</li>
+<li>Perspective projection: <span
+class="math inline">\(\mathbb{P}^{3}\to\mathbb{P}^{2}\)</span>, matrix
+크기는 <span class="math inline">\(3\times 4\)</span>다.</li>
+<li>Homography: <span
+class="math inline">\(\mathbb{P}^{2}\to\mathbb{P}^{2}\)</span>, matrix
+크기는 <span class="math inline">\(3\times 3\)</span>, 자유도는
+8이다.</li>
+<li>Homography 계산 최소 대응점 수: 4쌍.</li>
+<li>점 <span class="math inline">\(\tilde{x}\)</span>가 직선 <span
+class="math inline">\(l\)</span> 위에 있을 조건: <span
+class="math inline">\(l^{\top}\tilde{x}=0\)</span>.</li>
+<li>두 점을 지나는 직선: <span
+class="math inline">\(l=\tilde{x}_{1}\times\tilde{x}_{2}\)</span>.</li>
+<li>두 직선의 교점: <span class="math inline">\(\tilde{x}=l_{1}\times
+l_{2}\)</span>.</li>
+<li>고유값 정의: <span class="math inline">\(Ax=\lambda x\)</span>.</li>
+<li>고유값 방정식: <span class="math inline">\(\det(A-\lambda
+I)=0\)</span>.</li>
+<li>대칭행렬 고유값분해: <span class="math inline">\(S=Q\Lambda
+Q^{\top}\)</span>.</li>
+<li>SVD: <span class="math inline">\(A=U\Sigma V^{\top}\)</span>. 오른쪽
+singular vector <span class="math inline">\(v_i\)</span>는 <span
+class="math inline">\(A^{\top}A\)</span>의 eigenvector, 왼쪽 singular
+vector <span class="math inline">\(u_i\)</span>는 <span
+class="math inline">\(AA^{\top}\)</span>의 eigenvector다.</li>
+<li>Homography 추정: <span class="math inline">\(x&#39;\sim Hx\)</span>,
+<span class="math inline">\(x&#39;\times Hx=0\)</span>, 점 대응 1쌍은
+독립식 2개, 최소 4쌍으로 <span class="math inline">\(Ah=0\)</span>을
+만들고 SVD의 마지막 right singular vector를 <span
+class="math inline">\(h\)</span>로 쓴다.</li>
+</ul>
+<h2 id="핵심-슬라이드로-외우는-구조">1-1. 핵심 슬라이드로 외우는
+구조</h2>
+<figure>
+<img src="../assets/slides/cv_tm_p07_purpose.png"
+alt="Template matching 목적" />
+<figcaption aria-hidden="true">Template matching 목적</figcaption>
+</figure>
+<p>출처: 강의자료 <code>[C++]_14-template-matching.pdf</code>, p.7.</p>
+<ul>
+<li>Template matching은 작은 template을 큰 source image 안에서
+이동시키며 가장 비슷한 위치를 찾는다.</li>
+<li>결과 image의 각 픽셀은 그 위치에서의 matching score다.</li>
+<li>시험에서는 결과 크기와 metric별 최솟값/최댓값 선택 기준을 자주
+묻는다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_tm_p08_method.png"
+alt="Template matching 방법" />
+<figcaption aria-hidden="true">Template matching 방법</figcaption>
+</figure>
+<p>출처: 강의자료 <code>[C++]_14-template-matching.pdf</code>, p.8.</p>
+<ul>
+<li>Source image 크기가 <span class="math inline">\(W\times H\)</span>,
+template 크기가 <span class="math inline">\(w\times h\)</span>이면 결과
+크기는 <span
+class="math inline">\((W-w+1)\times(H-h+1)\)</span>이다.</li>
+<li>Template을 한 칸씩 이동하면서 겹친 영역의 유사도 또는 차이를
+계산한다.</li>
+<li><code>TM_SQDIFF</code> 계열은 작을수록 좋고, correlation 계열은
+클수록 좋다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_tm_p32_matchtemplate.png"
+alt="OpenCV matchTemplate" />
+<figcaption aria-hidden="true">OpenCV matchTemplate</figcaption>
+</figure>
+<p>출처: 강의자료 <code>[C++]_14-template-matching.pdf</code>, p.32.</p>
+<ul>
+<li><code>matchTemplate(src, templ, result, method)</code> 형태를 코드
+빈칸으로 묻기 쉽다.</li>
+<li>Matching 후 <code>minMaxLoc</code>으로 최소/최대 위치를 찾는다.</li>
+<li>Metric에 따라 <code>minLoc</code>을 쓸지 <code>maxLoc</code>을 쓸지
+달라진다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_gt02_p64_transform_summary.png"
+alt="Geometric transformation 요약" />
+<figcaption aria-hidden="true">Geometric transformation
+요약</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_15-geometric-transformations-02_geometric_transformations.pdf</code>,
+p.64.</p>
+<ul>
+<li>Linear transform은 원점을 보존하고 <span
+class="math inline">\(y=Ax\)</span>로 쓴다.</li>
+<li>Affine transform은 translation을 포함하므로 <span
+class="math inline">\(y=Ax+b\)</span>이고, 동차좌표로 쓰면 하나의
+행렬곱이 된다.</li>
+<li>OpenCV에서 affine은 <span class="math inline">\(2\times3\)</span>,
+homography/perspective는 <span class="math inline">\(3\times3\)</span>
+행렬을 사용한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_gt02_p16_bilinear.png"
+alt="Bilinear interpolation" />
+<figcaption aria-hidden="true">Bilinear interpolation</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_15-geometric-transformations-02_geometric_transformations.pdf</code>,
+p.16.</p>
+<ul>
+<li>Warping 후 좌표가 정수 픽셀에 정확히 떨어지지 않으면 interpolation이
+필요하다.</li>
+<li>Nearest neighbor는 빠르지만 계단 현상이 크고, bilinear는 주변
+4픽셀을 가중 평균한다.</li>
+<li>코드 문제에서는 좌표 변환 뒤 보간 방법 선택을 묻기 쉽다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_gt02_p26_forward_backward.png"
+alt="Forward/backward warping" />
+<figcaption aria-hidden="true">Forward/backward warping</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_15-geometric-transformations-02_geometric_transformations.pdf</code>,
+p.26.</p>
+<ul>
+<li>Forward warping은 source를 destination으로 보내므로 hole이 생기기
+쉽다.</li>
+<li>Backward warping은 destination 픽셀에서 source 좌표를 역으로 찾아
+채우므로 hole 문제가 적다.</li>
+<li>실제 image warping 구현은 보통 inverse mapping을 사용한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_gt02_p58_affine_three_points.png"
+alt="Affine transform과 세 점 대응" />
+<figcaption aria-hidden="true">Affine transform과 세 점
+대응</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_15-geometric-transformations-02_geometric_transformations.pdf</code>,
+p.58.</p>
+<ul>
+<li>Affine transform은 <span class="math inline">\(2\times3\)</span>
+행렬이므로 자유도 6이다.</li>
+<li>점 한 쌍은 x, y 두 식을 주므로 최소 3쌍 대응점이 필요하다.</li>
+<li>OpenCV에서는 <code>getAffineTransform</code>과
+<code>warpAffine</code>을 연결해서 외운다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_h01_p34_projective_space.png"
+alt="Projective Space 개념" />
+<figcaption aria-hidden="true">Projective Space 개념</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_17-homography_01_homogeneous_coordinates.pdf</code>,
+p.34.</p>
+<ul>
+<li><span class="math inline">\(\mathbb{P}^{2}\)</span>는 <span
+class="math inline">\(\mathbb{R}^{2}\)</span>에 infinity point를 추가한
+공간으로 외운다.</li>
+<li>동차좌표 <span class="math inline">\((x,y,w)^{\top}\)</span>에서
+<span class="math inline">\(w\ne0\)</span>이면 직교좌표 <span
+class="math inline">\((x/w,y/w)\)</span>로 돌아간다.</li>
+<li><span class="math inline">\(w=0\)</span>인 점은 <span
+class="math inline">\(\mathbb{R}^{2}\)</span>에서 직접 대응되지 않는
+point at infinity다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_h01_p67_parallel_intersection.png"
+alt="평행선의 무한원점 교점" />
+<figcaption aria-hidden="true">평행선의 무한원점 교점</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_17-homography_01_homogeneous_coordinates.pdf</code>,
+p.67.</p>
+<ul>
+<li>유클리드 공간에서는 평행선이 만나지 않지만, 사영공간에서는 같은
+방향의 평행선이 infinity point에서 만난다.</li>
+<li>두 직선의 교점은 <span class="math inline">\(x=l_{1}\times
+l_{2}\)</span>로 구한다.</li>
+<li>두 점을 지나는 직선은 <span class="math inline">\(l=x_{1}\times
+x_{2}\)</span>로 구한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_eig_p19_definition.png" alt="고유값 정의" />
+<figcaption aria-hidden="true">고유값 정의</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_17-homography_03_eigenvalue_decomposition.pdf</code>,
+p.19.</p>
+<ul>
+<li>고유벡터는 행렬 <span class="math inline">\(A\)</span>를 곱해도
+방향이 변하지 않고 크기만 바뀌는 벡터다.</li>
+<li>고유값은 그 방향에서의 scaling factor다.</li>
+<li>정의식은 <span class="math inline">\(Ax=\lambda x\)</span>다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_eig_p20_ax_lambdax.png"
+alt="Ax = lambda x" />
+<figcaption aria-hidden="true">Ax = lambda x</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_17-homography_03_eigenvalue_decomposition.pdf</code>,
+p.20.</p>
+<ul>
+<li><span class="math inline">\((A-\lambda I)x=0\)</span>에서 non-zero
+<span class="math inline">\(x\)</span>가 존재하려면 <span
+class="math inline">\(\det(A-\lambda I)=0\)</span>이다.</li>
+<li>이 식이 고유값을 찾는 characteristic equation이다.</li>
+<li>코드/객관식에서는 <span class="math inline">\(\det(A-\lambda
+I)=0\)</span> 형태를 고른다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_eig_p31_symmetric_real.png"
+alt="대칭행렬 고유값" />
+<figcaption aria-hidden="true">대칭행렬 고유값</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_17-homography_03_eigenvalue_decomposition.pdf</code>,
+p.31.</p>
+<ul>
+<li>Real symmetric matrix의 eigenvalue는 모두 real이다.</li>
+<li>Computer vision에서 covariance, structure tensor 같은 행렬은
+대칭행렬로 자주 나온다.</li>
+<li>대칭행렬 성질은 PCA/eigendecomposition 문제의 핵심 전제다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_eig_p32_symmetric_orthogonal.png"
+alt="대칭행렬 고유벡터 직교성" />
+<figcaption aria-hidden="true">대칭행렬 고유벡터 직교성</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_17-homography_03_eigenvalue_decomposition.pdf</code>,
+p.32.</p>
+<ul>
+<li>Real symmetric matrix의 서로 다른 eigenvalue에 대응하는
+eigenvector는 orthogonal하다.</li>
+<li>그래서 <span class="math inline">\(S=Q\Lambda Q^{\top}\)</span>
+형태로 분해할 수 있다.</li>
+<li><span class="math inline">\(Q^{-1}=Q^{\top}\)</span>가 되는
+orthogonal matrix 성질을 같이 외운다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_h02_p40_homography_matrix.png"
+alt="Homography matrix" />
+<figcaption aria-hidden="true">Homography matrix</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_17-homography_02_image_warping_using_homography.pdf</code>,
+p.40.</p>
+<ul>
+<li>Homography는 <span
+class="math inline">\(\mathbb{P}^{2}\to\mathbb{P}^{2}\)</span>를 보내는
+<span class="math inline">\(3\times3\)</span> 행렬이다.</li>
+<li>동차좌표에서는 scale ambiguity가 있으므로 <span
+class="math inline">\(H\)</span>의 자유도는 9가 아니라 8이다.</li>
+<li>최소 4쌍의 대응점이 있어야 <span class="math inline">\(H\)</span>를
+계산할 수 있다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_h02_p55_perspective_topview.png"
+alt="Perspective transformation 예시" />
+<figcaption aria-hidden="true">Perspective transformation
+예시</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_17-homography_02_image_warping_using_homography.pdf</code>,
+p.55.</p>
+<ul>
+<li>원근 왜곡된 평면 이미지는 homography로 top-view처럼 보정할 수
+있다.</li>
+<li>Forward warping은 hole이 생기기 쉬우므로 실제 구현에서는 보통
+inverse warping을 사용한다.</li>
+<li>OpenCV에서는 <code>getPerspectiveTransform</code>으로 <span
+class="math inline">\(H\)</span>를 구하고 <code>warpPerspective</code>로
+변환한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_eig_p55_decomposition.png"
+alt="Eigen decomposition" />
+<figcaption aria-hidden="true">Eigen decomposition</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_17-homography_03_eigenvalue_decomposition.pdf</code>,
+p.55.</p>
+<ul>
+<li>Eigendecomposition은 행렬을 eigenvector matrix와 diagonal eigenvalue
+matrix로 분해한다.</li>
+<li>대칭행렬이면 <span class="math inline">\(A=Q\Lambda
+Q^{\top}\)</span>로 안정적으로 해석한다.</li>
+<li>Homography/PCA/최소제곱 문제에서 “가장 작은 eigenvalue의
+eigenvector” 같은 표현이 나온다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_eig_p70_geometry.png"
+alt="Eigen decomposition 기하학" />
+<figcaption aria-hidden="true">Eigen decomposition 기하학</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_17-homography_03_eigenvalue_decomposition.pdf</code>,
+p.70.</p>
+<ul>
+<li>Eigenvector 방향은 변환 후에도 방향이 보존되는 special
+direction이다.</li>
+<li>Eigenvalue는 그 방향에서 늘어나거나 줄어드는 비율이다.</li>
+<li>그림 문제는 “방향 유지”와 “스케일 변화”를 구분하면 된다.</li>
+</ul>
+<h2 id="template-matching">2. Template Matching</h2>
+<p>Template matching은 작은 template image를 source image 위에
+이동시키면서 유사도를 계산하고, 가장 좋은 위치를 찾는 방법이다.</p>
+<h3 id="결과-크기">결과 크기</h3>
+<p>Source image 크기가 <span class="math inline">\(W\times H\)</span>,
+template 크기가 <span class="math inline">\(w\times h\)</span>이면 결과
+image 크기는 다음과 같다.</p>
+<p><span class="math display">\[
+(W-w+1)\times(H-h+1)
+\]</span></p>
+<p>OpenCV의 <code>matchTemplate</code> 결과는 보통 single-channel 32-bit
+floating point image다.</p>
+<h3 id="matching-metric">Matching Metric</h3>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>방법</th>
+<th style="text-align: right;">선택 기준</th>
+<th>핵심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TM_SQDIFF</code></td>
+<td style="text-align: right;">최솟값</td>
+<td>pixel 차이 제곱합이 작을수록 좋다</td>
+</tr>
+<tr>
+<td><code>TM_SQDIFF_NORMED</code></td>
+<td style="text-align: right;">최솟값</td>
+<td>정규화된 차이 제곱합</td>
+</tr>
+<tr>
+<td><code>TM_CCORR</code></td>
+<td style="text-align: right;">최댓값</td>
+<td>template과 image patch의 correlation이 클수록 좋다</td>
+</tr>
+<tr>
+<td><code>TM_CCORR_NORMED</code></td>
+<td style="text-align: right;">최댓값</td>
+<td>정규화된 correlation</td>
+</tr>
+<tr>
+<td><code>TM_CCOEFF</code></td>
+<td style="text-align: right;">최댓값</td>
+<td>평균을 제거한 correlation</td>
+</tr>
+<tr>
+<td><code>TM_CCOEFF_NORMED</code></td>
+<td style="text-align: right;">최댓값</td>
+<td>정규화된 zero-mean correlation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mask-사용">Mask 사용</h3>
+<p>Mask를 쓰면 template 중 실제 비교할 영역만 선택할 수 있다. 배경이
+섞인 template에서는 mask가 없는 영역을 무시하여 matching을
+안정화한다.</p>
+<h2 id="geometric-transformation">3. Geometric Transformation</h2>
+<h3 id="linear와-affine">Linear와 Affine</h3>
+<p>Linear transformation은 다음 형태다.</p>
+<p><span class="math display">\[
+y=Ax
+\]</span></p>
+<p>Affine transformation은 translation이 추가된다.</p>
+<p><span class="math display">\[
+y=Ax+b
+\]</span></p>
+<p>동차좌표를 쓰면 affine transformation도 matrix multiplication 하나로
+쓸 수 있다.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+y\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+A &amp; b\\
+0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+x\\
+1
+\end{bmatrix}
+\]</span></p>
+<h3 id="변환별-보존-성질">변환별 보존 성질</h3>
+<table>
+<thead>
+<tr>
+<th>변환</th>
+<th style="text-align: right;">자유도</th>
+<th>보존되는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rigid</td>
+<td style="text-align: right;">3</td>
+<td>길이, 각도, 평행성, 직선성</td>
+</tr>
+<tr>
+<td>Similarity</td>
+<td style="text-align: right;">4</td>
+<td>각도, 길이 비율, 평행성, 직선성</td>
+</tr>
+<tr>
+<td>Affine</td>
+<td style="text-align: right;">6</td>
+<td>평행성, 직선성</td>
+</tr>
+<tr>
+<td>Projective</td>
+<td style="text-align: right;">8</td>
+<td>직선성</td>
+</tr>
+</tbody>
+</table>
+<p>Projective transformation은 직선을 직선으로 보내지만 평행성은
+보존하지 않는다. 그래서 평행한 선도 image에서는 vanishing point에서 만날
+수 있다.</p>
+<h3 id="opencv-함수">OpenCV 함수</h3>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>함수</th>
+<th style="text-align: right;">matrix</th>
+<th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>resize</code></td>
+<td style="text-align: right;">없음</td>
+<td>image scaling</td>
+</tr>
+<tr>
+<td><code>warpAffine</code></td>
+<td style="text-align: right;"><span class="math inline">\(2\times
+3\)</span></td>
+<td>affine transformation</td>
+</tr>
+<tr>
+<td><code>getAffineTransform</code></td>
+<td style="text-align: right;"><span class="math inline">\(2\times
+3\)</span> 생성</td>
+<td>3쌍 대응점으로 affine matrix 계산</td>
+</tr>
+<tr>
+<td><code>getRotationMatrix2D</code></td>
+<td style="text-align: right;"><span class="math inline">\(2\times
+3\)</span> 생성</td>
+<td>center, angle, scale로 회전 matrix 계산</td>
+</tr>
+<tr>
+<td><code>warpPerspective</code></td>
+<td style="text-align: right;"><span class="math inline">\(3\times
+3\)</span></td>
+<td>homography, perspective warping</td>
+</tr>
+</tbody>
+</table>
+<p><code>WARP_INVERSE_MAP</code>은 주어진 matrix를 destination에서
+source로 가는 inverse mapping으로 해석하라는 flag다.</p>
+<h3 id="회전-matrix">회전 Matrix</h3>
+<p>OpenCV의 <code>getRotationMatrix2D(center, angle, scale)</code>은
+다음 형태의 <span class="math inline">\(2\times 3\)</span> matrix를
+만든다.</p>
+<p><span class="math display">\[
+M=
+\begin{bmatrix}
+\alpha &amp; \beta &amp; (1-\alpha)c_{x}-\beta c_{y}\\
+-\beta &amp; \alpha &amp; \beta c_{x}+(1-\alpha)c_{y}
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\alpha=s\cos\theta,\qquad \beta=s\sin\theta
+\]</span></p>
+<h2 id="homogeneous-coordinates">4. Homogeneous Coordinates</h2>
+<p>2D 점 <span class="math inline">\((x,y)\)</span>는 동차좌표에서
+다음과 같이 쓴다.</p>
+<p><span class="math display">\[
+\tilde{x}=
+\begin{bmatrix}
+x\\
+y\\
+1
+\end{bmatrix}
+\]</span></p>
+<p>동차좌표에서는 0이 아닌 scalar 배가 같은 점이다.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+x\\
+y\\
+w
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+kx\\
+ky\\
+kw
+\end{bmatrix}
+\qquad (k\neq 0)
+\]</span></p>
+<p><span class="math inline">\(w\neq 0\)</span>이면 직교좌표는 다음과
+같다.</p>
+<p><span class="math display">\[
+(x/w,\;y/w)
+\]</span></p>
+<p><span class="math inline">\(w=0\)</span>인 점은 point at infinity다.
+2D projective space에서 평행한 직선은 infinity point에서 만난다고
+해석한다.</p>
+<p>Line at infinity는 다음과 같이 쓴다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+l_{\infty}=
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+<h2 id="point-line-cross-product">5. Point, Line, Cross Product</h2>
+<p>2D projective line은 다음과 같이 쓴다.</p>
+<p><span class="math display">\[
+l=
+\begin{bmatrix}
+a\\
+b\\
+c
+\end{bmatrix}
+\]</span></p>
+<p>이 line은 직교좌표에서 다음 직선을 뜻한다.</p>
+<p><span class="math display">\[
+ax+by+c=0
+\]</span></p>
+<p>점 <span class="math inline">\(\tilde{x}\)</span>가 직선 <span
+class="math inline">\(l\)</span> 위에 있다는 조건은 다음과 같다.</p>
+<p><span class="math display">\[
+l^{\top}\tilde{x}=0
+\]</span></p>
+<p>두 점을 지나는 직선은 외적으로 구한다.</p>
+<p><span class="math display">\[
+l=\tilde{x}_{1}\times\tilde{x}_{2}
+\]</span></p>
+<p>두 직선의 교점도 외적으로 구한다.</p>
+<p><span class="math display">\[
+\tilde{x}=l_{1}\times l_{2}
+\]</span></p>
+<h3 id="cross-product">Cross Product</h3>
+<p>두 3D vector <span class="math inline">\(a\)</span>, <span
+class="math inline">\(b\)</span>의 외적은 다음과 같다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+a\times b=
+\begin{bmatrix}
+a_{y}b_{z}-a_{z}b_{y}\\
+a_{z}b_{x}-a_{x}b_{z}\\
+a_{x}b_{y}-a_{y}b_{x}
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+<p>성질은 다음과 같다.</p>
+<ul>
+<li><span class="math inline">\(a\times b=-(b\times a)\)</span>.</li>
+<li><span class="math inline">\(a\times a=0\)</span>.</li>
+<li><span class="math inline">\(a\times b\)</span>는 <span
+class="math inline">\(a\)</span>, <span
+class="math inline">\(b\)</span>에 모두 수직이다.</li>
+<li><span class="math inline">\(\lVert a\times b\rVert=\lVert
+a\rVert\lVert b\rVert\sin\theta\)</span>.</li>
+<li>외적의 크기는 두 vector가 만드는 평행사변형의 넓이다.</li>
+<li>방향은 오른손 법칙으로 정한다.</li>
+</ul>
+<h2 id="perspective-projection">6. Perspective Projection</h2>
+<p>Perspective projection은 3D projective point를 2D image point로
+보내는 mapping이다.</p>
+<p><span class="math display">\[
+\tilde{x}\sim P\tilde{X}
+\]</span></p>
+<p><span class="math display">\[
+P\in\mathbb{R}^{3\times 4}
+\]</span></p>
+<p>따라서 perspective projection은 다음 mapping이다.</p>
+<p><span class="math display">\[
+\mathbb{P}^{3}\to\mathbb{P}^{2}
+\]</span></p>
+<p>3D에서 평행한 직선들은 image에서 vanishing point로 모일 수 있다. 3D
+방향 vector가 image plane에 투영된 점이 그 방향의 vanishing point다.</p>
+<h2 id="homography">7. Homography</h2>
+<p>Homography는 한 projective plane의 점을 다른 projective plane의
+점으로 보내는 <span class="math inline">\(3\times 3\)</span>
+matrix다.</p>
+<p><span class="math display">\[
+\tilde{x}&#39;\sim H\tilde{x}
+\]</span></p>
+<p><span class="math display">\[
+H\in\mathbb{R}^{3\times 3}
+\]</span></p>
+<p>Mapping은 다음과 같다.</p>
+<p><span class="math display">\[
+\mathbb{P}^{2}\to\mathbb{P}^{2}
+\]</span></p>
+<p>원소는 9개지만 <span class="math inline">\(H\)</span>와 <span
+class="math inline">\(sH\)</span>가 같은 변환을 나타내므로 자유도는
+8이다.</p>
+<p><span class="math display">\[
+H\sim sH\qquad (s\neq 0)
+\]</span></p>
+<p>한 점 대응은 독립 방정식 2개를 제공하므로 homography 계산에는 최소
+4쌍의 point correspondence가 필요하다.</p>
+<h3 id="homography가-성립하는-대표-상황">Homography가 성립하는 대표
+상황</h3>
+<ul>
+<li>같은 physical plane 위의 점들을 두 image에서 대응시킬 때.</li>
+<li>camera center가 고정되고 camera rotation만 있을 때.</li>
+<li>서로 다른 camera가 같은 plane을 볼 때.</li>
+<li>road plane을 top view로 바꾸는 around view.</li>
+<li>panorama stitching에서 중심이 거의 같은 회전 camera를 쓸 때.</li>
+</ul>
+<h3 id="homography가-깨지는-상황">Homography가 깨지는 상황</h3>
+<p>Scene이 하나의 plane이 아니고 깊이가 크게 다르면 하나의 homography로
+전체 image를 정확히 맞출 수 없다. 바닥 plane은 잘 맞아도 사람, 차,
+건물처럼 높이가 있는 물체는 왜곡된다.</p>
+<h2 id="image-warping">8. Image Warping</h2>
+<p>Image warping은 source image의 pixel을 geometric transformation으로
+옮겨 새로운 image를 만드는 과정이다.</p>
+<h3 id="forward-warping">Forward Warping</h3>
+<p>Source pixel을 변환해서 destination에 뿌리는 방식이다.</p>
+<p>문제점은 다음과 같다.</p>
+<ul>
+<li>Destination에 빈 pixel hole이 생길 수 있다.</li>
+<li>여러 source pixel이 같은 destination pixel에 겹칠 수 있다.</li>
+</ul>
+<h3 id="backward-warping">Backward Warping</h3>
+<p>Destination pixel마다 inverse transform을 적용해 source 위치를 찾는
+방식이다.</p>
+<p>장점은 다음과 같다.</p>
+<ul>
+<li>모든 destination pixel을 채우기 쉽다.</li>
+<li>Source 위치가 실수 좌표이면 interpolation으로 값을 계산한다.</li>
+</ul>
+<p>그래서 실제 구현에서는 backward warping이 더 자주 설명된다.</p>
+<h3 id="interpolation">Interpolation</h3>
+<ul>
+<li>Nearest neighbor: 가장 가까운 pixel 값을 사용한다. 빠르지만 계단
+현상이 생길 수 있다.</li>
+<li>Bilinear: 주변 4개 pixel을 가중 평균한다. 일반적인 image resizing과
+warping에 많이 쓴다.</li>
+<li>Bicubic: 주변 pixel을 더 많이 사용해 부드럽지만 계산량이 크다.</li>
+</ul>
+<h2 id="eigenvalue-decomposition">9. Eigenvalue Decomposition</h2>
+<p>고유값과 고유벡터는 다음 조건을 만족한다.</p>
+<p><span class="math display">\[
+Ax=\lambda x
+\]</span></p>
+<ul>
+<li><span class="math inline">\(A\)</span>: square matrix</li>
+<li><span class="math inline">\(\lambda\)</span>: eigenvalue</li>
+<li><span class="math inline">\(x\)</span>: eigenvector</li>
+<li><span class="math inline">\(x\neq 0\)</span></li>
+</ul>
+<p>고유값은 다음 방정식으로 구한다.</p>
+<p><span class="math display">\[
+\det(A-\lambda I)=0
+\]</span></p>
+<p>고유벡터는 각 고유값에 대해 다음 연립방정식을 풀어 구한다.</p>
+<p><span class="math display">\[
+(A-\lambda I)x=0
+\]</span></p>
+<h3 id="핵심-성질">핵심 성질</h3>
+<ul>
+<li>고유벡터는 방향이 중요하다.</li>
+<li><span class="math inline">\(x\)</span>가 고유벡터이면 <span
+class="math inline">\(kx\)</span>도 같은 고유값에 대한 고유벡터다.</li>
+<li><span class="math inline">\(n\times n\)</span> matrix는 중복도를
+포함해 <span class="math inline">\(n\)</span>개의 complex eigenvalue를
+가진다.</li>
+<li>모든 matrix가 real eigenvalue를 갖는 것은 아니다.</li>
+<li>서로 다른 고유값에 대응하는 eigenvector들이 충분히 독립이면
+diagonalization이 가능하다.</li>
+</ul>
+<p><span class="math display">\[
+A=X\Lambda X^{-1}
+\]</span></p>
+<h3 id="대칭행렬">대칭행렬</h3>
+<p>대칭행렬 <span class="math inline">\(S\)</span>는 다음 성질이
+중요하다.</p>
+<ul>
+<li>모든 eigenvalue가 real number다.</li>
+<li>서로 다른 eigenvalue에 대응하는 eigenvector는 서로
+orthogonal하다.</li>
+<li>단위 eigenvector를 열로 모은 matrix <span
+class="math inline">\(Q\)</span>는 orthogonal matrix다.</li>
+</ul>
+<p><span class="math display">\[
+Q^{-1}=Q^{\top}
+\]</span></p>
+<p>따라서 대칭행렬은 다음과 같이 분해된다.</p>
+<p><span class="math display">\[
+S=Q\Lambda Q^{\top}
+\]</span></p>
+<p>기하학적으로는 <span class="math inline">\(Q^{\top}\)</span>로
+eigenvector 축에 맞게 회전하고, <span
+class="math inline">\(\Lambda\)</span>로 축별 scale을 한 뒤, <span
+class="math inline">\(Q\)</span>로 다시 원래 좌표계로 회전하는
+변환이다.</p>
+<figure>
+<img src="../assets/slides/cv_eig_p86_square_vs_symmetric.png"
+alt="정방행렬과 대칭행렬 비교" />
+<figcaption aria-hidden="true">정방행렬과 대칭행렬 비교</figcaption>
+</figure>
+<figure>
+<img src="../assets/slides/cv_eig_p89_symmetric_example.png"
+alt="대칭행렬 고유값분해 예시" />
+<figcaption aria-hidden="true">대칭행렬 고유값분해 예시</figcaption>
+</figure>
+<h2 id="quadratic-form-psd-gram-matrix-singular-value">10. Quadratic
+Form, PSD, Gram Matrix, Singular Value</h2>
+<h3 id="quadratic-form">Quadratic form</h3>
+<p>Quadratic form은 벡터를 양쪽에서 곱해 scalar를 만드는 형태다.</p>
+<p><span class="math display">\[
+x^{\top} A x
+\]</span></p>
+<p>2차원에서는 다음처럼 쓴다.</p>
+<p><span class="math display">\[
+ax^{2}+by^{2}+cxy
+=
+\begin{bmatrix}
+x &amp; y
+\end{bmatrix}
+\begin{bmatrix}
+a &amp; \frac{c}{2}\\
+\frac{c}{2} &amp; b
+\end{bmatrix}
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+\]</span></p>
+<p>교차항 <span class="math inline">\(cxy\)</span>는 matrix의 양쪽
+off-diagonal에 절반씩 나누어 넣는다.</p>
+<p>일반 matrix <span class="math inline">\(A\)</span>가 가운데 있어도
+quadratic form에서는 대칭 부분만 의미가 있다.</p>
+<p><span class="math display">\[
+x^{\top}Ax
+=
+x^{\top}\left(\frac{A+A^{\top}}{2}\right)x
+\]</span></p>
+<p>따라서 quadratic form의 가운데 matrix는 대칭행렬로 생각해도 된다.</p>
+<h3 id="positive-definite와-positive-semidefinite">Positive definite와
+positive semidefinite</h3>
+<p>Positive definite matrix는 모든 nonzero vector에 대해 quadratic
+form이 항상 양수인 matrix다.</p>
+<p><span class="math display">\[
+x^{\top}Ax&gt;0
+\qquad (x\neq 0)
+\]</span></p>
+<p>Positive semidefinite matrix는 모든 nonzero vector에 대해 quadratic
+form이 항상 0 이상인 matrix다.</p>
+<p><span class="math display">\[
+x^{\top}Ax\ge 0
+\qquad (x\neq 0)
+\]</span></p>
+<p>시험에서 쓰는 핵심 판정은 다음이다.</p>
+<ul>
+<li>Positive semidefinite matrix는 square matrix다.</li>
+<li>Positive semidefinite matrix는 symmetric matrix다.</li>
+<li>Positive semidefinite matrix는 <span
+class="math inline">\(x^{\top}Ax\ge0\)</span>를 만족한다.</li>
+<li>Matrix의 모든 entry가 양수여야 한다는 뜻은 아니다.</li>
+</ul>
+<p>Positive semidefinite matrix의 eigenvalue는 모두 0 이상이다.</p>
+<p><span class="math display">\[
+Ax=\lambda x
+\]</span></p>
+<p>양변의 왼쪽에 <span class="math inline">\(x^{\top}\)</span>를 곱하면
+다음과 같다.</p>
+<p><span class="math display">\[
+x^{\top}Ax=\lambda x^{\top}x
+\]</span></p>
+<p><span class="math inline">\(x^{\top}Ax\ge0\)</span>, <span
+class="math inline">\(x^{\top}x&gt;0\)</span>이므로 다음 결론이
+나온다.</p>
+<p><span class="math display">\[
+\lambda\ge0
+\]</span></p>
+<h3 id="gram-matrix">Gram matrix</h3>
+<p>임의의 matrix <span class="math inline">\(A\in\mathbb{R}^{m\times
+n}\)</span>에 대해 다음 두 matrix를 Gram matrix로 볼 수 있다.</p>
+<p><span class="math display">\[
+G_R=A^{\top}A\in\mathbb{R}^{n\times n}
+\]</span></p>
+<p><span class="math display">\[
+G_L=AA^{\top}\in\mathbb{R}^{m\times m}
+\]</span></p>
+<p><span class="math inline">\(A^{\top}A\)</span>와 <span
+class="math inline">\(AA^{\top}\)</span>는 항상 symmetric이고 positive
+semidefinite다.</p>
+<p><span class="math display">\[
+(A^{\top}A)^{\top}=A^{\top}A,
+\qquad
+x^{\top}A^{\top}Ax=(Ax)^{\top}(Ax)=\lVert Ax\rVert^{2}\ge0
+\]</span></p>
+<p><span class="math display">\[
+(AA^{\top})^{\top}=AA^{\top},
+\qquad
+y^{\top}AA^{\top}y=(A^{\top}y)^{\top}(A^{\top}y)=\lVert
+A^{\top}y\rVert^{2}\ge0
+\]</span></p>
+<p>Rank 관계는 다음처럼 외운다.</p>
+<p><span class="math display">\[
+\operatorname{rank}(A)
+=
+\operatorname{rank}(A^{\top}A)
+=
+\operatorname{rank}(AA^{\top})
+\]</span></p>
+<p>Rank가 <span class="math inline">\(r\)</span>이면 Gram matrix의 양수
+eigenvalue는 <span class="math inline">\(r\)</span>개이고, 나머지
+eigenvalue는 0이다.</p>
+<h3 id="singular-value와-singular-vector-도입">Singular value와 singular
+vector 도입</h3>
+<p><span class="math inline">\(A^{\top}A\)</span>의 eigenvalue problem을
+다음처럼 둔다.</p>
+<p><span class="math display">\[
+A^{\top}A v_i=\lambda_i v_i
+\]</span></p>
+<p>양변에 <span class="math inline">\(A\)</span>를 곱하면 다음 관계가
+된다.</p>
+<p><span class="math display">\[
+AA^{\top}(Av_i)=\lambda_i(Av_i)
+\]</span></p>
+<p>즉 <span class="math inline">\(Av_i\)</span>는 <span
+class="math inline">\(AA^{\top}\)</span>의 eigenvector 방향이다. <span
+class="math inline">\(\lambda_i&gt;0\)</span>일 때 다음처럼 단위벡터를
+정의한다.</p>
+<p><span class="math display">\[
+u_i=\frac{Av_i}{\sqrt{\lambda_i}}
+\]</span></p>
+<p>Singular value는 eigenvalue의 제곱근이다.</p>
+<p><span class="math display">\[
+\sigma_i=\sqrt{\lambda_i}
+\]</span></p>
+<p>따라서 핵심 관계는 다음이다.</p>
+<p><span class="math display">\[
+Av_i=\sigma_i u_i
+\]</span></p>
+<ul>
+<li><span class="math inline">\(v_i\)</span>: right singular vector</li>
+<li><span class="math inline">\(u_i\)</span>: left singular vector</li>
+<li><span class="math inline">\(\sigma_i\)</span>: singular value</li>
+</ul>
+<p>기하학적으로 <span class="math inline">\(A\)</span>는 <span
+class="math inline">\(v_i\)</span> 방향을 <span
+class="math inline">\(u_i\)</span> 방향으로 보내고, 그 길이를 <span
+class="math inline">\(\sigma_i\)</span>배 한다.</p>
+<p>Homography 계산에서는 <span class="math inline">\(H\)</span>의
+unknown을 vector로 놓고 homogeneous linear system을 풀어야 한다. 이때
+trivial solution을 피하고 적절한 해 방향을 찾기 위해 SVD가 필요하다.</p>
+<h2 id="svd와-homography-계산">11. SVD와 Homography 계산</h2>
+<h3 id="svd-기본식과-matrix-크기">SVD 기본식과 matrix 크기</h3>
+<p>임의의 <span class="math inline">\(A\in\mathbb{R}^{m\times
+n}\)</span>에 대해 singular value decomposition은 항상 존재한다.</p>
+<p><span class="math display">\[
+A=U\Sigma V^{\top}
+\]</span></p>
+<p>Full SVD의 크기는 다음처럼 외운다.</p>
+<p><span class="math display">\[
+U\in\mathbb{R}^{m\times m},\qquad
+\Sigma\in\mathbb{R}^{m\times n},\qquad
+V\in\mathbb{R}^{n\times n}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(U\)</span>: left singular vectors를
+column으로 모은 orthogonal matrix</li>
+<li><span class="math inline">\(V\)</span>: right singular vectors를
+column으로 모은 orthogonal matrix</li>
+<li><span class="math inline">\(\Sigma\)</span>: singular value를 대각
+방향에 놓은 matrix</li>
+</ul>
+<p><span class="math display">\[
+U^{\top}U=I,\qquad V^{\top}V=I
+\]</span></p>
+<p>Rank가 <span class="math inline">\(r\)</span>이면 양수 singular
+value는 <span class="math inline">\(r\)</span>개다.</p>
+<p><span class="math display">\[
+\sigma_1\ge\sigma_2\ge\cdots\ge\sigma_r&gt;0
+\]</span></p>
+<p><span class="math display">\[
+\sigma_i=\sqrt{\lambda_i}
+\]</span></p>
+<p>여기서 <span class="math inline">\(\lambda_i\)</span>는 <span
+class="math inline">\(A^{\top}A\)</span> 또는 <span
+class="math inline">\(AA^{\top}\)</span>의 양수 eigenvalue다.</p>
+<h3 id="right-singular-vector와-left-singular-vector">Right singular
+vector와 left singular vector</h3>
+<p>오른쪽 singular vector는 <span
+class="math inline">\(A^{\top}A\)</span>의 eigenvector다.</p>
+<p><span class="math display">\[
+A^{\top}A v_i=\lambda_i v_i
+\]</span></p>
+<p>왼쪽 singular vector는 <span
+class="math inline">\(AA^{\top}\)</span>의 eigenvector다.</p>
+<p><span class="math display">\[
+AA^{\top}u_i=\lambda_i u_i
+\]</span></p>
+<p><span class="math inline">\(\lambda_i&gt;0\)</span>일 때 두 vector는
+다음 관계로 연결된다.</p>
+<p><span class="math display">\[
+u_i=\frac{Av_i}{\sqrt{\lambda_i}}
+\]</span></p>
+<p>가장 중요한 한 줄은 다음이다.</p>
+<p><span class="math display">\[
+Av_i=\sigma_i u_i
+\]</span></p>
+<h3 id="full-thin-compact-svd">Full, thin, compact SVD</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>형태</th>
+<th>외울 크기</th>
+<th>쓰는 상황</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full SVD</td>
+<td><span class="math inline">\(U_{m\times m}\Sigma_{m\times
+n}V^{\top}_{n\times n}\)</span></td>
+<td>전체 직교기저까지 모두 보존</td>
+</tr>
+<tr>
+<td>Thin SVD</td>
+<td><span class="math inline">\(U_{m\times n}\Sigma_{n\times
+n}V^{\top}_{n\times n}\)</span></td>
+<td><span class="math inline">\(m&gt;n\)</span>인 tall matrix에서 zero
+row/column을 줄임</td>
+</tr>
+<tr>
+<td>Compact SVD</td>
+<td><span class="math inline">\(U_{m\times r}\Sigma_{r\times
+r}V^{\top}_{r\times n}\)</span></td>
+<td>rank <span class="math inline">\(r\)</span>인 실제 정보만 남김</td>
+</tr>
+</tbody>
+</table>
+<p>시험에서는 full SVD 크기와 compact SVD 크기를 바꿔 묻기 쉽다. Compact
+SVD의 <span class="math inline">\(r\)</span>은 rank다.</p>
+<h3 id="svd의-기하학적-의미">SVD의 기하학적 의미</h3>
+<p>오른쪽부터 적용한다고 생각한다.</p>
+<p><span class="math display">\[
+x
+\xrightarrow{V^{\top}}
+V^{\top}x
+\xrightarrow{\Sigma}
+\Sigma V^{\top}x
+\xrightarrow{U}
+U\Sigma V^{\top}x
+\]</span></p>
+<ul>
+<li><span class="math inline">\(V^{\top}\)</span>: input 좌표계를 right
+singular vector 축으로 회전 또는 기저변환</li>
+<li><span class="math inline">\(\Sigma\)</span>: 축별 scale, 필요하면
+차원 축소 또는 확장</li>
+<li><span class="math inline">\(U\)</span>: output 좌표계로 회전 또는
+기저변환</li>
+</ul>
+<p>대칭행렬의 eigendecomposition은 <span
+class="math inline">\(S=Q\Lambda Q^{\top}\)</span>처럼 앞뒤 기저가 같은
+구조다. SVD는 일반 matrix에도 가능하고, 보통 input 쪽 기저 <span
+class="math inline">\(V\)</span>와 output 쪽 기저 <span
+class="math inline">\(U\)</span>가 다르다.</p>
+<h3 id="ax0과-null-space"><span class="math inline">\(Ax=0\)</span>과
+null space</h3>
+<p>동차 선형방정식은 다음 꼴이다.</p>
+<p><span class="math display">\[
+Ax=0
+\]</span></p>
+<p>영벡터 <span class="math inline">\(x=0\)</span>는 항상 해이지만,
+homography 추정에서는 의미가 없는 trivial solution이다. 비영 해 방향은
+<span class="math inline">\(A\)</span>의 null space에서 찾는다.</p>
+<p>SVD로 풀 때는 singular value가 0인 right singular vector가 null space
+방향이다. 잡음 때문에 정확히 0이 아니면 가장 작은 singular value에
+대응하는 right singular vector를 쓴다.</p>
+<p>예를 들어 다음 연립방정식은</p>
+<p><span class="math display">\[
+x+y+z=0,\qquad x-y=0
+\]</span></p>
+<p>다음 해 방향을 가진다.</p>
+<p><span class="math display">\[
+x=y,\qquad z=-2x
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}x\\y\\z\end{bmatrix}
+=
+t
+\begin{bmatrix}
+1\\
+1\\
+-2
+\end{bmatrix}
+\]</span></p>
+<h3 id="homography-추정-핵심">Homography 추정 핵심</h3>
+<p>Homography는 동차좌표에서 다음처럼 쓴다.</p>
+<p><span class="math display">\[
+\tilde{x}&#39;\sim H\tilde{x}
+\]</span></p>
+<p>동차좌표에서는 scale이 의미 없으므로 완전한 등호가 아니라 같은
+방향이라는 뜻의 <span class="math inline">\(\sim\)</span>를 쓴다. 같은
+방향인 두 동차벡터는 cross product가 0이다.</p>
+<p><span class="math display">\[
+\tilde{x}&#39;\times H\tilde{x}=0
+\]</span></p>
+<p>이 식은 3개의 scalar equation처럼 보이지만 독립식은 2개뿐이다. 따라서
+점 대응 1쌍은 독립 방정식 2개를 제공한다.</p>
+<p><span class="math display">\[
+\text{점 대응 1쌍}\Rightarrow 2\text{개 독립식}
+\]</span></p>
+<p>Homography matrix는 원소 9개지만 전체 scalar 배가 같은 변환이다.</p>
+<p><span class="math display">\[
+H\sim kH
+\qquad (k\neq0)
+\]</span></p>
+<p>따라서 자유도는 8이다.</p>
+<p><span class="math display">\[
+9-1=8
+\]</span></p>
+<p>최소 대응점 수는 4쌍이다.</p>
+<p><span class="math display">\[
+4\text{쌍}\times2\text{식}=8\text{식}
+\]</span></p>
+<p>실제로는 <span class="math inline">\(H\)</span>의 원소를 vector로
+펴서 <span class="math inline">\(h\)</span>로 둔다.</p>
+<p><span class="math display">\[
+h=
+\begin{bmatrix}
+h_{11}&amp;h_{12}&amp;h_{13}&amp;h_{21}&amp;h_{22}&amp;h_{23}&amp;h_{31}&amp;h_{32}&amp;h_{33}
+\end{bmatrix}^{\top}
+\]</span></p>
+<p>4쌍 대응점이면 다음 꼴의 동차 선형시스템을 만든다.</p>
+<p><span class="math display">\[
+Ah=0,\qquad A\in\mathbb{R}^{8\times9}
+\]</span></p>
+<p>SVD로 <span class="math inline">\(A=U\Sigma V^{\top}\)</span>를
+계산하고, 가장 작은 singular value에 대응하는 마지막 right singular
+vector를 <span class="math inline">\(h\)</span>로 사용한다.</p>
+<p><span class="math display">\[
+h=v_9
+\]</span></p>
+<p>이 <span class="math inline">\(h\)</span>를 <span
+class="math inline">\(3\times3\)</span>으로 reshape하면 <span
+class="math inline">\(H\)</span>가 된다.</p>
+<h3 id="opencv-코드-흐름">OpenCV 코드 흐름</h3>
+<p>문서나 명함을 펴는 문제는 다음 순서로 외운다.</p>
+<ol>
+<li>Source image에서 네 꼭짓점을 클릭하거나 검출한다.</li>
+<li>Destination 네 점을 직사각형 좌표로 둔다.</li>
+<li><code>findHomography(srcPts, dstPts)</code>로 <span
+class="math inline">\(H\)</span>를 구한다.</li>
+<li><code>warpPerspective(src, dst, H, Size(width, height))</code>로
+펴진 이미지를 만든다.</li>
+</ol>
+<p>대표 코드 형태는 다음이다.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>Mat H <span class="op">=</span> cv<span class="op">::</span>findHomography<span class="op">(</span>srcPts<span class="op">,</span> dstPts<span class="op">);</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>warpPerspective<span class="op">(</span>src<span class="op">,</span> dst<span class="op">,</span> H<span class="op">,</span> cv<span class="op">::</span>Size<span class="op">(</span>width<span class="op">,</span> height<span class="op">));</span></span></code></pre></div>
+<p>함정은 <code>findHomography</code>와 <code>warpPerspective</code>의
+역할이 다르다는 점이다. <code>findHomography</code>는 <span
+class="math inline">\(H\)</span>를 계산하고,
+<code>warpPerspective</code>는 이미지를 실제로 변환한다.</p>
+<h2 id="계산-예시">12. 계산 예시</h2>
+<h3 id="고유값-예시-1">고유값 예시 1</h3>
+<p><span class="math display">\[
+A=
+\begin{bmatrix}
+3 &amp; 0\\
+0 &amp; 2
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+A
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+3\\
+0
+\end{bmatrix}
+=
+3
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+A
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\
+2
+\end{bmatrix}
+=
+2
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+\]</span></p>
+<p>고유값은 <span class="math inline">\(3\)</span>, <span
+class="math inline">\(2\)</span>다.</p>
+<h3 id="고유값-예시-2">고유값 예시 2</h3>
+<p><span class="math display">\[
+A=
+\begin{bmatrix}
+4 &amp; -5\\
+2 &amp; -3
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\det(A-\lambda I)=
+\begin{vmatrix}
+4-\lambda &amp; -5\\
+2 &amp; -3-\lambda
+\end{vmatrix}
+\]</span></p>
+<p><span class="math display">\[
+=(4-\lambda)(-3-\lambda)+10
+\]</span></p>
+<p><span class="math display">\[
+=\lambda^{2}-\lambda-2
+\]</span></p>
+<p><span class="math display">\[
+=(\lambda+1)(\lambda-2)
+\]</span></p>
+<p>고유값은 <span class="math inline">\(-1\)</span>, <span
+class="math inline">\(2\)</span>다.</p>
+<h3 id="homography-좌표-나누기-예시">Homography 좌표 나누기 예시</h3>
+<p><span class="math display">\[
+H=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0.2 &amp; 0 &amp; 1
+\end{bmatrix},
+\qquad
+\tilde{x}=
+\begin{bmatrix}
+5\\
+4\\
+1
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+H\tilde{x}=
+\begin{bmatrix}
+5\\
+4\\
+2
+\end{bmatrix}
+\]</span></p>
+<p>동차좌표의 마지막 값 <span class="math inline">\(w=2\)</span>로
+나누면 직교좌표는 다음과 같다.</p>
+<p><span class="math display">\[
+(2.5,\;2)
+\]</span></p>
+<h2 id="자주-나오는-함정">13. 자주 나오는 함정</h2>
+<ul>
+<li><span class="math inline">\(\mathbb{P}^{2}\)</span>는 <span
+class="math inline">\(\mathbb{R}^{3}\)</span>와 같은 공간이 아니다. 단지
+<span class="math inline">\(\mathbb{P}^{2}\)</span>의 점을 <span
+class="math inline">\(\mathbb{R}^{3}\)</span>의 ray로 시각화할 수
+있다.</li>
+<li><span class="math inline">\((x,y,1)^{\top}\)</span>, <span
+class="math inline">\((2x,2y,2)^{\top}\)</span>, <span
+class="math inline">\((-x,-y,-1)^{\top}\)</span>는 projective space에서
+같은 점이다.</li>
+<li><span class="math inline">\(w=0\)</span>은 일반 직교좌표로 나눌 수
+없고 point at infinity다.</li>
+<li>Line <span class="math inline">\(l=(a,b,c)^{\top}\)</span>와 <span
+class="math inline">\(kl\)</span>은 같은 직선이다.</li>
+<li><code>warpAffine</code>은 <span class="math inline">\(2\times
+3\)</span>, <code>warpPerspective</code>는 <span
+class="math inline">\(3\times 3\)</span>, perspective projection은 <span
+class="math inline">\(3\times 4\)</span>다.</li>
+<li>Homography는 <span class="math inline">\(3\times 3\)</span>이지만
+자유도는 8이다.</li>
+<li>Homography 점 대응 1쌍은 cross product 식 3개가 아니라 독립 방정식
+2개를 제공한다.</li>
+<li>Homography 추정의 최소 대응점은 4쌍이다.</li>
+<li><span class="math inline">\(x&#39;=Hx\)</span>를 일반 등호처럼 보면
+안 된다. 동차좌표에서는 <span class="math inline">\(\tilde{x}&#39;\sim
+H\tilde{x}\)</span>이고 scale 차이는 같은 점이다.</li>
+<li>Homography 추정에서 <span class="math inline">\(Ah=0\)</span>의 해는
+SVD의 마지막 right singular vector다.</li>
+<li><code>findHomography</code>는 <span
+class="math inline">\(H\)</span>를 계산하고,
+<code>warpPerspective</code>는 <span class="math inline">\(H\)</span>를
+적용한다.</li>
+<li>Homography는 직선성은 보존하지만 평행성은 보존하지 않는다.</li>
+<li>Affine transformation은 평행성을 보존하지만 일반적으로 길이와 각도는
+보존하지 않는다.</li>
+<li>Similarity transformation은 scale 때문에 절대 길이는 바뀔 수 있지만
+각도와 길이 비율은 보존한다.</li>
+<li><code>TM_SQDIFF</code> 계열은 최솟값을 찾고, 나머지 template
+matching metric은 최댓값을 찾는다.</li>
+<li>Backward warping은 output pixel을 기준으로 source 위치를
+찾는다.</li>
+<li><code>WARP_INVERSE_MAP</code>을 쓰면 matrix를 inverse mapping으로
+해석한다.</li>
+<li>대칭행렬의 고유값분해는 <span class="math inline">\(S=Q\Lambda
+Q^{\top}\)</span>이고, <span
+class="math inline">\(Q^{-1}=Q^{\top}\)</span>다.</li>
+<li>Positive semidefinite는 모든 entry가 양수라는 뜻이 아니다.</li>
+<li>대칭행렬이라고 해서 eigenvalue가 항상 0 이상인 것은 아니다. Positive
+semidefinite 조건이 붙어야 0 이상이다.</li>
+<li><span class="math inline">\(A^{\top}A\)</span>와 <span
+class="math inline">\(AA^{\top}\)</span>는 크기가 다를 수 있지만 양수
+eigenvalue는 같다.</li>
+<li>Singular value는 <span
+class="math inline">\(\sqrt{\lambda_i}\)</span>이므로 항상 0
+이상이다.</li>
+<li>SVD는 정방행렬에만 가능한 분해가 아니다. 임의의 <span
+class="math inline">\(m\times n\)</span> matrix에 대해 가능하다.</li>
+</ul>
+<h1 id="손계산형-집중-대비">손계산형 집중 대비</h1>
+<h2 id="template-matching-박스-계산">1. Template matching 박스 계산</h2>
+<p>Template matching 손계산은 작은 window를 움직이며 score를 계산하는
+방식으로 나온다.</p>
+<p>Image가 <span class="math inline">\(W\times H\)</span>, template이
+<span class="math inline">\(w\times h\)</span>이면 result map 크기는
+다음과 같다.</p>
+<p><span class="math display">\[
+(W-w+1)\times(H-h+1)
+\]</span></p>
+<p>Raw SQDIFF score는 window와 template의 각 칸 차이를 제곱해서 모두
+더한다.</p>
+<p><span class="math display">\[
+\mathrm{SQDIFF}=\sum_{x,y}\left(I(x,y)-T(x,y)\right)^2
+\]</span></p>
+<p>SQDIFF 계열은 작을수록 잘 맞는 것이므로 <code>minLoc</code>을
+고른다.</p>
+<p>Raw CCORR score는 window와 template의 같은 위치 값을 곱해서 모두
+더한다.</p>
+<p><span class="math display">\[
+\mathrm{CCORR}=\sum_{x,y}I(x,y)T(x,y)
+\]</span></p>
+<p>SQDIFF가 아닌 일반 correlation 계열은 클수록 잘 맞는 것이므로
+<code>maxLoc</code>을 고른다.</p>
+<h2 id="box-filterwindow-평균-계산">2. Box filter/window 평균 계산</h2>
+<p>박스 필터는 window 내부 값을 평균내는 필터다. <span
+class="math inline">\(3\times3\)</span> normalized box filter라면 중심
+pixel 출력은 다음과 같다.</p>
+<p><span class="math display">\[
+I&#39;(x,y)=\frac{1}{9}\sum_{i=-1}^{1}\sum_{j=-1}^{1}I(x+i,y+j)
+\]</span></p>
+<p>Unnormalized box filter라면 나누지 않고 합만 사용한다.</p>
+<p>시험에서는 window를 정확히 잡는 것이 핵심이다. 중심 pixel을 기준으로
+<span class="math inline">\(3\times3\)</span>, <span
+class="math inline">\(5\times5\)</span> 박스를 씌우고 내부 숫자를 모두
+더한 뒤, normalized 여부에 따라 pixel 개수로 나눈다.</p>
+</body>
+</html>

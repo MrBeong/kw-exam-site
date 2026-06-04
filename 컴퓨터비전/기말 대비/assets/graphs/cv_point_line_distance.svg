@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-label="Point to line distance guide">
+  <rect width="760" height="420" fill="#fbfaf7"/>
+  <line x1="80" y1="340" x2="690" y2="340" stroke="#222" stroke-width="2"/>
+  <line x1="120" y1="365" x2="120" y2="55" stroke="#222" stroke-width="2"/>
+  <polygon points="690,340 678,334 678,346" fill="#222"/>
+  <polygon points="120,55 114,67 126,67" fill="#222"/>
+  <text x="704" y="348" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="18">x</text>
+  <text x="111" y="44" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="18">y</text>
+  <line x1="145" y1="310" x2="650" y2="95" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+  <text x="510" y="92" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="20" fill="#1e3a8a">line: ax + by + c = 0</text>
+  <circle cx="392" cy="110" r="7" fill="#dc2626"/>
+  <text x="405" y="105" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="20" fill="#991b1b">point (x₀, y₀)</text>
+  <line x1="392" y1="110" x2="455" y2="259" stroke="#dc2626" stroke-width="3" stroke-dasharray="8 8"/>
+  <circle cx="455" cy="259" r="5" fill="#dc2626"/>
+  <path d="M438 219 Q454 215 462 232" fill="none" stroke="#444" stroke-width="1.5"/>
+  <text x="322" y="204" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="20" fill="#991b1b">distance d</text>
+  <text x="190" y="55" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="23" fill="#111">d = |ax₀ + by₀ + c| / √(a² + b²)</text>
+  <text x="190" y="85" font-family="Arial, Apple SD Gothic Neo, sans-serif" font-size="16" fill="#555">분자는 점을 직선식에 대입한 값, 분모는 법선벡터 (a,b)의 길이</text>
+</svg>

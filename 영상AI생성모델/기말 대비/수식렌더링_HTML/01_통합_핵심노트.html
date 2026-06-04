@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>01_통합_핵심노트</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1 id="영상ai생성모델-퀴즈과제-통합-핵심노트">영상AI생성모델 퀴즈/과제
+통합 핵심노트</h1>
+<h3 id="영상ai생성모델-퀴즈-전-1시간-복습-노트">영상AI생성모델 퀴즈 전
+1시간 복습 노트</h3>
+<p>목표: Transformer MHA, FFN, Encoder/Decoder block 파라미터 계산
+문제를 1시간 안에 다시 풀 수 있게 만드는 압축 노트.</p>
+<h2 id="시간-운영법">0. 1시간 운영법</h2>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: right;">시간</th>
+<th>할 일</th>
+<th>목표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0-10분</td>
+<td>아래 <code>계산 전 체크리스트</code>와 <code>핵심 공식</code>만
+암기</td>
+<td>문제 조건 확인</td>
+</tr>
+<tr>
+<td style="text-align: right;">10-25분</td>
+<td>MHA shape 흐름 복습</td>
+<td><span class="math inline">\(QK^{\top}\)</span>, softmax, head output
+shape 실수 제거</td>
+</tr>
+<tr>
+<td style="text-align: right;">25-40분</td>
+<td>파라미터 공식과 bias/LayerNorm 포함 여부 복습</td>
+<td>weight 수와 parameter 수 구분</td>
+</tr>
+<tr>
+<td style="text-align: right;">40-55분</td>
+<td>미니 실전 10문제 풀기</td>
+<td>계산 속도 확보</td>
+</tr>
+<tr>
+<td style="text-align: right;">55-60분</td>
+<td>오답 포인트만 다시 보기</td>
+<td>마지막 함정 제거</td>
+</tr>
+</tbody>
+</table>
+<h2 id="차원-정합-vit-cnn-추가-암기">0-1. 차원 정합, ViT, CNN 추가
+암기</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>주제</th>
+<th>한줄 암기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>입력 차원 정합</td>
+<td>embedding 차원과 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>이 다르면 첫 linear
+projection으로 맞춘다.</td>
+</tr>
+<tr>
+<td>encoder 출력 차원</td>
+<td>encoder block을 여러 층 지나도 보통 <span
+class="math inline">\(T\times d_{\mathrm{model}}\)</span>을
+유지한다.</td>
+</tr>
+<tr>
+<td>표준 MHA</td>
+<td><span
+class="math inline">\(d_k=d_v=\frac{d_{\mathrm{model}}}{h}\)</span>이면
+MHA weight는 <span
+class="math inline">\(4d_{\mathrm{model}}^2\)</span>.</td>
+</tr>
+<tr>
+<td>변형 MHA</td>
+<td><span class="math inline">\(d_k,d_v\)</span>가 따로 주어지면
+projection shape으로 직접 센다.</td>
+</tr>
+<tr>
+<td>ViT</td>
+<td>image를 patch sequence로 바꿔 Transformer encoder에 넣는다.</td>
+</tr>
+<tr>
+<td>ViT position</td>
+<td>patch가 원래 이미지의 어느 위치였는지 알려주기 위해 positional
+embedding을 더한다.</td>
+</tr>
+<tr>
+<td>CNN vs ViT</td>
+<td>CNN은 local convolution bias, ViT는 patch token self-attention
+기반이다.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="핵심-슬라이드로-외우는-구조">0-2. 핵심 슬라이드로 외우는
+구조</h2>
+<figure>
+<img src="../assets/slides/videoai_l4_p07_embedding.png"
+alt="Embedding과 모델 차원 정합" />
+<figcaption aria-hidden="true">Embedding과 모델 차원 정합</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L4.Transformer_part3.pdf</code>, p.7.</p>
+<ul>
+<li>입력 embedding 차원이 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>과 다르면 첫 linear
+projection으로 모델 차원에 맞춘다.</li>
+<li>이후 encoder/decoder 내부 계산은 보통 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>을 유지한다.</li>
+<li>차원 문제는 “입력 token 수 <span
+class="math inline">\(\times\)</span> feature 차원”을 먼저 적고
+시작한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l4_p08_encoder_block.png"
+alt="Encoder block 구조" />
+<figcaption aria-hidden="true">Encoder block 구조</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L4.Transformer_part3.pdf</code>, p.8.</p>
+<ul>
+<li>Encoder block은 self-attention MHA, Add &amp; Norm, FFN, Add &amp;
+Norm으로 외운다.</li>
+<li>한 block의 출력 shape은 입력과 같은 <span
+class="math inline">\(T\times d_{\mathrm{model}}\)</span>이 되도록
+맞춘다.</li>
+<li>Encoder block 파라미터 계산은 보통 MHA + FFN + 필요 시
+LayerNorm/bias다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l4_p09_add_norm.png"
+alt="Add &amp; Norm" />
+<figcaption aria-hidden="true">Add &amp; Norm</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L4.Transformer_part3.pdf</code>, p.9.</p>
+<ul>
+<li>Add는 residual connection이고, Norm은 LayerNorm이다.</li>
+<li>문제에서 LayerNorm 제외라고 하면 <span
+class="math inline">\(\gamma,\beta\)</span>를 세지 않는다.</li>
+<li>LayerNorm 포함이면 보통 한 LayerNorm당 <span
+class="math inline">\(2d_{\mathrm{model}}\)</span> parameter를
+더한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l4_p13_mha.png"
+alt="Multi-Head Attention 구조" />
+<figcaption aria-hidden="true">Multi-Head Attention 구조</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L4.Transformer_part3.pdf</code>, p.13.</p>
+<ul>
+<li>MHA는 <span class="math inline">\(Q,K,V\)</span>를 head별로 linear
+projection한 뒤 scaled dot-product attention을 병렬로 수행하고, concat
+후 <span class="math inline">\(W^{O}\)</span>로 다시 <span
+class="math inline">\(d_{\mathrm{model}}\)</span> 차원에 맞춘다.</li>
+<li>표준 MHA weight는 <span class="math inline">\(W^{Q}, W^{K}, W^{V},
+W^{O}\)</span> 네 묶음이므로 <span
+class="math inline">\(4d_{\mathrm{model}}^{2}\)</span>가
+기본값이다.</li>
+<li><span class="math inline">\(\sqrt{d_k}\)</span>는 attention score를
+안정화하는 scale factor일 뿐 학습 파라미터가 아니다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l4_p12_ffn.png"
+alt="Feed Forward Network" />
+<figcaption aria-hidden="true">Feed Forward Network</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L4.Transformer_part3.pdf</code>, p.12.</p>
+<ul>
+<li>FFN은 각 token에 독립적으로 적용되는 2-layer MLP다.</li>
+<li>Bias 제외 weight는 <span
+class="math inline">\(d_{\mathrm{model}}d_{\mathrm{ff}}+d_{\mathrm{ff}}d_{\mathrm{model}}=2d_{\mathrm{model}}d_{\mathrm{ff}}\)</span>다.</li>
+<li>Bias 포함이면 <span
+class="math inline">\(d_{\mathrm{ff}}+d_{\mathrm{model}}\)</span>을
+추가한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l4_p18_decoder_block.png"
+alt="Decoder block 구조" />
+<figcaption aria-hidden="true">Decoder block 구조</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L4.Transformer_part3.pdf</code>, p.18.</p>
+<ul>
+<li>Decoder block은 masked self-attention, cross-attention, FFN을
+가진다.</li>
+<li>Decoder block은 MHA가 2개라 encoder block보다 attention 파라미터가
+더 많다.</li>
+<li>출력 token을 순차 생성하므로 첫 attention은 causal mask를
+사용한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l4_p19_three_attentions.png"
+alt="Self/Cross/Masked attention 구분" />
+<figcaption aria-hidden="true">Self/Cross/Masked attention
+구분</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L4.Transformer_part3.pdf</code>, p.19.</p>
+<ul>
+<li>Encoder self-attention은 <span
+class="math inline">\(Q,K,V\)</span>가 모두 encoder input에서 온다.</li>
+<li>Decoder masked self-attention은 <span
+class="math inline">\(Q,K,V\)</span>가 decoder 쪽에서 오되 미래 token을
+가린다.</li>
+<li>Cross-attention은 <span class="math inline">\(Q\)</span>는 decoder,
+<span class="math inline">\(K,V\)</span>는 encoder output에서 온다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l4_p21_masked_attention.png"
+alt="Masked Self-Attention 구조" />
+<figcaption aria-hidden="true">Masked Self-Attention 구조</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L4.Transformer_part3.pdf</code>, p.21.</p>
+<ul>
+<li>Padding mask는 <span class="math inline">\(\mathrm{PAD}\)</span>
+token을 attention 대상에서 제거한다.</li>
+<li>Causal mask는 decoder가 미래 token을 보지 못하게 막는다.</li>
+<li>Mask는 score에 매우 작은 값을 더해 softmax 후 확률이 사실상 0이 되게
+만드는 장치다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l4_p22_autoregressive_decoding.png"
+alt="Auto-regressive decoding" />
+<figcaption aria-hidden="true">Auto-regressive decoding</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L4.Transformer_part3.pdf</code>, p.22.</p>
+<ul>
+<li>Decoder는 이전 token들을 조건으로 다음 token을 하나씩 예측한다.</li>
+<li>Training에서는 정답 shifted sequence를 넣고, inference에서는 생성된
+token을 다시 입력한다.</li>
+<li>Causal mask가 없으면 정답 미래 token을 미리 보는 leakage가
+생긴다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l5_p06_patch_embedding.png"
+alt="Patch Embedding" />
+<figcaption aria-hidden="true">Patch Embedding</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L5.ViT.pdf</code>, p.6.</p>
+<ul>
+<li>ViT는 이미지를 <span class="math inline">\(P\times P\)</span>
+patch로 자른 뒤 각 patch를 하나의 token처럼 본다.</li>
+<li>Patch 수는 <span
+class="math inline">\(\frac{H}{P}\times\frac{W}{P}\)</span>, patch
+flatten 차원은 <span class="math inline">\(P^{2}C\)</span>다.</li>
+<li>Flatten된 patch는 linear projection으로 <span
+class="math inline">\(d_{\mathrm{model}}\)</span> 차원 embedding이
+된다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l5_p08_patch_projection.png"
+alt="Patch linear projection" />
+<figcaption aria-hidden="true">Patch linear projection</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L5.ViT.pdf</code>, p.8.</p>
+<ul>
+<li>Patch 하나는 flatten 후 vector가 되고, linear projection으로 token
+embedding이 된다.</li>
+<li>Projection weight shape은 <span class="math inline">\((P^{2}C)\times
+d_{\mathrm{model}}\)</span>로 센다.</li>
+<li>Patch 수는 sequence length가 되고 projection weight 수 자체에는
+곱하지 않는다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l5_p10_patch_model_dim.png"
+alt="Patch 수와 모델 차원" />
+<figcaption aria-hidden="true">Patch 수와 모델 차원</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L5.ViT.pdf</code>, p.10.</p>
+<ul>
+<li>ViT 입력 token 수는 patch 개수와 class token 여부로 결정된다.</li>
+<li>각 token 차원은 projection 후 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>이다.</li>
+<li>Shape 문제는 <span
+class="math inline">\((N_{\mathrm{patch}}+1)\times
+d_{\mathrm{model}}\)</span> 형태를 자주 묻는다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l5_p11_position_embedding.png"
+alt="Positional embedding" />
+<figcaption aria-hidden="true">Positional embedding</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L5.ViT.pdf</code>, p.11.</p>
+<ul>
+<li>Transformer는 patch 순서만으로 2D 위치를 알 수 없으므로 positional
+embedding을 더한다.</li>
+<li>Positional embedding shape은 token 수와 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>에 맞춘다.</li>
+<li>Class token을 쓰면 positional embedding도 class token 자리까지
+포함한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l5_p12_vit_architecture.png"
+alt="ViT Architecture" />
+<figcaption aria-hidden="true">ViT Architecture</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L5.ViT.pdf</code>, p.12.</p>
+<ul>
+<li>ViT 전체 흐름은 patch embedding, positional embedding, Transformer
+encoder, MLP head 순서다.</li>
+<li>위치 정보는 patch token만으로는 알 수 없으므로 positional
+embedding을 반드시 더한다.</li>
+<li>CNN은 local convolution bias가 강하고, ViT는 patch token 사이
+self-attention으로 전역 관계를 학습한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l5_p14_vit_classification.png"
+alt="ViT classification head" />
+<figcaption aria-hidden="true">ViT classification head</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L5.ViT.pdf</code>, p.14.</p>
+<ul>
+<li>Classification에서는 보통 class token 출력 또는 pooled output을 MLP
+head에 넣는다.</li>
+<li>Output classifier 포함 조건이면 <span
+class="math inline">\(d_{\mathrm{model}}\times
+C_{\mathrm{class}}\)</span>와 bias를 추가한다.</li>
+<li>포함/제외 조건을 문제에서 반드시 확인한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l5_p15_perf_complexity.png"
+alt="ViT 성능과 복잡도" />
+<figcaption aria-hidden="true">ViT 성능과 복잡도</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L5.ViT.pdf</code>, p.15.</p>
+<ul>
+<li>ViT는 큰 데이터/큰 모델에서 강하지만 작은 데이터에서는 CNN inductive
+bias가 유리할 수 있다.</li>
+<li>Self-attention 계산량은 token 수에 크게 의존하므로 patch 수가 늘면
+부담이 커진다.</li>
+<li>CNN과 ViT 비교 문제는 local bias와 global attention을 중심으로
+답한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/videoai_l5_p17_diffusion_attention.png"
+alt="Diffusion model에서 attention" />
+<figcaption aria-hidden="true">Diffusion model에서
+attention</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L5.ViT.pdf</code>, p.17.</p>
+<ul>
+<li>Diffusion 계열에서도 attention은 이미지 feature와 조건 정보를
+연결하는 핵심 모듈로 쓰인다.</li>
+<li>Text/image 조건이 들어가면 cross-attention 구조가 중요해진다.</li>
+<li>생성 모델 attention 문제는 “어디서 <span
+class="math inline">\(Q\)</span>, <span
+class="math inline">\(K,V\)</span>가 오는가”로 구분한다.</li>
+</ul>
+<h2 id="계산-전-체크리스트">1. 계산 전 체크리스트</h2>
+<p>문제를 읽으면 계산부터 하지 말고 아래를 먼저 표시한다.</p>
+<ol type="1">
+<li>표준 MHA인가, variant인가?
+<ul>
+<li>표준형: <span
+class="math inline">\(d_k=d_v=\frac{d_{\mathrm{model}}}{h}\)</span></li>
+<li>variant: <span class="math inline">\(d_k,d_v\)</span>가 따로
+주어지면 그 값을 그대로 쓴다.</li>
+</ul></li>
+<li>무엇을 세는가?
+<ul>
+<li><code>weight 수</code>: weight matrix 원소만 센다.</li>
+<li><code>parameter 수</code>: 문제에서 포함하라고 한 학습 가능한 값까지
+센다.</li>
+<li>bias 제외 조건이면 보통 <span
+class="math inline">\(\mathrm{parameter\ 수}=\mathrm{weight\
+수}\)</span>.</li>
+<li>bias 포함 조건이면 <span class="math inline">\(\mathrm{parameter\
+수}=\mathrm{weight\ 수}+\mathrm{bias\ 수}\)</span>.</li>
+</ul></li>
+<li>제외/포함 조건은?
+<ul>
+<li>bias 포함 여부</li>
+<li>LayerNorm 포함 여부</li>
+<li>embedding table 포함 여부</li>
+<li>output classifier 포함 여부</li>
+<li>block 간 weight 공유 여부</li>
+</ul></li>
+<li>Encoder인가 Decoder인가?
+<ul>
+<li>Encoder block: self-attention MHA 1개 + FFN 1개</li>
+<li>Decoder block: masked self-attention MHA 1개 + cross-attention MHA
+1개 + FFN 1개</li>
+</ul></li>
+<li>sequence length가 파라미터 수에 들어가는가?
+<ul>
+<li>보통 안 들어간다.</li>
+<li><span class="math inline">\(T,S,U\)</span>는 shape에는 들어가지만,
+projection weight 개수에는 보통 들어가지 않는다.</li>
+</ul></li>
+</ol>
+<h2 id="핵심-공식">2. 핵심 공식</h2>
+<h3 id="scaled-dot-product-attention">2.1 Scaled Dot-Product
+Attention</h3>
+<p><span class="math display">\[
+\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
+\]</span></p>
+<p>중요한 점:</p>
+<ul>
+<li><span class="math inline">\(\sqrt{d_k}\)</span>는 학습되는 weight가
+아니다.</li>
+<li><span class="math inline">\(\sqrt{d_k}\)</span>는 scalar라서 shape을
+바꾸지 않는다.</li>
+<li>그래서 <span class="math inline">\(\sqrt{d_k}\)</span>는 parameter
+count에 넣지 않는다.</li>
+</ul>
+<h3 id="표준-mha-shape">2.2 표준 MHA Shape</h3>
+<p>입력:</p>
+<p><span class="math display">\[
+X\in\mathbb{R}^{T\times d_{\mathrm{model}}}
+\]</span></p>
+<p>표준형:</p>
+<p><span class="math display">\[
+d_k=d_v=\frac{d_{\mathrm{model}}}{h}
+\]</span></p>
+<p>한 head에서:</p>
+<p><span class="math display">\[
+\begin{aligned}
+W^Q,W^K\in\mathbb{R}^{d_{\mathrm{model}}\times d_k},\quad
+W^V\in\mathbb{R}^{d_{\mathrm{model}}\times d_v}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+Q,K\in\mathbb{R}^{T\times d_k},\quad
+V\in\mathbb{R}^{T\times d_v}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+QK^\top=(T\times d_k)(d_k\times T)=T\times T
+\]</span></p>
+<p><span class="math display">\[
+\mathrm{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)\in\mathbb{R}^{T\times
+T}
+\]</span></p>
+<p><span class="math display">\[
+\text{head output}=(T\times T)(T\times d_v)=T\times d_v
+\]</span></p>
+<p>head를 <span class="math inline">\(h\)</span>개 concat하면:</p>
+<p><span class="math display">\[
+\text{concat}\in\mathbb{R}^{T\times (h d_v)}
+\]</span></p>
+<p>표준형에서는 <span class="math inline">\(h
+d_v=d_{\mathrm{model}}\)</span>이므로:</p>
+<p><span class="math display">\[
+\begin{aligned}
+W^O\in\mathbb{R}^{d_{\mathrm{model}}\times d_{\mathrm{model}}},\quad
+\text{output}\in\mathbb{R}^{T\times d_{\mathrm{model}}}
+\end{aligned}
+\]</span></p>
+<h3 id="표준-mha-weight-수">2.3 표준 MHA Weight 수</h3>
+<p>표준 MHA는 <span class="math inline">\(Q,K,V,O\)</span> 네 projection
+weight를 센다.</p>
+<p><span class="math display">\[
+\#W_{\mathrm{MHA}}=4d_{\mathrm{model}}^2
+\]</span></p>
+<p>직접 풀어 쓰면:</p>
+<p><span class="math display">\[
+Q,K,V: 3d_{\mathrm{model}}^2,\quad O: d_{\mathrm{model}}^2
+\]</span></p>
+<p>따라서:</p>
+<p><span class="math display">\[
+3d^2+d^2=4d^2
+\]</span></p>
+<p>주의:</p>
+<ul>
+<li>표준형에서는 최종 공식에 <span class="math inline">\(h\)</span>가
+남지 않는다.</li>
+<li><span class="math inline">\(h\)</span>가 커지면 head 하나의 차원
+<span class="math inline">\(d_k,d_v\)</span>가 작아지기 때문이다.</li>
+<li>단, <span class="math inline">\(d_k,d_v\)</span>를 따로 주는
+variant에서는 이 단순 공식이 깨질 수 있다.</li>
+</ul>
+<h3 id="variant-mha-weight-수">2.4 Variant MHA Weight 수</h3>
+<p>표준형이 아니고 <span class="math inline">\(d_k,d_v\)</span>가 따로
+주어지면 직접 센다.</p>
+<p>한 head:</p>
+<p><span class="math display">\[
+W^Q,W^K\in\mathbb{R}^{d\times d_k},\qquad W^V\in\mathbb{R}^{d\times d_v}
+\]</span></p>
+<p>head <span class="math inline">\(h\)</span>개:</p>
+<p><span class="math display">\[
+h d(2d_k+d_v)
+\]</span></p>
+<p>output projection:</p>
+<p><span class="math display">\[
+\begin{aligned}
+W^O\in\mathbb{R}^{h d_v\times d}
+\Rightarrow h d_v d
+\end{aligned}
+\]</span></p>
+<p>따라서 전체:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\#W_{\mathrm{MHA}}=h d(2d_k+d_v)+h d_v d
+=h d(2d_k+2d_v)
+\end{aligned}
+\]</span></p>
+<p>단, 여기서 <span
+class="math inline">\(d=d_{\mathrm{model}}\)</span>이다.</p>
+<h3 id="ffn-weight-수">2.5 FFN Weight 수</h3>
+<p>FFN은 보통:</p>
+<p><span class="math display">\[
+d_{\mathrm{model}}\rightarrow d_{\mathrm{ff}}\rightarrow
+d_{\mathrm{model}}
+\]</span></p>
+<p>따라서 bias 제외 weight:</p>
+<p><span class="math display">\[
+\#W_{\mathrm{FFN}}=d d_{\mathrm{ff}}+d_{\mathrm{ff}}d=2dd_{\mathrm{ff}}
+\]</span></p>
+<h3 id="block-weight-수">2.6 Block Weight 수</h3>
+<p>Encoder block 하나:</p>
+<p><span class="math display">\[
+\#W_{\mathrm{Encoder}}=4d^2+2df
+\]</span></p>
+<p>Decoder block 하나:</p>
+<p><span class="math display">\[
+\#W_{\mathrm{Decoder}}=8d^2+2df
+\]</span></p>
+<p>왜 Decoder가 <span class="math inline">\(8d^2\)</span>인가?</p>
+<ul>
+<li>masked self-attention MHA 1개: <span
+class="math inline">\(4d^2\)</span></li>
+<li>cross-attention MHA 1개: <span
+class="math inline">\(4d^2\)</span></li>
+<li>총 MHA 2개: <span class="math inline">\(8d^2\)</span></li>
+</ul>
+<h2 id="bias와-layernorm-포함-공식">3. Bias와 LayerNorm 포함 공식</h2>
+<h3 id="mha-bias">3.1 MHA Bias</h3>
+<p>표준 MHA에서 bias를 포함하면 <span
+class="math inline">\(Q,K,V,O\)</span> 네 projection bias를 더한다.</p>
+<p><span class="math display">\[
+\#b_{\mathrm{MHA}}=4d
+\]</span></p>
+<p>Decoder block은 MHA가 2개라서:</p>
+<p><span class="math display">\[
+\#b_{\mathrm{MHA,decoder}}=2\times4d=8d
+\]</span></p>
+<h3 id="ffn-bias">3.2 FFN Bias</h3>
+<p>FFN은 두 linear layer가 있으므로:</p>
+<p><span class="math display">\[
+\#b_{\mathrm{FFN}}=d_{\mathrm{ff}}+d
+\]</span></p>
+<h3 id="layernorm-parameter">3.3 LayerNorm Parameter</h3>
+<p>LayerNorm 하나는 보통 <span
+class="math inline">\(\gamma,\beta\in\mathbb{R}^{d}\)</span>를
+가진다.</p>
+<p><span class="math display">\[
+\#\mathrm{LN}=2d
+\]</span></p>
+<p>보통 문제에서 주는 기준:</p>
+<ul>
+<li>Encoder block: LayerNorm 2개 <span class="math inline">\(\Rightarrow
+4d\)</span></li>
+<li>Decoder block: LayerNorm 3개 <span class="math inline">\(\Rightarrow
+6d\)</span></li>
+</ul>
+<h3 id="포함-조건별-encoderdecoder-parameter">3.4 포함 조건별
+Encoder/Decoder Parameter</h3>
+<p>Encoder block, bias 포함, LayerNorm 제외:</p>
+<p><span class="math display">\[
+4d^2+2df+4d+(f+d)
+\]</span></p>
+<p>Encoder block, bias 포함, LayerNorm 2개 포함:</p>
+<p><span class="math display">\[
+4d^2+2df+4d+(f+d)+4d
+\]</span></p>
+<p>Decoder block, bias 포함, LayerNorm 제외:</p>
+<p><span class="math display">\[
+8d^2+2df+8d+(f+d)
+\]</span></p>
+<p>Decoder block, bias 포함, LayerNorm 3개 포함:</p>
+<p><span class="math display">\[
+8d^2+2df+8d+(f+d)+6d
+\]</span></p>
+<h2 id="cross-attention-shape">4. Cross-Attention Shape</h2>
+<p>source length를 <span class="math inline">\(S\)</span>, target
+length를 <span class="math inline">\(U\)</span>라고 하자.</p>
+<p>Cross-attention에서는:</p>
+<ul>
+<li><span class="math inline">\(Q\)</span>: decoder target 쪽에서
+나온다.</li>
+<li><span class="math inline">\(K,V\)</span>: encoder source 쪽에서
+나온다.</li>
+</ul>
+<p>표준형이면:</p>
+<p><span class="math display">\[
+d_k=d_v=\frac{d}{h}
+\]</span></p>
+<p>한 head shape:</p>
+<p><span class="math display">\[
+Q\in\mathbb{R}^{U\times d_k}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+K\in\mathbb{R}^{S\times d_k},\quad
+V\in\mathbb{R}^{S\times d_v}
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+QK^\top=(U\times d_k)(d_k\times S)=U\times S
+\]</span></p>
+<p><span class="math display">\[
+\text{head output}=(U\times S)(S\times d_v)=U\times d_v
+\]</span></p>
+<p>전체 MHA output:</p>
+<p><span class="math display">\[
+U\times d_{\mathrm{model}}
+\]</span></p>
+<p>주의:</p>
+<ul>
+<li>cross-attention score shape은 <span class="math inline">\(T\times
+T\)</span>가 아니라 <span class="math inline">\(U\times
+S\)</span>다.</li>
+<li>최종 output length는 query가 온 target length <span
+class="math inline">\(U\)</span>를 따른다.</li>
+<li>파라미터 수는 <span class="math inline">\(S,U\)</span>가 아니라
+weight matrix 차원으로 결정된다.</li>
+</ul>
+<h2 id="자주-틀리는-함정">5. 자주 틀리는 함정</h2>
+<ol type="1">
+<li><span class="math inline">\(\sqrt{d_k}\)</span>를 weight로 세는 실수
+<ul>
+<li>아니다. scalar scaling 값이다.</li>
+</ul></li>
+<li><code>weight 수</code>와 <code>parameter 수</code>를 무조건 같다고
+보는 실수
+<ul>
+<li>bias 제외면 같게 나올 수 있다.</li>
+<li>bias 포함이면 bias 수만큼 커진다.</li>
+</ul></li>
+<li>Encoder와 Decoder의 MHA 개수를 같게 세는 실수
+<ul>
+<li>Encoder: MHA 1개</li>
+<li>Decoder: MHA 2개</li>
+</ul></li>
+<li>LayerNorm을 weight 공식에 자동 포함하는 실수
+<ul>
+<li>문제에서 포함하라고 해야 센다.</li>
+<li>LayerNorm 하나는 <span class="math inline">\(2d\)</span>다.</li>
+</ul></li>
+<li>표준형이 아닌데 <span class="math inline">\(d/h\)</span>를 쓰는 실수
+<ul>
+<li><span class="math inline">\(d_k,d_v\)</span>가 직접 주어지면 그 값을
+우선한다.</li>
+</ul></li>
+<li>sequence length를 parameter 수에 넣는 실수
+<ul>
+<li><span class="math inline">\(T,S,U\)</span>는 shape 계산에는
+필요하지만 보통 parameter count에는 안 들어간다.</li>
+</ul></li>
+<li>block 수를 더하지 않는 실수
+<ul>
+<li>weight 공유가 없으면 block 하나의 수에 block 개수를 곱한다.</li>
+</ul></li>
+</ol>
+<h2 id="대표-계산-예시">6. 대표 계산 예시</h2>
+<h3 id="예시-1.-encoder-block-weight">예시 1. Encoder block weight</h3>
+<p>조건:</p>
+<p><span class="math display">\[
+d=8,\quad h=2,\quad f=16
+\]</span></p>
+<p>bias와 LayerNorm 제외.</p>
+<p>MHA:</p>
+<p><span class="math display">\[
+4d^2=4\times8^2=256
+\]</span></p>
+<p>FFN:</p>
+<p><span class="math display">\[
+2df=2\times8\times16=256
+\]</span></p>
+<p>Encoder block:</p>
+<p><span class="math display">\[
+256+256=512
+\]</span></p>
+<h3 id="예시-2.-encoder-block-parameter-bias와-layernorm-포함">예시 2.
+Encoder block parameter, bias와 LayerNorm 포함</h3>
+<p>조건:</p>
+<p><span class="math display">\[
+d=8,\quad f=16
+\]</span></p>
+<p>Encoder weight:</p>
+<p><span class="math display">\[
+4d^2+2df=512
+\]</span></p>
+<p>MHA bias:</p>
+<p><span class="math display">\[
+4d=32
+\]</span></p>
+<p>FFN bias:</p>
+<p><span class="math display">\[
+f+d=16+8=24
+\]</span></p>
+<p>LayerNorm 2개:</p>
+<p><span class="math display">\[
+2\times(2d)=2\times16=32
+\]</span></p>
+<p>전체:</p>
+<p><span class="math display">\[
+512+32+24+32=600
+\]</span></p>
+<h3 id="예시-3.-decoder-block-parameter-bias와-layernorm-포함">예시 3.
+Decoder block parameter, bias와 LayerNorm 포함</h3>
+<p>조건:</p>
+<p><span class="math display">\[
+d=12,\quad f=24
+\]</span></p>
+<p>Decoder weight:</p>
+<p><span class="math display">\[
+8d^2+2df=8\times12^2+2\times12\times24=1152+576=1728
+\]</span></p>
+<p>MHA 2개 bias:</p>
+<p><span class="math display">\[
+2\times4d=96
+\]</span></p>
+<p>FFN bias:</p>
+<p><span class="math display">\[
+f+d=24+12=36
+\]</span></p>
+<p>LayerNorm 3개:</p>
+<p><span class="math display">\[
+3\times(2d)=72
+\]</span></p>
+<p>전체:</p>
+<p><span class="math display">\[
+1728+96+36+72=1932
+\]</span></p>
+<h3 id="예시-4.-variant-mha">예시 4. Variant MHA</h3>
+<p>조건:</p>
+<p><span class="math display">\[
+d=20,\quad h=4,\quad d_k=4,\quad d_v=6
+\]</span></p>
+<p>표준형이 아니므로 <span class="math inline">\(d/h\)</span>를 쓰지
+않는다.</p>
+<p>concat dimension:</p>
+<p><span class="math display">\[
+hd_v=4\times6=24
+\]</span></p>
+<p>한 head의 <span class="math inline">\(Q,K,V\)</span> weight:</p>
+<p><span class="math display">\[
+20\times4+20\times4+20\times6=280
+\]</span></p>
+<p>4 heads:</p>
+<p><span class="math display">\[
+280\times4=1120
+\]</span></p>
+<p>output projection:</p>
+<p><span class="math display">\[
+\begin{aligned}
+W^O\in\mathbb{R}^{24\times20}
+\Rightarrow 480
+\end{aligned}
+\]</span></p>
+<p>전체:</p>
+<p><span class="math display">\[
+1120+480=1600
+\]</span></p>
+<h2 id="미니-실전-10문제">7. 미니 실전 10문제</h2>
+<p>답을 가리고 15분 안에 푼다.</p>
+<h3 id="문제-1">문제 1</h3>
+<p><span class="math display">\[
+X\in\mathbb{R}^{6\times15},\quad h=3
+\]</span></p>
+<p>표준 MHA에서 <span class="math inline">\(d_k,d_v,Q,K,V\)</span>
+shape을 구하라.</p>
+<h3 id="문제-2">문제 2</h3>
+<p>문제 1 조건에서 <span class="math inline">\(QK^\top\)</span>, <span
+class="math inline">\(\frac{QK^\top}{\sqrt{d_k}}\)</span>, attention
+weight, head output, concat, <span class="math inline">\(W^O\)</span>
+shape을 구하라.</p>
+<h3 id="문제-3">문제 3</h3>
+<p><span class="math display">\[
+d=15,\quad h=3
+\]</span></p>
+<p>표준 MHA의 bias 제외 weight 수와 bias 포함 parameter 수를 구하라.</p>
+<h3 id="문제-4">문제 4</h3>
+<p><span class="math display">\[
+d=15,\quad f=45
+\]</span></p>
+<p>FFN의 bias 제외 weight 수와 bias 포함 parameter 수를 구하라.</p>
+<h3 id="문제-5">문제 5</h3>
+<p><span class="math display">\[
+d=15,\quad h=3,\quad f=45
+\]</span></p>
+<p>Encoder block 하나의 bias 제외 weight 수를 구하라.</p>
+<h3 id="문제-6">문제 6</h3>
+<p><span class="math display">\[
+d=15,\quad h=3,\quad f=45
+\]</span></p>
+<p>Decoder block 하나의 bias 제외 weight 수를 구하라.</p>
+<h3 id="문제-7">문제 7</h3>
+<p>Encoder 2개, Decoder 2개가 있고:</p>
+<p><span class="math display">\[
+d=15,\quad h=3,\quad f=45
+\]</span></p>
+<p>전체 block weight 수를 구하라. embedding/output classifier는
+제외한다.</p>
+<h3 id="문제-8">문제 8</h3>
+<p>표준 MHA의 bias 제외 weight 수가 <span
+class="math inline">\(1600\)</span>이다. <span
+class="math inline">\(d_{\mathrm{model}}\)</span>을 구하고, <span
+class="math inline">\(h=4\)</span>라면 <span
+class="math inline">\(d_k,d_v\)</span>도 구하라.</p>
+<h3 id="문제-9">문제 9</h3>
+<p>표준형이 아니다.</p>
+<p><span class="math display">\[
+d=20,\quad h=4,\quad d_k=4,\quad d_v=6
+\]</span></p>
+<p>concat dimension, <span class="math inline">\(W^O\)</span> shape, MHA
+weight 수를 구하라.</p>
+<h3 id="문제-10">문제 10</h3>
+<p>Cross-attention에서:</p>
+<p><span class="math display">\[
+S=9,\quad U=4,\quad d=20,\quad h=4
+\]</span></p>
+<p>한 head의 <span class="math inline">\(Q,K,V,QK^\top\)</span>, head
+output shape과 전체 MHA output shape을 쓰라.</p>
+<h2 id="미니-실전-답">8. 미니 실전 답</h2>
+<h3 id="답-1">답 1</h3>
+<p><span class="math display">\[
+d_k=d_v=15/3=5
+\]</span></p>
+<p><span class="math display">\[
+Q,K,V\in\mathbb{R}^{6\times5}
+\]</span></p>
+<h3 id="답-2">답 2</h3>
+<p><span class="math display">\[
+QK^\top\in\mathbb{R}^{6\times6}
+\]</span></p>
+<p><span class="math display">\[
+\frac{QK^\top}{\sqrt{d_k}}\in\mathbb{R}^{6\times6}
+\]</span></p>
+<p>attention weight:</p>
+<p><span class="math display">\[
+\mathbb{R}^{6\times6}
+\]</span></p>
+<p>head output:</p>
+<p><span class="math display">\[
+(6\times6)(6\times5)=6\times5
+\]</span></p>
+<p>concat:</p>
+<p><span class="math display">\[
+6\times(3\times5)=6\times15
+\]</span></p>
+<p><span class="math display">\[
+W^O\in\mathbb{R}^{15\times15}
+\]</span></p>
+<h3 id="답-3">답 3</h3>
+<p>weight:</p>
+<p><span class="math display">\[
+4d^2=4\times15^2=900
+\]</span></p>
+<p>bias:</p>
+<p><span class="math display">\[
+4d=60
+\]</span></p>
+<p>bias 포함 parameter:</p>
+<p><span class="math display">\[
+900+60=960
+\]</span></p>
+<h3 id="답-4">답 4</h3>
+<p>weight:</p>
+<p><span class="math display">\[
+2df=2\times15\times45=1350
+\]</span></p>
+<p>bias:</p>
+<p><span class="math display">\[
+f+d=45+15=60
+\]</span></p>
+<p>bias 포함 parameter:</p>
+<p><span class="math display">\[
+1350+60=1410
+\]</span></p>
+<h3 id="답-5">답 5</h3>
+<p><span class="math display">\[
+4d^2+2df=4\times15^2+2\times15\times45=900+1350=2250
+\]</span></p>
+<h3 id="답-6">답 6</h3>
+<p><span class="math display">\[
+8d^2+2df=8\times15^2+2\times15\times45=1800+1350=3150
+\]</span></p>
+<h3 id="답-7">답 7</h3>
+<p>Encoder:</p>
+<p><span class="math display">\[
+2250\times2=4500
+\]</span></p>
+<p>Decoder:</p>
+<p><span class="math display">\[
+3150\times2=6300
+\]</span></p>
+<p>전체:</p>
+<p><span class="math display">\[
+4500+6300=10800
+\]</span></p>
+<h3 id="답-8">답 8</h3>
+<p><span class="math display">\[
+4d^2=1600
+\]</span></p>
+<p><span class="math display">\[
+d^2=400,\quad d=20
+\]</span></p>
+<p><span class="math display">\[
+d_k=d_v=20/4=5
+\]</span></p>
+<h3 id="답-9">답 9</h3>
+<p>concat:</p>
+<p><span class="math display">\[
+hd_v=4\times6=24
+\]</span></p>
+<p><span class="math display">\[
+W^O\in\mathbb{R}^{24\times20}
+\]</span></p>
+<p>한 head:</p>
+<p><span class="math display">\[
+20\times4+20\times4+20\times6=280
+\]</span></p>
+<p>4 heads:</p>
+<p><span class="math display">\[
+1120
+\]</span></p>
+<p>output projection:</p>
+<p><span class="math display">\[
+24\times20=480
+\]</span></p>
+<p>전체:</p>
+<p><span class="math display">\[
+1120+480=1600
+\]</span></p>
+<h3 id="답-10">답 10</h3>
+<p><span class="math display">\[
+d_k=d_v=20/4=5
+\]</span></p>
+<p><span class="math display">\[
+Q\in\mathbb{R}^{4\times5}
+\]</span></p>
+<p><span class="math display">\[
+K,V\in\mathbb{R}^{9\times5}
+\]</span></p>
+<p><span class="math display">\[
+QK^\top\in\mathbb{R}^{4\times9}
+\]</span></p>
+<p>head output:</p>
+<p><span class="math display">\[
+(4\times9)(9\times5)=4\times5
+\]</span></p>
+<p>전체 MHA output:</p>
+<p><span class="math display">\[
+4\times20
+\]</span></p>
+<h2 id="마지막-5분-암기">9. 마지막 5분 암기</h2>
+<p>아래만 종이에 다시 적고 들어간다.</p>
+<p><span class="math display">\[
+d_k=d_v=\frac{d}{h}\quad \text{only if standard MHA}
+\]</span></p>
+<p><span class="math display">\[
+\#W_{\mathrm{MHA}}=4d^2
+\]</span></p>
+<p><span class="math display">\[
+\#W_{\mathrm{FFN}}=2df
+\]</span></p>
+<p><span class="math display">\[
+\#W_{\mathrm{Encoder}}=4d^2+2df
+\]</span></p>
+<p><span class="math display">\[
+\#W_{\mathrm{Decoder}}=8d^2+2df
+\]</span></p>
+<p><span class="math display">\[
+b_{\mathrm{MHA}}=4d,\quad b_{\mathrm{FFN}}=f+d,\quad b_{\mathrm{LN}}=2d
+\]</span></p>
+<p>Cross-attention:</p>
+<p><span class="math display">\[
+Q:U\times d_k,\quad K:S\times d_k,\quad V:S\times d_v,\quad
+QK^\top:U\times S
+\]</span></p>
+<p>가장 중요한 문장:</p>
+<blockquote>
+<p>문제에서 포함하라고 한 것만 세고, 표준형인지 variant인지 먼저
+확인한다.</p>
+</blockquote>
+<h3 id="차원-정합-vit-cnn">차원 정합, ViT, CNN</h3>
+<h2 id="반드시-기억할-것">반드시 기억할 것</h2>
+<p>이번 강의의 핵심은 “Transformer 수식은 돌아가려면 차원이 맞아야 하고,
+image도 patch sequence로 바꾸면 Transformer에 넣을 수 있다”이다.</p>
+<h2 id="차원-정합">1. 차원 정합</h2>
+<p>문제에서 embedding dimension과 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>이 다르면 첫 단에서
+projection을 넣는다.</p>
+<p>예:</p>
+<p><span class="math display">\[
+\begin{aligned}
+embedding &amp;= 128\\
+d_{\mathrm{model}} &amp;= 512
+\end{aligned}
+\]</span></p>
+<p>이면</p>
+<p><span class="math display">\[
+Linear(128 \to  512)
+\]</span></p>
+<p>를 먼저 적용한 뒤 Transformer encoder에 넣는다.</p>
+<p>이후 encoder block의 입출력은 보통 계속:</p>
+<p><span class="math display">\[
+T\times d_{\mathrm{model}}
+\]</span></p>
+<p>이다.</p>
+<h2 id="mha-차원-판단">2. MHA 차원 판단</h2>
+<p>표준 MHA:</p>
+<p><span class="math display">\[
+\begin{aligned}
+d_k &amp;= d_v = d_{\mathrm{model}} / h
+\end{aligned}
+\]</span></p>
+<p>그러면 MHA weight 수는:</p>
+<p><span class="math display">\[
+4 d_{\mathrm{model}}^2
+\]</span></p>
+<p>단, <span class="math inline">\(d_k\)</span>, <span
+class="math inline">\(d_v\)</span>를 따로 주면 표준 공식으로 바로 가면
+안 된다.</p>
+<p>변형 MHA:</p>
+<p><span class="math display">\[
+\begin{aligned}
+W_Q: d_{\mathrm{model}}\times d_k\\
+W_K: d_{\mathrm{model}}\times d_k\\
+W_V: d_{\mathrm{model}}\times d_v\\
+W_O: h d_v\times d_{\mathrm{model}}
+\end{aligned}
+\]</span></p>
+<p>전체 weight:</p>
+<p><span class="math display">\[
+h\,d_{\mathrm{model}}(2d_k+2d_v)
+\]</span></p>
+<h2 id="q-k-v-외-projection">3. Q, K, V 외 projection</h2>
+<p>표준 attention은 Q, K, V와 output projection으로 구성된다.</p>
+<p>추가 projection <span class="math inline">\(Y\)</span>, <span
+class="math inline">\(U\)</span> 같은 것을 넣는다면 그것은 표준 MHA가
+아니라 변형 모델이다. 퀴즈에서는 문제 조건에 “추가 projection을
+사용한다”는 말이 있을 때만 따로 센다.</p>
+<h2 id="vit-구조">4. ViT 구조</h2>
+<p>Vision Transformer의 핵심 흐름:</p>
+<p><span class="math display">\[
+\mathrm{image}
+\rightarrow \mathrm{patch}
+\rightarrow \mathrm{flatten}
+\rightarrow \mathrm{patch\ embedding}
+\rightarrow \mathrm{positional\ embedding}
+\rightarrow \mathrm{Transformer\ encoder}
+\rightarrow \mathrm{classification}
+\]</span></p>
+<p>이미지는 원래 sequence가 아니지만, patch를 token처럼 만들면
+Transformer 입력으로 쓸 수 있다.</p>
+<h2 id="positional-embedding">5. Positional Embedding</h2>
+<p>Transformer는 CNN처럼 2D 공간 구조를 자동으로 강하게 가정하지
+않는다.</p>
+<p>그래서 patch token에 위치 정보를 더해야 한다.</p>
+<p>한줄 답안:</p>
+<p>ViT에서 positional embedding은 patch token이 이미지의 어느 위치에서
+왔는지 알려주기 위해 필요하다.</p>
+<h2 id="cnn과-vit-비교">6. CNN과 ViT 비교</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>CNN</th>
+<th>ViT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>입력 처리</td>
+<td>convolution window</td>
+<td>patch token sequence</td>
+</tr>
+<tr>
+<td>기본 가정</td>
+<td>local pattern 강함</td>
+<td>전역 attention</td>
+</tr>
+<tr>
+<td>장점</td>
+<td>적은 데이터에서도 안정적</td>
+<td>큰 데이터/compute에서 확장성</td>
+</tr>
+<tr>
+<td>대표 흐름</td>
+<td>LeNet, AlexNet, VGG, ResNet</td>
+<td>ViT</td>
+</tr>
+</tbody>
+</table>
+<h2 id="퀴즈-단답-후보">7. 퀴즈 단답 후보</h2>
+<ol type="1">
+<li>입력 embedding 차원과 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>이 다를 때 어떻게
+하는가?
+<ul>
+<li>첫 linear projection으로 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>에 맞춘다.</li>
+</ul></li>
+<li>encoder block을 여러 개 쌓아도 출력 차원이 유지되는 이유는?
+<ul>
+<li>residual connection과 다음 block 연결을 위해 <span
+class="math inline">\(d_{\mathrm{model}}\)</span> 차원을 유지한다.</li>
+</ul></li>
+<li>ViT는 이미지를 어떻게 Transformer에 넣는가?
+<ul>
+<li>image를 patch로 나누고 각 patch를 token처럼 embedding한다.</li>
+</ul></li>
+<li>ViT에서 position 정보가 필요한 이유는?
+<ul>
+<li>patch sequence만으로는 원래 2D 위치 정보를 충분히 알 수 없기
+때문이다.</li>
+</ul></li>
+<li>CNN과 ViT의 가장 큰 구조 차이는?
+<ul>
+<li>CNN은 local convolution, ViT는 patch token 간 self-attention을
+사용한다.</li>
+</ul></li>
+</ol>
+<h2 id="출제-가능-서술형">8. 출제 가능 서술형</h2>
+<h3 id="문제">문제</h3>
+<p>입력 image patch embedding이 192차원이고 Transformer encoder의 <span
+class="math inline">\(d_{\mathrm{model}}\)</span>이 768이다. 이 경우 첫
+단에서 무엇을 해야 하며, 왜 필요한가?</p>
+<h3 id="모범답안">모범답안</h3>
+<p>첫 단에서 <span
+class="math inline">\(\mathrm{Linear}(192\to768)\)</span> projection을
+적용해 patch embedding을 <span
+class="math inline">\(d_{\mathrm{model}}\)</span> 차원으로 맞춘다.
+Transformer encoder 내부의 MHA, FFN, residual connection, LayerNorm은
+보통 <span class="math inline">\(d_{\mathrm{model}}\)</span> 차원을
+기준으로 설계되므로 입력 차원을 맞추지 않으면 block 연산을 일관되게
+수행할 수 없다.</p>
+<h3 id="diffusion-ddpm-ddim-ldm-clip">Diffusion, DDPM, DDIM, LDM,
+CLIP</h3>
+<h2 id="반드시-기억할-것-1">반드시 기억할 것</h2>
+<p>이번 강의의 핵심은 “Diffusion은 noise를 조금씩 더하는 forward
+process를 거꾸로 학습해 denoising으로 이미지를 생성하고, Stable
+Diffusion 계열은 pixel space가 아니라 latent space에서 이 과정을
+수행한다”이다.</p>
+<h2 id="diffusion-전체-그림">1. Diffusion 전체 그림</h2>
+<figure>
+<img src="../assets/slides/videoai_l5_p17_diffusion_attention.png"
+alt="Diffusion model에서 attention" />
+<figcaption aria-hidden="true">Diffusion model에서
+attention</figcaption>
+</figure>
+<p>출처: 강의자료 <code>L5.ViT.pdf</code>, p.17.</p>
+<p>Diffusion model은 두 과정을 구분해서 외운다.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>구분</th>
+<th>의미</th>
+<th>암기 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forward process</td>
+<td>깨끗한 image에 noise를 step별로 추가</td>
+<td>학습되는 과정이라기보다 정해진 noise schedule을 따른다.</td>
+</tr>
+<tr>
+<td>Reverse process</td>
+<td>noisy image에서 noise를 제거하며 image 복원</td>
+<td>neural network가 denoising 방향을 학습한다.</td>
+</tr>
+</tbody>
+</table>
+<p>Forward process는 열역학적 확산처럼 질서 있는 image가 점점 random
+noise에 가까워지는 방향이다. 생성은 이 방향을 거꾸로 따라가야 하므로,
+model은 각 step에서 “현재 noise가 얼마인지” 또는 “제거해야 할 noise가
+무엇인지”를 예측하도록 학습된다.</p>
+<h2 id="loss는-무엇을-맞추는가">2. Loss는 무엇을 맞추는가</h2>
+<p>Diffusion 학습에서 중요한 것은 최종 image만 맞추는 것이 아니라 각
+timestep에서의 denoising target을 맞추는 것이다.</p>
+<p>기본적으로 model은 다음 형태를 학습한다고 보면 된다.</p>
+<p><span class="math display">\[
+\epsilon_{\theta}(x_t,t)
+\]</span></p>
+<p>여기서 <span class="math inline">\(x_t\)</span>는 timestep <span
+class="math inline">\(t\)</span>에서 noise가 섞인 sample이고, <span
+class="math inline">\(t\)</span>는 현재 noise level을 알려주는 timestep
+condition이다. <span class="math inline">\(t\)</span>를 넣지 않으면
+model은 지금 입력이 약하게 noisy한 상태인지 거의 완전한 noise인지
+구분하기 어렵다.</p>
+<p>실전 암기:</p>
+<ul>
+<li>학습 때는 원본 image와 넣은 noise를 알고 있으므로 각 step의 ground
+truth target이 있다.</li>
+<li>network는 noisy input <span class="math inline">\(x_t\)</span>와
+timestep <span class="math inline">\(t\)</span>를 보고 noise 또는
+denoised direction을 예측한다.</li>
+<li>Loss는 예측 noise와 실제 넣은 noise의 차이를 줄이는 방식으로
+이해하면 된다.</li>
+<li>VAE에서 distribution을 맞출 때 KL divergence가 중요했던 것처럼,
+diffusion도 posterior/분포 관점에서 정리된다.</li>
+</ul>
+<h2 id="ddpm">3. DDPM</h2>
+<p>DDPM은 diffusion model을 실제 image generation 성능으로 끌어올린
+대표적인 구조다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>암기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>핵심</td>
+<td>step별로 noise를 제거하는 denoising model</td>
+</tr>
+<tr>
+<td>단점</td>
+<td>sampling step이 많아 generation이 느리다.</td>
+</tr>
+<tr>
+<td>조건</td>
+<td>timestep embedding을 model에 넣어야 한다.</td>
+</tr>
+<tr>
+<td>backbone</td>
+<td>image-to-image denoising 구조라 U-Net 계열을 자주 쓴다.</td>
+</tr>
+</tbody>
+</table>
+<p>DDPM에서는 timestep이 매우 중요하다. 같은 noisy image처럼 보여도
+<span class="math inline">\(t\)</span>가 다르면 제거해야 할 noise
+level이 다르기 때문이다. 그래서 timestep embedding을 image feature에
+더하거나 attention/conditioning 형태로 넣는다.</p>
+<h2 id="ddim">4. DDIM</h2>
+<p>DDIM은 DDPM의 느린 sampling 문제를 줄이기 위해 sampling step을 줄이는
+방향으로 이해하면 된다.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>구분</th>
+<th>DDPM</th>
+<th>DDIM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>생성 방식</td>
+<td>많은 step을 순차적으로 denoising</td>
+<td>일부 timestep을 건너뛰며 더 빠르게 sampling</td>
+</tr>
+<tr>
+<td>장점</td>
+<td>안정적 생성</td>
+<td>빠른 생성</td>
+</tr>
+<tr>
+<td>퀴즈 포인트</td>
+<td>step이 많아 느리다</td>
+<td>skip sampling으로 step 수를 줄인다</td>
+</tr>
+</tbody>
+</table>
+<p>한 줄 답안:</p>
+<blockquote>
+<p>DDIM은 DDPM처럼 모든 timestep을 촘촘히 거치지 않고 일부 step을
+건너뛰어 더 적은 denoising step으로 sampling 속도를 높인다.</p>
+</blockquote>
+<h2 id="ldm과-stable-diffusion">5. LDM과 Stable Diffusion</h2>
+<p>일반 diffusion을 pixel space에서 직접 수행하면 image resolution이
+커질수록 계산량이 매우 커진다. LDM은 이 문제를 줄이기 위해 image를 VAE
+encoder로 latent code로 압축한 뒤, latent space에서 diffusion을
+수행한다.</p>
+<p>흐름:</p>
+<p><span class="math display">\[
+\mathrm{image}\rightarrow \mathrm{VAE\ encoder}\rightarrow
+\mathrm{latent}\rightarrow \mathrm{diffusion}\rightarrow \mathrm{VAE\
+decoder}\rightarrow \mathrm{image}
+\]</span></p>
+<p>핵심 비교:</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>Pixel-space diffusion</th>
+<th>Latent diffusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>denoising 위치</td>
+<td>image pixel 공간</td>
+<td>VAE latent 공간</td>
+</tr>
+<tr>
+<td>계산량</td>
+<td>큼</td>
+<td>상대적으로 작음</td>
+</tr>
+<tr>
+<td>대표 모델</td>
+<td>초기 diffusion 계열</td>
+<td>Stable Diffusion 계열</td>
+</tr>
+<tr>
+<td>장점</td>
+<td>직접 image를 다룸</td>
+<td>고해상도 생성 비용 감소</td>
+</tr>
+</tbody>
+</table>
+<p>Stable Diffusion에서 VAE는 image를 압축하고 복원하는 역할을 한다.
+Diffusion model은 압축된 latent에서 denoising을 수행하므로 pixel 전체를
+직접 다루는 것보다 효율적이다.</p>
+<h2 id="text-condition과-clip">6. Text condition과 CLIP</h2>
+<p>Text-to-image generation을 하려면 text prompt와 image feature가 같은
+의미 공간에서 연결되어야 한다. CLIP은 image encoder와 text encoder를
+함께 학습해 text와 image embedding이 서로 맞도록 만든다.</p>
+<p>CLIP 학습 직관:</p>
+<ul>
+<li>배치 안에 image와 text pair가 있다.</li>
+<li>맞는 image-text pair의 similarity는 크게 만든다.</li>
+<li>틀린 pair의 similarity는 작게 만든다.</li>
+<li>결과적으로 text embedding이 image generation의 condition으로 쓰일 수
+있다.</li>
+</ul>
+<p>Text-conditioned diffusion에서는 text embedding이 denoising network에
+condition으로 들어간다. Cross-attention 관점에서는 image feature 쪽
+query와 text condition 쪽 key/value를 연결하는 구조로 이해하면 된다.</p>
+<h2 id="퀴즈-단답-후보-1">7. 퀴즈 단답 후보</h2>
+<ol type="1">
+<li>Diffusion forward process는 무엇인가?
+<ul>
+<li>원본 image에 timestep별 noise를 점점 더해 random noise에 가깝게
+만드는 과정이다.</li>
+</ul></li>
+<li>Reverse process는 무엇인가?
+<ul>
+<li>noisy sample에서 noise를 제거하며 image를 복원하거나 생성하는
+과정이다.</li>
+</ul></li>
+<li>Diffusion model에 timestep을 넣어야 하는 이유는?
+<ul>
+<li>timestep마다 noise level이 다르므로 model이 현재 제거해야 할 noise의
+수준을 알아야 하기 때문이다.</li>
+</ul></li>
+<li>DDPM의 단점은?
+<ul>
+<li>많은 denoising step을 순차적으로 거쳐야 하므로 sampling이
+느리다.</li>
+</ul></li>
+<li>DDIM의 핵심은?
+<ul>
+<li>일부 timestep을 건너뛰는 sampling으로 generation step 수를
+줄인다.</li>
+</ul></li>
+<li>LDM이 pixel-space diffusion보다 효율적인 이유는?
+<ul>
+<li>VAE latent space에서 denoising하므로 다루는 공간의 크기가
+작아진다.</li>
+</ul></li>
+<li>Stable Diffusion에서 VAE의 역할은?
+<ul>
+<li>image를 latent로 압축하고, denoising된 latent를 다시 image로
+복원한다.</li>
+</ul></li>
+<li>CLIP이 text-to-image generation에서 중요한 이유는?
+<ul>
+<li>text와 image를 같은 의미 embedding 공간에 맞춰 text prompt를 image
+생성 조건으로 쓸 수 있게 하기 때문이다.</li>
+</ul></li>
+</ol>
+<h2 id="출제-가능-서술형-1">8. 출제 가능 서술형</h2>
+<h3 id="문제-11">문제</h3>
+<p>DDPM, DDIM, LDM을 sampling 속도와 계산 공간 관점에서 비교하라.</p>
+<h3 id="모범답안-1">모범답안</h3>
+<p>DDPM은 pixel 또는 feature 공간에서 많은 timestep을 순차적으로
+denoising하므로 생성 품질은 안정적이지만 sampling이 느리다. DDIM은 모든
+timestep을 촘촘히 거치지 않고 일부 step을 건너뛰는 방식으로 sampling
+step 수를 줄여 더 빠르게 생성한다. LDM은 denoising 자체를 pixel space가
+아니라 VAE가 만든 latent space에서 수행하므로 고해상도 image를 직접
+다루는 것보다 계산량이 줄어든다. 따라서 DDIM은 timestep 수를 줄여 속도를
+높이고, LDM은 계산 공간을 줄여 효율을 높인다고 정리할 수 있다.</p>
+<h3
+id="conditional-diffusion-cfg-stable-diffusion-퀴즈-핵심">Conditional
+Diffusion, CFG, Stable Diffusion 퀴즈 핵심</h3>
+<h2 id="반드시-기억할-것-2">반드시 기억할 것</h2>
+<p>이번 강의에서 퀴즈 핵심은 “Stable Diffusion 구조를 보고 VAE,
+CLIP/text encoder, U-Net, timestep, condition, CFG가 각각 어디에
+들어가는지 설명할 수 있는가”이다.</p>
+<h2 id="classifier-guidance와-cfg-구분">1. Classifier Guidance와 CFG
+구분</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>구분</th>
+<th>Classifier guidance</th>
+<th>Classifier-free guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>필요한 모델</td>
+<td>diffusion model + 별도 classifier</td>
+<td>condition 있는 diffusion model 하나</td>
+</tr>
+<tr>
+<td>guidance 방식</td>
+<td>classifier gradient로 원하는 class 방향을 더함</td>
+<td>unconditional prediction과 conditional prediction을 섞음</td>
+</tr>
+<tr>
+<td>단점/주의</td>
+<td>classifier를 따로 학습해야 함</td>
+<td>null condition까지 같이 학습해야 함</td>
+</tr>
+<tr>
+<td>퀴즈 한줄</td>
+<td>“classifier가 guidance를 줌”</td>
+<td>“classifier 없이 condition/null을 섞음”</td>
+</tr>
+</tbody>
+</table>
+<p>Classifier-free guidance는 학습 때 condition을 넣은 경우와
+condition을 비운 경우를 같이 경험하게 만든다. Sampling 때는 같은 <span
+class="math inline">\(x_t,t\)</span>에 대해 unconditional 예측과
+conditional 예측을 모두 얻고, 둘의 차이를 prompt 방향으로 더
+밀어준다.</p>
+<p>대표 형태:</p>
+<p><span class="math display">\[
+\hat{\epsilon}
+=\epsilon_{\theta}(x_t,\varnothing,t)
++s\left(\epsilon_{\theta}(x_t,c,t)-\epsilon_{\theta}(x_t,\varnothing,t)\right)
+\]</span></p>
+<p>여기서 <span class="math inline">\(c\)</span>는 text/class condition,
+<span class="math inline">\(\varnothing\)</span>는 null condition, <span
+class="math inline">\(s\)</span>는 guidance scale이다.</p>
+<h2 id="guidance-scale-해석">2. Guidance scale 해석</h2>
+<table>
+<thead>
+<tr>
+<th>Guidance scale</th>
+<th>생성 경향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>너무 낮음</td>
+<td>prompt 영향이 약하고 unconditional/random 생성에 가까움</td>
+</tr>
+<tr>
+<td>적당함</td>
+<td>prompt 의미와 image 다양성의 균형</td>
+</tr>
+<tr>
+<td>너무 높음</td>
+<td>prompt를 과하게 따라가며 부자연스럽거나 다양성이 줄어듦</td>
+</tr>
+</tbody>
+</table>
+<p>한 줄 답안:</p>
+<blockquote>
+<p>CFG scale은 prompt 조건을 얼마나 강하게 반영할지 정하는 값이며, 너무
+크면 조건은 강해지지만 자연스러움과 다양성이 떨어질 수 있다.</p>
+</blockquote>
+<h2 id="clip과-text-condition">3. CLIP과 text condition</h2>
+<p>CLIP은 image encoder와 text encoder를 contrastive learning으로
+맞춘다.</p>
+<ul>
+<li>맞는 image-text pair는 embedding similarity를 크게 만든다.</li>
+<li>틀린 pair는 embedding similarity를 작게 만든다.</li>
+<li>배치 similarity matrix에서는 diagonal이 정답 pair, off-diagonal이
+negative pair다.</li>
+<li>비슷한 강아지/고양이처럼 헷갈리는 negative가 있으면 더 강한 학습
+신호가 된다.</li>
+<li>처음부터 어려운 pair만 주기보다 쉬운 구분에서 어려운 구분으로 가는
+curriculum learning이 쓰일 수 있다.</li>
+</ul>
+<p>Text-to-image diffusion에서는 CLIP/text encoder의 text embedding이
+denoising U-Net의 condition으로 들어간다. Stable Diffusion 구조에서는
+보통 cross-attention을 통해 image latent feature와 text embedding이
+연결된다.</p>
+<h2 id="stable-diffusion-구조">4. Stable Diffusion 구조</h2>
+<p>Stable Diffusion은 pixel에서 직접 diffusion을 하지 않고 VAE
+latent에서 diffusion을 수행한다.</p>
+<p>흐름:</p>
+<p><span class="math display">\[
+\mathrm{Prompt}\rightarrow \mathrm{Text\ encoder}\rightarrow
+\mathrm{text\ embedding}
+\]</span></p>
+<p><span class="math display">\[
+\mathrm{Image}\rightarrow \mathrm{VAE\ encoder}\rightarrow z
+\]</span></p>
+<p><span class="math display">\[
+z_t,\ t,\ \mathrm{text\ embedding}
+\rightarrow \mathrm{U\text{-}Net}
+\rightarrow \hat{\epsilon}
+\]</span></p>
+<p><span class="math display">\[
+z_0\rightarrow \mathrm{VAE\ decoder}\rightarrow \mathrm{Image}
+\]</span></p>
+<p>외울 역할:</p>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VAE encoder</td>
+<td>image를 latent map으로 압축</td>
+</tr>
+<tr>
+<td>VAE decoder</td>
+<td>denoising된 latent를 image로 복원</td>
+</tr>
+<tr>
+<td>Text encoder/CLIP</td>
+<td>prompt를 embedding으로 변환</td>
+</tr>
+<tr>
+<td>U-Net</td>
+<td>latent <span class="math inline">\(z_t\)</span>, timestep, text
+condition을 보고 noise를 예측</td>
+</tr>
+<tr>
+<td>Cross-attention</td>
+<td>image latent feature가 prompt 의미를 보도록 연결</td>
+</tr>
+<tr>
+<td>CFG</td>
+<td>null/condition 예측을 섞어 prompt 반영 강도를 조절</td>
+</tr>
+</tbody>
+</table>
+<p>예시 암기:</p>
+<ul>
+<li><span class="math inline">\(512\times512\)</span> image를 <span
+class="math inline">\(64\times64\)</span> latent map처럼 줄여
+계산한다.</li>
+<li>원본 image는 RGB 3채널이지만 latent channel은 모델 설계에 따라 4채널
+이상이 될 수 있다.</li>
+<li>Stable Diffusion에서 학습/생성의 핵심 denoising은 pixel이 아니라
+latent map에서 일어난다.</li>
+</ul>
+<h2 id="dit와-lora">5. DiT와 LoRA</h2>
+<p>DiT는 diffusion process 자체를 새로 만든 것이 아니라 denoising
+backbone에 Transformer block을 쓰는 방향이다.</p>
+<p>한 줄 답안:</p>
+<blockquote>
+<p>DiT는 U-Net 중심의 denoising network를 Transformer 계열 block으로
+바꾸거나 강화한 diffusion model 구조로 이해한다.</p>
+</blockquote>
+<p>LoRA는 거대한 U-Net 전체를 처음부터 다시 학습하지 않고, 기존 weight는
+유지한 채 작은 low-rank adapter만 학습해 특정 style이나 domain에 맞추는
+방법이다.</p>
+<p>한 줄 답안:</p>
+<blockquote>
+<p>특정 style을 만들기 위해 전체 diffusion model을 새로 학습하는 대신
+LoRA 같은 lightweight fine-tuning으로 작은 추가 weight만 학습할 수
+있다.</p>
+</blockquote>
+<h2 id="오늘-강의-퀴즈-단답-후보">6. 오늘 강의 퀴즈 단답 후보</h2>
+<ol type="1">
+<li>CFG가 classifier-free인 이유는?
+<ul>
+<li>별도 classifier 없이 diffusion model 자체가
+conditional/unconditional 예측을 모두 만들기 때문이다.</li>
+</ul></li>
+<li>CFG에서 null condition을 학습하는 이유는?
+<ul>
+<li>sampling 때 unconditional prediction을 얻어 conditional prediction과
+섞기 위해서다.</li>
+</ul></li>
+<li>Stable Diffusion에서 diffusion이 일어나는 공간은?
+<ul>
+<li>VAE가 만든 latent space다.</li>
+</ul></li>
+<li>Text prompt는 Stable Diffusion에서 어디로 들어가는가?
+<ul>
+<li>text encoder/CLIP을 거쳐 text embedding이 되고, U-Net의
+cross-attention condition으로 들어간다.</li>
+</ul></li>
+<li>Guidance scale이 너무 크면?
+<ul>
+<li>prompt 반영은 강해지지만 이미지가 과하게 조형화되고 다양성이나
+자연스러움이 줄 수 있다.</li>
+</ul></li>
+<li>DiT는 diffusion process를 바꾸는가?
+<ul>
+<li>아니다. 주로 denoising network backbone을 Transformer 계열로 바꾸는
+관점이다.</li>
+</ul></li>
+<li>LoRA의 목적은?
+<ul>
+<li>전체 모델 재학습 없이 작은 adapter 학습으로 특정 style/domain에
+맞추는 것이다.</li>
+</ul></li>
+</ol>
+</body>
+</html>
