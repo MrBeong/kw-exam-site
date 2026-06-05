@@ -254,6 +254,7 @@
 <script>
 const questions = JSON.parse(document.getElementById('question-data').textContent);
 const storageKey = 'examProblemState:' + location.pathname;
+const positionKey = 'examProblemPosition:' + location.pathname;
 function normalizeStateValue(v) {
   if (v === true) return { status:'correct', answered:true };
   if (v === false) return { status:'wrong', answered:true };
@@ -279,6 +280,7 @@ let activeQuestions = [];
 let currentIndex = 0;
 let reviewLock = null;
 let reviewMode = 'all';
+let initialResumeApplied = false;
 
 function esc(s) {
   return String(s ?? '').replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
@@ -324,6 +326,41 @@ function updateScore() {
 }
 function persistState() {
   localStorage.setItem(storageKey, JSON.stringify(Object.fromEntries(state)));
+}
+function loadSavedPositionId() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(positionKey) || 'null');
+    return saved && typeof saved.id === 'string' ? saved.id : null;
+  } catch (_) {
+    return null;
+  }
+}
+function persistPosition(q) {
+  if (!q || reviewMode !== 'all') return;
+  localStorage.setItem(positionKey, JSON.stringify({ id:q.id, ts:Date.now() }));
+}
+function firstUnsolvedIndex(list, start = 0) {
+  if (!list.length) return 0;
+  const safeStart = Math.max(0, Math.min(start, list.length - 1));
+  for (let i = safeStart; i < list.length; i += 1) {
+    if (!isSolvedEntry(state.get(list[i].id))) return i;
+  }
+  for (let i = 0; i < safeStart; i += 1) {
+    if (!isSolvedEntry(state.get(list[i].id))) return i;
+  }
+  return safeStart;
+}
+function resumeIndexFor(list) {
+  if (!list.length) return 0;
+  const savedId = loadSavedPositionId();
+  if (savedId) {
+    const savedIndex = list.findIndex(q => q.id === savedId);
+    if (savedIndex >= 0) {
+      if (!isSolvedEntry(state.get(list[savedIndex].id))) return savedIndex;
+      return firstUnsolvedIndex(list, Math.min(savedIndex + 1, list.length - 1));
+    }
+  }
+  return firstUnsolvedIndex(list, 0);
 }
 function renderQuestion(q) {
   const hard = q.level === '변별력' ? ' hard' : '';
@@ -402,11 +439,16 @@ function advanceAfterCorrect() {
 }
 function render() {
   activeQuestions = getFilteredQuestions();
+  if (!initialResumeApplied && reviewMode === 'all') {
+    currentIndex = resumeIndexFor(activeQuestions);
+    initialResumeApplied = true;
+  }
   if (currentIndex >= activeQuestions.length) currentIndex = Math.max(0, activeQuestions.length - 1);
   const emptyText = reviewMode === 'wrong' ? '현재 조건에 맞는 오답 문제가 없습니다.' : reviewMode === 'solved' ? '현재 조건에 맞는 풀이 완료 문제가 없습니다.' : '조건에 맞는 문제가 없습니다.';
   list.innerHTML = activeQuestions.length ? renderQuestion(activeQuestions[currentIndex]) : `<div class="empty">${emptyText}</div>`;
   reviewLock = null;
   if (activeQuestions.length) {
+    persistPosition(activeQuestions[currentIndex]);
     const card = list.querySelector('.card');
     if (card) restoreCardState(card, activeQuestions[currentIndex]);
   }
@@ -569,7 +611,7 @@ wrongOnlyBtn.addEventListener('click', () => {
 });
 document.getElementById('prevBtn').addEventListener('click', goPrev);
 document.getElementById('nextBtn').addEventListener('click', goNext);
-document.getElementById('resetBtn').addEventListener('click', () => { state.clear(); localStorage.removeItem(storageKey); reviewMode = 'all'; reviewLock = null; currentIndex = 0; updateScore(); render(); });
+document.getElementById('resetBtn').addEventListener('click', () => { state.clear(); localStorage.removeItem(storageKey); localStorage.removeItem(positionKey); reviewMode = 'all'; reviewLock = null; currentIndex = 0; initialResumeApplied = true; updateScore(); render(); });
 render();
 </script>
 </body>
