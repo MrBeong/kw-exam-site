@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>컴퓨터비전 qna</title>
   <script>
-    location.replace(new URL("../컴퓨터비전/기말 대비/수식렌더링_HTML/03_암기형_예상문답_종합본.html", location.href).href);
+    const target = new URL("../컴퓨터비전/기말 대비/수식렌더링_HTML/03_암기형_예상문답_종합본.html", location.href);
+    target.search = location.search;
+    target.hash = location.hash;
+    location.replace(target.href);
+    window.addEventListener("DOMContentLoaded", () => {
+      const a = document.querySelector("main a");
+      if (a) {
+        const fallback = new URL(a.getAttribute("href"), location.href);
+        fallback.search = location.search;
+        fallback.hash = location.hash;
+        a.href = fallback.href;
+      }
+    });
   </script>
   <style>
     body { margin:0; min-height:100vh; display:grid; place-items:center; background:#f5f7fb; color:#111827; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif; }
