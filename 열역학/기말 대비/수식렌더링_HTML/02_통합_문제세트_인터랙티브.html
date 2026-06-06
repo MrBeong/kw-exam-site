@@ -446,12 +446,22 @@ function currentSubjectPayload() {
   return {
     state: Object.fromEntries(state),
     positions: collectPositionEntries(),
+    resetAt: Number(localStorage.getItem(resetKey) || 0),
     updatedAt: Date.now()
   };
 }
 function mergeSubjectPayload(subjectPayload) {
   if (!subjectPayload || typeof subjectPayload !== 'object') return false;
   let changed = false;
+  const remoteResetAt = Number(subjectPayload.resetAt || 0);
+  const localResetAt = Number(localStorage.getItem(resetKey) || 0);
+  if (remoteResetAt > localResetAt) {
+    state.clear();
+    for (const key of storageKeyCandidates) localStorage.removeItem(key);
+    clearLocalPositions();
+    localStorage.setItem(resetKey, String(remoteResetAt));
+    changed = true;
+  }
   const remoteState = subjectPayload.state || {};
   for (const [qid, raw] of Object.entries(remoteState)) {
     const value = normalizeStateValue(raw);
@@ -498,7 +508,7 @@ async function pullCloudState({ silent = false } = {}) {
   if (!silent) setCloudStatus(changed ? '클라우드 진행 상태를 반영했습니다.' : '이미 최신 상태입니다.', 'ok');
   return changed;
 }
-async function pushCloudState({ silent = false } = {}) {
+async function pushCloudState({ silent = false, replaceSubject = false } = {}) {
   const cred = readCloudCredential();
   if (!cred) {
     if (!silent) setCloudStatus('먼저 동기화 연결을 해주세요.', 'bad');
@@ -514,7 +524,7 @@ async function pushCloudState({ silent = false } = {}) {
   payload.version = 1;
   payload.subjects = payload.subjects || {};
   const remoteSubject = payload.subjects[canonicalPathname];
-  mergeSubjectPayload(remoteSubject);
+  if (!replaceSubject) mergeSubjectPayload(remoteSubject);
   payload.subjects[canonicalPathname] = currentSubjectPayload();
   payload.updatedAt = Date.now();
   await upsertCloudPayload(cred, payload);
@@ -551,6 +561,7 @@ function loadState() {
   return merged;
 }
 const state = loadState();
+const resetKey = `${storageKey}:resetAt`;
 const list = document.getElementById('list');
 const solvedCountEl = document.getElementById('solvedCount');
 const scoreEl = document.getElementById('score');
@@ -606,9 +617,9 @@ function updateScore() {
   wrongOnlyBtn.classList.toggle('active', reviewMode === 'wrong');
   wrongOnlyBtn.disabled = wrong === 0 && reviewMode !== 'wrong';
 }
-function persistState() {
+function persistState({ sync = true } = {}) {
   localStorage.setItem(storageKey, JSON.stringify(Object.fromEntries(state)));
-  scheduleCloudSave();
+  if (sync) scheduleCloudSave();
 }
 function loadSavedPositionId() {
   let best = null;
@@ -922,17 +933,22 @@ document.getElementById('resumeBtn').addEventListener('click', () => {
   scrollToTopSoft();
 });
 document.getElementById('resetBtn').addEventListener('click', () => {
+  const resetAt = Date.now();
   state.clear();
   for (const key of storageKeyCandidates) localStorage.removeItem(key);
   clearLocalPositions();
+  localStorage.setItem(resetKey, String(resetAt));
   reviewMode = 'all';
   reviewLock = null;
   currentIndex = 0;
   initialResumeApplied = true;
-  persistState();
+  clearTimeout(cloudSaveTimer);
+  persistState({ sync:false });
   updateScore();
   render();
-  pushCloudState({ silent:true }).catch(() => {});
+  pushCloudState({ silent:true, replaceSubject:true })
+    .then(() => setCloudStatus('채점 초기화를 클라우드에 저장했습니다.', 'ok'))
+    .catch(() => {});
 });
 document.getElementById('startCloudSyncBtn').addEventListener('click', async () => {
   let cred = readCloudCredential();
