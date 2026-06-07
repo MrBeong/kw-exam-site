@@ -588,15 +588,38 @@ A. Underfitting 위험이 커진다.</p>
 <p>Q. <span class="math inline">\(\lambda\)</span>가 너무 작으면?<br />
 A. Overfitting 위험이 커진다.</p>
 <p>Q. MLE는 무엇인가?<br />
-A. 관측 data가 가장 그럴듯해지는 parameter를 찾는 방법이다.</p>
+A. 관측 data <span class="math inline">\(X\)</span>가 고정되어 있을 때
+likelihood <span
+class="math inline">\(L(\theta;X)=P(X|\theta)\)</span>를 최대화하는
+parameter를 찾는 방법이다. 이때 <span
+class="math inline">\(\theta\)</span>는 확률변수가 아니라 고정 모수
+후보값이다.</p>
 <p><span class="math display">\[
-\theta_{\mathrm{MLE}}=\arg\max_\theta P(X|\theta)
+\hat{\theta}_{\mathrm{MLE}}=\arg\max_\theta L(\theta;X)=\arg\max_\theta
+P(X|\theta)
 \]</span></p>
 <p>Q. MAP는 무엇인가?<br />
-A. Likelihood에 prior까지 고려해 posterior가 최대가 되는 parameter를
+A. Likelihood에 prior까지 고려해 posterior <span
+class="math inline">\(P(\theta|X)\)</span>가 최대가 되는 parameter를
 찾는 방법이다.</p>
+<p><span class="math display">\[
+P(\theta|X)\propto P(X|\theta)P(\theta),\quad
+\hat{\theta}_{\mathrm{MAP}}=\arg\max_\theta P(\theta|X)=\arg\max_\theta
+P(X|\theta)P(\theta)
+\]</span></p>
+<p>Q. MAP에서 왜 <span class="math inline">\(\propto\)</span>를
+쓰는가?<br />
+A. <span
+class="math inline">\(P(\theta|X)=\frac{P(X|\theta)P(\theta)}{P(X)}\)</span>에서
+evidence <span class="math inline">\(P(X)\)</span>는 <span
+class="math inline">\(\theta\)</span>에 대해 상수라 argmax에 영향을 주지
+않기 때문이다.</p>
+<p>Q. 동전을 10번 던져 앞면이 7번 나온 경우 MLE 추정값은?<br />
+A. 앞면 확률 <span class="math inline">\(p\)</span>의 likelihood는 <span
+class="math inline">\(L(p;X)=p^7(1-p)^3\)</span>이고, MLE는 <span
+class="math inline">\(\hat p=0.7\)</span>이다.</p>
 <p>Q. Bayesian estimator는 무엇이 다른가?<br />
-A. Parameter 하나만 고정하지 않고 posterior distribution 전체를
+A. Parameter 하나만 점추정하지 않고 posterior distribution 전체를
 고려한다.</p>
 <p>Q. EM algorithm은 언제 쓰는가?<br />
 A. Latent variable이나 missing data 때문에 likelihood 최적화가 어려울 때
@@ -683,7 +706,13 @@ A. O.</p>
 학습하는 전략이다.<br />
 A. X. Validation 성능을 보고 멈춘다.</p>
 <p>Q. MLE는 prior를 반드시 포함한다.<br />
-A. X. Prior를 포함하면 MAP이다.</p>
+A. X. MLE는 <span
+class="math inline">\(L(\theta;X)=P(X|\theta)\)</span>를 최대화하고,
+prior를 포함하면 MAP이다.</p>
+<p>Q. MLE에서 <span class="math inline">\(\theta\)</span>는
+확률변수이다.<br />
+A. X. MLE에서 <span class="math inline">\(\theta\)</span>는 확률변수가
+아니라 비교할 고정 모수 후보값이다.</p>
 <h2 id="그래프-해석형">16. 그래프 해석형</h2>
 <p>Q. SHAP summary plot에서 x축 오른쪽은 무엇인가?<br />
 A. SHAP value가 양수인 영역이다. 해당 feature가 예측값 또는 positive
