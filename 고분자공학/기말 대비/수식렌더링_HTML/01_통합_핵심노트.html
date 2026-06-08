@@ -172,65 +172,20 @@
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
-
-  <style id="kw-back-style">
-    .kw-back-button {
-      position: fixed;
-      top: max(10px, env(safe-area-inset-top));
-      left: 10px;
-      z-index: 10000;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      min-width: 42px;
-      height: 42px;
-      padding: 0 12px;
-      border: 1px solid rgba(148, 163, 184, .45);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .92);
-      color: #111827;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, .12);
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-      font: 800 14px/1 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", Segoe UI, sans-serif;
-      cursor: pointer;
-    }
-    .kw-back-button::before {
-      content: "‹";
-      font-size: 27px;
-      line-height: 0;
-      transform: translateY(-1px);
-    }
-    @media (max-width: 760px) {
-      .kw-back-button {
-        top: max(8px, env(safe-area-inset-top));
-        left: 8px;
-        width: 40px;
-        min-width: 40px;
-        height: 40px;
-        padding: 0;
-        font-size: 0;
-      }
-      .kw-back-button::before { font-size: 30px; }
-      .kw-back-button ~ header .wrap { padding-left: 56px !important; }
-      .kw-back-button ~ h1:first-of-type { padding-left: 48px; }
-    }
-  </style>
-  <script id="kw-back-script">
-    function kwGoBack() {
-      try {
-        if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
-          history.back();
-          return;
-        }
-      } catch (error) {}
-      location.href = new URL('../../../index.html', location.href).href;
-    }
+  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css" />
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
   </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
+    .back-to-index:hover{background:#eff6ff}
+    @media(max-width:640px){.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
+  </style>
 </head>
 <body>
-<button type="button" class="kw-back-button" onclick="kwGoBack()" aria-label="뒤로가기"><span>뒤로</span></button>
+<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+
 <header id="title-block-header">
 <h1 class="title">고분자공학 01_통합_핵심노트</h1>
 </header>
@@ -731,7 +686,7 @@ dilute/semidilute/concentrated, ideal/non-ideal 구분</td>
 <li>긴 증명형 서술</li>
 </ul>
 <h2 id="이번-week7-대비-핵심">이번 Week7 대비 핵심</h2>
-<ol>
+<ol type="1">
 <li>묽은 고분자 용액은 저분자 용액과 거동이 다르다.</li>
 <li>dilute/semidilute/concentrated는 농도 자체보다 코일의 겹침과 사슬 간
 상호작용으로 구분한다.</li>
@@ -746,7 +701,7 @@ class="math inline">\(\theta\)</span> solvent는 이상적인 random coil
 나노복합체, 막, 바이오재료, 3D 프린팅 등에서 상용성 판단에 쓰인다.</li>
 </ol>
 <h2 id="이번-week12-대비-핵심">이번 Week12 대비 핵심</h2>
-<ol>
+<ol type="1">
 <li>고분자는 긴 사슬의 얽힘(entanglement) 때문에 저분자 고체와 달리 찢김
 저항, 인장강도, 점탄성, 높은 점도 같은 거동을 보인다.</li>
 <li>Rouse-Buche theory는 Kuhn segment를 bead-spring으로 보고 매우 묽은
@@ -1271,6 +1226,54 @@ class="math inline">\(M_e\)</span></td>
 </tr>
 </tbody>
 </table>
+<h3 id="fjc-frc-hrm-사슬-모델-비교">FJC, FRC, HRM 사슬 모델 비교</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>모델</th>
+<th>핵심 가정</th>
+<th>시험 답안 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FJC, freely-jointed chain</td>
+<td>bond length만 고정, 각 segment 방향은 서로 독립적으로 완전 자유</td>
+<td>가장 단순하고 가장 유연한 이상 사슬. <span
+class="math inline">\(\langle R^2\rangle=nl^2\)</span>, <span
+class="math inline">\(R_{\mathrm{rms}}=l\sqrt n\)</span></td>
+</tr>
+<tr>
+<td>FRC, freely-rotating chain</td>
+<td>bond length와 bond angle은 고정, 단일결합 회전은 자유</td>
+<td>bond angle 제약 때문에 FJC보다 사슬이 더 뻣뻣하고 end-to-end
+distance가 커진다</td>
+</tr>
+<tr>
+<td>HRM, hindered rotation model</td>
+<td>bond length와 bond angle 고정 + steric hindrance 때문에 회전도
+제한</td>
+<td>실제 사슬에 가장 가까운 모델. trans/gauche 같은 선호 회전 상태와
+회전 장벽을 반영</td>
+</tr>
+</tbody>
+</table>
+<p>Characteristic ratio는 실제 사슬이 FJC와 비교해 얼마나 더 뻣뻣한지
+나타내는 지표다.</p>
+<p><span class="math display">\[
+C_n=\frac{\langle R^2\rangle}{nl^2}, \qquad
+C_\infty=\lim_{n\to\infty}C_n
+\]</span></p>
+<p><span class="math inline">\(C_\infty=1\)</span>이면 FJC 수준이고,
+<span class="math inline">\(C_\infty&gt;1\)</span>이면 결합각 또는 회전
+장애 때문에 FJC보다 더 extended/stiff한 사슬이다. 비교 순서는 보통
+<code>FJC &lt; FRC &lt; HRM</code> 순서로 현실성과 강성 반영이 커진다고
+외운다.</p>
 <h2 id="morphology-amorphous-crystalline-semi-crystalline">8.
 Morphology: Amorphous, Crystalline, Semi-Crystalline</h2>
 <table>

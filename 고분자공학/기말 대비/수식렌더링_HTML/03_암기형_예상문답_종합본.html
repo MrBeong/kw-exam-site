@@ -172,65 +172,20 @@
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
-
-  <style id="kw-back-style">
-    .kw-back-button {
-      position: fixed;
-      top: max(10px, env(safe-area-inset-top));
-      left: 10px;
-      z-index: 10000;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      min-width: 42px;
-      height: 42px;
-      padding: 0 12px;
-      border: 1px solid rgba(148, 163, 184, .45);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .92);
-      color: #111827;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, .12);
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-      font: 800 14px/1 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", Segoe UI, sans-serif;
-      cursor: pointer;
-    }
-    .kw-back-button::before {
-      content: "‹";
-      font-size: 27px;
-      line-height: 0;
-      transform: translateY(-1px);
-    }
-    @media (max-width: 760px) {
-      .kw-back-button {
-        top: max(8px, env(safe-area-inset-top));
-        left: 8px;
-        width: 40px;
-        min-width: 40px;
-        height: 40px;
-        padding: 0;
-        font-size: 0;
-      }
-      .kw-back-button::before { font-size: 30px; }
-      .kw-back-button ~ header .wrap { padding-left: 56px !important; }
-      .kw-back-button ~ h1:first-of-type { padding-left: 48px; }
-    }
-  </style>
-  <script id="kw-back-script">
-    function kwGoBack() {
-      try {
-        if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
-          history.back();
-          return;
-        }
-      } catch (error) {}
-      location.href = new URL('../../../index.html', location.href).href;
-    }
+  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css" />
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
   </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
+    .back-to-index:hover{background:#eff6ff}
+    @media(max-width:640px){.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
+  </style>
 </head>
 <body>
-<button type="button" class="kw-back-button" onclick="kwGoBack()" aria-label="뒤로가기"><span>뒤로</span></button>
+<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+
 <header id="title-block-header">
 <h1 class="title">고분자공학 03_암기형_예상문답_종합본</h1>
 </header>
@@ -567,6 +522,27 @@ A. 실제 사슬은 bond angle과 회전 장벽 때문에 완전히 자유롭게
 <p>Q. Freely-rotating chain은 freely-jointed chain과 무엇이
 다른가?<br />
 A. Bond angle은 고정되어 있고 단일결합 회전만 자유롭다고 본다.</p>
+<p>Q. Hindered rotation model은 freely-rotating chain에서 무엇을 더
+반영하는가?<br />
+A. Steric hindrance와 torsional energy barrier 때문에 단일결합 회전이
+완전히 자유롭지 않고 trans/gauche 같은 선호 회전 상태가 존재한다는 점을
+반영한다.</p>
+<p>Q. FJC, FRC, HRM을 현실성 또는 사슬 강성 반영이 커지는 순서로
+배열하면?<br />
+A. FJC <span class="math inline">\(\rightarrow\)</span> FRC <span
+class="math inline">\(\rightarrow\)</span> HRM.</p>
+<p>Q. FJC, FRC, HRM의 핵심 차이는?<br />
+A. FJC는 bond 방향이 완전 자유, FRC는 bond angle 고정과 자유 회전, HRM은
+bond angle 고정에 더해 회전 장애까지 반영한다.</p>
+<p>Q. Characteristic ratio <span class="math inline">\(C_n\)</span>의
+정의는?<br />
+A.</p>
+<p><span class="math display">\[
+C_n=\frac{\langle R^2\rangle}{nl^2}
+\]</span></p>
+<p>Q. <span class="math inline">\(C_\infty&gt;1\)</span>의 의미는?<br />
+A. 실제 사슬이 FJC보다 bond angle이나 회전 장애 때문에 더 뻣뻣하고 더
+extended되어 있다는 뜻이다.</p>
 <p>Q. Kuhn length는 무엇인가?<br />
 A. 실제 사슬을 같은 end-to-end distance를 갖는 자유연결 사슬로 바꿨을
 때의 등가 segment 길이이다.</p>

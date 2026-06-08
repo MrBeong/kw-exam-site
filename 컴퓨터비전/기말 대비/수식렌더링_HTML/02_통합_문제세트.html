@@ -4,11 +4,157 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>02_통합_문제세트</title>
+  <title>컴퓨터비전 02_통합_문제세트</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
@@ -88,22 +234,25 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
-
-<style>
-.back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
-.back-to-index:hover{background:#eff6ff}
-@media(max-width:640px){.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
-</style>
+  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css" />
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
+    .back-to-index:hover{background:#eff6ff}
+    @media(max-width:640px){.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
+  </style>
 </head>
 <body>
 <a class="back-to-index" href="../../../index.html">← 뒤로</a>
 
 <header id="title-block-header">
-<h1 class="title">02_통합_문제세트</h1>
+<h1 class="title">컴퓨터비전 02_통합_문제세트</h1>
 </header>
 <h1 id="컴퓨터비전-통합-문제세트">컴퓨터비전 통합 문제세트</h1>
 <h3 id="기말-예상문제-세트">기말 예상문제 세트</h3>
@@ -2078,5 +2227,250 @@ basis <span class="math inline">\(Q\)</span>를 앞뒤에 사용한다. SVD는
 input 쪽 right singular basis <span class="math inline">\(V\)</span>와
 output 쪽 left singular basis <span class="math inline">\(U\)</span>가
 보통 다르다. Singular value는 scale 역할을 하며 음수가 아니다.</p>
+<h2 id="실전형-보강-계산-ㄱㄴㄷ-순서-나열">실전형 보강: 계산, ㄱㄴㄷ,
+순서 나열</h2>
+<h3 id="문제-901.-hough-rho-계산">문제 901. Hough <span
+class="math inline">\(\rho\)</span> 계산</h3>
+<p>Line Hough 식 <span
+class="math inline">\(\rho=x\cos\theta+y\sin\theta\)</span>에서 점 <span
+class="math inline">\((3,4)\)</span>, <span
+class="math inline">\(\theta=90^\circ\)</span>일 때 <span
+class="math inline">\(\rho\)</span>는?</p>
+<ol type="1">
+<li>3</li>
+<li>4</li>
+<li>5</li>
+<li>7</li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: <span class="math inline">\(\cos90^\circ=0\)</span>, <span
+class="math inline">\(\sin90^\circ=1\)</span>이므로 <span
+class="math inline">\(\rho=3\cdot0+4\cdot1=4\)</span>이다.</p>
+<h3 id="문제-902.-hough-rho-계산-2">문제 902. Hough <span
+class="math inline">\(\rho\)</span> 계산 2</h3>
+<p>점 <span class="math inline">\((3,4)\)</span>, <span
+class="math inline">\(\theta=45^\circ\)</span>일 때 <span
+class="math inline">\(\rho\)</span>로 맞는 것은?</p>
+<ol type="1">
+<li><span class="math inline">\(\frac{7\sqrt{2}}{2}\)</span></li>
+<li><span class="math inline">\(\frac{\sqrt{2}}{2}\)</span></li>
+<li><span class="math inline">\(7\)</span></li>
+<li><span class="math inline">\(12\)</span></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: <span
+class="math inline">\(\rho=3\frac{\sqrt2}{2}+4\frac{\sqrt2}{2}=\frac{7\sqrt2}{2}\)</span>이다.</p>
+<h3 id="문제-903.-점-직선-거리-계산">문제 903. 점-직선 거리 계산</h3>
+<p>직선 <span class="math inline">\(3x+4y-10=0\)</span>과 점 <span
+class="math inline">\((1,2)\)</span> 사이의 거리는?</p>
+<ol type="1">
+<li><span class="math inline">\(\frac{1}{5}\)</span></li>
+<li><span class="math inline">\(1\)</span></li>
+<li><span class="math inline">\(5\)</span></li>
+<li><span class="math inline">\(\frac{10}{3}\)</span></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: 거리는 <span
+class="math inline">\(\frac{|3\cdot1+4\cdot2-10|}{\sqrt{3^2+4^2}}=\frac{1}{5}\)</span>이다.</p>
+<h3 id="문제-904.-template-matching-result-map-크기">문제 904. Template
+matching result map 크기</h3>
+<p>입력 이미지 크기가 <span class="math inline">\(8\times7\)</span>,
+template 크기가 <span class="math inline">\(3\times2\)</span>이다.
+stride 1, valid matching의 result map 크기는?</p>
+<ol type="1">
+<li><span class="math inline">\(6\times6\)</span></li>
+<li><span class="math inline">\(8\times7\)</span></li>
+<li><span class="math inline">\(5\times5\)</span></li>
+<li><span class="math inline">\(11\times9\)</span></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: result width는 <span class="math inline">\(8-3+1=6\)</span>,
+height는 <span class="math inline">\(7-2+1=6\)</span>이다.</p>
+<h3 id="문제-905.-convolution-계산">문제 905. Convolution 계산</h3>
+<p>patch <span
+class="math inline">\(P=\begin{bmatrix}1&amp;0\\2&amp;1\end{bmatrix}\)</span>,
+kernel <span
+class="math inline">\(K=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix}\)</span>일
+때 convolution 결과는?</p>
+<ol type="1">
+<li>9</li>
+<li>11</li>
+<li>7</li>
+<li>4</li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: convolution은 kernel을 180도 뒤집어 <span
+class="math inline">\(\begin{bmatrix}4&amp;3\\2&amp;1\end{bmatrix}\)</span>로
+만든 뒤 곱하므로 <span
+class="math inline">\(4\cdot1+3\cdot0+2\cdot2+1\cdot1=9\)</span>이다.</p>
+<h3 id="문제-906.-cross-correlation-계산">문제 906. Cross-correlation
+계산</h3>
+<p>patch <span
+class="math inline">\(P=\begin{bmatrix}1&amp;0\\2&amp;1\end{bmatrix}\)</span>,
+template <span
+class="math inline">\(T=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix}\)</span>일
+때 cross-correlation 값은?</p>
+<ol type="1">
+<li>9</li>
+<li>11</li>
+<li>5</li>
+<li>16</li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: cross-correlation은 template을 뒤집지 않으므로 <span
+class="math inline">\(1\cdot1+0\cdot2+2\cdot3+1\cdot4=11\)</span>이다.</p>
+<h3 id="문제-907.-integral-image-사각형-합">문제 907. Integral image
+사각형 합</h3>
+<p>Integral image에서 사각형 합을 <span
+class="math inline">\(D-B-C+A\)</span>로 구한다. <span
+class="math inline">\(D=30\)</span>, <span
+class="math inline">\(B=12\)</span>, <span
+class="math inline">\(C=10\)</span>, <span
+class="math inline">\(A=3\)</span>이면 사각형 내부 합은?</p>
+<ol type="1">
+<li>11</li>
+<li>25</li>
+<li>49</li>
+<li>19</li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: <span class="math inline">\(30-12-10+3=11\)</span>이다.</p>
+<h3 id="문제-908.-homogeneous-coordinate-정규화">문제 908. Homogeneous
+coordinate 정규화</h3>
+<p>동차좌표 <span class="math inline">\(p=(6,9,3)^T\)</span>를 Cartesian
+coordinate로 정규화하면?</p>
+<ol type="1">
+<li><span class="math inline">\((2,3)\)</span></li>
+<li><span class="math inline">\((6,9)\)</span></li>
+<li><span class="math inline">\((18,27)\)</span></li>
+<li><span class="math inline">\((3,2)\)</span></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: 마지막 좌표 <span class="math inline">\(w=3\)</span>으로 나누어
+<span class="math inline">\((6/3,9/3)=(2,3)\)</span>이다.</p>
+<h3 id="문제-909.-두-점을-지나는-직선">문제 909. 두 점을 지나는
+직선</h3>
+<p>동차좌표 점 <span class="math inline">\(p_1=(1,0,1)^T\)</span>, <span
+class="math inline">\(p_2=(0,1,1)^T\)</span>를 지나는 직선 <span
+class="math inline">\(l=p_1\times p_2\)</span>로 맞는 것은?</p>
+<ol type="1">
+<li><span class="math inline">\((-1,-1,1)^T\)</span></li>
+<li><span class="math inline">\((1,1,1)^T\)</span></li>
+<li><span class="math inline">\((0,0,1)^T\)</span></li>
+<li><span class="math inline">\((1,-1,0)^T\)</span></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: <span class="math inline">\(p_1\times
+p_2=(-1,-1,1)^T\)</span>이고, 이는 <span
+class="math inline">\(-x-y+1=0\)</span>, 즉 <span
+class="math inline">\(x+y=1\)</span>이다.</p>
+<h3 id="문제-910.-두-직선의-교점">문제 910. 두 직선의 교점</h3>
+<p>직선 <span class="math inline">\(l_1=(1,0,-2)^T\)</span>, <span
+class="math inline">\(l_2=(0,1,-3)^T\)</span>의 교점 <span
+class="math inline">\(p=l_1\times l_2\)</span>를 Cartesian coordinate로
+쓰면?</p>
+<ol type="1">
+<li><span class="math inline">\((2,3)\)</span></li>
+<li><span class="math inline">\((3,2)\)</span></li>
+<li><span class="math inline">\((-2,-3)\)</span></li>
+<li><span class="math inline">\((1,1)\)</span></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: <span class="math inline">\(l_1\)</span>은 <span
+class="math inline">\(x=2\)</span>, <span
+class="math inline">\(l_2\)</span>는 <span
+class="math inline">\(y=3\)</span>이므로 교점은 <span
+class="math inline">\((2,3)\)</span>이다.</p>
+<h3 id="문제-911.-ㄱㄴㄷ-짝짓기-opencv-함수">문제 911. ㄱㄴㄷ 짝짓기:
+OpenCV 함수</h3>
+<p>다음 설명을 함수와 올바르게 짝지은 것은?</p>
+<p>ㄱ. 무한 직선을 <span class="math inline">\((\rho,\theta)\)</span>
+형태로 반환한다.<br />
+ㄴ. 선분 endpoint <span
+class="math inline">\((x_1,y_1,x_2,y_2)\)</span>를 반환한다.<br />
+ㄷ. perspective transform matrix로 이미지를 warping한다.</p>
+<ol type="1">
+<li>ㄱ-<code>HoughLines</code>, ㄴ-<code>HoughLinesP</code>,
+ㄷ-<code>warpPerspective</code></li>
+<li>ㄱ-<code>matchTemplate</code>, ㄴ-<code>warpAffine</code>,
+ㄷ-<code>HoughLines</code></li>
+<li>ㄱ-<code>HoughCircles</code>, ㄴ-<code>SVD</code>,
+ㄷ-<code>minMaxLoc</code></li>
+<li>ㄱ-<code>warpPerspective</code>, ㄴ-<code>HoughLines</code>,
+ㄷ-<code>HoughLinesP</code></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: 표준 Hough는 <span
+class="math inline">\((\rho,\theta)\)</span>, probabilistic Hough는
+endpoint, homography warping은 <code>warpPerspective</code>를 쓴다.</p>
+<h3 id="문제-912.-ㄱㄴㄷ-짝짓기-보존-성질">문제 912. ㄱㄴㄷ 짝짓기: 보존
+성질</h3>
+<p>다음 변환과 보존 성질의 연결로 맞는 것은?</p>
+<p>ㄱ. Euclidean transform<br />
+ㄴ. Similarity transform<br />
+ㄷ. Affine transform</p>
+<ol type="1">
+<li>ㄱ-길이와 각도 보존, ㄴ-각도 보존과 scale 허용, ㄷ-평행성 보존</li>
+<li>ㄱ-평행성만 보존, ㄴ-직선성만 보존, ㄷ-길이 보존</li>
+<li>ㄱ-projective depth 보존, ㄴ-평행선 소실, ㄷ-원근 보존</li>
+<li>ㄱ-면적만 보존, ㄴ-색상 보존, ㄷ-거리 보존</li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: Euclidean은 rotation/translation이라 길이와 각도를 보존하고,
+similarity는 uniform scale을 허용하며, affine은 평행성을 보존한다.</p>
+<h3 id="문제-913.-ㄱㄴㄷ-짝짓기-homography-계산">문제 913. ㄱㄴㄷ
+짝짓기: Homography 계산</h3>
+<p>다음 설명과 개념의 연결로 맞는 것은?</p>
+<p>ㄱ. Homography는 scale ambiguity가 있어 <span
+class="math inline">\(H\)</span>와 <span
+class="math inline">\(kH\)</span>가 같은 mapping이다.<br />
+ㄴ. DLT에서 각 대응점은 독립 방정식 2개를 제공한다.<br />
+ㄷ. <span class="math inline">\(Ax=0\)</span> 형태에서 해는 최소
+singular value의 right singular vector로 구한다.</p>
+<ol type="1">
+<li>ㄱ-맞음, ㄴ-맞음, ㄷ-맞음</li>
+<li>ㄱ-틀림, ㄴ-맞음, ㄷ-맞음</li>
+<li>ㄱ-맞음, ㄴ-틀림, ㄷ-틀림</li>
+<li>ㄱ-틀림, ㄴ-틀림, ㄷ-맞음</li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: Homography는 동차 scale이 임의이고, 대응점 4쌍이면 최소 8개
+독립식으로 8자유도를 결정한다.</p>
+<h3 id="문제-914.-순서-나열-convolution-적용">문제 914. 순서 나열:
+convolution 적용</h3>
+<p>다음 절차를 convolution 계산 순서대로 나열하시오.</p>
+<p>ㄱ. patch와 뒤집힌 kernel의 대응 원소를 곱한다.<br />
+ㄴ. kernel을 180도 회전한다.<br />
+ㄷ. 곱한 값을 모두 더한다.<br />
+ㄹ. image에서 현재 위치의 patch를 잡는다.<br />
+ㅁ. 결과값을 output image의 현재 위치에 저장한다.</p>
+<p>모범답안: ㄹ → ㄴ → ㄱ → ㄷ → ㅁ</p>
+<p>풀이: convolution은 위치별 patch를 잡고 kernel을 뒤집은 뒤 곱-합을
+계산해 output에 저장한다.</p>
+<h3 id="문제-915.-순서-나열-hough-line-검출">문제 915. 순서 나열: Hough
+line 검출</h3>
+<p>다음 절차를 Hough line detection의 일반적인 순서대로 나열하시오.</p>
+<p>ㄱ. Edge image를 만든다.<br />
+ㄴ. Edge point마다 가능한 <span
+class="math inline">\((\rho,\theta)\)</span>에 vote한다.<br />
+ㄷ. Accumulator에서 peak를 찾는다.<br />
+ㄹ. Peak가 나타내는 line parameter를 image space의 선으로 그린다.<br />
+ㅁ. <span class="math inline">\(\rho,\theta\)</span> parameter space를
+discretize한다.</p>
+<p>모범답안: ㄱ → ㅁ → ㄴ → ㄷ → ㄹ</p>
+<p>풀이: edge를 얻은 뒤 parameter space를 만들고 vote, peak detection,
+line drawing 순서로 진행한다.</p>
+<h3 id="문제-916.-순서-나열-masked-template-matching">문제 916. 순서
+나열: masked template matching</h3>
+<p>Hidden picture처럼 배경이 matching score에 끼어들면 안 되는 경우의
+처리 순서로 적절한 것을 쓰시오.</p>
+<p>ㄱ. 회전 또는 scale이 다른 template 후보를 만든다.<br />
+ㄴ. template의 실제 물체 영역에 해당하는 mask를 만든다.<br />
+ㄷ. <code>matchTemplate</code>에 template과 mask를 함께 적용한다.<br />
+ㄹ. <code>minMaxLoc</code>으로 best location을 찾는다.<br />
+ㅁ. 배경 영역의 score 기여를 줄인 결과를 해석한다.</p>
+<p>모범답안: ㄱ → ㄴ → ㄷ → ㄹ → ㅁ</p>
+<p>풀이: template 변형 후보를 만들고 mask로 배경을 제외한 뒤 matching과
+위치 선택을 한다.</p>
 </body>
 </html>

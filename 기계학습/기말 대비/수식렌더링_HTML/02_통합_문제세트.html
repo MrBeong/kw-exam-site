@@ -172,65 +172,20 @@
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
-
-  <style id="kw-back-style">
-    .kw-back-button {
-      position: fixed;
-      top: max(10px, env(safe-area-inset-top));
-      left: 10px;
-      z-index: 10000;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      min-width: 42px;
-      height: 42px;
-      padding: 0 12px;
-      border: 1px solid rgba(148, 163, 184, .45);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .92);
-      color: #111827;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, .12);
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-      font: 800 14px/1 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", Segoe UI, sans-serif;
-      cursor: pointer;
-    }
-    .kw-back-button::before {
-      content: "‹";
-      font-size: 27px;
-      line-height: 0;
-      transform: translateY(-1px);
-    }
-    @media (max-width: 760px) {
-      .kw-back-button {
-        top: max(8px, env(safe-area-inset-top));
-        left: 8px;
-        width: 40px;
-        min-width: 40px;
-        height: 40px;
-        padding: 0;
-        font-size: 0;
-      }
-      .kw-back-button::before { font-size: 30px; }
-      .kw-back-button ~ header .wrap { padding-left: 56px !important; }
-      .kw-back-button ~ h1:first-of-type { padding-left: 48px; }
-    }
-  </style>
-  <script id="kw-back-script">
-    function kwGoBack() {
-      try {
-        if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
-          history.back();
-          return;
-        }
-      } catch (error) {}
-      location.href = new URL('../../../index.html', location.href).href;
-    }
+  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css" />
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
   </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
+    .back-to-index:hover{background:#eff6ff}
+    @media(max-width:640px){.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
+  </style>
 </head>
 <body>
-<button type="button" class="kw-back-button" onclick="kwGoBack()" aria-label="뒤로가기"><span>뒤로</span></button>
+<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+
 <header id="title-block-header">
 <h1 class="title">기계학습 02_통합_문제세트</h1>
 </header>
@@ -5246,5 +5201,242 @@ Repeat:
     If neighbor is worse, accept with probability depending on T
     Decrease T
 Output best solution</code></pre>
+<h2 id="실전형-보강-그래프-해석과-수도코드-답안">실전형 보강: 그래프
+해석과 수도코드 답안</h2>
+<h3 id="문제-901.-train-validation-loss-그래프-해석">문제 901.
+Train-validation loss 그래프 해석</h3>
+<figure>
+<img src="../assets/generated/ml_graph_overfit.svg"
+alt="train loss는 계속 감소하고 validation loss는 중간 이후 증가하는 그래프" />
+<figcaption aria-hidden="true">train loss는 계속 감소하고 validation
+loss는 중간 이후 증가하는 그래프</figcaption>
+</figure>
+<p>위 그래프가 가장 강하게 의미하는 것은?</p>
+<ol type="1">
+<li>underfitting이므로 모델 복잡도를 무조건 키워야 한다.</li>
+<li>validation loss가 증가하기 시작한 뒤 overfitting이 발생한다.</li>
+<li>train loss가 감소하므로 일반화 성능도 항상 좋아진다.</li>
+<li>learning rate가 0이라는 뜻이다.</li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: train loss는 계속 감소하지만 validation loss가 다시 증가하므로
+학습 데이터에 과적합되는 구간이다.</p>
+<h3 id="문제-902.-pdp-그래프-개형-해석">문제 902. PDP 그래프 개형
+해석</h3>
+<figure>
+<img src="../assets/generated/ml_graph_pdp_flat_then_drop.svg"
+alt="feature가 증가할 때 평균 예측이 증가하다가 포화 후 감소하는 PDP 그래프" />
+<figcaption aria-hidden="true">feature가 증가할 때 평균 예측이
+증가하다가 포화 후 감소하는 PDP 그래프</figcaption>
+</figure>
+<p>위 PDP 그래프에 대한 해석으로 가장 적절한 것은?</p>
+<ol type="1">
+<li>관심 feature는 어떤 구간에서도 예측값에 영향을 주지 않는다.</li>
+<li>관심 feature는 낮은 구간에서는 예측값을 올리지만, 높은 구간에서는
+효과가 약해지거나 감소한다.</li>
+<li>PDP는 개별 샘플별 곡선을 직접 보여주므로 모든 heterogeneity를
+설명한다.</li>
+<li>PDP는 black-box model에는 적용할 수 없다.</li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: PDP는 feature 변화에 따른 평균 예측 효과를 보여주며, 이
+그래프는 증가 후 포화/감소 패턴이다.</p>
+<h3 id="문제-903.-ice-곡선-교차-해석">문제 903. ICE 곡선 교차 해석</h3>
+<figure>
+<img src="../assets/generated/ml_graph_ice_heterogeneous.svg"
+alt="여러 ICE curve가 서로 교차하는 그래프" />
+<figcaption aria-hidden="true">여러 ICE curve가 서로 교차하는
+그래프</figcaption>
+</figure>
+<p>ICE curve들이 서로 교차하는 그래프가 의미하는 것으로 가장 적절한
+것은?</p>
+<ol type="1">
+<li>모든 관측치에서 feature 효과가 완전히 동일하다.</li>
+<li>관측치마다 feature 효과 방향이나 크기가 다를 수 있다.</li>
+<li>평균 PDP만으로 모든 개별 효과를 완벽하게 설명할 수 있다.</li>
+<li>해당 feature는 반드시 제거해야 한다.</li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: ICE는 instance별 prediction curve이므로 곡선이 교차하면
+sample별 heterogeneous effect가 있다는 뜻이다.</p>
+<h3 id="문제-904.-왼쪽-꼬리-분포-해석">문제 904. 왼쪽 꼬리 분포
+해석</h3>
+<figure>
+<img src="../assets/generated/ml_graph_left_skew.svg"
+alt="왼쪽 꼬리가 긴 left-skewed distribution" />
+<figcaption aria-hidden="true">왼쪽 꼬리가 긴 left-skewed
+distribution</figcaption>
+</figure>
+<p>위와 같이 왼쪽 꼬리가 긴 분포에 대한 설명으로 맞는 것은?</p>
+<ol type="1">
+<li>mean이 median과 mode보다 오른쪽으로 끌린다.</li>
+<li>대부분의 데이터는 오른쪽 높은 값 근처에 몰려 있고 mean은 왼쪽 꼬리
+쪽으로 끌린다.</li>
+<li>평균, 중앙값, 최빈값은 항상 같다.</li>
+<li>오른쪽 꼬리가 길기 때문에 right-skewed distribution이다.</li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: left-skewed 분포는 왼쪽 꼬리가 평균을 낮은 값 쪽으로
+끌어당기며, 보통 mean &lt; median &lt; mode이다.</p>
+<h3 id="문제-905.-pr-curve와-threshold">문제 905. PR curve와
+threshold</h3>
+<figure>
+<img src="../assets/generated/ml_graph_pr_threshold.svg"
+alt="precision-recall curve에서 high threshold와 low threshold 지점" />
+<figcaption aria-hidden="true">precision-recall curve에서 high
+threshold와 low threshold 지점</figcaption>
+</figure>
+<p>분류 threshold를 낮출 때 일반적으로 나타나는 변화로 가장 적절한
+것은?</p>
+<ol type="1">
+<li>recall은 증가하고 precision은 낮아질 수 있다.</li>
+<li>recall은 항상 감소하고 precision은 항상 증가한다.</li>
+<li>TP, FP가 모두 0이 된다.</li>
+<li>ROC curve의 x축이 precision으로 바뀐다.</li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: threshold를 낮추면 positive로 예측하는 샘플이 늘어 recall은
+올라가지만 FP 증가로 precision은 낮아질 수 있다.</p>
+<h3 id="문제-906.-shap-summary-그래프-해석">문제 906. SHAP summary
+그래프 해석</h3>
+<figure>
+<img src="../assets/generated/ml_graph_shap_beeswarm.svg"
+alt="SHAP beeswarm 형태의 feature별 영향 그래프" />
+<figcaption aria-hidden="true">SHAP beeswarm 형태의 feature별 영향
+그래프</figcaption>
+</figure>
+<p>위 SHAP summary 형태의 그래프에서 오른쪽 SHAP value에 점들이 몰린다는
+뜻은?</p>
+<ol type="1">
+<li>해당 feature가 prediction을 낮추는 방향으로 기여한다.</li>
+<li>해당 feature가 prediction을 높이는 방향으로 기여한다.</li>
+<li>해당 feature는 모델에 전혀 쓰이지 않았다.</li>
+<li>해당 feature는 반드시 categorical feature이다.</li>
+</ol>
+<p>정답: 2</p>
+<p>풀이: SHAP value가 양수이면 기준값 대비 모델 예측을 증가시키는
+방향으로 기여한다.</p>
+<h3 id="문제-907.-mle-표기-선택">문제 907. MLE 표기 선택</h3>
+<p>MLE에서 데이터 <span class="math inline">\(X\)</span>가 주어졌을 때
+모수 <span class="math inline">\(\theta\)</span>에 대한 likelihood
+표기로 맞는 것은?</p>
+<ol type="1">
+<li><span class="math inline">\(L(\theta\mid
+X)=P(X\mid\theta)\)</span></li>
+<li><span class="math inline">\(P(\theta\mid
+X)=P(X\mid\theta)P(\theta)\)</span></li>
+<li><span class="math inline">\(P(X)=P(\theta)\)</span></li>
+<li><span class="math inline">\(L(X\mid\theta)=P(\theta\mid
+X)\)</span></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: MLE에서는 <span class="math inline">\(\theta\)</span>를
+확률변수가 아니라 고정된 후보 모수로 두고, 그 모수에서 데이터가 나올
+likelihood를 최대화한다.</p>
+<h3 id="문제-908.-map-식-선택">문제 908. MAP 식 선택</h3>
+<p>MAP 추정에서 evidence를 제외했을 때 최대화하는 값으로 맞는 것은?</p>
+<ol type="1">
+<li><span class="math inline">\(P(\theta\mid X)\propto
+P(X\mid\theta)P(\theta)\)</span></li>
+<li><span class="math inline">\(P(\theta\mid X)=P(X)\)</span></li>
+<li><span class="math inline">\(L(\theta\mid X)=P(\theta)\)</span></li>
+<li><span class="math inline">\(P(X\mid\theta)\propto P(X)\)</span></li>
+</ol>
+<p>정답: 1</p>
+<p>풀이: MAP은 likelihood에 prior를 곱한 posterior를 최대화하고, <span
+class="math inline">\(P(X)\)</span>는 <span
+class="math inline">\(\theta\)</span>와 무관해 비례식으로 처리한다.</p>
+<h3 id="문제-909.-pdp-수도코드-작성">문제 909. PDP 수도코드 작성</h3>
+<p>관심 feature <span class="math inline">\(x_j\)</span>에 대한 PDP를
+계산하는 수도코드를 작성하시오.</p>
+<p>모범답안:</p>
+<pre class="text"><code>Input: trained model f, data X, feature j, grid values G
+For each value g in G:
+    Copy X to X_temp
+    Set every row&#39;s feature j in X_temp to g
+    Predict f(X_temp)
+    Average predictions over all rows
+Plot grid values G versus averaged predictions</code></pre>
+<p>풀이: PDP는 관심 feature만 grid 값으로 고정하고 나머지 feature 분포는
+데이터 전체로 평균화한다.</p>
+<h3 id="문제-910.-ice-수도코드-작성">문제 910. ICE 수도코드 작성</h3>
+<p>관심 feature <span class="math inline">\(x_j\)</span>에 대한 ICE
+curve를 계산하는 수도코드를 작성하시오.</p>
+<p>모범답안:</p>
+<pre class="text"><code>Input: trained model f, data X, feature j, grid values G
+For each sample i:
+    For each value g in G:
+        Copy sample x_i to x_temp
+        Set feature j of x_temp to g
+        Store prediction f(x_temp)
+    Draw one curve for sample i over G</code></pre>
+<p>풀이: ICE는 평균을 먼저 내지 않고 각 sample마다 feature 변화에 따른
+prediction curve를 따로 그린다.</p>
+<h3 id="문제-911.-permutation-feature-importance-수도코드-작성">문제
+911. Permutation feature importance 수도코드 작성</h3>
+<p>Permutation feature importance를 계산하는 수도코드를 작성하시오.</p>
+<p>모범답안:</p>
+<pre class="text"><code>Input: trained model f, validation data X, y, metric M
+Compute baseline score M(y, f(X))
+For each feature j:
+    Copy X to X_perm
+    Randomly shuffle column j of X_perm
+    Compute permuted score M(y, f(X_perm))
+    Importance_j = baseline score - permuted score
+Rank features by Importance_j</code></pre>
+<p>풀이: 중요한 feature를 섞으면 모델 성능이 크게 떨어지므로 baseline
+대비 성능 감소량을 중요도로 본다.</p>
+<h3 id="문제-912.-adaboost-수도코드-작성">문제 912. AdaBoost 수도코드
+작성</h3>
+<p>Binary classification용 AdaBoost 학습 수도코드를 작성하시오.</p>
+<p>모범답안:</p>
+<pre class="text"><code>Initialize sample weights uniformly
+For t = 1 to T:
+    Train weak learner using current sample weights
+    Compute weighted error
+    Compute learner weight alpha_t from error
+    Increase weights of misclassified samples
+    Decrease weights of correctly classified samples
+    Normalize sample weights
+Final prediction = weighted vote of weak learners</code></pre>
+<p>풀이: AdaBoost는 틀린 샘플의 weight를 키워 다음 weak learner가 더
+집중하게 만드는 순차 앙상블이다.</p>
+<h3 id="문제-913.-gbm-수도코드-작성">문제 913. GBM 수도코드 작성</h3>
+<p>Gradient Boosting Machine의 회귀 학습 수도코드를 작성하시오.</p>
+<p>모범답안:</p>
+<pre class="text"><code>Initialize model with constant prediction
+For t = 1 to T:
+    Compute residuals or negative gradients of loss
+    Train a weak learner to predict those residuals
+    Add learning_rate × weak learner to current model
+Output additive ensemble model</code></pre>
+<p>풀이: GBM은 이전 모델이 남긴 residual 또는 loss의 negative gradient를
+새 weak learner로 근사해 더한다.</p>
+<h3 id="문제-914.-morris-sensitivity-수도코드-작성">문제 914. Morris
+sensitivity 수도코드 작성</h3>
+<p>Morris sensitivity analysis의 핵심 수도코드를 작성하시오.</p>
+<p>모범답안:</p>
+<pre class="text"><code>Input: model f, input ranges, step delta
+For each sampled base point x:
+    For each feature j:
+        Change only feature j by delta
+        Keep all other features fixed
+        Compute elementary effect = change in f / delta
+For each feature:
+    Compute mean of elementary effects
+    Compute standard deviation of elementary effects</code></pre>
+<p>풀이: Morris는 한 번에 하나의 feature만 변화시켜 평균 영향과
+비선형/상호작용성에 따른 흔들림을 본다.</p>
+<h3 id="문제-915.-random-forest-수도코드-작성">문제 915. Random forest
+수도코드 작성</h3>
+<p>Random forest 학습 수도코드를 작성하시오.</p>
+<p>모범답안:</p>
+<pre class="text"><code>For b = 1 to B:
+    Draw bootstrap sample from training data
+    Train a decision tree
+    At each split, consider only a random subset of features
+Aggregate trees by majority vote or average</code></pre>
+<p>풀이: Random forest는 row bootstrap과 feature subsampling으로 tree
+다양성을 만들고 평균/투표로 variance를 줄인다.</p>
 </body>
 </html>
