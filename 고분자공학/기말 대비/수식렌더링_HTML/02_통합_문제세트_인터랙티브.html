@@ -332,6 +332,7 @@ const positionKeyCandidates = uniqueList([
   'examProblemPosition:' + decodedPathname,
   'examProblemPosition:' + decodedPathname.normalize('NFD')
 ]);
+const resetKey = `${storageKey}:resetAt`;
 function simpleHash(text) {
   let h = 2166136261;
   for (let i = 0; i < text.length; i += 1) {
@@ -440,12 +441,13 @@ async function upsertCloudPayload(cred, payload) {
 }
 function collectPositionEntries() {
   const positions = {};
+  const localResetAt = Number(localStorage.getItem(resetKey) || 0);
   for (let i = 0; i < localStorage.length; i += 1) {
     const key = localStorage.key(i);
     if (!key || !(key === positionKey || key.startsWith(`${positionKey}:filter:`))) continue;
     try {
       const value = JSON.parse(localStorage.getItem(key) || 'null');
-      if (value?.id) positions[key] = value;
+      if (value?.id && Number(value.ts || 0) > localResetAt) positions[key] = value;
     } catch (_) {}
   }
   return positions;
@@ -463,6 +465,7 @@ function mergeSubjectPayload(subjectPayload) {
   let changed = false;
   const remoteResetAt = Number(subjectPayload.resetAt || 0);
   const localResetAt = Number(localStorage.getItem(resetKey) || 0);
+  let effectiveResetAt = Math.max(remoteResetAt, localResetAt);
   if (remoteResetAt > localResetAt) {
     state.clear();
     for (const key of storageKeyCandidates) localStorage.removeItem(key);
@@ -474,6 +477,7 @@ function mergeSubjectPayload(subjectPayload) {
   for (const [qid, raw] of Object.entries(remoteState)) {
     const value = normalizeStateValue(raw);
     if (!value) continue;
+    if (Number(value.ts || 0) <= effectiveResetAt) continue;
     const prev = getEntry(qid);
     if (!prev || Number(value.ts || 0) >= Number(prev.ts || 0)) {
       state.set(qid, value);
@@ -483,6 +487,7 @@ function mergeSubjectPayload(subjectPayload) {
   const positions = subjectPayload.positions || {};
   for (const [key, value] of Object.entries(positions)) {
     if (!key.startsWith(positionKey) || !value?.id) continue;
+    if (Number(value.ts || 0) <= effectiveResetAt) continue;
     try {
       const prev = JSON.parse(localStorage.getItem(key) || 'null');
       if (!prev || Number(value.ts || 0) >= Number(prev.ts || 0)) {
@@ -522,12 +527,16 @@ async function pushCloudState({ silent = false, replaceSubject = false } = {}) {
     if (!silent) setCloudStatus('먼저 동기화 연결을 해주세요.', 'bad');
     return false;
   }
+  const pushStartedAt = Date.now();
   if (!silent) setCloudStatus('클라우드에 저장하는 중...');
   let payload;
   try {
     payload = await fetchCloudPayload(cred);
   } catch (_) {
     payload = { version:1, subjects:{} };
+  }
+  if (!replaceSubject && Number(localStorage.getItem(resetKey) || 0) > pushStartedAt) {
+    return false;
   }
   payload.version = 1;
   payload.subjects = payload.subjects || {};
@@ -555,12 +564,14 @@ function normalizeStateValue(v) {
 }
 function loadState() {
   const merged = new Map();
+  const localResetAt = Number(localStorage.getItem(resetKey) || 0);
   for (const key of storageKeyCandidates) {
     try {
       const parsed = JSON.parse(localStorage.getItem(key) || '{}');
       for (const [qid, raw] of Object.entries(parsed)) {
         const value = normalizeStateValue(raw);
         if (!value) continue;
+        if (Number(value.ts || 0) <= localResetAt) continue;
         const prev = normalizeStateValue(merged.get(qid));
         if (!prev || Number(value.ts || 0) >= Number(prev.ts || 0)) merged.set(qid, value);
       }
@@ -569,7 +580,6 @@ function loadState() {
   return merged;
 }
 const state = loadState();
-const resetKey = `${storageKey}:resetAt`;
 const list = document.getElementById('list');
 const solvedCountEl = document.getElementById('solvedCount');
 const scoreEl = document.getElementById('score');
