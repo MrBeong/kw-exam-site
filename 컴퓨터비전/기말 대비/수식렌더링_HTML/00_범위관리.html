@@ -25,66 +25,22 @@
   </style>
   <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css" />
 
-  <style id="kw-back-style">
-    .kw-back-button {
-      position: fixed;
-      top: max(10px, env(safe-area-inset-top));
-      left: 10px;
-      z-index: 10000;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      min-width: 42px;
-      height: 42px;
-      padding: 0 12px;
-      border: 1px solid rgba(148, 163, 184, .45);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .92);
-      color: #111827;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, .12);
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-      font: 800 14px/1 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", Segoe UI, sans-serif;
-      cursor: pointer;
-    }
-    .kw-back-button::before {
-      content: "‹";
-      font-size: 27px;
-      line-height: 0;
-      transform: translateY(-1px);
-    }
-    @media (max-width: 760px) {
-      .kw-back-button {
-        top: max(8px, env(safe-area-inset-top));
-        left: 8px;
-        width: 40px;
-        min-width: 40px;
-        height: 40px;
-        padding: 0;
-        font-size: 0;
-      }
-      .kw-back-button::before { font-size: 30px; }
-      .kw-back-button ~ header .wrap { padding-left: 56px !important; }
-      .kw-back-button ~ h1:first-of-type { padding-left: 48px; }
-    }
-  </style>
-  <script id="kw-back-script">
-    function kwGoBack() {
-      try {
-        if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
-          history.back();
-          return;
-        }
-      } catch (error) {}
-      location.href = new URL('../../../index.html', location.href).href;
-    }
-  </script>
+<style>
+.back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
+.back-to-index:hover{background:#eff6ff}
+@media(max-width:640px){.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
+</style>
 </head>
 <body>
-<button type="button" class="kw-back-button" onclick="kwGoBack()" aria-label="뒤로가기"><span>뒤로</span></button>
+<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+
+<header id="title-block-header">
+<h1 class="title">00_범위관리</h1>
+</header>
 <h1 id="시험범위-관리">시험범위 관리</h1>
 <p>예상문제는 <code>확정 포함 범위</code>만 기준으로 만든다.</p>
+<p>2026-06-08 공식 공지 기준: 기말 범위는 중간고사 시험범위 이후, 즉
+<strong>허프 변환 2부터 배운데까지</strong>다.</p>
 <h2 id="확정-포함-범위">확정 포함 범위</h2>
 <table>
 <colgroup>
@@ -101,13 +57,25 @@
 </thead>
 <tbody>
 <tr>
-<td><code>[C++]_14-template-matching.pdf</code></td>
-<td>사용자가 이 자료부터 기말 범위 시작이라고 명시</td>
+<td><code>[C++]_13-hough_transforms-02_hough_transforms.pdf</code></td>
+<td>2026-06-08 기말 공지: 시험범위가 <code>허프 변환 2부터</code>라고
+확정</td>
 <td>확정 포함. 여기서부터 기말 범위 시작</td>
 </tr>
 <tr>
+<td><code>Computer-Vision-Code/project/11_hough_transform</code></td>
+<td>Hough Transform 2 PDF와 직접 대응하는 수업 코드</td>
+<td>확정 포함. <code>HoughLines</code>, <code>HoughLinesP</code>,
+<code>HoughCircles</code>, RANSAC line 코드 빈칸형 반영</td>
+</tr>
+<tr>
+<td><code>[C++]_14-template-matching.pdf</code></td>
+<td>허프 변환 2 이후 강의자료</td>
+<td>확정 포함</td>
+</tr>
+<tr>
 <td><code>[C++]_15-geometric-transformations-01_mathematical_background.pdf</code></td>
-<td>14장 이후 강의자료</td>
+<td>허프 변환 2 이후 강의자료</td>
 <td>확정 포함</td>
 </tr>
 <tr>
@@ -266,16 +234,14 @@ system, homography 추정, <code>findHomography</code>,
 </thead>
 <tbody>
 <tr>
-<td><code>[C++]_13-hough_transforms-01_mathematical_background.pdf</code>,
-<code>[C++]_13-hough_transforms-02_hough_transforms.pdf</code>,
-<code>Computer-Vision-Code/project/11_hough_transform</code></td>
-<td>사용자가 2026-06-03에 기말 범위는
-<code>14-template-matching</code>부터 끝까지라고 재확정</td>
-<td>기말 예상문제와 핵심노트에서 제외</td>
+<td><code>[C++]_13-hough_transforms-01_mathematical_background.pdf</code></td>
+<td>공식 공지는 <code>허프 변환 2부터</code>라고 명시</td>
+<td>별도 단원 문제는 제외. 단, 허프 변환 2에서 쓰는 직선 방정식과
+점-직선 거리 공식은 필요한 선행 공식으로만 반영</td>
 </tr>
 <tr>
 <td>범위 밖 이전 단원</td>
-<td>14장 이전 단원 중 위에서 따로 확정 포함하지 않은 자료</td>
+<td>허프 변환 2 이전 단원 중 위에서 따로 확정 포함하지 않은 자료</td>
 <td>기말 예상문제에서 제외</td>
 </tr>
 <tr>

@@ -93,70 +93,102 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
 
-  <style id="kw-back-style">
-    .kw-back-button {
-      position: fixed;
-      top: max(10px, env(safe-area-inset-top));
-      left: 10px;
-      z-index: 10000;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      min-width: 42px;
-      height: 42px;
-      padding: 0 12px;
-      border: 1px solid rgba(148, 163, 184, .45);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .92);
-      color: #111827;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, .12);
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-      font: 800 14px/1 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", Segoe UI, sans-serif;
-      cursor: pointer;
-    }
-    .kw-back-button::before {
-      content: "‹";
-      font-size: 27px;
-      line-height: 0;
-      transform: translateY(-1px);
-    }
-    @media (max-width: 760px) {
-      .kw-back-button {
-        top: max(8px, env(safe-area-inset-top));
-        left: 8px;
-        width: 40px;
-        min-width: 40px;
-        height: 40px;
-        padding: 0;
-        font-size: 0;
-      }
-      .kw-back-button::before { font-size: 30px; }
-      .kw-back-button ~ header .wrap { padding-left: 56px !important; }
-      .kw-back-button ~ h1:first-of-type { padding-left: 48px; }
-    }
-  </style>
-  <script id="kw-back-script">
-    function kwGoBack() {
-      try {
-        if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
-          history.back();
-          return;
-        }
-      } catch (error) {}
-      location.href = new URL('../../../index.html', location.href).href;
-    }
-  </script>
+<style>
+.back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
+.back-to-index:hover{background:#eff6ff}
+@media(max-width:640px){.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
+</style>
 </head>
 <body>
-<button type="button" class="kw-back-button" onclick="kwGoBack()" aria-label="뒤로가기"><span>뒤로</span></button>
+<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+
+<header id="title-block-header">
+<h1 class="title">03_암기형_예상문답_종합본</h1>
+</header>
 <h1 id="컴퓨터비전-암기형-예상문답-종합본">컴퓨터비전 암기형 예상문답
 종합본</h1>
 <p>한 줄 요약: 컴퓨터비전 기말은 함수 이름, 인자, matrix 크기, 좌표계
 의미, 코드 빈칸을 빠르게 고르는 시험이므로
 <code>무엇을 넣어야 하는가</code>와 <code>왜 그 함수인가</code>를 같이
 외운다.</p>
+<h2 id="공식-범위-시작-hough-transform-2">0. 공식 범위 시작: Hough
+Transform 2</h2>
+<p>Q. Line Hough Transform에서 직선을 표현하는 극좌표식은?<br />
+A.</p>
+<p><span class="math display">\[
+\rho=x\cos\theta+y\sin\theta
+\]</span></p>
+<p>Q. <span class="math inline">\(y=ax+b\)</span> 대신 <span
+class="math inline">\((\rho,\theta)\)</span> 표현을 쓰는 이유는?<br />
+A. <span class="math inline">\(y=ax+b\)</span>는 수직선 <span
+class="math inline">\(x=c\)</span>에서 기울기 <span
+class="math inline">\(a\)</span>가 무한대가 되지만, <span
+class="math inline">\((\rho,\theta)\)</span>는 수직선도 유한한
+parameter로 표현할 수 있기 때문이다.</p>
+<p>Q. Hough Transform에서 accumulator는 무엇을 저장하는가?<br />
+A. Parameter space의 각 cell이 edge point들로부터 받은 vote 수를
+저장한다.</p>
+<p>Q. Image space의 한 edge point는 Hough parameter space에서 무엇이
+되는가?<br />
+A. 가능한 모든 직선 parameter의 curve가 된다. 여러 edge point의 curve가
+같은 cell에서 만나면 그 cell이 직선 후보가 된다.</p>
+<p>Q. Hough line detection의 기본 순서는?<br />
+A. Edge detection → <span class="math inline">\((\rho,\theta)\)</span>
+accumulator 생성 → edge point별 voting → threshold 이상 peak
+선택이다.</p>
+<p>Q. <code>HoughLines</code>의 출력 형태는?<br />
+A. <code>vector&lt;Vec2f&gt;</code>이며 각 line은 보통 <span
+class="math inline">\((\rho,\theta)\)</span>로 표현된다.</p>
+<p>Q. <code>HoughLinesP</code>의 출력 형태는?<br />
+A. <code>vector&lt;Vec4i&gt;</code>이며 각 line segment는 <span
+class="math inline">\((x_1,y_1,x_2,y_2)\)</span> endpoint로
+표현된다.</p>
+<p>Q. <code>HoughLines</code>와 <code>HoughLinesP</code>의 가장 큰
+차이는?<br />
+A. <code>HoughLines</code>는 무한 직선의 <span
+class="math inline">\((\rho,\theta)\)</span> parameter를 반환하고,
+<code>HoughLinesP</code>는 실제 검출된 선분의 양 끝점 좌표를
+반환한다.</p>
+<p>Q. <code>HoughLinesP</code>의 <code>minLineLength</code>와
+<code>maxLineGap</code> 의미는?<br />
+A. <code>minLineLength</code>는 너무 짧은 선분을 버리는 최소 길이이고,
+<code>maxLineGap</code>은 같은 선으로 연결할 수 있는 edge point 사이
+최대 간격이다.</p>
+<p>Q. Circle Hough Transform의 parameter space는?<br />
+A. 중심과 반지름을 포함한 <span
+class="math inline">\((x_0,y_0,r)\)</span>의 3차원 parameter
+space다.</p>
+<p>Q. <code>HoughCircles</code>의 출력 형태는?<br />
+A. 보통 <code>vector&lt;Vec3f&gt;</code>이고 각 circle은 <span
+class="math inline">\((x,y,radius)\)</span>로 표현된다.</p>
+<p>Q. RANSAC의 full name은?<br />
+A. <code>RANdom SAmple Consensus</code>다.</p>
+<p>Q. RANSAC line fitting에서 minimal sample은 몇 점인가?<br />
+A. 직선은 두 점으로 결정되므로 2점이다.</p>
+<p>Q. RANSAC의 핵심 절차는?<br />
+A. 최소 sample 랜덤 선택 → model fitting → 모든 point를 inlier/outlier로
+분류 → inlier가 많은 model 선택 → 반복이다.</p>
+<p>Q. 점 <span class="math inline">\((x_0,y_0)\)</span>와 직선 <span
+class="math inline">\(ax+by+c=0\)</span> 사이의 거리 공식은?<br />
+A.</p>
+<p><span class="math display">\[
+d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
+\]</span></p>
+<p>Q. 수업 코드 <code>Normalized_Line</code>에서 distance 계산 시 분모를
+생략할 수 있는 이유는?<br />
+A. <span class="math inline">\(a,b,c\)</span>를 <span
+class="math inline">\(\sqrt{a^2+b^2}\)</span>로 normalize해 두었기
+때문에 분모가 1이 된다.</p>
+<p>Q. Hough Transform과 RANSAC을 비교하시오.<br />
+A. Hough는 parameter space에서 voting하는 deterministic 방식이고,
+RANSAC은 image space에서 minimal point를 random sample해 inlier 수로
+model을 고르는 non-deterministic 방식이다.</p>
+<p>Q. Hough Transform의 대표 단점은?<br />
+A. Parameter space accumulator가 필요해 memory가 커질 수 있고,
+discretization error가 생길 수 있다.</p>
+<p>Q. RANSAC의 대표 단점은?<br />
+A. 반복 sampling이 필요하고 random 선택에 따라 결과가 달라질 수
+있다.</p>
 <h2 id="template-matching">1. Template Matching</h2>
 <p>Q. Template matching은 무엇을 찾는 방법인가?<br />
 A. Source image 안에서 template image와 가장 비슷한 위치를 sliding
@@ -466,14 +498,18 @@ class="math inline">\(\tilde{x}_1\times\tilde{x}_2\)</span></td>
 <span class="math inline">\(w\times h\)</span>이면 <span
 class="math inline">\((W-w+1)\times(H-h+1)\)</span>이다.</p>
 <p>Q. Raw SQDIFF score 식은?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 \mathrm{SQDIFF}=\sum_{x,y}(I(x,y)-T(x,y))^2
 \]</span></p>
 <p>Q. SQDIFF 계열에서 best location은?</p>
 <p>A. score가 작을수록 잘 맞으므로 <code>minLoc</code>이다.</p>
 <p>Q. Raw CCORR score 식은?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 \mathrm{CCORR}=\sum_{x,y}I(x,y)T(x,y)
 \]</span></p>
@@ -484,13 +520,17 @@ filter 계산은?</p>
 <h2 id="quadratic-form-psd-gram-matrix-singular-value">10. Quadratic
 Form, PSD, Gram Matrix, Singular Value</h2>
 <p>Q. Quadratic form의 기본 형태는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 x^{\top}Ax
 \]</span></p>
 <p>Q. <span class="math inline">\(ax^{2}+by^{2}+cxy\)</span>를 matrix
 quadratic form으로 쓰면?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 ax^{2}+by^{2}+cxy
 =
@@ -513,7 +553,9 @@ class="math inline">\(\frac{c}{2}\)</span>, <span
 class="math inline">\(\frac{c}{2}\)</span>로 나누어 들어간다.</p>
 <p>Q. Quadratic form의 가운데 matrix를 symmetric matrix로 생각해도 되는
 이유는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 x^{\top}Ax
 =
@@ -521,13 +563,17 @@ x^{\top}\left(\frac{A+A^{\top}}{2}\right)x
 \]</span></p>
 <p>이므로 대칭 부분만 quadratic form에 기여한다.</p>
 <p>Q. Positive definite의 정의는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 x^{\top}Ax&gt;0
 \qquad (x\neq0)
 \]</span></p>
 <p>Q. Positive semidefinite의 정의는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 x^{\top}Ax\ge0
 \qquad (x\neq0)
@@ -539,7 +585,9 @@ class="math inline">\(x^{\top}Ax\ge0\)</span> 조건이다.</p>
 <p>A. 모두 0 이상이다.</p>
 <p>Q. Positive semidefinite matrix의 eigenvalue가 0 이상임을 보이는 한
 줄 증명은?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 Ax=\lambda x
 \Rightarrow
@@ -551,14 +599,18 @@ class="math inline">\(\lambda\ge0\)</span>이다.</p>
 <p>Q. 임의의 <span class="math inline">\(A\in\mathbb{R}^{m\times
 n}\)</span>에 대해 <span class="math inline">\(A^{\top}A\)</span>의
 크기는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 A^{\top}A\in\mathbb{R}^{n\times n}
 \]</span></p>
 <p>Q. 임의의 <span class="math inline">\(A\in\mathbb{R}^{m\times
 n}\)</span>에 대해 <span class="math inline">\(AA^{\top}\)</span>의
 크기는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 AA^{\top}\in\mathbb{R}^{m\times m}
 \]</span></p>
@@ -568,14 +620,18 @@ semidefinite이다.</p>
 <p>A. O.</p>
 <p>Q. <span class="math inline">\(A^{\top}A\)</span>가 positive
 semidefinite인 이유는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 x^{\top}A^{\top}Ax
 =(Ax)^{\top}(Ax)
 =\lVert Ax\rVert^{2}\ge0
 \]</span></p>
 <p>Q. Rank 관계로 외울 식은?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 \operatorname{rank}(A)
 =
@@ -589,19 +645,25 @@ Gram matrix의 양수 eigenvalue는 몇 개인가?</p>
 0이다.</p>
 <p>Q. <span class="math inline">\(A^{\top}A v_i=\lambda_i
 v_i\)</span>에서 singular value는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 \sigma_i=\sqrt{\lambda_i}
 \]</span></p>
 <p>Q. <span class="math inline">\(A^{\top}A v_i=\lambda_i v_i\)</span>일
 때 left singular vector <span class="math inline">\(u_i\)</span>는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 u_i=\frac{Av_i}{\sqrt{\lambda_i}}
 \qquad (\lambda_i&gt;0)
 \]</span></p>
 <p>Q. Singular value/vector의 핵심 관계식은?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 Av_i=\sigma_i u_i
 \]</span></p>
@@ -631,20 +693,26 @@ class="math inline">\(AA^{\top}\)</span>의 양수 eigenvalue는 서로
 <h2 id="최종-온라인-강의-svd-homography-계산">11. 최종 온라인 강의: SVD
 / Homography 계산</h2>
 <p>Q. SVD의 기본 분해식은?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 A=U\Sigma V^{\top}
 \]</span></p>
 <p>Q. <span class="math inline">\(A\in\mathbb{R}^{m\times n}\)</span>일
 때 full SVD의 matrix 크기는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 U\in\mathbb{R}^{m\times m},\quad
 \Sigma\in\mathbb{R}^{m\times n},\quad
 V\in\mathbb{R}^{n\times n}
 \]</span></p>
 <p>Q. Singular value와 Gram matrix eigenvalue의 관계는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 \sigma_i=\sqrt{\lambda_i}
 \]</span></p>
@@ -658,14 +726,18 @@ eigenvector다.</p>
 <p>A. <span class="math inline">\(AA^{\top}\)</span>의
 eigenvector다.</p>
 <p>Q. Singular vector의 핵심 관계식은?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 Av_i=\sigma_i u_i
 \]</span></p>
 <p>Q. <span class="math inline">\(\lambda_i&gt;0\)</span>일 때 <span
 class="math inline">\(u_i\)</span>를 <span
 class="math inline">\(v_i\)</span>로부터 구하는 식은?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 u_i=\frac{Av_i}{\sqrt{\lambda_i}}
 \]</span></p>
@@ -688,7 +760,9 @@ V_r^{\top}\in\mathbb{R}^{r\times n}
 <p>A. Singular value가 0이거나 가장 작은 값에 대응하는 right singular
 vector로 찾는다.</p>
 <p>Q. Homography의 점 대응식은?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <p><span class="math display">\[
 \tilde{x}&#39;\sim H\tilde{x}
 \]</span></p>
@@ -721,7 +795,9 @@ class="math inline">\(H\)</span>를 계산하고,
 <code>warpPerspective</code>는 <span class="math inline">\(H\)</span>를
 이미지에 적용한다.</p>
 <p>Q. 문서 스캔 또는 명함 펴기 코드 순서는?</p>
-<p>A.</p>
+<ol type="A">
+<li></li>
+</ol>
 <div class="sourceCode" id="cb5"><pre
 class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>Mat H <span class="op">=</span> cv<span class="op">::</span>findHomography<span class="op">(</span>srcPts<span class="op">,</span> dstPts<span class="op">);</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>warpPerspective<span class="op">(</span>src<span class="op">,</span> dst<span class="op">,</span> H<span class="op">,</span> cv<span class="op">::</span>Size<span class="op">(</span>width<span class="op">,</span> height<span class="op">));</span></span></code></pre></div>

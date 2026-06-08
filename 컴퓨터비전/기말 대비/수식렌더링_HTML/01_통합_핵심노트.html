@@ -93,72 +93,36 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
 
-  <style id="kw-back-style">
-    .kw-back-button {
-      position: fixed;
-      top: max(10px, env(safe-area-inset-top));
-      left: 10px;
-      z-index: 10000;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      min-width: 42px;
-      height: 42px;
-      padding: 0 12px;
-      border: 1px solid rgba(148, 163, 184, .45);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .92);
-      color: #111827;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, .12);
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-      font: 800 14px/1 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", Segoe UI, sans-serif;
-      cursor: pointer;
-    }
-    .kw-back-button::before {
-      content: "‹";
-      font-size: 27px;
-      line-height: 0;
-      transform: translateY(-1px);
-    }
-    @media (max-width: 760px) {
-      .kw-back-button {
-        top: max(8px, env(safe-area-inset-top));
-        left: 8px;
-        width: 40px;
-        min-width: 40px;
-        height: 40px;
-        padding: 0;
-        font-size: 0;
-      }
-      .kw-back-button::before { font-size: 30px; }
-      .kw-back-button ~ header .wrap { padding-left: 56px !important; }
-      .kw-back-button ~ h1:first-of-type { padding-left: 48px; }
-    }
-  </style>
-  <script id="kw-back-script">
-    function kwGoBack() {
-      try {
-        if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
-          history.back();
-          return;
-        }
-      } catch (error) {}
-      location.href = new URL('../../../index.html', location.href).href;
-    }
-  </script>
+<style>
+.back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
+.back-to-index:hover{background:#eff6ff}
+@media(max-width:640px){.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
+</style>
 </head>
 <body>
-<button type="button" class="kw-back-button" onclick="kwGoBack()" aria-label="뒤로가기"><span>뒤로</span></button>
+<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+
+<header id="title-block-header">
+<h1 class="title">01_통합_핵심노트</h1>
+</header>
 <h1 id="컴퓨터비전-기말-암기-종합본">컴퓨터비전 기말 암기 종합본</h1>
-<p>오늘 강의 한 줄 요약: Homography는 <span
-class="math inline">\(\mathbb{P}^{2}\to\mathbb{P}^{2}\)</span>의 <span
-class="math inline">\(3\times 3\)</span> 사영변환이고, 동차좌표의 외적과
-고유값분해를 같이 알아야 점, 직선, warping 계산을 안정적으로 이해할 수
-있다.</p>
+<p>오늘 강의 한 줄 요약: 공식 기말 범위는 허프 변환 2부터이며,
+Hough/RANSAC의 line detection 흐름과 homography/SVD 계산까지 함수명,
+행렬 크기, 좌표 정규화를 같이 외워야 한다.</p>
 <h2 id="시험-직전-한-장-요약">1. 시험 직전 한 장 요약</h2>
 <ul>
+<li>Hough line 식: <span
+class="math inline">\(\rho=x\cos\theta+y\sin\theta\)</span>.</li>
+<li>Hough Transform: edge point가 parameter space의 curve에 vote하고,
+accumulator peak가 line/circle parameter가 된다.</li>
+<li><code>HoughLines</code>: <span
+class="math inline">\((\rho,\theta)\)</span>를 반환한다.</li>
+<li><code>HoughLinesP</code>: line segment endpoint <span
+class="math inline">\((x_1,y_1,x_2,y_2)\)</span>를 반환한다.</li>
+<li><code>HoughCircles</code>: circle center와 radius <span
+class="math inline">\((x,y,r)\)</span>를 반환한다.</li>
+<li>RANSAC: minimal sample로 model을 만들고 전체 point를
+inlier/outlier로 나눈 뒤 inlier가 많은 model을 고른다.</li>
 <li><code>matchTemplate</code> 결과 영상 크기: <span
 class="math inline">\((W-w+1)\times(H-h+1)\)</span>.</li>
 <li><code>TM_SQDIFF</code>, <code>TM_SQDIFF_NORMED</code>: 값이 작을수록
@@ -203,6 +167,82 @@ class="math inline">\(h\)</span>로 쓴다.</li>
 </ul>
 <h2 id="핵심-슬라이드로-외우는-구조">1-1. 핵심 슬라이드로 외우는
 구조</h2>
+<figure>
+<img src="../assets/slides/cv_hough_p45_duality.png"
+alt="Hough line duality" />
+<figcaption aria-hidden="true">Hough line duality</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_13-hough_transforms-02_hough_transforms.pdf</code>,
+p.45.</p>
+<ul>
+<li>Image space의 한 edge point는 Hough parameter space에서 가능한
+직선들의 curve가 된다.</li>
+<li>여러 edge point가 같은 직선 위에 있으면 parameter space에서
+curve들이 같은 cell 근처에 모인다.</li>
+<li>시험에서는 “image point가 parameter space에서 무엇이 되는가”를 묻기
+쉽다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_hough_p46_line_steps.png"
+alt="Hough line transform 절차" />
+<figcaption aria-hidden="true">Hough line transform 절차</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_13-hough_transforms-02_hough_transforms.pdf</code>,
+p.46.</p>
+<ul>
+<li>Parameter range를 정하고 accumulator를 discretization한다.</li>
+<li>Edge pixel마다 여러 <span class="math inline">\(\theta\)</span>에
+대해 <span class="math inline">\(\rho=x\cos\theta+y\sin\theta\)</span>를
+계산해 vote한다.</li>
+<li>Threshold 이상 vote가 쌓인 accumulator cell이 검출된 line
+parameter다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_hough_p57_circle.png"
+alt="Circle Hough transform" />
+<figcaption aria-hidden="true">Circle Hough transform</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_13-hough_transforms-02_hough_transforms.pdf</code>,
+p.57.</p>
+<ul>
+<li>원은 <span class="math inline">\((x-x_0)^2+(y-y_0)^2=r^2\)</span>로
+표현한다.</li>
+<li>Circle Hough의 parameter space는 <span
+class="math inline">\((x_0,y_0,r)\)</span>의 3차원이다.</li>
+<li>OpenCV <code>HoughCircles</code>의 결과는 보통 <span
+class="math inline">\((x,y,radius)\)</span> 형태로 외운다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_ransac_p67_steps.png" alt="RANSAC 절차" />
+<figcaption aria-hidden="true">RANSAC 절차</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_13-hough_transforms-02_hough_transforms.pdf</code>,
+p.67.</p>
+<ul>
+<li>RANSAC은 최소 sample을 랜덤으로 뽑아 model을 fitting한다.</li>
+<li>모든 data point와 model 사이의 loss/distance를 계산해 inlier와
+outlier를 나눈다.</li>
+<li>Inlier가 가장 많거나 충분히 많은 model을 선택한다.</li>
+</ul>
+<figure>
+<img src="../assets/slides/cv_ransac_p72_vs_hough.png"
+alt="Hough Transform vs RANSAC" />
+<figcaption aria-hidden="true">Hough Transform vs RANSAC</figcaption>
+</figure>
+<p>출처: 강의자료
+<code>[C++]_13-hough_transforms-02_hough_transforms.pdf</code>,
+p.69.</p>
+<ul>
+<li>Hough는 parameter space에서 voting하는 deterministic 방식이다.</li>
+<li>RANSAC은 image space에서 minimal points를 랜덤 샘플링하는
+non-deterministic 방식이다.</li>
+<li>둘 다 noise/outlier에 강하지만, Hough는 memory와 discretization
+error, RANSAC은 반복성과 randomness가 단점이다.</li>
+</ul>
 <figure>
 <img src="../assets/slides/cv_tm_p07_purpose.png"
 alt="Template matching 목적" />
@@ -469,6 +509,157 @@ direction이다.</li>
 <li>Eigenvalue는 그 방향에서 늘어나거나 줄어드는 비율이다.</li>
 <li>그림 문제는 “방향 유지”와 “스케일 변화”를 구분하면 된다.</li>
 </ul>
+<h2 id="공식-범위-시작-hough-transform-2">1-2. 공식 범위 시작: Hough
+Transform 2</h2>
+<h3 id="line-hough-transform">Line Hough Transform</h3>
+<p>기울기-절편식 <span class="math inline">\(y=ax+b\)</span>는 수직선
+<span class="math inline">\(x=c\)</span>를 표현할 때 기울기가 무한대가
+되는 문제가 있다. 그래서 허프 변환에서는 보통 극좌표식으로 직선을
+표현한다.</p>
+<p><span class="math display">\[
+\rho=x\cos\theta+y\sin\theta
+\]</span></p>
+<p>여기서 <span class="math inline">\(\rho\)</span>는 원점에서
+직선까지의 signed distance이고, <span
+class="math inline">\(\theta\)</span>는 직선의 법선벡터가 x축과 이루는
+각도다.</p>
+<p>절차는 다음 순서로 외운다.</p>
+<ol type="1">
+<li><span class="math inline">\(\rho,\theta\)</span> parameter range를
+정한다.</li>
+<li>Parameter space를 accumulator array로 discretization한다.</li>
+<li>Canny 같은 edge detector로 edge pixel을 찾는다.</li>
+<li>각 edge pixel마다 여러 <span class="math inline">\(\theta\)</span>에
+대해 <span class="math inline">\(\rho\)</span>를 계산하고 accumulator에
+vote한다.</li>
+<li>Threshold 이상 vote가 쌓인 cell을 line으로 채택한다.</li>
+</ol>
+<h3 id="opencv-hough-함수">OpenCV Hough 함수</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>함수</th>
+<th>입력</th>
+<th>출력</th>
+<th>시험 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HoughLines</code></td>
+<td>8-bit single-channel binary edge image</td>
+<td><code>vector&lt;Vec2f&gt;</code> 또는 <span
+class="math inline">\((\rho,\theta)\)</span></td>
+<td>무한히 긴 직선 parameter</td>
+</tr>
+<tr>
+<td><code>HoughLinesP</code></td>
+<td>8-bit single-channel binary edge image</td>
+<td><code>vector&lt;Vec4i&gt;</code> 또는 <span
+class="math inline">\((x_1,y_1,x_2,y_2)\)</span></td>
+<td>확률적 Hough, 선분 endpoint</td>
+</tr>
+<tr>
+<td><code>HoughCircles</code></td>
+<td>8-bit single-channel grayscale image</td>
+<td><code>vector&lt;Vec3f&gt;</code> 또는 <span
+class="math inline">\((x,y,r)\)</span></td>
+<td>중심과 반지름</td>
+</tr>
+</tbody>
+</table>
+<p><code>HoughLines</code> 코드 흐름:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Canny<span class="op">(</span>img_gray<span class="op">,</span> img_edge<span class="op">,</span> <span class="dv">50</span><span class="op">,</span> <span class="dv">150</span><span class="op">);</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span>Vec2f<span class="op">&gt;</span> lines<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>HoughLines<span class="op">(</span>img_edge<span class="op">,</span> lines<span class="op">,</span> <span class="dv">1</span><span class="op">,</span> CV_PI<span class="op">/</span><span class="dv">180</span><span class="op">,</span> <span class="dv">200</span><span class="op">);</span></span></code></pre></div>
+<p><code>HoughLinesP</code> 코드 흐름:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Canny<span class="op">(</span>img_gray<span class="op">,</span> img_edge<span class="op">,</span> <span class="dv">50</span><span class="op">,</span> <span class="dv">200</span><span class="op">);</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span>Vec4i<span class="op">&gt;</span> lines<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>HoughLinesP<span class="op">(</span>img_edge<span class="op">,</span> lines<span class="op">,</span> <span class="dv">1</span><span class="op">,</span> CV_PI<span class="op">/</span><span class="dv">180</span><span class="op">,</span> <span class="dv">80</span><span class="op">,</span> <span class="dv">30</span><span class="op">,</span> <span class="dv">10</span><span class="op">);</span></span></code></pre></div>
+<p><code>HoughCircles</code> 코드 흐름:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>medianBlur<span class="op">(</span>img_gray<span class="op">,</span> img_blur<span class="op">,</span> <span class="dv">5</span><span class="op">);</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&lt;</span>Vec3f<span class="op">&gt;</span> circles<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>HoughCircles<span class="op">(</span>img_blur<span class="op">,</span> circles<span class="op">,</span> HOUGH_GRADIENT<span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">50</span><span class="op">,</span> <span class="dv">25</span><span class="op">);</span></span></code></pre></div>
+<h3 id="circle-hough-transform">Circle Hough Transform</h3>
+<p>원 방정식은 다음과 같다.</p>
+<p><span class="math display">\[
+(x-x_0)^2+(y-y_0)^2=r^2
+\]</span></p>
+<p>반지름을 모르면 parameter가 <span
+class="math inline">\((x_0,y_0,r)\)</span>이므로 3차원 accumulator가
+필요하다. <code>HoughCircles</code>는 gradient 정보를 이용하는
+<code>HOUGH_GRADIENT</code> 방식을 사용한다.</p>
+<h3 id="ransac">RANSAC</h3>
+<p>RANSAC은 <code>RANdom SAmple Consensus</code>다. Line fitting에서는
+두 점이 minimal sample이다.</p>
+<ol type="1">
+<li>모델 fitting에 필요한 최소 point를 랜덤 선택한다.</li>
+<li>그 point로 line parameter <span
+class="math inline">\(a,b,c\)</span>를 구한다.</li>
+<li>모든 point의 line distance를 계산한다.</li>
+<li>Distance가 threshold 이하이면 inlier, 크면 outlier로 본다.</li>
+<li>Inlier가 가장 많은 model을 채택한다.</li>
+</ol>
+<p>점 <span class="math inline">\((x_0,y_0)\)</span>와 직선 <span
+class="math inline">\(ax+by+c=0\)</span> 사이의 거리는 다음과 같다.</p>
+<p><span class="math display">\[
+d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
+\]</span></p>
+<p>수업 코드의 <code>Normalized_Line</code>은 <span
+class="math inline">\(a,b,c\)</span>를 normalize하므로 distance 계산에서
+분모를 생략하고 <span class="math inline">\(|ax+by+c|\)</span>만
+사용한다.</p>
+<h3 id="hough와-ransac-비교">Hough와 RANSAC 비교</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>Hough Transform</th>
+<th>RANSAC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>접근</td>
+<td>deterministic</td>
+<td>non-deterministic</td>
+</tr>
+<tr>
+<td>단위</td>
+<td>single edge point가 vote</td>
+<td>minimal points가 model 생성</td>
+</tr>
+<tr>
+<td>판단</td>
+<td>accumulator voting peak</td>
+<td>inlier/outlier count</td>
+</tr>
+<tr>
+<td>공간</td>
+<td>parameter space</td>
+<td>image space</td>
+</tr>
+<tr>
+<td>장점</td>
+<td>noise에 강함</td>
+<td>outlier에 강함</td>
+</tr>
+<tr>
+<td>단점</td>
+<td>memory, discretization error</td>
+<td>반복 필요, random 결과</td>
+</tr>
+</tbody>
+</table>
 <h2 id="template-matching">2. Template Matching</h2>
 <p>Template matching은 작은 template image를 source image 위에
 이동시키면서 유사도를 계산하고, 가장 좋은 위치를 찾는 방법이다.</p>
@@ -1239,7 +1430,7 @@ class="math inline">\(3\times3\)</span>으로 reshape하면 <span
 class="math inline">\(H\)</span>가 된다.</p>
 <h3 id="opencv-코드-흐름">OpenCV 코드 흐름</h3>
 <p>문서나 명함을 펴는 문제는 다음 순서로 외운다.</p>
-<ol>
+<ol type="1">
 <li>Source image에서 네 꼭짓점을 클릭하거나 검출한다.</li>
 <li>Destination 네 점을 직사각형 좌표로 둔다.</li>
 <li><code>findHomography(srcPts, dstPts)</code>로 <span
@@ -1248,9 +1439,9 @@ class="math inline">\(H\)</span>를 구한다.</li>
 펴진 이미지를 만든다.</li>
 </ol>
 <p>대표 코드 형태는 다음이다.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>Mat H <span class="op">=</span> cv<span class="op">::</span>findHomography<span class="op">(</span>srcPts<span class="op">,</span> dstPts<span class="op">);</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>warpPerspective<span class="op">(</span>src<span class="op">,</span> dst<span class="op">,</span> H<span class="op">,</span> cv<span class="op">::</span>Size<span class="op">(</span>width<span class="op">,</span> height<span class="op">));</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>Mat H <span class="op">=</span> cv<span class="op">::</span>findHomography<span class="op">(</span>srcPts<span class="op">,</span> dstPts<span class="op">);</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cv<span class="op">::</span>warpPerspective<span class="op">(</span>src<span class="op">,</span> dst<span class="op">,</span> H<span class="op">,</span> cv<span class="op">::</span>Size<span class="op">(</span>width<span class="op">,</span> height<span class="op">));</span></span></code></pre></div>
 <p>함정은 <code>findHomography</code>와 <code>warpPerspective</code>의
 역할이 다르다는 점이다. <code>findHomography</code>는 <span
 class="math inline">\(H\)</span>를 계산하고,
