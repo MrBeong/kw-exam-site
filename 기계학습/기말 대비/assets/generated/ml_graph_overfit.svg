@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#ffffff"/>
+  <line x1="72" y1="294" x2="584" y2="294" stroke="#111827" stroke-width="3"/>
+  <line x1="72" y1="294" x2="72" y2="44" stroke="#111827" stroke-width="3"/>
+  <text x="308" y="336" font-family="Arial" font-size="20" text-anchor="middle">epoch</text>
+  <text x="24" y="176" font-family="Arial" font-size="20" text-anchor="middle" transform="rotate(-90 24 176)">loss</text>
+  <path d="M82 260 C145 210, 230 160, 320 120 S500 84, 570 70" fill="none" stroke="#2563eb" stroke-width="6"/>
+  <path d="M82 262 C145 212, 230 166, 318 140 C402 118, 500 168, 570 232" fill="none" stroke="#dc2626" stroke-width="6"/>
+  <text x="445" y="82" font-family="Arial" font-size="20" fill="#2563eb">train loss</text>
+  <text x="438" y="244" font-family="Arial" font-size="20" fill="#dc2626">validation loss</text>
+</svg>
