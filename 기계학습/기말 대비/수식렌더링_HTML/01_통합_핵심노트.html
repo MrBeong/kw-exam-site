@@ -172,15 +172,18 @@
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
-  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css" />
+  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css?v=20260609-center2" />
   <script>
     window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
+    html,body{width:100%;max-width:none!important;min-height:100%;margin:0}
+    body > :not(script):not(style):not(.back-to-index):not(.kw-back-button){width:min(1080px,calc(100vw - 128px));margin-left:auto!important;margin-right:auto!important}
     .back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
     .back-to-index:hover{background:#eff6ff}
-    @media(max-width:640px){.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
+    @media(max-width:920px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button){width:calc(100vw - 56px)}}
+    @media(max-width:640px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button){width:calc(100vw - 28px)}.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
   </style>
 </head>
 <body>
@@ -3413,7 +3416,56 @@ Repeat:
 Output best solution</code></pre>
 <p>핵심 암기:</p>
 <pre class="text"><code>초반에는 탐색을 넓게 하고, 온도가 낮아질수록 나쁜 해를 덜 받아들인다.</code></pre>
-<h2 id="그래프-해석-문제-답안-문장">19. 그래프 해석 문제 답안 문장</h2>
+<h2 id="의사코드-진짜-암기-3개">19. 의사코드 진짜 암기 3개</h2>
+<p>18번 전체를 다 외우면 비효율적이다. 시험 직전에는 아래 3개만 완전
+암기한다. 앙상블, XAI, 최적화를 하나씩 커버하는 조합이다.</p>
+<h3 id="adaboost-1">1. AdaBoost</h3>
+<pre class="text"><code>Input: data, weak learner, T
+Initialize sample weights D_i = 1/n
+For t = 1 to T:
+    Train weak learner h_t with D
+    Compute weighted error epsilon_t
+    If epsilon_t &gt;= 0.5: discard or stop
+    Compute alpha_t = 1/2 log((1-epsilon_t)/epsilon_t)
+    Increase weights of misclassified samples
+    Decrease weights of correctly classified samples
+    Normalize D
+Output: sign(sum alpha_t h_t(x))</code></pre>
+<p>한 줄 설명: AdaBoost는 <strong>틀린 sample의 weight를
+키우고</strong>, learner 신뢰도 <span
+class="math inline">\(\alpha_t\)</span>로 weighted vote한다.</p>
+<h3 id="permutation-feature-importance">2. Permutation Feature
+Importance</h3>
+<pre class="text"><code>Input: trained model, validation data, score metric
+Compute baseline score
+For each feature j:
+    Copy validation data
+    Shuffle only feature j
+    Compute shuffled score
+    importance_j = baseline score - shuffled score
+Rank features by importance_j</code></pre>
+<p>한 줄 설명: 특정 feature만 섞었을 때 성능이 크게 떨어지면, 그
+feature가 모델 예측에 중요하다는 뜻이다.</p>
+<h3 id="mini-batch-gradient-descent-early-stopping">3. Mini-batch
+Gradient Descent + Early Stopping</h3>
+<pre class="text"><code>Initialize parameters w and best validation score
+For each epoch:
+    Shuffle training data
+    Split into mini-batches
+    For each mini-batch:
+        Compute mini-batch gradient
+        Update w = w - learning_rate * gradient
+    Evaluate validation score
+    If validation score improves:
+        Save current model and reset patience
+    Else:
+        Increase patience counter
+    Stop if patience reaches limit
+Output: best saved model</code></pre>
+<p>한 줄 설명: Mini-batch GD는 batch 단위로 parameter를 갱신하고, early
+stopping은 validation 성능이 더 이상 좋아지지 않으면 과적합 전에
+멈춘다.</p>
+<h2 id="그래프-해석-문제-답안-문장">20. 그래프 해석 문제 답안 문장</h2>
 <ol type="1">
 <li>SHAP plot에서 x축 오른쪽은 예측값을 증가시키는 양의 기여, 왼쪽은
 예측값을 감소시키는 음의 기여다.</li>
