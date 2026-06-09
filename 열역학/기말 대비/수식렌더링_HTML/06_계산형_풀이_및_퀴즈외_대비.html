@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>공학열역학 06_계산형_풀이_및_퀴즈외_대비</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css?v=20260609-print-hide-back" />
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    html,body{width:100%;max-width:none!important;min-height:100%;margin:0}
+    body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:min(1080px,calc(100vw - 128px));margin-left:auto!important;margin-right:auto!important}
+    body > figure{width:min(82%,860px)!important;margin-left:auto!important;margin-right:auto!important}
+    body > figure img{width:auto;max-width:100%;margin-left:auto!important;margin-right:auto!important}
+    body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:min(82%,860px)!important;margin-left:auto!important;margin-right:auto!important}
+    .back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
+    .back-to-index:hover{background:#eff6ff}
+    @media(max-width:920px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:calc(100vw - 56px)}body > figure,body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:94%!important}}
+    @media(max-width:640px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:calc(100vw - 28px)}body > figure,body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:100%!important}.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
+    @media print{.back-to-index,.kw-back-button{display:none!important}}
+  </style>
+</head>
+<body>
+<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+
+<header id="title-block-header">
+<h1 class="title">공학열역학 06_계산형_풀이_및_퀴즈외_대비</h1>
+</header>
+<h1 id="공학열역학-객관식-계산형-풀이-및-퀴즈-외-대비">공학열역학 객관식
+계산형 풀이 및 퀴즈 외 대비</h1>
+<p>한 줄 요약: 객관식 계산형은 식을 고르는 문제가 아니라, 단위 맞추고
+부호 잡고 계산기로 ln만 제대로 치면 되는 문제였음. 아래 문제는 답보다
+풀이 순서를 외우는 용도임.</p>
+<h2 id="계산형-공통-체크">1. 계산형 공통 체크</h2>
+<ul>
+<li>온도는 무조건 K로 바꿨음. 섭씨 그대로 넣으면 틀림.</li>
+<li>압력, 부피는 비율로 들어가면 같은 단위끼리 나누면 됨.</li>
+<li>열을 잃는 쪽은 엔트로피 변화가 음수, 열을 받는 쪽은 양수였음.</li>
+<li>전체 엔트로피 또는 생성 엔트로피가 음수면 불가능한 공정임.</li>
+<li>Carnot 효율은 최대값이라 실제 효율이 이보다 크면 불가능함.</li>
+<li>압축기는 실제 일이 더 큼. 터빈/팽창기는 실제 일이 더 작음.</li>
+</ul>
+<h2 id="계산형-예상문제">2. 계산형 예상문제</h2>
+<h3 id="carnot-효율-계산">1. Carnot 효율 계산</h3>
+<p>문제: 고온 열원이 327°C, 저온 열원이 27°C일 때 Carnot 열기관의 최대
+효율을 구하시오.</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+T_H=327+273=600\,\mathrm{K},\quad T_C=27+273=300\,\mathrm{K}
+\]</span></p>
+<p><span class="math display">\[
+\eta_C=1-\frac{T_C}{T_H}=1-\frac{300}{600}=0.50
+\]</span></p>
+<p>답: 최대 효율은 0.50, 즉 50%였음.</p>
+<p>헷갈림 포인트: 327, 27을 그대로 넣으면 안 됨. Carnot은 Kelvin만
+씀.</p>
+<h3 id="실제-효율과-carnot-한계-비교">2. 실제 효율과 Carnot 한계
+비교</h3>
+<p>문제: 어떤 열기관이 600 K와 300 K 사이에서 작동하고, 고온 열원에서
+1000 J를 받아 600 J의 일을 생산한다고 주장했다. 가능한가?</p>
+<p>풀이:</p>
+<p>실제 효율:</p>
+<p><span class="math display">\[
+\eta=\frac{W}{Q_H}=\frac{600}{1000}=0.60
+\]</span></p>
+<p>Carnot 효율:</p>
+<p><span class="math display">\[
+\eta_C=1-\frac{300}{600}=0.50
+\]</span></p>
+<p>실제 효율 0.60이 Carnot 효율 0.50보다 큼.</p>
+<p>답: 불가능함. 2법칙 위배였음.</p>
+<h3 id="열기관에서-버리는-열-계산">3. 열기관에서 버리는 열 계산</h3>
+<p>문제: 열기관이 <span
+class="math inline">\(Q_H=2000\,\mathrm{J}\)</span>를 받고 효율이
+30%이다. 생산 일과 저온 열원으로 버리는 열을 구하시오.</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+W=\eta Q_H=0.30\times 2000=600\,\mathrm{J}
+\]</span></p>
+<p><span class="math display">\[
+Q_C=Q_H-W=2000-600=1400\,\mathrm{J}
+\]</span></p>
+<p>답: 일은 600 J, 버리는 열은 1400 J였음.</p>
+<h3 id="냉동기-cop-계산">4. 냉동기 COP 계산</h3>
+<p>문제: 냉동기가 차가운 공간에서 1200 J를 빼내기 위해 300 J의 일을
+받았다. 냉동기 COP를 구하시오.</p>
+<p>풀이:</p>
+<p>냉동기는 목적이 차가운 곳에서 빼낸 열 <span
+class="math inline">\(Q_C\)</span>임.</p>
+<p><span class="math display">\[
+COP_R=\frac{Q_C}{W}=\frac{1200}{300}=4.0
+\]</span></p>
+<p>답: <span class="math inline">\(COP_R=4.0\)</span>였음.</p>
+<p>헷갈림 포인트: COP는 1보다 커도 이상한 게 아님.</p>
+<h3 id="히트펌프-cop-계산">5. 히트펌프 COP 계산</h3>
+<p>문제: 히트펌프가 실내로 1800 J의 열을 공급하고 압축기에 300 J의 일이
+들어갔다. 히트펌프 COP와 저온부에서 가져온 열을 구하시오.</p>
+<p>풀이:</p>
+<p>히트펌프는 목적이 따뜻한 곳으로 공급한 열 <span
+class="math inline">\(Q_H\)</span>임.</p>
+<p><span class="math display">\[
+COP_{HP}=\frac{Q_H}{W}=\frac{1800}{300}=6.0
+\]</span></p>
+<p>에너지수지:</p>
+<p><span class="math display">\[
+Q_H=Q_C+W
+\]</span></p>
+<p><span class="math display">\[
+Q_C=Q_H-W=1800-300=1500\,\mathrm{J}
+\]</span></p>
+<p>답: <span class="math inline">\(COP_{HP}=6.0\)</span>, 저온부에서
+가져온 열은 1500 J였음.</p>
+<h3 id="carnot-냉동기-cop">6. Carnot 냉동기 COP</h3>
+<p>문제: 냉동기가 260 K의 저온 공간과 300 K의 실내 사이에서 작동한다.
+Carnot 냉동기 COP를 구하시오.</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+COP_{R,C}=\frac{T_C}{T_H-T_C}=\frac{260}{300-260}=\frac{260}{40}=6.5
+\]</span></p>
+<p>답: <span class="math inline">\(COP_{R,C}=6.5\)</span>였음.</p>
+<h3 id="t-s-선도-직사각형-carnot-cycle">7. T-S 선도 직사각형 Carnot
+cycle</h3>
+<p>문제: Carnot cycle에서 <span
+class="math inline">\(T_H=600\,\mathrm{K}\)</span>, <span
+class="math inline">\(T_C=300\,\mathrm{K}\)</span>, 등온 과정의 엔트로피
+변화가 <span class="math inline">\(\Delta
+S=5\,\mathrm{J/K}\)</span>이다. <span
+class="math inline">\(Q_H\)</span>, <span
+class="math inline">\(Q_C\)</span>, <span
+class="math inline">\(W\)</span>를 구하시오.</p>
+<p>풀이:</p>
+<p>가역 등온 열전달은 <span class="math inline">\(Q=T\Delta
+S\)</span>.</p>
+<p><span class="math display">\[
+Q_H=T_H\Delta S=600\times5=3000\,\mathrm{J}
+\]</span></p>
+<p><span class="math display">\[
+Q_C=T_C\Delta S=300\times5=1500\,\mathrm{J}
+\]</span></p>
+<p><span class="math display">\[
+W=Q_H-Q_C=3000-1500=1500\,\mathrm{J}
+\]</span></p>
+<p>답: <span class="math inline">\(Q_H=3000\,\mathrm{J}\)</span>, <span
+class="math inline">\(Q_C=1500\,\mathrm{J}\)</span>, <span
+class="math inline">\(W=1500\,\mathrm{J}\)</span>였음.</p>
+<h3 id="단순-열전달의-전체-엔트로피-변화">8. 단순 열전달의 전체 엔트로피
+변화</h3>
+<p>문제: 600 K 열원에서 300 K 열원으로 1200 J의 열이 직접 이동했다. 전체
+엔트로피 변화를 구하고 가능 여부를 판단하시오.</p>
+<p>풀이:</p>
+<p>고온 열원은 열을 잃음.</p>
+<p><span class="math display">\[
+\Delta S_H=-\frac{1200}{600}=-2.0\,\mathrm{J/K}
+\]</span></p>
+<p>저온 열원은 열을 받음.</p>
+<p><span class="math display">\[
+\Delta S_C=\frac{1200}{300}=4.0\,\mathrm{J/K}
+\]</span></p>
+<p><span class="math display">\[
+\Delta S_{total}= -2.0+4.0=2.0\,\mathrm{J/K}
+\]</span></p>
+<p>답: <span class="math inline">\(\Delta
+S_{total}=2.0\,\mathrm{J/K}\)</span>이고 가능함. 단, 비가역 과정임.</p>
+<h3 id="저온에서-고온으로-열이-그냥-이동하는-경우">9. 저온에서 고온으로
+열이 그냥 이동하는 경우</h3>
+<p>문제: 300 K 열원에서 600 K 열원으로 1200 J의 열이 외부 일 없이
+이동한다고 주장했다. 가능한가?</p>
+<p>풀이:</p>
+<p>300 K 쪽은 열을 잃음.</p>
+<p><span class="math display">\[
+\Delta S_{300}=-\frac{1200}{300}=-4.0\,\mathrm{J/K}
+\]</span></p>
+<p>600 K 쪽은 열을 받음.</p>
+<p><span class="math display">\[
+\Delta S_{600}=\frac{1200}{600}=2.0\,\mathrm{J/K}
+\]</span></p>
+<p><span class="math display">\[
+\Delta S_{total}=-4.0+2.0=-2.0\,\mathrm{J/K}
+\]</span></p>
+<p>답: 전체 엔트로피가 음수라 불가능함. Clausius 서술 위배였음.</p>
+<h3 id="강의-숫자형-엔트로피-생성과-lost-work">10. 강의 숫자형: 엔트로피
+생성과 lost work</h3>
+<p>문제: 600 K 열원에서 250 K 열원으로 4000 J의 열이 직접 전달된다. 주변
+온도 <span class="math inline">\(T_\sigma=100\,\mathrm{K}\)</span>일 때
+<span class="math inline">\(S_{gen}\)</span>과 <span
+class="math inline">\(W_{lost}\)</span>를 구하시오.</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+S_{gen}=\Delta S_{total}=-\frac{4000}{600}+\frac{4000}{250}
+\]</span></p>
+<p><span class="math display">\[
+S_{gen}=-6.667+16.000=9.33\,\mathrm{J/K}
+\]</span></p>
+<p><span class="math display">\[
+W_{lost}=T_\sigma S_{gen}=100\times9.33=933\,\mathrm{J}
+\]</span></p>
+<p>답: <span class="math inline">\(S_{gen}=9.33\,\mathrm{J/K}\)</span>,
+<span class="math inline">\(W_{lost}=933\,\mathrm{J}\)</span>였음.</p>
+<h3 id="carnot-최대일에서-lost-work-빼기">11. Carnot 최대일에서 lost
+work 빼기</h3>
+<p>문제: 위 상황에서 Carnot 최대일이 3333 J이고, <span
+class="math inline">\(W_{lost}=933\,\mathrm{J}\)</span>라면 실제 가능한
+일은 얼마인가?</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+W_{actual}=W_{Carnot}-W_{lost}
+\]</span></p>
+<p><span class="math display">\[
+W_{actual}=3333-933=2400\,\mathrm{J}
+\]</span></p>
+<p>답: 실제 가능한 일은 2400 J였음.</p>
+<h3 id="이상기체-엔트로피-변화-tp식">12. 이상기체 엔트로피 변화: <span
+class="math inline">\(T,P\)</span>식</h3>
+<p>문제: 이상기체 1 mol이 300 K, 1 bar에서 600 K, 5 bar로 변했다. <span
+class="math inline">\(C_p=29.1\,\mathrm{J/(mol\,K)}\)</span>, <span
+class="math inline">\(R=8.314\,\mathrm{J/(mol\,K)}\)</span>일 때 <span
+class="math inline">\(\Delta s\)</span>를 구하시오.</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+\Delta s=C_p\ln\frac{T_2}{T_1}-R\ln\frac{P_2}{P_1}
+\]</span></p>
+<p><span class="math display">\[
+\Delta s=29.1\ln\frac{600}{300}-8.314\ln\frac{5}{1}
+\]</span></p>
+<p><span class="math display">\[
+\Delta s=29.1\ln2-8.314\ln5
+\]</span></p>
+<p><span class="math display">\[
+\Delta s=20.17-13.38=6.79\,\mathrm{J/(mol\,K)}
+\]</span></p>
+<p>답: <span
+class="math inline">\(6.79\,\mathrm{J/(mol\,K)}\)</span>였음.</p>
+<h3 id="이상기체-등온-압축-엔트로피">13. 이상기체 등온 압축
+엔트로피</h3>
+<p>문제: 이상기체 2 mol이 300 K에서 등온으로 10 L에서 2 L까지 압축됐다.
+계의 엔트로피 변화를 구하시오.</p>
+<p>풀이:</p>
+<p>등온이면 온도항이 사라짐.</p>
+<p><span class="math display">\[
+\Delta S=nR\ln\frac{V_2}{V_1}
+\]</span></p>
+<p><span class="math display">\[
+\Delta S=2(8.314)\ln\frac{2}{10}
+\]</span></p>
+<p><span class="math display">\[
+\Delta S=16.628\ln0.2=-26.8\,\mathrm{J/K}
+\]</span></p>
+<p>답: <span class="math inline">\(\Delta
+S=-26.8\,\mathrm{J/K}\)</span>였음.</p>
+<p>헷갈림 포인트: 계 엔트로피는 감소 가능함. 전체 엔트로피가 음수면 안
+됨.</p>
+<h3 id="정압정적-엔트로피-변화-비교">14. 정압/정적 엔트로피 변화
+비교</h3>
+<p>문제: 이상기체 1 mol을 300 K에서 450 K로 가열한다. <span
+class="math inline">\(C_p=29.1\)</span>, <span
+class="math inline">\(C_v=20.8\,\mathrm{J/(mol\,K)}\)</span>일 때
+정압/정적 엔트로피 변화를 비교하시오.</p>
+<p>풀이:</p>
+<p>정압:</p>
+<p><span class="math display">\[
+\Delta
+s_p=C_p\ln\frac{T_2}{T_1}=29.1\ln\frac{450}{300}=11.80\,\mathrm{J/(mol\,K)}
+\]</span></p>
+<p>정적:</p>
+<p><span class="math display">\[
+\Delta
+s_v=C_v\ln\frac{T_2}{T_1}=20.8\ln\frac{450}{300}=8.43\,\mathrm{J/(mol\,K)}
+\]</span></p>
+<p>답: 정압 11.80, 정적 8.43. 정압이 더 큼.</p>
+<p>이유: <span class="math inline">\(C_p&gt;C_v\)</span>이고, 정압
+가열은 팽창까지 포함함.</p>
+<h3 id="압축기-효율">15. 압축기 효율</h3>
+<p>문제: 압축기에 이상적으로 100 kJ/kg의 일이 필요하지만 실제로는 125
+kJ/kg이 필요했다. 압축기 효율을 구하시오.</p>
+<p>풀이:</p>
+<p>압축기는 실제 일이 더 큼. 효율이 1보다 작아지게 분모에 실제 일을
+둠.</p>
+<p><span class="math display">\[
+\eta_c=\frac{W_{ideal}}{W_{actual}}=\frac{100}{125}=0.80
+\]</span></p>
+<p>답: 압축기 효율은 80%였음.</p>
+<h3 id="터빈-효율">16. 터빈 효율</h3>
+<p>문제: 터빈에서 이상적으로 500 kJ/kg의 일을 생산할 수 있는데 실제
+생산일은 420 kJ/kg이었다. 터빈 효율을 구하시오.</p>
+<p>풀이:</p>
+<p>터빈은 실제 일이 더 작음. 효율이 1보다 작아지게 실제 일을 분자에
+둠.</p>
+<p><span class="math display">\[
+\eta_t=\frac{W_{actual}}{W_{ideal}}=\frac{420}{500}=0.84
+\]</span></p>
+<p>답: 터빈 효율은 84%였음.</p>
+<h3 id="s_gen0-장치-판정-발명가-장치형">17. <span
+class="math inline">\(S_{gen}&lt;0\)</span> 장치 판정: 발명가
+장치형</h3>
+<p>문제: 포화수증기 1 mol이 100°C에서 들어와 0°C 물로 나간다. 기준을 0°C
+물에서 <span class="math inline">\(h_2=0\)</span>, <span
+class="math inline">\(s_2=0\)</span>으로 잡고, 입구는 <span
+class="math inline">\(h_1=2676\,\mathrm{J/mol}\)</span>, <span
+class="math inline">\(s_1=7.35\,\mathrm{J/(mol\,K)}\)</span>이다. 장치가
+200°C 열원에 2000 J를 방출하고, 0°C 열원에 나머지 676 J를 방출한다고
+주장했다. 가능한가?</p>
+<p>풀이:</p>
+<p>에너지수지는 맞아 보임.</p>
+<p><span class="math display">\[
+2676=2000+676
+\]</span></p>
+<p>하지만 2법칙을 봐야 함.</p>
+<p>흐름 스트림 엔트로피 변화:</p>
+<p><span class="math display">\[
+\Delta S_{stream}=s_2-s_1=0-7.35=-7.35\,\mathrm{J/K}
+\]</span></p>
+<p>주변 엔트로피 증가:</p>
+<p><span class="math display">\[
+\Delta S_{sur}=\frac{2000}{473}+\frac{676}{273}
+\]</span></p>
+<p><span class="math display">\[
+\Delta S_{sur}=4.23+2.48=6.71\,\mathrm{J/K}
+\]</span></p>
+<p>따라서</p>
+<p><span class="math display">\[
+S_{gen}=-7.35+6.71=-0.64\,\mathrm{J/K}
+\]</span></p>
+<p>답: 불가능함. 에너지수지는 맞지만 <span
+class="math inline">\(S_{gen}&lt;0\)</span>라 2법칙 위배였음.</p>
+<h3 id="발명가-장치에서-최대-고온-열량">18. 발명가 장치에서 최대 고온
+열량</h3>
+<p>문제: 위 장치가 가역 한계로 작동한다고 하면, 200°C 열원으로 보낼 수
+있는 최대 열량은 약 얼마인가? 전체 방출 열량은 2676 J이고, 0°C 열원으로
+가는 열량은 <span class="math inline">\(2676-Q_H\)</span>라고 둔다.</p>
+<p>풀이:</p>
+<p>가역 한계에서는 <span class="math inline">\(S_{gen}=0\)</span>.</p>
+<p><span class="math display">\[
+0=-7.35+\frac{Q_H}{473}+\frac{2676-Q_H}{273}
+\]</span></p>
+<p>정리하면</p>
+<p><span class="math display">\[
+7.35=\frac{Q_H}{473}+\frac{2676-Q_H}{273}
+\]</span></p>
+<p>계산하면</p>
+<p><span class="math display">\[
+Q_H\approx1577\,\mathrm{J}
+\]</span></p>
+<p><span class="math display">\[
+Q_C=2676-1577=1099\,\mathrm{J}
+\]</span></p>
+<p>답: 200°C 열원으로 최대 약 1577 J, 0°C 열원으로 약 1099 J였음.</p>
+<h3 id="압축인자-z-계산">19. 압축인자 <span
+class="math inline">\(Z\)</span> 계산</h3>
+<p>문제: 300 K에서 어떤 기체 1 mol이 10 L, 2.5 bar를 가진다. <span
+class="math inline">\(R=0.08314\,\mathrm{L\,bar/(mol\,K)}\)</span>일 때
+<span class="math inline">\(Z\)</span>를 구하시오.</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+Z=\frac{PV}{nRT}
+\]</span></p>
+<p><span class="math display">\[
+Z=\frac{(2.5)(10)}{(1)(0.08314)(300)}=\frac{25}{24.942}=1.00
+\]</span></p>
+<p>답: <span class="math inline">\(Z\approx1.00\)</span>이라 거의
+이상기체였음.</p>
+<h3 id="z-해석">20. <span class="math inline">\(Z\)</span> 해석</h3>
+<p>문제: 어떤 실제기체의 <span
+class="math inline">\(Z=0.80\)</span>이다. 분자 간 인력/반발력 중 무엇이
+우세한가?</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+Z=\frac{V_{real}}{V_{ideal}}
+\]</span></p>
+<p><span class="math inline">\(Z&lt;1\)</span>이면 실제 부피가
+이상기체보다 작음. 서로 끌어당기는 효과가 큰 쪽임.</p>
+<p>답: 인력이 우세했음.</p>
+<h3 id="gibbs-phase-rule">21. Gibbs phase rule</h3>
+<p>문제: 순수 물질 1성분계에서 액체-기체 두 상이 공존한다. 자유도 <span
+class="math inline">\(F\)</span>를 구하시오.</p>
+<p>풀이:</p>
+<p>Gibbs phase rule:</p>
+<p><span class="math display">\[
+F=C-P+2
+\]</span></p>
+<p>1성분, 2상이라서</p>
+<p><span class="math display">\[
+F=1-2+2=1
+\]</span></p>
+<p>답: 자유도는 1이었음. 압력을 정하면 끓는점이 정해지는 식임.</p>
+<h3 id="triple-point-자유도">22. Triple point 자유도</h3>
+<p>문제: 순수 물질에서 고체, 액체, 기체 3상이 공존한다. 자유도는?</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+F=C-P+2=1-3+2=0
+\]</span></p>
+<p>답: 자유도 0. 삼중점은 온도와 압력이 동시에 고정됨.</p>
+<h3 id="평균-열용량으로-현열-계산">23. 평균 열용량으로 현열 계산</h3>
+<p>문제: 2 mol의 물질을 300 K에서 500 K까지 가열한다. 평균 열용량이
+<span class="math inline">\(30\,\mathrm{J/(mol\,K)}\)</span>이면 필요한
+현열은?</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+Q=n\bar C_p\Delta T
+\]</span></p>
+<p><span class="math display">\[
+Q=2\times30\times(500-300)=12000\,\mathrm{J}
+\]</span></p>
+<p>답: 12.0 kJ였음.</p>
+<h3 id="상변화-엔트로피">24. 상변화 엔트로피</h3>
+<p>문제: 어떤 물질의 융해열이 <span
+class="math inline">\(6000\,\mathrm{J/mol}\)</span>이고 융점이 300
+K이다. 융해 엔트로피를 구하시오.</p>
+<p>풀이:</p>
+<p>상변화는 일정 온도에서 진행한다고 보고</p>
+<p><span class="math display">\[
+\Delta S_{fus}=\frac{\Delta H_{fus}}{T_m}
+\]</span></p>
+<p><span class="math display">\[
+\Delta S_{fus}=\frac{6000}{300}=20\,\mathrm{J/(mol\,K)}
+\]</span></p>
+<p>답: <span
+class="math inline">\(20\,\mathrm{J/(mol\,K)}\)</span>였음.</p>
+<h3 id="hess-법칙-반응열">25. Hess 법칙 반응열</h3>
+<p>문제: 반응 <span class="math inline">\(A+B\rightarrow C\)</span>에서
+<span class="math inline">\(\Delta H_f^\circ(A)=-100\)</span>, <span
+class="math inline">\(\Delta H_f^\circ(B)=-50\)</span>, <span
+class="math inline">\(\Delta
+H_f^\circ(C)=-200\,\mathrm{kJ/mol}\)</span>이면 표준 반응열은?</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+\Delta H_{rxn}^\circ=\sum \nu\Delta H_f^\circ(products)-\sum \nu\Delta
+H_f^\circ(reactants)
+\]</span></p>
+<p><span class="math display">\[
+\Delta H_{rxn}^\circ=(-200)-[(-100)+(-50)]
+\]</span></p>
+<p><span class="math display">\[
+\Delta H_{rxn}^\circ=-50\,\mathrm{kJ/mol}
+\]</span></p>
+<p>답: <span class="math inline">\(-50\,\mathrm{kJ/mol}\)</span>, 발열
+반응이었음.</p>
+<h3 id="clausius-clapeyron-단순-계산">26. Clausius-Clapeyron 단순
+계산</h3>
+<p>문제: 증발잠열이 <span
+class="math inline">\(40.0\,\mathrm{kJ/mol}\)</span>이고 373 K에서
+증기압이 1 atm인 물질이 있다. 393 K에서 증기압을 추정하시오. <span
+class="math inline">\(R=8.314\,\mathrm{J/(mol\,K)}\)</span>.</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+\ln\frac{P_2}{P_1}=-\frac{\Delta
+H_{vap}}{R}\left(\frac{1}{T_2}-\frac{1}{T_1}\right)
+\]</span></p>
+<p><span class="math display">\[
+\ln\frac{P_2}{1}=-\frac{40000}{8.314}\left(\frac{1}{393}-\frac{1}{373}\right)
+\]</span></p>
+<p>괄호 안은 음수라서 전체는 양수임.</p>
+<p><span class="math display">\[
+\ln P_2\approx0.657
+\]</span></p>
+<p><span class="math display">\[
+P_2=e^{0.657}\approx1.93\,\mathrm{atm}
+\]</span></p>
+<p>답: 약 1.93 atm였음.</p>
+<h3 id="fugacity-coefficient">27. Fugacity coefficient</h3>
+<p>문제: 어떤 기체가 10 bar에서 fugacity <span
+class="math inline">\(f=8\,\mathrm{bar}\)</span>를 가진다. fugacity
+coefficient <span class="math inline">\(\phi\)</span>는?</p>
+<p>풀이:</p>
+<p><span class="math display">\[
+\phi=\frac{f}{P}
+\]</span></p>
+<p><span class="math display">\[
+\phi=\frac{8}{10}=0.8
+\]</span></p>
+<p>답: <span class="math inline">\(\phi=0.8\)</span>였음.</p>
+<h3 id="상평형-fugacity-조건">28. 상평형 fugacity 조건</h3>
+<p>문제: 같은 온도에서 액상 fugacity가 5 bar, 기상 fugacity가 8 bar이다.
+평형인가?</p>
+<p>풀이:</p>
+<p>상평형 조건은</p>
+<p><span class="math display">\[
+f^L=f^V
+\]</span></p>
+<p>그런데 5 bar와 8 bar가 다름.</p>
+<p>답: 평형 아님. fugacity가 같아질 때까지 물질 이동 경향이 있음.</p>
+<h3 id="gibbs-자유에너지-자발성">29. Gibbs 자유에너지 자발성</h3>
+<p>문제: 일정 <span class="math inline">\(T,P\)</span>에서 <span
+class="math inline">\(\Delta H=-20\,\mathrm{kJ/mol}\)</span>, <span
+class="math inline">\(\Delta S=-50\,\mathrm{J/(mol\,K)}\)</span>, <span
+class="math inline">\(T=300\,\mathrm{K}\)</span>이다. 자발적인가?</p>
+<p>풀이:</p>
+<p>단위 맞춤:</p>
+<p><span class="math display">\[
+\Delta S=-0.050\,\mathrm{kJ/(mol\,K)}
+\]</span></p>
+<p><span class="math display">\[
+\Delta G=\Delta H-T\Delta S
+\]</span></p>
+<p><span class="math display">\[
+\Delta G=-20-300(-0.050)=-20+15=-5\,\mathrm{kJ/mol}
+\]</span></p>
+<p>답: <span class="math inline">\(\Delta G&lt;0\)</span>라
+자발적임.</p>
+<h3 id="온도에-따른-자발성-역전">30. 온도에 따른 자발성 역전</h3>
+<p>문제: <span class="math inline">\(\Delta
+H=10\,\mathrm{kJ/mol}\)</span>, <span class="math inline">\(\Delta
+S=50\,\mathrm{J/(mol\,K)}\)</span>인 반응이 자발적이려면 온도는 어느
+정도 이상이어야 하는가?</p>
+<p>풀이:</p>
+<p>자발 조건:</p>
+<p><span class="math display">\[
+\Delta G=\Delta H-T\Delta S&lt;0
+\]</span></p>
+<p>경계는 <span class="math inline">\(\Delta G=0\)</span>.</p>
+<p><span class="math display">\[
+T=\frac{\Delta H}{\Delta S}
+\]</span></p>
+<p>단위 맞춤:</p>
+<p><span class="math display">\[
+\Delta S=0.050\,\mathrm{kJ/(mol\,K)}
+\]</span></p>
+<p><span class="math display">\[
+T=\frac{10}{0.050}=200\,\mathrm{K}
+\]</span></p>
+<p>답: 200 K보다 높으면 자발적임.</p>
+<h2 id="퀴즈-외-개념-예상문제">3. 퀴즈 외 개념 예상문제</h2>
+<h3 id="maxwell-relation을-왜-쓰는가">1. Maxwell relation을 왜
+쓰는가?</h3>
+<p>답: 직접 측정하기 어려운 엔트로피 편미분을 <span
+class="math inline">\(P,V,T\)</span>로 바꿔 계산하려고 씀.</p>
+<p>풀이: 기본 에너지식에서 상태함수의 교차편미분이 같다는 성질을 쓰면
+됨. 예를 들어 <span class="math inline">\(dG=-S dT+V dP\)</span>에서
+<span class="math inline">\(S\)</span>와 <span
+class="math inline">\(V\)</span>의 편미분 관계가 나옴.</p>
+<h3 id="대-기본-에너지-미분식">2. 4대 기본 에너지 미분식</h3>
+<p>답:</p>
+<p><span class="math display">\[
+dU=T dS-P dV
+\]</span></p>
+<p><span class="math display">\[
+dH=T dS+V dP
+\]</span></p>
+<p><span class="math display">\[
+dA=-S dT-P dV
+\]</span></p>
+<p><span class="math display">\[
+dG=-S dT+V dP
+\]</span></p>
+<p>풀이: natural variable을 보고 외움. <span
+class="math inline">\(U(S,V)\)</span>, <span
+class="math inline">\(H(S,P)\)</span>, <span
+class="math inline">\(A(T,V)\)</span>, <span
+class="math inline">\(G(T,P)\)</span>였음.</p>
+<h3 id="g와-a를-구분하는-법">3. <span class="math inline">\(G\)</span>와
+<span class="math inline">\(A\)</span>를 구분하는 법</h3>
+<p>답: <span class="math inline">\(G\)</span>는 일정 <span
+class="math inline">\(T,P\)</span>에서 비팽창 일/자발성 판단에 쓰고,
+<span class="math inline">\(A\)</span>는 일정 <span
+class="math inline">\(T,V\)</span>에서 최대 일 판단에 씀.</p>
+<p>풀이: 조건이 등온·등압이면 Gibbs, 등온·등적이면 Helmholtz로 잡음.</p>
+<h3 id="잔여-성질-mr의-의미">4. 잔여 성질 <span
+class="math inline">\(M^R\)</span>의 의미</h3>
+<p>답: 같은 <span class="math inline">\(T,P\)</span>에서 실제 유체와
+이상기체 기준값의 차이였음.</p>
+<p><span class="math display">\[
+M^R=M-M^{ig}
+\]</span></p>
+<p>풀이: 실제기체 계산이 어려우니 이상기체에서 얼마나 벗어났는지
+보정하는 값임.</p>
+<h3 id="z1-z1-해석">5. <span class="math inline">\(Z&gt;1\)</span>,
+<span class="math inline">\(Z&lt;1\)</span> 해석</h3>
+<p>답: <span class="math inline">\(Z&gt;1\)</span>이면 반발력 우세,
+<span class="math inline">\(Z&lt;1\)</span>이면 인력 우세였음.</p>
+<p>풀이: <span
+class="math inline">\(Z=PV/RT=V_{real}/V_{ideal}\)</span>로 보면 됨.
+실제 부피가 더 크면 반발, 더 작으면 인력.</p>
+<h3 id="상평형-조건">6. 상평형 조건</h3>
+<p>답: 온도 같고, 압력 같고, 각 성분의 화학퍼텐셜 또는 fugacity가 같아야
+함.</p>
+<p>풀이: 물질이 한 상에서 다른 상으로 이동할 구동력이 없어지는
+조건임.</p>
+<h3 id="clapeyron-식의-의미">7. Clapeyron 식의 의미</h3>
+<p>답: 상평형선의 기울기 <span class="math inline">\(dP/dT\)</span>를
+상변화 엔탈피와 부피 변화로 연결하는 식임.</p>
+<p><span class="math display">\[
+\frac{dP}{dT}=\frac{\Delta H}{T\Delta V}
+\]</span></p>
+<p>풀이: 기화처럼 기체 부피가 지배적이면 Clausius-Clapeyron 근사로
+넘어감.</p>
+<h3 id="clausius-clapeyron-식이-말하는-것">8. Clausius-Clapeyron 식이
+말하는 것</h3>
+<p>답: 온도가 올라가면 증기압이 증가함.</p>
+<p>풀이: <span class="math inline">\(\ln P\)</span>와 <span
+class="math inline">\(1/T\)</span>가 거의 직선 관계라서 증기압 추정에
+씀.</p>
+<h3 id="hess-법칙">9. Hess 법칙</h3>
+<p>답: 반응열은 경로와 무관하고 초기/최종 상태만 보면 됨.</p>
+<p>풀이: 엔탈피가 상태함수라서 반응을 여러 단계로 나눠도 총합은
+같음.</p>
+<h3 id="현열과-잠열-구분">10. 현열과 잠열 구분</h3>
+<p>답: 현열은 온도 변화에 쓰는 열이고, 잠열은 온도 변화 없이 상변화에
+쓰는 열임.</p>
+<p>풀이: 현열은 <span class="math inline">\(Q=\int C_p dT\)</span>,
+잠열은 <span class="math inline">\(Q=\Delta H_{phase}\)</span>로
+처리함.</p>
+<h3 id="열용량-평균값을-쓰는-이유">11. 열용량 평균값을 쓰는 이유</h3>
+<p>답: <span class="math inline">\(C_p\)</span>가 온도 함수라 적분해야
+하는데, 시험 계산에서는 평균 열용량으로 단순화할 수 있음.</p>
+<p>풀이: 정확히는 <span
+class="math inline">\(Q=\int_{T_1}^{T_2}C_p(T)dT\)</span>이고, 평균이면
+<span class="math inline">\(Q=\bar C_p(T_2-T_1)\)</span>임.</p>
+<h3 id="법칙에서-불가능을-판정하는-기준">12. 2법칙에서 “불가능”을
+판정하는 기준</h3>
+<p>답: 전체 엔트로피 변화나 생성 엔트로피가 음수면 불가능함.</p>
+<p>풀이: 에너지수지가 맞아도 <span
+class="math inline">\(S_{gen}&lt;0\)</span>이면 자연에서 일어날 수 없는
+장치임.</p>
+<h3 id="boltzmann-식에서-log를-쓰는-이유-4개">13. Boltzmann 식에서 log를
+쓰는 이유 4개</h3>
+<p>답:</p>
+<ol type="1">
+<li>경우의 수는 곱해지지만 엔트로피는 더해져야 해서 log를 씀.</li>
+<li><span class="math inline">\(\ln1=0\)</span>이라 완전결정의 <span
+class="math inline">\(S=0\)</span> 기준과 맞음.</li>
+<li>미시상태 수가 너무 커서 log로 크기를 줄임.</li>
+<li>정보량/확률 관점에서 곱셈적 확률을 덧셈적 정보량으로 바꿈.</li>
+</ol>
+<p>풀이: 이건 개념식 1번 유력이라 문장으로 외우는 게 낫음.</p>
+<h3 id="maxwell-demon이-실패하는-이유">14. Maxwell demon이 실패하는
+이유</h3>
+<p>답: 분자 정보를 측정, 저장, 삭제하는 과정에서 열과 엔트로피가
+생김.</p>
+<p>풀이: 계만 보면 엔트로피가 줄어든 것처럼 보여도
+도깨비+정보장치+주변까지 보면 총 엔트로피는 증가함.</p>
+<h3 id="counter-current가-co-current보다-좋은-이유">15.
+Counter-current가 co-current보다 좋은 이유</h3>
+<p>답: 향류는 전체 열교환기 길이에 걸쳐 온도차를 유지함.</p>
+<p>풀이: 병류는 입구에서만 온도차가 크고 뒤쪽에서는 열교환 구동력이
+줄어듦. 향류는 같은 길이에서 더 큰 열회수 가능함.</p>
+<h3 id="제습기를-켜면-방이-더워지는-이유">16. 제습기를 켜면 방이
+더워지는 이유</h3>
+<p>답: 수증기 응축잠열과 압축기 일이 전부 실내 열로 들어오기 때문임.</p>
+<p>풀이: 습도는 낮아지지만 냉장고처럼 실외기가 밖에 있는 게 아니라 열을
+방 안에 버리므로 방 온도는 올라감.</p>
+<h3 id="인덕션-전용-냄비가-필요한-이유">17. 인덕션 전용 냄비가 필요한
+이유</h3>
+<p>답: 냄비 바닥에 유도전류와 자성 손실을 만들어야 하므로 강자성 금속이
+필요함.</p>
+<p>풀이: 유리, 알루미늄 단독, 구리 단독처럼 자기장 결합이 약하면 냄비
+자체가 잘 가열되지 않음.</p>
+<h2 id="누락-검증표">4. 누락 검증표</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>범위</th>
+<th>퀴즈/기존노트 반영</th>
+<th>이번 보강</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0법칙, 1법칙, 상태량/경로량</td>
+<td>반영됨</td>
+<td>핵심만 유지</td>
+</tr>
+<tr>
+<td>내부에너지, 엔탈피, 열용량</td>
+<td>일부 반영</td>
+<td>현열/잠열/평균 <span class="math inline">\(C_p\)</span> 계산
+추가</td>
+</tr>
+<tr>
+<td>PVT, 압축인자, 실제기체</td>
+<td>일부 반영</td>
+<td><span class="math inline">\(Z\)</span> 계산, <span
+class="math inline">\(Z\)</span> 해석 추가</td>
+</tr>
+<tr>
+<td>상평형, phase rule</td>
+<td>약했음</td>
+<td>Gibbs phase rule, triple point 추가</td>
+</tr>
+<tr>
+<td>Clapeyron, Clausius-Clapeyron</td>
+<td>약했음</td>
+<td>증기압 계산 추가</td>
+</tr>
+<tr>
+<td>Hess 법칙, 반응열</td>
+<td>약했음</td>
+<td>생성엔탈피 반응열 계산 추가</td>
+</tr>
+<tr>
+<td>Carnot, 열기관, COP</td>
+<td>반영됨</td>
+<td>계산형 풀이 강화</td>
+</tr>
+<tr>
+<td>엔트로피 변화</td>
+<td>반영됨</td>
+<td>이상기체/등온/정압정적 계산 강화</td>
+</tr>
+<tr>
+<td><span class="math inline">\(S_{gen}\)</span>, lost work</td>
+<td>반영됨</td>
+<td>강의 숫자형 계산 강화</td>
+</tr>
+<tr>
+<td>발명가 장치 가능성 판정</td>
+<td>반영됨</td>
+<td>에너지수지+2법칙 풀이 추가</td>
+</tr>
+<tr>
+<td>3법칙, Boltzmann log</td>
+<td>반영됨</td>
+<td>log 이유 4개 재정리</td>
+</tr>
+<tr>
+<td>Maxwell relation, fugacity, residual</td>
+<td>반영됨</td>
+<td>짧은 개념형 예상문제 추가</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
