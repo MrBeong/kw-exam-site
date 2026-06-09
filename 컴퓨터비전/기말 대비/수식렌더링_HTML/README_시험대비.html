@@ -1,212 +1,188 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="kw-exam-protected" content="v1">
   <title>컴퓨터비전 README_시험대비</title>
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #d8e0ee;
+      --blue: #2563eb;
+      --bad: #dc2626;
     }
+    * { box-sizing: border-box; }
     body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top left, #eaf0ff, transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      padding: 24px;
     }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
+    .gate {
+      width: min(420px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
+      padding: 28px;
     }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
+    .badge {
+      display: inline-flex;
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--blue);
+      background: #eff6ff;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.22;
+      letter-spacing: 0;
+      margin: 0 0 10px;
     }
     p {
-      margin: 1em 0;
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
     }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      white-space: pre-wrap;
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
+    label {
       display: block;
-      font-variant-numeric: lining-nums tabular-nums;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
     }
-    table caption {
-      margin-bottom: 0.75em;
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 14px;
+      font-size: 18px;
+      outline: none;
     }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
     }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
+    button {
+      width: 100%;
+      height: 52px;
+      border: 0;
+      border-radius: 14px;
+      margin-top: 14px;
+      background: var(--blue);
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
     }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
+    .status {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--bad);
+      font-size: 14px;
+      font-weight: 700;
     }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
+    .fine {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #98a2b3;
     }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-  </style>
-  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css?v=20260609-image-caption-align" />
-  <script>
-    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <style>
-    html,body{width:100%;max-width:none!important;min-height:100%;margin:0}
-    body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:min(1080px,calc(100vw - 128px));margin-left:auto!important;margin-right:auto!important}
-    body > figure{width:min(82%,860px)!important;margin-left:auto!important;margin-right:auto!important}
-    body > figure img{width:auto;max-width:100%;margin-left:auto!important;margin-right:auto!important}
-    body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:min(82%,860px)!important;margin-left:auto!important;margin-right:auto!important}
-    .back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
-    .back-to-index:hover{background:#eff6ff}
-    @media(max-width:920px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:calc(100vw - 56px)}body > figure,body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:94%!important}}
-    @media(max-width:640px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:calc(100vw - 28px)}body > figure,body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:100%!important}.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
   </style>
 </head>
 <body>
-<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+  <main class="gate">
+    <div class="badge">KW Final Prep</div>
+    <h1>비밀번호가 필요합니다</h1>
+    <p>이 페이지의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 현재 탭에서 바로 열립니다.</p>
+    <form id="gate-form">
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" autofocus>
+      <button type="submit">열기</button>
+      <div class="status" id="status"></div>
+    </form>
+    <div class="fine">비밀번호 입력 전에는 HTML 본문 데이터가 평문으로 포함되지 않습니다.</div>
+  </main>
+  <script>
+  (() => {
+    const payload = {"salt":"nUZFC6JcbqDiOXakpeAT+A==","iv":"G0Kv3St9ovLLiJb9","tag":"fKWAbpvxrgkDISEfWx54Vw==","data":"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"};
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+    const status = document.getElementById("status");
+    const input = document.getElementById("pw");
+    const form = document.getElementById("gate-form");
 
-<header id="title-block-header">
-<h1 class="title">컴퓨터비전 README_시험대비</h1>
-</header>
-<h1 id="컴퓨터비전-대비-폴더">컴퓨터비전 대비 폴더</h1>
-<h2 id="현재-활성-md-파일">현재 활성 md 파일</h2>
-<ul>
-<li><code>00_범위관리.md</code></li>
-<li><code>01_통합_핵심노트.md</code></li>
-<li><code>02_통합_문제세트.md</code></li>
-<li><code>03_암기형_예상문답_종합본.md</code></li>
-<li><code>README_시험대비.md</code></li>
-</ul>
-<h2 id="html-보기">HTML 보기</h2>
-<ul>
-<li><code>수식렌더링_HTML/00_범위관리.html</code></li>
-<li><code>수식렌더링_HTML/01_통합_핵심노트.html</code></li>
-<li><code>수식렌더링_HTML/02_통합_문제세트.html</code></li>
-<li><code>수식렌더링_HTML/03_암기형_예상문답_종합본.html</code></li>
-</ul>
+    function b64ToBytes(value) {
+      const raw = atob(value);
+      const out = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+      return out;
+    }
+
+    async function deriveKey(password) {
+      const material = await crypto.subtle.importKey(
+        "raw",
+        enc.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+      );
+      return crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(payload.salt), iterations: 250000, hash: "SHA-256" },
+        material,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function unlock(password, remember) {
+      status.textContent = "확인 중...";
+      try {
+        const key = await deriveKey(password);
+        const encrypted = b64ToBytes(payload.data);
+        const tag = b64ToBytes(payload.tag);
+        const combined = new Uint8Array(encrypted.length + tag.length);
+        combined.set(encrypted, 0);
+        combined.set(tag, encrypted.length);
+        const plain = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64ToBytes(payload.iv), tagLength: 128 },
+          key,
+          combined
+        );
+        if (remember) sessionStorage.setItem("kwExamPassword", password);
+        document.open();
+        document.write(dec.decode(plain));
+        document.close();
+      } catch (error) {
+        sessionStorage.removeItem("kwExamPassword");
+        status.textContent = "비밀번호가 맞지 않습니다.";
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      unlock(input.value, true);
+    });
+
+    const remembered = sessionStorage.getItem("kwExamPassword");
+    if (remembered) unlock(remembered, false);
+  })();
+  </script>
 </body>
 </html>

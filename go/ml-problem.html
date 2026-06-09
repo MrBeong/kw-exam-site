@@ -3,32 +3,186 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="kw-exam-protected" content="v1">
   <title>기계학습 problem</title>
-  <script>
-    const target = new URL("../기계학습/기말 대비/수식렌더링_HTML/02_통합_문제세트_인터랙티브.html", location.href);
-    target.search = location.search;
-    target.hash = location.hash;
-    location.replace(target.href);
-    window.addEventListener("DOMContentLoaded", () => {
-      const a = document.querySelector("main a");
-      if (a) {
-        const fallback = new URL(a.getAttribute("href"), location.href);
-        fallback.search = location.search;
-        fallback.hash = location.hash;
-        a.href = fallback.href;
-      }
-    });
-  </script>
   <style>
-    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#f5f7fb; color:#111827; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif; }
-    main { width:min(92vw,480px); padding:26px; border:1px solid #e2e8f0; border-radius:22px; background:#fff; text-align:center; box-shadow:0 18px 50px rgba(15,23,42,.08); }
-    a { color:#2563eb; font-weight:800; }
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #d8e0ee;
+      --blue: #2563eb;
+      --bad: #dc2626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top left, #eaf0ff, transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      padding: 24px;
+    }
+    .gate {
+      width: min(420px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
+      padding: 28px;
+    }
+    .badge {
+      display: inline-flex;
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--blue);
+      background: #eff6ff;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.22;
+      letter-spacing: 0;
+      margin: 0 0 10px;
+    }
+    p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 14px;
+      font-size: 18px;
+      outline: none;
+    }
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
+    }
+    button {
+      width: 100%;
+      height: 52px;
+      border: 0;
+      border-radius: 14px;
+      margin-top: 14px;
+      background: var(--blue);
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .status {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--bad);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .fine {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #98a2b3;
+    }
   </style>
 </head>
 <body>
-  <main>
-    <p>이동 중입니다.</p>
-    <a href="../기계학습/기말 대비/수식렌더링_HTML/02_통합_문제세트_인터랙티브.html">바로 열기</a>
+  <main class="gate">
+    <div class="badge">KW Final Prep</div>
+    <h1>비밀번호가 필요합니다</h1>
+    <p>이 페이지의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 현재 탭에서 바로 열립니다.</p>
+    <form id="gate-form">
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" autofocus>
+      <button type="submit">열기</button>
+      <div class="status" id="status"></div>
+    </form>
+    <div class="fine">비밀번호 입력 전에는 HTML 본문 데이터가 평문으로 포함되지 않습니다.</div>
   </main>
+  <script>
+  (() => {
+    const payload = {"salt":"QQprVSc5fWCjlligwey8ag==","iv":"pEsiNGK0IdIgdMXv","tag":"6I8xPsBVerVTtCJxBoaSzQ==","data":"bNl09hSst1aGsnRkndRkVhJO9GzwuLk2ITUsek/gTq99UXywgk0Z5UgFXfhdYKHJoCJ+PECWIh2a2cPCTVWHyvkH7xH6tJHuTHC1E04Pqelual//r8hyf2dRdpjxiYAoPEVnz0qgx2O3NogE6nI6T2j8aWxRr5OPahwkY1tBVXe1KpvSQ+fiO7g9AtlcrCovXM9voXcghqaxcEpfuWo0m92Blib43aUsEnrbv58ImdLXwjBcIOkLXzys7eDQVn+5yb2fEnlapT18/ZKz4+TTfA5AwjdoJADooKs7ZxfDXmmOmVM7btuJV658LoNcZAdKX+GXRm4ipOrXVlBtaG9suGfQMEJBdW/ezH5xwBWoiCh1CSsDQNsB0KpgXBhTP+FRPwKyOYfc6Z3tnntAp6ymdEmTZlS7indUmxNG1OMN4LhjO+ObBqIl68NUbilX/7GTg02WntIfBPeoqGPRJeP2ko2pta1mZI9B4nU15Kre2BV9y/ZsrhqNYau8JvssrdoBb5G2AtGkiV/Z/Lcmb2tV6tYJSImZaRoTPAQDaLrnQYIS44lDYan9AqQ+3HLueO6FK3SK4K2wbIbVTsDKPv2gQsfyPXWJhfDE4TlzgmFDRY3RTVvkxpa8oK7nEx6RbU/EjeYwVHpeCB2CwZhCRkaU9BXZg/RRdwMH0xiGz7iNHpnoo2QX2uKiNPLy+x4ijJvlmhubGatGNY4cfKMxXBfT6Z4+JvZXMfbplyPULDEXcwTxkF8oVR8kRefeqAhgjGJ/nXh0M4Sk74DIDn2ojvDCYO2ygw6X1MOWhaXVvuh2NIL/SDxGd+76uMrtjrdhBb/sGST3ClkTcQ//ad5j5f0CYBbr2jggDunl0xDysLsvdRmUXVTEqARFyJSG9nDrQz25Oq/2NSV2JWLBTjTtwPnOiqGcWSBTKqHc+V92TzLfDkgud/TzwBPDWHg8OtfGERBQ2zabjSfZKiF2WdzzMnMVA12BnSfzWoEvYE9QfgYJItYwt415YF4xNadUgwdgkPgBHbEHgirVMpaovCO1k8BbgjkqOTx7moM23rxb89g7I9d2q9qm0TXeJcpC4m7gb/xh9uGXxHMG8juKhlsoLFmARnIdCC1Ff3sRYAOVX9vTcHCGVH4wIX+qIxps2l90P7Fk99kuKOToAK1ohlitfkV3ZKyrYedxZgaJIpboZeD/jNLky2z+d0h0VYq9l5RidOGQJjbAIQl4ZYg/aRIDLezUe2A4Ed1MQ7KYNrzymYiVySpPnK9C9waUCZQ2XETYxeIaciqXg03dM3fLrfv1533z4LUVldNyKvwqcewz42T/rF89uVmlpGQyxglp3LfeixkXKbr2Y1Q90pQHj6h5hkRE8ETON9HMFtumxrQ6Mka3ZFZH8fYfDsPNErwLU9wLIsdi25VAcGHBMmSUJydNFsyDlz9LCOKTCGCSjDV6yA7/S/k6yq8PxdFSVu/DjYyVimos2mnV5PCamaF+HpXlUZQ+ixF/g+xZ1/VibMP5lvw6kiZmqtSJ61z77sG8xOqC8GFC2MkRKpmkmSYRlFvLKjuwqCTWdHPmI2ONbTK0KTdLUXpeySxVN+AUa/x1kNvVOZRl13Kza+G78cS+8hk742x9JARI6tehVsrHZBbzHDRBLfy9LfEoF7icpQ6qM9VLEFQM2wyVpgXFpXAGLUDjb5m/E6KwjwzcCzYqy2n3R3ny2fjzRlFPgFdOm2I0tmNwB/vA/7fWiSAAGRbwpWl1ijoFMvsoUxBNOdvSnFAB7bf3dT+OaBJ1zfUiIk5PTMDL808gr9wKuhF2wtfEtyaR2sPG333X8W8MrYExp093cC6AhUvoPvQQc3gYRVoqZZE/joa8J22/pPglfF39I8xJl6uJ7JFXIUtEMJB/O0sE6n+PNFQe7xc="};
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+    const status = document.getElementById("status");
+    const input = document.getElementById("pw");
+    const form = document.getElementById("gate-form");
+
+    function b64ToBytes(value) {
+      const raw = atob(value);
+      const out = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+      return out;
+    }
+
+    async function deriveKey(password) {
+      const material = await crypto.subtle.importKey(
+        "raw",
+        enc.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+      );
+      return crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(payload.salt), iterations: 250000, hash: "SHA-256" },
+        material,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function unlock(password, remember) {
+      status.textContent = "확인 중...";
+      try {
+        const key = await deriveKey(password);
+        const encrypted = b64ToBytes(payload.data);
+        const tag = b64ToBytes(payload.tag);
+        const combined = new Uint8Array(encrypted.length + tag.length);
+        combined.set(encrypted, 0);
+        combined.set(tag, encrypted.length);
+        const plain = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64ToBytes(payload.iv), tagLength: 128 },
+          key,
+          combined
+        );
+        if (remember) sessionStorage.setItem("kwExamPassword", password);
+        document.open();
+        document.write(dec.decode(plain));
+        document.close();
+      } catch (error) {
+        sessionStorage.removeItem("kwExamPassword");
+        status.textContent = "비밀번호가 맞지 않습니다.";
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      unlock(input.value, true);
+    });
+
+    const remembered = sessionStorage.getItem("kwExamPassword");
+    if (remembered) unlock(remembered, false);
+  })();
+  </script>
 </body>
 </html>

@@ -3,32 +3,186 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="kw-exam-protected" content="v1">
   <title>컴퓨터비전 note</title>
-  <script>
-    const target = new URL("../컴퓨터비전/기말 대비/수식렌더링_HTML/01_통합_핵심노트.html", location.href);
-    target.search = location.search;
-    target.hash = location.hash;
-    location.replace(target.href);
-    window.addEventListener("DOMContentLoaded", () => {
-      const a = document.querySelector("main a");
-      if (a) {
-        const fallback = new URL(a.getAttribute("href"), location.href);
-        fallback.search = location.search;
-        fallback.hash = location.hash;
-        a.href = fallback.href;
-      }
-    });
-  </script>
   <style>
-    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#f5f7fb; color:#111827; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif; }
-    main { width:min(92vw,480px); padding:26px; border:1px solid #e2e8f0; border-radius:22px; background:#fff; text-align:center; box-shadow:0 18px 50px rgba(15,23,42,.08); }
-    a { color:#2563eb; font-weight:800; }
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #d8e0ee;
+      --blue: #2563eb;
+      --bad: #dc2626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top left, #eaf0ff, transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      padding: 24px;
+    }
+    .gate {
+      width: min(420px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
+      padding: 28px;
+    }
+    .badge {
+      display: inline-flex;
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--blue);
+      background: #eff6ff;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.22;
+      letter-spacing: 0;
+      margin: 0 0 10px;
+    }
+    p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 14px;
+      font-size: 18px;
+      outline: none;
+    }
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
+    }
+    button {
+      width: 100%;
+      height: 52px;
+      border: 0;
+      border-radius: 14px;
+      margin-top: 14px;
+      background: var(--blue);
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .status {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--bad);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .fine {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #98a2b3;
+    }
   </style>
 </head>
 <body>
-  <main>
-    <p>이동 중입니다.</p>
-    <a href="../컴퓨터비전/기말 대비/수식렌더링_HTML/01_통합_핵심노트.html">바로 열기</a>
+  <main class="gate">
+    <div class="badge">KW Final Prep</div>
+    <h1>비밀번호가 필요합니다</h1>
+    <p>이 페이지의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 현재 탭에서 바로 열립니다.</p>
+    <form id="gate-form">
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" autofocus>
+      <button type="submit">열기</button>
+      <div class="status" id="status"></div>
+    </form>
+    <div class="fine">비밀번호 입력 전에는 HTML 본문 데이터가 평문으로 포함되지 않습니다.</div>
   </main>
+  <script>
+  (() => {
+    const payload = {"salt":"8W/O+7GAFG8lP5g9kEZR6Q==","iv":"nU433Tn82aP/Olx0","tag":"JYFUMDFBS9tWRqRQOdUDgw==","data":"5Cyd6E+sRjcdgKGmXTpPbJlNJbKHh8E4K99+Fi3o8lkhf0mTz4quG3h+oeq3SM7c5LeTNW9YE3BrvUBg+1THFPM/DBADBFN+jypkJVoBObSY7B4mAJbhbN2zSaoMediExWr52vgreemVrYy/+UvGyckldHBU/icpB14oqXmnWn4d6KYkp4BRNQ08Bosh/ttY86jaGLcNw/qjYXjyqZ3dAEhPJyMHPJiMfCh6DpyXUZxAULM5XRlREPu4+HziXBX3/7ETxfIoviB8Qh/OPCllQerN8wGmS5HN8sOCLtRf6iXQtYyiV3gqlFTwPpD7wIRFvRz+r1f1LjHP+Pd3uuW98K22MO2vMH7u96H31UbOQ3R8qtJXxmSvl/zcksV8qShhiu8CtelVDiV1tsMoKNuYZqKv9rl1xpPPNe8nf4euzvaGtyJAiYJHIvMQVYViataVf+FnHhyB9t/aOdinrtNrXRhAQAHR7L/OpwQlogoo44NSHwhqsKdLxvA0gj0sOglr69QaNHRzMXDFmqdUdfR+BBPfmoetpYyXNsCmEQ99mI8DPWJ9EP2LCbZOGrRvq2SuzWcAWBYcX+kvB1Pji/bI9Hd5/gSdvja35H6d1QBqRBtp8+1bHgtQPfkNyDgNmCoAGMsPuq2ts+UDzowdQEL/UrxWOTKNlxKguI540fGuJRpyMytBkJyh/HVmE7vSGKuMYac3hu6aD+p9TlmqZDIJfGAM4sdIVt0tgJBxx2ojYbLMM62x8fvP73IttQutOgOJnO6HMWUj2HgmYqmidIlaCxE8/OKeKM/b6+xcxyGg3v6l0Ou3sEpCgb0wvbrBXwtGimFZXCcyQfdTEqqGZuttH3qSM/qkeckDgJMV4dUamn3XCfXCqb9htoQ60itPZeGardixW0SXSGeUJJbQtRNZHbQnfDbSDBv/7Qsy33caHm5C/sOTE1NhjVYFKIw+zixHCTa7znXXQrTqnVTMO/xRgMfzRBfwk/Gf/OqEfLXBznWzVtNgNYhkmyTLS0UUG6W/7RpY7SjHcaaqw/IQqFPhgUYlFztBb2uLfdmqSKYDaH6/XDjCPY70dgNL+BA/VFIxcY5JnTGbQVrS2ues3FNk49crdTa7sg7yMK1xB+oWWhx0wEAPLokRK9s5xwWbo/Bbq547bGK2ecLKhWBTGsZe+sR3TzxZZbCutBYM154zjwuiZAJuHF0wrGmTXAdtOL+tKGeb75MpKp1z5XUSlm3l4bvzpYUvOTAERddy6cmy4zV0/u9q5vYAocbkgWKehWX/4M5As/ev4PYKEJGZ+GNVF5DoSl3NR49RiGlbzkjCN5An0+dMR/gKiQ0wWPFEhG+YMV7xnwz3V1HRmia72T+HYjYHQZmpRQB8+aCILnbOlIGQV45QO54Ud8Q8aTCvEAFN7qB8VQFZFXdWe3Dwj7bJr+AQWBAMYDhXcw7bnd1NVMTigLu10SBbfg/WRnHnCogrGfY8RjMggeHNVmCT9QRPnzzPnUkSnHIPQZWsRuN972C4j2b9bplVOjnchgol7pK9Ydz2hpFr049zR1Qkawri8RVT85ELPlYtwdHo5mpkXEWtf1dz1YYt8Hj0FbFDQhn0uajEkBQTwZb3KNCuLsZSnbNf7qenurvZzsX4SQ0FKsFkUSy+ufbeSFwoy29gphT4oR8bvwzMI6sB/HN9CgDcN9NDpgpLftlAm8tj3UhLzET7NX9pqoR+6IA0ONrWbDSvJ5d+kEKLYiIJvRF2FaH6H8jH+NNClWbWHoOb1krfOi4BGSk/c/rtOcuG+Nwuorqn6oovNWjXNdMd7leHARV+POzGbskrOQ4H4rTAmIMishxAkv49cvMeFr1Xx2XGYtXC2Y40q6q6C955"};
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+    const status = document.getElementById("status");
+    const input = document.getElementById("pw");
+    const form = document.getElementById("gate-form");
+
+    function b64ToBytes(value) {
+      const raw = atob(value);
+      const out = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+      return out;
+    }
+
+    async function deriveKey(password) {
+      const material = await crypto.subtle.importKey(
+        "raw",
+        enc.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+      );
+      return crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(payload.salt), iterations: 250000, hash: "SHA-256" },
+        material,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function unlock(password, remember) {
+      status.textContent = "확인 중...";
+      try {
+        const key = await deriveKey(password);
+        const encrypted = b64ToBytes(payload.data);
+        const tag = b64ToBytes(payload.tag);
+        const combined = new Uint8Array(encrypted.length + tag.length);
+        combined.set(encrypted, 0);
+        combined.set(tag, encrypted.length);
+        const plain = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64ToBytes(payload.iv), tagLength: 128 },
+          key,
+          combined
+        );
+        if (remember) sessionStorage.setItem("kwExamPassword", password);
+        document.open();
+        document.write(dec.decode(plain));
+        document.close();
+      } catch (error) {
+        sessionStorage.removeItem("kwExamPassword");
+        status.textContent = "비밀번호가 맞지 않습니다.";
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      unlock(input.value, true);
+    });
+
+    const remembered = sessionStorage.getItem("kwExamPassword");
+    if (remembered) unlock(remembered, false);
+  })();
+  </script>
 </body>
 </html>

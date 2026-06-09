@@ -3,32 +3,186 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="kw-exam-protected" content="v1">
   <title>영상AI생성모델 problem</title>
-  <script>
-    const target = new URL("../영상AI생성모델/기말 대비/수식렌더링_HTML/02_통합_문제세트_인터랙티브.html", location.href);
-    target.search = location.search;
-    target.hash = location.hash;
-    location.replace(target.href);
-    window.addEventListener("DOMContentLoaded", () => {
-      const a = document.querySelector("main a");
-      if (a) {
-        const fallback = new URL(a.getAttribute("href"), location.href);
-        fallback.search = location.search;
-        fallback.hash = location.hash;
-        a.href = fallback.href;
-      }
-    });
-  </script>
   <style>
-    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#f5f7fb; color:#111827; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif; }
-    main { width:min(92vw,480px); padding:26px; border:1px solid #e2e8f0; border-radius:22px; background:#fff; text-align:center; box-shadow:0 18px 50px rgba(15,23,42,.08); }
-    a { color:#2563eb; font-weight:800; }
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #d8e0ee;
+      --blue: #2563eb;
+      --bad: #dc2626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top left, #eaf0ff, transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      padding: 24px;
+    }
+    .gate {
+      width: min(420px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
+      padding: 28px;
+    }
+    .badge {
+      display: inline-flex;
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--blue);
+      background: #eff6ff;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.22;
+      letter-spacing: 0;
+      margin: 0 0 10px;
+    }
+    p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 14px;
+      font-size: 18px;
+      outline: none;
+    }
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
+    }
+    button {
+      width: 100%;
+      height: 52px;
+      border: 0;
+      border-radius: 14px;
+      margin-top: 14px;
+      background: var(--blue);
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .status {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--bad);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .fine {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #98a2b3;
+    }
   </style>
 </head>
 <body>
-  <main>
-    <p>이동 중입니다.</p>
-    <a href="../영상AI생성모델/기말 대비/수식렌더링_HTML/02_통합_문제세트_인터랙티브.html">바로 열기</a>
+  <main class="gate">
+    <div class="badge">KW Final Prep</div>
+    <h1>비밀번호가 필요합니다</h1>
+    <p>이 페이지의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 현재 탭에서 바로 열립니다.</p>
+    <form id="gate-form">
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" autofocus>
+      <button type="submit">열기</button>
+      <div class="status" id="status"></div>
+    </form>
+    <div class="fine">비밀번호 입력 전에는 HTML 본문 데이터가 평문으로 포함되지 않습니다.</div>
   </main>
+  <script>
+  (() => {
+    const payload = {"salt":"Dd+ZybVIdJsdFT1uaMoUpQ==","iv":"kqw9HkkgrGHcxuD4","tag":"khPhKMyzaZVby/fvwZ+mkQ==","data":"1uah8R5K/26NERfUGAbWArjZNSo7oCj4AlXb7GDe2bqWexmqXAuxYbCCWWTARXjoY/rZBBwn3gzsYtzh8iPu5WcKA76dT4Z3r0XddrnpmD91kVNudPZyqwuv5VOp5Gj8O0dGB06yaRy/OQ6XU8bvryU7gzRzboypnkDCSY0PnGopom5trteoLGvQ9XBufWAYOGxs/sA8T4hUFr0BfawPyEI0zJkwAOYlP55okR2o7NbYUi1wuRu3kIUO6ucdiVCOeAsYP/cXfEwDOAdQtCgRt6synoq1R1SPA/3jU//+kqHiCT5A+o7hpTaUeIfsNyU8zhPoOf4fuzQ/ZLwtjiffDM3oeq5bGSQKrke9VGBiQ00OlB19hMRPVzV6n3IoDeRNoWmRvA8U2ubWX82ojWhkeCChOc48lZ3GgPqjJVKWho3Bq+J1PihLhTxSLyeWlVFcrM6IT+TeunjOFrJPzeo0xR70CCjQ46DA/VkWLqOrO6NaGg/BtXT/u2u7YGI8BC7B2U1Oggj1PpBA/mXxAAm4ddDhB7vQnpzXH6uioRYqGkkrwt+uE1L/7XSGzkMIRKPbrRV5CX/1hB+9eWYUhhb9xxiP8jr02bSS52iZTh7MWi8kx6NfINYdIBCkI1rgO+92MlYIbhaD1yJvwQjuLjqtQbIp5xP6WmiYD4oIR5a3MrApHB5NwJnUngMI44FquXdgWZGRerQtla58cRW29TjiDy7fjHfzGFNI1Y4oAFsMxQmaB2svYBbTAnGClZkRWuFoiojGkjw0mXVRO7mcMarD1cAIYuQDL72NoEeUhTW2C1gc/AeT1VmUWEUESPlgRCmK6Fu2yMPJ4vgyruNNYqYQ77ZCzNHu/JjLpa4y+3Iwy2PO3EbbdmHuKUlTlLVO+Bu0hWHQG5O3PN9S7SaamDANX1MObCa994lS3cN8gCAhWr2Ry0W491n4jPijXCvxJBFAGovwRZEV0porMXT71oWgZn8BZ0TJJUrrIDUGzudquh9yju5dPH8dK77xpLnYPAKP3dorgRE56XwDQ+f37KNtxmF65y5D3K9oYrWkdCU1LH+XFm+2foxdfzu8bLbaQciqAmVlIGW0OIGTCaKa8I6xIgbJSHUPB4YSo+5uSUq7yTGa35F3Q8aa5aowSkfubqEktv7coSkSGHoKXcERVUhRUbV1DqGEpO9k0P+K0MWTIUTvg3G5d/2ts2hYIAZ25srKoyQQEHeW3RD92IJS4vKMBq65S/5hLWbfOHxey5MdyWnAqnkshCmijm1CInRfDygKg7ZPHfDjJEAhYXN0TLyp5g6hCc6eZbNniLxn6e8UuDrSnKqC/rrQ2XVHDCAozY/AxjtvhGV5l4PCxz+/V0rv9MJk+zobfxXXGhAIHQ0uh6DwPxUn3KUt0N4gQMHkBzS+XDcE5idUgLZ5fAb8PkkyRjIBrDTC2OkWVg7jdtAABUeH4FIPJG6Zh4Y2eO7s5AimBq7fmtIQ7w0H+mzrVlkJO4B3oe5m6dkdUuA6AkTiF2lsLogSUPTAYwuqBFKmSQKCZpeDiFDOB+1ybEDM77gFM+819S0LL3F/2G/t7uJjeP5U5vghUg6m9JJ7kmTXBqYGlPwjE3CuMjcfsQhgq4Mch9ZnKZzhD3yEjqcq5KWQhZbEdGfReU4x1jDo3d1XKuX97B81Glna2fT0gvuBvx+1XgMas8v/NH5siXLmzA9P5aB7fVVBkQlMHh+5wBzkACzbQs3xq+dTzJXv1EkikbRIzg1j0sKBZbX/HZCBR9UGSJrxvzvLR5b5U+dG9iYOvxMPkSvFpq0uKlOBJxr0+sXwrE9xJGoPK7USlbBLSjzqblL+RHfesi37M2ph8R4CClXKbWbBGkzgb5Lc+lnHP5uUVaI+zVJaslVIkfyp6HUGAOWN0HVg9uSPsKfRRO1uL4AVj8twH5Fud1XHy10="};
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+    const status = document.getElementById("status");
+    const input = document.getElementById("pw");
+    const form = document.getElementById("gate-form");
+
+    function b64ToBytes(value) {
+      const raw = atob(value);
+      const out = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+      return out;
+    }
+
+    async function deriveKey(password) {
+      const material = await crypto.subtle.importKey(
+        "raw",
+        enc.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+      );
+      return crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(payload.salt), iterations: 250000, hash: "SHA-256" },
+        material,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function unlock(password, remember) {
+      status.textContent = "확인 중...";
+      try {
+        const key = await deriveKey(password);
+        const encrypted = b64ToBytes(payload.data);
+        const tag = b64ToBytes(payload.tag);
+        const combined = new Uint8Array(encrypted.length + tag.length);
+        combined.set(encrypted, 0);
+        combined.set(tag, encrypted.length);
+        const plain = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64ToBytes(payload.iv), tagLength: 128 },
+          key,
+          combined
+        );
+        if (remember) sessionStorage.setItem("kwExamPassword", password);
+        document.open();
+        document.write(dec.decode(plain));
+        document.close();
+      } catch (error) {
+        sessionStorage.removeItem("kwExamPassword");
+        status.textContent = "비밀번호가 맞지 않습니다.";
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      unlock(input.value, true);
+    });
+
+    const remembered = sessionStorage.getItem("kwExamPassword");
+    if (remembered) unlock(remembered, false);
+  })();
+  </script>
 </body>
 </html>

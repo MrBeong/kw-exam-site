@@ -1,212 +1,188 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="kw-exam-protected" content="v1">
   <title>무기공업화학 README_시험대비</title>
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #d8e0ee;
+      --blue: #2563eb;
+      --bad: #dc2626;
     }
+    * { box-sizing: border-box; }
     body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top left, #eaf0ff, transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      padding: 24px;
     }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
+    .gate {
+      width: min(420px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
+      padding: 28px;
     }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
+    .badge {
+      display: inline-flex;
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--blue);
+      background: #eff6ff;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.22;
+      letter-spacing: 0;
+      margin: 0 0 10px;
     }
     p {
-      margin: 1em 0;
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
     }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      white-space: pre-wrap;
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
+    label {
       display: block;
-      font-variant-numeric: lining-nums tabular-nums;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
     }
-    table caption {
-      margin-bottom: 0.75em;
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 14px;
+      font-size: 18px;
+      outline: none;
     }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
     }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
+    button {
+      width: 100%;
+      height: 52px;
+      border: 0;
+      border-radius: 14px;
+      margin-top: 14px;
+      background: var(--blue);
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
     }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
+    .status {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--bad);
+      font-size: 14px;
+      font-weight: 700;
     }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
+    .fine {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #98a2b3;
     }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-  </style>
-  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css?v=20260609-image-caption-align" />
-  <script>
-    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <style>
-    html,body{width:100%;max-width:none!important;min-height:100%;margin:0}
-    body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:min(1080px,calc(100vw - 128px));margin-left:auto!important;margin-right:auto!important}
-    body > figure{width:min(82%,860px)!important;margin-left:auto!important;margin-right:auto!important}
-    body > figure img{width:auto;max-width:100%;margin-left:auto!important;margin-right:auto!important}
-    body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:min(82%,860px)!important;margin-left:auto!important;margin-right:auto!important}
-    .back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
-    .back-to-index:hover{background:#eff6ff}
-    @media(max-width:920px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:calc(100vw - 56px)}body > figure,body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:94%!important}}
-    @media(max-width:640px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:calc(100vw - 28px)}body > figure,body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:100%!important}.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
   </style>
 </head>
 <body>
-<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+  <main class="gate">
+    <div class="badge">KW Final Prep</div>
+    <h1>비밀번호가 필요합니다</h1>
+    <p>이 페이지의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 현재 탭에서 바로 열립니다.</p>
+    <form id="gate-form">
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" autofocus>
+      <button type="submit">열기</button>
+      <div class="status" id="status"></div>
+    </form>
+    <div class="fine">비밀번호 입력 전에는 HTML 본문 데이터가 평문으로 포함되지 않습니다.</div>
+  </main>
+  <script>
+  (() => {
+    const payload = {"salt":"xe9OdI6AVwom5XInFkULQg==","iv":"BmqU9Q4budZ4JWRx","tag":"G1zgg3Q85FtCWpBJrhoRKA==","data":"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"};
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+    const status = document.getElementById("status");
+    const input = document.getElementById("pw");
+    const form = document.getElementById("gate-form");
 
-<header id="title-block-header">
-<h1 class="title">무기공업화학 README_시험대비</h1>
-</header>
-<h1 id="무기공업화학-대비-폴더">무기공업화학 대비 폴더</h1>
-<h2 id="현재-활성-md-파일">현재 활성 md 파일</h2>
-<ul>
-<li><code>00_범위관리.md</code></li>
-<li><code>01_통합_핵심노트.md</code></li>
-<li><code>02_통합_문제세트.md</code></li>
-<li><code>03_암기형_예상문답_종합본.md</code></li>
-<li><code>README_시험대비.md</code></li>
-</ul>
-<h2 id="html-보기">HTML 보기</h2>
-<ul>
-<li><code>수식렌더링_HTML/00_범위관리.html</code></li>
-<li><code>수식렌더링_HTML/01_통합_핵심노트.html</code></li>
-<li><code>수식렌더링_HTML/02_통합_문제세트.html</code></li>
-<li><code>수식렌더링_HTML/03_암기형_예상문답_종합본.html</code></li>
-</ul>
+    function b64ToBytes(value) {
+      const raw = atob(value);
+      const out = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+      return out;
+    }
+
+    async function deriveKey(password) {
+      const material = await crypto.subtle.importKey(
+        "raw",
+        enc.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+      );
+      return crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(payload.salt), iterations: 250000, hash: "SHA-256" },
+        material,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function unlock(password, remember) {
+      status.textContent = "확인 중...";
+      try {
+        const key = await deriveKey(password);
+        const encrypted = b64ToBytes(payload.data);
+        const tag = b64ToBytes(payload.tag);
+        const combined = new Uint8Array(encrypted.length + tag.length);
+        combined.set(encrypted, 0);
+        combined.set(tag, encrypted.length);
+        const plain = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64ToBytes(payload.iv), tagLength: 128 },
+          key,
+          combined
+        );
+        if (remember) sessionStorage.setItem("kwExamPassword", password);
+        document.open();
+        document.write(dec.decode(plain));
+        document.close();
+      } catch (error) {
+        sessionStorage.removeItem("kwExamPassword");
+        status.textContent = "비밀번호가 맞지 않습니다.";
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      unlock(input.value, true);
+    });
+
+    const remembered = sessionStorage.getItem("kwExamPassword");
+    if (remembered) unlock(remembered, false);
+  })();
+  </script>
 </body>
 </html>

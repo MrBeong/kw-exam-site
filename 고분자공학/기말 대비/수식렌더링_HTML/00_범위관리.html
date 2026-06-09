@@ -1,368 +1,188 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="kw-exam-protected" content="v1">
   <title>고분자공학 00_범위관리</title>
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #d8e0ee;
+      --blue: #2563eb;
+      --bad: #dc2626;
     }
+    * { box-sizing: border-box; }
     body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top left, #eaf0ff, transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      padding: 24px;
     }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
+    .gate {
+      width: min(420px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
+      padding: 28px;
     }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
+    .badge {
+      display: inline-flex;
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--blue);
+      background: #eff6ff;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.22;
+      letter-spacing: 0;
+      margin: 0 0 10px;
     }
     p {
-      margin: 1em 0;
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
     }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      white-space: pre-wrap;
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
+    label {
       display: block;
-      font-variant-numeric: lining-nums tabular-nums;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
     }
-    table caption {
-      margin-bottom: 0.75em;
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 14px;
+      font-size: 18px;
+      outline: none;
     }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
     }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
+    button {
+      width: 100%;
+      height: 52px;
+      border: 0;
+      border-radius: 14px;
+      margin-top: 14px;
+      background: var(--blue);
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
     }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
+    .status {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--bad);
+      font-size: 14px;
+      font-weight: 700;
     }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
+    .fine {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #98a2b3;
     }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-  </style>
-  <script defer=""
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
-  type="text/javascript"></script>
-  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css?v=20260609-image-caption-align" />
-  <script>
-    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <style>
-    html,body{width:100%;max-width:none!important;min-height:100%;margin:0}
-    body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:min(1080px,calc(100vw - 128px));margin-left:auto!important;margin-right:auto!important}
-    body > figure{width:min(82%,860px)!important;margin-left:auto!important;margin-right:auto!important}
-    body > figure img{width:auto;max-width:100%;margin-left:auto!important;margin-right:auto!important}
-    body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:min(82%,860px)!important;margin-left:auto!important;margin-right:auto!important}
-    .back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
-    .back-to-index:hover{background:#eff6ff}
-    @media(max-width:920px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:calc(100vw - 56px)}body > figure,body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:94%!important}}
-    @media(max-width:640px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:calc(100vw - 28px)}body > figure,body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:100%!important}.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
   </style>
 </head>
 <body>
-<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+  <main class="gate">
+    <div class="badge">KW Final Prep</div>
+    <h1>비밀번호가 필요합니다</h1>
+    <p>이 페이지의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 현재 탭에서 바로 열립니다.</p>
+    <form id="gate-form">
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" autofocus>
+      <button type="submit">열기</button>
+      <div class="status" id="status"></div>
+    </form>
+    <div class="fine">비밀번호 입력 전에는 HTML 본문 데이터가 평문으로 포함되지 않습니다.</div>
+  </main>
+  <script>
+  (() => {
+    const payload = {"salt":"DYy7PbtxgOjXq6RMI1l1kA==","iv":"57LpXw8c6hPbdrZw","tag":"WdN1+wzTuC6aZGQLYYMQVg==","data":"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"};
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+    const status = document.getElementById("status");
+    const input = document.getElementById("pw");
+    const form = document.getElementById("gate-form");
 
-<header id="title-block-header">
-<h1 class="title">고분자공학 00_범위관리</h1>
-</header>
-<h1 id="시험범위-관리">시험범위 관리</h1>
-<p>예상문제는 <code>확정 포함 범위</code>만 기준으로 만든다.</p>
-<h2 id="확정-포함-범위">확정 포함 범위</h2>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th>자료/단원</th>
-<th>범위 판단</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Week7_Polymer_solution_(I).pdf</code></td>
-<td>포함</td>
-</tr>
-<tr>
-<td>대면강의: Polymer solution, dilute polymer solution, solvent
-quality, solubility parameter</td>
-<td>포함</td>
-</tr>
-<tr>
-<td><code>Week12_Polymer_morphology.pdf</code></td>
-<td>포함</td>
-</tr>
-<tr>
-<td>대면강의: Polymer morphology, entanglement, Rouse-Buche, reptation,
-amorphous/crystalline, <span class="math inline">\(T_g\)</span>/<span
-class="math inline">\(T_m\)</span>/<span
-class="math inline">\(T_c\)</span>, XRD, crystallinity, Fox
-equation</td>
-<td>포함</td>
-</tr>
-<tr>
-<td><code>Week12_Elasticity.pdf</code></td>
-<td>포함</td>
-</tr>
-<tr>
-<td>대면강의: Elasticity, thermoplastic, elastomer, thermoset,
-crosslinking, <span class="math inline">\(T_g\)</span>-room temperature,
-stress-strain curve</td>
-<td>포함</td>
-</tr>
-<tr>
-<td><code>Week12_Viscoelasticity.pdf</code></td>
-<td>포함</td>
-</tr>
-<tr>
-<td>대면강의: Viscoelasticity, Newtonian/non-Newtonian fluid, creep,
-stress relaxation, Maxwell/Kelvin-Voigt model, storage/loss modulus,
-phase angle, DMA/rheometer</td>
-<td>포함</td>
-</tr>
-<tr>
-<td>2026-06-01 마지막 대면강의 이후 전체 기말 강의</td>
-<td>강의 종료. 이후는 시험 대비만 진행</td>
-</tr>
-</tbody>
-</table>
-<h2 id="제외-범위">제외 범위</h2>
-<p>교수님이 제외했거나 사용자가 제외하라고 한 내용이다. 여기에 들어간
-내용으로는 예상문제를 만들지 않는다.</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th>자료/단원/키워드</th>
-<th>제외 근거</th>
-<th>처리 상태</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>계산식 유도 문제</td>
-<td>사용자가 계산식 유도는 안 나온다고 명시</td>
-<td>예상문제 생성 금지</td>
-</tr>
-<tr>
-<td>화학식 암기 문제</td>
-<td>사용자가 화학식 암기는 안 나온다고 명시</td>
-<td>예상문제 생성 금지</td>
-</tr>
-<tr>
-<td>반응식 직접 작성 문제</td>
-<td>사용자가 반응식을 물어보지 않고, 반응을 보고 어떤 반응인지 고르는
-식이라고 명시</td>
-<td>직접 작성형 생성 금지</td>
-</tr>
-</tbody>
-</table>
-<h2 id="보류-범위">보류 범위</h2>
-<p>포함 여부가 확실하지 않은 자료다. 확정 전까지 예상문제를 만들지
-않는다.</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th>자료/단원</th>
-<th>보류 이유</th>
-<th>확인 필요 사항</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>추가 미제공 자료</td>
-<td>현재 기말 강의 종료로 새 범위 없음</td>
-<td>새 공지가 있을 때만 갱신</td>
-</tr>
-</tbody>
-</table>
-<h2 id="출제-방식-참고-자료">출제 방식 참고 자료</h2>
-<p>아래 내용은 출제 형식만 참고한다. 기말 강의자료와 마지막 수업 범위에
-직접 포함되지 않는 개념은 암기 범위에 넣지 않는다.</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th>자료</th>
-<th>참고할 것</th>
-<th>내용 반영 여부</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>과거 시험 형식 메모</td>
-<td>객관식 중심, 비슷한 개념 구분, 함정 선지, 서술형 2개 정도</td>
-<td>유형만 참고</td>
-</tr>
-<tr>
-<td>과거 주관식 형식 예시</td>
-<td>짧은 핵심어 서술형 스타일</td>
-<td>유형만 참고</td>
-</tr>
-<tr>
-<td>2026-05-19 Week12 대면 강의 전사</td>
-<td>morphology 개념 구분, <span class="math inline">\(T_g\)</span>/<span
-class="math inline">\(T_m\)</span>/<span
-class="math inline">\(T_c\)</span>, XRD, Fox equation 출제 가능성</td>
-<td>확정 범위 내용으로 반영</td>
-</tr>
-<tr>
-<td>2026-05-21 대면 강의 전사</td>
-<td>thermoplastic/elastomer/thermoset 비교, crosslinking, elastomer
-network model, stress-strain curve, modulus</td>
-<td>확정 범위 내용으로 반영</td>
-</tr>
-<tr>
-<td>2026-06-01 마지막 대면 강의 전사</td>
-<td>viscoelasticity, creep, stress relaxation, Maxwell/Kelvin-Voigt
-model, storage/loss modulus, phase angle, DMA/rheometer</td>
-<td>확정 범위 내용으로 반영</td>
-</tr>
-</tbody>
-</table>
+    function b64ToBytes(value) {
+      const raw = atob(value);
+      const out = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+      return out;
+    }
+
+    async function deriveKey(password) {
+      const material = await crypto.subtle.importKey(
+        "raw",
+        enc.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+      );
+      return crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(payload.salt), iterations: 250000, hash: "SHA-256" },
+        material,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function unlock(password, remember) {
+      status.textContent = "확인 중...";
+      try {
+        const key = await deriveKey(password);
+        const encrypted = b64ToBytes(payload.data);
+        const tag = b64ToBytes(payload.tag);
+        const combined = new Uint8Array(encrypted.length + tag.length);
+        combined.set(encrypted, 0);
+        combined.set(tag, encrypted.length);
+        const plain = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64ToBytes(payload.iv), tagLength: 128 },
+          key,
+          combined
+        );
+        if (remember) sessionStorage.setItem("kwExamPassword", password);
+        document.open();
+        document.write(dec.decode(plain));
+        document.close();
+      } catch (error) {
+        sessionStorage.removeItem("kwExamPassword");
+        status.textContent = "비밀번호가 맞지 않습니다.";
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      unlock(input.value, true);
+    });
+
+    const remembered = sessionStorage.getItem("kwExamPassword");
+    if (remembered) unlock(remembered, false);
+  })();
+  </script>
 </body>
 </html>

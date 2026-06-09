@@ -3,32 +3,186 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="kw-exam-protected" content="v1">
   <title>열역학 scope</title>
-  <script>
-    const target = new URL("../열역학/기말 대비/수식렌더링_HTML/00_범위관리.html", location.href);
-    target.search = location.search;
-    target.hash = location.hash;
-    location.replace(target.href);
-    window.addEventListener("DOMContentLoaded", () => {
-      const a = document.querySelector("main a");
-      if (a) {
-        const fallback = new URL(a.getAttribute("href"), location.href);
-        fallback.search = location.search;
-        fallback.hash = location.hash;
-        a.href = fallback.href;
-      }
-    });
-  </script>
   <style>
-    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#f5f7fb; color:#111827; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif; }
-    main { width:min(92vw,480px); padding:26px; border:1px solid #e2e8f0; border-radius:22px; background:#fff; text-align:center; box-shadow:0 18px 50px rgba(15,23,42,.08); }
-    a { color:#2563eb; font-weight:800; }
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #d8e0ee;
+      --blue: #2563eb;
+      --bad: #dc2626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top left, #eaf0ff, transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      padding: 24px;
+    }
+    .gate {
+      width: min(420px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
+      padding: 28px;
+    }
+    .badge {
+      display: inline-flex;
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--blue);
+      background: #eff6ff;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.22;
+      letter-spacing: 0;
+      margin: 0 0 10px;
+    }
+    p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 14px;
+      font-size: 18px;
+      outline: none;
+    }
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
+    }
+    button {
+      width: 100%;
+      height: 52px;
+      border: 0;
+      border-radius: 14px;
+      margin-top: 14px;
+      background: var(--blue);
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .status {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--bad);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .fine {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #98a2b3;
+    }
   </style>
 </head>
 <body>
-  <main>
-    <p>이동 중입니다.</p>
-    <a href="../열역학/기말 대비/수식렌더링_HTML/00_범위관리.html">바로 열기</a>
+  <main class="gate">
+    <div class="badge">KW Final Prep</div>
+    <h1>비밀번호가 필요합니다</h1>
+    <p>이 페이지의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 현재 탭에서 바로 열립니다.</p>
+    <form id="gate-form">
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" autofocus>
+      <button type="submit">열기</button>
+      <div class="status" id="status"></div>
+    </form>
+    <div class="fine">비밀번호 입력 전에는 HTML 본문 데이터가 평문으로 포함되지 않습니다.</div>
   </main>
+  <script>
+  (() => {
+    const payload = {"salt":"Cepj3n07fk8PNk2wLqDBYg==","iv":"zz5s9+01C+bphHpl","tag":"l5IGnNDbJdE6TYZ5zpkkWQ==","data":"rr9kvkHF4+d16L/X2DVhT1EDzIbOhF6vz4d/sDzT/S4gzaHhubL3myHsicP4OunX6/IFTs3j7KCPf2XLmTwQCXl1wP/dmTFLwUcUFCa0i30AM0hjKUtDPtWnn2Baot0uBkTl/8t3q/qm6dD2Xfozhc/0JbRVl7a8OLJySre6ss/XR9AzM/0cppjBrKbB5mFB24oKH9wWIJVrNSr4pwGWt1f64hWkNWzcUencPZDyepmWva1U/D9KpwhPDhONAtgKLYtUY5tEUFEIu17Lqx4UI2iRf3n4BJHBliy66CslJL2/8YfwoSJUblEQcSk6umLnY6M8GjjJb4jW5+tC4MOZOWOuQRh00dv8/2aIfElqMYQ7fh7RMbATafPi0r0PimGPLE9xkv1vnZ15gD8lcx3+ZVydcEoQ7nCAfJB59buT9jgU5ZjOnd8jkxdWyjaxBk4k/h/6o04LnyN6ePeXLVLH/8+bbqld2I/uinjPXKnNqeKihGLtrRqruNI/gI/2iePa4PGEknXqPwaGLGFe7EqdHcfMavfd91hIHWVwI4hDYl31BTgYnp+NPdwRmak7r2R9AUuVuukz1ljodLctOfQ37IMKXH+F5XhyUFYZ+xuWPG6k6EeVJzrKmDVdXEx6bJDoo7dX7ritayp+nYZUzxn45uLqHMr++8BMG508r2c6rMfPGR2Nn321V8P+9r092t0Csx9W64uXTj30a6wmVO6ZyQTJpOE5ErZWnaPEtC7KKpRa0NoO/CHwWQlgNVZYijVadI/RijB7Qx5RX+jA/jxomKKzgoCkrY0aJpKvz2U2OiRUGPXsmKBvXPmW1yPRLResESA0gRUyYgmGi2EmlJFi5yAgLJ8YR8YpAkfgnwYPahcNbRdfG8FC7yeQzgVd1brj+By5BlhOJwMj0aS3wr5ZSJMb97IAe4Zc41NeEFxVUWCKmxx51GsuIahRZgQSz2Xx6dHzSI2Wc+bqqXg6+GuflgXYVoirFiHXX9FCVML1UYvkJJvRampbFGHkaOwGKKV7Il98fAJUt7D9vs+kYrKQise/iQdoSqjyQDyk1QrLMiTTpAVE6lbRLdhFHg3/JX7pIO2fY7Fqu02EpRIFoxUeEpOurzZ5dd3AZkigyj7Pm+BkTRMqsR/4R14k9zXuY/FQ2DSjYNM7gNt6RbuyKUbgugq5qhZTFUnGCb7nRvCXXDwqkQW9vPAC6ECiX0czUcvL6NWTUBi91EA/FBx7YV09O60z+/4dRVrxrmMaSi72JrhzV5mf4ycC3YBLRdIkYKsMCj9F2kHFKtmPR5/axFNsL8d5C39XB+SPAp+Zb/U0M7Ha8KNat+m1OTWmfZUcSIsPmVV145MBTWSxPTXu8HqA7kTUT9N3yiCA812A2CShXQ+50nskuoR0JItYuRzzim/rBVS5oBMng8Jqw5UT9fwobR3jc+nsQbtDH5wmZkGB/lbhDE3qEay7Xu7wjRQ01lfzZZVqfY+zAdi/BruzTuXxmNiQ9IoE85wh2IdYYYo2PUl4JSTLC5L7PVEPm5We73kuWXvsPZ2lhBojl9xdxH7w9dSskxLVsLEPyNSWGLwFCuWdPQB+zhxmUhLHXRvwGnrtqMi6bqZsLwtOJawlH8fnc9ilSvZXL1DbxcVAt56rRSBdTvBtOaNsEokxq6R+Lza6RPMQ3ZsXW2vHXwgEEtyGoB011VnEMRk8WrZAgkOu+WMTw/JuXkoDTT7cPzlGIiSnzqBrpvY48C3mV3QbsBk+37tjqzoFFMyRtKIsHrrCPJuBm3vAOGf9ageqr//KmT+OuwvoQTBqUE+mAuiK/kVBPYQMcszP9DmbgUc="};
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+    const status = document.getElementById("status");
+    const input = document.getElementById("pw");
+    const form = document.getElementById("gate-form");
+
+    function b64ToBytes(value) {
+      const raw = atob(value);
+      const out = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+      return out;
+    }
+
+    async function deriveKey(password) {
+      const material = await crypto.subtle.importKey(
+        "raw",
+        enc.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+      );
+      return crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(payload.salt), iterations: 250000, hash: "SHA-256" },
+        material,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function unlock(password, remember) {
+      status.textContent = "확인 중...";
+      try {
+        const key = await deriveKey(password);
+        const encrypted = b64ToBytes(payload.data);
+        const tag = b64ToBytes(payload.tag);
+        const combined = new Uint8Array(encrypted.length + tag.length);
+        combined.set(encrypted, 0);
+        combined.set(tag, encrypted.length);
+        const plain = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64ToBytes(payload.iv), tagLength: 128 },
+          key,
+          combined
+        );
+        if (remember) sessionStorage.setItem("kwExamPassword", password);
+        document.open();
+        document.write(dec.decode(plain));
+        document.close();
+      } catch (error) {
+        sessionStorage.removeItem("kwExamPassword");
+        status.textContent = "비밀번호가 맞지 않습니다.";
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      unlock(input.value, true);
+    });
+
+    const remembered = sessionStorage.getItem("kwExamPassword");
+    if (remembered) unlock(remembered, false);
+  })();
+  </script>
 </body>
 </html>

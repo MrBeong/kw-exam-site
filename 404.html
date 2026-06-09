@@ -3,63 +3,186 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="kw-exam-protected" content="v1">
   <title>KW 기말 대비 사이트 - 경로 복구</title>
-  <script>
-    (function () {
-      var decoded = decodeURI(window.location.href);
-      var normalized = decoded.normalize("NFC");
-      if (normalized !== decoded) {
-        window.location.replace(encodeURI(normalized));
-      }
-    })();
-  </script>
   <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #d8e0ee;
+      --blue: #2563eb;
+      --bad: #dc2626;
+    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
       display: grid;
       place-items: center;
-      background: #f5f7fb;
-      color: #111827;
-      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", Segoe UI, sans-serif;
+      background: radial-gradient(circle at top left, #eaf0ff, transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      padding: 24px;
     }
-    main {
-      width: min(92vw, 520px);
+    .gate {
+      width: min(420px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
       padding: 28px;
-      border: 1px solid #e2e8f0;
-      border-radius: 24px;
-      background: #fff;
-      box-shadow: 0 18px 50px rgba(15, 23, 42, .08);
-      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--blue);
+      background: #eff6ff;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
     }
     h1 {
-      margin: 0 0 12px;
-      font-size: 24px;
+      font-size: 26px;
+      line-height: 1.22;
+      letter-spacing: 0;
+      margin: 0 0 10px;
     }
     p {
-      margin: 0 0 18px;
-      color: #64748b;
-      line-height: 1.65;
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
     }
-    a {
-      display: inline-flex;
-      min-height: 44px;
-      align-items: center;
-      justify-content: center;
-      padding: 0 18px;
-      border-radius: 999px;
-      background: #2563eb;
-      color: #fff;
+    label {
+      display: block;
+      font-size: 14px;
       font-weight: 800;
-      text-decoration: none;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 14px;
+      font-size: 18px;
+      outline: none;
+    }
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
+    }
+    button {
+      width: 100%;
+      height: 52px;
+      border: 0;
+      border-radius: 14px;
+      margin-top: 14px;
+      background: var(--blue);
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .status {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--bad);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .fine {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #98a2b3;
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>페이지 경로를 복구하는 중입니다</h1>
-    <p>잠시 후에도 이동하지 않으면 홈으로 돌아가서 다시 선택하세요.</p>
-    <a href="/kw-exam-site/">홈으로 이동</a>
+  <main class="gate">
+    <div class="badge">KW Final Prep</div>
+    <h1>비밀번호가 필요합니다</h1>
+    <p>이 페이지의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 현재 탭에서 바로 열립니다.</p>
+    <form id="gate-form">
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" autofocus>
+      <button type="submit">열기</button>
+      <div class="status" id="status"></div>
+    </form>
+    <div class="fine">비밀번호 입력 전에는 HTML 본문 데이터가 평문으로 포함되지 않습니다.</div>
   </main>
+  <script>
+  (() => {
+    const payload = {"salt":"rVjGhnD6qKjs0so5txQoaw==","iv":"umTRlgZ74fA+grGN","tag":"q8uuKQDp/v37jJC8QnbADA==","data":"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"};
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+    const status = document.getElementById("status");
+    const input = document.getElementById("pw");
+    const form = document.getElementById("gate-form");
+
+    function b64ToBytes(value) {
+      const raw = atob(value);
+      const out = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+      return out;
+    }
+
+    async function deriveKey(password) {
+      const material = await crypto.subtle.importKey(
+        "raw",
+        enc.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+      );
+      return crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(payload.salt), iterations: 250000, hash: "SHA-256" },
+        material,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function unlock(password, remember) {
+      status.textContent = "확인 중...";
+      try {
+        const key = await deriveKey(password);
+        const encrypted = b64ToBytes(payload.data);
+        const tag = b64ToBytes(payload.tag);
+        const combined = new Uint8Array(encrypted.length + tag.length);
+        combined.set(encrypted, 0);
+        combined.set(tag, encrypted.length);
+        const plain = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64ToBytes(payload.iv), tagLength: 128 },
+          key,
+          combined
+        );
+        if (remember) sessionStorage.setItem("kwExamPassword", password);
+        document.open();
+        document.write(dec.decode(plain));
+        document.close();
+      } catch (error) {
+        sessionStorage.removeItem("kwExamPassword");
+        status.textContent = "비밀번호가 맞지 않습니다.";
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      unlock(input.value, true);
+    });
+
+    const remembered = sessionStorage.getItem("kwExamPassword");
+    if (remembered) unlock(remembered, false);
+  })();
+  </script>
 </body>
 </html>

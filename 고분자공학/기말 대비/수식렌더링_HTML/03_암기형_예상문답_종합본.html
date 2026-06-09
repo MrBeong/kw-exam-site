@@ -1,950 +1,188 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="kw-exam-protected" content="v1">
   <title>고분자공학 03_암기형_예상문답_종합본</title>
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #667085;
+      --line: #d8e0ee;
+      --blue: #2563eb;
+      --bad: #dc2626;
     }
+    * { box-sizing: border-box; }
     body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at top left, #eaf0ff, transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      padding: 24px;
     }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
+    .gate {
+      width: min(420px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, .12);
+      padding: 28px;
     }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
+    .badge {
+      display: inline-flex;
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--blue);
+      background: #eff6ff;
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.22;
+      letter-spacing: 0;
+      margin: 0 0 10px;
     }
     p {
-      margin: 1em 0;
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
     }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      white-space: pre-wrap;
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
+    label {
       display: block;
-      font-variant-numeric: lining-nums tabular-nums;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
     }
-    table caption {
-      margin-bottom: 0.75em;
+    input {
+      width: 100%;
+      height: 52px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0 14px;
+      font-size: 18px;
+      outline: none;
     }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
+    input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .12);
     }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
+    button {
+      width: 100%;
+      height: 52px;
+      border: 0;
+      border-radius: 14px;
+      margin-top: 14px;
+      background: var(--blue);
+      color: white;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
     }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
+    .status {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--bad);
+      font-size: 14px;
+      font-weight: 700;
     }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
+    .fine {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #98a2b3;
     }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-  </style>
-  <script defer=""
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
-  type="text/javascript"></script>
-  <link rel="stylesheet" href="../../../시험대비_수식렌더링_HTML/study_math.css?v=20260609-image-caption-align" />
-  <script>
-    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <style>
-    html,body{width:100%;max-width:none!important;min-height:100%;margin:0}
-    body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:min(1080px,calc(100vw - 128px));margin-left:auto!important;margin-right:auto!important}
-    body > figure{width:min(82%,860px)!important;margin-left:auto!important;margin-right:auto!important}
-    body > figure img{width:auto;max-width:100%;margin-left:auto!important;margin-right:auto!important}
-    body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:min(82%,860px)!important;margin-left:auto!important;margin-right:auto!important}
-    .back-to-index{position:fixed;top:14px;left:14px;z-index:9999;display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border:1px solid #d8e0ee;border-radius:999px;background:rgba(255,255,255,.92);color:#1d4ed8;text-decoration:none;font-weight:800;box-shadow:0 8px 24px rgba(15,23,42,.12);backdrop-filter:blur(12px)}
-    .back-to-index:hover{background:#eff6ff}
-    @media(max-width:920px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:calc(100vw - 56px)}body > figure,body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:94%!important}}
-    @media(max-width:640px){body > :not(script):not(style):not(.back-to-index):not(.kw-back-button):not(figure){width:calc(100vw - 28px)}body > figure,body > figure + p,body > figure + p + ul,body > figure + p + ol,body > figure + ul,body > figure + ol{width:100%!important}.back-to-index{top:10px;left:10px;padding:8px 10px;font-size:14px}}
   </style>
 </head>
 <body>
-<a class="back-to-index" href="../../../index.html">← 뒤로</a>
+  <main class="gate">
+    <div class="badge">KW Final Prep</div>
+    <h1>비밀번호가 필요합니다</h1>
+    <p>이 페이지의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 현재 탭에서 바로 열립니다.</p>
+    <form id="gate-form">
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" autofocus>
+      <button type="submit">열기</button>
+      <div class="status" id="status"></div>
+    </form>
+    <div class="fine">비밀번호 입력 전에는 HTML 본문 데이터가 평문으로 포함되지 않습니다.</div>
+  </main>
+  <script>
+  (() => {
+    const payload = {"salt":"MPAKgsUyo6YYwBhTALFMrQ==","iv":"LQ/wS3USc1VDqTvA","tag":"WsvoraBvwtAT55qTTffJlA==","data":"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"};
+    const enc = new TextEncoder();
+    const dec = new TextDecoder();
+    const status = document.getElementById("status");
+    const input = document.getElementById("pw");
+    const form = document.getElementById("gate-form");
 
-<header id="title-block-header">
-<h1 class="title">고분자공학 03_암기형_예상문답_종합본</h1>
-</header>
-<h1 id="고분자공학-암기형-예상문답-종합본">고분자공학 암기형 예상문답
-종합본</h1>
-<p>한 줄 요약: 고분자공학 기말은 비슷한 개념을 섞은 객관식과 짧은
-서술형이 중심이므로 용액, 사슬 차원, morphology, 탄성체, 점탄성을
-비교표처럼 바로 구분할 수 있어야 한다.</p>
-<h2 id="polymer-solution-기본">1. Polymer Solution 기본</h2>
-<p>Q. 고분자 용액이 저분자 용액과 다르게 거동하는 이유는?<br />
-A. 고분자는 사슬 길이가 길고 coil을 형성하며, 분자량과 사슬 얽힘 때문에
-용액 점도와 혼합 entropy가 저분자와 다르다.</p>
-<p>Q. 혼합이 자발적이기 위한 자유에너지 조건은?<br />
-A.</p>
-<p><span class="math display">\[
-\Delta G_m=\Delta H_m-T\Delta S_m&lt;0
-\]</span></p>
-<p>Q. Ideal solution은 어떤 가정인가?<br />
-A. Solvent와 solute 크기가 같고 모든 분자 간 interaction이 동일하다고
-보는 가정이다.</p>
-<p>Q. Athermal mixing은 무엇인가?<br />
-A. <span class="math inline">\(\Delta H_m=0\)</span>이고 주로 entropy
-증가 때문에 혼합이 유리한 경우이다.</p>
-<p>Q. 고분자 용액에서 mole fraction보다 volume fraction을 더 중요하게
-보는 이유는?<br />
-A. 고분자는 한 분자가 많은 segment를 차지하므로 몰수보다 실제 차지
-부피가 혼합과 상호작용을 더 잘 설명한다.</p>
-<h2 id="dilute-semidilute-concentrated">2. Dilute, Semidilute,
-Concentrated</h2>
-<p>Q. Dilute polymer solution은?<br />
-A. Polymer coil들이 서로 거의 겹치지 않고 독립적으로 존재하는
-상태이다.</p>
-<p>Q. Semidilute polymer solution은?<br />
-A. Coil들이 서로 겹치기 시작하지만 용매가 아직 상당히 존재하는
-상태이다.</p>
-<p>Q. Concentrated polymer solution은?<br />
-A. Polymer 사슬 간 상호작용과 entanglement가 강해지고 집단 거동이 중요한
-상태이다.</p>
-<p>Q. Overlap concentration은?<br />
-A. Polymer coil들이 서로 겹치기 시작하는 경계 농도이다.</p>
-<p>함정: Concentrated solution은 단순히 농도 숫자만 높은 것이 아니라
-사슬 간 상호작용과 얽힘이 중요해진다.</p>
-<h2 id="coil-크기와-용매-품질">3. Coil 크기와 용매 품질</h2>
-<p>Q. Random coil은?<br />
-A. 단일결합 회전 때문에 고분자 사슬이 용액에서 불규칙하게 말린 평균
-형태이다.</p>
-<p>Q. End-to-end distance는?<br />
-A. 사슬 한쪽 끝과 다른 끝 사이의 거리이다.</p>
-<p>Q. Radius of gyration은?<br />
-A. 사슬 전체가 차지하는 평균적 공간 크기이다.</p>
-<p>Q. Good solvent에서 polymer chain은?<br />
-A. Polymer-solvent interaction이 좋아 사슬이 팽창한다.</p>
-<p>Q. Poor solvent에서 polymer chain은?<br />
-A. Polymer-solvent interaction이 나빠 사슬이 수축하고 심하면
-침전된다.</p>
-<p>Q. <span class="math inline">\(\theta\)</span> solvent는?<br />
-A. Polymer-polymer interaction과 polymer-solvent interaction이 균형을
-이루어 excluded volume effect가 상쇄되는 조건이다.</p>
-<p>Q. Good, <span class="math inline">\(\theta\)</span>, poor solvent를
-<span class="math inline">\(\chi\)</span>로 구분하면?<br />
-A. 일반적으로 good solvent는 <span
-class="math inline">\(\chi&lt;1/2\)</span>, <span
-class="math inline">\(\theta\)</span> solvent는 <span
-class="math inline">\(\chi=1/2\)</span>, poor solvent는 <span
-class="math inline">\(\chi&gt;1/2\)</span>이다.</p>
-<h2 id="flory-huggins">4. Flory-Huggins</h2>
-<p>Q. Flory-Huggins theory는 무엇을 설명하는가?<br />
-A. Polymer를 segment chain으로 보고 solvent와 polymer의 혼합
-자유에너지를 설명한다.</p>
-<p>Q. Flory-Huggins interaction parameter <span
-class="math inline">\(\chi\)</span>는 무엇인가?<br />
-A. Solvent-polymer interaction의 유리함 또는 불리함을 나타내는
-parameter이다.</p>
-<p>Q. <span class="math inline">\(\chi\)</span>가 크면 어떤 일이
-쉬워지는가?<br />
-A. Polymer와 solvent의 interaction이 불리해져 상분리가 쉬워진다.</p>
-<p>Q. <span class="math inline">\(\chi\)</span>가 작으면 어떤 일이
-쉬워지는가?<br />
-A. 혼합이 쉬워지고 용해성이 좋아진다.</p>
-<p>Q. Flory-Huggins 혼합 자유에너지의 대표 형태는?<br />
-A.</p>
-<p><span class="math display">\[
-\Delta G_m=RT\left(n_1\ln\phi_1+n_2\ln\phi_2+n_1\phi_2\chi\right)
-\]</span></p>
-<p>Q. Solvent chemical potential 변화식으로 activity를 연결하면?<br />
-A.</p>
-<p><span class="math display">\[
-\Delta\mu_1=RT\ln a_1
-\]</span></p>
-<p>Q. 문제에 주어진 solvent activity로 <span
-class="math inline">\(\chi\)</span>를 구할 때 쓰는 관계는?<br />
-A.</p>
-<p><span class="math display">\[
-\ln a_1=-\frac{\phi_2}{x}+\left(\chi-\frac{1}{2}\right)\phi_2^2
-\]</span></p>
-<p>Q. 위 식에서 <span class="math inline">\(x\)</span>는 무엇인가?<br />
-A. Polymer chain 하나가 solvent-sized segment 몇 개로 이루어졌는지를
-나타내는 polymerization 또는 segment number이다.</p>
-<p>Q. <span class="math inline">\(\phi_2\)</span>는 무엇인가?<br />
-A. Polymer volume fraction이다.</p>
-<p>함정: <span class="math inline">\(\chi\)</span>는 concentration
-자체가 아니라 interaction parameter이다.</p>
-<h2 id="chemical-potential과-activity">5. Chemical Potential과
-Activity</h2>
-<p>Q. Chemical potential은 무엇인가?<br />
-A. Partial molar Gibbs free energy이다.</p>
-<p>Q. Activity는 무엇인가?<br />
-A. 비이상성을 포함한 유효 농도 개념이다.</p>
-<p>Q. Ideal solution에서 activity는 무엇과 가까운가?<br />
-A. Mole fraction에 가까워진다.</p>
-<p>Q. Activity coefficient는?<br />
-A.</p>
-<p><span class="math display">\[
-a_i=\gamma_i x_i
-\]</span></p>
-<p>Q. Activity coefficient가 1이면?<br />
-A. 이상용액 거동에 가깝다.</p>
-<h2 id="solubility-parameter">6. Solubility Parameter</h2>
-<p>Q. Hildebrand solubility parameter <span
-class="math inline">\(\delta\)</span>는 무엇인가?<br />
-A. Cohesive energy density의 제곱근으로, 분자 간 인력과 용해성을
-판단하는 parameter이다.</p>
-<p><span class="math display">\[
-\delta=\sqrt{\frac{\Delta H_{\mathrm{vap}}-RT}{V}}
-\]</span></p>
-<p>Q. CED는 무엇인가?<br />
-A. Cohesive energy density, 즉 단위 부피당 분자 간 인력 에너지이다.</p>
-<p>Q. “Like dissolves like”의 뜻은?<br />
-A. <span class="math inline">\(\delta\)</span> 값이 비슷한 물질끼리 잘
-녹거나 잘 섞인다는 뜻이다.</p>
-<p>Q. Polymer의 <span class="math inline">\(\delta\)</span>를 직접
-증발엔탈피로 구하기 어려운 이유는?<br />
-A. 고분자는 비휘발성이어서 저분자 액체처럼 <span
-class="math inline">\(\Delta H_{\mathrm{vap}}\)</span>를 직접 측정하기
-어렵다.</p>
-<p>Q. Hansen solubility parameter는 <span
-class="math inline">\(\delta\)</span>를 어떻게 나누는가?<br />
-A. 분산력, 극성 상호작용, 수소결합 항으로 나눈다.</p>
-<p>Q. Solubility parameter가 쓰이는 곳은?<br />
-A. Polymer blend, coating, adhesive, membrane, nanocomposite, drug
-delivery, 3D printing, battery separator 등에 쓰인다.</p>
-<h2 id="entanglement와-reptation">7. Entanglement와 Reptation</h2>
-<p>Q. Entanglement는 무엇인가?<br />
-A. 긴 고분자 사슬들이 물리적으로 얽혀 움직임이 제한되는 현상이다.</p>
-<p>Q. Entanglement와 chemical crosslink는 같은가?<br />
-A. 아니다. Entanglement는 물리적 얽힘이고, crosslink는 사슬 사이
-결합이다.</p>
-<p>Q. Kuhn segment는?<br />
-A. 실제 제한회전 사슬을 자유연결 사슬처럼 다루기 위한 등가
-segment이다.</p>
-<p>Q. Rouse-Buche theory는 어떤 조건에 적합한가?<br />
-A. Entanglement가 거의 없는 매우 묽은 용액의 bead-spring 사슬 거동
-설명에 적합하다.</p>
-<p>Q. Rouse-Buche theory의 한계는?<br />
-A. Entanglement가 큰 melt나 concentrated solution의 거동을 잘 설명하지
-못한다.</p>
-<p>Q. Reptation model은 무엇인가?<br />
-A. 얽힌 사슬이 주변 사슬 때문에 tube 안에서 뱀처럼 제한적으로 움직인다고
-보는 모델이다.</p>
-<p>Q. Entanglement molecular weight <span
-class="math inline">\(M_e\)</span>는?<br />
-A. 이 분자량 이상에서 entanglement 효과가 본격적으로 중요해지는
-기준이다.</p>
-<h2 id="amorphous-crystalline-semi-crystalline">8. Amorphous,
-Crystalline, Semi-Crystalline</h2>
-<p>Q. Amorphous polymer의 특징은?<br />
-A. 무질서 배열, 큰 free volume, 유연성, 대체로 투명, <span
-class="math inline">\(T_g\)</span> 중심이다.</p>
-<p>Q. Crystalline polymer의 특징은?<br />
-A. 규칙 배열, 높은 밀도, 높은 강도, 높은 내열성, 대체로 불투명, <span
-class="math inline">\(T_m\)</span> 중심이다.</p>
-<p>Q. Semi-crystalline polymer는?<br />
-A. Amorphous region과 crystalline region이 함께 존재하는
-polymer이다.</p>
-<p>Q. Semi-crystalline polymer에서 관찰될 수 있는 전이온도는?<br />
-A. <span class="math inline">\(T_g\)</span>, <span
-class="math inline">\(T_m\)</span>, <span
-class="math inline">\(T_c\)</span>가 모두 관찰될 수 있다.</p>
-<p>Q. XRD에서 amorphous는 어떻게 보이는가?<br />
-A. 넓고 broad한 amorphous halo가 나타난다.</p>
-<p>Q. XRD에서 crystalline은 어떻게 보이는가?<br />
-A. 날카로운 sharp crystalline peak가 나타난다.</p>
-<p>Q. Crystallinity가 높아지면 일반적으로 증가하는 것은?<br />
-A. 밀도, 강도, 내열성, 내화학성이다.</p>
-<p>Q. Crystallinity가 높아지면 일반적으로 감소하는 것은?<br />
-A. 투명도와 유연성이다.</p>
-<h2 id="t_g-t_m-t_c">9. <span class="math inline">\(T_g\)</span>, <span
-class="math inline">\(T_m\)</span>, <span
-class="math inline">\(T_c\)</span></h2>
-<p>Q. <span class="math inline">\(T_g\)</span>는 무엇인가?<br />
-A. Glass transition temperature이다. Glassy하고 딱딱한 상태에서
-rubbery하고 부드러운 상태로 바뀌는 온도이다.</p>
-<p>Q. <span class="math inline">\(T_g\)</span>는 melting인가?<br />
-A. 아니다. Amorphous 영역의 segment mobility 변화이다.</p>
-<p>Q. <span class="math inline">\(T_m\)</span>은 무엇인가?<br />
-A. Crystalline lamellae가 무너져 amorphous melt가 되는 melting
-temperature이다.</p>
-<p>Q. <span class="math inline">\(T_c\)</span>는 무엇인가?<br />
-A. 냉각 중 amorphous melt에서 결정이 다시 형성되는 crystallization
-temperature이다.</p>
-<p>Q. 일반적으로 <span class="math inline">\(T_c&lt;T_m\)</span>인
-이유는?<br />
-A. 결정화에는 nucleation과 growth가 필요하고 supercooling이 요구되기
-때문이다.</p>
-<p>Q. Free volume은 <span class="math inline">\(T_g\)</span>와 어떤
-관계인가?<br />
-A. 온도가 올라가 free volume이 증가하면 segment가 움직일 수 있어 rubbery
-상태가 된다.</p>
-<h2 id="crystallinity와-t_g-영향-인자">10. Crystallinity와 <span
-class="math inline">\(T_g\)</span> 영향 인자</h2>
-<p>Q. Tacticity가 crystallinity에 미치는 영향은?<br />
-A. Isotactic과 syndiotactic은 규칙 배열이 쉬워 crystallinity가 증가하고,
-atactic은 amorphous 경향이 크다.</p>
-<p>Q. Symmetry가 높으면 crystallinity는?<br />
-A. 증가하기 쉽다. Packing이 쉬워지기 때문이다.</p>
-<p>Q. Branching이 많으면 crystallinity는?<br />
-A. 감소하기 쉽다. 조밀 packing을 방해하기 때문이다.</p>
-<p>Q. Interchain interaction이 강하면 <span
-class="math inline">\(T_g\)</span>는?<br />
-A. 증가한다. 사슬 이동이 어려워지기 때문이다.</p>
-<p>Q. Backbone flexibility가 커지면 <span
-class="math inline">\(T_g\)</span>는?<br />
-A. 낮아진다. 사슬이 더 쉽게 움직이기 때문이다.</p>
-<p>Q. Bulky side group은 <span class="math inline">\(T_g\)</span>를
-어떻게 바꾸는가?<br />
-A. 대체로 사슬 회전을 방해해 <span class="math inline">\(T_g\)</span>를
-높일 수 있지만, packing을 방해해 free volume 효과도 함께 고려해야
-한다.</p>
-<p>Q. Fox equation은 무엇을 계산하는가?<br />
-A. Polymer blend의 <span class="math inline">\(T_g\)</span>를 weight
-fraction과 각 성분 <span class="math inline">\(T_g\)</span>로
-추정한다.</p>
-<p><span class="math display">\[
-\frac{1}{T_g}=\frac{w_1}{T_{g,1}}+\frac{w_2}{T_{g,2}}
-\]</span></p>
-<p>함정: Fox equation에서 온도는 Kelvin으로 넣는다.</p>
-<h2 id="열가소성-탄성체-열경화성">11. 열가소성, 탄성체, 열경화성</h2>
-<p>Q. Thermoplastic은 무엇인가?<br />
-A. Crosslink가 거의 없어 열을 가하면 녹아 재가공이 가능한
-polymer이다.</p>
-<p>Q. Elastomer는 무엇인가?<br />
-A. 적당한 crosslink가 있어 늘어났다가 힘을 제거하면 원래 형태로 돌아오는
-polymer이다.</p>
-<p>Q. Thermoset은 무엇인가?<br />
-A. Crosslink가 매우 많아 열을 가해도 녹지 않고 분해되며 재가공이 어려운
-polymer이다.</p>
-<p>Q. Crosslink density가 증가하면 일반적으로 어떻게 되는가?<br />
-A. 강도, 내열성, 내화학성이 증가하고 재가공성은 감소한다.</p>
-<p>Q. Chemical crosslink와 physical crosslink 차이는?<br />
-A. Chemical crosslink는 공유결합 같은 화학 결합이고, physical
-crosslink는 수소결합, 이온결합, 결정영역 같은 물리적 결합이다.</p>
-<p>Q. Elastomer에서 crosslink가 필요한 이유는?<br />
-A. 사슬이 늘어난 뒤 완전히 흘러가 버리지 않고 원래 형태로 복원되게 하기
-위해서다.</p>
-<h2 id="탄성-modulus-stress-strain">12. 탄성, Modulus,
-Stress-Strain</h2>
-<p>Q. 탄성이란?<br />
-A. 외부 힘으로 변형된 뒤 힘을 제거하면 원래 상태로 돌아오는
-성질이다.</p>
-<p>Q. 저장 탄성률은 무엇을 나타내는가?<br />
-A. 저장된 에너지가 다시 회복되는 elastic 성분을 나타낸다.</p>
-<p>Q. 손실 탄성률은 무엇을 나타내는가?<br />
-A. 변형 중 열 등으로 소산되어 회복되지 않는 viscous 성분을 나타낸다.</p>
-<p>Q. Young’s modulus는?<br />
-A. Stress-strain curve의 선형 elastic 구간 기울기이다.</p>
-<p><span class="math display">\[
-E=\frac{\sigma}{\varepsilon}
-\]</span></p>
-<p>Q. Modulus가 크면 어떤 물질인가?<br />
-A. 딱딱하고 변형이 작다.</p>
-<p>Q. Modulus가 작으면 어떤 물질인가?<br />
-A. 부드럽고 잘 늘어난다.</p>
-<p>Q. Elastic region을 넘으면 어떤 일이 생기는가?<br />
-A. 원래 상태로 돌아오지 않는 plastic deformation 또는 파괴가 생긴다.</p>
-<h2 id="대표-polymer">13. 대표 Polymer</h2>
-<p>Q. Polyethylene의 기본 특징은?<br />
-A. Ethylene 중합체이며 branching과 density에 따라 LDPE, LLDPE, HDPE 등이
-나뉜다.</p>
-<p>Q. HDPE가 LDPE보다 강한 이유는?<br />
-A. Branching이 적어 packing과 crystallinity가 높기 때문이다.</p>
-<p>Q. PP의 tacticity 중 결정성이 큰 것은?<br />
-A. Isotactic PP와 syndiotactic PP이다.</p>
-<p>Q. PVC의 특징은?<br />
-A. 염소를 포함해 내화학성과 난연성이 좋지만 연소 시 HCl 발생 문제가
-있다.</p>
-<p>Q. PS의 특징은?<br />
-A. Styrene 기반 polymer이며 케이스, 포장재 등에 쓰인다.</p>
-<p>Q. PET의 특징은?<br />
-A. 병, 필름, 섬유에 쓰이는 대표적인 thermoplastic polyester이다.</p>
-<p>Q. Engineering plastic은?<br />
-A. 일반 플라스틱보다 내열성, 충격강도, 기계적 성능을 높인 고성능
-플라스틱이다.</p>
-<p>Q. PDMS는 어떤 계열인가?<br />
-A. Silicone 기반 non-diene elastomer이다. 투명하고 생체적합성이 좋고
-유연하다.</p>
-<p>Q. Polyurethane의 hard segment와 soft segment 역할은?<br />
-A. Hard segment는 물리적 crosslink와 강도, soft segment는 유연성과
-신축성을 담당한다.</p>
-<p>Q. Epoxy resin은 어떤 계열인가?<br />
-A. Thermoset이다. 접착력, 화학저항성, 경화 후 치수 안정성이 좋아
-접착제와 coating에 쓰인다.</p>
-<p>Q. Novolac resin은 어디에 쓰일 수 있는가?<br />
-A. Photoresist 등 미세 패턴 형성 재료로 쓰일 수 있다.</p>
-<h2 id="chain-dimension과-chain-model">14. Chain Dimension과 Chain
-Model</h2>
-<p>Q. Contour length는 무엇인가?<br />
-A. 고분자 사슬을 완전히 편 상태에서 backbone을 따라 잰 최대
-길이이다.</p>
-<p>Q. End-to-end distance <span class="math inline">\(R\)</span>는
-무엇인가?<br />
-A. 사슬의 한쪽 끝과 다른 끝을 직선으로 이은 거리이다.</p>
-<p>Q. End-to-end distance는 왜 평균값을 바로 쓰기 어려운가?<br />
-A. Random coil은 방향이 계속 바뀌므로 벡터 평균 <span
-class="math inline">\(\langle R\rangle\)</span>은 0에 가까워지고, 보통
-<span class="math inline">\(\langle R^2\rangle\)</span> 또는 <span
-class="math inline">\(R_{\mathrm{rms}}\)</span>를 쓴다.</p>
-<p>Q. Freely-jointed chain의 가정은?<br />
-A. 모든 bond 길이는 같고 각 bond 방향은 서로 독립적으로 자유롭게
-정해진다고 본다.</p>
-<p>Q. Freely-jointed chain의 평균 제곱 end-to-end distance는?<br />
-A.</p>
-<p><span class="math display">\[
-\langle R^2\rangle=nl^2
-\]</span></p>
-<p>Q. Freely-jointed chain의 root-mean-square distance는?<br />
-A.</p>
-<p><span class="math display">\[
-R_{\mathrm{rms}}=l\sqrt{n}
-\]</span></p>
-<p>Q. Freely-jointed chain이 실제 고분자를 과하게 단순화하는
-이유는?<br />
-A. 실제 사슬은 bond angle과 회전 장벽 때문에 완전히 자유롭게 꺾이지
-않는다.</p>
-<p>Q. Freely-rotating chain은 freely-jointed chain과 무엇이
-다른가?<br />
-A. Bond angle은 고정되어 있고 단일결합 회전만 자유롭다고 본다.</p>
-<p>Q. Hindered rotation model은 freely-rotating chain에서 무엇을 더
-반영하는가?<br />
-A. Steric hindrance와 torsional energy barrier 때문에 단일결합 회전이
-완전히 자유롭지 않고 trans/gauche 같은 선호 회전 상태가 존재한다는 점을
-반영한다.</p>
-<p>Q. FJC, FRC, HRM을 현실성 또는 사슬 강성 반영이 커지는 순서로
-배열하면?<br />
-A. FJC <span class="math inline">\(\rightarrow\)</span> FRC <span
-class="math inline">\(\rightarrow\)</span> HRM.</p>
-<p>Q. FJC, FRC, HRM의 핵심 차이는?<br />
-A. FJC는 bond 방향이 완전 자유, FRC는 bond angle 고정과 자유 회전, HRM은
-bond angle 고정에 더해 회전 장애까지 반영한다.</p>
-<p>Q. Characteristic ratio <span class="math inline">\(C_n\)</span>의
-정의는?<br />
-A.</p>
-<p><span class="math display">\[
-C_n=\frac{\langle R^2\rangle}{nl^2}
-\]</span></p>
-<p>Q. <span class="math inline">\(C_\infty&gt;1\)</span>의 의미는?<br />
-A. 실제 사슬이 FJC보다 bond angle이나 회전 장애 때문에 더 뻣뻣하고 더
-extended되어 있다는 뜻이다.</p>
-<p>Q. Kuhn length는 무엇인가?<br />
-A. 실제 사슬을 같은 end-to-end distance를 갖는 자유연결 사슬로 바꿨을
-때의 등가 segment 길이이다.</p>
-<p>Q. Persistence length는 무엇인가?<br />
-A. 사슬이 기존 방향성을 얼마나 오래 유지하는지를 나타내는 길이
-척도이다.</p>
-<p>Q. Radius of gyration <span class="math inline">\(R_g\)</span>는
-무엇인가?<br />
-A. 사슬 전체 segment가 질량중심 주변에 얼마나 퍼져 있는지를 나타내는
-평균 크기이다.</p>
-<p>Q. Ideal chain에서 <span class="math inline">\(R_g\)</span>와 <span
-class="math inline">\(R\)</span>의 관계는?<br />
-A.</p>
-<p><span class="math display">\[
-R_g^2=\frac{\langle R^2\rangle}{6}
-\]</span></p>
-<p>함정: <span class="math inline">\(R\)</span>는 양 끝 사이 거리이고,
-<span class="math inline">\(R_g\)</span>는 사슬 전체가 차지하는 coil
-크기이다.</p>
-<h2 id="chain-expansion-viscosity-diffusion">15. Chain Expansion,
-Viscosity, Diffusion</h2>
-<p>Q. Excluded volume effect는 무엇인가?<br />
-A. 실제 segment가 같은 공간을 동시에 차지할 수 없어 사슬이 ideal
-chain보다 팽창하는 효과이다.</p>
-<p>Q. Expansion parameter <span class="math inline">\(\alpha\)</span>는
-무엇인가?<br />
-A. 실제 사슬 크기가 ideal chain 크기보다 얼마나 커졌는지를 나타내는
-값이다.</p>
-<p>Q. Good solvent에서 <span
-class="math inline">\(\alpha\)</span>는?<br />
-A. Polymer-solvent interaction이 좋아 사슬이 팽창하므로 <span
-class="math inline">\(\alpha&gt;1\)</span>이다.</p>
-<p>Q. <span class="math inline">\(\theta\)</span> condition에서 <span
-class="math inline">\(\alpha\)</span>는?<br />
-A. Excluded volume effect가 상쇄되어 ideal chain처럼 거동하므로 <span
-class="math inline">\(\alpha=1\)</span>이다.</p>
-<p>Q. Ideal chain과 good solvent chain의 크기 스케일링은?<br />
-A. Ideal chain은 대략 <span class="math inline">\(R\propto
-n^{0.5}\)</span>, good solvent의 real chain은 대략 <span
-class="math inline">\(R\propto n^{0.6}\)</span>이다.</p>
-<p>Q. Free-draining model은?<br />
-A. 용매가 coil 내부를 자유롭게 통과하여 각 segment가 거의 독립적으로
-friction을 받는다고 보는 모델이다.</p>
-<p>Q. Free-draining coil의 friction coefficient는?<br />
-A.</p>
-<p><span class="math display">\[
-f_{\mathrm{coil}}\approx nf
-\]</span></p>
-<p>Q. Non-draining model은?<br />
-A. Coil이 하나의 입자처럼 움직여 용매가 coil 내부를 자유롭게 통과하지
-못한다고 보는 모델이다.</p>
-<p>Q. Non-draining coil의 Stokes friction은?<br />
-A.</p>
-<p><span class="math display">\[
-f=6\pi\eta_sR_h
-\]</span></p>
-<p>Q. Einstein viscosity equation은 무엇인가?<br />
-A. 묽은 hard sphere 분산계에서 부피분율이 점도를 얼마나 올리는지 나타낸
-식이다.</p>
-<p><span class="math display">\[
-\eta=\eta_s\left(1+\frac{5}{2}\phi\right)
-\]</span></p>
-<p>Q. Specific viscosity는?<br />
-A.</p>
-<p><span class="math display">\[
-\eta_{\mathrm{sp}}=\frac{\eta-\eta_s}{\eta_s}
-\]</span></p>
-<p>Q. Intrinsic viscosity는?<br />
-A. 무한희석 조건에서 고분자 하나가 용액 점도에 기여하는 정도이다.</p>
-<p><span class="math display">\[
-[\eta]=\lim_{c\to0}\frac{\eta_{\mathrm{sp}}}{c}
-\]</span></p>
-<p>Q. Mark-Houwink-Sakurada equation은?<br />
-A. Intrinsic viscosity와 분자량의 관계를 나타낸 경험식이다.</p>
-<p><span class="math display">\[
-[\eta]=KM^a
-\]</span></p>
-<p>Q. Mark-Houwink 지수 <span class="math inline">\(a\)</span>가
-의미하는 것은?<br />
-A. 사슬 형태와 용매 품질을 나타낸다. Good solvent에서는 사슬 팽창 때문에
-<span class="math inline">\(a\)</span>가 커진다.</p>
-<p>Q. Stokes-Einstein equation은?<br />
-A. 입자 또는 coil의 diffusion coefficient와 hydrodynamic radius의
-관계식이다.</p>
-<p><span class="math display">\[
-D=\frac{k_BT}{6\pi\eta_sR_h}
-\]</span></p>
-<p>함정: 점도는 polymer coil이 용매 흐름을 방해하는 정도이고,
-diffusion은 coil이 용액 속에서 이동하는 정도이다.</p>
-<h2 id="대표-polymer-세부-암기">16. 대표 Polymer 세부 암기</h2>
-<p>Q. HDPE와 LDPE의 구조 차이는?<br />
-A. HDPE는 branching이 적어 packing과 crystallinity가 높고, LDPE는
-branching이 많아 density와 crystallinity가 낮다.</p>
-<p>Q. Isotactic PP와 syndiotactic PP가 결정화되기 쉬운 이유는?<br />
-A. Side group 배열이 규칙적이라 chain packing이 쉽기 때문이다.</p>
-<p>Q. Atactic PP가 amorphous 성향을 갖는 이유는?<br />
-A. Side group 배열이 불규칙해 규칙 packing이 어렵기 때문이다.</p>
-<p>Q. CPVC가 PVC보다 내열성과 난연성이 좋은 이유는?<br />
-A. 추가 chlorination으로 chlorine 함량이 증가해 열과 화염에 대한
-저항성이 증가하기 때문이다.</p>
-<p>Q. PVC와 CPVC의 공통 주의점은?<br />
-A. 연소 또는 열분해 시 HCl이 발생할 수 있다.</p>
-<p>Q. General purpose polystyrene은 어떤 구조인가?<br />
-A. Free radical polymerization으로 얻기 쉬운 amorphous PS이다.</p>
-<p>Q. Isotactic polystyrene은 왜 일반 PS보다 특성이 다른가?<br />
-A. 규칙적인 tacticity 때문에 crystallinity를 가질 수 있고, melting
-temperature가 나타난다.</p>
-<p>Q. PET가 많이 쓰이는 형태는?<br />
-A. Fiber, bottle, film이다.</p>
-<p>Q. Engineering plastic이 일반 plastic보다 강조하는 성질은?<br />
-A. 높은 내열성, 내화학성, 충격강도, 인장강도, 낮은 creep이다.</p>
-<p>Q. Diene elastomer의 대표 예시는?<br />
-A. Polybutadiene, polyisoprene, polychloroprene, SBR, NBR이다.</p>
-<p>Q. Diene elastomer가 sulfur vulcanization이 쉬운 이유는?<br />
-A. Chain에 double bond가 있어 sulfur crosslink 형성이 가능하기
-때문이다.</p>
-<p>Q. SBR은 어떤 elastomer인가?<br />
-A. Styrene과 butadiene의 random copolymer이며 타이어, 신발 밑창 등 마모
-저항이 필요한 곳에 쓰인다.</p>
-<p>Q. SBR에서 styrene의 역할은?<br />
-A. 비용을 낮추고 abrasion resistance와 adhesion을 높인다.</p>
-<p>Q. NBR은 어떤 elastomer인가?<br />
-A. Butadiene과 acrylonitrile의 copolymer이며 oil resistance가 좋아
-glove, gasket, tubing, O-ring, fuel hose 등에 쓰인다.</p>
-<p>Q. PDMS는 왜 wearable device와 bio-device에 자주 쓰이는가?<br />
-A. 투명하고 유연하며 생체적합성이 좋고 저온 유연성, 산화 안정성, 전기
-절연성이 좋기 때문이다.</p>
-<p>Q. PDMS crosslinking에서 자주 언급되는 반응은?<br />
-A. Hydrosilylation이다.</p>
-<p>Q. Polyurethane에서 hard segment와 soft segment의 역할은?<br />
-A. Hard segment는 수소결합과 물리적 crosslink로 강도와 형태 유지를
-담당하고, soft segment는 유연성과 신축성을 담당한다.</p>
-<p>Q. TPE는 무엇인가?<br />
-A. Thermoplastic elastomer이다. 고무처럼 탄성을 가지면서 열가소성
-플라스틱처럼 가공과 재활용이 가능한 polymer이다.</p>
-<p>Q. Styrenic block copolymer TPE의 구조적 핵심은?<br />
-A. Hard styrene domain과 soft rubbery domain이 함께 존재해 물리적
-crosslink처럼 작동한다.</p>
-<p>Q. Epoxy resin의 대표 특성은?<br />
-A. 접착력, 화학저항성, 부식저항성, 낮은 curing shrinkage이다.</p>
-<p>Q. Phenolic resin의 대표 종류는?<br />
-A. Novolac과 resol이다.</p>
-<p>Q. Novolac resin이 반도체 공정에서 언급되는 이유는?<br />
-A. Photoresist 같은 미세 패턴 형성 재료로 쓰일 수 있기 때문이다.</p>
-<h2 id="elasticity-핵심">17. Elasticity 핵심</h2>
-<p>Q. 탄성에서 가장 중요한 조건은?<br />
-A. 잘 늘어나는 것만이 아니라 힘을 제거했을 때 원래 상태로 돌아오는
-것이다.</p>
-<p>Q. Elastomer가 thermoplastic처럼 계속 흘러가지 않는 이유는?<br />
-A. 적당한 crosslink가 사슬 이동을 묶어 복원력을 제공하기 때문이다.</p>
-<p>Q. Crosslink가 너무 많아지면 어떤 재료가 되는가?<br />
-A. Thermoset처럼 딱딱해지고 재가공이 어려워진다.</p>
-<p>Q. Physical crosslink의 예시는?<br />
-A. 수소결합, 이온결합, 결정영역, hard domain이다.</p>
-<p>Q. Chemical crosslink의 예시는?<br />
-A. 공유결합으로 연결된 sulfur crosslink, cured epoxy network 등이다.</p>
-<p>Q. Affine network model은 elastomer를 어떻게 보는가?<br />
-A. Crosslink point들이 macroscopic deformation과 함께 균일하게
-이동한다고 보는 모델이다.</p>
-<p>Q. Hooke’s law 형태로 stress와 strain을 쓰면?<br />
-A.</p>
-<p><span class="math display">\[
-\sigma=E\varepsilon
-\]</span></p>
-<p>Q. Young’s modulus <span class="math inline">\(E\)</span>가 큰
-재료는?<br />
-A. 작은 strain에도 큰 stress가 필요하므로 딱딱한 재료이다.</p>
-<p>Q. Young’s modulus <span class="math inline">\(E\)</span>가 작은
-재료는?<br />
-A. 작은 stress에도 잘 늘어나는 부드러운 재료이다.</p>
-<p>Q. Stress-strain curve에서 elastic region은?<br />
-A. Stress와 strain이 거의 선형이고 힘 제거 후 원래 상태로 돌아가는
-구간이다.</p>
-<p>Q. Plastic deformation은?<br />
-A. Elastic limit을 넘어 힘을 제거해도 원래 상태로 완전히 돌아오지 않는
-변형이다.</p>
-<p>Q. Amorphous polymer, semi-crystalline polymer, elastomer의
-stress-strain 곡선 차이는?<br />
-A. Elastomer는 낮은 modulus와 큰 reversible strain을 보이고, glassy
-amorphous polymer는 높은 modulus와 작은 strain에서 파괴되기 쉽고,
-semi-crystalline polymer는 결정영역 때문에 강도와 항복 거동이
-나타난다.</p>
-<h2 id="viscoelasticity">18. Viscoelasticity</h2>
-<p>Q. 점탄성이란?<br />
-A. Elastic solid처럼 에너지를 저장하는 성질과 viscous liquid처럼
-에너지를 소산하는 성질을 동시에 갖는 시간 의존적 거동이다.</p>
-<p>Q. 점도와 탄성의 단위 차이는?<br />
-A. 점도는 <span class="math inline">\(\mathrm{Pa\cdot s}\)</span>,
-탄성률은 <span class="math inline">\(\mathrm{Pa}\)</span>이다.</p>
-<p>Q. Newtonian fluid의 전단응력 관계식은?<br />
-A.</p>
-<p><span class="math display">\[
-\tau=\mu\frac{\partial u}{\partial y}
-\]</span></p>
-<p>Q. Shear thinning은?<br />
-A. Shear rate가 증가할수록 viscosity가 감소하는 거동이다. Ketchup,
-toothpaste, ink, blood가 예시이다.</p>
-<p>Q. Shear thickening은?<br />
-A. Shear rate가 증가할수록 viscosity가 증가하는 거동이다. Cornstarch
-slurry가 대표 예시이다.</p>
-<p>Q. Bingham plastic은?<br />
-A. Yield stress를 넘기 전에는 거의 흐르지 않고, 넘긴 뒤 흐르는
-재료이다.</p>
-<p>Q. Creep test는 무엇인가?<br />
-A. 일정 stress를 가했을 때 strain이 시간에 따라 증가하는지를 보는
-시험이다.</p>
-<p>Q. Creep compliance는?<br />
-A.</p>
-<p><span class="math display">\[
-J(t)=\frac{\varepsilon(t)}{\sigma_0}
-\]</span></p>
-<p>Q. Stress relaxation test는 무엇인가?<br />
-A. 일정 strain을 유지했을 때 stress가 시간에 따라 감소하는지를 보는
-시험이다.</p>
-<p>Q. Relaxation modulus는?<br />
-A.</p>
-<p><span class="math display">\[
-E(t)=\frac{\sigma(t)}{\varepsilon_0}
-\]</span></p>
-<p>Q. Boltzmann superposition principle은?<br />
-A. 선형 점탄성 범위에서 과거에 가해진 여러 하중의 효과를 시간 지연을
-고려해 더할 수 있다는 원리이다.</p>
-<p>Q. Maxwell model의 구성과 특징은?<br />
-A. Spring과 dashpot이 직렬로 연결된 모델이다. Stress relaxation 설명에
-적합하다.</p>
-<p>Q. Maxwell model의 직렬 조건은?<br />
-A.</p>
-<p><span class="math display">\[
-\sigma=\sigma_s=\sigma_d,\qquad \varepsilon=\varepsilon_s+\varepsilon_d
-\]</span></p>
-<p>Q. Kelvin-Voigt model의 구성과 특징은?<br />
-A. Spring과 dashpot이 병렬로 연결된 모델이다. Creep 설명에 적합하다.</p>
-<p>Q. Kelvin-Voigt model의 병렬 조건은?<br />
-A.</p>
-<p><span class="math display">\[
-\sigma=\sigma_s+\sigma_d,\qquad \varepsilon=\varepsilon_s=\varepsilon_d
-\]</span></p>
-<p>Q. Storage modulus <span
-class="math inline">\(E&#39;\)</span>는?<br />
-A. 변형 에너지를 저장하고 회복하는 elastic 성분이다.</p>
-<p>Q. Loss modulus <span
-class="math inline">\(E&#39;&#39;\)</span>는?<br />
-A. 변형 에너지를 열이나 진동으로 잃는 viscous 성분이다.</p>
-<p>Q. <span class="math inline">\(E&#39;&gt;E&#39;&#39;\)</span>이면
-어떤 성격이 강한가?<br />
-A. Solid-like 또는 elastic 성격이 강하다.</p>
-<p>Q. <span class="math inline">\(E&#39;&lt;E&#39;&#39;\)</span>이면
-어떤 성격이 강한가?<br />
-A. Liquid-like 또는 viscous 성격이 강하다.</p>
-<p>Q. 복소 탄성률은?<br />
-A.</p>
-<p><span class="math display">\[
-E^*=E&#39;+iE&#39;&#39;
-\]</span></p>
-<p>Q. Dynamic test에서 phase lag <span
-class="math inline">\(\delta\)</span>와 modulus 관계는?<br />
-A.</p>
-<p><span class="math display">\[
-E&#39;=E^*\cos\delta,\qquad E&#39;&#39;=E^*\sin\delta
-\]</span></p>
-<p>Q. Loss tangent는?<br />
-A.</p>
-<p><span class="math display">\[
-\tan\delta=\frac{E&#39;&#39;}{E&#39;}
-\]</span></p>
-<p>Q. DMA에서 <span class="math inline">\(T_g\)</span>는 어떻게
-잡는가?<br />
-A. Storage modulus가 급격히 감소하고 loss modulus 또는 <span
-class="math inline">\(\tan\delta\)</span> peak가 나타나는 온도 부근으로
-판단한다.</p>
-<p>함정: <span class="math inline">\(E&#39;\)</span>는 저장, <span
-class="math inline">\(E&#39;&#39;\)</span>는 손실이다. Prime 하나가
-elastic, double prime이 viscous라고 외우면 된다.</p>
-<h2 id="빈칸형-최종-암기">19. 빈칸형 최종 암기</h2>
-<ul>
-<li><span class="math inline">\(\Delta G_m=\Delta H_m-T\Delta
-S_m\)</span></li>
-<li>Good solvent: <span class="math inline">\(\chi&lt;1/2\)</span></li>
-<li><span class="math inline">\(\theta\)</span> solvent: <span
-class="math inline">\(\chi=1/2\)</span></li>
-<li>Poor solvent: <span class="math inline">\(\chi&gt;1/2\)</span></li>
-<li><span class="math inline">\(\Delta\mu_1=RT\ln a_1\)</span></li>
-<li><span class="math inline">\(\ln
-a_1=-\dfrac{\phi_2}{x}+\left(\chi-\dfrac{1}{2}\right)\phi_2^2\)</span></li>
-<li><span class="math inline">\(\delta=\sqrt{\dfrac{\Delta
-H_{\mathrm{vap}}-RT}{V}}\)</span></li>
-<li><span class="math inline">\(M_e\)</span>: entanglement molecular
-weight</li>
-<li>Amorphous: broad halo, <span class="math inline">\(T_g\)</span></li>
-<li>Crystalline: sharp peak, <span
-class="math inline">\(T_m\)</span></li>
-<li>Semi-crystalline: <span class="math inline">\(T_g\)</span>, <span
-class="math inline">\(T_m\)</span>, <span
-class="math inline">\(T_c\)</span></li>
-<li><span class="math inline">\(T_c&lt;T_m\)</span></li>
-<li><span
-class="math inline">\(\dfrac{1}{T_g}=\dfrac{w_1}{T_{g,1}}+\dfrac{w_2}{T_{g,2}}\)</span></li>
-<li><span
-class="math inline">\(E=\dfrac{\sigma}{\varepsilon}\)</span></li>
-<li><span class="math inline">\(\langle R^2\rangle=nl^2\)</span></li>
-<li><span class="math inline">\(R_{\mathrm{rms}}=l\sqrt{n}\)</span></li>
-<li><span class="math inline">\(R_g^2=\dfrac{\langle
-R^2\rangle}{6}\)</span></li>
-<li><span class="math inline">\(f_{\mathrm{coil}}\approx
-nf\)</span></li>
-<li><span class="math inline">\(f=6\pi\eta_sR_h\)</span></li>
-<li><span
-class="math inline">\(\eta=\eta_s\left(1+\dfrac{5}{2}\phi\right)\)</span></li>
-<li><span
-class="math inline">\(\eta_{\mathrm{sp}}=\dfrac{\eta-\eta_s}{\eta_s}\)</span></li>
-<li><span
-class="math inline">\([\eta]=\lim_{c\to0}\dfrac{\eta_{\mathrm{sp}}}{c}\)</span></li>
-<li><span class="math inline">\([\eta]=KM^a\)</span></li>
-<li><span
-class="math inline">\(D=\dfrac{k_BT}{6\pi\eta_sR_h}\)</span></li>
-<li><span class="math inline">\(\sigma=E\varepsilon\)</span></li>
-<li><span class="math inline">\(\tau=\mu\dfrac{\partial u}{\partial
-y}\)</span></li>
-<li><span
-class="math inline">\(J(t)=\dfrac{\varepsilon(t)}{\sigma_0}\)</span></li>
-<li><span
-class="math inline">\(E(t)=\dfrac{\sigma(t)}{\varepsilon_0}\)</span></li>
-<li>Maxwell model: spring + dashpot series, stress relaxation</li>
-<li>Kelvin-Voigt model: spring + dashpot parallel, creep</li>
-<li><span class="math inline">\(E^*=E&#39;+iE&#39;&#39;\)</span></li>
-<li><span class="math inline">\(E&#39;=E^*\cos\delta\)</span></li>
-<li><span class="math inline">\(E&#39;&#39;=E^*\sin\delta\)</span></li>
-<li><span
-class="math inline">\(\tan\delta=\dfrac{E&#39;&#39;}{E&#39;}\)</span></li>
-<li>Thermoplastic: no crosslink, melt and reprocess</li>
-<li>Elastomer: light crosslink, reversible stretch</li>
-<li>Thermoset: dense crosslink, no remelting</li>
-<li>SBR: styrene-butadiene rubber</li>
-<li>NBR: acrylonitrile-butadiene rubber, oil resistance</li>
-<li>PDMS: silicone elastomer, transparent and biocompatible</li>
-<li>PU: hard segment gives strength, soft segment gives elasticity</li>
-</ul>
-<h2 id="마지막-강의-viscoelasticity-최종-찍기">20. 마지막 강의
-Viscoelasticity 최종 찍기</h2>
-<p>Q. 마지막 강의 한 줄 핵심은?<br />
-A. 고분자는 점성과 탄성을 동시에 가져서 시간에 따라 변형과 응력이
-달라지는 점탄성 거동을 보인다.</p>
-<p>Q. 점성은?<br />
-A. 흐름을 방해하는 내부 저항이다. 점도가 클수록 잘 흐르지 않는다.</p>
-<p>Q. 탄성은?<br />
-A. 외력으로 변형된 뒤 원래 상태로 돌아가려는 성질이다.</p>
-<p>Q. 점탄성은?<br />
-A. Elastic solid처럼 에너지를 저장하고 viscous liquid처럼 에너지를
-소산하는 시간 의존적 거동이다.</p>
-<p>Q. Newtonian fluid는?<br />
-A. Shear rate가 변해도 viscosity가 일정하고, shear stress와 shear rate가
-선형 관계인 유체다.</p>
-<p>Q. Non-Newtonian 세 가지 대표 유형은?<br />
-A. Shear thickening, shear thinning, Bingham plastic.</p>
-<p>Q. Shear thickening은?<br />
-A. Shear rate가 증가할수록 viscosity가 증가한다. 옥수수 전분 현탁액이
-대표 예시다.</p>
-<p>Q. Shear thinning은?<br />
-A. Shear rate가 증가할수록 viscosity가 감소한다. 케첩, 치약, 잉크,
-혈액이 예시다.</p>
-<p>Q. Bingham plastic은?<br />
-A. Yield stress 이상에서 흐르기 시작한다. 마요네즈, paste, 치약이
-예시다.</p>
-<p>Q. Creep과 stress relaxation을 한 줄로 구분하면?<br />
-A. Creep은 stress 고정, strain 증가이고 stress relaxation은 strain 고정,
-stress 감소다.</p>
-<p>Q. Maxwell model과 Kelvin-Voigt model을 한 줄로 구분하면?<br />
-A. Maxwell은 직렬과 stress relaxation, Kelvin-Voigt는 병렬과
-creep이다.</p>
-<p>Q. 직렬 Maxwell model에서 같은 것과 더해지는 것은?<br />
-A. Stress는 같고 strain은 더해진다.</p>
-<p>Q. 병렬 Kelvin-Voigt model에서 같은 것과 더해지는 것은?<br />
-A. Strain은 같고 stress는 더해진다.</p>
-<p>Q. Storage modulus <span
-class="math inline">\(E&#39;\)</span>는?<br />
-A. 저장되는 탄성 성분이다.</p>
-<p>Q. Loss modulus <span
-class="math inline">\(E&#39;&#39;\)</span>는?<br />
-A. 소산되는 점성 성분이다.</p>
-<p>Q. <span
-class="math inline">\(E&#39;&gt;E&#39;&#39;\)</span>이면?<br />
-A. Elastic 또는 solid-like 성격이 강하다.</p>
-<p>Q. <span
-class="math inline">\(E&#39;&lt;E&#39;&#39;\)</span>이면?<br />
-A. Viscous 또는 liquid-like 성격이 강하다.</p>
-<p>Q. Phase angle 판정은?<br />
-A. <span class="math inline">\(0^\circ\)</span>는 이상 탄성체, <span
-class="math inline">\(90^\circ\)</span>는 Newtonian fluid, 그 사이는
-viscoelastic material이다.</p>
-<p>Q. DMA에서 <span class="math inline">\(T_g\)</span>는 어떻게
-보이나?<br />
-A. Storage modulus가 급격히 감소하고 loss modulus 또는 <span
-class="math inline">\(\tan\delta\)</span> peak가 나타나는 온도
-부근이다.</p>
-<p>Q. 점탄성 소재 응용은?<br />
-A. 충격 흡수, 진동 감쇠, 방음, 쿠션, 웨어러블/의료센서, 인공피부에
-쓴다.</p>
+    function b64ToBytes(value) {
+      const raw = atob(value);
+      const out = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+      return out;
+    }
+
+    async function deriveKey(password) {
+      const material = await crypto.subtle.importKey(
+        "raw",
+        enc.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+      );
+      return crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: b64ToBytes(payload.salt), iterations: 250000, hash: "SHA-256" },
+        material,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function unlock(password, remember) {
+      status.textContent = "확인 중...";
+      try {
+        const key = await deriveKey(password);
+        const encrypted = b64ToBytes(payload.data);
+        const tag = b64ToBytes(payload.tag);
+        const combined = new Uint8Array(encrypted.length + tag.length);
+        combined.set(encrypted, 0);
+        combined.set(tag, encrypted.length);
+        const plain = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64ToBytes(payload.iv), tagLength: 128 },
+          key,
+          combined
+        );
+        if (remember) sessionStorage.setItem("kwExamPassword", password);
+        document.open();
+        document.write(dec.decode(plain));
+        document.close();
+      } catch (error) {
+        sessionStorage.removeItem("kwExamPassword");
+        status.textContent = "비밀번호가 맞지 않습니다.";
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      unlock(input.value, true);
+    });
+
+    const remembered = sessionStorage.getItem("kwExamPassword");
+    if (remembered) unlock(remembered, false);
+  })();
+  </script>
 </body>
 </html>
