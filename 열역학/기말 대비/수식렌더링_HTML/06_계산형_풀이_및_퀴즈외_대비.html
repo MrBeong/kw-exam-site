@@ -211,9 +211,13 @@
 <li>압축기는 실제 일이 더 큼. 터빈/팽창기는 실제 일이 더 작음.</li>
 </ul>
 <h2 id="계산형-예상문제">2. 계산형 예상문제</h2>
+<p>계산형은 답만 외우면 숫자가 바뀌었을 때 못 풀기 때문에, 먼저 최종
+답을 확인하고 바로 아래 풀이에서 대입 순서를 확인하는 구조로
+정리했음.</p>
 <h3 id="carnot-효율-계산">1. Carnot 효율 계산</h3>
 <p>문제: 고온 열원이 327°C, 저온 열원이 27°C일 때 Carnot 열기관의 최대
 효율을 구하시오.</p>
+<p>답: 최대 효율은 0.50, 즉 50%였음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 T_H=327+273=600\,\mathrm{K},\quad T_C=27+273=300\,\mathrm{K}
@@ -221,13 +225,13 @@ T_H=327+273=600\,\mathrm{K},\quad T_C=27+273=300\,\mathrm{K}
 <p><span class="math display">\[
 \eta_C=1-\frac{T_C}{T_H}=1-\frac{300}{600}=0.50
 \]</span></p>
-<p>답: 최대 효율은 0.50, 즉 50%였음.</p>
 <p>헷갈림 포인트: 327, 27을 그대로 넣으면 안 됨. Carnot은 Kelvin만
 씀.</p>
 <h3 id="실제-효율과-carnot-한계-비교">2. 실제 효율과 Carnot 한계
 비교</h3>
 <p>문제: 어떤 열기관이 600 K와 300 K 사이에서 작동하고, 고온 열원에서
 1000 J를 받아 600 J의 일을 생산한다고 주장했다. 가능한가?</p>
+<p>답: 불가능함. 2법칙 위배였음.</p>
 <p>풀이:</p>
 <p>실제 효율:</p>
 <p><span class="math display">\[
@@ -238,11 +242,11 @@ T_H=327+273=600\,\mathrm{K},\quad T_C=27+273=300\,\mathrm{K}
 \eta_C=1-\frac{300}{600}=0.50
 \]</span></p>
 <p>실제 효율 0.60이 Carnot 효율 0.50보다 큼.</p>
-<p>답: 불가능함. 2법칙 위배였음.</p>
 <h3 id="열기관에서-버리는-열-계산">3. 열기관에서 버리는 열 계산</h3>
 <p>문제: 열기관이 <span
 class="math inline">\(Q_H=2000\,\mathrm{J}\)</span>를 받고 효율이
 30%이다. 생산 일과 저온 열원으로 버리는 열을 구하시오.</p>
+<p>답: 일은 600 J, 버리는 열은 1400 J였음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 W=\eta Q_H=0.30\times 2000=600\,\mathrm{J}
@@ -250,21 +254,22 @@ W=\eta Q_H=0.30\times 2000=600\,\mathrm{J}
 <p><span class="math display">\[
 Q_C=Q_H-W=2000-600=1400\,\mathrm{J}
 \]</span></p>
-<p>답: 일은 600 J, 버리는 열은 1400 J였음.</p>
 <h3 id="냉동기-cop-계산">4. 냉동기 COP 계산</h3>
 <p>문제: 냉동기가 차가운 공간에서 1200 J를 빼내기 위해 300 J의 일을
 받았다. 냉동기 COP를 구하시오.</p>
+<p>답: <span class="math inline">\(COP_R=4.0\)</span>였음.</p>
 <p>풀이:</p>
 <p>냉동기는 목적이 차가운 곳에서 빼낸 열 <span
 class="math inline">\(Q_C\)</span>임.</p>
 <p><span class="math display">\[
 COP_R=\frac{Q_C}{W}=\frac{1200}{300}=4.0
 \]</span></p>
-<p>답: <span class="math inline">\(COP_R=4.0\)</span>였음.</p>
 <p>헷갈림 포인트: COP는 1보다 커도 이상한 게 아님.</p>
 <h3 id="히트펌프-cop-계산">5. 히트펌프 COP 계산</h3>
 <p>문제: 히트펌프가 실내로 1800 J의 열을 공급하고 압축기에 300 J의 일이
 들어갔다. 히트펌프 COP와 저온부에서 가져온 열을 구하시오.</p>
+<p>답: <span class="math inline">\(COP_{HP}=6.0\)</span>, 저온부에서
+가져온 열은 1500 J였음.</p>
 <p>풀이:</p>
 <p>히트펌프는 목적이 따뜻한 곳으로 공급한 열 <span
 class="math inline">\(Q_H\)</span>임.</p>
@@ -278,16 +283,14 @@ Q_H=Q_C+W
 <p><span class="math display">\[
 Q_C=Q_H-W=1800-300=1500\,\mathrm{J}
 \]</span></p>
-<p>답: <span class="math inline">\(COP_{HP}=6.0\)</span>, 저온부에서
-가져온 열은 1500 J였음.</p>
 <h3 id="carnot-냉동기-cop">6. Carnot 냉동기 COP</h3>
 <p>문제: 냉동기가 260 K의 저온 공간과 300 K의 실내 사이에서 작동한다.
 Carnot 냉동기 COP를 구하시오.</p>
+<p>답: <span class="math inline">\(COP_{R,C}=6.5\)</span>였음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 COP_{R,C}=\frac{T_C}{T_H-T_C}=\frac{260}{300-260}=\frac{260}{40}=6.5
 \]</span></p>
-<p>답: <span class="math inline">\(COP_{R,C}=6.5\)</span>였음.</p>
 <h3 id="t-s-선도-직사각형-carnot-cycle">7. T-S 선도 직사각형 Carnot
 cycle</h3>
 <p>문제: Carnot cycle에서 <span
@@ -298,6 +301,9 @@ S=5\,\mathrm{J/K}\)</span>이다. <span
 class="math inline">\(Q_H\)</span>, <span
 class="math inline">\(Q_C\)</span>, <span
 class="math inline">\(W\)</span>를 구하시오.</p>
+<p>답: <span class="math inline">\(Q_H=3000\,\mathrm{J}\)</span>, <span
+class="math inline">\(Q_C=1500\,\mathrm{J}\)</span>, <span
+class="math inline">\(W=1500\,\mathrm{J}\)</span>였음.</p>
 <p>풀이:</p>
 <p>가역 등온 열전달은 <span class="math inline">\(Q=T\Delta
 S\)</span>.</p>
@@ -310,13 +316,12 @@ Q_C=T_C\Delta S=300\times5=1500\,\mathrm{J}
 <p><span class="math display">\[
 W=Q_H-Q_C=3000-1500=1500\,\mathrm{J}
 \]</span></p>
-<p>답: <span class="math inline">\(Q_H=3000\,\mathrm{J}\)</span>, <span
-class="math inline">\(Q_C=1500\,\mathrm{J}\)</span>, <span
-class="math inline">\(W=1500\,\mathrm{J}\)</span>였음.</p>
 <h3 id="단순-열전달의-전체-엔트로피-변화">8. 단순 열전달의 전체 엔트로피
 변화</h3>
 <p>문제: 600 K 열원에서 300 K 열원으로 1200 J의 열이 직접 이동했다. 전체
 엔트로피 변화를 구하고 가능 여부를 판단하시오.</p>
+<p>답: <span class="math inline">\(\Delta
+S_{total}=2.0\,\mathrm{J/K}\)</span>이고 가능함. 단, 비가역 과정임.</p>
 <p>풀이:</p>
 <p>고온 열원은 열을 잃음.</p>
 <p><span class="math display">\[
@@ -329,12 +334,11 @@ class="math inline">\(W=1500\,\mathrm{J}\)</span>였음.</p>
 <p><span class="math display">\[
 \Delta S_{total}= -2.0+4.0=2.0\,\mathrm{J/K}
 \]</span></p>
-<p>답: <span class="math inline">\(\Delta
-S_{total}=2.0\,\mathrm{J/K}\)</span>이고 가능함. 단, 비가역 과정임.</p>
 <h3 id="저온에서-고온으로-열이-그냥-이동하는-경우">9. 저온에서 고온으로
 열이 그냥 이동하는 경우</h3>
 <p>문제: 300 K 열원에서 600 K 열원으로 1200 J의 열이 외부 일 없이
 이동한다고 주장했다. 가능한가?</p>
+<p>답: 전체 엔트로피가 음수라 불가능함. Clausius 서술 위배였음.</p>
 <p>풀이:</p>
 <p>300 K 쪽은 열을 잃음.</p>
 <p><span class="math display">\[
@@ -347,13 +351,14 @@ S_{total}=2.0\,\mathrm{J/K}\)</span>이고 가능함. 단, 비가역 과정임.<
 <p><span class="math display">\[
 \Delta S_{total}=-4.0+2.0=-2.0\,\mathrm{J/K}
 \]</span></p>
-<p>답: 전체 엔트로피가 음수라 불가능함. Clausius 서술 위배였음.</p>
 <h3 id="강의-숫자형-엔트로피-생성과-lost-work">10. 강의 숫자형: 엔트로피
 생성과 lost work</h3>
 <p>문제: 600 K 열원에서 250 K 열원으로 4000 J의 열이 직접 전달된다. 주변
 온도 <span class="math inline">\(T_\sigma=100\,\mathrm{K}\)</span>일 때
 <span class="math inline">\(S_{gen}\)</span>과 <span
 class="math inline">\(W_{lost}\)</span>를 구하시오.</p>
+<p>답: <span class="math inline">\(S_{gen}=9.33\,\mathrm{J/K}\)</span>,
+<span class="math inline">\(W_{lost}=933\,\mathrm{J}\)</span>였음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 S_{gen}=\Delta S_{total}=-\frac{4000}{600}+\frac{4000}{250}
@@ -364,13 +369,12 @@ S_{gen}=-6.667+16.000=9.33\,\mathrm{J/K}
 <p><span class="math display">\[
 W_{lost}=T_\sigma S_{gen}=100\times9.33=933\,\mathrm{J}
 \]</span></p>
-<p>답: <span class="math inline">\(S_{gen}=9.33\,\mathrm{J/K}\)</span>,
-<span class="math inline">\(W_{lost}=933\,\mathrm{J}\)</span>였음.</p>
 <h3 id="carnot-최대일에서-lost-work-빼기">11. Carnot 최대일에서 lost
 work 빼기</h3>
 <p>문제: 위 상황에서 Carnot 최대일이 3333 J이고, <span
 class="math inline">\(W_{lost}=933\,\mathrm{J}\)</span>라면 실제 가능한
 일은 얼마인가?</p>
+<p>답: 실제 가능한 일은 2400 J였음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 W_{actual}=W_{Carnot}-W_{lost}
@@ -378,13 +382,14 @@ W_{actual}=W_{Carnot}-W_{lost}
 <p><span class="math display">\[
 W_{actual}=3333-933=2400\,\mathrm{J}
 \]</span></p>
-<p>답: 실제 가능한 일은 2400 J였음.</p>
 <h3 id="이상기체-엔트로피-변화-tp식">12. 이상기체 엔트로피 변화: <span
 class="math inline">\(T,P\)</span>식</h3>
 <p>문제: 이상기체 1 mol이 300 K, 1 bar에서 600 K, 5 bar로 변했다. <span
 class="math inline">\(C_p=29.1\,\mathrm{J/(mol\,K)}\)</span>, <span
 class="math inline">\(R=8.314\,\mathrm{J/(mol\,K)}\)</span>일 때 <span
 class="math inline">\(\Delta s\)</span>를 구하시오.</p>
+<p>답: <span
+class="math inline">\(6.79\,\mathrm{J/(mol\,K)}\)</span>였음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 \Delta s=C_p\ln\frac{T_2}{T_1}-R\ln\frac{P_2}{P_1}
@@ -398,12 +403,12 @@ class="math inline">\(\Delta s\)</span>를 구하시오.</p>
 <p><span class="math display">\[
 \Delta s=20.17-13.38=6.79\,\mathrm{J/(mol\,K)}
 \]</span></p>
-<p>답: <span
-class="math inline">\(6.79\,\mathrm{J/(mol\,K)}\)</span>였음.</p>
 <h3 id="이상기체-등온-압축-엔트로피">13. 이상기체 등온 압축
 엔트로피</h3>
 <p>문제: 이상기체 2 mol이 300 K에서 등온으로 10 L에서 2 L까지 압축됐다.
 계의 엔트로피 변화를 구하시오.</p>
+<p>답: <span class="math inline">\(\Delta
+S=-26.8\,\mathrm{J/K}\)</span>였음.</p>
 <p>풀이:</p>
 <p>등온이면 온도항이 사라짐.</p>
 <p><span class="math display">\[
@@ -415,8 +420,6 @@ class="math inline">\(6.79\,\mathrm{J/(mol\,K)}\)</span>였음.</p>
 <p><span class="math display">\[
 \Delta S=16.628\ln0.2=-26.8\,\mathrm{J/K}
 \]</span></p>
-<p>답: <span class="math inline">\(\Delta
-S=-26.8\,\mathrm{J/K}\)</span>였음.</p>
 <p>헷갈림 포인트: 계 엔트로피는 감소 가능함. 전체 엔트로피가 음수면 안
 됨.</p>
 <h3 id="정압정적-엔트로피-변화-비교">14. 정압/정적 엔트로피 변화
@@ -425,6 +428,7 @@ S=-26.8\,\mathrm{J/K}\)</span>였음.</p>
 class="math inline">\(C_p=29.1\)</span>, <span
 class="math inline">\(C_v=20.8\,\mathrm{J/(mol\,K)}\)</span>일 때
 정압/정적 엔트로피 변화를 비교하시오.</p>
+<p>답: 정압 11.80, 정적 8.43. 정압이 더 큼.</p>
 <p>풀이:</p>
 <p>정압:</p>
 <p><span class="math display">\[
@@ -436,29 +440,28 @@ s_p=C_p\ln\frac{T_2}{T_1}=29.1\ln\frac{450}{300}=11.80\,\mathrm{J/(mol\,K)}
 \Delta
 s_v=C_v\ln\frac{T_2}{T_1}=20.8\ln\frac{450}{300}=8.43\,\mathrm{J/(mol\,K)}
 \]</span></p>
-<p>답: 정압 11.80, 정적 8.43. 정압이 더 큼.</p>
 <p>이유: <span class="math inline">\(C_p&gt;C_v\)</span>이고, 정압
 가열은 팽창까지 포함함.</p>
 <h3 id="압축기-효율">15. 압축기 효율</h3>
 <p>문제: 압축기에 이상적으로 100 kJ/kg의 일이 필요하지만 실제로는 125
 kJ/kg이 필요했다. 압축기 효율을 구하시오.</p>
+<p>답: 압축기 효율은 80%였음.</p>
 <p>풀이:</p>
 <p>압축기는 실제 일이 더 큼. 효율이 1보다 작아지게 분모에 실제 일을
 둠.</p>
 <p><span class="math display">\[
 \eta_c=\frac{W_{ideal}}{W_{actual}}=\frac{100}{125}=0.80
 \]</span></p>
-<p>답: 압축기 효율은 80%였음.</p>
 <h3 id="터빈-효율">16. 터빈 효율</h3>
 <p>문제: 터빈에서 이상적으로 500 kJ/kg의 일을 생산할 수 있는데 실제
 생산일은 420 kJ/kg이었다. 터빈 효율을 구하시오.</p>
+<p>답: 터빈 효율은 84%였음.</p>
 <p>풀이:</p>
 <p>터빈은 실제 일이 더 작음. 효율이 1보다 작아지게 실제 일을 분자에
 둠.</p>
 <p><span class="math display">\[
 \eta_t=\frac{W_{actual}}{W_{ideal}}=\frac{420}{500}=0.84
 \]</span></p>
-<p>답: 터빈 효율은 84%였음.</p>
 <h3 id="s_gen0-장치-판정-발명가-장치형">17. <span
 class="math inline">\(S_{gen}&lt;0\)</span> 장치 판정: 발명가
 장치형</h3>
@@ -469,6 +472,8 @@ class="math inline">\(h_1=2676\,\mathrm{J/mol}\)</span>, <span
 class="math inline">\(s_1=7.35\,\mathrm{J/(mol\,K)}\)</span>이다. 장치가
 200°C 열원에 2000 J를 방출하고, 0°C 열원에 나머지 676 J를 방출한다고
 주장했다. 가능한가?</p>
+<p>답: 불가능함. 에너지수지는 맞지만 <span
+class="math inline">\(S_{gen}&lt;0\)</span>라 2법칙 위배였음.</p>
 <p>풀이:</p>
 <p>에너지수지는 맞아 보임.</p>
 <p><span class="math display">\[
@@ -490,13 +495,12 @@ class="math inline">\(s_1=7.35\,\mathrm{J/(mol\,K)}\)</span>이다. 장치가
 <p><span class="math display">\[
 S_{gen}=-7.35+6.71=-0.64\,\mathrm{J/K}
 \]</span></p>
-<p>답: 불가능함. 에너지수지는 맞지만 <span
-class="math inline">\(S_{gen}&lt;0\)</span>라 2법칙 위배였음.</p>
 <h3 id="발명가-장치에서-최대-고온-열량">18. 발명가 장치에서 최대 고온
 열량</h3>
 <p>문제: 위 장치가 가역 한계로 작동한다고 하면, 200°C 열원으로 보낼 수
 있는 최대 열량은 약 얼마인가? 전체 방출 열량은 2676 J이고, 0°C 열원으로
 가는 열량은 <span class="math inline">\(2676-Q_H\)</span>라고 둔다.</p>
+<p>답: 200°C 열원으로 최대 약 1577 J, 0°C 열원으로 약 1099 J였음.</p>
 <p>풀이:</p>
 <p>가역 한계에서는 <span class="math inline">\(S_{gen}=0\)</span>.</p>
 <p><span class="math display">\[
@@ -513,12 +517,13 @@ Q_H\approx1577\,\mathrm{J}
 <p><span class="math display">\[
 Q_C=2676-1577=1099\,\mathrm{J}
 \]</span></p>
-<p>답: 200°C 열원으로 최대 약 1577 J, 0°C 열원으로 약 1099 J였음.</p>
 <h3 id="압축인자-z-계산">19. 압축인자 <span
 class="math inline">\(Z\)</span> 계산</h3>
 <p>문제: 300 K에서 어떤 기체 1 mol이 10 L, 2.5 bar를 가진다. <span
 class="math inline">\(R=0.08314\,\mathrm{L\,bar/(mol\,K)}\)</span>일 때
 <span class="math inline">\(Z\)</span>를 구하시오.</p>
+<p>답: <span class="math inline">\(Z\approx1.00\)</span>이라 거의
+이상기체였음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 Z=\frac{PV}{nRT}
@@ -526,22 +531,21 @@ Z=\frac{PV}{nRT}
 <p><span class="math display">\[
 Z=\frac{(2.5)(10)}{(1)(0.08314)(300)}=\frac{25}{24.942}=1.00
 \]</span></p>
-<p>답: <span class="math inline">\(Z\approx1.00\)</span>이라 거의
-이상기체였음.</p>
 <h3 id="z-해석">20. <span class="math inline">\(Z\)</span> 해석</h3>
 <p>문제: 어떤 실제기체의 <span
 class="math inline">\(Z=0.80\)</span>이다. 분자 간 인력/반발력 중 무엇이
 우세한가?</p>
+<p>답: 인력이 우세했음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 Z=\frac{V_{real}}{V_{ideal}}
 \]</span></p>
 <p><span class="math inline">\(Z&lt;1\)</span>이면 실제 부피가
 이상기체보다 작음. 서로 끌어당기는 효과가 큰 쪽임.</p>
-<p>답: 인력이 우세했음.</p>
 <h3 id="gibbs-phase-rule">21. Gibbs phase rule</h3>
 <p>문제: 순수 물질 1성분계에서 액체-기체 두 상이 공존한다. 자유도 <span
 class="math inline">\(F\)</span>를 구하시오.</p>
+<p>답: 자유도는 1이었음. 압력을 정하면 끓는점이 정해지는 식임.</p>
 <p>풀이:</p>
 <p>Gibbs phase rule:</p>
 <p><span class="math display">\[
@@ -551,18 +555,18 @@ F=C-P+2
 <p><span class="math display">\[
 F=1-2+2=1
 \]</span></p>
-<p>답: 자유도는 1이었음. 압력을 정하면 끓는점이 정해지는 식임.</p>
 <h3 id="triple-point-자유도">22. Triple point 자유도</h3>
 <p>문제: 순수 물질에서 고체, 액체, 기체 3상이 공존한다. 자유도는?</p>
+<p>답: 자유도 0. 삼중점은 온도와 압력이 동시에 고정됨.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 F=C-P+2=1-3+2=0
 \]</span></p>
-<p>답: 자유도 0. 삼중점은 온도와 압력이 동시에 고정됨.</p>
 <h3 id="평균-열용량으로-현열-계산">23. 평균 열용량으로 현열 계산</h3>
 <p>문제: 2 mol의 물질을 300 K에서 500 K까지 가열한다. 평균 열용량이
 <span class="math inline">\(30\,\mathrm{J/(mol\,K)}\)</span>이면 필요한
 현열은?</p>
+<p>답: 12.0 kJ였음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 Q=n\bar C_p\Delta T
@@ -570,11 +574,12 @@ Q=n\bar C_p\Delta T
 <p><span class="math display">\[
 Q=2\times30\times(500-300)=12000\,\mathrm{J}
 \]</span></p>
-<p>답: 12.0 kJ였음.</p>
 <h3 id="상변화-엔트로피">24. 상변화 엔트로피</h3>
 <p>문제: 어떤 물질의 융해열이 <span
 class="math inline">\(6000\,\mathrm{J/mol}\)</span>이고 융점이 300
 K이다. 융해 엔트로피를 구하시오.</p>
+<p>답: <span
+class="math inline">\(20\,\mathrm{J/(mol\,K)}\)</span>였음.</p>
 <p>풀이:</p>
 <p>상변화는 일정 온도에서 진행한다고 보고</p>
 <p><span class="math display">\[
@@ -583,14 +588,14 @@ K이다. 융해 엔트로피를 구하시오.</p>
 <p><span class="math display">\[
 \Delta S_{fus}=\frac{6000}{300}=20\,\mathrm{J/(mol\,K)}
 \]</span></p>
-<p>답: <span
-class="math inline">\(20\,\mathrm{J/(mol\,K)}\)</span>였음.</p>
 <h3 id="hess-법칙-반응열">25. Hess 법칙 반응열</h3>
 <p>문제: 반응 <span class="math inline">\(A+B\rightarrow C\)</span>에서
 <span class="math inline">\(\Delta H_f^\circ(A)=-100\)</span>, <span
 class="math inline">\(\Delta H_f^\circ(B)=-50\)</span>, <span
 class="math inline">\(\Delta
 H_f^\circ(C)=-200\,\mathrm{kJ/mol}\)</span>이면 표준 반응열은?</p>
+<p>답: <span class="math inline">\(-50\,\mathrm{kJ/mol}\)</span>, 발열
+반응이었음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 \Delta H_{rxn}^\circ=\sum \nu\Delta H_f^\circ(products)-\sum \nu\Delta
@@ -602,14 +607,13 @@ H_f^\circ(reactants)
 <p><span class="math display">\[
 \Delta H_{rxn}^\circ=-50\,\mathrm{kJ/mol}
 \]</span></p>
-<p>답: <span class="math inline">\(-50\,\mathrm{kJ/mol}\)</span>, 발열
-반응이었음.</p>
 <h3 id="clausius-clapeyron-단순-계산">26. Clausius-Clapeyron 단순
 계산</h3>
 <p>문제: 증발잠열이 <span
 class="math inline">\(40.0\,\mathrm{kJ/mol}\)</span>이고 373 K에서
 증기압이 1 atm인 물질이 있다. 393 K에서 증기압을 추정하시오. <span
 class="math inline">\(R=8.314\,\mathrm{J/(mol\,K)}\)</span>.</p>
+<p>답: 약 1.93 atm였음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 \ln\frac{P_2}{P_1}=-\frac{\Delta
@@ -625,11 +629,11 @@ H_{vap}}{R}\left(\frac{1}{T_2}-\frac{1}{T_1}\right)
 <p><span class="math display">\[
 P_2=e^{0.657}\approx1.93\,\mathrm{atm}
 \]</span></p>
-<p>답: 약 1.93 atm였음.</p>
 <h3 id="fugacity-coefficient">27. Fugacity coefficient</h3>
 <p>문제: 어떤 기체가 10 bar에서 fugacity <span
 class="math inline">\(f=8\,\mathrm{bar}\)</span>를 가진다. fugacity
 coefficient <span class="math inline">\(\phi\)</span>는?</p>
+<p>답: <span class="math inline">\(\phi=0.8\)</span>였음.</p>
 <p>풀이:</p>
 <p><span class="math display">\[
 \phi=\frac{f}{P}
@@ -637,22 +641,23 @@ coefficient <span class="math inline">\(\phi\)</span>는?</p>
 <p><span class="math display">\[
 \phi=\frac{8}{10}=0.8
 \]</span></p>
-<p>답: <span class="math inline">\(\phi=0.8\)</span>였음.</p>
 <h3 id="상평형-fugacity-조건">28. 상평형 fugacity 조건</h3>
 <p>문제: 같은 온도에서 액상 fugacity가 5 bar, 기상 fugacity가 8 bar이다.
 평형인가?</p>
+<p>답: 평형 아님. fugacity가 같아질 때까지 물질 이동 경향이 있음.</p>
 <p>풀이:</p>
 <p>상평형 조건은</p>
 <p><span class="math display">\[
 f^L=f^V
 \]</span></p>
 <p>그런데 5 bar와 8 bar가 다름.</p>
-<p>답: 평형 아님. fugacity가 같아질 때까지 물질 이동 경향이 있음.</p>
 <h3 id="gibbs-자유에너지-자발성">29. Gibbs 자유에너지 자발성</h3>
 <p>문제: 일정 <span class="math inline">\(T,P\)</span>에서 <span
 class="math inline">\(\Delta H=-20\,\mathrm{kJ/mol}\)</span>, <span
 class="math inline">\(\Delta S=-50\,\mathrm{J/(mol\,K)}\)</span>, <span
 class="math inline">\(T=300\,\mathrm{K}\)</span>이다. 자발적인가?</p>
+<p>답: <span class="math inline">\(\Delta G&lt;0\)</span>라
+자발적임.</p>
 <p>풀이:</p>
 <p>단위 맞춤:</p>
 <p><span class="math display">\[
@@ -664,13 +669,12 @@ class="math inline">\(T=300\,\mathrm{K}\)</span>이다. 자발적인가?</p>
 <p><span class="math display">\[
 \Delta G=-20-300(-0.050)=-20+15=-5\,\mathrm{kJ/mol}
 \]</span></p>
-<p>답: <span class="math inline">\(\Delta G&lt;0\)</span>라
-자발적임.</p>
 <h3 id="온도에-따른-자발성-역전">30. 온도에 따른 자발성 역전</h3>
 <p>문제: <span class="math inline">\(\Delta
 H=10\,\mathrm{kJ/mol}\)</span>, <span class="math inline">\(\Delta
 S=50\,\mathrm{J/(mol\,K)}\)</span>인 반응이 자발적이려면 온도는 어느
 정도 이상이어야 하는가?</p>
+<p>답: 200 K보다 높으면 자발적임.</p>
 <p>풀이:</p>
 <p>자발 조건:</p>
 <p><span class="math display">\[
@@ -687,7 +691,6 @@ T=\frac{\Delta H}{\Delta S}
 <p><span class="math display">\[
 T=\frac{10}{0.050}=200\,\mathrm{K}
 \]</span></p>
-<p>답: 200 K보다 높으면 자발적임.</p>
 <h2 id="퀴즈-외-개념-예상문제">3. 퀴즈 외 개념 예상문제</h2>
 <h3 id="maxwell-relation을-왜-쓰는가">1. Maxwell relation을 왜
 쓰는가?</h3>
