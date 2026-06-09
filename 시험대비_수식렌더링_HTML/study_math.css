@@ -36,6 +36,6 @@ nav#TOC { background:#f8fafc; border:1px solid var(--line); border-radius:10px; 
 nav#TOC ul { margin-top:4px; }
 .back-to-index,
 .kw-back-button { width:auto !important; max-width:calc(100vw - 28px); margin:0 !important; white-space:nowrap; }
-@media print { body { background:white; padding:0; } body > :not(script):not(style):not(.back-to-index):not(.kw-back-button), table { width:100%; } main { border:0; box-shadow:none; max-width:none; } a { color:inherit; } }
+@media print { .back-to-index,.kw-back-button { display:none !important; } body { background:white; padding:0; } body > :not(script):not(style):not(.back-to-index):not(.kw-back-button), table { width:100%; } main { border:0; box-shadow:none; max-width:none; } a { color:inherit; } }
 @media (max-width: 920px) { :root { --gutter:28px; --media:94%; } main { padding:28px; } img { max-width:94%; } }
 @media (max-width: 720px) { :root { --gutter:14px; --media:100%; } main { padding:22px 16px; } img { max-width:100%; } }
