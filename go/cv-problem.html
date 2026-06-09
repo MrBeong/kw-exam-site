@@ -107,7 +107,7 @@
   <main class="gate">
     <div class="badge">KW Final Prep</div>
     <h1>비밀번호가 필요합니다</h1>
-    <p>이 페이지의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 현재 탭에서 바로 열립니다.</p>
+    <p>이 사이트의 노트와 문제 데이터는 암호화되어 있습니다. 비밀번호를 입력하면 내부 페이지로 이동할 수 있습니다.</p>
     <form id="gate-form">
       <label for="pw">비밀번호</label>
       <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" autofocus>
@@ -118,12 +118,14 @@
   </main>
   <script>
   (() => {
-    const payload = {"salt":"lv+l9qzQO5mB2sTwtTin3A==","iv":"uI3UWjAJLAdtxJBa","tag":"lfjBmPB8MaJja5064tltWA==","data":"qQKIsYQb/NEtIXXWUjRWEP6y65TBmAaOJI0eLpL9ndbDMtNDxjgNcD8nLlewC62aLSh6yaGapsnZng0mPQmVcS3Pnc3SGz55AQYKDFH78iPt2r6rSGO57NEI/SGU/I7EYOMOFPYqZY/ghIQxismdR4WAzPRs0fNEMltMmFM/JM0NEHPhfHdrlZ8O7QctbVFjCK6kWNRlySuVu1yz9lPLg3zX7Oxov9A95XQpB7H2Dtx/xRtO/QDjXJcCXCEbBlw6Y03uFbtGLFphFnNgTUcmQZ/jIvuBDyAEna9DGwHOIkSN4iYJOpo4bGxHiwfGFxgEfM2TTbpm4MW2Bhu82sAguiW+4EHFpyGzMb5KaLA+yjnNVx6GOtnXmgBkpd1NShFVW2QufTGh0bjVQ1HukrF/Tu3z+LbFF0TkD+uiJoTPZoIw+IGloF0xF9eLGcQoDpLezalRaWitn4V3NyGaMgj14lhaWse9PO0zgc0oG6R334231W11tC0oiwsFsb1nxW4Q3n5BRdjF/GMshiYojiv0KIedAffS2qgnojISZBqoCGN6edN1QTypp4jYPmzcexvgc2pVgmShmYZwBqXiZxJKE/wqfN3llEme1bmzKXkpOBfen6q/TCst1VXwlrjAL0FddrKmMlJXL9cRMG7cQrI+qN3rIPW9euXu7nulIl4y50kLb6IcKgq4NXRK6D6pRJ0G+Qp/phxDN8HC9ETfr7mmw8+OzpgwsfTbSclCL0YYFqtvQ7/htTsakQJPw7S3I4VvSuXKeBgkdRD1sBVoiAFPsFRNN77OnGva3U8e02qafdQk/WEOxXaP0BSzipOH+P+0eto7fkQvwGI3pWUgku3nTUXEr/+3dmAtAB7SxVZ9S86fcbveg8hDF/xeWBoxj/HiLnOTj9N/57LCsxZuYt8uAhrAIuTgtoAN5Idh2Z7YEeAuSzjAEmHAqwcJ2nCNDxARIzTcrbC54FdeFGzIjSaU0vh10m8QIIQ/Dp/5ucfYDZih8DNgr/ioLdf+1vNrenfoefVAB7u61jawy6d/yOvSFYBjFs4XOE14+/KR0/jxyjYJJjSLwi8JKliDthqi4khCZR+LrJTk18OiCY9aZGiZRiHhopPjm9BLPVoy2C6NVZJYmgNnm4JariGQVibwexdFrrjgYU7VaUZp9CqSM5WaN1s+OglzY0su9afvOpcs7i0HuicS/nvGOMPol2TErREtmeCOpiBljv0wOjnV/G2JO0cmWbc+QvjT6ebx3dpQS5Zn+f4WnIFoyqV+douelEN9YGdMu6OB4sr65hFggS9G2EIfxAYV2ZcZXFKBCoGth/1b9fjFl0k+53zghcVyvkd8U7w+DrQxAtD56x8fNnssiz67CFNmAu+RVMcrE8muJ5T7TOiGNWylc7fLg55mibULoAdhTkXdViGdUuaFAjJnlJ8vusPTi1g+QDPhqFSGrchERYo3WMqhUaMBtCz9PgO9ZF3J8Wzpt2biAWUGSc+V+p9WjvvTSyrNxVDVFZr3td2qpnMTi0o+iw787kU8b7jP8c4YYoS6PE9xyMc8xz7UnRt7Mj5EvWZRYnqE9IpvZX8MeMxmnTi9uHX5fEgLpIlb9gYuOEhfBdKsfJBszpJy+gDQvqXbGAJ7/AfHohQ1muANmXBWWPeLdPHDg+hHGPNzI0M6YDHaiqx6smQ8Z4toB4q1lAHD+L0/gO30+s9RrriUqPI3BgHlV56Tj1p8K5xvMjgBqAZNXcUaue34Jo8mjnYD1PXjC6WXjUvU9IF51BwlBEQmqZX3PqJFkm296+htThIXt14CLmv9zcaKDWMa7WJi2lxmm9KJKHZKeIsFua5e0GwQQtRrxYY778nu+Y6oQygqNstivT0J3xEnrgf4nG4ZvzbsI2N4z1cLEYfaACy1F4l0egJIBrvaxlQ="};
+    const payload = {"salt":"X9LUXIhFTMSSp19uKrvs8Q==","iv":"lUJvtiApAyA2r/Nw","tag":"LDtQC4epsHl1iPp0e/+fZg==","data":"06G+FevBuKeCeMM9pVhWo0Rac2ZbeF05Q9Zb/YNhhrdU+YCLSD65ePl/k4Lw5wZNfN+tSs4z+WmpB1zV8Ovs5BoBrsXQ3F0Was91lpmzhLtTr+aT0JHcowCv3PSmNcXa3bSlBZ1QURJL/eNOYkxvhrfleIQBYx898fSO0m6QqNJ0VTlsZMRGbA02H+GwWZy1GVFR1f+YUG5wxZva9KSxAGBdLi6L1eduM/FJ0wzBl+i1BliiRW6ScoAzwlyBMtTafds7JruoIXoqsHXFJ4n94AkJyE6MDH0BdBP0nW7UfzECaxZ1UWjjnlx0tmuezZXquOynVzTJBUBAeIb7oZ6oNLfGbabq39zeBI6G6K2AYrwQXx7lLPJzeP8JP/T0tcj7qMGt8pfyRSuQLKodmI6YMSGzs09x0zFx82qMklkASysBvfCILef6tggJJsbG2hkbiaLyPDG9OZjBDeN0OJbUZCEm+jYegQm2rbwC1lOknldGfbaJXO4TQw5KOdDeM/CKSPjuuGEKThmvtpZdIAWNhgFa6ACXR8Ew2O5dSB2fnWEo8in5im57bsf3i5Zr5rN59JORCO8yrF6b9LMeRns/S6AV1SmuMoIpDXxu+tMNKzMqacoyuPPxYpUPUeJasGdqdMjhIpW18/Vl6tb+WFllZB/iMHftpJJv2E6z48KPg11KfXD+IrPDUGZGJLYl3p2vKT1U+U6auxGgkSDGNNo9UoUn3RMvOoBe1zGvuztBya17bVJfdhNfTqKmjzadE2HJovYctAwWD9tstvnSjxhBiDOAMVPsUz8NA2Tx3Lcjxjq942OELwURtIuxBRwGiPrYQ4VQYpPMOGAD8CeD/7fp4GTVraAlluf22+LyGBznMLWsI6hZgxYeaenBAncJSJvt2JVzCw3wqAoJWu2yhdL6TxgZI4RbQt7KaGnIKduCb1Me50Xl6mEUkzRW4dR9Un/QWReL618OZsoinqXJemHumWuJUs14KJ/aveip4OBRzyL3ppoO0r/FrPPmy0NqH8zsbHqWErm/nk1F+PXbIpo5GcwIE3SXRB00PTY9zemKcwXHafBd8f33RWeYrH5X2ERHxiSOFEQnnOwOwcz1H3Dg2tiQuLy625Q503pW35rTdetdVlfDPhgVNqd8uRAMKM1F4jX57ghlmj9RU1KhKnskNae0O3QSl4mc7pvhuPn5FCSyP0Wir9X6s6M+diejRlYM4xBen79kgweFx4qrmKXFmh0Qts9ZFjQ12UUo39ak14yWqB08MHAXyTTvwdLjWClk2xUiC0ninIrJc7FThmkBp3atxjDnnJ5JPRvTpeQozRl+7adXAr8Kl/PcH5uyA6fBU3NLiP+8wkWIc1L/ZRRebdysoLYh0rMnORqASUI6CN17oYhUfDONxLbdzWJIiVSF9eo1qT9LzUd7QVwdUNC3pyu5LCOHRVBck+AZf8uMLtcT41Eonmngt7agIS0RkQ/+2vFxVsKu0xl5TV7RTc/cnTfOJ5Z09P9M5zbepYkflfsscP8PD3T56D17f3KaTNyrmz0Q7okz/2WI5mx83QdnHxt6C8n6fuUh5KYKeo1ZCLojhv2PPzCAeC1GfcHjoXlUqpFL7r2TR/gDYq1LZHn11AytbN9MXsBOgXqi1/V/x7BlvixtkH4WStByRA4YJrP93hEZD9k/HagaIQaC6/3v7Ibyefoc85OEXvT1jDJHhRJapHRAWaQx8keqG48nNDnSkyem2dCvjjVj2QOhLTzHsXw6Py7GF3StVwYVpFJFIlXfJKp0MQcj8q5uiTVcnLRmhysyclUW2ChiFqYes0a682EhT1fcNeGHeXAD36am/iN24pIC2V6IRMntY5MKC3/C1N2DvZnJrgNgtD/T57el3aFGJXueyYuxAdGCu04Wc0fpLG+amt7U0gUjeMM="};
     const enc = new TextEncoder();
     const dec = new TextDecoder();
     const status = document.getElementById("status");
     const input = document.getElementById("pw");
     const form = document.getElementById("gate-form");
+    const rootHref = "../index.html";
+    const isEntryPage = false;
 
     function b64ToBytes(value) {
       const raw = atob(value);
@@ -149,6 +151,59 @@
       );
     }
 
+    function injectSessionGuard(html) {
+      const guard = `
+<script>
+(() => {
+  if (window.__kwExamSessionGuardInstalled) return;
+  window.__kwExamSessionGuardInstalled = true;
+  let internalNavigation = false;
+
+  function markInternal(target) {
+    try {
+      const url = new URL(target || "", location.href);
+      if (url.origin === location.origin) internalNavigation = true;
+    } catch (error) {}
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target && event.target.closest ? event.target.closest("a[href]") : null;
+    if (link) markInternal(link.getAttribute("href"));
+  }, true);
+
+  document.addEventListener("submit", (event) => {
+    const form = event.target;
+    if (form && form.action) markInternal(form.action);
+  }, true);
+
+  window.addEventListener("pagehide", () => {
+    if (!internalNavigation) sessionStorage.removeItem("kwExamPassword");
+  });
+})();
+<\/script>`;
+      if (/<\/body>/i.test(html)) return html.replace(/<\/body>/i, guard + "\n</body>");
+      return html + guard;
+    }
+
+    function redirectToEntry() {
+      const entry = new URL(rootHref, location.href);
+      entry.searchParams.set("next", location.pathname + location.search + location.hash);
+      location.replace(entry.href);
+    }
+
+    function nextTarget() {
+      if (!isEntryPage) return "";
+      const raw = new URLSearchParams(location.search).get("next");
+      if (!raw) return "";
+      try {
+        const url = new URL(raw, location.origin);
+        if (url.origin !== location.origin) return "";
+        return url.href;
+      } catch (error) {
+        return "";
+      }
+    }
+
     async function unlock(password, remember) {
       status.textContent = "확인 중...";
       try {
@@ -164,8 +219,13 @@
           combined
         );
         if (remember) sessionStorage.setItem("kwExamPassword", password);
+        const target = nextTarget();
+        if (remember && target) {
+          location.replace(target);
+          return;
+        }
         document.open();
-        document.write(dec.decode(plain));
+        document.write(injectSessionGuard(dec.decode(plain)));
         document.close();
       } catch (error) {
         sessionStorage.removeItem("kwExamPassword");
@@ -181,7 +241,11 @@
     });
 
     const remembered = sessionStorage.getItem("kwExamPassword");
-    if (remembered) unlock(remembered, false);
+    if (remembered && !isEntryPage) {
+      unlock(remembered, false);
+    } else if (!remembered && !isEntryPage) {
+      redirectToEntry();
+    }
   })();
   </script>
 </body>
