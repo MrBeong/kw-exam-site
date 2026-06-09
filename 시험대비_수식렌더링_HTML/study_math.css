@@ -1,5 +1,5 @@
 
-:root { color-scheme: light; --ink:#162033; --muted:#6b7280; --line:#d9dee8; --accent:#285ea8; --bg:#f6f7fb; --paper:#ffffff; --read:1080px; --gutter:64px; }
+:root { color-scheme: light; --ink:#162033; --muted:#6b7280; --line:#d9dee8; --accent:#285ea8; --bg:#f6f7fb; --paper:#ffffff; --read:1080px; --media:960px; --gutter:64px; }
 * { box-sizing: border-box; }
 html { width:100%; min-height:100%; background:var(--bg); }
 body { width:100%; max-width:none; min-height:100vh; margin:0; padding:34px 0 70px; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif; line-height:1.72; }
@@ -22,9 +22,15 @@ div.sourceCode pre,
 pre.sourceCode { width:100% !important; margin:0 !important; }
 pre code { background:transparent; border:0; color:inherit; padding:0; }
 blockquote { margin:18px auto; padding:10px 18px; border-left:4px solid var(--accent); background:#f4f7fb; color:#334155; }
-figure { margin-top:18px; margin-bottom:22px; }
+figure { width:min(var(--media), calc(100vw - var(--gutter) * 2)); margin:18px auto 22px; }
 figure figcaption { color:var(--muted); font-size:.92rem; text-align:center; margin-top:8px; }
+figure + p,
+figure + p + ul,
+figure + p + ol,
+figure + ul,
+figure + ol { width:min(var(--media), calc(100vw - var(--gutter) * 2)); margin-left:auto; margin-right:auto; }
 img { max-width:min(82%, 860px); height:auto; display:block; margin:18px auto 8px; border:1px solid var(--line); border-radius:10px; background:#fff; box-shadow:0 8px 24px rgba(15,23,42,.08); }
+figure img { width:100%; max-width:100%; margin:0 auto 8px; }
 .MathJax { font-size:108% !important; }
 nav#TOC { background:#f8fafc; border:1px solid var(--line); border-radius:10px; padding:14px 22px; margin:18px auto 28px; }
 nav#TOC ul { margin-top:4px; }
