@@ -175,6 +175,9 @@
     }
 
     .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       min-height: 42px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -674,6 +677,7 @@
         <button type="button" data-section="calculator">지정수량 계산</button>
         <button type="button" data-section="problems">문제은행</button>
         <button type="button" data-section="mock">모의고사</button>
+        <button type="button" data-section="past2025">2025 기출영상</button>
         <button type="button" data-section="cards">암기카드</button>
         <button type="button" data-section="sources">자료링크</button>
       </nav>
@@ -751,7 +755,7 @@
           </div>
         </div>
 
-        <div class="grid">
+        <div class="grid three">
           <div class="panel searchable" data-search="최신 출제기준 2025 2029 mcrtrNo 340 2024.09.13">
             <h3>최신 출제기준</h3>
             <p>위험물산업기사(2025.1.1 ~ 2029.12.31), Q-Net 보고서 번호 <strong>mcrtrNo=340</strong>, 자료실 최종수정일 <strong>2024.09.13</strong>.</p>
@@ -855,6 +859,31 @@
         <div class="question-list" id="mockList"></div>
       </section>
 
+      <section class="section" id="past2025" data-title="2025 기출영상">
+        <div class="section-head">
+          <h2>2025 기출영상</h2>
+          <p class="hint">제1회·제2회·제3회 영상 링크와 대비 체크</p>
+        </div>
+        <div class="grid three" id="pastVideoList"></div>
+        <div class="panel searchable" data-search="2025 기출 대비 체크 지정수량 유별 소화 반응식 법규 시설 서술형">
+          <h3>영상 학습 체크</h3>
+          <div class="grid three">
+            <div class="card">
+              <span class="badge blue">1회독</span>
+              <p style="margin-top:8px;">영상에서 틀린 문항을 원문이 아니라 키워드, 유별, 계산식, 반응식 단위로 적는다.</p>
+            </div>
+            <div class="card">
+              <span class="badge hazard">2회독</span>
+              <p style="margin-top:8px;">지정수량 배수, 제3류 금수성, 제4류 정전기·소화, 제5류 저장 주의사항을 따로 묶는다.</p>
+            </div>
+            <div class="card">
+              <span class="badge good">마무리</span>
+              <p style="margin-top:8px;">같은 요구 능력의 자체 문제를 문제은행에 추가해 답안 문장으로 반복한다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="cards" data-title="암기카드">
         <div class="section-head">
           <h2>암기카드</h2>
@@ -877,7 +906,7 @@
           <h2>자료링크</h2>
           <p class="hint">시험 직전 재확인 경로</p>
         </div>
-        <div class="grid">
+        <div class="grid three">
           <div class="panel searchable" data-search="qnet 종목 상세 출제기준 공개문제 시험일정">
             <h3>Q-Net</h3>
             <ul class="source-list" id="qnetLinks"></ul>
@@ -885,6 +914,10 @@
           <div class="panel searchable" data-search="국가법령정보센터 위험물안전관리법 시행령 시행규칙 별표 지정수량">
             <h3>국가법령정보센터</h3>
             <ul class="source-list" id="lawLinks"></ul>
+          </div>
+          <div class="panel searchable" data-search="유튜브 2025 기출문제 1회 2회 3회 무료인강 직업상점 산기공">
+            <h3>2025 기출영상</h3>
+            <ul class="source-list" id="videoLinks"></ul>
           </div>
         </div>
         <div class="panel searchable" data-search="업데이트 체크리스트 출제기준 공개문제 시행령 시행규칙 수험자 안내 계산기 답안">
@@ -1095,6 +1128,33 @@
       ["위험물안전관리법 시행규칙", "https://www.law.go.kr/법령/위험물안전관리법시행규칙"]
     ];
 
+    const pastVideos = [
+      {
+        round: "2025년 제1회",
+        title: "[위험물산업기사 무료인강] 실기 - 2025년 제1회 기출문제",
+        duration: "44:36",
+        uploadDate: "2026.02.11",
+        url: "https://www.youtube.com/watch?v=dlrwBVhmXEs",
+        focus: "기출 회차 전체 풀이 흐름 확인"
+      },
+      {
+        round: "2025년 제2회",
+        title: "[위험물산업기사 무료인강] 실기 - 2025년 제2회 기출문제",
+        duration: "48:44",
+        uploadDate: "2026.02.11",
+        url: "https://www.youtube.com/watch?v=Kw8fACNXaiM",
+        focus: "계산·분류·서술형 오답 정리"
+      },
+      {
+        round: "2025년 제3회",
+        title: "[위험물산업기사 무료인강] 실기 - 2025년 제3회 기출문제",
+        duration: "45:54",
+        uploadDate: "2026.02.12",
+        url: "https://www.youtube.com/watch?v=tE_stGlXGpQ",
+        focus: "반응식·법규·시설 단답 보강"
+      }
+    ];
+
     const updateItems = [
       "Q-Net 출제기준 적용기간",
       "Q-Net 공개문제 신규 등록",
@@ -1177,6 +1237,23 @@
       $("#mockList").innerHTML = mockExam.map((item) => questionCard(item, item.no)).join("");
     }
 
+    function renderPastVideos() {
+      $("#pastVideoList").innerHTML = pastVideos.map((video) => `
+        <article class="card searchable" data-search="${escapeHtml([video.round, video.title, video.focus].join(" "))}">
+          <div class="badge-row">
+            <span class="badge hazard">${escapeHtml(video.round)}</span>
+            <span class="badge">${escapeHtml(video.duration)}</span>
+          </div>
+          <h3 style="margin-top:12px;">${escapeHtml(video.round)} 기출문제</h3>
+          <p>${escapeHtml(video.focus)}</p>
+          <p class="hint" style="margin-top:8px;">업로드 ${escapeHtml(video.uploadDate)}</p>
+          <div class="actions" style="margin-top:12px;">
+            <a class="button primary" href="${escapeHtml(video.url)}" target="_blank" rel="noopener">영상 열기</a>
+          </div>
+        </article>
+      `).join("");
+    }
+
     function questionCard(item, number) {
       const status = state.progress[item.id] || "";
       const search = [item.group, item.q, item.a].join(" ");
@@ -1200,6 +1277,7 @@
     function renderSources() {
       $("#qnetLinks").innerHTML = qnetLinks.map(linkItem).join("");
       $("#lawLinks").innerHTML = lawLinks.map(linkItem).join("");
+      $("#videoLinks").innerHTML = pastVideos.map((video) => linkItem([video.round, video.url])).join("");
       $("#updateChecklist").innerHTML = updateItems.map((item) => `
         <div class="card searchable" data-search="${escapeHtml(item)}">
           <span class="badge hazard">확인</span>
@@ -1451,6 +1529,7 @@
       renderTheory();
       renderProblems();
       renderMock();
+      renderPastVideos();
       renderSources();
       renderCalculator();
       renderCard();
