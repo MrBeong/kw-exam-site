@@ -1,0 +1,1465 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>위험물산업기사 실기 대비</title>
+  <meta name="description" content="위험물산업기사 실기 필답형 대비용 이론, 지정수량 계산기, 문제은행, 모의고사">
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fa;
+      --paper: #ffffff;
+      --ink: #182033;
+      --muted: #667085;
+      --line: #d8dee9;
+      --soft: #eef2f7;
+      --hazard: #b45309;
+      --hazard-soft: #fff7ed;
+      --blue: #1d4ed8;
+      --blue-soft: #eff6ff;
+      --green: #15803d;
+      --green-soft: #ecfdf3;
+      --red: #b91c1c;
+      --red-soft: #fef2f2;
+      --shadow: 0 12px 32px rgba(24, 32, 51, .08);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+      letter-spacing: 0;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .app {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .side {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      background: #111827;
+      color: #fff;
+      border-right: 1px solid #0b1220;
+      padding: 20px 14px;
+    }
+
+    .brand {
+      display: grid;
+      gap: 6px;
+      padding: 6px 8px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, .14);
+      margin-bottom: 12px;
+    }
+
+    .brand strong {
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .brand span {
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
+    .nav {
+      display: grid;
+      gap: 6px;
+    }
+
+    .nav button {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      background: transparent;
+      color: #dbe4f0;
+      text-align: left;
+      padding: 9px 10px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .nav button:hover,
+    .nav button[aria-current="page"] {
+      background: #243044;
+      color: #fff;
+      border-color: rgba(255, 255, 255, .14);
+    }
+
+    .side-foot {
+      margin-top: 18px;
+      padding: 12px 8px 0;
+      border-top: 1px solid rgba(255, 255, 255, .14);
+      color: #cbd5e1;
+      font-size: 12px;
+    }
+
+    .main {
+      min-width: 0;
+      padding: 24px;
+    }
+
+    .top {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .search {
+      flex: 1 1 280px;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 0 12px;
+      outline: none;
+    }
+
+    .search:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, .12);
+    }
+
+    .button {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      color: var(--ink);
+      padding: 0 12px;
+      cursor: pointer;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .button:hover { border-color: #aab4c4; }
+    .button.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .button.good { background: var(--green); color: #fff; border-color: var(--green); }
+    .button.warn { background: var(--hazard); color: #fff; border-color: var(--hazard); }
+    .button.danger { background: var(--red); color: #fff; border-color: var(--red); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 10px;
+    }
+
+    .stat,
+    .panel,
+    .card,
+    .question-card,
+    .flashcard {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .stat {
+      padding: 12px;
+      min-height: 76px;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .stat strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .panel {
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: none;
+    }
+
+    .card {
+      padding: 14px;
+      box-shadow: none;
+    }
+
+    .card p,
+    .panel p { margin: 0; }
+
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      color: #344054;
+      padding: 3px 9px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .badge.hazard { background: var(--hazard-soft); border-color: #fed7aa; color: #92400e; }
+    .badge.good { background: var(--green-soft); border-color: #bbf7d0; color: #166534; }
+    .badge.blue { background: var(--blue-soft); border-color: #bfdbfe; color: #1e40af; }
+    .badge.bad { background: var(--red-soft); border-color: #fecaca; color: #991b1b; }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      margin: 10px 0 0;
+    }
+
+    table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-size: 12px;
+      color: #475467;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .class-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(130px, 1fr));
+      gap: 10px;
+    }
+
+    .class-card {
+      border-left: 4px solid var(--hazard);
+    }
+
+    .class-card strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .class-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .calc-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .calc-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) 120px 70px 44px;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .calc-row select,
+    .calc-row input {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 0 10px;
+      min-width: 0;
+    }
+
+    .unit {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .icon-button {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      cursor: pointer;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .result-box {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .result-number {
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .formula {
+      display: block;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: var(--radius);
+      padding: 11px 12px;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 12px;
+    }
+
+    .filters button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 0 10px;
+      cursor: pointer;
+      font-weight: 800;
+      color: #344054;
+    }
+
+    .filters button.active {
+      border-color: var(--blue);
+      background: var(--blue-soft);
+      color: #1e40af;
+    }
+
+    .question-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .question-card {
+      padding: 14px;
+      box-shadow: none;
+    }
+
+    .question-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .question-card p {
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+
+    .answer {
+      border-left: 4px solid var(--green);
+      background: var(--green-soft);
+      padding: 10px 12px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 10px 0;
+      white-space: pre-wrap;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .mini-button {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 0 10px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .mini-button.active-good {
+      color: #166534;
+      border-color: #86efac;
+      background: var(--green-soft);
+    }
+
+    .mini-button.active-review {
+      color: #991b1b;
+      border-color: #fca5a5;
+      background: var(--red-soft);
+    }
+
+    .flashcard {
+      min-height: 220px;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      text-align: center;
+      padding: 22px;
+      box-shadow: none;
+    }
+
+    .flashcard small {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .flashcard strong {
+      display: block;
+      margin-top: 12px;
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1.25;
+      word-break: keep-all;
+    }
+
+    .flashcard code {
+      display: inline-block;
+      background: #f1f5f9;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 5px 7px;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .timer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .timer strong {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 118px;
+      height: 44px;
+      border-radius: var(--radius);
+      background: #0f172a;
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+      font-size: 20px;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 8px;
+      padding: 0;
+      list-style: none;
+      margin: 0;
+    }
+
+    .source-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 10px 12px;
+      background: #fff;
+    }
+
+    .empty {
+      display: none;
+      padding: 18px;
+      text-align: center;
+      color: var(--muted);
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .searching .empty.visible { display: block; }
+
+    @media (max-width: 1100px) {
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid.three,
+      .class-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .split { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .app { grid-template-columns: 1fr; }
+      .side {
+        position: static;
+        height: auto;
+        padding: 12px;
+      }
+      .brand {
+        padding: 4px 2px 10px;
+        margin-bottom: 10px;
+      }
+      .nav {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+      .nav button {
+        flex: 0 0 auto;
+        width: auto;
+        text-align: center;
+        white-space: nowrap;
+      }
+      .side-foot { display: none; }
+      .main { padding: 16px; }
+      .stats,
+      .grid,
+      .grid.three,
+      .class-grid { grid-template-columns: 1fr; }
+      .calc-row {
+        grid-template-columns: 1fr 96px 54px 40px;
+      }
+      h1 { font-size: 28px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .app { display: block; }
+      .side,
+      .toolbar,
+      .actions,
+      .filters,
+      .timer { display: none !important; }
+      .main { padding: 0; }
+      .section { display: block !important; break-after: page; }
+      .panel,
+      .card,
+      .question-card,
+      .stat { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <div class="brand">
+        <strong>위험물산업기사 실기</strong>
+        <span>필답형 대비 · 2026.06.24 기준</span>
+      </div>
+      <nav class="nav" id="mainNav" aria-label="주요 메뉴">
+        <button type="button" data-section="overview" aria-current="page">시험정보</button>
+        <button type="button" data-section="theory">핵심이론</button>
+        <button type="button" data-section="calculator">지정수량 계산</button>
+        <button type="button" data-section="problems">문제은행</button>
+        <button type="button" data-section="mock">모의고사</button>
+        <button type="button" data-section="cards">암기카드</button>
+        <button type="button" data-section="sources">자료링크</button>
+      </nav>
+      <div class="side-foot">
+        <div>Q-Net 종목코드 2121</div>
+        <div>출제기준 2025.1.1~2029.12.31</div>
+      </div>
+    </aside>
+
+    <main class="main" id="content">
+      <header class="top">
+        <div class="title-row">
+          <div>
+            <h1>위험물산업기사 실기 대비</h1>
+            <p class="subtitle">공식 기준 확인 자료와 자체 재구성 문제로 만든 개인 학습 페이지</p>
+          </div>
+          <div class="badge-row">
+            <span class="badge hazard">필답형</span>
+            <span class="badge blue">120분 기준</span>
+            <span class="badge good">60점 합격</span>
+          </div>
+        </div>
+        <div class="toolbar">
+          <input class="search" id="globalSearch" type="search" placeholder="물질명, 유별, 반응식, 문제 검색" autocomplete="off">
+          <button class="button" type="button" id="printBtn">인쇄</button>
+          <button class="button danger" type="button" id="resetProgressBtn">진행률 초기화</button>
+        </div>
+        <div class="stats">
+          <div class="stat"><span>실기 수수료</span><strong>20,800원</strong></div>
+          <div class="stat"><span>최신 출제기준</span><strong>2025~2029</strong></div>
+          <div class="stat"><span>2025 실기 합격률</span><strong>51.2%</strong></div>
+          <div class="stat"><span>진행률</span><strong id="progressText">0 / 60</strong></div>
+        </div>
+      </header>
+
+      <section class="section active" id="overview" data-title="시험정보">
+        <div class="section-head">
+          <h2>시험정보</h2>
+          <p class="hint">Q-Net 및 국가법령정보센터 확인 기준</p>
+        </div>
+
+        <div class="grid">
+          <div class="panel searchable" data-search="종목명 위험물산업기사 industrial engineer hazardous material qnet 2121 소방청 한국산업인력공단 과정평가형">
+            <h3>종목 기본정보</h3>
+            <div class="table-wrap">
+              <table>
+                <tbody>
+                  <tr><th>종목명</th><td>위험물산업기사</td></tr>
+                  <tr><th>영문명</th><td>Industrial Engineer Hazardous material</td></tr>
+                  <tr><th>Q-Net 코드</th><td>2121</td></tr>
+                  <tr><th>관련부처</th><td>소방청</td></tr>
+                  <tr><th>시행기관</th><td>한국산업인력공단</td></tr>
+                  <tr><th>취득 경로</th><td>검정형 및 과정평가형</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel searchable" data-search="실기 시험 개요 위험물 취급 실무 필답형 2시간 120분 60점 합격 수수료 20800원">
+            <h3>실기 개요</h3>
+            <div class="badge-row">
+              <span class="badge">위험물 취급 실무</span>
+              <span class="badge">필답형</span>
+              <span class="badge">100점 만점</span>
+              <span class="badge">60점 이상</span>
+            </div>
+            <p style="margin-top:12px;">장소, 지참 가능 계산기, 답안 작성 기준은 회차별 수험자 안내에서 재확인한다.</p>
+          </div>
+        </div>
+
+        <div class="panel searchable" data-search="2026 정기 기사 실기 일정 접수 발표 1회 2회 3회">
+          <h3>2026년 Q-Net 실기 일정</h3>
+          <div class="table-wrap">
+            <table id="scheduleTable"></table>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="panel searchable" data-search="최신 출제기준 2025 2029 mcrtrNo 340 2024.09.13">
+            <h3>최신 출제기준</h3>
+            <p>위험물산업기사(2025.1.1 ~ 2029.12.31), Q-Net 보고서 번호 <strong>mcrtrNo=340</strong>, 자료실 최종수정일 <strong>2024.09.13</strong>.</p>
+          </div>
+          <div class="panel searchable" data-search="최근 실기 합격률 2025 2024 2023 2022 2021">
+            <h3>최근 실기 합격률</h3>
+            <div class="table-wrap">
+              <table id="passRateTable"></table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="theory" data-title="핵심이론">
+        <div class="section-head">
+          <h2>핵심이론</h2>
+          <p class="hint">지정수량, 유별 성질, 소화방법, 반응식</p>
+        </div>
+
+        <div class="panel searchable" data-search="지정수량 합산값 실제수량 지정수량 1 이상">
+          <h3>지정수량 합산식</h3>
+          <code class="formula">합산값 = 실제수량1 / 지정수량1 + 실제수량2 / 지정수량2 + ...</code>
+          <p style="margin-top:10px;">합산값이 1 이상이면 지정수량 이상이다.</p>
+        </div>
+
+        <div class="class-grid" id="classGrid"></div>
+
+        <div class="panel">
+          <div class="section-head">
+            <h3>지정수량 표</h3>
+            <div class="filters" id="quantityFilters"></div>
+          </div>
+          <div class="table-wrap">
+            <table id="quantityTable"></table>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="panel searchable" data-search="소화방법 제1류 제2류 제3류 제4류 제5류 제6류 금수성 포 분말 이산화탄소 건조사">
+            <h3>소화방법 핵심</h3>
+            <div class="table-wrap">
+              <table id="fireTable"></table>
+            </div>
+          </div>
+          <div class="panel searchable" data-search="반응식 칼륨 나트륨 탄화칼슘 탄화알루미늄 인화칼슘 과산화수소 염소산칼륨 에탄올 벤젠">
+            <h3>자주 쓰는 반응식</h3>
+            <div class="table-wrap">
+              <table id="reactionTable"></table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="calculator" data-title="지정수량 계산">
+        <div class="section-head">
+          <h2>지정수량 계산</h2>
+          <div class="badge-row">
+            <span class="badge">합산값 자동계산</span>
+            <span class="badge">kg / L 항목별 입력</span>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="panel">
+            <div class="actions">
+              <button class="button primary" type="button" id="addCalcRowBtn">항목 추가</button>
+              <button class="button" type="button" id="loadExampleBtn">예시 불러오기</button>
+              <button class="button" type="button" id="clearCalcBtn">비우기</button>
+            </div>
+            <div class="calc-list" id="calcList"></div>
+          </div>
+          <aside class="result-box searchable" data-search="계산 결과 지정수량 배수 합산값 이상 미만">
+            <span class="badge hazard" id="calcStatus">계산 대기</span>
+            <div class="result-number" id="calcTotal">0.000</div>
+            <div id="calcMessage">항목을 입력하면 지정수량 배수가 표시된다.</div>
+            <code class="formula" id="calcFormula">-</code>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="problems" data-title="문제은행">
+        <div class="section-head">
+          <h2>문제은행</h2>
+          <p class="hint">기출유형 재구성 40문항</p>
+        </div>
+        <div class="filters" id="problemFilters"></div>
+        <div class="question-list" id="problemList"></div>
+        <div class="empty" id="problemEmpty">검색 결과가 없습니다.</div>
+      </section>
+
+      <section class="section" id="mock" data-title="모의고사">
+        <div class="section-head">
+          <h2>실전 모의고사 1회</h2>
+          <div class="timer">
+            <strong id="timerText">120:00</strong>
+            <button class="button primary" type="button" id="timerStart">시작</button>
+            <button class="button" type="button" id="timerPause">정지</button>
+            <button class="button" type="button" id="timerReset">리셋</button>
+          </div>
+        </div>
+        <div class="question-list" id="mockList"></div>
+      </section>
+
+      <section class="section" id="cards" data-title="암기카드">
+        <div class="section-head">
+          <h2>암기카드</h2>
+          <p class="hint"><span id="cardCounter">1 / 32</span></p>
+        </div>
+        <div class="flashcard" id="flashcard" role="button" tabindex="0" aria-label="암기카드">
+          <small id="cardSide">앞면</small>
+          <strong id="cardText"></strong>
+        </div>
+        <div class="actions" style="margin-top:12px;">
+          <button class="button" type="button" id="prevCard">이전</button>
+          <button class="button primary" type="button" id="flipCard">뒤집기</button>
+          <button class="button" type="button" id="nextCard">다음</button>
+          <button class="button" type="button" id="shuffleCard">섞기</button>
+        </div>
+      </section>
+
+      <section class="section" id="sources" data-title="자료링크">
+        <div class="section-head">
+          <h2>자료링크</h2>
+          <p class="hint">시험 직전 재확인 경로</p>
+        </div>
+        <div class="grid">
+          <div class="panel searchable" data-search="qnet 종목 상세 출제기준 공개문제 시험일정">
+            <h3>Q-Net</h3>
+            <ul class="source-list" id="qnetLinks"></ul>
+          </div>
+          <div class="panel searchable" data-search="국가법령정보센터 위험물안전관리법 시행령 시행규칙 별표 지정수량">
+            <h3>국가법령정보센터</h3>
+            <ul class="source-list" id="lawLinks"></ul>
+          </div>
+        </div>
+        <div class="panel searchable" data-search="업데이트 체크리스트 출제기준 공개문제 시행령 시행규칙 수험자 안내 계산기 답안">
+          <h3>업데이트 체크리스트</h3>
+          <div class="grid three" id="updateChecklist"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const STORE_KEY = "hazmat-industrial-practical-2026";
+
+    const schedules = [
+      ["정기 기사 1회", "2026.03.23 ~ 2026.03.26", "2026.04.12 ~ 2026.04.13", "2026.04.18 ~ 2026.05.06", "2026.06.12"],
+      ["정기 기사 2회", "2026.06.22 ~ 2026.06.25", "2026.07.12 ~ 2026.07.13", "2026.07.18 ~ 2026.08.05", "2026.09.11"],
+      ["정기 기사 3회", "2026.09.21 ~ 2026.09.28", "Q-Net 화면상 미표시", "2026.10.24 ~ 2026.11.13", "2026.12.18"]
+    ];
+
+    const passRates = [
+      ["2025", "20,747", "10,631", "51.2%"],
+      ["2024", "21,003", "9,567", "45.6%"],
+      ["2023", "19,896", "9,116", "45.8%"],
+      ["2022", "17,393", "8,412", "48.4%"],
+      ["2021", "18,232", "8,691", "47.7%"]
+    ];
+
+    const hazardClasses = [
+      ["제1류", "산화성 고체", "산소 공급, 가연물 연소 촉진"],
+      ["제2류", "가연성 고체", "점화·마찰·충격에 의한 연소"],
+      ["제3류", "자연발화성 및 금수성 물질", "공기 중 발화, 물과 반응해 가연성 가스 발생"],
+      ["제4류", "인화성 액체", "증기 인화, 정전기, 유증기 폭발"],
+      ["제5류", "자기반응성 물질", "자체 분해, 폭발적 연소"],
+      ["제6류", "산화성 액체", "강산화성, 부식성, 가연물 산화"]
+    ];
+
+    const quantities = [
+      ["제1류", "아염소산염류", "50 kg"], ["제1류", "염소산염류", "50 kg"], ["제1류", "과염소산염류", "50 kg"], ["제1류", "무기과산화물", "50 kg"], ["제1류", "브롬산염류", "300 kg"], ["제1류", "질산염류", "300 kg"], ["제1류", "아이오딘산염류", "300 kg"], ["제1류", "과망가니즈산염류", "1,000 kg"], ["제1류", "다이크로뮴산염류", "1,000 kg"],
+      ["제2류", "황화린", "100 kg"], ["제2류", "적린", "100 kg"], ["제2류", "황", "100 kg"], ["제2류", "철분", "500 kg"], ["제2류", "금속분", "500 kg"], ["제2류", "마그네슘", "500 kg"], ["제2류", "인화성고체", "1,000 kg"],
+      ["제3류", "칼륨", "10 kg"], ["제3류", "나트륨", "10 kg"], ["제3류", "알킬알루미늄", "10 kg"], ["제3류", "알킬리튬", "10 kg"], ["제3류", "황린", "20 kg"], ["제3류", "알칼리금속 및 알칼리토금속", "50 kg"], ["제3류", "유기금속화합물", "50 kg"], ["제3류", "금속의 수소화물", "300 kg"], ["제3류", "금속의 인화물", "300 kg"], ["제3류", "칼슘 또는 알루미늄의 탄화물", "300 kg"],
+      ["제4류", "특수인화물", "50 L"], ["제4류", "제1석유류 비수용성액체", "200 L"], ["제4류", "제1석유류 수용성액체", "400 L"], ["제4류", "알코올류", "400 L"], ["제4류", "제2석유류 비수용성액체", "1,000 L"], ["제4류", "제2석유류 수용성액체", "2,000 L"], ["제4류", "제3석유류 비수용성액체", "2,000 L"], ["제4류", "제3석유류 수용성액체", "4,000 L"], ["제4류", "제4석유류", "6,000 L"], ["제4류", "동식물유류", "10,000 L"],
+      ["제5류", "유기과산화물", "제1종 10 kg, 제2종 100 kg"], ["제5류", "질산에스테르류", "제1종 10 kg, 제2종 100 kg"], ["제5류", "니트로화합물", "제1종 10 kg, 제2종 100 kg"], ["제5류", "나이트로소화합물", "제1종 10 kg, 제2종 100 kg"], ["제5류", "아조화합물", "제1종 10 kg, 제2종 100 kg"], ["제5류", "다이아조화합물", "제1종 10 kg, 제2종 100 kg"], ["제5류", "하이드라진 유도체", "제1종 10 kg, 제2종 100 kg"], ["제5류", "하이드록실아민", "제1종 10 kg, 제2종 100 kg"], ["제5류", "하이드록실아민염류", "제1종 10 kg, 제2종 100 kg"],
+      ["제6류", "과염소산", "300 kg"], ["제6류", "과산화수소", "300 kg"], ["제6류", "질산", "300 kg"], ["제6류", "그 밖의 행정안전부령 지정 물질 및 혼합물", "300 kg"]
+    ];
+
+    const fireMethods = [
+      ["제1류", "다량 주수로 냉각", "무기과산화물 등 물 반응성은 물질명 기준으로 판단"],
+      ["제2류", "냉각·질식", "금속분·마그네슘은 주수 금지, 건조사 등 사용"],
+      ["제3류", "건조사, 팽창질석, 금속화재용 분말", "물·포·CO2 부적응인 경우가 많음"],
+      ["제4류", "포, 분말, CO2, 할로겐화합물", "봉상 주수는 연소 확대 우려, 탱크 냉각에는 물 분무"],
+      ["제5류", "다량 주수 냉각", "충격·마찰·가열 금지, 폭발 위험"],
+      ["제6류", "물로 희석·냉각, 가연물 격리", "강산화성·부식성, 유기물 접촉 금지"]
+    ];
+
+    const reactions = [
+      ["칼륨 + 물", "2K + 2H2O -> 2KOH + H2"],
+      ["나트륨 + 물", "2Na + 2H2O -> 2NaOH + H2"],
+      ["탄화칼슘 + 물", "CaC2 + 2H2O -> C2H2 + Ca(OH)2"],
+      ["탄화알루미늄 + 물", "Al4C3 + 12H2O -> 4Al(OH)3 + 3CH4"],
+      ["인화칼슘 + 물", "Ca3P2 + 6H2O -> 3Ca(OH)2 + 2PH3"],
+      ["수소화칼슘 + 물", "CaH2 + 2H2O -> Ca(OH)2 + 2H2"],
+      ["염소산칼륨 열분해", "2KClO3 -> 2KCl + 3O2"],
+      ["과산화수소 분해", "2H2O2 -> 2H2O + O2"],
+      ["황린 연소", "P4 + 5O2 -> P4O10"],
+      ["에탄올 완전연소", "C2H5OH + 3O2 -> 2CO2 + 3H2O"],
+      ["벤젠 완전연소", "2C6H6 + 15O2 -> 12CO2 + 6H2O"]
+    ];
+
+    const calcOptions = [
+      { name: "디에틸에테르 · 특수인화물", amount: 50, unit: "L" },
+      { name: "이황화탄소 · 특수인화물", amount: 50, unit: "L" },
+      { name: "아세트알데히드 · 특수인화물", amount: 50, unit: "L" },
+      { name: "산화프로필렌 · 특수인화물", amount: 50, unit: "L" },
+      { name: "휘발유 · 제1석유류 비수용성", amount: 200, unit: "L" },
+      { name: "벤젠 · 제1석유류 비수용성", amount: 200, unit: "L" },
+      { name: "톨루엔 · 제1석유류 비수용성", amount: 200, unit: "L" },
+      { name: "아세톤 · 제1석유류 수용성", amount: 400, unit: "L" },
+      { name: "메탄올 · 알코올류", amount: 400, unit: "L" },
+      { name: "에탄올 · 알코올류", amount: 400, unit: "L" },
+      { name: "등유 · 제2석유류 비수용성", amount: 1000, unit: "L" },
+      { name: "경유 · 제2석유류 비수용성", amount: 1000, unit: "L" },
+      { name: "중유 · 제3석유류 비수용성", amount: 2000, unit: "L" },
+      { name: "윤활유 · 제4석유류", amount: 6000, unit: "L" },
+      { name: "동식물유류", amount: 10000, unit: "L" },
+      { name: "칼륨 · 제3류", amount: 10, unit: "kg" },
+      { name: "나트륨 · 제3류", amount: 10, unit: "kg" },
+      { name: "황린 · 제3류", amount: 20, unit: "kg" },
+      { name: "철분 · 제2류", amount: 500, unit: "kg" },
+      { name: "마그네슘 · 제2류", amount: 500, unit: "kg" },
+      { name: "과염소산 · 제6류", amount: 300, unit: "kg" },
+      { name: "과산화수소 · 제6류", amount: 300, unit: "kg" },
+      { name: "질산 · 제6류", amount: 300, unit: "kg" },
+      { name: "제5류 제1종", amount: 10, unit: "kg" },
+      { name: "제5류 제2종", amount: 100, unit: "kg" }
+    ];
+
+    const questionBank = [
+      { id: "q1", group: "A. 지정수량", q: "디에틸에테르 20 L, 휘발유 80 L, 메탄올 80 L를 저장한다. 지정수량 이상 여부를 판단하라.", a: "20/50 + 80/200 + 80/400 = 0.4 + 0.4 + 0.2 = 1.0. 지정수량 이상이다." },
+      { id: "q2", group: "A. 지정수량", q: "등유 400 L와 경유 300 L를 저장한다. 지정수량 배수를 구하라.", a: "둘 다 제2석유류 비수용성액체 1,000 L 기준. (400+300)/1,000 = 0.7배." },
+      { id: "q3", group: "A. 지정수량", q: "과염소산, 과산화수소, 질산의 유별과 지정수량을 쓰라.", a: "제6류 산화성액체, 각각 300 kg." },
+      { id: "q4", group: "A. 지정수량", q: "칼륨 4 kg, 나트륨 3 kg, 황린 6 kg의 지정수량 배수를 구하라.", a: "4/10 + 3/10 + 6/20 = 0.4 + 0.3 + 0.3 = 1.0배." },
+      { id: "q5", group: "A. 지정수량", q: "적린, 황, 철분의 유별과 지정수량을 쓰라.", a: "제2류 가연성고체. 적린 100 kg, 황 100 kg, 철분 500 kg." },
+      { id: "q6", group: "A. 지정수량", q: "아세톤 200 L는 지정수량 몇 배인가?", a: "아세톤은 제1석유류 수용성액체로 400 L 기준. 200/400 = 0.5배." },
+      { id: "q7", group: "A. 지정수량", q: "휘발유 120 L와 아세톤 160 L의 합산 배수를 구하라.", a: "휘발유 120/200 = 0.6, 아세톤 160/400 = 0.4, 합계 1.0배." },
+      { id: "q8", group: "A. 지정수량", q: "알킬알루미늄과 유기금속화합물의 지정수량 차이를 쓰라.", a: "알킬알루미늄은 별도 항목 10 kg, 일반 유기금속화합물은 50 kg이다." },
+      { id: "q9", group: "A. 지정수량", q: "제5류 위험물의 지정수량 체계를 쓰라.", a: "제1종은 10 kg, 제2종은 100 kg." },
+      { id: "q10", group: "A. 지정수량", q: "동식물유류의 유별과 지정수량을 쓰라.", a: "제4류 인화성액체, 10,000 L." },
+      { id: "q11", group: "B. 소화·취급", q: "제3류 위험물 화재에 주수소화가 부적응인 이유를 쓰라.", a: "물과 반응하여 수소, 아세틸렌 등 가연성 가스를 발생하거나 반응열로 발화·폭발 위험이 커지기 때문이다." },
+      { id: "q12", group: "B. 소화·취급", q: "금속나트륨 저장 방법을 쓰라.", a: "물과 공기를 피하고 석유류 속에 저장하거나 건조한 불활성 분위기에서 보관한다." },
+      { id: "q13", group: "B. 소화·취급", q: "제4류 위험물 취급 시 정전기 대책 3가지를 쓰라.", a: "접지, 유속 제한, 도전성 재료 사용, 습도 관리, 정전기 제거장치 설치 중 3가지." },
+      { id: "q14", group: "B. 소화·취급", q: "제5류 위험물의 저장상 주의사항을 쓰라.", a: "가열, 충격, 마찰을 피하고 통풍이 양호한 냉암소에 저장하며 분해 촉진 물질과 접촉시키지 않는다." },
+      { id: "q15", group: "B. 소화·취급", q: "제1류 위험물과 가연물의 혼재를 피해야 하는 이유를 쓰라.", a: "제1류는 산화성 물질로 산소를 공급하여 가연물의 연소를 촉진하기 때문이다." },
+      { id: "q16", group: "B. 소화·취급", q: "제4류 위험물 화재에 봉상 주수가 부적절한 이유를 쓰라.", a: "인화성 액체가 물 위에 뜨거나 흘러 연소면이 확대될 수 있기 때문이다." },
+      { id: "q17", group: "B. 소화·취급", q: "특수인화물의 일반적 위험성을 쓰라.", a: "발화점 또는 인화점이 매우 낮아 상온에서도 인화성 증기를 발생시키며 작은 점화원에도 쉽게 착화된다." },
+      { id: "q18", group: "B. 소화·취급", q: "제6류 위험물과 유기물 접촉을 피해야 하는 이유를 쓰라.", a: "강한 산화성으로 유기물을 산화시켜 발열, 발화 또는 폭발을 일으킬 수 있기 때문이다." },
+      { id: "q19", group: "C. 반응식", q: "탄화칼슘과 물의 반응식을 쓰라.", a: "CaC2 + 2H2O -> C2H2 + Ca(OH)2" },
+      { id: "q20", group: "C. 반응식", q: "탄화알루미늄과 물의 반응식을 쓰라.", a: "Al4C3 + 12H2O -> 4Al(OH)3 + 3CH4" },
+      { id: "q21", group: "C. 반응식", q: "인화칼슘과 물의 반응식을 쓰라.", a: "Ca3P2 + 6H2O -> 3Ca(OH)2 + 2PH3" },
+      { id: "q22", group: "C. 반응식", q: "과산화수소 분해 반응식을 쓰라.", a: "2H2O2 -> 2H2O + O2" },
+      { id: "q23", group: "C. 반응식", q: "염소산칼륨 열분해 반응식을 쓰라.", a: "2KClO3 -> 2KCl + 3O2" },
+      { id: "q24", group: "C. 반응식", q: "나트륨과 물의 반응식을 쓰라.", a: "2Na + 2H2O -> 2NaOH + H2" },
+      { id: "q25", group: "C. 반응식", q: "에탄올 완전연소 반응식을 쓰라.", a: "C2H5OH + 3O2 -> 2CO2 + 3H2O" },
+      { id: "q26", group: "D. 법규·시설", q: "위험물안전관리법상 위험물 판정에서 중요한 두 축을 쓰라.", a: "유별·성질 및 품명, 지정수량." },
+      { id: "q27", group: "D. 법규·시설", q: "게시판에 표시해야 할 대표 항목을 쓰라.", a: "유별, 품명, 최대수량, 지정수량 배수, 취급상 주의사항, 안전관리자 등." },
+      { id: "q28", group: "D. 법규·시설", q: "제4류 저장·취급 장소에서 환기가 중요한 이유를 쓰라.", a: "인화성 증기 체류를 방지하여 폭발성 혼합기 형성을 억제하기 위해서다." },
+      { id: "q29", group: "D. 법규·시설", q: "옥외탱크 주변 방유제의 목적을 쓰라.", a: "탱크 파손 또는 누출 시 위험물의 외부 유출과 연소 확대를 방지하기 위해서다." },
+      { id: "q30", group: "D. 법규·시설", q: "위험물 운반 시 혼재 제한이 필요한 이유를 쓰라.", a: "서로 반응하여 발열, 발화, 폭발, 유독가스 발생 등 2차 위험을 일으킬 수 있기 때문이다." },
+      { id: "q31", group: "D. 법규·시설", q: "주유취급소에서 화기 엄금이 필요한 이유를 쓰라.", a: "휘발유 등 제4류 인화성 액체의 증기가 점화원에 의해 쉽게 착화·폭발할 수 있기 때문이다." },
+      { id: "q32", group: "D. 법규·시설", q: "제3류 금수성 물질에 적응성이 높은 소화재를 쓰라.", a: "건조사, 팽창질석, 금속화재용 분말 등." },
+      { id: "q33", group: "D. 법규·시설", q: "제4류 위험물에 적응성이 높은 소화설비를 쓰라.", a: "포소화설비, 분말소화설비, 이산화탄소소화설비 등." },
+      { id: "q34", group: "D. 법규·시설", q: "위험물 저장소에서 용기 밀봉이 중요한 이유를 쓰라.", a: "증기 누출, 수분 접촉, 공기 산화, 이물 혼입을 막아 화재·폭발 위험을 줄이기 위해서다." },
+      { id: "q35", group: "D. 법규·시설", q: "제2류 금속분 화재에 물을 쓰지 않는 이유를 쓰라.", a: "물과 반응하거나 고온에서 수소 발생·비산·폭발 위험이 커질 수 있기 때문이다." },
+      { id: "q36", group: "E. 서술형", q: "제4류 위험물의 일반적 저장·취급상 주의사항을 4가지 쓰라.", a: "화기 엄금, 통풍·환기, 정전기 제거, 용기 밀폐, 냉암소 저장, 산화제와 격리 중 4가지." },
+      { id: "q37", group: "E. 서술형", q: "제3류 위험물의 일반적 위험성을 설명하라.", a: "공기 중에서 자연발화하거나 물과 반응하여 가연성 가스와 열을 발생시켜 화재·폭발 위험이 크다." },
+      { id: "q38", group: "E. 서술형", q: "지정수량 배수 계산 절차를 설명하라.", a: "각 위험물의 실제 저장량을 해당 지정수량으로 나누고, 서로 다른 위험물의 몫을 모두 더해 합산값을 구한다." },
+      { id: "q39", group: "E. 서술형", q: "제1류 위험물의 소화 원칙을 설명하라.", a: "산화성 고체로 연소를 촉진하므로 가연물과 격리하고, 물질별 금수성을 확인한 뒤 일반적으로 냉각소화를 우선한다." },
+      { id: "q40", group: "E. 서술형", q: "제5류 위험물의 화재 위험성을 설명하라.", a: "자체 산소 또는 불안정 결합을 가져 외부 산소가 부족해도 분해·연소가 진행될 수 있고 폭발적으로 반응할 수 있다." }
+    ];
+
+    const mockExam = [
+      ["m1", "위험물 지정수량 이상 여부를 판단하는 합산식을 쓰라.", "합산값 = 실제수량1/지정수량1 + 실제수량2/지정수량2 + ... . 합산값이 1 이상이면 지정수량 이상이다."],
+      ["m2", "디에틸에테르 15 L, 휘발유 100 L, 메탄올 120 L를 저장한다. 지정수량 배수와 지정수량 이상 여부를 쓰라.", "디에틸에테르 15/50 = 0.3, 휘발유 100/200 = 0.5, 메탄올 120/400 = 0.3. 합계 1.1배로 지정수량 이상이다."],
+      ["m3", "칼륨, 나트륨, 황린의 유별과 지정수량을 쓰라.", "모두 제3류 자연발화성 및 금수성 물질. 칼륨 10 kg, 나트륨 10 kg, 황린 20 kg."],
+      ["m4", "제4류 인화성액체의 품명별 지정수량 중 특수인화물, 제1석유류 비수용성액체, 알코올류, 동식물유류의 지정수량을 쓰라.", "특수인화물 50 L, 제1석유류 비수용성액체 200 L, 알코올류 400 L, 동식물유류 10,000 L."],
+      ["m5", "과염소산, 과산화수소, 질산의 유별·성질·지정수량을 쓰라.", "제6류 산화성액체. 과염소산·과산화수소·질산 모두 300 kg."],
+      ["m6", "탄화칼슘과 물의 반응식을 쓰고 발생 가스명을 쓰라.", "CaC2 + 2H2O -> C2H2 + Ca(OH)2. 발생 가스는 아세틸렌이다."],
+      ["m7", "인화칼슘과 물의 반응식을 쓰고 발생 가스의 위험성을 쓰라.", "Ca3P2 + 6H2O -> 3Ca(OH)2 + 2PH3. 포스핀은 유독성·가연성이 있어 화재·폭발 및 중독 위험이 있다."],
+      ["m8", "제3류 위험물 화재에 주수소화가 부적응인 이유를 쓰라.", "물과 반응하여 가연성 가스와 열을 발생시키거나 자연발화 위험을 키울 수 있기 때문이다."],
+      ["m9", "제4류 위험물 저장·취급 시 정전기 방지 대책 4가지를 쓰라.", "접지, 본딩, 유속 제한, 도전성 호스 사용, 정전기 제거장치, 습도 관리 중 4가지."],
+      ["m10", "제5류 자기반응성 물질의 저장상 주의사항 4가지를 쓰라.", "가열 금지, 충격 금지, 마찰 금지, 냉암소 저장, 통풍, 분해 촉진 물질과 격리 중 4가지."],
+      ["m11", "제1류 위험물과 가연물을 격리해야 하는 이유를 쓰라.", "제1류는 산화성 고체로 산소를 공급하거나 연소를 촉진하여 가연물 화재를 확대할 수 있기 때문이다."],
+      ["m12", "아세톤 160 L, 등유 300 L, 윤활유 1,200 L의 지정수량 배수를 계산하라.", "아세톤 160/400 = 0.4, 등유 300/1,000 = 0.3, 윤활유 1,200/6,000 = 0.2. 합계 0.9배."],
+      ["m13", "제2류 위험물 중 지정수량 100 kg인 품명 3가지를 쓰라.", "황화린, 적린, 황."],
+      ["m14", "제3류 위험물 중 지정수량 300 kg인 품명 3가지를 쓰라.", "금속의 수소화물, 금속의 인화물, 칼슘 또는 알루미늄의 탄화물."],
+      ["m15", "과산화수소 분해 반응식을 쓰라.", "2H2O2 -> 2H2O + O2"],
+      ["m16", "염소산칼륨 열분해 반응식을 쓰라.", "2KClO3 -> 2KCl + 3O2"],
+      ["m17", "제4류 위험물 화재에 적응성이 높은 소화설비 3가지를 쓰라.", "포소화설비, 분말소화설비, 이산화탄소소화설비."],
+      ["m18", "위험물 저장·취급 장소 게시판에 표시할 대표 항목 5가지를 쓰라.", "유별, 품명, 최대수량, 지정수량 배수, 취급상 주의사항, 안전관리자 중 5가지."],
+      ["m19", "금속나트륨의 저장 방법과 이유를 쓰라.", "석유류 속 또는 건조한 불활성 분위기에서 저장한다. 물·공기와 접촉하면 발열, 수소 발생, 발화 위험이 있기 때문이다."],
+      ["m20", "위험물 운반 시 혼재 제한이 필요한 이유를 쓰라.", "서로 반응하여 발열, 발화, 폭발, 유독가스 발생 등 2차 위험이 생길 수 있기 때문이다."]
+    ].map(([id, q, a], index) => ({ id, group: "모의고사", no: index + 1, q, a }));
+
+    const memoryCards = [
+      ["제1류 성질", "산화성 고체"],
+      ["제2류 성질", "가연성 고체"],
+      ["제3류 성질", "자연발화성 및 금수성 물질"],
+      ["제4류 성질", "인화성 액체"],
+      ["제5류 성질", "자기반응성 물질"],
+      ["제6류 성질", "산화성 액체"],
+      ["특수인화물 지정수량", "50 L"],
+      ["제1석유류 비수용성 지정수량", "200 L"],
+      ["제1석유류 수용성 지정수량", "400 L"],
+      ["알코올류 지정수량", "400 L"],
+      ["제2석유류 비수용성 지정수량", "1,000 L"],
+      ["제2석유류 수용성 지정수량", "2,000 L"],
+      ["제3석유류 비수용성 지정수량", "2,000 L"],
+      ["제3석유류 수용성 지정수량", "4,000 L"],
+      ["제4석유류 지정수량", "6,000 L"],
+      ["동식물유류 지정수량", "10,000 L"],
+      ["칼륨 지정수량", "10 kg"],
+      ["나트륨 지정수량", "10 kg"],
+      ["알킬알루미늄 지정수량", "10 kg"],
+      ["알킬리튬 지정수량", "10 kg"],
+      ["황린 지정수량", "20 kg"],
+      ["철분 지정수량", "500 kg"],
+      ["마그네슘 지정수량", "500 kg"],
+      ["제5류 제1종 지정수량", "10 kg"],
+      ["제5류 제2종 지정수량", "100 kg"],
+      ["제6류 지정수량", "300 kg"],
+      ["탄화칼슘 물 반응", "CaC2 + 2H2O -> C2H2 + Ca(OH)2"],
+      ["탄화알루미늄 물 반응", "Al4C3 + 12H2O -> 4Al(OH)3 + 3CH4"],
+      ["인화칼슘 물 반응", "Ca3P2 + 6H2O -> 3Ca(OH)2 + 2PH3"],
+      ["과산화수소 분해", "2H2O2 -> 2H2O + O2"],
+      ["염소산칼륨 분해", "2KClO3 -> 2KCl + 3O2"],
+      ["지정수량 합산식", "각 실제수량을 해당 지정수량으로 나눈 값을 모두 더한다"]
+    ];
+
+    const qnetLinks = [
+      ["위험물산업기사 종목 상세", "https://www.q-net.or.kr/crf005.do?id=crf00505&gSite=Q&gId=&jmCd=2121"],
+      ["출제기준 자료실", "https://www.q-net.or.kr/cst006.do?id=cst00601&code=1202&gSite=Q&gId="],
+      ["공개문제 자료실", "https://www.q-net.or.kr/cst006.do?id=cst00601&code=1204&gSite=Q&gId="],
+      ["연간 국가기술자격 시험일정", "https://www.q-net.or.kr/crf021.do?id=crf02101&gSite=Q&gId=&scheType=01"]
+    ];
+
+    const lawLinks = [
+      ["위험물안전관리법", "https://www.law.go.kr/법령/위험물안전관리법"],
+      ["위험물안전관리법 시행령", "https://www.law.go.kr/법령/위험물안전관리법시행령"],
+      ["위험물안전관리법 시행규칙", "https://www.law.go.kr/법령/위험물안전관리법시행규칙"]
+    ];
+
+    const updateItems = [
+      "Q-Net 출제기준 적용기간",
+      "Q-Net 공개문제 신규 등록",
+      "시행령 별표 1 지정수량 개정",
+      "시행규칙 시설 기준 별표 개정",
+      "회차별 수험자 안내",
+      "지참물·계산기·답안 기준"
+    ];
+
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+
+    let state = loadState();
+    let activeProblemGroup = "전체";
+    let activeQuantityGroup = "전체";
+    let cardIndex = 0;
+    let cardBack = false;
+    let timerSeconds = 120 * 60;
+    let timerId = null;
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    function loadState() {
+      try {
+        return JSON.parse(localStorage.getItem(STORE_KEY)) || { progress: {} };
+      } catch {
+        return { progress: {} };
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem(STORE_KEY, JSON.stringify(state));
+      updateProgressText();
+    }
+
+    function table(headers, rows) {
+      return `
+        <thead><tr>${headers.map((h) => `<th>${escapeHtml(h)}</th>`).join("")}</tr></thead>
+        <tbody>${rows.map((row) => `<tr class="searchable" data-search="${escapeHtml(row.join(" "))}">${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`).join("")}</tbody>
+      `;
+    }
+
+    function renderOverview() {
+      $("#scheduleTable").innerHTML = table(["회차", "실기 원서접수", "빈자리접수", "실기시험", "최종합격 발표"], schedules);
+      $("#passRateTable").innerHTML = table(["연도", "응시", "합격", "합격률"], passRates);
+    }
+
+    function renderTheory() {
+      $("#classGrid").innerHTML = hazardClasses.map(([label, property, risk]) => `
+        <div class="card class-card searchable" data-search="${escapeHtml([label, property, risk].join(" "))}">
+          <strong>${escapeHtml(label)} · ${escapeHtml(property)}</strong>
+          <span>${escapeHtml(risk)}</span>
+        </div>
+      `).join("");
+
+      const groups = ["전체", ...new Set(quantities.map((row) => row[0]))];
+      $("#quantityFilters").innerHTML = groups.map((group) => `<button type="button" class="${group === activeQuantityGroup ? "active" : ""}" data-quantity-filter="${escapeHtml(group)}">${escapeHtml(group)}</button>`).join("");
+      const visibleRows = activeQuantityGroup === "전체" ? quantities : quantities.filter((row) => row[0] === activeQuantityGroup);
+      $("#quantityTable").innerHTML = table(["유별", "품명", "지정수량"], visibleRows);
+      $("#fireTable").innerHTML = table(["대상", "원칙", "주의"], fireMethods);
+      $("#reactionTable").innerHTML = table(["항목", "반응식"], reactions);
+    }
+
+    function renderProblems() {
+      const groups = ["전체", ...new Set(questionBank.map((item) => item.group))];
+      $("#problemFilters").innerHTML = groups.map((group) => `<button type="button" class="${group === activeProblemGroup ? "active" : ""}" data-problem-filter="${escapeHtml(group)}">${escapeHtml(group)}</button>`).join("");
+      const visible = activeProblemGroup === "전체" ? questionBank : questionBank.filter((item) => item.group === activeProblemGroup);
+      $("#problemList").innerHTML = visible.map((item, index) => questionCard(item, index + 1)).join("");
+    }
+
+    function renderMock() {
+      $("#mockList").innerHTML = mockExam.map((item) => questionCard(item, item.no)).join("");
+    }
+
+    function questionCard(item, number) {
+      const status = state.progress[item.id] || "";
+      const search = [item.group, item.q, item.a].join(" ");
+      return `
+        <article class="question-card searchable" data-id="${escapeHtml(item.id)}" data-search="${escapeHtml(search)}">
+          <div class="question-top">
+            <span class="badge blue">${String(number).padStart(2, "0")}</span>
+            <span class="badge">${escapeHtml(item.group)}</span>
+          </div>
+          <p>${escapeHtml(item.q)}</p>
+          <div class="answer" hidden>${escapeHtml(item.a)}</div>
+          <div class="actions">
+            <button class="mini-button" type="button" data-action="toggle-answer">정답 보기</button>
+            <button class="mini-button ${status === "correct" ? "active-good" : ""}" type="button" data-action="correct">맞힘</button>
+            <button class="mini-button ${status === "review" ? "active-review" : ""}" type="button" data-action="review">오답</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderSources() {
+      $("#qnetLinks").innerHTML = qnetLinks.map(linkItem).join("");
+      $("#lawLinks").innerHTML = lawLinks.map(linkItem).join("");
+      $("#updateChecklist").innerHTML = updateItems.map((item) => `
+        <div class="card searchable" data-search="${escapeHtml(item)}">
+          <span class="badge hazard">확인</span>
+          <p style="margin-top:8px;">${escapeHtml(item)}</p>
+        </div>
+      `).join("");
+    }
+
+    function linkItem([label, url]) {
+      return `<li class="searchable" data-search="${escapeHtml(label + " " + url)}"><span>${escapeHtml(label)}</span><a href="${escapeHtml(url)}" target="_blank" rel="noopener">열기</a></li>`;
+    }
+
+    function renderCalculator() {
+      $("#calcList").innerHTML = "";
+      addCalcRow(0, "");
+      calculateTotal();
+    }
+
+    function addCalcRow(optionIndex = 0, quantity = "") {
+      const row = document.createElement("div");
+      row.className = "calc-row";
+      row.innerHTML = `
+        <select aria-label="위험물 선택">
+          ${calcOptions.map((item, index) => `<option value="${index}" ${index === optionIndex ? "selected" : ""}>${escapeHtml(item.name)} · ${item.amount}${item.unit}</option>`).join("")}
+        </select>
+        <input type="number" inputmode="decimal" min="0" step="0.001" value="${escapeHtml(quantity)}" aria-label="실제수량">
+        <span class="unit">${escapeHtml(calcOptions[optionIndex].unit)}</span>
+        <button class="icon-button" type="button" aria-label="항목 삭제">×</button>
+      `;
+      $("#calcList").append(row);
+      row.addEventListener("input", calculateTotal);
+      row.addEventListener("change", () => {
+        const selected = calcOptions[Number($("select", row).value)];
+        $(".unit", row).textContent = selected.unit;
+        calculateTotal();
+      });
+      $(".icon-button", row).addEventListener("click", () => {
+        row.remove();
+        if (!$("#calcList").children.length) addCalcRow(0, "");
+        calculateTotal();
+      });
+    }
+
+    function calculateTotal() {
+      const parts = [];
+      let total = 0;
+      $$(".calc-row", $("#calcList")).forEach((row) => {
+        const option = calcOptions[Number($("select", row).value)];
+        const quantity = Number($("input", row).value);
+        if (!Number.isFinite(quantity) || quantity <= 0) return;
+        const ratio = quantity / option.amount;
+        total += ratio;
+        parts.push(`${quantity}/${option.amount}`);
+      });
+      $("#calcTotal").textContent = total.toFixed(3);
+      $("#calcFormula").textContent = parts.length ? `${parts.join(" + ")} = ${total.toFixed(3)}` : "-";
+      const status = $("#calcStatus");
+      if (!parts.length) {
+        status.textContent = "계산 대기";
+        status.className = "badge hazard";
+        $("#calcMessage").textContent = "항목을 입력하면 지정수량 배수가 표시된다.";
+      } else if (total >= 1) {
+        status.textContent = "지정수량 이상";
+        status.className = "badge bad";
+        $("#calcMessage").textContent = "합산값이 1 이상이다.";
+      } else {
+        status.textContent = "지정수량 미만";
+        status.className = "badge good";
+        $("#calcMessage").textContent = "합산값이 1 미만이다.";
+      }
+    }
+
+    function loadExample() {
+      $("#calcList").innerHTML = "";
+      addCalcRow(0, "25");
+      addCalcRow(4, "60");
+      addCalcRow(8, "80");
+      calculateTotal();
+    }
+
+    function renderCard() {
+      const [front, back] = memoryCards[cardIndex];
+      $("#cardCounter").textContent = `${cardIndex + 1} / ${memoryCards.length}`;
+      $("#cardSide").textContent = cardBack ? "뒷면" : "앞면";
+      const value = cardBack ? back : front;
+      $("#cardText").innerHTML = /->|[A-Z][a-z]?\d/.test(value) ? `<code>${escapeHtml(value)}</code>` : escapeHtml(value);
+    }
+
+    function moveCard(delta) {
+      cardIndex = (cardIndex + delta + memoryCards.length) % memoryCards.length;
+      cardBack = false;
+      renderCard();
+    }
+
+    function shuffleCards() {
+      for (let i = memoryCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [memoryCards[i], memoryCards[j]] = [memoryCards[j], memoryCards[i]];
+      }
+      cardIndex = 0;
+      cardBack = false;
+      renderCard();
+    }
+
+    function updateProgressText() {
+      const total = questionBank.length + mockExam.length;
+      const correct = Object.values(state.progress).filter((value) => value === "correct").length;
+      const review = Object.values(state.progress).filter((value) => value === "review").length;
+      $("#progressText").textContent = `${correct} / ${total}`;
+      $("#progressText").title = `오답 ${review}개`;
+    }
+
+    function setProgress(id, value) {
+      state.progress[id] = value;
+      saveState();
+      renderProblems();
+      renderMock();
+      applySearch();
+    }
+
+    function updateTimerText() {
+      const minutes = Math.floor(timerSeconds / 60);
+      const seconds = timerSeconds % 60;
+      $("#timerText").textContent = `${String(minutes).padStart(3, "0")}:${String(seconds).padStart(2, "0")}`;
+    }
+
+    function startTimer() {
+      if (timerId) return;
+      timerId = setInterval(() => {
+        timerSeconds = Math.max(0, timerSeconds - 1);
+        updateTimerText();
+        if (timerSeconds === 0) pauseTimer();
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      clearInterval(timerId);
+      timerId = null;
+    }
+
+    function resetTimer() {
+      pauseTimer();
+      timerSeconds = 120 * 60;
+      updateTimerText();
+    }
+
+    function applySearch() {
+      const query = $("#globalSearch").value.trim().toLowerCase();
+      document.body.classList.toggle("searching", Boolean(query));
+      let problemVisible = 0;
+      $$(".searchable").forEach((node) => {
+        const haystack = (node.dataset.search || node.textContent).toLowerCase();
+        const visible = !query || haystack.includes(query);
+        node.hidden = !visible;
+        if (node.closest("#problemList") && visible) problemVisible++;
+      });
+      $("#problemEmpty").classList.toggle("visible", Boolean(query) && problemVisible === 0 && $("#problems").classList.contains("active"));
+    }
+
+    function setSection(id) {
+      $$(".section").forEach((section) => section.classList.toggle("active", section.id === id));
+      $$("#mainNav button").forEach((button) => button.setAttribute("aria-current", button.dataset.section === id ? "page" : "false"));
+      $("#problemEmpty").classList.remove("visible");
+      applySearch();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function wireEvents() {
+      $("#mainNav").addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-section]");
+        if (button) setSection(button.dataset.section);
+      });
+
+      $("#globalSearch").addEventListener("input", applySearch);
+      $("#printBtn").addEventListener("click", () => window.print());
+      $("#resetProgressBtn").addEventListener("click", () => {
+        if (!confirm("문제 진행률을 초기화할까요?")) return;
+        state.progress = {};
+        saveState();
+        renderProblems();
+        renderMock();
+        applySearch();
+      });
+
+      $("#quantityFilters").addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-quantity-filter]");
+        if (!button) return;
+        activeQuantityGroup = button.dataset.quantityFilter;
+        renderTheory();
+        applySearch();
+      });
+
+      $("#problemFilters").addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-problem-filter]");
+        if (!button) return;
+        activeProblemGroup = button.dataset.problemFilter;
+        renderProblems();
+        applySearch();
+      });
+
+      document.addEventListener("click", (event) => {
+        const actionButton = event.target.closest("button[data-action]");
+        if (!actionButton) return;
+        const card = actionButton.closest(".question-card");
+        const id = card.dataset.id;
+        if (actionButton.dataset.action === "toggle-answer") {
+          const answer = $(".answer", card);
+          answer.hidden = !answer.hidden;
+          actionButton.textContent = answer.hidden ? "정답 보기" : "정답 숨기기";
+        }
+        if (actionButton.dataset.action === "correct") setProgress(id, "correct");
+        if (actionButton.dataset.action === "review") setProgress(id, "review");
+      });
+
+      $("#addCalcRowBtn").addEventListener("click", () => addCalcRow(0, ""));
+      $("#loadExampleBtn").addEventListener("click", loadExample);
+      $("#clearCalcBtn").addEventListener("click", () => {
+        $("#calcList").innerHTML = "";
+        addCalcRow(0, "");
+        calculateTotal();
+      });
+
+      $("#prevCard").addEventListener("click", () => moveCard(-1));
+      $("#nextCard").addEventListener("click", () => moveCard(1));
+      $("#flipCard").addEventListener("click", () => {
+        cardBack = !cardBack;
+        renderCard();
+      });
+      $("#flashcard").addEventListener("click", () => {
+        cardBack = !cardBack;
+        renderCard();
+      });
+      $("#flashcard").addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          cardBack = !cardBack;
+          renderCard();
+        }
+      });
+      $("#shuffleCard").addEventListener("click", shuffleCards);
+
+      $("#timerStart").addEventListener("click", startTimer);
+      $("#timerPause").addEventListener("click", pauseTimer);
+      $("#timerReset").addEventListener("click", resetTimer);
+    }
+
+    function boot() {
+      renderOverview();
+      renderTheory();
+      renderProblems();
+      renderMock();
+      renderSources();
+      renderCalculator();
+      renderCard();
+      updateTimerText();
+      updateProgressText();
+      wireEvents();
+    }
+
+    boot();
+  </script>
+</body>
+</html>
