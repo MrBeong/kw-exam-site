@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>위험물산업기사 실기 대비</title>
-  <meta name="description" content="위험물산업기사 실기 필답형 대비용 이론, 지정수량 계산기, 문제은행, 모의고사">
+  <meta name="description" content="위험물산업기사 실기 필답형 대비용 핵심이론, 지정수량 계산, 실전문제, 2025 기출분석">
   <link rel="icon" href="data:,">
   <style>
     :root {
@@ -647,6 +647,78 @@
       background: var(--hazard-soft);
     }
 
+    body.locked {
+      overflow: hidden;
+      background: #111827;
+    }
+
+    body.locked .app { display: none; }
+
+    .auth-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background:
+        radial-gradient(circle at top left, rgba(180, 83, 9, .22), transparent 34%),
+        #111827;
+      color: #fff;
+    }
+
+    .auth-card {
+      width: min(420px, 100%);
+      display: grid;
+      gap: 14px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: var(--radius);
+      background: #182235;
+      padding: 20px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .28);
+    }
+
+    .auth-card h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .auth-card p {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .auth-form {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 92px;
+      gap: 8px;
+    }
+
+    .auth-form input {
+      min-height: 44px;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: var(--radius);
+      background: #0f172a;
+      color: #fff;
+      padding: 0 12px;
+      outline: none;
+    }
+
+    .auth-form input:focus {
+      border-color: #93c5fd;
+      box-shadow: 0 0 0 3px rgba(147, 197, 253, .16);
+    }
+
+    .auth-message {
+      min-height: 20px;
+      color: #fecaca;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    body:not(.locked) .auth-gate { display: none; }
+
     .empty {
       display: none;
       padding: 18px;
@@ -678,15 +750,15 @@
         margin-bottom: 10px;
       }
       .nav {
-        display: flex;
-        overflow-x: auto;
-        padding-bottom: 2px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        overflow-x: visible;
+        padding-bottom: 0;
       }
       .nav button {
-        flex: 0 0 auto;
-        width: auto;
+        width: 100%;
         text-align: center;
-        white-space: nowrap;
+        white-space: normal;
       }
       .side-foot { display: none; }
       .main { padding: 16px; }
@@ -717,7 +789,21 @@
     }
   </style>
 </head>
-<body>
+<body class="locked">
+  <section class="auth-gate" id="authGate" aria-label="비밀번호 입력">
+    <form class="auth-card" id="authForm">
+      <div>
+        <h1>위험물산업기사 실기 대비</h1>
+        <p>비밀번호를 입력하면 학습 페이지가 열린다.</p>
+      </div>
+      <div class="auth-form">
+        <input type="text" value="hazmat" autocomplete="username" hidden aria-hidden="true" tabindex="-1">
+        <input id="passcodeInput" type="password" inputmode="numeric" autocomplete="current-password" placeholder="비밀번호" aria-label="비밀번호">
+        <button class="button primary" type="submit">입장</button>
+      </div>
+      <div class="auth-message" id="authMessage" aria-live="polite"></div>
+    </form>
+  </section>
   <div class="app">
     <aside class="side">
       <div class="brand">
@@ -725,18 +811,14 @@
         <span>필답형 대비 · 2026.06.24 기준</span>
       </div>
       <nav class="nav" id="mainNav" aria-label="주요 메뉴">
-        <button type="button" data-section="overview" aria-current="page">시험정보</button>
-        <button type="button" data-section="theory">핵심이론</button>
+        <button type="button" data-section="theory" aria-current="page">핵심이론</button>
         <button type="button" data-section="calculator">지정수량 계산</button>
-        <button type="button" data-section="problems">문제은행</button>
-        <button type="button" data-section="mock">모의고사</button>
+        <button type="button" data-section="problems">실전문제</button>
         <button type="button" data-section="past2025">2025 기출분석</button>
-        <button type="button" data-section="cards">암기카드</button>
-        <button type="button" data-section="sources">자료링크</button>
       </nav>
       <div class="side-foot">
         <div>Q-Net 종목코드 2121</div>
-        <div>출제기준 2025.1.1~2029.12.31</div>
+        <div>출제기준 2025~2029</div>
       </div>
     </aside>
 
@@ -766,7 +848,7 @@
         </div>
       </header>
 
-      <section class="section active" id="overview" data-title="시험정보">
+      <section class="section" id="overview" data-title="시험정보">
         <div class="section-head">
           <h2>시험정보</h2>
           <p class="hint">Q-Net 및 국가법령정보센터 확인 기준</p>
@@ -822,7 +904,7 @@
         </div>
       </section>
 
-      <section class="section" id="theory" data-title="핵심이론">
+      <section class="section active" id="theory" data-title="핵심이론">
         <div class="section-head">
           <h2>핵심이론</h2>
           <p class="hint">지정수량, 유별 성질, 소화방법, 반응식</p>
@@ -889,10 +971,10 @@
         </div>
       </section>
 
-      <section class="section" id="problems" data-title="문제은행">
+      <section class="section" id="problems" data-title="실전문제">
         <div class="section-head">
-          <h2>문제은행</h2>
-          <p class="hint">기출유형 재구성 40문항</p>
+          <h2>실전문제</h2>
+          <p class="hint">기출형 재구성 문항과 바로 외우는 모범답안</p>
         </div>
         <div class="filters" id="problemFilters"></div>
         <div class="question-list" id="problemList"></div>
@@ -927,6 +1009,11 @@
           <div class="table-wrap">
             <table id="pastRoundTable"></table>
           </div>
+        </div>
+        <div class="panel searchable" data-search="2025 암기형 모범답안 정답 반응식 계산 법규 지정수량">
+          <h3>2025 암기형 모범답안</h3>
+          <p class="hint" style="margin-bottom:12px;">출제 요구 능력별로 바로 외울 수 있게 정리한 답안 문장</p>
+          <div class="question-list" id="pastModelAnswerList"></div>
         </div>
         <div class="grid">
           <div class="panel searchable" data-search="2025 공부해야 할 이론 우선순위 반응식 계산 지정수량 법규 시설">
@@ -991,6 +1078,8 @@
 
   <script>
     const STORE_KEY = "hazmat-industrial-practical-2026";
+    const AUTH_KEY = "hazmat-practical-auth";
+    const PASSCODE = "6761";
 
     const schedules = [
       ["정기 기사 1회", "2026.03.23 ~ 2026.03.26", "2026.04.12 ~ 2026.04.13", "2026.04.18 ~ 2026.05.06", "2026.06.12"],
@@ -1140,6 +1229,225 @@
       ["m19", "금속나트륨의 저장 방법과 이유를 쓰라.", "석유류 속 또는 건조한 불활성 분위기에서 저장한다. 물·공기와 접촉하면 발열, 수소 발생, 발화 위험이 있기 때문이다."],
       ["m20", "위험물 운반 시 혼재 제한이 필요한 이유를 쓰라.", "서로 반응하여 발열, 발화, 폭발, 유독가스 발생 등 2차 위험이 생길 수 있기 때문이다."]
     ].map(([id, q, a], index) => ({ id, group: "모의고사", no: index + 1, q, a }));
+
+    const modelAnswerItems = [
+      {
+        id: "ma1",
+        group: "2025-1회형",
+        q: "CS2, 아세트알데히드, 벤젠처럼 분자량이 주어진 물질의 증기비중을 구하는 형식",
+        a: "모범답안: 증기비중은 분자량을 공기의 평균분자량 29로 나누어 구한다. 따라서 증기비중 = 분자량 / 29 이며, 계산값은 소수 둘째 자리까지 정리한다."
+      },
+      {
+        id: "ma2",
+        group: "2025-1회형",
+        q: "염소산칼륨의 화학식, 열분해 반응식, 발생 기체를 쓰는 형식",
+        a: "모범답안: 염소산칼륨의 화학식은 KClO3이다. 열분해 반응식은 2KClO3 -> 2KCl + 3O2이며, 발생 기체는 산소이다."
+      },
+      {
+        id: "ma3",
+        group: "2025-1회형",
+        q: "삼황화인, 오황화인, 알루미늄의 완전연소 반응식을 쓰는 형식",
+        a: "모범답안: 삼황화인은 P4S3, 오황화인은 P2S5로 먼저 쓴다. 완전연소식은 산소와 반응하여 인산화물과 이산화황 또는 금속산화물을 생성하도록 계수를 맞춘다."
+      },
+      {
+        id: "ma4",
+        group: "2025-1회형",
+        q: "제4류 물질의 품명, 수용성 여부, 지정수량을 연결하는 형식",
+        a: "모범답안: 제4류는 품명과 수용성 여부를 함께 판정한다. 특수인화물 50L, 제1석유류 비수용성 200L, 제1석유류 수용성 400L, 알코올류 400L, 제2석유류 비수용성 1,000L, 제2석유류 수용성 2,000L로 정리한다."
+      },
+      {
+        id: "ma5",
+        group: "2025-1회형",
+        q: "탄화알루미늄이 물과 반응할 때의 반응식과 발생 기체를 쓰는 형식",
+        a: "모범답안: Al4C3 + 12H2O -> 4Al(OH)3 + 3CH4. 발생 기체는 메탄이며, 메탄의 완전연소식은 CH4 + 2O2 -> CO2 + 2H2O이다."
+      },
+      {
+        id: "ma6",
+        group: "2025-1회형",
+        q: "분말소화약제의 종류별 주성분 화학식을 쓰는 형식",
+        a: "모범답안: 제1종 분말소화약제의 주성분은 NaHCO3, 제2종은 KHCO3, 제3종은 NH4H2PO4이다."
+      },
+      {
+        id: "ma7",
+        group: "2025-1회형",
+        q: "탄화칼슘 물 반응식과 아세틸렌 연소식을 연속으로 쓰는 형식",
+        a: "모범답안: CaC2 + 2H2O -> C2H2 + Ca(OH)2. 발생 기체는 아세틸렌이다. 완전연소식은 2C2H2 + 5O2 -> 4CO2 + 2H2O이다."
+      },
+      {
+        id: "ma8",
+        group: "2025-1회형",
+        q: "자동화재탐지설비 경계구역 수치를 쓰는 형식",
+        a: "모범답안: 하나의 경계구역은 원칙적으로 2개 이상의 층에 걸치지 않게 한다. 면적, 길이, 층별 예외 등은 대상 기준을 확인해 500m2, 600m2, 50m, 100m, 1,000m2 수치를 구분해서 쓴다."
+      },
+      {
+        id: "ma9",
+        group: "2025-1회형",
+        q: "이황화탄소의 유별, 품명, 저장상 주의사항, 연소식을 쓰는 형식",
+        a: "모범답안: 이황화탄소는 제4류 특수인화물로 지정수량은 50L이다. 휘발성과 인화성이 매우 크므로 물 속 저장 등 증기 발생 억제 조치를 한다. 연소식은 CS2 + 3O2 -> CO2 + 2SO2이다."
+      },
+      {
+        id: "ma10",
+        group: "2025-1회형",
+        q: "산화성고체의 정의를 쓰는 형식",
+        a: "모범답안: 산화성고체는 고체로서 산화력의 잠재적 위험성 또는 충격에 대한 민감성을 판단하는 성질을 가진 제1류 위험물이다. 상태 기준은 1기압, 20도 조건을 기준으로 구분한다."
+      },
+      {
+        id: "ma11",
+        group: "2025-2회형",
+        q: "트리니트로페놀의 품명, 지정수량, 위험등급을 쓰는 형식",
+        a: "모범답안: 트리니트로페놀은 제5류 니트로화합물이다. 제1종에 해당하면 지정수량은 10kg이며, 위험등급은 I 등급으로 정리한다."
+      },
+      {
+        id: "ma12",
+        group: "2025-2회형",
+        q: "산화프로필렌의 품명, 화학식, 지정수량, 보관 온도를 쓰는 형식",
+        a: "모범답안: 산화프로필렌은 제4류 특수인화물이고 지정수량은 50L이다. 특수인화물은 인화 위험이 매우 크므로 이동탱크저장소 등에서는 온도 상승과 증기 발생을 억제하도록 관리한다."
+      },
+      {
+        id: "ma13",
+        group: "2025-2회형",
+        q: "과산화나트륨과 물의 반응에서 산소 부피를 구하는 형식",
+        a: "모범답안: 먼저 반응식 2Na2O2 + 2H2O -> 4NaOH + O2로 산소 몰수를 구한다. 표준상태가 아니면 22.4L/mol을 바로 쓰지 않고 PV = nRT에 온도 K와 압력을 대입해 부피를 구한다."
+      },
+      {
+        id: "ma14",
+        group: "2025-2회형",
+        q: "오황화인, 알루미늄, 마그네슘의 연소 생성물을 쓰는 형식",
+        a: "모범답안: 황화인은 연소 시 인산화물과 이산화황을 생성하고, 알루미늄은 Al2O3, 마그네슘은 MgO를 생성한다. 답안은 반드시 반응식 계수를 맞추어 쓴다."
+      },
+      {
+        id: "ma15",
+        group: "2025-2회형",
+        q: "트리에틸알루미늄과 물의 반응식 및 발생 기체명을 쓰는 형식",
+        a: "모범답안: Al(C2H5)3 + 3H2O -> Al(OH)3 + 3C2H6. 발생 기체는 에테인이다. 알킬알루미늄은 제3류 위험물이며 지정수량은 10kg이다."
+      },
+      {
+        id: "ma16",
+        group: "2025-2회형",
+        q: "화재분류 A, B, C, D, K를 구분하는 형식",
+        a: "모범답안: A급은 일반화재, B급은 유류화재, C급은 전기화재, D급은 금속화재, K급은 주방화재이다. 위험물 문제에서는 제4류는 B급, 금속분·마그네슘은 D급으로 먼저 판단한다."
+      },
+      {
+        id: "ma17",
+        group: "2025-2회형",
+        q: "제3류 지정수량 빈칸을 채우는 형식",
+        a: "모범답안: 칼륨, 나트륨, 알킬알루미늄, 알킬리튬은 10kg, 황린은 20kg, 알칼리금속 및 알칼리토금속과 유기금속화합물은 50kg, 금속의 수소화물·인화물·탄화물은 300kg이다."
+      },
+      {
+        id: "ma18",
+        group: "2025-2회형",
+        q: "배출설비의 국소방식과 전역방식 기준을 계산하는 형식",
+        a: "모범답안: 국소방식은 방출원 주변 배출능력을 기준량의 20배 이상으로 하고, 전역방식은 바닥면적 1m2당 매시간 18m3 이상으로 계산한다."
+      },
+      {
+        id: "ma19",
+        group: "2025-2회형",
+        q: "질산의 유별, 지정수량, 보관상 주의사항을 쓰는 형식",
+        a: "모범답안: 질산은 제6류 산화성액체이며 지정수량은 300kg이다. 강산화성·부식성이 있으므로 가연물, 유기물, 환원성 물질과 격리하고 차광하여 보관한다."
+      },
+      {
+        id: "ma20",
+        group: "2025-2회형",
+        q: "황린의 성질과 보관 방법을 쓰는 형식",
+        a: "모범답안: 황린은 제3류 자연발화성 물질이며 지정수량은 20kg이다. 공기 중에서 자연발화 위험이 있으므로 물 속에 저장하고, 적린과 구분하여 쓴다."
+      },
+      {
+        id: "ma21",
+        group: "2025-2회형",
+        q: "할로겐화합물 소화약제의 명칭과 화학식을 연결하는 형식",
+        a: "모범답안: 할로겐화합물 소화약제는 코드명과 화학식을 연결해 암기한다. 예를 들어 브로모트리플루오로메탄은 CF3Br, 트리플루오로메탄은 CHF3처럼 탄소·수소·플루오린·브로민 수를 코드에서 확인한다."
+      },
+      {
+        id: "ma22",
+        group: "2025-3회형",
+        q: "제조소 보유공지 기준을 쓰는 형식",
+        a: "모범답안: 제조소의 보유공지는 지정수량의 10배 이하이면 3m 이상, 10배 초과이면 5m 이상으로 쓴다."
+      },
+      {
+        id: "ma23",
+        group: "2025-3회형",
+        q: "제1종·제2종 분말소화약제의 열분해 반응식을 쓰는 형식",
+        a: "모범답안: 제1종은 2NaHCO3 -> Na2CO3 + CO2 + H2O, 제2종은 2KHCO3 -> K2CO3 + CO2 + H2O이다."
+      },
+      {
+        id: "ma24",
+        group: "2025-3회형",
+        q: "동식물유류의 아이오딘값과 건성유 구분을 쓰는 형식",
+        a: "모범답안: 아이오딘값은 유지 100g이 흡수하는 아이오딘의 g수이다. 건성유는 130 이상, 반건성유는 100 이상 130 미만, 불건성유는 100 미만으로 구분한다."
+      },
+      {
+        id: "ma25",
+        group: "2025-3회형",
+        q: "황화인의 종류와 화학식을 쓰는 형식",
+        a: "모범답안: 삼황화인은 P4S3, 오황화인은 P2S5, 칠황화인은 P4S7로 쓴다. 조해성 여부 등 성질을 묻는 경우 오황화인과 칠황화인을 구분한다."
+      },
+      {
+        id: "ma26",
+        group: "2025-3회형",
+        q: "소화설비 적응성 판정에서 금수성·금속류를 판단하는 형식",
+        a: "모범답안: 금수성 물질과 금속류는 물계 소화가 부적응인 경우가 많다. 철분, 마그네슘, 탄화칼슘 등은 물 사용 여부를 먼저 배제하고 건조사, 팽창질석, 금속화재용 분말을 검토한다."
+      },
+      {
+        id: "ma27",
+        group: "2025-3회형",
+        q: "트리메틸알루미늄·트리에틸알루미늄의 물 반응과 연소를 쓰는 형식",
+        a: "모범답안: 알킬알루미늄은 물과 격렬히 반응하여 알루미늄수산화물과 알케인을 생성한다. 트리메틸알루미늄은 메테인, 트리에틸알루미늄은 에테인을 발생시키는 구조로 정리한다."
+      },
+      {
+        id: "ma28",
+        group: "2025-3회형",
+        q: "제조소 등 저장·취급 기준 빈칸을 채우는 형식",
+        a: "모범답안: 저장·취급은 차광, 환기, 온도·습도·압력 관리, 용기 파손·부식·균열 방지, 가연성 증기·미분 체류 방지, 보호액 중 보존 등으로 쓴다."
+      },
+      {
+        id: "ma29",
+        group: "2025-3회형",
+        q: "자체소방대 설치 기준을 쓰는 형식",
+        a: "모범답안: 제4류 위험물을 취급하는 제조소 또는 일반취급소는 지정수량 3,000배 이상, 옥외탱크저장소는 지정수량 50만배 이상일 때 자체소방대 기준을 검토한다."
+      },
+      {
+        id: "ma30",
+        group: "2025-3회형",
+        q: "옥외탱크저장소 방유제 기준을 쓰는 형식",
+        a: "모범답안: 방유제는 누출 위험물의 외부 유출을 막기 위한 설비이다. 면적 제한, 탱크 수 제한, 인화점 구간별 제한을 함께 확인한다."
+      },
+      {
+        id: "ma31",
+        group: "2025-3회형",
+        q: "운반 시 차광성 덮개와 방수성 덮개를 판정하는 형식",
+        a: "모범답안: 빛과 열에 민감한 위험물은 차광성 덮개, 물과 반응하는 위험물은 방수성 덮개를 사용한다. 알칼리금속의 과산화물처럼 둘 다 필요한 대상을 구분한다."
+      },
+      {
+        id: "ma32",
+        group: "2025-3회형",
+        q: "알루미늄분의 연소식, 물 반응식, 염산 반응식을 쓰는 형식",
+        a: "모범답안: 알루미늄은 연소하여 Al2O3를 생성한다. 산과 반응하면 수소를 발생시키므로 염산 반응은 2Al + 6HCl -> 2AlCl3 + 3H2로 쓴다."
+      },
+      {
+        id: "ma33",
+        group: "2025-3회형",
+        q: "제2석유류 수용성 물질을 고르는 형식",
+        a: "모범답안: 제2석유류는 인화점이 21도 이상 70도 미만인 액체이다. 수용성 여부가 함께 제시되면 아세트산, 폼산 등 물질별 수용성을 확인해 지정수량 2,000L 기준으로 판단한다."
+      },
+      {
+        id: "ma34",
+        group: "2025-3회형",
+        q: "에틸알코올과 메틸알코올의 물성을 비교하는 형식",
+        a: "모범답안: 에틸알코올과 메틸알코올은 모두 제4류 알코올류로 지정수량은 400L이다. 비교형 문제에서는 인화점, 착화점, 비점, 분자량, 연소범위를 표로 정리해 쓴다."
+      },
+      {
+        id: "ma35",
+        group: "2025-3회형",
+        q: "소요단위를 계산하는 형식",
+        a: "모범답안: 위험물의 소요단위는 지정수량의 10배를 1소요단위로 계산한다. 건축물 소요단위는 외벽 내화 여부와 면적 기준을 따로 적용한다."
+      },
+      {
+        id: "ma36",
+        group: "2025-3회형",
+        q: "질산암모늄 반응식으로 물질을 추론하는 형식",
+        a: "모범답안: 질산암모늄의 화학식은 NH4NO3이다. 가열·분해 조건에 따라 생성물이 달라질 수 있으므로 문제에서 제시한 반응식을 기준으로 물질명과 위험성을 함께 쓴다."
+      }
+    ];
 
     const memoryCards = [
       ["제1류 성질", "산화성 고체"],
@@ -1433,6 +1741,33 @@
       updateProgressText();
     }
 
+    function unlockContent() {
+      document.body.classList.remove("locked");
+      $("#authMessage").textContent = "";
+    }
+
+    function initAuth() {
+      const form = $("#authForm");
+      const input = $("#passcodeInput");
+      const message = $("#authMessage");
+      if (sessionStorage.getItem(AUTH_KEY) === "ok") {
+        unlockContent();
+        return;
+      }
+      input.focus();
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (input.value.trim() === PASSCODE) {
+          sessionStorage.setItem(AUTH_KEY, "ok");
+          unlockContent();
+          setSection("theory");
+          return;
+        }
+        message.textContent = "비밀번호가 맞지 않습니다.";
+        input.select();
+      });
+    }
+
     function table(headers, rows) {
       return `
         <thead><tr>${headers.map((h) => `<th>${escapeHtml(h)}</th>`).join("")}</tr></thead>
@@ -1462,10 +1797,11 @@
     }
 
     function renderProblems() {
-      const groups = ["전체", ...new Set(questionBank.map((item) => item.group))];
+      const items = practiceItems();
+      const groups = ["전체", ...new Set(items.map((item) => item.group))];
       $("#problemFilters").innerHTML = groups.map((group) => `<button type="button" class="${group === activeProblemGroup ? "active" : ""}" data-problem-filter="${escapeHtml(group)}">${escapeHtml(group)}</button>`).join("");
-      const visible = activeProblemGroup === "전체" ? questionBank : questionBank.filter((item) => item.group === activeProblemGroup);
-      $("#problemList").innerHTML = visible.map((item, index) => questionCard(item, index + 1)).join("");
+      const visible = activeProblemGroup === "전체" ? items : items.filter((item) => item.group === activeProblemGroup);
+      $("#problemList").innerHTML = visible.map((item, index) => questionCard(item, index + 1, true)).join("");
     }
 
     function renderMock() {
@@ -1485,6 +1821,17 @@
       `).join("");
 
       $("#pastRoundTable").innerHTML = table(["회차", "자막 기반 문항 포인트", "출제 형식", "우선 이론"], pastRoundAnalysis);
+
+      $("#pastModelAnswerList").innerHTML = modelAnswerItems.map((item, index) => `
+        <article class="question-card searchable" data-search="${escapeHtml([item.group, item.q, item.a].join(" "))}">
+          <div class="question-top">
+            <span class="badge blue">${String(index + 1).padStart(2, "0")}</span>
+            <span class="badge">${escapeHtml(item.group)}</span>
+          </div>
+          <p>${escapeHtml(item.q)}</p>
+          <div class="answer">${escapeHtml(item.a)}</div>
+        </article>
+      `).join("");
 
       $("#pastTheoryList").innerHTML = pastTheoryFocus.map((item) => `
         <div class="priority-row searchable" data-search="${escapeHtml([item.rank, item.title, item.body].join(" "))}">
@@ -1518,7 +1865,17 @@
       `).join("");
     }
 
-    function questionCard(item, number) {
+    function practiceItems() {
+      const pastItems = pastPracticeItems.map((item, index) => ({
+        id: `past-${index + 1}`,
+        group: `2025 재구성-${item.group}`,
+        q: item.q,
+        a: item.a
+      }));
+      return [...modelAnswerItems, ...questionBank, ...mockExam, ...pastItems];
+    }
+
+    function questionCard(item, number, answerVisible = false) {
       const status = state.progress[item.id] || "";
       const search = [item.group, item.q, item.a].join(" ");
       return `
@@ -1528,9 +1885,9 @@
             <span class="badge">${escapeHtml(item.group)}</span>
           </div>
           <p>${escapeHtml(item.q)}</p>
-          <div class="answer" hidden>${escapeHtml(item.a)}</div>
+          <div class="answer" ${answerVisible ? "" : "hidden"}>${escapeHtml(item.a)}</div>
           <div class="actions">
-            <button class="mini-button" type="button" data-action="toggle-answer">정답 보기</button>
+            <button class="mini-button" type="button" data-action="toggle-answer">${answerVisible ? "정답 숨기기" : "정답 보기"}</button>
             <button class="mini-button ${status === "correct" ? "active-good" : ""}" type="button" data-action="correct">맞힘</button>
             <button class="mini-button ${status === "review" ? "active-review" : ""}" type="button" data-action="review">오답</button>
           </div>
@@ -1647,7 +2004,7 @@
     }
 
     function updateProgressText() {
-      const total = questionBank.length + mockExam.length;
+      const total = practiceItems().length;
       const correct = Object.values(state.progress).filter((value) => value === "correct").length;
       const review = Object.values(state.progress).filter((value) => value === "review").length;
       $("#progressText").textContent = `${correct} / ${total}`;
@@ -1800,6 +2157,7 @@
       updateTimerText();
       updateProgressText();
       wireEvents();
+      initAuth();
     }
 
     boot();
