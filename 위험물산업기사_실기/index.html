@@ -594,6 +594,59 @@
       background: #fff;
     }
 
+    .dense-list {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .dense-list li { padding-left: 2px; }
+
+    .analysis-card {
+      display: grid;
+      gap: 8px;
+      border-left: 4px solid var(--blue);
+    }
+
+    .analysis-card strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .analysis-card small {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .priority-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .priority-row {
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 10px;
+      background: #fff;
+    }
+
+    .priority-row p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .source-note {
+      border-left: 4px solid var(--hazard);
+      background: var(--hazard-soft);
+    }
+
     .empty {
       display: none;
       padding: 18px;
@@ -677,7 +730,7 @@
         <button type="button" data-section="calculator">지정수량 계산</button>
         <button type="button" data-section="problems">문제은행</button>
         <button type="button" data-section="mock">모의고사</button>
-        <button type="button" data-section="past2025">2025 기출영상</button>
+        <button type="button" data-section="past2025">2025 기출분석</button>
         <button type="button" data-section="cards">암기카드</button>
         <button type="button" data-section="sources">자료링크</button>
       </nav>
@@ -859,28 +912,36 @@
         <div class="question-list" id="mockList"></div>
       </section>
 
-      <section class="section" id="past2025" data-title="2025 기출영상">
+      <section class="section" id="past2025" data-title="2025 기출분석">
         <div class="section-head">
-          <h2>2025 기출영상</h2>
-          <p class="hint">제1회·제2회·제3회 영상 링크와 대비 체크</p>
+          <h2>2025 기출분석</h2>
+          <p class="hint">제1회·제2회·제3회 풀이 자막 기반 출제형식·이론 정리</p>
         </div>
-        <div class="grid three" id="pastVideoList"></div>
-        <div class="panel searchable" data-search="2025 기출 대비 체크 지정수량 유별 소화 반응식 법규 시설 서술형">
-          <h3>영상 학습 체크</h3>
-          <div class="grid three">
-            <div class="card">
-              <span class="badge blue">1회독</span>
-              <p style="margin-top:8px;">영상에서 틀린 문항을 원문이 아니라 키워드, 유별, 계산식, 반응식 단위로 적는다.</p>
-            </div>
-            <div class="card">
-              <span class="badge hazard">2회독</span>
-              <p style="margin-top:8px;">지정수량 배수, 제3류 금수성, 제4류 정전기·소화, 제5류 저장 주의사항을 따로 묶는다.</p>
-            </div>
-            <div class="card">
-              <span class="badge good">마무리</span>
-              <p style="margin-top:8px;">같은 요구 능력의 자체 문제를 문제은행에 추가해 답안 문장으로 반복한다.</p>
-            </div>
+        <div class="panel source-note searchable" data-search="2025 기출분석 유튜브 자동자막 출제형식 이론 정리">
+          <h3>분석 기준</h3>
+          <p>아래 내용은 2025년 제1회·제2회·제3회 풀이 영상의 한국어 자막을 기준으로 문항 요구 능력을 분류한 것이다. 공개 페이지에는 원문 문제 복제가 아니라 출제 포인트, 답안 형식, 공부 범위, 재구성 연습문제로 정리했다.</p>
+        </div>
+        <div class="grid three" id="pastPatternList"></div>
+        <div class="panel searchable" data-search="2025 회차별 문항 포인트 반응식 계산 법규 지정수량 소화설비">
+          <h3>회차별 문항 포인트</h3>
+          <div class="table-wrap">
+            <table id="pastRoundTable"></table>
           </div>
+        </div>
+        <div class="grid">
+          <div class="panel searchable" data-search="2025 공부해야 할 이론 우선순위 반응식 계산 지정수량 법규 시설">
+            <h3>공부해야 할 이론 우선순위</h3>
+            <div class="priority-list" id="pastTheoryList"></div>
+          </div>
+          <div class="panel searchable" data-search="답안 형식 훈련 쓰시오 구하시오 반응식 빈칸 고르시오">
+            <h3>답안 형식 훈련</h3>
+            <div class="priority-list" id="pastAnswerDrillList"></div>
+          </div>
+        </div>
+        <div class="panel searchable" data-search="2025 재구성 연습문제 계산 반응식 법규 소화 지정수량">
+          <h3>2025 재구성 연습문제</h3>
+          <p class="hint" style="margin-bottom:12px;">영상에서 확인된 출제 형식을 같은 요구 능력으로 바꾼 자체 문항</p>
+          <div class="question-list" id="pastPracticeList"></div>
         </div>
       </section>
 
@@ -915,8 +976,8 @@
             <h3>국가법령정보센터</h3>
             <ul class="source-list" id="lawLinks"></ul>
           </div>
-          <div class="panel searchable" data-search="유튜브 2025 기출문제 1회 2회 3회 무료인강 직업상점 산기공">
-            <h3>2025 기출영상</h3>
+          <div class="panel searchable" data-search="유튜브 2025 기출문제 1회 2회 3회 무료인강 분석 출처">
+            <h3>2025 분석 출처</h3>
             <ul class="source-list" id="videoLinks"></ul>
           </div>
         </div>
@@ -1128,7 +1189,7 @@
       ["위험물안전관리법 시행규칙", "https://www.law.go.kr/법령/위험물안전관리법시행규칙"]
     ];
 
-    const pastVideos = [
+    const pastVideoSources = [
       {
         round: "2025년 제1회",
         title: "[위험물산업기사 무료인강] 실기 - 2025년 제1회 기출문제",
@@ -1152,6 +1213,180 @@
         uploadDate: "2026.02.12",
         url: "https://www.youtube.com/watch?v=tE_stGlXGpQ",
         focus: "반응식·법규·시설 단답 보강"
+      }
+    ];
+
+    const pastPatterns = [
+      {
+        label: "반응식 쓰기",
+        badge: "최우선",
+        summary: "염소산칼륨, 과산화수소, 탄화칼슘, 탄화알루미늄, 알킬알루미늄, 황화인·금속 연소, 분말소화약제 열분해가 반복된다.",
+        study: "물질명 -> 화학식 -> 반응물/생성물 -> 계수 순서로 암기"
+      },
+      {
+        label: "계산형",
+        badge: "빈출",
+        summary: "증기비중, 기체 발생량, 지정수량 배수, 배출설비 용량, 소요단위가 숫자를 바꿔 나온다.",
+        study: "표준상태 22.4L/mol과 PV=nRT 적용 조건을 구분"
+      },
+      {
+        label: "지정수량·분류",
+        badge: "암기",
+        summary: "제3류·제4류·제5류·제6류의 품명, 위험등급, 수용성/비수용성, 지정수량을 묻는다.",
+        study: "품명별 지정수량을 유별 표와 함께 묶어서 반복"
+      },
+      {
+        label: "법규 수치",
+        badge: "단답",
+        summary: "보유공지, 주유·급유설비 거리, 옥내저장소 면적, 방유제, 경계구역, 자체소방대 수치가 나온다.",
+        study: "숫자만 외우지 말고 적용 대상까지 같이 암기"
+      },
+      {
+        label: "판정·선택형",
+        badge: "실수주의",
+        summary: "혼재 가능 여부, 화재분류, 소화설비 적응성, 차광성·방수성 덮개처럼 맞는 조합을 고른다.",
+        study: "금수성·금속류·인화성액체를 먼저 배제하는 연습"
+      },
+      {
+        label: "성질 설명",
+        badge: "서술",
+        summary: "황린, 이황화탄소, 동식물유류, 질산, 과산화수소처럼 물질 특성과 보관 조건을 짧게 쓴다.",
+        study: "색, 냄새, 저장법, 위험성, 대표 반응식을 한 줄 카드로 정리"
+      }
+    ];
+
+    const pastRoundAnalysis = [
+      [
+        "2025년 제1회",
+        "증기비중 계산, 유별 혼재, 염소산칼륨 산소 발생량, 황화인·알루미늄 연소식, 제4류 지정수량, 탄화알루미늄 물 반응, 제5류 시성식, 분말소화약제, 자동화재탐지설비, 지하탱크 간격",
+        "계산 3축(분자량/29, 22.4L, 지정수량 배수)과 반응식 계수 맞추기, 시설 수치 암기가 동시에 요구됨",
+        "제3류·제4류 지정수량, 산화성고체 정의, 소화약제 화학식, 탱크·경계구역 수치"
+      ],
+      [
+        "2025년 제2회",
+        "트리니트로페놀, 산화프로필렌, 과산화나트륨 비표준 기체 계산, 금속·황화인 연소식, 이황화탄소, 트리에틸알루미늄, 화재분류, 제3류 지정수량, 배출설비, 할로젠화합물 소화약제",
+        "물질명만 주고 품명·지정수량·위험등급·반응식을 연결하게 하며, 표준상태가 아닌 기체 계산을 섞음",
+        "제3류 물 반응성, 제4류 특수인화물, PV=nRT, 배출설비 20배·18m3 기준, 할론/HFC 코드"
+      ],
+      [
+        "2025년 제3회",
+        "제조소 보유공지, 염소산칼륨, 분말소화약제 열분해, 동식물유류 아이오딘값, 배출설비 계산, 황화인 성질, 소화설비 적응성, 알킬알루미늄 반응식, 자체소방대, 방유제, 운반 덮개, 황린, 알루미늄분",
+        "법규 숫자와 물질 성질을 단답으로 묻고, 같은 반응식을 물 반응·연소 반응으로 연속 확장함",
+        "보유공지 3m/5m, 방유제 제한, 자체소방대 기준, 운반 덮개, 알코올류 물성 비교"
+      ]
+    ];
+
+    const pastTheoryFocus = [
+      {
+        rank: "1순위",
+        title: "반응식 30개",
+        body: "KClO3, H2O2, HNO3, NH4NO3, Na2O2, BaO2, CaC2, Al4C3, Al(CH3)3, Al(C2H5)3, P4S3, P2S5, Al, Mg, NaHCO3, KHCO3 계열을 먼저 끝낸다."
+      },
+      {
+        rank: "2순위",
+        title: "제3류·제4류·제5류·제6류 지정수량",
+        body: "제3류 10/20/50/300/500kg, 제4류 특수인화물·석유류·알코올류, 제5류 제1종/제2종, 제6류 300kg을 표로 암기한다."
+      },
+      {
+        rank: "3순위",
+        title: "계산 공식",
+        body: "증기비중=분자량/29, 지정수량 배수=저장량/지정수량, 표준상태 22.4L/mol, 비표준상태 PV=nRT, 배출설비 국소 20배·전역 18m3/(m2·h)."
+      },
+      {
+        rank: "4순위",
+        title: "시설·법규 수치",
+        body: "보유공지 3m/5m, 주유·급유설비 거리, 옥내저장소 바닥면적, 자동화재탐지 경계구역, 방유제, 자체소방대 기준을 대상별로 묶는다."
+      },
+      {
+        rank: "5순위",
+        title: "소화·운반 판정",
+        body: "금수성·금속류는 물계 소화 부적합, 제4류는 포·분말·CO2 중심, 혼재 가능 조합과 운반 덮개 차광성/방수성을 같이 정리한다."
+      }
+    ];
+
+    const pastAnswerDrills = [
+      {
+        rank: "쓰시오",
+        title: "물질명·품명·지정수량",
+        body: "답은 물질명만 쓰지 말고 유별, 품명, 지정수량 단위까지 붙인다. 예: 제4류 제1석유류 비수용성 200L."
+      },
+      {
+        rank: "구하시오",
+        title: "계산 과정",
+        body: "몰수, 반응계수, 온도 단위(K), 최종 단위를 한 줄씩 남긴다. 표준상태가 아니면 22.4L로 바로 계산하지 않는다."
+      },
+      {
+        rank: "반응식",
+        title: "계수와 상태보다 생성물",
+        body: "실기 채점은 생성물 누락과 계수 오류에서 많이 갈린다. 물 반응과 완전연소식을 따로 외운다."
+      },
+      {
+        rank: "빈칸",
+        title: "법규 문장",
+        body: "숫자만 외운 답안은 흔들린다. '어떤 설비/저장소/위험물에 적용되는 숫자'인지 같이 적는다."
+      }
+    ];
+
+    const pastPracticeItems = [
+      {
+        group: "계산",
+        q: "분자량이 78인 인화성 액체의 증기비중을 구하시오.",
+        a: "증기비중 = 78 / 29 = 약 2.69"
+      },
+      {
+        group: "반응식",
+        q: "염소산칼륨이 열분해될 때의 반응식을 쓰고 발생 기체명을 쓰시오.",
+        a: "2KClO3 -> 2KCl + 3O2, 발생 기체는 산소"
+      },
+      {
+        group: "계산",
+        q: "무기과산화물 반응으로 산소가 발생하는 문제에서 온도와 압력이 표준상태가 아닐 때 적용할 계산식을 쓰시오.",
+        a: "PV = nRT. 섭씨온도는 K로 바꾸고, 반응식 계수로 산소 몰수를 먼저 구한다."
+      },
+      {
+        group: "반응식",
+        q: "탄화칼슘이 물과 반응할 때의 반응식과 발생 기체의 완전연소식을 쓰시오.",
+        a: "CaC2 + 2H2O -> C2H2 + Ca(OH)2, 2C2H2 + 5O2 -> 4CO2 + 2H2O"
+      },
+      {
+        group: "지정수량",
+        q: "제3류 위험물 중 칼륨, 나트륨, 알킬알루미늄, 알킬리튬의 지정수량을 쓰시오.",
+        a: "각각 10kg"
+      },
+      {
+        group: "제4류",
+        q: "제4류 물질을 수용성/비수용성으로 구분해 지정수량을 묻는 문제에서 먼저 확인할 기준을 쓰시오.",
+        a: "특수인화물, 제1석유류, 알코올류, 제2석유류, 제3석유류 등 품명과 수용성 여부를 먼저 판정한다."
+      },
+      {
+        group: "시설",
+        q: "제조소 보유공지 문제에서 지정수량 10배 이하와 10배 초과의 기준 거리를 쓰시오.",
+        a: "10배 이하 3m 이상, 10배 초과 5m 이상"
+      },
+      {
+        group: "시설계산",
+        q: "전역방식 배출설비 문제에서 바닥면적이 100m2라면 시간당 배출능력 기준을 구하시오.",
+        a: "18m3/(m2·h) x 100m2 = 1800m3/h 이상"
+      },
+      {
+        group: "소화",
+        q: "철분, 마그네슘, 탄화칼슘 같은 금속·금수성 위험물의 소화설비 적응성 판정에서 주의할 점을 쓰시오.",
+        a: "물계 소화는 부적합하다. 건조사, 팽창질석, 금속화재용 분말 등 대상별 적응성을 확인한다."
+      },
+      {
+        group: "법규",
+        q: "옥외탱크저장소 방유제 문제에서 반복 확인할 제한 항목을 쓰시오.",
+        a: "방유제 면적, 방유제 안의 탱크 수, 탱크 인화점 구간별 제한"
+      },
+      {
+        group: "물질성질",
+        q: "황린 설명형 문제에서 한 답안에 같이 묶어야 할 핵심어를 쓰시오.",
+        a: "제3류, 자연발화성, 물 속 저장, P4, 낮은 발화점, 적린과 구분"
+      },
+      {
+        group: "운반",
+        q: "운반 시 차광성 덮개와 방수성 덮개를 고르는 문제의 판단 순서를 쓰시오.",
+        a: "물과 반응하는 위험물인지, 빛·열에 민감한 위험물인지, 알칼리금속 과산화물처럼 둘 다 필요한 대상인지 확인한다."
       }
     ];
 
@@ -1237,19 +1472,48 @@
       $("#mockList").innerHTML = mockExam.map((item) => questionCard(item, item.no)).join("");
     }
 
-    function renderPastVideos() {
-      $("#pastVideoList").innerHTML = pastVideos.map((video) => `
-        <article class="card searchable" data-search="${escapeHtml([video.round, video.title, video.focus].join(" "))}">
+    function renderPastAnalysis() {
+      $("#pastPatternList").innerHTML = pastPatterns.map((item) => `
+        <article class="card analysis-card searchable" data-search="${escapeHtml([item.label, item.badge, item.summary, item.study].join(" "))}">
           <div class="badge-row">
-            <span class="badge hazard">${escapeHtml(video.round)}</span>
-            <span class="badge">${escapeHtml(video.duration)}</span>
+            <span class="badge hazard">${escapeHtml(item.badge)}</span>
+            <span class="badge blue">${escapeHtml(item.label)}</span>
           </div>
-          <h3 style="margin-top:12px;">${escapeHtml(video.round)} 기출문제</h3>
-          <p>${escapeHtml(video.focus)}</p>
-          <p class="hint" style="margin-top:8px;">업로드 ${escapeHtml(video.uploadDate)}</p>
-          <div class="actions" style="margin-top:12px;">
-            <a class="button primary" href="${escapeHtml(video.url)}" target="_blank" rel="noopener">영상 열기</a>
+          <strong>${escapeHtml(item.summary)}</strong>
+          <small>${escapeHtml(item.study)}</small>
+        </article>
+      `).join("");
+
+      $("#pastRoundTable").innerHTML = table(["회차", "자막 기반 문항 포인트", "출제 형식", "우선 이론"], pastRoundAnalysis);
+
+      $("#pastTheoryList").innerHTML = pastTheoryFocus.map((item) => `
+        <div class="priority-row searchable" data-search="${escapeHtml([item.rank, item.title, item.body].join(" "))}">
+          <span class="badge hazard">${escapeHtml(item.rank)}</span>
+          <div>
+            <strong>${escapeHtml(item.title)}</strong>
+            <p>${escapeHtml(item.body)}</p>
           </div>
+        </div>
+      `).join("");
+
+      $("#pastAnswerDrillList").innerHTML = pastAnswerDrills.map((item) => `
+        <div class="priority-row searchable" data-search="${escapeHtml([item.rank, item.title, item.body].join(" "))}">
+          <span class="badge blue">${escapeHtml(item.rank)}</span>
+          <div>
+            <strong>${escapeHtml(item.title)}</strong>
+            <p>${escapeHtml(item.body)}</p>
+          </div>
+        </div>
+      `).join("");
+
+      $("#pastPracticeList").innerHTML = pastPracticeItems.map((item, index) => `
+        <article class="question-card searchable" data-search="${escapeHtml([item.group, item.q, item.a].join(" "))}">
+          <div class="question-top">
+            <span class="badge blue">재구성 ${String(index + 1).padStart(2, "0")}</span>
+            <span class="badge">${escapeHtml(item.group)}</span>
+          </div>
+          <p>${escapeHtml(item.q)}</p>
+          <div class="answer">${escapeHtml(item.a)}</div>
         </article>
       `).join("");
     }
@@ -1277,7 +1541,7 @@
     function renderSources() {
       $("#qnetLinks").innerHTML = qnetLinks.map(linkItem).join("");
       $("#lawLinks").innerHTML = lawLinks.map(linkItem).join("");
-      $("#videoLinks").innerHTML = pastVideos.map((video) => linkItem([video.round, video.url])).join("");
+      $("#videoLinks").innerHTML = pastVideoSources.map((video) => linkItem([`${video.round} 분석 원본`, video.url])).join("");
       $("#updateChecklist").innerHTML = updateItems.map((item) => `
         <div class="card searchable" data-search="${escapeHtml(item)}">
           <span class="badge hazard">확인</span>
@@ -1529,7 +1793,7 @@
       renderTheory();
       renderProblems();
       renderMock();
-      renderPastVideos();
+      renderPastAnalysis();
       renderSources();
       renderCalculator();
       renderCard();
