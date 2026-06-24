@@ -436,6 +436,17 @@
       font-size: 13px;
     }
 
+    .chem-formula {
+      white-space: nowrap;
+      font-variant-numeric: lining-nums;
+    }
+
+    .chem-formula sub {
+      font-size: .72em;
+      line-height: 0;
+      vertical-align: sub;
+    }
+
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -1728,6 +1739,15 @@
       }[char]));
     }
 
+    function formatText(value) {
+      return escapeHtml(value)
+        .replace(/-&gt;/g, "→")
+        .replace(/(^|[^A-Za-z0-9])(\d*)((?:[A-Z][a-z]?|\([A-Za-z0-9]+\))(?:[A-Z][a-z]?|\([A-Za-z0-9]+\)|\d)+)(?=$|[^A-Za-z0-9])/g, (match, prefix, coefficient, formula) => {
+          if (!/\d/.test(formula)) return match;
+          return `${prefix}${coefficient}<span class="chem-formula">${formula.replace(/\d+/g, (digits) => `<sub>${digits}</sub>`)}</span>`;
+        });
+    }
+
     function loadState() {
       try {
         return JSON.parse(localStorage.getItem(STORE_KEY)) || { progress: {} };
@@ -1771,7 +1791,7 @@
     function table(headers, rows) {
       return `
         <thead><tr>${headers.map((h) => `<th>${escapeHtml(h)}</th>`).join("")}</tr></thead>
-        <tbody>${rows.map((row) => `<tr class="searchable" data-search="${escapeHtml(row.join(" "))}">${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`).join("")}</tbody>
+        <tbody>${rows.map((row) => `<tr class="searchable" data-search="${escapeHtml(row.join(" "))}">${row.map((cell) => `<td>${formatText(cell)}</td>`).join("")}</tr>`).join("")}</tbody>
       `;
     }
 
@@ -1815,8 +1835,8 @@
             <span class="badge hazard">${escapeHtml(item.badge)}</span>
             <span class="badge blue">${escapeHtml(item.label)}</span>
           </div>
-          <strong>${escapeHtml(item.summary)}</strong>
-          <small>${escapeHtml(item.study)}</small>
+          <strong>${formatText(item.summary)}</strong>
+          <small>${formatText(item.study)}</small>
         </article>
       `).join("");
 
@@ -1828,8 +1848,8 @@
             <span class="badge blue">${String(index + 1).padStart(2, "0")}</span>
             <span class="badge">${escapeHtml(item.group)}</span>
           </div>
-          <p>${escapeHtml(item.q)}</p>
-          <div class="answer">${escapeHtml(item.a)}</div>
+          <p>${formatText(item.q)}</p>
+          <div class="answer">${formatText(item.a)}</div>
         </article>
       `).join("");
 
@@ -1837,8 +1857,8 @@
         <div class="priority-row searchable" data-search="${escapeHtml([item.rank, item.title, item.body].join(" "))}">
           <span class="badge hazard">${escapeHtml(item.rank)}</span>
           <div>
-            <strong>${escapeHtml(item.title)}</strong>
-            <p>${escapeHtml(item.body)}</p>
+            <strong>${formatText(item.title)}</strong>
+            <p>${formatText(item.body)}</p>
           </div>
         </div>
       `).join("");
@@ -1847,8 +1867,8 @@
         <div class="priority-row searchable" data-search="${escapeHtml([item.rank, item.title, item.body].join(" "))}">
           <span class="badge blue">${escapeHtml(item.rank)}</span>
           <div>
-            <strong>${escapeHtml(item.title)}</strong>
-            <p>${escapeHtml(item.body)}</p>
+            <strong>${formatText(item.title)}</strong>
+            <p>${formatText(item.body)}</p>
           </div>
         </div>
       `).join("");
@@ -1859,8 +1879,8 @@
             <span class="badge blue">재구성 ${String(index + 1).padStart(2, "0")}</span>
             <span class="badge">${escapeHtml(item.group)}</span>
           </div>
-          <p>${escapeHtml(item.q)}</p>
-          <div class="answer">${escapeHtml(item.a)}</div>
+          <p>${formatText(item.q)}</p>
+          <div class="answer">${formatText(item.a)}</div>
         </article>
       `).join("");
     }
@@ -1884,8 +1904,8 @@
             <span class="badge blue">${String(number).padStart(2, "0")}</span>
             <span class="badge">${escapeHtml(item.group)}</span>
           </div>
-          <p>${escapeHtml(item.q)}</p>
-          <div class="answer" ${answerVisible ? "" : "hidden"}>${escapeHtml(item.a)}</div>
+          <p>${formatText(item.q)}</p>
+          <div class="answer" ${answerVisible ? "" : "hidden"}>${formatText(item.a)}</div>
           <div class="actions">
             <button class="mini-button" type="button" data-action="toggle-answer">${answerVisible ? "정답 숨기기" : "정답 보기"}</button>
             <button class="mini-button ${status === "correct" ? "active-good" : ""}" type="button" data-action="correct">맞힘</button>
@@ -1984,7 +2004,7 @@
       $("#cardCounter").textContent = `${cardIndex + 1} / ${memoryCards.length}`;
       $("#cardSide").textContent = cardBack ? "뒷면" : "앞면";
       const value = cardBack ? back : front;
-      $("#cardText").innerHTML = /->|[A-Z][a-z]?\d/.test(value) ? `<code>${escapeHtml(value)}</code>` : escapeHtml(value);
+      $("#cardText").innerHTML = /->|[A-Z][a-z]?\d/.test(value) ? `<code>${formatText(value)}</code>` : formatText(value);
     }
 
     function moveCard(delta) {
