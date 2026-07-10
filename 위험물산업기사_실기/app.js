@@ -357,18 +357,23 @@
 
   function submitAnswer(question, value, raw) {
     const correct = value === question.answer;
-    state.progress[state.stage].answers[question.id] = { value, raw, correct };
-    saveProgress();
-    renderQuestion();
+    finishGradedAnswer(question, { value, raw, correct });
   }
 
   function submitBlank(question, raw) {
     if (!raw.trim()) return;
     const normalized = normalizeAnswer(raw);
     const correct = question.answers.some((answer) => normalizeAnswer(answer) === normalized);
-    state.progress.blank.answers[question.id] = { value: normalized, raw, correct };
+    finishGradedAnswer(question, { value: normalized, raw, correct });
+  }
+
+  function finishGradedAnswer(question, answer) {
+    state.progress[state.stage].answers[question.id] = answer;
     saveProgress();
-    renderQuestion();
+    const items = data.questions[state.stage];
+    const hasNextQuestion = state.indexes[state.stage] < items.length - 1;
+    if (answer.correct && hasNextQuestion) moveQuestion(1);
+    else renderQuestion();
   }
 
   function submitPractical(question, raw) {
@@ -384,9 +389,17 @@
         <ul class="rubric">${question.rubric.map((item) => `<li>${formatText(item)}</li>`).join("")}</ul>
       </div>`;
     const answerText = stage === "ox" ? (question.answer ? "O" : "X") : stage === "choice" ? `${question.answer + 1}. ${question.options[question.answer]}` : question.answers.join(" / ");
+    const submittedText = stage === "ox" ? (saved.value ? "O" : "X") : stage === "choice" ? `${saved.value + 1}. ${question.options[saved.value]}` : saved.raw;
+    if (!saved.correct) return `
+      <div class="feedback wrong">
+        <h4>오답 · 상세해설</h4>
+        <p><strong>내 답:</strong> ${formatText(submittedText)}</p>
+        <p><strong>정답:</strong> ${formatText(answerText)}</p>
+        <p><strong>해설:</strong> ${formatText(question.explanation)}</p>
+      </div>`;
     return `
-      <div class="feedback ${saved.correct ? "correct" : "wrong"}">
-        <h4>${saved.correct ? "정답" : "오답"}</h4>
+      <div class="feedback correct">
+        <h4>정답</h4>
         <p><strong>정답:</strong> ${formatText(answerText)}</p>
         <p>${formatText(question.explanation)}</p>
       </div>`;

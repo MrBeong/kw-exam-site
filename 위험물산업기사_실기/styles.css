@@ -505,6 +505,7 @@ a { color: var(--blue); }
 .feedback.wrong { border-left-color: var(--red); background: var(--red-soft); }
 .feedback h4 { margin: 0 0 5px; }
 .feedback p { margin: 0; }
+.feedback p + p { margin-top: 7px; }
 .feedback .rubric { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
 
 .question-actions { display: flex; gap: 10px; justify-content: space-between; margin-top: 18px; flex-wrap: wrap; }
