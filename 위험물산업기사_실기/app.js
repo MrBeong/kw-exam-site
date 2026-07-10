@@ -421,6 +421,8 @@
 
   function boot() {
     if (!data) throw new Error("학습 데이터가 로드되지 않았습니다.");
+    const unitOrder = new Map(data.theory.map((unit, index) => [unit.id, index]));
+    data.questions.ox.sort((a, b) => unitOrder.get(a.unit) - unitOrder.get(b.unit));
     setupAuth();
     setupNavigation();
     renderTheory();
