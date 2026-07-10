@@ -400,6 +400,7 @@ a { color: var(--blue); }
 .action-button.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
 .action-button.success { background: var(--green); border-color: var(--green); color: #fff; }
 .action-button:disabled { opacity: .45; cursor: not-allowed; }
+.resume-button { flex: 0 0 auto; }
 
 .calc-result {
   min-height: 160px;
@@ -569,6 +570,7 @@ a { color: var(--blue); }
   .summary-strip { grid-template-columns: 1fr 1fr; }
   .summary-item strong { font-size: 20px; }
   .section-heading { display: block; }
+  .resume-button { width: 100%; margin-top: 12px; }
   .theory-unit summary { grid-template-columns: 1fr; }
   .unit-meta { text-align: left; }
   .question-card { min-height: 460px; padding: 18px 14px; }

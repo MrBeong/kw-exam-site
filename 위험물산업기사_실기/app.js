@@ -5,6 +5,7 @@
   const PASSWORD = "6761";
   const AUTH_KEY = "hazmat-study-unlocked-v2";
   const PROGRESS_KEY = "hazmat-study-progress-v3";
+  const RESUME_KEY = "hazmat-study-resume-v1";
   const stageLabels = { ox: "O/X", choice: "객관식", blank: "빈칸", practical: "실전" };
   const sectionMeta = {
     theory: ["핵심이론", "새 기출기반 핵심이론을 단원별로 정리했습니다."],
@@ -12,12 +13,16 @@
     practice: ["실전문제", "O/X부터 실전 서술형까지 단계별로 학습합니다."],
     analysis: ["기출분석", "첨부 문제에서 확인한 출제 형식과 우선순위입니다."]
   };
+  const unitOrder = new Map(data.theory.map((unit, index) => [unit.id, index]));
+  data.questions.ox.sort((a, b) => unitOrder.get(a.unit) - unitOrder.get(b.unit));
 
+  const initialProgress = loadProgress();
   const state = {
     section: "theory",
     stage: "ox",
     indexes: { ox: 0, choice: 0, blank: 0, practical: 0 },
-    progress: loadProgress(),
+    progress: initialProgress,
+    resume: loadResume(initialProgress),
     calcRows: []
   };
 
@@ -62,6 +67,56 @@
 
   function saveProgress() {
     localStorage.setItem(PROGRESS_KEY, JSON.stringify(state.progress));
+  }
+
+  function inferResume(progress) {
+    const stages = Object.keys(stageLabels);
+    for (let stageIndex = stages.length - 1; stageIndex >= 0; stageIndex -= 1) {
+      const stage = stages[stageIndex];
+      const answers = progress[stage]?.answers || {};
+      if (!Object.keys(answers).length) continue;
+      const items = data.questions[stage];
+      const firstUnanswered = items.findIndex((question) => !answers[question.id]);
+      const index = firstUnanswered === -1 ? items.length - 1 : firstUnanswered;
+      return { stage, questionId: items[index].id, index };
+    }
+    return null;
+  }
+
+  function loadResume(progress) {
+    try {
+      const saved = JSON.parse(localStorage.getItem(RESUME_KEY));
+      if (saved && stageLabels[saved.stage] && (saved.questionId || Number.isInteger(saved.index))) return saved;
+    } catch {
+      // Fall through to progress-based migration.
+    }
+    return inferResume(progress);
+  }
+
+  function resumeIndex(resume) {
+    if (!resume || !stageLabels[resume.stage]) return -1;
+    const items = data.questions[resume.stage];
+    const questionIndex = items.findIndex((question) => question.id === resume.questionId);
+    if (questionIndex >= 0) return questionIndex;
+    if (!Number.isInteger(resume.index)) return -1;
+    return Math.max(0, Math.min(items.length - 1, resume.index));
+  }
+
+  function updateResumeButton() {
+    const button = document.getElementById("resumePractice");
+    if (!button) return;
+    const index = resumeIndex(state.resume);
+    const available = index >= 0;
+    button.disabled = !available;
+    button.textContent = available ? `이어서 풀기 · ${stageLabels[state.resume.stage]} ${index + 1}번` : "이어서 풀기";
+  }
+
+  function saveResume() {
+    const items = data.questions[state.stage];
+    const index = Math.max(0, Math.min(items.length - 1, state.indexes[state.stage]));
+    state.resume = { stage: state.stage, questionId: items[index].id, index };
+    localStorage.setItem(RESUME_KEY, JSON.stringify(state.resume));
+    updateResumeButton();
   }
 
   function setupAuth() {
@@ -271,16 +326,28 @@
       button.addEventListener("click", () => {
         state.stage = button.dataset.stage;
         document.querySelectorAll(".stage-button").forEach((item) => item.setAttribute("aria-selected", String(item === button)));
+        saveResume();
         renderQuestion();
       });
+    });
+    document.getElementById("resumePractice").addEventListener("click", () => {
+      const index = resumeIndex(state.resume);
+      if (index < 0) return;
+      state.stage = state.resume.stage;
+      state.indexes[state.stage] = index;
+      document.querySelectorAll(".stage-button").forEach((button) => button.setAttribute("aria-selected", String(button.dataset.stage === state.stage)));
+      renderQuestion();
+      document.getElementById("practiceTitle").scrollIntoView({ behavior: "smooth", block: "start" });
     });
     document.getElementById("resetProgress").addEventListener("click", () => {
       if (!window.confirm(`${stageLabels[state.stage]} 단계의 학습 기록을 초기화할까요?`)) return;
       state.progress[state.stage] = { answers: {} };
       state.indexes[state.stage] = 0;
       saveProgress();
+      saveResume();
       renderQuestion();
     });
+    updateResumeButton();
     renderQuestion();
   }
 
@@ -351,6 +418,7 @@
   function moveQuestion(delta) {
     const items = data.questions[state.stage];
     state.indexes[state.stage] = Math.max(0, Math.min(items.length - 1, state.indexes[state.stage] + delta));
+    saveResume();
     renderQuestion();
     document.getElementById("practiceTitle").scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -373,12 +441,16 @@
     const items = data.questions[state.stage];
     const hasNextQuestion = state.indexes[state.stage] < items.length - 1;
     if (answer.correct && hasNextQuestion) moveQuestion(1);
-    else renderQuestion();
+    else {
+      saveResume();
+      renderQuestion();
+    }
   }
 
   function submitPractical(question, raw) {
     state.progress.practical.answers[question.id] = { value: "revealed", raw, correct: true };
     saveProgress();
+    saveResume();
     renderQuestion();
   }
 
@@ -434,8 +506,6 @@
 
   function boot() {
     if (!data) throw new Error("학습 데이터가 로드되지 않았습니다.");
-    const unitOrder = new Map(data.theory.map((unit, index) => [unit.id, index]));
-    data.questions.ox.sort((a, b) => unitOrder.get(a.unit) - unitOrder.get(b.unit));
     setupAuth();
     setupNavigation();
     renderTheory();
