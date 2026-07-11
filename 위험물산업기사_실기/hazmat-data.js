@@ -326,7 +326,7 @@
         "염소산칼륨은 분해온도 약 400°C, 비중 2.32, 융점 368°C이며 열분해하여 산소를 발생한다.",
         "염소산칼륨은 온수·글리세린에 잘 녹고 냉수·알코올에는 잘 녹지 않으며, 산과 반응하면 ClO2를 발생해 폭발할 수 있다.",
         "염소산나트륨은 철을 부식시키므로 철제 용기를 피하고 유리 등 내식성 용기에 저장한다.",
-        "염소산암모늄·아염소산나트륨·과염소산나트륨·과염소산암모늄의 열분해 반응식이 반복 출제된다.",
+        "염소산암모늄은 열분해하여 질소·염소·산소·물을 생성한다.",
         "과염소산암모늄의 분해온도는 약 130°C이다.",
         "질산칼륨은 가열하면 아질산칼륨과 산소로 분해한다.",
         "질산암모늄은 조해성이 있고 물에 녹을 때 흡열하며, 급격히 가열하거나 충격을 받으면 단독으로도 폭발할 수 있다.",
@@ -928,7 +928,8 @@
 
   const pastOxFalseStatements = {
     "class1:1": "염소산칼륨은 냉수·알코올에 잘 녹고, 산과 반응해도 폭발성 기체를 발생하지 않는다.",
-    "class1:3": "과염소산암모늄의 분해온도는 약 400°C이다.",
+    "class1:3": "염소산암모늄이 열분해하면 질소와 염소는 생성되지 않는다.",
+    "class1:4": "과염소산암모늄의 분해온도는 약 400°C이다.",
     "class1:5": "질산칼륨을 가열하면 수산화칼륨과 질소가 생성된다.",
     "class1:7": "과산화칼륨은 물과 반응해도 산소를 발생하지 않으므로 주수소화가 적응한다.",
     "class1:9": "과망가니즈산칼륨을 가열하면 산소는 발생하지 않는다.",
@@ -943,7 +944,7 @@
     "class3:9": "금속의 수소화물이 물과 반응하면 주로 산소가 발생한다.",
     "class4:0": "디에틸에테르의 폭발성 과산화물에 10% KI 수용액을 넣으면 완전히 무색을 나타낸다.",
     "class4:2": "아세트알데하이드는 은거울반응을 하지 않고, 산화되면 에탄올이 된다.",
-    "class4:4": "벤젠에 니켈 촉매로 수소를 첨가하면 톨루엔이 생성된다.",
+    "class4:4": "산화프로필렌의 인화점은 37°C, 비중은 1.82이며 휘발성이 작다.",
     "class4:6": "시안화수소는 제1석유류 비수용성액체로 지정수량은 200 L이다.",
     "class4:8": "메탄올은 독성이 없고, 가열된 CuO와 반응하면 아세톤이 생성된다.",
     "class4:10": "에탄올은 산화되면 아세톤이 되며 아이오딘포름반응을 하지 않는다.",
@@ -987,20 +988,22 @@
     "extinguishing:5": "IG-541은 N2 40%·Ar 52%·CO2 8%, G-55는 N2 55%·Ar 45%로 구성된다.",
     "extinguishing:7": "제2종 분말 KHCO3는 열분해하여 Na2CO3·CO2·H2O를 생성한다.",
     "detection:0": "소화난이도등급 I 제조소·일반취급소는 소형수동식소화기만 설치하면 된다.",
-    "detection:2": "옥외탱크저장소는 액표면적 10 m2 이상이거나 탱크 옆판 상단높이 3 m 이상이면 소화난이도등급 I이다.",
+    "detection:2": "옥내저장소는 지정수량 100배 이상이거나 연면적 150 m2 이상이어야 소화난이도등급 I이다.",
     "detection:4": "이송취급소는 지정수량 100배 이상인 경우에만 소화난이도등급 I이다.",
     "management:1": "위험물운반자는 8시간, 위험물운송자는 4시간의 실무교육을 각각 2년마다 받는다.",
     "management:3": "예방규정 이행 실태 최초평가는 제출 후 1년이 되는 해에, 정기평가는 2년마다 실시한다.",
     "management:5": "지하탱크저장소와 이동탱크저장소는 정기점검 결과서 제출 대상에서 항상 제외된다.",
-    "management:7": "안전관리자교육 이수자와 3년 이상 소방공무원 경력자는 모든 유별의 위험물을 취급할 수 있다."
+    "management:7": "위험물기능장·위험물산업기사·위험물기능사의 취급가능 범위는 제4류 위험물로 한정된다."
   };
 
+  const revisedPastOxKeys = new Set(["class1:3", "class1:4", "class4:4", "detection:2", "management:7"]);
   let pastOxNumber = 1;
   Object.entries(pastExamTheory).forEach(([unit, supplement]) => {
     supplement.items.forEach((text, itemIndex) => {
-      const falseStatement = pastOxFalseStatements[`${unit}:${itemIndex}`];
+      const conceptKey = `${unit}:${itemIndex}`;
+      const falseStatement = pastOxFalseStatements[conceptKey];
       questions.ox.push(ox(
-        `oxp${String(pastOxNumber).padStart(3, "0")}`,
+        `oxp${String(pastOxNumber).padStart(3, "0")}${revisedPastOxKeys.has(conceptKey) ? "r2" : ""}`,
         unit,
         falseStatement || text,
         !falseStatement,

@@ -464,18 +464,21 @@
       </div>`;
     const answerText = stage === "ox" ? (question.answer ? "O" : "X") : stage === "choice" ? `${question.answer + 1}. ${question.options[question.answer]}` : question.answers.join(" / ");
     const submittedText = stage === "ox" ? (saved.value ? "O" : "X") : stage === "choice" ? `${saved.value + 1}. ${question.options[saved.value]}` : saved.raw;
+    const explanation = stage === "ox" && question.answer
+      ? `옳은 내용: ${question.q} ${question.explanation}`
+      : question.explanation;
     if (!saved.correct) return `
       <div class="feedback wrong">
         <h4>오답 · 상세해설</h4>
         <p><strong>내 답:</strong> ${formatText(submittedText)}</p>
         <p><strong>정답:</strong> ${formatText(answerText)}</p>
-        <p><strong>해설:</strong> ${formatText(question.explanation)}</p>
+        <p><strong>해설:</strong> ${formatText(explanation)}</p>
       </div>`;
     return `
       <div class="feedback correct">
         <h4>정답</h4>
         <p><strong>정답:</strong> ${formatText(answerText)}</p>
-        <p>${formatText(question.explanation)}</p>
+        <p>${formatText(explanation)}</p>
       </div>`;
   }
 
