@@ -322,9 +322,11 @@
   }
 
   function setupPractice() {
-    document.querySelectorAll(".stage-button").forEach((button) => {
+    document.querySelectorAll(".stage-button").forEach((button, index) => {
+      const stage = button.dataset.stage;
+      button.textContent = `${index + 1}. ${stageLabels[stage]} · ${data.questions[stage].length}`;
       button.addEventListener("click", () => {
-        state.stage = button.dataset.stage;
+        state.stage = stage;
         document.querySelectorAll(".stage-button").forEach((item) => item.setAttribute("aria-selected", String(item === button)));
         saveResume();
         renderQuestion();
