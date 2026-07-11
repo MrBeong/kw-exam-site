@@ -181,7 +181,7 @@
   }
 
   function priorityBadge(priority) {
-    const label = priority === "hot" ? "최빈출" : priority === "often" ? "빈출" : "기본";
+    const label = priority === "hot" ? "최빈출" : priority === "often" ? "빈출" : priority === "past" ? "기출표시" : "기본";
     return `<span class="badge ${priority}">${label}</span>`;
   }
 
@@ -214,7 +214,7 @@
         </section>`).join("");
       const formulas = unit.formulas.length ? `
         <table class="formula-table">
-          <tbody>${unit.formulas.map(([name, formula]) => `<tr><th>${escapeHtml(name)}</th><td>${formatText(formula)}</td></tr>`).join("")}</tbody>
+          <tbody>${unit.formulas.map(([name, formula, flag]) => `<tr class="${flag === "past" ? "past" : ""}"><th>${flag === "past" ? '<span class="badge past">기출표시</span> ' : ""}${escapeHtml(name)}</th><td>${formatText(formula)}</td></tr>`).join("")}</tbody>
         </table>` : "";
       const searchText = [unit.title, unit.group, unit.summary, ...unit.sections.flatMap((s) => s.items.map((p) => p.text)), ...unit.formulas.flat()].join(" ").toLowerCase();
       return `

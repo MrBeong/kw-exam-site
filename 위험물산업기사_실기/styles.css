@@ -12,6 +12,8 @@
   --green-soft: #edf7ef;
   --blue: #1d4ed8;
   --blue-soft: #edf4ff;
+  --cyan: #087f9c;
+  --cyan-soft: #eaf8fb;
   --amber: #a44708;
   --amber-soft: #fff7e8;
   --red: #b42318;
@@ -274,6 +276,7 @@ a { color: var(--blue); }
 
 .badge.hot { color: var(--red); border-color: #f1b5ae; background: var(--red-soft); }
 .badge.often { color: var(--amber); border-color: #efca91; background: var(--amber-soft); }
+.badge.past { color: var(--cyan); border-color: #91d5e3; background: var(--cyan-soft); }
 .badge.base { color: var(--blue); border-color: #b8cdfa; background: var(--blue-soft); }
 
 .theory-list { display: grid; gap: 10px; }
@@ -328,12 +331,14 @@ a { color: var(--blue); }
 
 .theory-point.hot { border-left-color: var(--red); background: var(--red-soft); font-weight: 700; }
 .theory-point.often { border-left-color: var(--amber); background: var(--amber-soft); }
+.theory-point.past { border-left-color: var(--cyan); background: var(--cyan-soft); }
 .theory-point .point-note { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; font-weight: 500; }
 
 .formula-table { width: 100%; margin-top: 18px; border-collapse: collapse; font-size: 14px; }
 .formula-table th,
 .formula-table td { border: 1px solid var(--line); padding: 9px 10px; text-align: left; vertical-align: top; }
 .formula-table th { width: 34%; background: #f4f7f9; }
+.formula-table tr.past th { border-left: 4px solid var(--cyan); background: var(--cyan-soft); }
 
 .chem-formula {
   display: inline-block;
