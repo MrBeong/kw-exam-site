@@ -357,6 +357,12 @@
     return data.theory.find((item) => item.id === unitId)?.title || unitId;
   }
 
+  function oxOptionClass(value, question, saved) {
+    if (!saved) return "";
+    if (saved.value === value) return saved.correct ? "correct" : "wrong";
+    return question.answer === value ? "correct" : "neutral";
+  }
+
   function renderQuestion() {
     const stage = state.stage;
     const items = data.questions[stage];
@@ -369,8 +375,8 @@
     let answerHtml = "";
     if (stage === "ox") {
       answerHtml = `<div class="answer-area ox-grid">
-        <button class="answer-option ${saved?.value === true ? (saved.correct ? "correct" : "wrong") : saved && question.answer === true ? "correct" : ""}" type="button" data-answer="true" ${saved ? "disabled" : ""}>O</button>
-        <button class="answer-option ${saved?.value === false ? (saved.correct ? "correct" : "wrong") : saved && question.answer === false ? "correct" : ""}" type="button" data-answer="false" ${saved ? "disabled" : ""}>X</button>
+        <button class="answer-option ${oxOptionClass(true, question, saved)}" type="button" data-answer="true" ${saved ? "disabled" : ""}>O</button>
+        <button class="answer-option ${oxOptionClass(false, question, saved)}" type="button" data-answer="false" ${saved ? "disabled" : ""}>X</button>
       </div>`;
     } else if (stage === "choice") {
       answerHtml = `<div class="answer-area">${question.options.map((option, optionIndex) => {

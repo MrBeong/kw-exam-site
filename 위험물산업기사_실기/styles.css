@@ -481,6 +481,8 @@ a { color: var(--blue); }
 
 .answer-option:hover { border-color: var(--blue); background: var(--blue-soft); }
 .answer-option:disabled { cursor: default; opacity: 1; color: var(--ink); }
+.answer-option:disabled.neutral,
+.answer-option:disabled.neutral:hover { border-color: var(--line-strong); background: #fff; }
 .answer-option.selected { border-color: var(--blue); background: var(--blue-soft); font-weight: 800; }
 .answer-option.correct { border-color: var(--green); background: var(--green-soft); }
 .answer-option.wrong { border-color: var(--red); background: var(--red-soft); }
