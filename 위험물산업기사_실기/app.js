@@ -323,6 +323,10 @@
   }
 
   function setupPractice() {
+    const pastConceptCount = data.theory.flatMap((unit) => unit.sections.flatMap((section) => section.items)).filter((item) => item.priority === "past").length;
+    const pastFormulaCount = data.theory.flatMap((unit) => unit.formulas).filter((formula) => formula[2] === "past").length;
+    document.getElementById("practiceCoverage").textContent = `하늘색 기출 개념 ${pastConceptCount}개와 반응식 ${pastFormulaCount}개를 전부 O/X로 훑고, 반응식은 빈칸 단계에서 직접 작성합니다.`;
+
     document.querySelectorAll(".stage-button").forEach((button, index) => {
       const stage = button.dataset.stage;
       button.textContent = `${index + 1}. ${stageLabels[stage]} · ${data.questions[stage].length}`;
