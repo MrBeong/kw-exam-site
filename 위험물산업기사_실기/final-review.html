@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="실전 모의고사 3회 기반 위험물산업기사 실기 시험 직전 2시간 압축본">
+  <title>시험 전 2시간 압축본 | 위험물산업기사 실기</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f8;
+      --paper: #fff;
+      --ink: #18212f;
+      --muted: #647184;
+      --line: #d6dde6;
+      --line-strong: #b8c3d1;
+      --navy: #142333;
+      --blue: #155eef;
+      --blue-soft: #edf4ff;
+      --green: #15703d;
+      --green-soft: #edf8f1;
+      --red: #b42318;
+      --red-soft: #fff1f0;
+      --yellow: #8a5a00;
+      --yellow-soft: #fff7df;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      letter-spacing: 0;
+      line-height: 1.6;
+    }
+    button, input { font: inherit; letter-spacing: 0; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    sub, sup { line-height: 0; }
+    .locked { overflow: hidden; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .auth-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: var(--navy);
+    }
+    .auth-gate[hidden] { display: none; }
+    .auth-box {
+      width: min(380px, 100%);
+      background: var(--paper);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .auth-box h1 { margin: 0 0 6px; font-size: 24px; }
+    .auth-box p { margin: 0 0 16px; color: var(--muted); }
+    .auth-form { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+    .auth-form input {
+      min-width: 0;
+      min-height: 46px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      padding: 0 12px;
+    }
+    .auth-error { grid-column: 1 / -1; min-height: 24px; margin: 0; color: var(--red); font-weight: 750; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--paper);
+      color: var(--ink);
+      padding: 0 13px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .button.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .button.dark { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .button.small { min-height: 36px; padding: 0 10px; font-size: 13px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, .97);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      min-height: 68px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand { min-width: 0; }
+    .brand strong { display: block; font-size: 17px; line-height: 1.3; }
+    .brand span { display: block; color: var(--muted); font-size: 12px; }
+    .timer-wrap { display: flex; align-items: center; gap: 7px; }
+    .timer {
+      min-width: 96px;
+      font-variant-numeric: tabular-nums;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 900;
+      text-align: center;
+    }
+    .timer.danger { color: var(--red); }
+
+    .timeline {
+      background: var(--navy);
+      color: #fff;
+      overflow-x: auto;
+    }
+    .timeline nav {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      display: flex;
+      min-width: 690px;
+      padding: 0 18px;
+    }
+    .timeline a {
+      flex: 1;
+      padding: 10px 12px;
+      border-right: 1px solid rgba(255, 255, 255, .14);
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+    }
+    .timeline b { display: block; color: #92c5ff; font-size: 11px; }
+
+    main { width: min(1080px, 100%); margin: 0 auto; padding: 24px 18px 80px; }
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 24px;
+      align-items: end;
+      padding: 8px 0 26px;
+      border-bottom: 2px solid var(--navy);
+    }
+    .intro h1 { margin: 0 0 10px; font-size: 34px; line-height: 1.2; }
+    .intro p { margin: 0; color: var(--muted); }
+    .source-box {
+      border-left: 4px solid var(--blue);
+      background: var(--blue-soft);
+      padding: 13px 14px;
+      font-size: 13px;
+    }
+    .source-box strong { display: block; margin-bottom: 4px; }
+
+    .progress-band {
+      margin: 18px 0 0;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .progress-band label {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px;
+      border-right: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+    .progress-band label:last-child { border-right: 0; }
+    .progress-band input { width: 18px; height: 18px; accent-color: var(--green); }
+
+    .block { padding: 34px 0; border-bottom: 1px solid var(--line-strong); }
+    .block-heading {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 17px;
+    }
+    .block-heading h2 { margin: 0; font-size: 25px; line-height: 1.25; }
+    .block-heading p { margin: 5px 0 0; color: var(--muted); }
+    .time-badge {
+      flex: 0 0 auto;
+      border: 1px solid #f2c56b;
+      background: var(--yellow-soft);
+      color: var(--yellow);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .callout {
+      margin: 0 0 16px;
+      border-left: 4px solid var(--green);
+      background: var(--green-soft);
+      padding: 12px 14px;
+      font-size: 14px;
+    }
+    .callout.danger { border-left-color: var(--red); background: var(--red-soft); }
+    .formula-table, .fact-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      font-size: 14px;
+    }
+    .formula-table th, .formula-table td,
+    .fact-table th, .fact-table td {
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    .formula-table th, .fact-table th { background: #edf0f4; font-size: 12px; }
+    .formula-table td:first-child { width: 24%; font-weight: 800; }
+    .formula {
+      font-family: "Times New Roman", ui-serif, serif;
+      font-size: 16px;
+      font-weight: 700;
+      white-space: normal;
+    }
+    .answer { color: var(--green); font-weight: 850; }
+    .warning { color: var(--red); font-weight: 850; }
+
+    .fact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .fact {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: 14px;
+    }
+    .fact h3 { margin: 0 0 7px; font-size: 16px; }
+    .fact p { margin: 0; font-size: 14px; }
+    .fact .memory { margin-top: 7px; color: var(--muted); font-size: 12px; }
+
+    .calc-list { display: grid; gap: 12px; }
+    .calc-item { border-left: 4px solid var(--blue); background: var(--paper); padding: 14px 16px; }
+    .calc-item h3 { margin: 0 0 5px; font-size: 16px; }
+    .calc-item p { margin: 4px 0; }
+
+    .recall-toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .recall-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .recall-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      overflow: hidden;
+    }
+    .recall-item button {
+      width: 100%;
+      min-height: 54px;
+      border: 0;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 11px 13px;
+      text-align: left;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .recall-item button::after { content: "정답 보기"; float: right; color: var(--blue); font-size: 11px; }
+    .recall-item button[aria-expanded="true"]::after { content: "정답 닫기"; }
+    .recall-answer { border-top: 1px solid var(--line); background: var(--green-soft); padding: 11px 13px; font-size: 14px; }
+    .recall-answer[hidden] { display: none; }
+
+    .last-five {
+      margin-top: 22px;
+      border: 2px solid var(--red);
+      background: var(--paper);
+      padding: 18px;
+    }
+    .last-five h2 { margin: 0 0 10px; color: var(--red); font-size: 22px; }
+    .last-five ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 34px; }
+    .last-five li { margin-bottom: 7px; break-inside: avoid; font-size: 14px; }
+    .page-footer { padding-top: 20px; color: var(--muted); font-size: 12px; text-align: center; }
+
+    @media (max-width: 760px) {
+      .topbar-inner { align-items: flex-start; padding: 9px 12px; }
+      .brand span { display: none; }
+      .timer-wrap { flex-wrap: wrap; justify-content: flex-end; }
+      .timer { width: 100%; min-width: 0; font-size: 20px; text-align: right; }
+      .button.small { min-height: 34px; }
+      main { padding: 18px 12px 60px; }
+      .intro { grid-template-columns: 1fr; gap: 14px; }
+      .intro h1 { font-size: 28px; }
+      .progress-band { grid-template-columns: 1fr; }
+      .progress-band label { min-height: 44px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .progress-band label:last-child { border-bottom: 0; }
+      .block { padding: 28px 0; }
+      .block-heading { display: block; }
+      .time-badge { display: inline-block; margin-top: 9px; }
+      .formula-table, .fact-table { font-size: 13px; }
+      .formula-table thead, .fact-table thead { display: none; }
+      .formula-table tbody, .fact-table tbody,
+      .formula-table tr, .fact-table tr,
+      .formula-table td, .fact-table td { display: block; width: 100%; }
+      .formula-table, .fact-table { background: transparent; }
+      .formula-table tr, .fact-table tr {
+        margin-bottom: 10px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--paper);
+        overflow: hidden;
+      }
+      .formula-table td, .fact-table td { padding: 9px 10px; border: 0; border-bottom: 1px solid var(--line); }
+      .formula-table td:first-child, .fact-table td:first-child { width: 100%; background: #edf0f4; font-weight: 850; }
+      .formula-table td:last-child, .fact-table td:last-child { border-bottom: 0; }
+      .formula { font-size: 15px; }
+      .fact-grid, .recall-list { grid-template-columns: 1fr; }
+      .last-five ol { columns: 1; }
+    }
+  </style>
+</head>
+<body class="locked">
+  <section class="auth-gate" id="authGate" aria-labelledby="authTitle">
+    <div class="auth-box">
+      <h1 id="authTitle">시험 전 2시간 압축본</h1>
+      <p>개인 학습실 비밀번호를 입력하세요.</p>
+      <form class="auth-form" id="authForm">
+        <label class="sr-only" for="passwordInput">비밀번호</label>
+        <input id="passwordInput" type="password" inputmode="numeric" maxlength="8" autocomplete="current-password" placeholder="비밀번호">
+        <button class="button dark" type="submit">열기</button>
+        <p class="auth-error" id="authError" role="alert"></p>
+      </form>
+    </div>
+  </section>
+
+  <div id="app" hidden>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <strong>위험물산업기사 실기</strong>
+          <span>실전 모의고사 3회 · 60문항 기반</span>
+        </div>
+        <div class="timer-wrap" aria-label="2시간 타이머">
+          <span class="timer" id="timer">02:00:00</span>
+          <button class="button primary small" id="startTimer" type="button">시작</button>
+          <button class="button small" id="pauseTimer" type="button">정지</button>
+          <button class="button small" id="resetTimer" type="button">초기화</button>
+        </div>
+      </div>
+      <div class="timeline">
+        <nav aria-label="압축 학습 순서">
+          <a href="#reactions"><b>0~30분</b>반응식</a>
+          <a href="#materials"><b>30~55분</b>물질·지정수량</a>
+          <a href="#facilities"><b>55~80분</b>시설 수치</a>
+          <a href="#calculations"><b>80~105분</b>계산</a>
+          <a href="#recall"><b>105~120분</b>백지회상</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div>
+          <h1>시험 전 2시간 압축본</h1>
+          <p>읽는 자료가 아니라 답을 가리고 직접 말하는 자료입니다. 막히는 항목만 표시하고 한 항목에서 90초 이상 머물지 마세요.</p>
+        </div>
+        <div class="source-box">
+          <strong>범위</strong>
+          첨부한 실전 모의고사 제1~3회 문제·해설만 반영했습니다. 새 수치나 외부 문제는 추가하지 않았습니다.
+        </div>
+      </section>
+
+      <div class="progress-band" aria-label="학습 완료 표시">
+        <label><input type="checkbox" data-progress="reactions"> 0~30분 반응식</label>
+        <label><input type="checkbox" data-progress="materials"> 30~55분 물질</label>
+        <label><input type="checkbox" data-progress="facilities"> 55~80분 시설</label>
+        <label><input type="checkbox" data-progress="calculations"> 80~105분 계산</label>
+        <label><input type="checkbox" data-progress="recall"> 105~120분 회상</label>
+      </div>
+
+      <section class="block" id="reactions">
+        <div class="block-heading">
+          <div>
+            <h2>1. 반응식 집중 회수</h2>
+            <p>왼쪽 물질명만 보고 생성물과 계수를 먼저 종이에 쓴 뒤 확인하세요.</p>
+          </div>
+          <span class="time-badge">0~30분 · 30분</span>
+        </div>
+        <div class="callout danger"><strong>채점 포인트:</strong> 화학식 아래첨자, 생성물, 계수를 모두 확인합니다. 특히 물 반응에서 발생기체를 따로 쓰라는 문제가 반복됩니다.</div>
+        <table class="formula-table">
+          <thead><tr><th>출제 물질</th><th>외울 반응식</th><th>발생·주의</th></tr></thead>
+          <tbody>
+            <tr><td>탄화칼슘 + 물</td><td class="formula">CaC<sub>2</sub> + 2H<sub>2</sub>O → Ca(OH)<sub>2</sub> + C<sub>2</sub>H<sub>2</sub>↑</td><td>아세틸렌</td></tr>
+            <tr><td>아세틸렌 연소</td><td class="formula">2C<sub>2</sub>H<sub>2</sub> + 5O<sub>2</sub> → 4CO<sub>2</sub> + 2H<sub>2</sub>O</td><td>산소 몰비 1 : 2.5</td></tr>
+            <tr><td>탄화알루미늄 + 물</td><td class="formula">Al<sub>4</sub>C<sub>3</sub> + 12H<sub>2</sub>O → 4Al(OH)<sub>3</sub> + 3CH<sub>4</sub>↑</td><td>메테인</td></tr>
+            <tr><td>메테인 연소</td><td class="formula">CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O</td><td>완전연소</td></tr>
+            <tr><td>트리에틸알루미늄 + 물</td><td class="formula">(C<sub>2</sub>H<sub>5</sub>)<sub>3</sub>Al + 3H<sub>2</sub>O → Al(OH)<sub>3</sub> + 3C<sub>2</sub>H<sub>6</sub>↑</td><td>에테인</td></tr>
+            <tr><td>수소화알루미늄리튬 + 물</td><td class="formula">LiAlH<sub>4</sub> + 4H<sub>2</sub>O → LiOH + Al(OH)<sub>3</sub> + 4H<sub>2</sub>↑</td><td>수소</td></tr>
+            <tr><td>리튬 + 물</td><td class="formula">2Li + 2H<sub>2</sub>O → 2LiOH + H<sub>2</sub>↑</td><td>수소</td></tr>
+            <tr><td>나트륨 + 에탄올</td><td class="formula">2Na + 2C<sub>2</sub>H<sub>5</sub>OH → 2C<sub>2</sub>H<sub>5</sub>ONa + H<sub>2</sub>↑</td><td>수소</td></tr>
+            <tr><td>에탄올 연소</td><td class="formula">C<sub>2</sub>H<sub>5</sub>OH + 3O<sub>2</sub> → 2CO<sub>2</sub> + 3H<sub>2</sub>O</td><td>증발연소</td></tr>
+            <tr><td>마그네슘 + 이산화탄소</td><td class="formula">2Mg + CO<sub>2</sub> → 2MgO + C</td><td class="warning">가연성 탄소 생성</td></tr>
+            <tr><td>칼륨 + 이산화탄소</td><td class="formula">4K + 3CO<sub>2</sub> → 2K<sub>2</sub>CO<sub>3</sub> + C</td><td class="warning">CO<sub>2</sub> 소화 부적응</td></tr>
+            <tr><td>황린 연소</td><td class="formula">P<sub>4</sub> + 5O<sub>2</sub> → 2P<sub>2</sub>O<sub>5</sub></td><td>완전연소</td></tr>
+            <tr><td>이황화탄소 연소</td><td class="formula">CS<sub>2</sub> + 3O<sub>2</sub> → CO<sub>2</sub> + 2SO<sub>2</sub></td><td>SO<sub>2</sub> 발생</td></tr>
+            <tr><td>질산칼륨 열분해</td><td class="formula">2KNO<sub>3</sub> → 2KNO<sub>2</sub> + O<sub>2</sub>↑</td><td>산소 발생</td></tr>
+            <tr><td>질산암모늄 열분해</td><td class="formula">2NH<sub>4</sub>NO<sub>3</sub> → 2N<sub>2</sub> + 4H<sub>2</sub>O + O<sub>2</sub>↑</td><td>N<sub>2</sub>·H<sub>2</sub>O·O<sub>2</sub></td></tr>
+            <tr><td>나이트로글리세린 분해</td><td class="formula">4C<sub>3</sub>H<sub>5</sub>(ONO<sub>2</sub>)<sub>3</sub> → 6N<sub>2</sub> + 12CO<sub>2</sub> + 10H<sub>2</sub>O + O<sub>2</sub></td><td>자기연소</td></tr>
+            <tr><td>아염소산나트륨 + 알루미늄</td><td class="formula">3NaClO<sub>2</sub> + 4Al → 2Al<sub>2</sub>O<sub>3</sub> + 3NaCl</td><td>산화·환원</td></tr>
+            <tr><td>염소산칼륨 + 황산</td><td class="formula">6KClO<sub>3</sub> + 3H<sub>2</sub>SO<sub>4</sub> → 2HClO<sub>4</sub> + 4ClO<sub>2</sub> + 3K<sub>2</sub>SO<sub>4</sub> + 2H<sub>2</sub>O</td><td class="warning">유독한 ClO<sub>2</sub></td></tr>
+            <tr><td>구리 + 묽은 질산</td><td class="formula">3Cu + 8HNO<sub>3</sub> → 3Cu(NO<sub>3</sub>)<sub>2</sub> + 2NO + 4H<sub>2</sub>O</td><td>일산화질소</td></tr>
+            <tr><td>화학포</td><td class="formula">Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> + 6NaHCO<sub>3</sub> → 3Na<sub>2</sub>SO<sub>4</sub> + 2Al(OH)<sub>3</sub> + 6CO<sub>2</sub>↑</td><td>CO<sub>2</sub> 6 mol</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block" id="materials">
+        <div class="block-heading">
+          <div>
+            <h2>2. 물질 식별·지정수량</h2>
+            <p>설명 한 줄을 보고 물질명, 화학식, 지정수량을 한 묶음으로 회상하세요.</p>
+          </div>
+          <span class="time-badge">30~55분 · 25분</span>
+        </div>
+        <div class="fact-grid">
+          <article class="fact"><h3>과산화수소</h3><p><span class="answer">36 wt% 이상 · 300 kg</span></p><p class="memory">안정제: 인산나트륨·인산·요산·글리세린 중 2개 / 피부 접촉: 다량의 물</p></article>
+          <article class="fact"><h3>질산</h3><p>HNO<sub>3</sub> · <span class="answer">비중 1.49 이상 · 300 kg</span></p><p class="memory">묽은 질산 + Cu → NO, 진한 질산 + Cu → NO<sub>2</sub></p></article>
+          <article class="fact"><h3>시안화수소</h3><p>HCN · 분자량 27 · 비점 26°C · 맹독성 · <span class="answer">400 L</span></p><p class="memory">제4류 제1석유류 수용성액체</p></article>
+          <article class="fact"><h3>메탄올</h3><p>CH<sub>3</sub>OH · 인화점 11°C · 시신경 마비 · <span class="answer">400 L</span></p><p class="memory">아이오딘포름반응 음성</p></article>
+          <article class="fact"><h3>다이크로뮴산칼륨</h3><p>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> · 등적색 판상결정 · <span class="answer">1,000 kg</span></p><p class="memory">분자량 294 · 융점 398°C · 비중 2.69</p></article>
+          <article class="fact"><h3>황화인 3종</h3><p>P<sub>4</sub>S<sub>3</sub> · P<sub>2</sub>S<sub>5</sub> · P<sub>4</sub>S<sub>7</sub></p><p class="memory">삼황화인·오황화인·칠황화인</p></article>
+          <article class="fact"><h3>보호액</h3><p>황린: <span class="answer">pH 약 9의 물</span><br>칼륨: <span class="answer">등유·경유·유동파라핀</span><br>CS<sub>2</sub>: <span class="answer">물</span></p></article>
+          <article class="fact"><h3>제3류 지정수량</h3><p>트리에틸알루미늄 <span class="answer">10 kg</span><br>리튬 <span class="answer">50 kg</span><br>탄화알루미늄 <span class="answer">300 kg</span></p></article>
+          <article class="fact"><h3>연소방식</h3><p>나트륨·금속분: <span class="answer">표면연소</span><br>에탄올·다이에틸에터: <span class="answer">증발연소</span><br>TNT·피크르산: <span class="answer">자기연소</span></p></article>
+          <article class="fact"><h3>황</h3><p>용매: <span class="answer">이황화탄소 CS<sub>2</sub></span><br>완전연소 생성가스: <span class="answer">이산화황 SO<sub>2</sub></span></p><p class="memory">단사황·사방황은 CS<sub>2</sub>에 잘 녹음</p></article>
+          <article class="fact"><h3>크실렌 이성질체</h3><p><span class="answer">o-크실렌 · m-크실렌 · p-크실렌</span></p><p class="memory">위치이성질체 3개</p></article>
+          <article class="fact"><h3>에탄올 판별</h3><p>KI·I<sub>2</sub> 후 KOH → 황색 CHI<sub>3</sub> 침전</p><p class="memory">물질: <span class="answer">에탄올</span> / 반응명: <span class="answer">아이오딘포름반응</span></p></article>
+        </div>
+      </section>
+
+      <section class="block" id="facilities">
+        <div class="block-heading">
+          <div>
+            <h2>3. 저장소·탱크·운반 수치</h2>
+            <p>숫자만 보지 말고 무엇의 거리·높이·두께인지 단위까지 함께 말하세요.</p>
+          </div>
+          <span class="time-badge">55~80분 · 25분</span>
+        </div>
+        <table class="fact-table">
+          <thead><tr><th>대상</th><th>시험 답안</th><th>혼동 방지</th></tr></thead>
+          <tbody>
+            <tr><td>옥내탱크 밸브 없는 통기관</td><td>개구부에서 <strong>1 m 이상</strong><br>지면에서 <strong>4 m 이상</strong><br>인화점 40°C 미만 탱크: 부지경계선에서 <strong>1.5 m 이상</strong></td><td>1 · 4 · 1.5</td></tr>
+            <tr><td>옥외탱크 방유제</td><td>높이 <strong>0.5~3 m</strong><br>최대면적 <strong>80,000 m²</strong><br>탱크 <strong>10기 이하</strong></td><td>높이·면적·기수 순서</td></tr>
+            <tr><td>옥내저장소 급기구</td><td>바닥면적 <strong>150 m²마다 1개 이상</strong><br>급기구 면적 <strong>800 cm² 이상</strong></td><td>450 m²라면 3개</td></tr>
+            <tr><td>옥내저장소 배출설비</td><td>인화점 <strong>70°C 미만</strong> 위험물은 가연성 증기를 지붕 위로 배출</td><td>70°C 이상이 아님</td></tr>
+            <tr><td>덩어리 황 옥외저장소</td><td>하나의 경계표시 내부면적 <strong>100 m² 이하</strong><br>경계표시 높이 <strong>1.5 m 이하</strong></td><td>100 · 1.5</td></tr>
+            <tr><td>옥외탱크 통기관</td><td>끝부분을 수평면보다 <strong>45° 이상</strong> 구부림<br>40 mesh 이상 구리망과 동등한 <strong>인화방지장치</strong></td><td>각도 45°</td></tr>
+            <tr><td>피뢰침</td><td>지정수량 <strong>10배 이상</strong> 제조소</td><td>안전상 지장 없는 경우 예외</td></tr>
+            <tr><td>이동저장탱크 칸막이</td><td><strong>4,000 L 이하마다</strong><br><strong>3.2 mm 이상</strong> 강철판</td><td>4,000 · 3.2</td></tr>
+            <tr><td>이동저장탱크 수압시험</td><td>압력탱크: 최대상용압력의 <strong>1.5배</strong><br>그 밖의 탱크: <strong>70 kPa</strong><br>시험시간: <strong>10분</strong></td><td>1.5 · 70 · 10</td></tr>
+            <tr><td>이동저장탱크 방호틀</td><td>역할: 전복 시 충격 흡수·누설 방지<br>두께 <strong>2.3 mm 이상</strong><br>정상부: 부속장치보다 <strong>50 mm 이상</strong> 높게</td><td>2.3 · 50</td></tr>
+            <tr><td>알킬알루미늄 1,000 kg 옥내저장</td><td>지정수량 100배 → 내화구조 보유공지 <strong>5 m 이상</strong><br>창고 바닥면적 <strong>1,000 m² 이하</strong></td><td>5 · 1,000</td></tr>
+            <tr><td>정전기 제거 3가지</td><td><strong>접지</strong><br>상대습도 <strong>70% 이상</strong><br><strong>공기 이온화</strong></td><td>답안 3개 그대로</td></tr>
+            <tr><td>혼재</td><td>제2류와 혼재 가능: <strong>제4류·제5류</strong><br>제3류와 혼재 가능: <strong>제4류</strong></td><td>2↔4·5, 3↔4</td></tr>
+            <tr><td>피복</td><td>특수인화물: <strong>차광성 피복</strong><br>알칼리금속 과산화물: <strong>차광성·방수성 피복</strong></td><td>빛만 / 빛+물</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="block" id="calculations">
+        <div class="block-heading">
+          <div>
+            <h2>4. 계산형 5패턴</h2>
+            <p>식 → 대입 → 단위 → 판정 순서로 씁니다. 답만 맞히지 말고 중간식을 남기세요.</p>
+          </div>
+          <span class="time-badge">80~105분 · 25분</span>
+        </div>
+        <div class="calc-list">
+          <article class="calc-item">
+            <h3>① 지정수량 배수 합산</h3>
+            <p class="formula">Σ(실제수량 ÷ 지정수량)</p>
+            <p>다이에틸에터 200 L, 수용성 제1석유류 400 L, 수용성 제2석유류 4,000 L, 수용성 제3석유류 12,000 L, 제4석유류 24,000 L</p>
+            <p class="answer">200/50 + 400/400 + 4,000/2,000 + 12,000/4,000 + 24,000/6,000 = 14배</p>
+          </article>
+          <article class="calc-item">
+            <h3>② 위험물 소요단위</h3>
+            <p>위험물은 지정수량의 10배가 1소요단위이다.</p>
+            <p class="formula">다이에틸에터 1소요단위 = 50 L × 10 = 500 L</p>
+            <p class="answer">2,000 L ÷ 500 L = 4소요단위</p>
+          </article>
+          <article class="calc-item">
+            <h3>③ 반응식 몰비 → 기체부피</h3>
+            <p>탄화칼슘 32 g: 32/64 = 0.5 mol → C<sub>2</sub>H<sub>2</sub> 0.5 mol → O<sub>2</sub> 1.25 mol</p>
+            <p class="answer">표준상태 O<sub>2</sub> 부피 = 1.25 × 22.4 = 28 L</p>
+            <p>탄화칼슘 128 g이면 2 mol → O<sub>2</sub> 5 mol → <strong>112 L</strong></p>
+          </article>
+          <article class="calc-item">
+            <h3>④ 질량·밀도 → 연소량</h3>
+            <p>메탄올 10 L, 비중 0.8 → 질량 8 kg. CH<sub>3</sub>OH 32 kg당 O<sub>2</sub> 48 kg 필요.</p>
+            <p class="answer">이론산소량 = 8 × 48/32 = 12 kg</p>
+            <p>CO<sub>2</sub>는 250 mol이며 25°C, 1 atm에서 PV = nRT 적용 → <strong>약 6.11 m³</strong></p>
+          </article>
+          <article class="calc-item">
+            <h3>⑤ 증기비중·함량</h3>
+            <p class="formula">증기비중 = 물질 분자량 ÷ 공기 평균분자량</p>
+            <p>톨루엔: 92/28.84 = <strong>3.19</strong></p>
+            <p>NH<sub>4</sub>NO<sub>3</sub> 분자량 80 → 질소 28/80 × 100 = <strong>35 wt%</strong>, 수소 4/80 × 100 = <strong>5 wt%</strong></p>
+          </article>
+          <article class="calc-item">
+            <h3>⑥ 전체용적에서 공간용적 제외</h3>
+            <p>먼저 탱크의 기하학적 내용적을 구하고 공간용적 10%를 제외한다.</p>
+            <p class="formula">저장용량 = 내용적 × (1 - 0.10)</p>
+            <p>첨부 원통형 탱크 문제: 내용적 263.89 m³ × 0.9 = <span class="answer">237.50 m³</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="block" id="recall">
+        <div class="block-heading">
+          <div>
+            <h2>5. 15분 백지회상</h2>
+            <p>질문을 읽고 5초 안에 소리 내어 답한 뒤 정답을 여세요. 틀린 항목만 다시 봅니다.</p>
+          </div>
+          <span class="time-badge">105~120분 · 15분</span>
+        </div>
+        <div class="recall-toolbar">
+          <button class="button small" id="showAll" type="button">정답 모두 보기</button>
+          <button class="button small" id="hideAll" type="button">정답 모두 가리기</button>
+          <a class="button small" href="index.html">학습실로 돌아가기</a>
+        </div>
+        <div class="recall-list">
+          <article class="recall-item"><button type="button" aria-expanded="false">황린·칼륨·CS<sub>2</sub>의 보호액?</button><div class="recall-answer" hidden>황린: pH 약 9의 물 / 칼륨: 등유·경유·유동파라핀 / CS<sub>2</sub>: 물</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">과산화수소 위험물 농도와 지정수량?</button><div class="recall-answer" hidden>36 wt% 이상, 300 kg</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">질산의 위험물 비중 기준과 지정수량?</button><div class="recall-answer" hidden>비중 1.49 이상, 300 kg</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">옥외탱크 방유제 높이·면적·탱크 수?</button><div class="recall-answer" hidden>0.5 m 이상 3 m 이하 / 80,000 m² 이하 / 10기 이하</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">옥내저장소 급기구 기준?</button><div class="recall-answer" hidden>바닥면적 150 m²마다 1개 이상, 급기구 면적 800 cm² 이상</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">덩어리 황 경계표시 면적과 높이?</button><div class="recall-answer" hidden>하나의 내부면적 100 m² 이하, 높이 1.5 m 이하</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">이동저장탱크 칸막이 용량과 두께?</button><div class="recall-answer" hidden>4,000 L 이하마다, 강철판 3.2 mm 이상</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">정전기 제거방법 3가지?</button><div class="recall-answer" hidden>접지, 상대습도 70% 이상, 공기 이온화</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">제2류와 혼재 가능한 유별?</button><div class="recall-answer" hidden>제4류와 제5류</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">HCN의 지정수량?</button><div class="recall-answer" hidden>400 L</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">마그네슘에 CO<sub>2</sub> 소화가 위험한 이유?</button><div class="recall-answer" hidden>2Mg + CO<sub>2</sub> → 2MgO + C. 가연성 탄소가 생성되어 위험하다.</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">탄화알루미늄과 물의 발생기체?</button><div class="recall-answer" hidden>메테인 CH<sub>4</sub></div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">질산암모늄 열분해 생성물?</button><div class="recall-answer" hidden>질소, 물, 산소: 2NH<sub>4</sub>NO<sub>3</sub> → 2N<sub>2</sub> + 4H<sub>2</sub>O + O<sub>2</sub></div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">구리와 묽은 질산의 발생가스?</button><div class="recall-answer" hidden>일산화질소 NO</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">에탄올의 아이오딘포름반응 결과?</button><div class="recall-answer" hidden>황색 아이오딘포름 CHI<sub>3</sub> 침전</div></article>
+          <article class="recall-item"><button type="button" aria-expanded="false">이황화탄소가 물 아래에 있는 이유?</button><div class="recall-answer" hidden>물보다 무겁고 물에 녹지 않기 때문이다.</div></article>
+        </div>
+      </section>
+
+      <section class="last-five">
+        <h2>시험장 입실 직전 5분</h2>
+        <ol>
+          <li>반응식은 생성물부터 쓰고 마지막에 계수를 맞춘다.</li>
+          <li>지정수량 배수는 각 수량을 각각의 지정수량으로 나눠 모두 더한다.</li>
+          <li>기체는 표준상태인지 확인한 후 1 mol = 22.4 L를 적용한다.</li>
+          <li>거리·높이·면적·두께는 숫자만 쓰지 말고 단위를 붙인다.</li>
+          <li>과산화수소: 36 wt%·300 kg·안정제·다량의 물.</li>
+          <li>질산: HNO<sub>3</sub>·비중 1.49·300 kg.</li>
+          <li>방유제: 0.5~3 m·80,000 m²·10기.</li>
+          <li>이동탱크: 4,000 L·3.2 mm·1.5배·70 kPa·10분.</li>
+          <li>정전기: 접지·습도 70%·공기 이온화.</li>
+          <li>모르는 서술형도 원인 → 위험 결과 → 조치 순서로 채점어를 남긴다.</li>
+        </ol>
+      </section>
+
+      <footer class="page-footer">첨부 자료: 실전 모의고사 제1~3회 문제 및 정답·해설 · 개인 시험 직전 학습용</footer>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+      const PASSWORD = "6761";
+      const AUTH_KEY = "hazmat-study-unlocked-v2";
+      const STATE_KEY = "hazmat-final-review-v1";
+      const gate = document.getElementById("authGate");
+      const app = document.getElementById("app");
+      const form = document.getElementById("authForm");
+      const password = document.getElementById("passwordInput");
+      const authError = document.getElementById("authError");
+
+      function unlock() {
+        sessionStorage.setItem(AUTH_KEY, "1");
+        gate.hidden = true;
+        app.hidden = false;
+        document.body.classList.remove("locked");
+      }
+
+      if (sessionStorage.getItem(AUTH_KEY) === "1") unlock();
+      else setTimeout(() => password.focus(), 50);
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (password.value === PASSWORD) {
+          authError.textContent = "";
+          unlock();
+        } else {
+          authError.textContent = "비밀번호가 맞지 않습니다.";
+          password.select();
+        }
+      });
+
+      let saved = {};
+      try { saved = JSON.parse(localStorage.getItem(STATE_KEY)) || {}; } catch (error) { saved = {}; }
+      const progress = saved.progress || {};
+      document.querySelectorAll("[data-progress]").forEach(function (input) {
+        input.checked = Boolean(progress[input.dataset.progress]);
+        input.addEventListener("change", function () {
+          progress[input.dataset.progress] = input.checked;
+          saveState();
+        });
+      });
+
+      const timer = document.getElementById("timer");
+      let remaining = Number.isFinite(saved.remaining) ? Math.max(0, saved.remaining) : 7200;
+      let deadline = saved.running && saved.deadline ? saved.deadline : null;
+      let running = Boolean(deadline);
+      let interval = null;
+
+      function currentRemaining() {
+        return running ? Math.max(0, Math.ceil((deadline - Date.now()) / 1000)) : remaining;
+      }
+
+      function saveState() {
+        localStorage.setItem(STATE_KEY, JSON.stringify({
+          progress: progress,
+          remaining: currentRemaining(),
+          running: running,
+          deadline: deadline
+        }));
+      }
+
+      function renderTimer() {
+        remaining = currentRemaining();
+        const hours = Math.floor(remaining / 3600);
+        const minutes = Math.floor((remaining % 3600) / 60);
+        const seconds = remaining % 60;
+        timer.textContent = [hours, minutes, seconds].map(function (value) { return String(value).padStart(2, "0"); }).join(":");
+        timer.classList.toggle("danger", remaining <= 900);
+        if (remaining === 0 && running) {
+          running = false;
+          deadline = null;
+          clearInterval(interval);
+          saveState();
+        }
+      }
+
+      function startTimer() {
+        if (running || remaining === 0) return;
+        deadline = Date.now() + remaining * 1000;
+        running = true;
+        interval = setInterval(renderTimer, 250);
+        renderTimer();
+        saveState();
+      }
+
+      function pauseTimer() {
+        if (!running) return;
+        remaining = currentRemaining();
+        running = false;
+        deadline = null;
+        clearInterval(interval);
+        renderTimer();
+        saveState();
+      }
+
+      function resetTimer() {
+        running = false;
+        deadline = null;
+        remaining = 7200;
+        clearInterval(interval);
+        renderTimer();
+        saveState();
+      }
+
+      document.getElementById("startTimer").addEventListener("click", startTimer);
+      document.getElementById("pauseTimer").addEventListener("click", pauseTimer);
+      document.getElementById("resetTimer").addEventListener("click", resetTimer);
+      renderTimer();
+      if (running) interval = setInterval(renderTimer, 250);
+
+      const recallButtons = Array.from(document.querySelectorAll(".recall-item button"));
+      function setAnswer(button, open) {
+        button.setAttribute("aria-expanded", String(open));
+        button.nextElementSibling.hidden = !open;
+      }
+      recallButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          setAnswer(button, button.getAttribute("aria-expanded") !== "true");
+        });
+      });
+      document.getElementById("showAll").addEventListener("click", function () { recallButtons.forEach(function (button) { setAnswer(button, true); }); });
+      document.getElementById("hideAll").addEventListener("click", function () { recallButtons.forEach(function (button) { setAnswer(button, false); }); });
+      window.addEventListener("beforeunload", saveState);
+    })();
+  </script>
+</body>
+</html>

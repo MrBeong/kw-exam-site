@@ -399,6 +399,7 @@ a { color: var(--blue); }
   color: var(--ink);
   padding: 0 14px;
   font-weight: 850;
+  text-decoration: none;
   cursor: pointer;
 }
 
