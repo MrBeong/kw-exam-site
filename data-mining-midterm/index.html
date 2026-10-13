@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="강의자료와 전사 대조본을 기반으로 만든 데이터마이닝 중간고사 개념 정리 및 문제 풀이 페이지" />
   <title>데이터마이닝 중간고사 · Study OS</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     :root {
       --bg: #ffffff;
@@ -252,11 +263,18 @@
       background: #f7f7f5;
       border: 1px solid #ededeb;
       border-radius: 4px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 13px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
       overflow-x: auto;
       white-space: nowrap;
     }
+    .formula mjx-container { margin: 0 !important; }
+    .priority-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0 22px; }
+    .priority-card { border: 1px solid var(--line); border-radius: 6px; padding: 14px; background: #fff; }
+    .priority-card strong { display: block; margin-bottom: 5px; }
+    .priority-card p { margin: 0; color: var(--muted); font-size: 12px; }
+    .stars { letter-spacing: 1px; font-size: 12px; }
+    .blank-page { white-space: nowrap; font-weight: 650; }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .note-list { margin: 8px 0; padding-left: 23px; }
     .note-list li { margin: 5px 0; }
@@ -370,7 +388,7 @@
       body.side-open .sidebar { transform: translateX(0); }
       .mobile-menu { display: grid; }
       main { width: min(760px, calc(100% - 32px)); padding-top: 48px; }
-      .dash-grid, .two-col { grid-template-columns: 1fr; }
+      .dash-grid, .two-col, .priority-grid { grid-template-columns: 1fr; }
       .flow { grid-template-columns: 1fr; }
       .flow-step { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
       .flow-step:last-child { border-bottom: 0; }
@@ -423,8 +441,9 @@
       <a class="side-link active" href="#dashboard"><span class="side-icon">⌂</span>시험 대시보드</a>
       <a class="side-link" href="#now"><span class="side-icon">→</span>지금 먼저</a>
       <a class="side-link" href="#concepts"><span class="side-icon">▤</span>개념 노트</a>
+      <a class="side-link" href="#priority"><span class="side-icon">★</span>Summary·강조 지도</a>
       <a class="side-link" href="#blanks"><span class="side-icon">▣</span>교안 빈칸</a>
-      <a class="side-link" href="#problems"><span class="side-icon">□</span>문제 은행 <span class="side-count">64</span></a>
+      <a class="side-link" href="#problems"><span class="side-icon">□</span>문제 은행 <span class="side-count">100</span></a>
       <a class="side-link" href="#mistakes"><span class="side-icon">↺</span>오답 노트 <span class="side-count" id="mistakeCountSide">0</span></a>
       <a class="side-link" href="#checklist"><span class="side-icon">✓</span>직전 체크리스트</a>
     </div>
@@ -462,7 +481,7 @@
 
         <div class="callout black block">
           <div class="callout-icon">!</div>
-          <div><strong>2026-10-13 제공된 시험 공지를 최종 기준으로 전면 재검증했습니다.</strong><br />코드·별첨·로지스틱 문제는 제거했고, 교안의 빈 답안 상자와 원문 오류까지 포함해 64문제로 확장했습니다.</div>
+          <div><strong>2026-10-13 제공된 시험 공지와 각 교안의 Summary, 제공 전사의 강조 발언을 최종 기준으로 재검증했습니다.</strong><br />빈칸 페이지는 개별 페이지 단위로 모두 정리했고, 사례형·빈칸형·객관식·계산·서술형을 100문제로 확장했습니다.</div>
         </div>
 
         <div class="dash-grid">
@@ -487,10 +506,10 @@
         <table class="study-table block">
           <thead><tr><th>순서</th><th>할 일</th><th>완료 기준</th><th>상태</th></tr></thead>
           <tbody>
-            <tr><td>01</td><td><strong>교안 빈칸 회수</strong></td><td>선형대수·회귀 II 빈칸을 답 없이 먼저 재현</td><td><span class="status-dot open"></span>진행</td></tr>
-            <tr><td>02</td><td><strong>손계산 묶음</strong></td><td>행렬·고유값·OLS·R²·VIF를 계산하고 역산 검산</td><td><span class="status-dot wait"></span>대기</td></tr>
-            <tr><td>03</td><td><strong>해석 묶음</strong></td><td>t·p·F·R²를 인과·정확도와 구별해 한 문장으로 답함</td><td><span class="status-dot wait"></span>대기</td></tr>
-            <tr><td>04</td><td><strong>실전 60분</strong></td><td>무작위 20문제를 골라 평균 3분 이내로 풀이</td><td><span class="status-dot wait"></span>대기</td></tr>
+            <tr><td>01</td><td><strong>Summary 회수</strong></td><td>각 교안 마지막 학습목표를 사례와 함께 설명</td><td><span class="status-dot open"></span>진행</td></tr>
+            <tr><td>02</td><td><strong>교안 빈칸 전체 회수</strong></td><td>모든 빈칸 페이지를 답 없이 재현</td><td><span class="status-dot wait"></span>대기</td></tr>
+            <tr><td>03</td><td><strong>사례 → 개념 판정</strong></td><td>ETL·학습분할·분포·잔차패턴을 개념으로 매칭</td><td><span class="status-dot wait"></span>대기</td></tr>
+            <tr><td>04</td><td><strong>실전 60분</strong></td><td>빈칸 5·사례 5·계산 4·개념 6문제 풀이</td><td><span class="status-dot wait"></span>대기</td></tr>
           </tbody>
         </table>
         <div class="callout block"><div class="callout-icon">→</div><div><strong>추천 루프</strong>　개념 토글 닫기 → 문제 풀이 → 모범 답안 확인 → 자신감 표시 → “다시”만 오답 노트에서 재풀이.</div></div>
@@ -514,6 +533,47 @@
           </tbody>
         </table>
 
+        <h3 id="priority">Summary · 교수 강조 출제 지도</h3>
+        <p class="muted">강의 영상의 억양은 원본 음성이 제공되지 않아 직접 판정할 수 없습니다. 대신 전사에서 반복된 설명, “꼭 기억”·“중요”·“이해해야” 발언, 각 교안의 마지막 Summary를 함께 반영했습니다.</p>
+        <div class="priority-grid">
+          <div class="priority-card"><span class="stars">★★★</span><strong>Summary에 직접 제시</strong><p>정의·구별·순서를 묻는 빈칸·객관식 최우선.</p></div>
+          <div class="priority-card"><span class="stars">★★★</span><strong>전사에서 반복·직접 강조</strong><p>교수님이 “기억”·“중요”·“이해”라고 표현한 개념.</p></div>
+          <div class="priority-card"><span class="stars">★★☆</span><strong>실제 사례와 연결</strong><p>상황을 주고 학습 유형·분포·가정·진단을 고르는 변별력 문제.</p></div>
+        </div>
+        <table class="study-table block">
+          <thead><tr><th>교안</th><th>Summary·전사가 직접 가리킨 핵심</th><th>우선도</th></tr></thead>
+          <tbody>
+            <tr><td>1.2 다변량 소개 I</td><td>데이터마이닝 배경, 3V·5V, 협의/광의 정의, DM–AI–ML–DL 구별, data-driven 사례</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td>1.3 다변량 소개 II</td><td>training/test 분할 이유, 수치/범주 예측, 회귀/분류, 5단계, AutoML, ETL·LLM 파이프라인</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td>2.1 선형대수</td><td>집합→행렬, 선형방정식, 가우스 소거, 투영/선형변환, 고유값·고유벡터</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td>2.2 기초통계</td><td>확률변수는 함수, 확률↔우도의 방향, 편향–분산, 상관, 차원, 불균형, 베이즈, 일반화</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td>4. 선형회귀 I</td><td>단순/다중/비선형 구별, 선형관계, 회귀 가정, cost function, OLS, 잔차</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td>5. 선형회귀 II</td><td>점·구간추정, 계수 검정, \(R^2\)·수정 \(R^2\), ANOVA·\(F\) 해석</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td>6. 선형회귀 III</td><td>4가지 가정·잔차진단, 다중공선성 정의·문제, 변수선택 기반 진단 절차</td><td><span class="tag dark">★★★</span></td></tr>
+          </tbody>
+        </table>
+        <details class="toggle block" open>
+          <summary>1.3 Summary에서 직접 나온 6가지</summary>
+          <div class="toggle-content">
+            <ol class="note-list">
+              <li>훈련 자료는 \(\theta^*=\arg\min_\theta \mathcal L(Y_{tr},\hat Y_{tr})\)에 쓰고, 테스트 자료는 보지 못한 자료의 일반화 성능을 확인한다.</li>
+              <li>연속형 \(Y\)를 맞히면 회귀, 범주형 \(Y\)를 맞히면 분류다.</li>
+              <li>추론은 관계 해석, 예측은 새 \(X\)의 \(Y\)를 맞히는 목적이다.</li>
+              <li>문제 정의→수집→탐색·정제·변환→모델링→요약·배포의 순환 구조를 이해한다.</li>
+              <li>AutoML은 반복 작업을 자동화하지만 문제 정의·의미 검증을 대체하지 않는다.</li>
+              <li>LLM 파이프라인에서 Prompting→Weak Supervision→End Model Training, 병렬 Prompt Chain→noisy prediction 통합을 구별한다.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>ETL·LLM 파이프라인 개념 답안</summary>
+          <div class="toggle-content">
+            <p><strong>ETL</strong>: <strong>E</strong>xtract—DB·API·파일에서 필요 데이터 추출 → <strong>T</strong>ransform—오류·중복 제거, 형식 통일 → <strong>L</strong>oad—정제 데이터를 Warehouse/Lake에 적재.</p>
+            <p><strong>Data Pipeline with LLM</strong>: 전문가 Prompt로 복수 Label Map 생성 → Label Model의 Weak Supervision으로 추정 label 통합 → 추정 label과 비라벨 자료로 End Model 학습·평가.</p>
+            <p><strong>Robust Modeling with LLM</strong>: 동일 입력에 병렬 Prompt Chain을 실행해 여러 noisy prediction을 만들고 Weak Supervision으로 통합해 최종 예측의 신뢰도를 높인다.</p>
+          </div>
+        </details>
+
         <h3 id="c1">1. 문제 정의와 다변량 데이터</h3>
         <div class="quote block">좋은 분석은 “어떤 모델을 쓸까?”가 아니라 <strong>“어떤 문제를 어떤 행동으로 연결할까?”</strong>에서 시작한다.</div>
         <div class="flow block">
@@ -530,10 +590,10 @@
             <ul class="note-list">
               <li><strong>샘플/관측치</strong>: 사람 한 명, 와인 한 병, 이미지 한 장처럼 분석의 한 행.</li>
               <li><strong>변수/특성</strong>: 샘플에서 측정한 열. 두 개 이상이면 다변량 데이터.</li>
-              <li><code>X ∈ R^(n×p)</code>: n개 샘플 × p개 입력 변수. <code>Y</code>: 반응·출력.</li>
+              <li>\(X\in\mathbb R^{n\times p}\): \(n\)개 샘플 × \(p\)개 입력 변수. \(Y\): 반응·출력.</li>
               <li>‘독립변수’라는 이름은 X끼리 독립이거나 X가 Y의 원인이라는 보장이 아니다.</li>
             </ul>
-            <div class="formula">예측값 Ŷ = fθ(X)　·　학습 θ* = argminθ L(θ)</div>
+            <div class="formula">\(\hat Y=f_\theta(X)\quad\cdot\quad\theta^*=\arg\min_\theta\mathcal L(\theta)\)</div>
           </div>
         </details>
 
@@ -596,8 +656,8 @@
         <details class="toggle block" open>
           <summary>행렬 크기와 곱 — 안쪽 차원부터 쓴다</summary>
           <div class="toggle-content">
-            <div class="formula">A(m×n) · B(n×k) = AB(m×k)　　(AB)ᵀ = BᵀAᵀ</div>
-            <p>행렬 곱은 일반적으로 교환되지 않는다. <code>Ax=b</code>에서 <code>A∈R^(m×n)</code>, <code>x∈R^n</code>, <code>b∈R^m</code>.</p>
+            <div class="formula">\(A_{m\times n}B_{n\times k}=(AB)_{m\times k}\qquad(AB)^\top=B^\top A^\top\)</div>
+            <p>행렬 곱은 일반적으로 교환되지 않는다. \(Ax=b\)에서 \(A\in\mathbb R^{m\times n}\), \(x\in\mathbb R^n\), \(b\in\mathbb R^m\).</p>
           </div>
         </details>
         <details class="toggle block">
@@ -612,7 +672,7 @@
         <details class="toggle block">
           <summary>역행렬과 가역성</summary>
           <div class="toggle-content">
-            <div class="formula">A⁻¹ = 1/(ad−bc) · [[d, −b], [−c, a]],　ad−bc ≠ 0</div>
+            <div class="formula">\(A^{-1}=\dfrac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix},\qquad ad-bc\ne0\)</div>
             <p><code>AA⁻¹=A⁻¹A=I</code>. 행렬식이 0이면 특이행렬이며 역행렬이 없다.</p>
           </div>
         </details>
@@ -626,7 +686,7 @@
         <details class="toggle block">
           <summary>고유값·고유벡터와 교안 오류</summary>
           <div class="toggle-content">
-            <div class="formula">Av = λv, v≠0　⇔　det(A−λI)=0</div>
+            <div class="formula">\(Av=\lambda v,\;v\ne0\qquad\Longleftrightarrow\qquad\det(A-\lambda I)=0\)</div>
             <p><code>A=[[2,6],[5,3]]</code>이면 특성다항식은 <code>λ²−5λ−24=(λ−8)(λ+3)</code>, 고유값은 <strong>8, −3</strong>이다. 교안의 중간식 <code>+6</code>과 결론 3은 계산과 맞지 않는다.</p>
             <p>서로 다른 고유값의 고유벡터는 선형독립이다. <strong>직교</strong>는 실수 대칭행렬 같은 추가 조건이 필요하다.</p>
           </div>
@@ -657,9 +717,9 @@
         <details class="toggle block">
           <summary>베이즈 정리 — 분모의 전체 양성을 빠뜨리지 않는다</summary>
           <div class="toggle-content">
-            <div class="formula">P(H|D) = P(D|H)P(H) / P(D)</div>
+            <div class="formula">\(P(H\mid D)=\dfrac{P(D\mid H)P(H)}{P(D)}\)</div>
             <p>유병률 1%, 민감도 90%, 특이도 95%에서 양성자의 실제 질병 확률:</p>
-            <div class="formula">(0.90×0.01) / [(0.90×0.01)+(0.05×0.99)] ≈ 0.1538 = 15.38%</div>
+            <div class="formula">\(\dfrac{0.90\times0.01}{(0.90\times0.01)+(0.05\times0.99)}\approx0.1538=15.38\%\)</div>
           </div>
         </details>
         <details class="toggle block">
@@ -681,7 +741,7 @@
         <details class="toggle block" open>
           <summary>모형·계수·단위를 한 문장으로 해석한다</summary>
           <div class="toggle-content">
-            <div class="formula">Yᵢ = β₀ + β₁Xᵢ + εᵢ　·　E(Yᵢ|Xᵢ)=β₀+β₁Xᵢ</div>
+            <div class="formula">\(Y_i=\beta_0+\beta_1X_i+\varepsilon_i\quad\cdot\quad E(Y_i\mid X_i)=\beta_0+\beta_1X_i\)</div>
             <p><code>β₁</code> 단위는 [Y]/[X]. X가 1단위 증가할 때 조건부 평균 Y의 변화다. X=0이 관측 범위 밖이면 절편을 현실적으로 과해석하지 않는다.</p>
             <p>X²를 특징으로 넣어도 <strong>미지 계수 β에 선형</strong>이면 선형회귀다.</p>
           </div>
@@ -689,15 +749,15 @@
         <details class="toggle block">
           <summary>잔차와 오차를 분리한다</summary>
           <div class="toggle-content">
-            <div class="formula">잔차 eᵢ = yᵢ−ŷᵢ　·　모형 오차 εᵢ = yᵢ−E(Yᵢ|xᵢ)</div>
+            <div class="formula">\(e_i=y_i-\hat y_i\quad\cdot\quad\varepsilon_i=y_i-E(Y_i\mid x_i)\)</div>
             <p>잔차는 표본에서 계산할 수 있지만 모집단 오차는 직접 관측하지 못한다.</p>
           </div>
         </details>
         <details class="toggle block">
           <summary>OLS 계산 순서</summary>
           <div class="toggle-content">
-            <div class="formula">Sxx=Σ(xᵢ−x̄)²　·　Sxy=Σ(xᵢ−x̄)(yᵢ−ȳ)</div>
-            <div class="formula">b̂₁=Sxy/Sxx　·　b̂₀=ȳ−b̂₁x̄　·　SSE=Σ(yᵢ−ŷᵢ)²</div>
+            <div class="formula">\(S_{xx}=\sum_i(x_i-\bar x)^2\quad\cdot\quad S_{xy}=\sum_i(x_i-\bar x)(y_i-\bar y)\)</div>
+            <div class="formula">\(\hat\beta_1=\dfrac{S_{xy}}{S_{xx}}\quad\cdot\quad\hat\beta_0=\bar y-\hat\beta_1\bar x\quad\cdot\quad\mathrm{SSE}=\sum_i(y_i-\hat y_i)^2\)</div>
             <ol class="note-list"><li>n과 단위 표시</li><li>x̄, ȳ 계산</li><li>Sxx, Sxy</li><li>기울기·절편</li><li>예측·잔차·SSE</li><li>잔차 합과 원자료 대입 검산</li></ol>
             <p>다중회귀의 행렬형은 <code>y=Xβ+ε</code>, X가 완전 열랭크이면 <code>β̂=(XᵀX)⁻¹Xᵀy</code>. 완전 다중공선성이 있으면 역행렬이 존재하지 않아 계수를 유일하게 정할 수 없다.</p>
           </div>
@@ -714,24 +774,24 @@
         <details class="toggle block" open>
           <summary>표준오차·신뢰구간·t 검정</summary>
           <div class="toggle-content">
-            <div class="formula">s²=SSE/(n−2)　·　SE(b̂₁)=s/√Sxx</div>
-            <div class="formula">95% CI: b̂₁ ± t₍0.975,n−2₎SE(b̂₁)　·　t=b̂₁/SE(b̂₁)</div>
+            <div class="formula">\(s^2=\dfrac{\mathrm{SSE}}{n-2}\quad\cdot\quad\mathrm{SE}(\hat\beta_1)=\dfrac{s}{\sqrt{S_{xx}}}\)</div>
+            <div class="formula">\(95\%\ \mathrm{CI}:\ \hat\beta_1\pm t_{0.975,n-2}\mathrm{SE}(\hat\beta_1)\quad\cdot\quad t=\dfrac{\hat\beta_1}{\mathrm{SE}(\hat\beta_1)}\)</div>
             <p><code>H₀:β₁=0</code>. p값은 H₀가 참일 확률이 아니라, <strong>H₀ 아래에서 지금만큼 극단적인 통계량이 나올 확률</strong>이다. 작은 p값이 인과효과를 증명하지 않는다.</p>
           </div>
         </details>
         <details class="toggle block" open>
           <summary>SST · SSR · SSE와 R²</summary>
           <div class="toggle-content">
-            <div class="formula">SST=Σ(yᵢ−ȳ)²　·　SSR=Σ(ŷᵢ−ȳ)²　·　SSE=Σ(yᵢ−ŷᵢ)²</div>
-            <div class="formula">SST=SSR+SSE　·　R²=1−SSE/SST</div>
+            <div class="formula">\(\mathrm{SST}=\sum_i(y_i-\bar y)^2\quad\cdot\quad\mathrm{SSR}=\sum_i(\hat y_i-\bar y)^2\quad\cdot\quad\mathrm{SSE}=\sum_i(y_i-\hat y_i)^2\)</div>
+            <div class="formula">\(\mathrm{SST}=\mathrm{SSR}+\mathrm{SSE}\quad\cdot\quad R^2=1-\dfrac{\mathrm{SSE}}{\mathrm{SST}}\)</div>
             <p>이 등식은 <strong>절편이 있는 OLS의 같은 학습자료</strong> 조건에서 쓴다. R²=0.8은 학습자료 변동 80% 설명이지, 테스트 정확도 80%나 인과효과 80%가 아니다. 테스트 R²는 음수일 수 있다.</p>
           </div>
         </details>
         <details class="toggle block">
           <summary>수정 R²와 F 검정</summary>
           <div class="toggle-content">
-            <div class="formula">R²adj = 1 − [SSE/(n−p−1)] / [SST/(n−1)]</div>
-            <div class="formula">F = (SSR/p) / (SSE/(n−p−1))　·　단순회귀에서는 F=t²</div>
+            <div class="formula">\(R^2_{adj}=1-\dfrac{\mathrm{SSE}/(n-p-1)}{\mathrm{SST}/(n-1)}\)</div>
+            <div class="formula">\(F=\dfrac{\mathrm{SSR}/p}{\mathrm{SSE}/(n-p-1)}\quad\cdot\quad단순회귀에서\ F=t^2\)</div>
             <p>전체 귀무가설은 <code>H₀:β₁=⋯=βp=0</code>. F는 자유도를 보정한 설명변동/잔차변동 비율이며 예측 정확도 퍼센트가 아니다. 정규오차 조건에서 제곱합은 χ²와 연결되고, 독립 χ²/자유도의 비가 F분포를 만든다.</p>
           </div>
         </details>
@@ -750,7 +810,7 @@
         <details class="toggle block" open>
           <summary>다중공선성 · tolerance · VIF</summary>
           <div class="toggle-content">
-            <div class="formula">Toleranceⱼ = 1−Rⱼ²　·　VIFⱼ = 1/(1−Rⱼ²)</div>
+            <div class="formula">\(\mathrm{Tolerance}_j=1-R_j^2\quad\cdot\quad\mathrm{VIF}_j=\dfrac{1}{1-R_j^2}\)</div>
             <p><code>Rⱼ²</code>는 Xⱼ를 나머지 X로 회귀한 보조회귀의 결정계수. <code>Rⱼ²=0.9</code>이면 tolerance=0.1, VIF=10.</p>
             <p>VIF 5·10은 관행적 신호이지 자동 삭제 명령이 아니다. 해석/예측 목적, 도메인 의미, 테스트 성능을 함께 본다.</p>
           </div>
@@ -774,23 +834,43 @@
           </div>
         </details>
 
-        <h3 id="blanks">교안 빈칸 · 그대로 나올 가능성이 높은 상자</h3>
-        <p class="muted">원본 PDF 화면의 실제 빈 답안 상자를 확인하고, 숨은 텍스트와 직접 계산을 대조했습니다. 아래 항목은 문제은행에서 <strong>교안 빈칸</strong> 태그로 다시 풀 수 있습니다.</p>
+        <h3 id="blanks">교안 빈칸 완전정리 · 페이지별 답</h3>
+        <p class="muted">원본 PDF의 답안 상자·<code>???</code>·학생 계산 형식을 화면과 텍스 계층으로 대조했습니다. 아래는 확인된 항목을 페이지 단위로 모두 펼쳐놓은 목록입니다.</p>
         <table class="study-table block">
-          <thead><tr><th>원본</th><th>빈칸</th><th>정답 핵심</th></tr></thead>
+          <thead><tr><th>원본</th><th>빈칸·문답</th><th>정답 및 출제 변형</th></tr></thead>
           <tbody>
-            <tr><td>선형대수 p.16–22</td><td>행·열벡터, 행렬곱 크기, 전치 성질</td><td>안쪽 차원 일치, 결과는 바깥 차원, (AB)ᵀ=BᵀAᵀ</td></tr>
-            <tr><td>선형대수 p.25–34</td><td>선형식 O/X, 해의 수, 계수·첨가행렬</td><td>유일/무한/없음, Ax=b와 [A|b]</td></tr>
-            <tr><td>선형대수 p.41</td><td>네 행렬의 REF 판정</td><td>좌상만 O, 나머지 X</td></tr>
-            <tr><td>선형대수 p.44–46</td><td>역행렬 해·AB·2×2 조건</td><td>x=A⁻¹b, AB=I, det≠0</td></tr>
-            <tr><td>선형대수 p.56</td><td>세 벡터의 AX=λX 확인</td><td>(2,3): λ=7, (−1,1): λ=2, (3,−2): 아님</td></tr>
-            <tr><td>선형대수 p.58–59</td><td>λ=8의 고유벡터, 특성방정식</td><td>c(1,1), λ=8·−3</td></tr>
-            <tr><td>회귀 II p.21–25</td><td>계수·식·SE·가설·t·p·해석</td><td>−17.5791, 3.9324, 6.7584, 0.4155, t=9.464, p=1.49×10⁻¹²</td></tr>
-            <tr><td>회귀 II p.32</td><td>R²=1 / R²=0 해석</td><td>모든 변동 설명 / 평균모형 대비 설명변동 없음</td></tr>
-            <tr><td>회귀 II p.36</td><td>R²와 수정 R²</td><td>0.6511 / 0.6438</td></tr>
-            <tr><td>회귀 II p.42</td><td>ANOVA 해석</td><td>F=89.57, df=(1,48), p≈1.49×10⁻¹², 전체 회귀 유의</td></tr>
+            <tr><td class="blank-page">1.3 p.17</td><td>관계 규명 / 수치 예측의 <code>???</code></td><td><strong>Inference</strong> / <strong>Prediction (regression)</strong></td></tr>
+            <tr><td class="blank-page">1.3 p.18</td><td>이미지 모양으로 숫자 라벨 예측</td><td><strong>Prediction (classification)</strong>. 라벨이 숫자여도 범주면 분류.</td></tr>
+            <tr><td class="blank-page">선형대수 p.16</td><td>2행 5열 \(A\), \(A_{ij},A_{i3},A_{1j}\)</td><td>\(A\in\mathbb R^{2\times5}\); \(A_{ij}\)=i행 j열 원소; \(A_{i3}\)=3열 열벡터; \(A_{1j}\)=1행 행벡터.</td></tr>
+            <tr><td class="blank-page">선형대수 p.18</td><td>전치·대칭행렬 성질</td><td>\(A=A^\top\), \((A^\top)^\top=A\), \((A\pm B)^\top=A^\top\pm B^\top\).</td></tr>
+            <tr><td class="blank-page">선형대수 p.20</td><td>\(A_{1\times n}B_{n\times1}\) 와 \(BA\)</td><td>\(AB=\sum_{i=1}^n a_ib_i\)는 \(1\times1\) 스칼라, \(BA=[b_i a_j]\)는 \(n\times n\) 외적.</td></tr>
+            <tr><td class="blank-page">선형대수 p.21</td><td>수치 행렬곱과 몇 행 몇 열</td><td>\(\begin{bmatrix}6&7\\2&4\\4&1\end{bmatrix}\begin{bmatrix}3\\1\end{bmatrix}=\begin{bmatrix}25\\10\\13\end{bmatrix}\), \(3\times1\).</td></tr>
+            <tr><td class="blank-page">선형대수 p.22</td><td>전치 성질 4개</td><td>\((A^\top)^\top=A\), \((A+B)^\top=A^\top+B^\top\), \((AB)^\top=B^\top A^\top\), \((kA)^\top=kA^\top\).</td></tr>
+            <tr><td class="blank-page">선형대수 p.25</td><td>선형 1차 방정식 O/X</td><td>미지수끼리 곱, 제곱·제곱근, \(\sin x\)가 들어가면 X; 미지수의 1차 선형결합만 O.</td></tr>
+            <tr><td class="blank-page">선형대수 p.28</td><td>일반 연립계의 \(A,x,b\) 크기</td><td>m개 식·n개 미지수면 \(A\in\mathbb R^{m\times n},x\in\mathbb R^n,b\in\mathbb R^m\).</td></tr>
+            <tr><td class="blank-page">선형대수 p.29</td><td>연립방정식의 간단한 표기</td><td>표준 열벡터 표기는 \(Ax=b\). 교안의 \(a^\top X=b\)는 배치와 함께 확인.</td></tr>
+            <tr><td class="blank-page">선형대수 p.30</td><td>계수행렬·첨가행렬</td><td>계수행렬 \(A=[a_{ij}]\), 첨가행렬 \([A\mid b]\).</td></tr>
+            <tr><td class="blank-page">선형대수 p.32</td><td>두 직선의 해 개수</td><td>한 점 교차=유일해, 일치=무한해, 서로 다른 평행선=해 없음.</td></tr>
+            <tr><td class="blank-page">선형대수 p.34</td><td>구체적 계수·첨가행렬</td><td>\(A=\begin{bmatrix}3&40&50\\10&20&2\\6&8&9\end{bmatrix}\), \(b=(80,62,133)^\top\), \([A\mid b]\).</td></tr>
+            <tr><td class="blank-page">선형대수 p.41</td><td>네 행렬의 REF 판정</td><td>교안 기준 좌상만 O. 단, 표준 REF에서 pivot=1은 필수가 아니며 RREF와 구별.</td></tr>
+            <tr><td class="blank-page">선형대수 p.44</td><td>역행렬로 \(Ax=b\) 풀기</td><td>\(A\)가 가역이면 \(A^{-1}Ax=A^{-1}b\Rightarrow x=A^{-1}b\).</td></tr>
+            <tr><td class="blank-page">선형대수 p.45</td><td>\(AB\) 계산과 역행렬 정의</td><td>\(AB=BA=I\). 교안의 \(Z\)는 영행렬이 아니라 항등행렬 \(I\)가 맞음.</td></tr>
+            <tr><td class="blank-page">선형대수 p.46</td><td>2×2 역행렬 공식·조건</td><td>\(ad-bc\ne0\)일 때 \(A^{-1}=\frac1{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}\); 0이면 특이.</td></tr>
+            <tr><td class="blank-page">선형대수 p.56</td><td>세 벡터의 \(Av=\lambda v\)</td><td>\((2,3)^\top:\lambda=7\), \((-1,1)^\top:\lambda=2\), \((3,-2)^\top\)는 고유벡터 아님.</td></tr>
+            <tr><td class="blank-page">선형대수 p.58</td><td>\(A=\begin{bmatrix}2&6\\5&3\end{bmatrix}\), \(\lambda=8\) 고유벡터</td><td>\((A-8I)v=0\Rightarrow x_1=x_2\), \(v=c(1,1)^\top\), \(c\ne0\).</td></tr>
+            <tr><td class="blank-page">선형대수 p.59</td><td>특성방정식·모든 고유값</td><td>\(\det(A-\lambda I)=\lambda^2-5\lambda-24=(\lambda-8)(\lambda+3)\); \(8,-3\).</td></tr>
+            <tr><td class="blank-page">회귀 I p.40</td><td>OLS의 \(\hat\beta_0,\hat\beta_1\)</td><td>\(\hat\beta_1=S_{xy}/S_{xx}\), \(\hat\beta_0=\bar y-\hat\beta_1\bar x\).</td></tr>
+            <tr><td class="blank-page">회귀 II p.21</td><td>Q1–2 모수·점추정·회귀식</td><td>\(\hat\beta_0=-17.5791,\hat\beta_1=3.9324\); \(\hat y=-17.5791+3.9324x\).</td></tr>
+            <tr><td class="blank-page">회귀 II p.22</td><td>Q3 계수 표준오차</td><td>\(SE(\hat\beta_0)=6.7584\), \(SE(\hat\beta_1)=0.4155\).</td></tr>
+            <tr><td class="blank-page">회귀 II p.23</td><td>Q4–5 기울기 가설·t</td><td>\(H_0:\beta_1=0,H_1:\beta_1\ne0\); \(t=3.9324/0.4155\approx9.464\).</td></tr>
+            <tr><td class="blank-page">회귀 II p.24</td><td>Q6–7 p값·T분포 표현</td><td>\(p\approx1.49\times10^{-12}=2P(T_{48}\ge|9.464|)\).</td></tr>
+            <tr><td class="blank-page">회귀 II p.25</td><td>Q8 p값 해석</td><td>\(p<.05\)로 \(H_0\) 기각; 유의한 선형 연관. 인과는 자동 증명되지 않음.</td></tr>
+            <tr><td class="blank-page">회귀 II p.32</td><td>\(R^2=1\) / \(R^2=0\)</td><td>1=학습 총변동을 전부 설명; 0=평균모형 대비 설명변동 없음.</td></tr>
+            <tr><td class="blank-page">회귀 II p.36</td><td>Q8 \(R^2\)·수정 \(R^2\)</td><td>0.6511 / 0.6438. 새 데이터 정확도 65.11%가 아님.</td></tr>
+            <tr><td class="blank-page">회귀 II p.42</td><td>Q9 ANOVA</td><td>\(F=89.57\), df=(1,48), \(p\approx1.49\times10^{-12}\); 전체 회귀 유의. \(F=t^2\) 검산.</td></tr>
           </tbody>
         </table>
+        <div class="callout block"><div class="callout-icon">!</div><div><strong>빈칸 해석 원칙</strong><br />교안에 숨은 문구가 있더라도 계산·정의와 충돌하면 검산값을 사용합니다. 대표적으로 p.45의 \(Z\to I\), p.59의 고유값 \(3\to-3\), 회귀 II p.42의 \(7.540\to89.57\)을 바로잡았습니다.</div></div>
 
         <h3 id="scope">확정 제외와 경계</h3>
         <div class="callout black block"><div class="callout-icon">×</div><div><strong>시험 공지상 제외</strong><br />별첨 자료와 R·Python 등 구현체는 일체 범위가 아닙니다. 로지스틱 회귀도 공지의 다섯 범위에 없으므로 문제은행에서 제거했습니다.</div></div>
@@ -799,9 +879,9 @@
 
       <hr class="divider" />
 
-      <section id="problems" data-search-title="문제 은행 64문제">
+      <section id="problems" data-search-title="문제 은행 100문제">
         <h2>문제 은행</h2>
-        <p class="muted">실제 약 20문제 시험을 세 번 이상 연습할 수 있도록 64문제로 확장했습니다. 교안 빈칸, 다지선다, 단순 사칙연산, 서술형을 모두 섞었고 답안은 자동 저장됩니다.</p>
+        <p class="muted">실제 약 20문제 시험을 다섯 번 연습할 수 있도록 100문제로 확장했습니다. Summary 최우선, 교안 빈칸, 실제 사례 → 개념 판정, 다지선다, 단순 사칙연산, 서술형을 모두 섞었습니다.</p>
         <div class="quiz-controls">
           <button class="strong" id="randomBtn">무작위 문제</button>
           <button id="unsolvedBtn">다음 미완료</button>
@@ -814,7 +894,9 @@
             <button class="filter-btn active" data-filter="all">전체</button>
             <button class="filter-btn" data-filter="calc">계산</button>
             <button class="filter-btn" data-filter="concept">개념</button>
+            <button class="filter-btn" data-filter="case">사례형</button>
             <button class="filter-btn" data-filter="blank">교안 빈칸</button>
+            <button class="filter-btn" data-filter="priority">교수 강조</button>
             <button class="filter-btn" data-filter="again">다시</button>
             <input class="db-search" id="questionSearch" type="search" placeholder="문제 검색…" aria-label="문제 검색" />
           </div>
@@ -851,6 +933,9 @@
           <div class="checkline"><input type="checkbox" id="ck16" /><label for="ck16">tolerance/VIF·조건지수와 공선성의 영향을 설명한다.</label></div>
           <div class="checkline"><input type="checkbox" id="ck17" /><label for="ck17">교안 빈칸을 답안 없이 한 번씩 재현했다.</label></div>
           <div class="checkline"><input type="checkbox" id="ck18" /><label for="ck18">교안 오류 항목에 정확한 조건과 검산 결과를 붙여 답한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck19" /><label for="ck19">1.2·1.3·선형대수·회귀 I–III의 Summary를 자료 없이 말한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck20" /><label for="ck20">ETL·LLM Label Pipeline·Robust Modeling의 순서와 목적을 구별한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck21" /><label for="ck21">사례를 보고 학습 유형·확률분포·회귀 가정 위반을 판정한다.</label></div>
         </div>
       </section>
 
@@ -865,7 +950,7 @@
           <div class="source-link"><strong>주차별 정리</strong><span>8개 전사와 교안 대조본 확인</span></div>
           <div class="source-link"><strong>원문과 검증</strong><span>교안 오류 의심과 조건 확인</span></div>
         </div>
-        <div class="callout block" style="margin-top:24px"><div class="callout-icon">i</div><div><strong>교안 빈칸</strong> 태그는 원본 교안의 실제 질문·빈 상자에서 가져왔고, 나머지는 공지 범위와 강의 내용을 바탕으로 만든 예상문제입니다. “예상”은 출제 확정을 뜻하지 않습니다.</div></div>
+        <div class="callout block" style="margin-top:24px"><div class="callout-icon">i</div><div><strong>교안 빈칸</strong>은 원본의 답안 상자·<code>???</code>·질문에서, <strong>교수 강조</strong>는 Summary·전사의 반복·직접 강조 표현에서 선정했습니다. 억양은 원본 음성 미제공으로 판정하지 않았고, “예상”은 출제 확정을 뜻하지 않습니다.</div></div>
       </section>
     </main>
   </div>
@@ -976,11 +1061,50 @@
       {id:61,chapter:"선형회귀 III",type:"calc",kind:"사칙연산",level:"핵심",prompt:"Xⱼ를 나머지 X에 회귀한 Rⱼ²=0.9일 때 tolerance와 VIF를 구하고 의미를 쓰라.",answer:"tolerance=1−0.9=0.1, VIF=1/0.1=10. 다른 설명변수로 Xⱼ가 강하게 설명되는 공선성 신호지만 자동 삭제 규칙은 아니다."},
       {id:62,chapter:"선형회귀 III",type:"concept",kind:"T/F",level:"함정",prompt:"설명변수끼리 강하게 상관되면 오차의 시간적 독립성 가정도 자동 위반된다. 참/거짓과 이유를 쓰라.",answer:"거짓. X 사이 강한 관계는 다중공선성, 관측 오차의 시간·집단 연관은 오차 독립성 문제다. 서로 다른 진단 대상이다."},
       {id:63,chapter:"선형회귀 III",type:"concept",kind:"서술형",level:"응용",prompt:"공선성 대응으로 변수 제거·규제화·PCA를 비교하고 무조건 한 방법을 적용하면 안 되는 이유를 쓰라.",answer:"변수 제거·결합은 해석을 단순화, Ridge/Lasso/Elastic Net은 계수를 축소, PCA는 직교한 새 특징을 만든다. 해석가능성·예측 목적·도메인 의미·테스트 성능이 달라 선택 근거가 필요하다. 공지상 구현은 제외다."},
-      {id:64,chapter:"선형회귀 III",type:"concept",kind:"서술형",level:"함정",prompt:"Cook’s distance가 큰 관측을 발견했을 때 자동 삭제하지 말아야 하는 이유와 확인 순서를 쓰라.",answer:"큰 Cook 거리는 영향점 후보일 뿐 오류 확정이 아니다. 입력·측정 오류인지, 실제 중요한 극단 사례인지, 모형 누락·비선형 때문인지 확인하고 포함/제외 민감도와 잔차 진단을 비교한 뒤 결정한다."}
+      {id:64,chapter:"선형회귀 III",type:"concept",kind:"서술형",level:"함정",prompt:"Cook’s distance가 큰 관측을 발견했을 때 자동 삭제하지 말아야 하는 이유와 확인 순서를 쓰라.",answer:"큰 Cook 거리는 영향점 후보일 뿐 오류 확정이 아니다. 입력·측정 오류인지, 실제 중요한 극단 사례인지, 모형 누락·비선형 때문인지 확인하고 포함/제외 민감도와 잔차 진단을 비교한 뒤 결정한다."},
+
+      {id:65,chapter:"1.3·ETL",type:"blank",kind:"교안 p.41",level:"최우선",prompt:"ETL의 E·T·L을 풀어 쓰고, DB·API·파일→오류·중복 제거→Warehouse/Lake의 각 단계와 연결하라.",answer:"E=Extract(추출): 원천에서 필요 데이터 가져오기. T=Transform(변환): 오류·중복 제거, 형식 통일. L=Load(적재): 정제된 데이터를 Data Warehouse/Lake에 저장."},
+      {id:66,chapter:"1.3·LLM",type:"blank",kind:"교안 p.42",level:"최우선",prompt:"LLM Data Pipeline의 세 단계를 빈칸으로 완성하라: ( ① )로 복수 Label Map 생성 → ( ② )으로 추정 Label 통합 → ( ③ )으로 최종 예측 모델 학습.",answer:"① Prompting ② Weak Supervision/Label Model ③ End Model Training. 복수의 noisy label을 통합한 후 추정 label과 비라벨 자료로 최종 모델을 학습한다."},
+      {id:67,chapter:"1.3·LLM",type:"case",kind:"사례형",level:"최우선",prompt:"동일 문장에 12개 Prompt Chain을 병렬로 실행해 서로 다른 예측을 얻고 Label Model로 통합했다. 교안의 어떤 개념인가?",answer:"Robust Modeling with LLM. 복수 noisy prediction을 Weak Supervision으로 통합해 단일 프롬프트 응답의 변동성을 줄이고 신뢰도 높은 최종 예측을 결정하는 구조다."},
+      {id:68,chapter:"1.3·학습분할",type:"case",kind:"다지선다",level:"최우선",prompt:"모델 A·B·C를 test set에서 30번 비교하고 최고 모델을 선택했다. 가장 적절한 설명은? ① test를 잘 활용 ② test 결과에 과적합 가능 ③ 훈련 불가 ④ 비지도학습",answer:"②. 모델 선택과 하이퍼파라미터 비교는 validation을 사용하고, test는 마지막 일반화 평가에 보존해야 한다."},
+      {id:69,chapter:"1.3·예측",type:"case",kind:"사례형",level:"최우선",prompt:"다음 Y에 회귀/분류를 연결하라: (a) 내일 기온 23.7°C (b) 암 0/1 (c) 손글씨 숫자 0–9 (d) 다음 달 매출액.",answer:"(a) 회귀, (b) 분류, (c) 분류, (d) 회귀. 숫자로 코딩된 라벨 0–9는 연속 크기가 아니라 범주이므로 분류다."},
+      {id:70,chapter:"1.3·AutoML",type:"case",kind:"T/F",level:"최우선",prompt:"AutoML의 목표가 '데이터 과학자 없는 ML'이므로 문제 정의·라벨 의미·프라이버시 검토도 모두 자동화해야 한다. 참/거짓?",answer:"거짓. 교수님 전사에서 AutoML은 데이터 과학자를 없애는 시스템이 아니라 획득·EDA·전처리·모델/하이퍼파라미터 비교·배포·모니터링의 반복 작업을 보조하는 도구로 강조했다."},
+      {id:71,chapter:"1.3·추론/예측",type:"blank",kind:"교안 p.17–18",level:"교안 빈칸",prompt:"월급에 관련된 변수를 찾는 목적과 새 사람의 월급을 맞히는 목적, 손글씨 숫자를 맞히는 목적을 교안 용어로 쓰라.",answer:"관계 파악=Inference, 새 월급 수치 예측=Prediction (regression), 손글씨 숫자 범주 예측=Prediction (classification)."},
+      {id:72,chapter:"데이터마이닝 절차",type:"case",kind:"사례형",level:"최우선",prompt:"공장이 '운반 이상 원인을 알 수 없고 라벨도 없다'고 한다. 문제 정의부터 배포 후 재정의까지 5단계로 설계하라.",answer:"문제·Y·현장 행동 정의 → 센서 시계열 수집 → time window 분할·정제·시각화 → 라벨 없으므로 이상탐지·군집, 전문가 라벨 후 분류 → 유형·원인 해석·배포, 새 유형은 open-set 문제로 재정의."},
+      {id:73,chapter:"1.2·빅데이터",type:"case",kind:"사례형",level:"최우선",prompt:"초당 10만 건의 센서값, 텍스트·영상·표 혼합, 측정 오류 8%, 불량 비용 절감 가능성을 5V와 연결하라.",answer:"초당 10만 건=Velocity(상황에 따라 Volume도 관련), 여러 형태=Variety, 오류 8%=Veracity, 비용 절감=Value, 전체 저장량=Volume."},
+      {id:74,chapter:"1.2·DM/AI",type:"concept",kind:"다지선다",level:"최우선",prompt:"강의의 구분으로 가장 적절한 것은? ① DM은 SQL 검색만 의미 ② DL은 ML과 무관 ③ DM은 패턴·지식 발견의 전체 과정, AI는 판단·행동의 더 넓은 목표 ④ 모두 동의어",answer:"③. ML은 데이터 관계를 학습하는 방법, DL은 다층 신경망을 쓰는 ML의 한 부류로 이해한다."},
+      {id:75,chapter:"1.2·상관/인과",type:"case",kind:"사례형",level:"함정",prompt:"마시멜로를 오래 참은 아이의 성취가 더 높았다. '인내심 교육이 성취를 높인다'고 단정하기 전 확인할 개념과 변수를 쓰라.",answer:"관측 상관과 인과를 구별하고 교란·선택 편향을 확인한다. 가정의 경제적 여건, 부모 교육, 안정성, 실험 환경 등이 대안 설명이 될 수 있다."},
+      {id:76,chapter:"1.2·다양한 데이터",type:"case",kind:"사례형",level:"응용",prompt:"야구 선수의 표 수치 기록과 타구 분포 이미지를 함께 쓴다. 정형/비정형과 다중양식 개념으로 설명하라.",answer:"수치 표는 정형 데이터, 타구 이미지는 비정형 데이터다. 두 형태의 정보를 함께 사용하므로 multimodal 분석 사례다."},
+      {id:77,chapter:"기초통계",type:"concept",kind:"빈칸",level:"최우선",prompt:"전사의 '확률변수는 변수가 아니라 (   )이다'를 완성하고 주사위 사례로 설명하라.",answer:"함수. 표본공간의 결과를 실수에 대응시킨다. 예를 들어 주사위 면을 1–6에 매핑하거나 검은색/흰색을 0/1에 매핑할 수 있다."},
+      {id:78,chapter:"기초통계",type:"concept",kind:"다지선다",level:"최우선",prompt:"올바른 방향은? ① probability: 샘플 고정→모수 변화 ② likelihood: 모수 고정→샘플 변화 ③ probability: 모수 고정→샘플, likelihood: 관측 샘플 고정→모수 ④ 동일",answer:"③. $p(y\\mid\\theta)$는 $\\theta$를 고정하고 $y$를 보며, $L(\\theta\\mid y)$는 관측 $y$를 고정하고 $\\theta$별 적합도를 비교한다."},
+      {id:79,chapter:"기초통계",type:"case",kind:"사례형",level:"함정",prompt:"콜센터에 10분 동안 들어온 전화 수와 다음 전화까지의 대기시간에 각각 어떤 분포를 연결하는가?",answer:"고정 10분 구간의 사건 개수=포아송분포, 다음 사건까지의 대기시간=지수분포(일정 발생률의 포아송 과정 가정)."},
+      {id:80,chapter:"기초통계",type:"case",kind:"사례형",level:"함정",prompt:"서울 대학생만 모집한 전국 청년 조사, 기존 믿음을 지지하는 기사만 공유, CNN의 지역 패턴 가정을 각각 어떤 bias로 분류하는가?",answer:"조사=선택 편향, 기사 공유=확증편향, CNN 가정=모델의 귀납 편향. 추정량의 편향 $E(\\hat\\theta)-\\theta$와도 구별한다."},
+      {id:81,chapter:"기초통계",type:"concept",kind:"다지선다",level:"핵심",prompt:"기존 500개 변수 중 20개를 고르는 것과 PCA로 20개 새 축을 만드는 것을 각각 무엇이라 하는가?",answer:"전자=변수 선택(feature selection), 후자=변수 추출(feature extraction). PCA 축은 원본 변수의 선형결합이다."},
+      {id:82,chapter:"기초통계",type:"case",kind:"사례형",level:"함정",prompt:"전체 데이터에 SMOTE를 적용한 후 train/test를 나누었더니 성능이 크게 올랐다. 문제점과 바른 순서를 쓰라.",answer:"test 정보가 합성 학습 샘플에 반영되는 데이터 누출 가능성이 있다. 먼저 분할하고 오버샘플링은 학습 세트에만 fit/apply하며 test 분포는 유지한다."},
+      {id:83,chapter:"베이즈",type:"case",kind:"사례형",level:"응용",prompt:"불량률이 평소 1%인 공장에서 센서가 이상 신호를 냈다. 센서 민감도만으로 실제 불량 확률을 알 수 없는 이유를 베이즈 용어로 쓰라.",answer:"사후확률 $P(D\\mid +)$은 우도 항 $P(+\\mid D)$뿐 아니라 사전확률 $P(D)$과 거짓양성 $P(+\\mid D^c)$까지 포함한 전체 양성 $P(+)$에 달려 있다."},
+      {id:84,chapter:"선형대수",type:"blank",kind:"교안 p.16",level:"교안 빈칸",prompt:"$A$가 2행 5열일 때 '그대로' 빈칸을 채우라: $A$는 (   ) 행렬, $A_{ij}$는 (   ), $A_{i3}$는 (   ), $A_{1j}$는 (   ).",answer:"2×5 행렬; i행 j열의 원소; 3열의 열벡터; 1행의 행벡터."},
+      {id:85,chapter:"선형대수",type:"blank",kind:"교안 p.20",level:"교안 빈칸",prompt:"$A=[a_1,\\ldots,a_n]$, $B=(b_1,\\ldots,b_n)^\\top$일 때 $AB$와 $BA$의 크기·원소 형태를 쓰라.",answer:"$AB=\\sum_i a_ib_i$는 1×1 스칼라. $BA$는 n×n인 외적이고 (i,j) 원소는 $b_i a_j$. 일반적으로 $AB\\ne BA$."},
+      {id:86,chapter:"선형대수",type:"blank",kind:"교안 p.28",level:"교안 빈칸",prompt:"m개 방정식·n개 미지수의 $Ax=b$에서 $A,x,b,[A\\mid b]$의 크기를 쓰라.",answer:"$A:m\\times n$, $x:n\\times1$, $b:m\\times1$, $[A\\mid b]:m\\times(n+1)$."},
+      {id:87,chapter:"선형대수",type:"blank",kind:"교안 p.29–30",level:"교안 빈칸",prompt:"연립방정식을 행렬로 표현하고 계수행렬과 첨가행렬을 구별하라.",answer:"표준 표기는 $Ax=b$. 계수행렬은 $A$, 상수항까지 붙인 첨가행렬은 $[A\\mid b]$."},
+      {id:88,chapter:"선형대수",type:"blank",kind:"교안 p.41",level:"교안 빈칸",prompt:"REF와 RREF의 차이를 쓰고 '모든 pivot은 1'이 어느 조건인지 답하라.",answer:"REF는 0행이 아래, 아래 행 pivot이 위 행보다 오른쪽. 표준 정의에서 pivot=1은 필수가 아니다. RREF는 pivot=1이고 pivot 열의 나머지 원소가 0이다."},
+      {id:89,chapter:"선형대수",type:"blank",kind:"교안 p.44–46",level:"교안 빈칸",prompt:"$A=\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}$의 가역 조건·역행렬·$Ax=b$의 해를 쓰라.",answer:"$ad-bc\\ne0$일 때 $A^{-1}=\\frac1{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}$, $x=A^{-1}b$. $ad-bc=0$이면 특이행렬로 역행렬이 없다."},
+      {id:90,chapter:"선형회귀 I",type:"case",kind:"사례형",level:"최우선",prompt:"연구자 A는 '어떤 X가 월급과 관련되는가'를, B는 '새 사람의 월급이 얼마인가'를 묻는다. 회귀의 두 목적으로 구별하라.",answer:"A=추론/설명(inference, descriptive): 계수·유의성·관계 해석. B=예측(prediction): 보지 못한 X의 Y 오차를 줄이는 것. 두 목적은 같은 모형에서도 평가 초점이 다를 수 있다."},
+      {id:91,chapter:"선형회귀 I",type:"case",kind:"사례형",level:"핵심",prompt:"거리=속력×시간처럼 공식이 정확한 관계와, 같은 아버지 키에서 아들 키가 다양한 관계를 구별하고 회귀가 필요한 쪽을 고르라.",answer:"전자는 확정적(deterministic) 관계로 공식이 알려졌다면 학습이 불필요하다. 후자는 관측차가 있는 확률적(stochastic) 관계로, 평균 관계+오차를 회귀로 모형화한다."},
+      {id:92,chapter:"선형회귀 I",type:"concept",kind:"서술형",level:"최우선",prompt:"OLS가 제곱잔차합을 최소화하는 이유와 $\\arg\\min$이 반환하는 것을 쓰라.",answer:"$\\mathrm{SSE}(\\beta)=\\sum_i(y_i-\\hat y_i)^2$는 부호 상쇄를 막고 큰 오차에 더 큰 패널티를 주며 미분·해석이 편리하다. $\\arg\\min$은 최소 함수값이 아니라 그 값을 만드는 계수 $\\hat\\beta$를 반환한다."},
+      {id:93,chapter:"선형회귀 II",type:"calc",kind:"계산·해석",level:"함정",prompt:"$\\hat\\beta_1=2$, $SE=0.5$, $t^*=2$일 때 95% 신뢰구간을 구하고 '참 기울기가 이 구간에 95% 확률로 있다'를 바로잡아라.",answer:"$2\\pm2(0.5)=[1,3]$. 빈도주의에서 모수는 고정된 값이며, 같은 절차를 반복해 만든 구간의 약 95%가 참 모수를 포함한다고 해석한다."},
+      {id:94,chapter:"선형회귀 II",type:"case",kind:"사례형",level:"함정",prompt:"$p=0.001$이므로 '약물이 효과가 있을 확률이 99.9%이고 인과효과도 크다'고 했다. 두 가지 오류를 지적하라.",answer:"p값은 $P(H_0\\mid data)$가 아니라 $H_0$ 하에서 현재 이상으로 극단적인 통계량의 확률이다. 또한 p값은 효과 크기·실용성·인과성을 보증하지 않으므로 연구설계·신뢰구간·효과크기를 봐야 한다."},
+      {id:95,chapter:"선형회귀 II",type:"case",kind:"사례형",level:"함정",prompt:"학습 $R^2=0.95$, test $R^2=-0.2$인 모형에 '설명력 95%의 훌륭한 모형'이라고 했다. 바른 해석은?",answer:"학습자료에서는 총변동 95%를 적합값이 설명했지만, test $R^2<0$이면 새 자료에서 평균만 쓰는 기준보다도 못한 예측이다. 과적합·분포 변화·누출을 의심한다."},
+      {id:96,chapter:"선형회귀 II",type:"calc",kind:"사칙연산",level:"핵심",prompt:"$SSR=120,SSE=80,n=22,p=2$일 때 $MSR,MSE,F$를 구하라.",answer:"$MSR=SSR/p=120/2=60$. 잔차 자유도 $n-p-1=19$, $MSE=80/19\\approx4.2105$, $F=60/(80/19)=14.25$."},
+      {id:97,chapter:"선형회귀 III",type:"case",kind:"사례형",level:"최우선",prompt:"잔차–적합값 그림이 (a) U자 (b) 부채꼴 (c) 0 주위 무작위, 시간순 잔차가 (d) 주기적일 때 각각 무엇을 의심하는가?",answer:"(a) 선형성 위반/곡선항·누락변수 (b) 이분산성 (c) 두 가정의 뚜렷한 패턴이 일차적으로 보이지 않음 (d) 오차 독립성/자기상관 문제."},
+      {id:98,chapter:"선형회귀 III",type:"case",kind:"사례형",level:"최우선",prompt:"전체 F 검정은 유의하고 $R^2$도 높지만 개별 계수의 SE가 크고 부호가 표본마다 바뀐다. 가장 의심할 개념과 진단값은?",answer:"다중공선성. 설명변수 상관·산점도와 보조회귀 $R_j^2$로 $Tolerance_j=1-R_j^2$, $VIF_j=1/(1-R_j^2)$를 확인한다. 오차 독립성과는 다른 문제다."},
+      {id:99,chapter:"선형회귀 III",type:"case",kind:"사례형",level:"응용",prompt:"변수 상관과 VIF로 중복 후보를 찾았고 Cook’s distance가 큰 관측도 발견했다. 안전한 모형 진단 순서를 서술하라.",answer:"기초 탐색·의미 확인 → 상관/VIF로 중복 변수 검토 → 모형 후보를 비교 → 잔차로 선형성·등분산성·정규성·오차 독립성 점검 → Cook 관측의 오류/실제 극단/모형 누락 확인 → 포함/제외 민감도와 보지 못한 자료 성능 비교."},
+      {id:100,chapter:"종합",type:"case",kind:"실전 서술형",level:"최우선",prompt:"바이탈 센서·진료 기록·이미지로 입원 일수를 예측한다. ETL, $X/Y$, 회귀/분류, 학습 분할, 가정 진단, 배포 후 모니터링을 한 흐름으로 제시하라.",answer:"DB·API·파일에서 Extract→중복·단위·결측 Transform→Lake/Warehouse Load. 한 행=환자/입원 시점, X=센서·진료·이미지 특징, Y=연속형 입원 일수이므로 회귀. 환자 단위로 train/validation/test를 분리하고 전처리는 train에만 fit. 잔차로 선형성·등분산성·정규성·독립성, VIF·영향점을 점검. 배포 후 오차·분포 변화·편향·프라이버시를 모니터링하고 새 문제를 재정의."}
     ];
 
-    const KEY = 'dm-midterm-notion-v2';
-    let state = JSON.parse(localStorage.getItem(KEY) || '{"answers":{},"grades":{},"checks":{}}');
+    const PRIORITY_IDS = new Set([1,3,4,5,6,7,8,10,11,14,17,20,23,24,25,28,30,33,36,38,39,41,44,46,47,48,49,50,51,53,54,55,56,57,58,60,61,65,66,67,68,69,70,71,72,73,74,77,78,79,84,85,86,87,88,89,90,92,93,94,95,96,97,98,100]);
+    const KEY = 'dm-midterm-notion-v3';
+    const previousState = localStorage.getItem(KEY) || localStorage.getItem('dm-midterm-notion-v2');
+    let state = JSON.parse(previousState || '{"answers":{},"grades":{},"checks":{}}');
     let currentFilter = 'all';
     let examTimer = null;
     let examSeconds = 3600;
@@ -988,15 +1112,21 @@
 
     function saveState(){ localStorage.setItem(KEY, JSON.stringify(state)); updateProgress(); renderErrorLog(); }
     function esc(value=''){ return String(value).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+    function typesetMath(root=document){
+      if(window.MathJax?.typesetPromise){
+        window.MathJax.typesetClear?.([root]);
+        window.MathJax.typesetPromise([root]).catch(()=>{});
+      }
+    }
 
     function renderProblems(){
       const list = document.getElementById('questionList');
       list.innerHTML = problems.map(q => `
-        <article class="question-card" id="q${q.id}" data-type="${q.type}" data-text="${esc((q.prompt+' '+q.chapter).toLowerCase())}">
+        <article class="question-card" id="q${q.id}" data-type="${q.type}" data-priority="${PRIORITY_IDS.has(q.id)?'1':'0'}" data-text="${esc((q.prompt+' '+q.chapter).toLowerCase())}">
           <div class="q-head">
             <div class="q-number">Q${String(q.id).padStart(2,'0')}</div>
             <div class="q-title">${q.prompt}</div>
-            <div class="q-meta"><span class="tag">${q.chapter}</span><span class="tag outline">${q.kind}</span><span class="tag outline">${q.level}</span></div>
+            <div class="q-meta"><span class="tag">${q.chapter}</span><span class="tag outline">${q.kind}</span><span class="tag outline">${q.level}</span>${PRIORITY_IDS.has(q.id)?'<span class="tag dark">교수 강조</span>':''}</div>
           </div>
           <div class="q-body">
             <textarea class="answer-box" data-id="${q.id}" placeholder="여기에 직접 풀이하세요…">${esc(state.answers[q.id] || '')}</textarea>
@@ -1015,6 +1145,7 @@
         </article>`).join('');
       bindProblemEvents();
       applyProblemFilter();
+      typesetMath(list);
     }
 
     function bindProblemEvents(){
@@ -1041,7 +1172,7 @@
       const query=document.getElementById('questionSearch').value.trim().toLowerCase(); let shown=0;
       document.querySelectorAll('.question-card').forEach(card => {
         const id=card.id.replace('q','');
-        const passType=currentFilter==='all' || (currentFilter==='again' ? ['again','unsure'].includes(state.grades[id]) : card.dataset.type===currentFilter);
+        const passType=currentFilter==='all' || (currentFilter==='again' ? ['again','unsure'].includes(state.grades[id]) : currentFilter==='priority' ? card.dataset.priority==='1' : card.dataset.type===currentFilter);
         const passText=!query || card.dataset.text.includes(query);
         const passExam=!document.body.classList.contains('exam-mode') || examSet.includes(Number(id));
         card.style.display=passType&&passText&&passExam?'block':'none'; if(passType&&passText&&passExam) shown++;
@@ -1056,6 +1187,7 @@
       if(!items.length){ el.innerHTML='<div class="empty-state" style="display:block">아직 등록된 오답이 없습니다.</div>'; return; }
       el.innerHTML=items.map(q=>`<div class="error-item"><span>Q${String(q.id).padStart(2,'0')}</span><a href="#q${q.id}">${q.prompt}</a><button data-clear-error="${q.id}" title="목록에서 제거">×</button></div>`).join('');
       el.querySelectorAll('[data-clear-error]').forEach(btn=>btn.addEventListener('click',()=>{ state.grades[btn.dataset.clearError]=''; saveState(); renderProblems(); }));
+      typesetMath(el);
     }
 
     function updateProgress(){
@@ -1097,7 +1229,9 @@
     function toggleExamMode(){
       const active=document.body.classList.toggle('exam-mode'); const btn=document.getElementById('examModeBtn');
       if(active){
-        examSet=[...problems].sort(()=>Math.random()-.5).slice(0,20).map(q=>q.id);
+        const shuffle=items=>[...items].sort(()=>Math.random()-.5);
+        const pick=(type,count)=>shuffle(problems.filter(q=>q.type===type)).slice(0,count);
+        examSet=shuffle([...pick('blank',5),...pick('case',5),...pick('calc',4),...pick('concept',6)]).map(q=>q.id);
         currentFilter='all'; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'));
         examSeconds=3600; btn.textContent='시험 모드 종료 · 20문제'; applyProblemFilter();
         document.getElementById('problems').scrollIntoView({behavior:'smooth'});
