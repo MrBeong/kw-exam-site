@@ -1,0 +1,1138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="강의자료와 전사 대조본을 기반으로 만든 데이터마이닝 중간고사 개념 정리 및 문제 풀이 페이지" />
+  <title>데이터마이닝 중간고사 · Study OS</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --sidebar: #fbfbfa;
+      --text: #191919;
+      --muted: #787774;
+      --faint: #9b9a97;
+      --line: #e9e9e7;
+      --soft: #f7f7f5;
+      --hover: #efefed;
+      --dark: #222222;
+      --radius: 4px;
+      --sidebar-w: 252px;
+      --topbar-h: 45px;
+      --page-w: 920px;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+    button, input, textarea, select { font: inherit; }
+    button { color: inherit; }
+    a { color: inherit; text-decoration-color: #b4b4b1; text-underline-offset: 3px; }
+    ::selection { background: #dcdcdc; }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--topbar-h);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 12px;
+      background: rgba(255,255,255,.94);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(12px);
+      z-index: 50;
+    }
+    .topbar.scrolled { border-color: var(--line); }
+    .crumb {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .crumb-icon {
+      width: 22px; height: 22px;
+      display: grid; place-items: center;
+      background: var(--dark); color: white;
+      border-radius: 4px;
+      font-weight: 700; font-size: 12px;
+      flex: 0 0 auto;
+    }
+    .top-actions { margin-left: auto; display: flex; gap: 4px; align-items: center; }
+    .icon-btn, .plain-btn {
+      border: 0;
+      background: transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      padding: 5px 8px;
+      color: #37352f;
+    }
+    .icon-btn:hover, .plain-btn:hover { background: var(--soft); }
+    .icon-btn { width: 30px; height: 30px; display: grid; place-items: center; }
+    .plain-btn { font-size: 13px; }
+
+    .sidebar {
+      position: fixed;
+      top: var(--topbar-h); bottom: 0; left: 0;
+      width: var(--sidebar-w);
+      background: var(--sidebar);
+      border-right: 1px solid var(--line);
+      padding: 12px 8px 24px;
+      overflow-y: auto;
+      z-index: 40;
+      transition: transform .2s ease;
+    }
+    .side-group { margin-bottom: 16px; }
+    .side-label {
+      padding: 5px 9px;
+      color: var(--faint);
+      font-size: 11px;
+      font-weight: 650;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .side-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      padding: 5px 9px;
+      border-radius: var(--radius);
+      color: #4b4a47;
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .side-link:hover, .side-link.active { background: var(--hover); color: var(--text); }
+    .side-icon { width: 17px; text-align: center; color: #72716e; font-size: 12px; }
+    .side-count { margin-left: auto; color: var(--faint); font-size: 11px; }
+    .side-progress { padding: 8px 9px 0; }
+    .mini-track { height: 4px; border-radius: 99px; background: #e2e2df; overflow: hidden; }
+    .mini-fill { width: 0%; height: 100%; background: var(--dark); transition: width .25s ease; }
+    .mini-copy { display: flex; justify-content: space-between; margin-top: 6px; color: var(--muted); font-size: 11px; }
+
+    .layout { padding-left: var(--sidebar-w); padding-top: var(--topbar-h); }
+    main { width: min(var(--page-w), calc(100% - 48px)); margin: 0 auto; padding: 72px 0 140px; }
+
+    .page-icon {
+      width: 72px; height: 72px;
+      display: grid; place-items: center;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      font-family: Georgia, serif;
+      font-size: 34px;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+    h1, h2, h3 { line-height: 1.25; letter-spacing: -.025em; }
+    h1 { margin: 0 0 10px; font-size: clamp(34px, 5vw, 48px); font-weight: 750; }
+    h2 { margin: 62px 0 16px; font-size: 27px; scroll-margin-top: 68px; }
+    h3 { margin: 28px 0 10px; font-size: 19px; scroll-margin-top: 68px; }
+    .subtitle { max-width: 720px; margin: 0 0 24px; color: var(--muted); font-size: 16px; }
+
+    .properties { max-width: 720px; margin: 24px 0 30px; }
+    .prop-row {
+      display: grid;
+      grid-template-columns: 138px 1fr;
+      min-height: 34px;
+      align-items: center;
+      font-size: 14px;
+    }
+    .prop-key { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+    .prop-icon { width: 16px; color: var(--faint); text-align: center; }
+    .tag {
+      display: inline-flex; align-items: center;
+      padding: 1px 7px;
+      border-radius: 4px;
+      background: #ededeb;
+      color: #4f4e49;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+    .tag.dark { background: #2f2f2f; color: white; }
+    .tag.outline { background: white; border: 1px solid #d7d7d4; }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      padding: 15px 16px;
+      margin: 18px 0;
+      background: var(--soft);
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .callout strong { font-weight: 700; }
+    .callout-icon { font-weight: 800; text-align: center; }
+    .callout.black { background: var(--dark); color: white; }
+    .callout.black a { text-decoration-color: #888; }
+
+    .divider { border: 0; border-top: 1px solid var(--line); margin: 38px 0; }
+    .block { position: relative; }
+    .block::before {
+      content: "⋮⋮";
+      position: absolute;
+      left: -27px; top: 3px;
+      color: transparent;
+      font-size: 12px;
+      letter-spacing: -3px;
+    }
+    .block:hover::before { color: #c2c2bf; }
+
+    .dash-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 14px; margin: 18px 0 10px; }
+    .card { border: 1px solid var(--line); border-radius: 7px; background: white; padding: 18px; }
+    .card-title { margin: 0 0 3px; font-size: 13px; font-weight: 700; }
+    .card-sub { color: var(--muted); font-size: 12px; }
+    .big-number { font-size: 36px; font-weight: 750; letter-spacing: -.04em; line-height: 1.15; margin: 16px 0 8px; }
+    .progress-track { height: 8px; border-radius: 99px; background: #e8e8e5; overflow: hidden; }
+    .progress-fill { width: 0%; height: 100%; background: var(--dark); transition: width .3s ease; }
+    .countdown { display: flex; align-items: baseline; gap: 6px; margin-top: 18px; }
+    .countdown strong { font-size: 27px; letter-spacing: -.03em; }
+    .countdown span { font-size: 12px; color: var(--muted); }
+
+    .study-table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
+    .study-table th, .study-table td { padding: 10px 9px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .study-table th { color: var(--muted); font-weight: 550; font-size: 12px; }
+    .study-table tr:hover td { background: #fafafa; }
+    .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #373737; }
+    .status-dot.open { background: white; border: 1px solid #8f8f8b; }
+    .status-dot.wait { background: #aaa9a5; }
+    .checkline { display: flex; gap: 9px; align-items: flex-start; padding: 4px 0; }
+    .checkline input { margin-top: 5px; accent-color: #222; }
+    .checkline label { cursor: pointer; }
+    .checkline input:checked + label { text-decoration: line-through; color: var(--muted); }
+
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); margin: 20px 0; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+    .flow-step { min-height: 116px; padding: 14px 12px; border-right: 1px solid var(--line); background: white; }
+    .flow-step:last-child { border-right: 0; }
+    .flow-num { color: var(--muted); font-size: 11px; }
+    .flow-step strong { display: block; margin: 6px 0 4px; font-size: 14px; }
+    .flow-step p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
+
+    details.toggle { margin: 4px 0; border-radius: var(--radius); }
+    details.toggle > summary {
+      position: relative;
+      list-style: none;
+      cursor: pointer;
+      padding: 8px 8px 8px 30px;
+      font-weight: 650;
+      border-radius: var(--radius);
+    }
+    details.toggle > summary::-webkit-details-marker { display: none; }
+    details.toggle > summary::before {
+      content: "▶";
+      position: absolute;
+      left: 9px; top: 10px;
+      color: #66645f;
+      font-size: 10px;
+      transition: transform .15s ease;
+    }
+    details.toggle[open] > summary::before { transform: rotate(90deg); }
+    details.toggle > summary:hover { background: var(--soft); }
+    .toggle-content { margin: 0 8px 12px 30px; padding: 2px 0 4px; }
+    .toggle-content p { margin: 8px 0; }
+    .toggle-content ul { margin: 7px 0; padding-left: 22px; }
+
+    .formula {
+      margin: 10px 0;
+      padding: 12px 14px;
+      background: #f7f7f5;
+      border: 1px solid #ededeb;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .note-list { margin: 8px 0; padding-left: 23px; }
+    .note-list li { margin: 5px 0; }
+    .muted { color: var(--muted); }
+    .tiny { font-size: 12px; }
+    .quote {
+      margin: 18px 0;
+      padding-left: 16px;
+      border-left: 3px solid #222;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    mark { background: #ebebea; color: inherit; padding: 1px 2px; }
+    code { padding: 2px 5px; background: var(--soft); border-radius: 3px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+
+    .database { margin: 16px 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+    .db-toolbar { display: flex; align-items: center; gap: 8px; padding: 9px; border-bottom: 1px solid var(--line); background: #fff; }
+    .db-title { font-size: 13px; font-weight: 700; margin-right: auto; }
+    .db-search {
+      width: 190px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 5px 8px;
+      background: white;
+      outline: none;
+      font-size: 12px;
+    }
+    .db-search:focus { border-color: #a8a8a4; box-shadow: 0 0 0 2px #eee; }
+    .filter-btn {
+      border: 0;
+      background: transparent;
+      border-radius: 4px;
+      padding: 5px 8px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .filter-btn:hover, .filter-btn.active { background: var(--soft); }
+    .question-card { border-bottom: 1px solid var(--line); padding: 0; }
+    .question-card:last-child { border-bottom: 0; }
+    .q-head { display: grid; grid-template-columns: 48px 1fr auto; align-items: start; gap: 8px; padding: 14px 14px 9px; }
+    .q-number { color: var(--muted); font-size: 12px; padding-top: 2px; }
+    .q-title { font-weight: 650; line-height: 1.55; }
+    .q-meta { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; }
+    .q-body { padding: 0 14px 15px 70px; }
+    .answer-box {
+      width: 100%; min-height: 86px; resize: vertical;
+      margin: 8px 0;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      outline: none;
+      line-height: 1.55;
+      background: #fff;
+    }
+    .answer-box:focus { border-color: #9b9a97; box-shadow: 0 0 0 2px #efefed; }
+    .q-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+    .small-btn {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 4px;
+      padding: 5px 9px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .small-btn:hover { background: var(--soft); }
+    .small-btn.primary { background: var(--dark); color: white; border-color: var(--dark); }
+    .grade-group { margin-left: auto; display: flex; gap: 4px; }
+    .grade-btn.active { background: var(--dark); color: white; border-color: var(--dark); }
+    .solution { display: none; margin-top: 12px; padding: 13px 14px; background: var(--soft); border-radius: 4px; font-size: 13px; }
+    .solution.visible { display: block; }
+    .solution-label { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .04em; margin-bottom: 4px; }
+    .empty-state { display: none; padding: 40px 20px; text-align: center; color: var(--muted); }
+
+    .quiz-controls { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0; }
+    .quiz-controls button { border: 1px solid var(--line); background: white; border-radius: 5px; padding: 7px 10px; cursor: pointer; font-size: 13px; }
+    .quiz-controls button:hover { background: var(--soft); }
+    .quiz-controls button.strong { background: var(--dark); border-color: var(--dark); color: white; }
+    .timer-pill { display: none; align-items: center; gap: 7px; padding: 5px 9px; background: var(--dark); color: white; border-radius: 4px; font-variant-numeric: tabular-nums; font-size: 12px; }
+    body.exam-mode .timer-pill { display: inline-flex; }
+    body.exam-mode .solution, body.exam-mode .show-solution { display: none !important; }
+
+    .error-log { margin-top: 14px; }
+    .error-item { display: grid; grid-template-columns: 50px 1fr auto; gap: 10px; padding: 10px 9px; border-bottom: 1px solid var(--line); font-size: 13px; }
+    .error-item button { border: 0; background: none; cursor: pointer; color: var(--muted); }
+
+    .source-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .source-link { display: block; padding: 11px 12px; border: 1px solid var(--line); border-radius: 5px; text-decoration: none; }
+    .source-link:hover { background: var(--soft); }
+    .source-link strong { display: block; font-size: 13px; }
+    .source-link span { color: var(--muted); font-size: 11px; }
+
+    .search-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.18); z-index: 100; padding: 80px 16px; }
+    .search-overlay.open { display: block; }
+    .search-panel { width: min(620px, 100%); margin: 0 auto; background: white; border: 1px solid #d6d6d3; border-radius: 7px; box-shadow: 0 12px 44px rgba(0,0,0,.16); overflow: hidden; }
+    .search-input-wrap { display: flex; align-items: center; gap: 9px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+    .search-input-wrap input { flex: 1; border: 0; outline: 0; font-size: 15px; }
+    .search-results { max-height: 55vh; overflow-y: auto; padding: 7px; }
+    .search-result { display: block; padding: 9px 10px; border-radius: 4px; text-decoration: none; }
+    .search-result:hover { background: var(--soft); }
+    .search-result strong { display: block; font-size: 13px; }
+    .search-result span { color: var(--muted); font-size: 12px; }
+    .kbd { padding: 2px 5px; border: 1px solid #d8d8d5; border-bottom-width: 2px; border-radius: 3px; color: var(--muted); font-size: 10px; }
+
+    .mobile-menu { display: none; }
+    .back-top { position: fixed; right: 18px; bottom: 18px; border: 1px solid var(--line); border-radius: 50%; background: white; width: 36px; height: 36px; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .back-top.show { opacity: 1; pointer-events: auto; }
+
+    @media (max-width: 900px) {
+      :root { --sidebar-w: 0px; }
+      .sidebar { width: 252px; transform: translateX(-100%); box-shadow: 8px 0 28px rgba(0,0,0,.08); }
+      body.side-open .sidebar { transform: translateX(0); }
+      .mobile-menu { display: grid; }
+      main { width: min(760px, calc(100% - 32px)); padding-top: 48px; }
+      .dash-grid, .two-col { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; }
+      .flow-step { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+      .flow-step:last-child { border-bottom: 0; }
+    }
+    @media (max-width: 620px) {
+      body { font-size: 14px; }
+      main { width: calc(100% - 28px); }
+      h1 { font-size: 34px; }
+      h2 { font-size: 24px; margin-top: 48px; }
+      .plain-btn.hide-mobile { display: none; }
+      .topbar .kbd { display: none; }
+      .properties .prop-row { grid-template-columns: 105px 1fr; }
+      .db-toolbar { flex-wrap: wrap; }
+      .db-search { order: 4; width: 100%; }
+      .q-head { grid-template-columns: 34px 1fr; }
+      .q-meta { grid-column: 2; justify-content: flex-start; }
+      .q-body { padding-left: 48px; }
+      .grade-group { width: 100%; margin-left: 0; margin-top: 4px; }
+      .source-grid { grid-template-columns: 1fr; }
+      .block::before { display: none; }
+    }
+    @media print {
+      .topbar, .sidebar, .back-top, .quiz-controls, .db-toolbar, .q-actions, textarea { display: none !important; }
+      .layout { padding: 0; }
+      main { width: 100%; padding: 0; }
+      .toggle { break-inside: avoid; }
+      details.toggle > .toggle-content { display: block; }
+      .question-card { break-inside: avoid; }
+      .q-body { padding-bottom: 8px; }
+      .solution { display: block !important; background: #f5f5f5; }
+      h2 { page-break-before: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <button class="icon-btn mobile-menu" id="menuBtn" aria-label="메뉴 열기">☰</button>
+    <div class="crumb"><span class="crumb-icon">DM</span><span>데이터마이닝</span><span class="muted">/</span><span>중간고사 Study OS</span></div>
+    <div class="top-actions">
+      <span class="timer-pill" id="timerPill">시험 모드 <strong id="timerText">60:00</strong></span>
+      <button class="plain-btn" id="searchBtn">검색 <span class="kbd">⌘ K</span></button>
+      <button class="plain-btn hide-mobile" id="printBtn">인쇄</button>
+      <button class="icon-btn" id="moreBtn" aria-label="모든 토글 열기" title="모든 토글 열기">•••</button>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="side-group">
+      <div class="side-label">Study OS</div>
+      <a class="side-link active" href="#dashboard"><span class="side-icon">⌂</span>시험 대시보드</a>
+      <a class="side-link" href="#now"><span class="side-icon">→</span>지금 먼저</a>
+      <a class="side-link" href="#concepts"><span class="side-icon">▤</span>개념 노트</a>
+      <a class="side-link" href="#blanks"><span class="side-icon">▣</span>교안 빈칸</a>
+      <a class="side-link" href="#problems"><span class="side-icon">□</span>문제 은행 <span class="side-count">64</span></a>
+      <a class="side-link" href="#mistakes"><span class="side-icon">↺</span>오답 노트 <span class="side-count" id="mistakeCountSide">0</span></a>
+      <a class="side-link" href="#checklist"><span class="side-icon">✓</span>직전 체크리스트</a>
+    </div>
+    <div class="side-group">
+      <div class="side-label">개념 목차</div>
+      <a class="side-link" href="#c1"><span class="side-icon">1</span>문제 정의와 다변량</a>
+      <a class="side-link" href="#c2"><span class="side-icon">2</span>선형대수</a>
+      <a class="side-link" href="#c3"><span class="side-icon">3</span>기초통계와 베이즈</a>
+      <a class="side-link" href="#c4"><span class="side-icon">4</span>선형회귀 I · OLS</a>
+      <a class="side-link" href="#c5"><span class="side-icon">5</span>선형회귀 II · 추론</a>
+      <a class="side-link" href="#c6"><span class="side-icon">6</span>선형회귀 III · 진단</a>
+      <a class="side-link" href="#scope"><span class="side-icon">✓</span>확정 범위·제외</a>
+    </div>
+    <div class="side-progress">
+      <div class="mini-track"><div class="mini-fill" id="sideProgressFill"></div></div>
+      <div class="mini-copy"><span>전체 학습 진도</span><span id="sideProgressText">0%</span></div>
+    </div>
+  </aside>
+
+  <div class="layout">
+    <main>
+      <section id="dashboard" data-search-title="시험 대시보드">
+        <div class="page-icon">∑</div>
+        <h1>데이터마이닝 중간고사</h1>
+        <p class="subtitle">강의 교안, 제공 전사, 전사 대조 정리, 교수 교안 질문을 한곳에서 읽고 직접 풀 수 있게 만든 흑백 Study OS.</p>
+
+        <div class="properties">
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">◷</span>시험</div><div><strong>2026년 10월 16일(금) 19:40–20:40</strong></div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">⌖</span>장소</div><div>새빛관 2층 202·203·204·205호 · 조교 안내 지정 좌석</div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">◎</span>방식</div><div><span class="tag dark">약 20문제 ±2</span><span class="tag outline">다지선다</span><span class="tag outline">단순 계산</span><span class="tag outline">서술형</span></div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">≡</span>확정 범위</div><div>다변량 분석 개론 · 선형대수 · 확률통계 · 선형회귀 I–III</div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">×</span>제외</div><div>별첨 자료 · R/Python 구현체 · 전자기기 · 치팅 시트</div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">◇</span>검증</div><div>원본 교안 화면 + PDF/PPT 텍스트 + 제공 전사 + 대조 정리</div></div>
+        </div>
+
+        <div class="callout black block">
+          <div class="callout-icon">!</div>
+          <div><strong>2026-10-13 제공된 시험 공지를 최종 기준으로 전면 재검증했습니다.</strong><br />코드·별첨·로지스틱 문제는 제거했고, 교안의 빈 답안 상자와 원문 오류까지 포함해 64문제로 확장했습니다.</div>
+        </div>
+
+        <div class="dash-grid">
+          <div class="card block">
+            <p class="card-title">나의 준비도</p>
+            <p class="card-sub">개념 체크 + 문제 자기채점 기준</p>
+            <div class="big-number" id="readinessNumber">0%</div>
+            <div class="progress-track"><div class="progress-fill" id="readinessFill"></div></div>
+            <p class="tiny muted" id="readinessCopy">체크리스트와 문제를 완료하면 자동으로 올라갑니다.</p>
+          </div>
+          <div class="card block">
+            <p class="card-title">시험까지</p>
+            <p class="card-sub">Asia/Seoul · 2026.10.16 19:40</p>
+            <div class="countdown"><strong id="daysLeft">—</strong><span id="daysLabel">남음</span></div>
+            <p class="tiny muted" id="countdownDetail">시간을 계산하는 중…</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="now" data-search-title="지금 먼저 할 일">
+        <h2>지금 먼저</h2>
+        <table class="study-table block">
+          <thead><tr><th>순서</th><th>할 일</th><th>완료 기준</th><th>상태</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td><strong>교안 빈칸 회수</strong></td><td>선형대수·회귀 II 빈칸을 답 없이 먼저 재현</td><td><span class="status-dot open"></span>진행</td></tr>
+            <tr><td>02</td><td><strong>손계산 묶음</strong></td><td>행렬·고유값·OLS·R²·VIF를 계산하고 역산 검산</td><td><span class="status-dot wait"></span>대기</td></tr>
+            <tr><td>03</td><td><strong>해석 묶음</strong></td><td>t·p·F·R²를 인과·정확도와 구별해 한 문장으로 답함</td><td><span class="status-dot wait"></span>대기</td></tr>
+            <tr><td>04</td><td><strong>실전 60분</strong></td><td>무작위 20문제를 골라 평균 3분 이내로 풀이</td><td><span class="status-dot wait"></span>대기</td></tr>
+          </tbody>
+        </table>
+        <div class="callout block"><div class="callout-icon">→</div><div><strong>추천 루프</strong>　개념 토글 닫기 → 문제 풀이 → 모범 답안 확인 → 자신감 표시 → “다시”만 오답 노트에서 재풀이.</div></div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="concepts" data-search-title="개념 노트">
+        <h2>개념 노트</h2>
+        <p class="muted">공지의 다섯 범위를 원본 교안·전사와 다시 대조했습니다. 제목을 눌러 개념, 공식, 조건, 교안 오류를 확인하세요.</p>
+
+        <table class="study-table block">
+          <thead><tr><th>공지 범위</th><th>반드시 답할 수 있어야 하는 내용</th><th>상태</th></tr></thead>
+          <tbody>
+            <tr><td>다변량 분석 개론</td><td>데이터 구조·학습 방식·5단계·일반화·과적합·AI/ML/DL·3V/5V</td><td><span class="tag dark">포함</span></td></tr>
+            <tr><td>선형대수</td><td>행렬·연립계·소거·역행렬·선형변환·고유값</td><td><span class="tag dark">포함</span></td></tr>
+            <tr><td>확률통계</td><td>표본·기술통계·분포·확률/우도·상관·베이즈·편향/분산</td><td><span class="tag dark">포함</span></td></tr>
+            <tr><td>선형회귀 I–II</td><td>유형 비교·가정·OLS·추론·R²·ANOVA</td><td><span class="tag dark">포함</span></td></tr>
+            <tr><td>선형회귀 III</td><td>해석·잔차진단·정규성·등분산성·다중공선성·영향점</td><td><span class="tag dark">포함</span></td></tr>
+            <tr><td>별첨·구현체</td><td>R/Python 문법·노트북 실행·패키지 API</td><td><span class="tag outline">제외</span></td></tr>
+          </tbody>
+        </table>
+
+        <h3 id="c1">1. 문제 정의와 다변량 데이터</h3>
+        <div class="quote block">좋은 분석은 “어떤 모델을 쓸까?”가 아니라 <strong>“어떤 문제를 어떤 행동으로 연결할까?”</strong>에서 시작한다.</div>
+        <div class="flow block">
+          <div class="flow-step"><span class="flow-num">STEP 1</span><strong>문제 정의</strong><p>질문 · Y · 최종 결정 · 범위</p></div>
+          <div class="flow-step"><span class="flow-num">STEP 2</span><strong>데이터 수집</strong><p>출처 · 품질 · 결측 · 법적 제약</p></div>
+          <div class="flow-step"><span class="flow-num">STEP 3</span><strong>탐색·변환</strong><p>분포 · 관계 · 이상치 · 불균형</p></div>
+          <div class="flow-step"><span class="flow-num">STEP 4</span><strong>모델링</strong><p>후보 비교 · 검증 · 일반화</p></div>
+          <div class="flow-step"><span class="flow-num">STEP 5</span><strong>요약·배포</strong><p>해석 · 현장 행동 · 반복 개선</p></div>
+        </div>
+
+        <details class="toggle block" open>
+          <summary>샘플·변수·X·Y를 먼저 고정한다</summary>
+          <div class="toggle-content">
+            <ul class="note-list">
+              <li><strong>샘플/관측치</strong>: 사람 한 명, 와인 한 병, 이미지 한 장처럼 분석의 한 행.</li>
+              <li><strong>변수/특성</strong>: 샘플에서 측정한 열. 두 개 이상이면 다변량 데이터.</li>
+              <li><code>X ∈ R^(n×p)</code>: n개 샘플 × p개 입력 변수. <code>Y</code>: 반응·출력.</li>
+              <li>‘독립변수’라는 이름은 X끼리 독립이거나 X가 Y의 원인이라는 보장이 아니다.</li>
+            </ul>
+            <div class="formula">예측값 Ŷ = fθ(X)　·　학습 θ* = argminθ L(θ)</div>
+          </div>
+        </details>
+
+        <details class="toggle block">
+          <summary>학습 방식과 목적을 구별한다</summary>
+          <div class="toggle-content">
+            <table class="study-table">
+              <thead><tr><th>구분</th><th>핵심 질문</th><th>강의 예</th></tr></thead>
+              <tbody>
+                <tr><td>지도학습</td><td>X로 Y를 예측</td><td>수치 Y=회귀, 범주 Y=분류</td></tr>
+                <tr><td>비지도학습</td><td>Y 없이 구조 탐색</td><td>군집, 일부 이상 탐지</td></tr>
+                <tr><td>준지도학습</td><td>일부만 Y 보유</td><td>50/1000개만 레이블</td></tr>
+                <tr><td>강화학습</td><td>행동과 보상으로 정책 개선</td><td>게임 시뮬레이터</td></tr>
+              </tbody>
+            </table>
+            <p><strong>추론</strong>은 관계의 해석, <strong>예측</strong>은 새 입력의 Y 맞히기다. 잘 예측한다고 인과가 증명되는 것은 아니다.</p>
+          </div>
+        </details>
+
+        <details class="toggle block">
+          <summary>3V·5V와 비판적 데이터 읽기</summary>
+          <div class="toggle-content">
+            <p><strong>Volume</strong> 양 · <strong>Velocity</strong> 생성/처리 속도 · <strong>Variety</strong> 정형/비정형 형태 + <strong>Veracity</strong> 신뢰성 · <strong>Value</strong> 문제 해결 가치.</p>
+            <p>데이터가 많아도 결측·오표기·선택 편향·교란이 있으면 좋은 답이 자동으로 나오지 않는다. 마시멜로 사례처럼 관측 관계를 인과로 옮기기 전에 가정환경·경제적 배경 같은 교란을 확인한다.</p>
+          </div>
+        </details>
+
+        <details class="toggle block">
+          <summary>훈련·검증·테스트와 데이터 누출</summary>
+          <div class="toggle-content">
+            <p>학습 데이터로 파라미터를 맞추고, 검증 데이터로 후보·하이퍼파라미터를 비교하며, 테스트 데이터는 마지막 일반화 확인에 쓴다.</p>
+            <div class="callout"><div class="callout-icon">!</div><div>표준화·결측 대체·오버샘플링의 <strong>fit은 학습 세트에만</strong>. 분할 전에 전체 데이터로 처리하면 테스트 정보가 새어 들어간다.</div></div>
+          </div>
+        </details>
+
+        <details class="toggle block">
+          <summary>데이터마이닝 · AI · ML · DL과 데이터 형태</summary>
+          <div class="toggle-content">
+            <p><strong>데이터마이닝</strong>은 문제 정의부터 패턴 발견·해석·활용까지의 과정, <strong>ML</strong>은 데이터 관계를 학습하는 방법, <strong>DL</strong>은 여러 층 신경망을 쓰는 ML의 한 부류, <strong>AI</strong>는 추론·판단·행동을 포함하는 더 넓은 목표다.</p>
+            <p>정형 표뿐 아니라 텍스트·이미지·영상·신호·네트워크도 특징을 추출하면 다변량 표현이 된다. 큰 데이터와 복잡한 모델만으로 품질이 보장되지 않는다.</p>
+          </div>
+        </details>
+
+        <details class="toggle block">
+          <summary>일반화 · 과적합 · 차원과 불균형</summary>
+          <div class="toggle-content">
+            <p><strong>일반화</strong>는 보지 않은 자료에서도 성능을 유지하는 성질이다. n에 비해 p가 너무 크면 과적합과 추정 불안정 위험이 커진다. 변수 선택은 기존 변수를 고르고, 변수 추출은 PCA처럼 새 좌표를 만든다.</p>
+            <p>오버·언더샘플링과 데이터 증강은 <strong>학습 세트에만</strong> 적용한다. 검증·테스트 분포를 바꾸면 일반화 평가가 오염된다.</p>
+          </div>
+        </details>
+
+        <h3 id="c2">2. 선형대수</h3>
+        <details class="toggle block">
+          <summary>집합 · 함수 · 벡터 · 행렬 종류</summary>
+          <div class="toggle-content">
+            <p><code>R</code>은 실수, <code>Z</code>는 정수, <code>∅</code>는 공집합. 교집합·합집합·데카르트곱과 <code>f:X→Y</code>를 구별한다. <code>argmin</code>은 최소값 자체가 아니라 그 값을 만드는 입력을 반환한다.</p>
+            <p>행벡터·열벡터, 영행렬, 항등행렬, 상/하삼각행렬, 대칭행렬을 그림에서 식별한다. 대칭행렬은 <code>A=Aᵀ</code>다.</p>
+          </div>
+        </details>
+        <details class="toggle block" open>
+          <summary>행렬 크기와 곱 — 안쪽 차원부터 쓴다</summary>
+          <div class="toggle-content">
+            <div class="formula">A(m×n) · B(n×k) = AB(m×k)　　(AB)ᵀ = BᵀAᵀ</div>
+            <p>행렬 곱은 일반적으로 교환되지 않는다. <code>Ax=b</code>에서 <code>A∈R^(m×n)</code>, <code>x∈R^n</code>, <code>b∈R^m</code>.</p>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>가우스 소거 · REF · RREF</summary>
+          <div class="toggle-content">
+            <ol class="note-list">
+              <li>두 행 교환</li><li>한 행에 0이 아닌 상수 곱</li><li>한 행에 다른 행의 상수배 더하기</li>
+            </ol>
+            <p>REF는 pivot이 오른쪽으로 이동하고 0행이 아래에 온다. <strong>표준 정의상 REF의 pivot이 꼭 1일 필요는 없다.</strong> RREF는 pivot=1이고 pivot 열의 나머지가 0이다. 모순행이면 해 없음, 자유변수가 남으면 무한해, 모든 미지수 열에 pivot이 있으면 유일해다.</p>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>역행렬과 가역성</summary>
+          <div class="toggle-content">
+            <div class="formula">A⁻¹ = 1/(ad−bc) · [[d, −b], [−c, a]],　ad−bc ≠ 0</div>
+            <p><code>AA⁻¹=A⁻¹A=I</code>. 행렬식이 0이면 특이행렬이며 역행렬이 없다.</p>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>선형변환 · 단사 · 전사</summary>
+          <div class="toggle-content">
+            <p><code>T:Rⁿ→Rᵐ</code>, <code>T(x)=Ax</code>에서 A는 m×n. 단사는 영공간이 <code>{0}</code>, 전사는 모든 공역 y에 대해 <code>Ax=y</code>가 풀리는 것, 전단사는 둘 다 성립하는 경우다.</p>
+            <p>일반 선형사상 <code>R²→R</code>은 단사가 될 수 없다. 교안 도식의 제한된 점 집합 사례와 일반 법칙을 구별한다.</p>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>고유값·고유벡터와 교안 오류</summary>
+          <div class="toggle-content">
+            <div class="formula">Av = λv, v≠0　⇔　det(A−λI)=0</div>
+            <p><code>A=[[2,6],[5,3]]</code>이면 특성다항식은 <code>λ²−5λ−24=(λ−8)(λ+3)</code>, 고유값은 <strong>8, −3</strong>이다. 교안의 중간식 <code>+6</code>과 결론 3은 계산과 맞지 않는다.</p>
+            <p>서로 다른 고유값의 고유벡터는 선형독립이다. <strong>직교</strong>는 실수 대칭행렬 같은 추가 조건이 필요하다.</p>
+          </div>
+        </details>
+
+        <h3 id="c3">3. 기초통계와 베이즈</h3>
+        <div class="two-col">
+          <div class="card block"><p class="card-title">중심·산포</p><p>평균·중앙값·최빈값, 사분위수를 구별한다. <code>IQR=Q3−Q1</code>, <code>s²=Σ(x−x̄)²/(n−1)</code>. 분산 단위는 원변수², 표준편차는 원변수와 같다.</p></div>
+          <div class="card block"><p class="card-title">확률·우도</p><p><code>p(y|θ)</code>는 θ 고정, y가 변한다. <code>L(θ|y)</code>는 관측 y 고정, θ의 함수다. 우도 자체는 θ의 확률분포가 아니다.</p></div>
+        </div>
+        <details class="toggle block">
+          <summary>모집단 · 표본 · i.i.d. · 기술/추론 통계</summary>
+          <div class="toggle-content">
+            <p>모집단은 관심 대상 전체, 표본은 관측한 일부, 표본추출은 고르는 절차다. i.i.d.는 관측치가 독립이고 같은 분포를 따른다는 가정이지 대표성을 자동 보장하지 않는다.</p>
+            <p>기술통계는 현재 자료를 요약하고, 추론통계는 표본과 가정으로 모집단 모수·관계를 추정하거나 검정한다.</p>
+          </div>
+        </details>
+        <details class="toggle block" open>
+          <summary>분포를 개수·대기시간·밀도로 구별한다</summary>
+          <div class="toggle-content">
+            <ul class="note-list">
+              <li><strong>포아송</strong>: 고정 구간의 사건 개수.</li>
+              <li><strong>지수</strong>: 일정 발생률을 가정한 사건 사이 대기시간.</li>
+              <li><strong>정규분포</strong>: 연속형 한 점의 확률은 0. 구간의 밀도 적분이 확률.</li>
+            </ul>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>베이즈 정리 — 분모의 전체 양성을 빠뜨리지 않는다</summary>
+          <div class="toggle-content">
+            <div class="formula">P(H|D) = P(D|H)P(H) / P(D)</div>
+            <p>유병률 1%, 민감도 90%, 특이도 95%에서 양성자의 실제 질병 확률:</p>
+            <div class="formula">(0.90×0.01) / [(0.90×0.01)+(0.05×0.99)] ≈ 0.1538 = 15.38%</div>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>편향·분산·상관의 함정</summary>
+          <div class="toggle-content">
+            <p>선택 편향·추정량 편향·모델의 귀납 편향은 서로 다른 문맥이다. 모델이 너무 단순하면 편향이 크고, 너무 복잡하면 훈련 자료 변화에 민감해 분산이 클 수 있다.</p>
+            <p>피어슨 상관 0은 <mark>선형 관계가 약함</mark>이지 비선형 관계가 없다는 뜻이 아니다. 상관은 인과도 아니다. 박스플롯의 1.5 IQR 바깥점은 조사할 후보이지 자동 삭제 대상이 아니다.</p>
+          </div>
+        </details>
+
+        <h3 id="c4">4. 선형회귀 I — 모형과 OLS</h3>
+        <details class="toggle block">
+          <summary>단순 · 다중 · 비선형 회귀를 두 축으로 비교한다</summary>
+          <div class="toggle-content">
+            <p><strong>단순/다중</strong>은 설명변수 개수의 구분이고, <strong>선형/비선형</strong>은 미지 계수가 모형에 들어가는 방식의 구분이다. <code>β₀+β₁x+β₂x²</code>는 x에는 곡선이지만 β에는 선형이므로 선형회귀다.</p>
+            <p><code>e^(β₁x)</code>, <code>β₁²x</code>, <code>sin(β₁x)</code>처럼 계수가 비선형으로 들어가면 비선형 회귀다.</p>
+          </div>
+        </details>
+        <details class="toggle block" open>
+          <summary>모형·계수·단위를 한 문장으로 해석한다</summary>
+          <div class="toggle-content">
+            <div class="formula">Yᵢ = β₀ + β₁Xᵢ + εᵢ　·　E(Yᵢ|Xᵢ)=β₀+β₁Xᵢ</div>
+            <p><code>β₁</code> 단위는 [Y]/[X]. X가 1단위 증가할 때 조건부 평균 Y의 변화다. X=0이 관측 범위 밖이면 절편을 현실적으로 과해석하지 않는다.</p>
+            <p>X²를 특징으로 넣어도 <strong>미지 계수 β에 선형</strong>이면 선형회귀다.</p>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>잔차와 오차를 분리한다</summary>
+          <div class="toggle-content">
+            <div class="formula">잔차 eᵢ = yᵢ−ŷᵢ　·　모형 오차 εᵢ = yᵢ−E(Yᵢ|xᵢ)</div>
+            <p>잔차는 표본에서 계산할 수 있지만 모집단 오차는 직접 관측하지 못한다.</p>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>OLS 계산 순서</summary>
+          <div class="toggle-content">
+            <div class="formula">Sxx=Σ(xᵢ−x̄)²　·　Sxy=Σ(xᵢ−x̄)(yᵢ−ȳ)</div>
+            <div class="formula">b̂₁=Sxy/Sxx　·　b̂₀=ȳ−b̂₁x̄　·　SSE=Σ(yᵢ−ŷᵢ)²</div>
+            <ol class="note-list"><li>n과 단위 표시</li><li>x̄, ȳ 계산</li><li>Sxx, Sxy</li><li>기울기·절편</li><li>예측·잔차·SSE</li><li>잔차 합과 원자료 대입 검산</li></ol>
+            <p>다중회귀의 행렬형은 <code>y=Xβ+ε</code>, X가 완전 열랭크이면 <code>β̂=(XᵀX)⁻¹Xᵀy</code>. 완전 다중공선성이 있으면 역행렬이 존재하지 않아 계수를 유일하게 정할 수 없다.</p>
+          </div>
+        </details>
+
+        <h3 id="c5">5. 선형회귀 II — 추정·검정·평가</h3>
+        <details class="toggle block">
+          <summary>추정량 · 추정치 · BLUE</summary>
+          <div class="toggle-content">
+            <p>추정량은 표본을 입력받아 값을 만드는 확률변수/함수, 추정치는 관측 후 나온 숫자다. BLUE는 <strong>Best Linear Unbiased Estimator</strong>: 선형·불편 추정량 중 최소분산이라는 뜻이다.</p>
+            <p>가우스–마르코프의 BLUE에는 정규성이 필수는 아니지만, 소표본 t/F의 정확한 분포를 쓸 때는 정규오차 같은 추가 조건이 중요하다.</p>
+          </div>
+        </details>
+        <details class="toggle block" open>
+          <summary>표준오차·신뢰구간·t 검정</summary>
+          <div class="toggle-content">
+            <div class="formula">s²=SSE/(n−2)　·　SE(b̂₁)=s/√Sxx</div>
+            <div class="formula">95% CI: b̂₁ ± t₍0.975,n−2₎SE(b̂₁)　·　t=b̂₁/SE(b̂₁)</div>
+            <p><code>H₀:β₁=0</code>. p값은 H₀가 참일 확률이 아니라, <strong>H₀ 아래에서 지금만큼 극단적인 통계량이 나올 확률</strong>이다. 작은 p값이 인과효과를 증명하지 않는다.</p>
+          </div>
+        </details>
+        <details class="toggle block" open>
+          <summary>SST · SSR · SSE와 R²</summary>
+          <div class="toggle-content">
+            <div class="formula">SST=Σ(yᵢ−ȳ)²　·　SSR=Σ(ŷᵢ−ȳ)²　·　SSE=Σ(yᵢ−ŷᵢ)²</div>
+            <div class="formula">SST=SSR+SSE　·　R²=1−SSE/SST</div>
+            <p>이 등식은 <strong>절편이 있는 OLS의 같은 학습자료</strong> 조건에서 쓴다. R²=0.8은 학습자료 변동 80% 설명이지, 테스트 정확도 80%나 인과효과 80%가 아니다. 테스트 R²는 음수일 수 있다.</p>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>수정 R²와 F 검정</summary>
+          <div class="toggle-content">
+            <div class="formula">R²adj = 1 − [SSE/(n−p−1)] / [SST/(n−1)]</div>
+            <div class="formula">F = (SSR/p) / (SSE/(n−p−1))　·　단순회귀에서는 F=t²</div>
+            <p>전체 귀무가설은 <code>H₀:β₁=⋯=βp=0</code>. F는 자유도를 보정한 설명변동/잔차변동 비율이며 예측 정확도 퍼센트가 아니다. 정규오차 조건에서 제곱합은 χ²와 연결되고, 독립 χ²/자유도의 비가 F분포를 만든다.</p>
+          </div>
+        </details>
+        <div class="callout block"><div class="callout-icon">!</div><div><strong>교안 검산</strong>　<code>t≈9.464</code>이면 <code>F≈89.57</code>. 교안 p.42의 <code>P(Y≥7.540)</code> 표기는 이 F값과 맞지 않습니다.</div></div>
+
+        <h3 id="c6">6. 선형회귀 III — 가정 진단과 공선성</h3>
+        <table class="study-table block">
+          <thead><tr><th>가정</th><th>무엇을 본다</th><th>의심 패턴</th></tr></thead>
+          <tbody>
+            <tr><td>선형성</td><td>잔차–적합값 / X–Y</td><td>U자·곡선</td></tr>
+            <tr><td>등분산성</td><td>잔차–적합값</td><td>부채꼴</td></tr>
+            <tr><td>정규성</td><td>Q–Q plot / 잔차 분포</td><td>직선에서 체계적 이탈</td></tr>
+            <tr><td>오차 독립성</td><td>시간·관측 순서별 잔차</td><td>연속 패턴·주기</td></tr>
+          </tbody>
+        </table>
+        <details class="toggle block" open>
+          <summary>다중공선성 · tolerance · VIF</summary>
+          <div class="toggle-content">
+            <div class="formula">Toleranceⱼ = 1−Rⱼ²　·　VIFⱼ = 1/(1−Rⱼ²)</div>
+            <p><code>Rⱼ²</code>는 Xⱼ를 나머지 X로 회귀한 보조회귀의 결정계수. <code>Rⱼ²=0.9</code>이면 tolerance=0.1, VIF=10.</p>
+            <p>VIF 5·10은 관행적 신호이지 자동 삭제 명령이 아니다. 해석/예측 목적, 도메인 의미, 테스트 성능을 함께 본다.</p>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>입력의 상관과 오차 독립성을 혼동하지 않는다</summary>
+          <div class="toggle-content">
+            <p>X끼리 강하게 상관되는 것은 <strong>다중공선성</strong>, 오차가 시간·집단에 따라 연관되는 것은 <strong>오차 독립성</strong> 문제다. 하나가 다른 하나를 자동으로 뜻하지 않는다.</p>
+          </div>
+        </details>
+        <details class="toggle block">
+          <summary>Cook’s distance가 크다고 바로 삭제하지 않는다</summary>
+          <div class="toggle-content"><p>입력 오류인지, 실제로 중요한 극단 사례인지, 모형 지정 오류인지 확인하고 포함/제외 민감도를 비교한 뒤 결정한다.</p></div>
+        </details>
+
+        <details class="toggle block">
+          <summary>가정 위반·공선성 대응</summary>
+          <div class="toggle-content">
+            <p>곡률에는 제곱항·누락 변수 추가, 분산 증가에는 로그·제곱근·Box–Cox 변환, 공선성에는 중복 변수 선택·결합, Ridge/Lasso/Elastic Net 또는 PCA를 검토한다.</p>
+            <p>이는 자동 처방이 아니다. 자료 생성 과정, 해석 목적, 예측 성능과 민감도 분석을 함께 적는다. 공지상 구현체는 제외이므로 코드와 패키지 문법은 외우지 않는다.</p>
+          </div>
+        </details>
+
+        <h3 id="blanks">교안 빈칸 · 그대로 나올 가능성이 높은 상자</h3>
+        <p class="muted">원본 PDF 화면의 실제 빈 답안 상자를 확인하고, 숨은 텍스트와 직접 계산을 대조했습니다. 아래 항목은 문제은행에서 <strong>교안 빈칸</strong> 태그로 다시 풀 수 있습니다.</p>
+        <table class="study-table block">
+          <thead><tr><th>원본</th><th>빈칸</th><th>정답 핵심</th></tr></thead>
+          <tbody>
+            <tr><td>선형대수 p.16–22</td><td>행·열벡터, 행렬곱 크기, 전치 성질</td><td>안쪽 차원 일치, 결과는 바깥 차원, (AB)ᵀ=BᵀAᵀ</td></tr>
+            <tr><td>선형대수 p.25–34</td><td>선형식 O/X, 해의 수, 계수·첨가행렬</td><td>유일/무한/없음, Ax=b와 [A|b]</td></tr>
+            <tr><td>선형대수 p.41</td><td>네 행렬의 REF 판정</td><td>좌상만 O, 나머지 X</td></tr>
+            <tr><td>선형대수 p.44–46</td><td>역행렬 해·AB·2×2 조건</td><td>x=A⁻¹b, AB=I, det≠0</td></tr>
+            <tr><td>선형대수 p.56</td><td>세 벡터의 AX=λX 확인</td><td>(2,3): λ=7, (−1,1): λ=2, (3,−2): 아님</td></tr>
+            <tr><td>선형대수 p.58–59</td><td>λ=8의 고유벡터, 특성방정식</td><td>c(1,1), λ=8·−3</td></tr>
+            <tr><td>회귀 II p.21–25</td><td>계수·식·SE·가설·t·p·해석</td><td>−17.5791, 3.9324, 6.7584, 0.4155, t=9.464, p=1.49×10⁻¹²</td></tr>
+            <tr><td>회귀 II p.32</td><td>R²=1 / R²=0 해석</td><td>모든 변동 설명 / 평균모형 대비 설명변동 없음</td></tr>
+            <tr><td>회귀 II p.36</td><td>R²와 수정 R²</td><td>0.6511 / 0.6438</td></tr>
+            <tr><td>회귀 II p.42</td><td>ANOVA 해석</td><td>F=89.57, df=(1,48), p≈1.49×10⁻¹², 전체 회귀 유의</td></tr>
+          </tbody>
+        </table>
+
+        <h3 id="scope">확정 제외와 경계</h3>
+        <div class="callout black block"><div class="callout-icon">×</div><div><strong>시험 공지상 제외</strong><br />별첨 자료와 R·Python 등 구현체는 일체 범위가 아닙니다. 로지스틱 회귀도 공지의 다섯 범위에 없으므로 문제은행에서 제거했습니다.</div></div>
+        <div class="callout block"><div class="callout-icon">i</div><div>Ridge/Lasso/Elastic Net은 회귀 III 교안에서 다중공선성 대응 후보로 언급된 <strong>개념 이름</strong>만 남겼습니다. 구현·목적함수 계산은 출제 범위로 다루지 않습니다.</div></div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="problems" data-search-title="문제 은행 64문제">
+        <h2>문제 은행</h2>
+        <p class="muted">실제 약 20문제 시험을 세 번 이상 연습할 수 있도록 64문제로 확장했습니다. 교안 빈칸, 다지선다, 단순 사칙연산, 서술형을 모두 섞었고 답안은 자동 저장됩니다.</p>
+        <div class="quiz-controls">
+          <button class="strong" id="randomBtn">무작위 문제</button>
+          <button id="unsolvedBtn">다음 미완료</button>
+          <button id="examModeBtn">60분 시험 모드</button>
+          <button id="resetBtn">진도 초기화</button>
+        </div>
+        <div class="database">
+          <div class="db-toolbar">
+            <span class="db-title">▦ 전체 문제</span>
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn" data-filter="calc">계산</button>
+            <button class="filter-btn" data-filter="concept">개념</button>
+            <button class="filter-btn" data-filter="blank">교안 빈칸</button>
+            <button class="filter-btn" data-filter="again">다시</button>
+            <input class="db-search" id="questionSearch" type="search" placeholder="문제 검색…" aria-label="문제 검색" />
+          </div>
+          <div id="questionList"></div>
+          <div class="empty-state" id="emptyState">조건에 맞는 문제가 없습니다.</div>
+        </div>
+      </section>
+
+      <section id="mistakes" data-search-title="오답 노트">
+        <h2>오답 노트</h2>
+        <p class="muted">문제에서 “다시” 또는 “애매”로 표시하면 이곳에 자동으로 모입니다.</p>
+        <div class="database error-log" id="errorLog"><div class="empty-state" style="display:block">아직 등록된 오답이 없습니다.</div></div>
+      </section>
+
+      <section id="checklist" data-search-title="시험 직전 체크리스트">
+        <h2>시험 직전 체크리스트</h2>
+        <p class="muted">자료 없이 말하거나 계산할 수 있을 때 체크하세요. 상태는 브라우저에 저장됩니다.</p>
+        <div class="card block" id="checklistBox">
+          <div class="checkline"><input type="checkbox" id="ck1" /><label for="ck1">공지의 날짜·시간·장소·준비물·제외 범위를 확인했다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck2" /><label for="ck2">샘플·변수·X/Y, 정형/비정형, 3V·5V를 사례로 설명한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck3" /><label for="ck3">지도/비지도/준지도/강화와 추론/예측/군집을 구별한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck4" /><label for="ck4">데이터마이닝 5단계와 훈련/검증/테스트의 역할을 말한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck5" /><label for="ck5">행렬 종류·크기·곱·전치와 선형/비선형 식을 판정한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck6" /><label for="ck6">계수/첨가행렬, 행 연산, REF/RREF, 해의 수를 연결한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck7" /><label for="ck7">역행렬·행렬식·선형변환·고유값/벡터를 손으로 검산한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck8" /><label for="ck8">모집단/표본/i.i.d., 기술/추론, 중심·산포를 구별한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck9" /><label for="ck9">포아송/지수, 확률/밀도/우도, 상관/인과를 구별한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck10" /><label for="ck10">조건부확률·베이즈, 편향–분산, 차원·불균형을 설명한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck11" /><label for="ck11">단순/다중과 선형/비선형을 서로 다른 축으로 분류한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck12" /><label for="ck12">OLS의 b₀, b₁, 예측, 잔차, SSE를 계산하고 단위를 쓴다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck13" /><label for="ck13">추정량/추정치/BLUE, SE·신뢰구간·t·p를 설명한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck14" /><label for="ck14">SST=SSR+SSE, R², 수정 R², F와 단순회귀 F=t²를 계산한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck15" /><label for="ck15">선형성·정규성·등분산성·오차 독립성을 잔차 그림과 연결한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck16" /><label for="ck16">tolerance/VIF·조건지수와 공선성의 영향을 설명한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck17" /><label for="ck17">교안 빈칸을 답안 없이 한 번씩 재현했다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck18" /><label for="ck18">교안 오류 항목에 정확한 조건과 검산 결과를 붙여 답한다.</label></div>
+        </div>
+      </section>
+
+      <section id="sources" data-search-title="근거 자료">
+        <h2>근거 자료</h2>
+        <p class="muted">이 HTML은 아래 로컬 정리와 원문 연결을 기준으로 만들었습니다.</p>
+        <div class="source-grid">
+          <div class="source-link"><strong>핵심개념과 공식</strong><span>공식 · 조건 · 근거 페이지 대조</span></div>
+          <div class="source-link"><strong>유형별 풀이전략</strong><span>계산과 서술 답안 순서 대조</span></div>
+          <div class="source-link"><strong>공지·누락·빈칸 검증</strong><span>원본 화면과 전사 재대조</span></div>
+          <div class="source-link"><strong>정답과 해설</strong><span>검산 · 단위 · 채점 요소 대조</span></div>
+          <div class="source-link"><strong>주차별 정리</strong><span>8개 전사와 교안 대조본 확인</span></div>
+          <div class="source-link"><strong>원문과 검증</strong><span>교안 오류 의심과 조건 확인</span></div>
+        </div>
+        <div class="callout block" style="margin-top:24px"><div class="callout-icon">i</div><div><strong>교안 빈칸</strong> 태그는 원본 교안의 실제 질문·빈 상자에서 가져왔고, 나머지는 공지 범위와 강의 내용을 바탕으로 만든 예상문제입니다. “예상”은 출제 확정을 뜻하지 않습니다.</div></div>
+      </section>
+    </main>
+  </div>
+
+  <button class="back-top" id="backTop" aria-label="맨 위로">↑</button>
+
+  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="페이지 검색">
+    <div class="search-panel">
+      <div class="search-input-wrap"><span>⌕</span><input id="globalSearch" type="search" placeholder="개념, 공식, 문제 검색…" /><span class="kbd">ESC</span></div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <script>
+    const problemsLegacy = [
+      {id:1, chapter:'데이터마이닝', type:'concept', kind:'서술형', level:'핵심', prompt:'데이터마이닝의 다섯 단계를 순서대로 쓰고 각 단계에서 확인할 내용을 한 가지씩 설명하라.', answer:'문제 정의 → 데이터 수집 → 데이터 탐색·정제·변환 → 데이터 모델링·검증 → 결과 요약·배포. 질문·Y·행동 정의, 품질과 법적 제약, 분포·결측·이상치, 목적에 맞는 후보와 일반화 평가, 현장 해석과 행동 연결을 각각 확인한다.'},
+      {id:2, chapter:'데이터마이닝', type:'concept', kind:'서술형', level:'핵심', prompt:'모델을 먼저 선택하는 접근이 위험한 이유를 문제 정의, 데이터, 의사결정의 세 관점에서 설명하라.', answer:'실제 질문과 출력이 불명확해지고, 필요한 표본·변수·품질 조건을 놓치며, 예측값을 어떤 행동으로 연결할지 정하지 못할 수 있다. 문제·데이터·최종 행동에 맞춰 모델을 골라야 한다.'},
+      {id:3, chapter:'일반화', type:'concept', kind:'개념형', level:'핵심', prompt:'일반화와 규제화의 관계를 설명하고 학습 데이터 성능만 확인했을 때 생길 수 있는 문제를 쓰라.', answer:'일반화는 보지 않은 데이터에서도 성능을 유지하는 성질이다. 규제화는 모델 복잡도나 계수에 제약을 두어 과적합을 줄이고 일반화를 돕는다. 학습 성능만 보면 과적합을 놓칠 수 있어 검증·테스트 성능을 따로 확인해야 한다.'},
+      {id:4, chapter:'학습 목적', type:'concept', kind:'분류형', level:'기초', prompt:'다음 목표에 선형회귀와 로지스틱 회귀 중 더 직접적으로 연결되는 모델과 이유를 쓰라. (a) 다음 달 매출액 (b) 고객 이탈 여부', answer:'(a) 매출액은 수치형 출력이므로 선형회귀. (b) 이탈 여부는 범주형 출력이므로 로지스틱 회귀. 실제 선택에서는 관계 형태·가정·평가 지표도 확인한다.'},
+      {id:5, chapter:'학습 목적', type:'concept', kind:'T/F', level:'함정', prompt:'“Naïve Bayes, KNN, SVM은 수업에서 분류 관점으로 소개되므로 어떤 형태로도 회귀에 사용할 수 없다.” 참/거짓과 근거를 쓰라.', answer:'거짓. 수업에서는 분류 관점으로 다루지만 KNN과 SVM 등은 회귀 변형도 있다. 알고리즘 이름이 아니라 출력 형태·손실함수·구현을 확인해야 한다.'},
+      {id:6, chapter:'문제 정의', type:'concept', kind:'응용', level:'응용', prompt:'벌통 온도와 벌 활동량을 분석한다. 가능한 X, Y, 표본 단위, 최종 행동과 인과 주장 전 확인할 교란 요인 두 가지를 제시하라.', answer:'예: X=온도·시간대·영상 활동 특징, Y=10분간 출입 벌 수 또는 건강 이상 여부, 표본=벌통 하나의 10분 구간, 행동=위험 시 환기·차광·냉각 검토. 교란은 시간대·계절·날씨·먹이·벌통 규모·질병·카메라 조건 등.'},
+      {id:7, chapter:'선형회귀', type:'concept', kind:'객관식', level:'함정', prompt:'다음 중 계수에 대해 선형인 회귀식은? ① y=β₀+β₁x+ε ② y=β₀+e^(β₁x)+ε ③ y=β₀+β₁²x+ε ④ y=β₀+sin(β₁x)+ε. 기준도 설명하라.', answer:'①. 선형의 기준은 x가 아니라 미지 계수 β에 대한 선형성이다. x² 같은 변환을 써도 계수가 1차로 더해지면 선형회귀가 가능하다.'},
+      {id:8, chapter:'선형대수', type:'calc', kind:'계산', level:'기초', prompt:'A가 3×2, B가 2×4일 때 AB, BA, AᵀA가 정의되는지 판정하고 결과 크기를 쓰라.', answer:'AB=(3×2)(2×4)→3×4. BA=(2×4)(3×2)는 안쪽 차원 4≠3으로 정의되지 않는다. AᵀA=(2×3)(3×2)→2×2.'},
+      {id:9, chapter:'선형대수', type:'calc', kind:'계산', level:'기초', prompt:'2x+y=5, x−y=1을 소거법으로 풀고 두 원식에 대입해 검산하라.', answer:'x=y+1을 첫 식에 넣으면 2(y+1)+y=5, y=1, x=2. 검산: 2·2+1=5, 2−1=1.'},
+      {id:10, chapter:'선형대수', type:'calc', kind:'계산', level:'핵심', prompt:'A=[[2,1],[1,2]]의 행렬식과 역행렬을 구하고 AA⁻¹=I를 검산하라.', answer:'det(A)=4−1=3. A⁻¹=(1/3)[[2,−1],[−1,2]]. 곱하면 대각은 1, 비대각은 0이 되어 I다.'},
+      {id:11, chapter:'선형대수', type:'calc', kind:'계산', level:'함정', prompt:'A=[[2,6],[5,3]]의 특성다항식과 고유값을 구하라.', answer:'det(A−λI)=(2−λ)(3−λ)−30=λ²−5λ−24=(λ−8)(λ+3). 고유값은 8, −3. 합=trace=5, 곱=det=−24로 검산한다.'},
+      {id:12, chapter:'기초통계', type:'concept', kind:'T/F', level:'함정', prompt:'(a) 포아송은 일정 구간 사건 횟수를 다룬다. (b) 지수분포는 그 횟수를 세는 이산분포다. (c) 정규분포의 밀도값은 개별 값이 나올 확률과 같다.', answer:'(a) 참. (b) 거짓: 지수분포는 사건 사이 대기시간의 연속 모형. (c) 거짓: 연속형 한 점의 확률은 0이고 구간 적분이 확률이다.'},
+      {id:13, chapter:'베이즈', type:'calc', kind:'계산', level:'핵심', prompt:'유병률 1%, 민감도 90%, 특이도 95%다. 양성 판정자의 실제 질병 확률을 베이즈 정리로 구하라.', answer:'(0.90×0.01)/[(0.90×0.01)+(0.05×0.99)]=0.009/0.0585≈0.1538=15.38%. 10,000명 기준 참양성 90, 거짓양성 495이므로 90/585로 검산.'},
+      {id:14, chapter:'기초통계', type:'concept', kind:'서술형', level:'핵심', prompt:'확률 p(y|θ)와 가능도 L(θ|y)의 해석 차이와 연속형 밀도값을 확률이라 부르면 안 되는 이유를 쓰라.', answer:'p(y|θ)는 θ를 고정하고 y의 확률·밀도를 본다. L(θ|y)는 관측 y를 고정하고 θ별 자료 적합도를 보는 함수이며 θ의 확률분포가 아니다. 연속형에서는 P(Y=y)=0이고 구간 확률은 밀도를 적분한다.'},
+      {id:15, chapter:'OLS', type:'calc', kind:'계산', level:'핵심', prompt:'(x,y)=(0,1),(1,3),(2,5)에서 절편 포함 OLS의 절편·기울기, 예측값, SSE를 구하고 단위를 쓰라. x=시간(h), y=생산량(개).', answer:'x̄=1h, ȳ=3개, Sxy=4h·개, Sxx=2h². b̂₁=2개/h, b̂₀=1개. 예측=(1,3,5)개, 잔차=(0,0,0)개, SSE=0개².'},
+      {id:16, chapter:'OLS', type:'calc', kind:'계산', level:'핵심', prompt:'(x,y)=(0,1),(1,2),(2,2),(3,4)에서 OLS 직선, SSE, SST, R²를 구하고 SST=SSR+SSE를 검산하라.', answer:'x̄=1.5, ȳ=2.25, Sxx=5, Sxy=4.5. ŷ=0.9+0.9x. 잔차=(0.1,0.2,−0.7,0.4), SSE=0.70개², SST=4.75개², SSR=4.05개², R²=1−0.70/4.75≈0.8526.'},
+      {id:17, chapter:'추론', type:'calc', kind:'계산·해석', level:'핵심', prompt:'b₁=3.9324개/h, SE=0.4155개/h, df=48. t값과 t₀.₉₇₅,₄₈≈2.011을 사용한 95% 신뢰구간을 구하고 유의성과 인과를 구별하라.', answer:'t=3.9324/0.4155≈9.464. 95% CI=3.9324±2.011·0.4155≈[3.0968,4.7680]개/h. 0이 없어 H₀를 기각하지만, 관측 연관의 유의성은 교란을 배제한 인과효과 증명이 아니다.'},
+      {id:18, chapter:'모형평가', type:'calc', kind:'계산', level:'핵심', prompt:'n=50, p=1, 학습 R²=0.6511일 때 수정 R²를 계산하고 원래 R²보다 작은 이유를 쓰라.', answer:'R²adj=1−(1−0.6511)(49/48)=0.64383125≈0.6438. 변수 수와 잔차 자유도를 보정하므로 같은 자료의 R²보다 조금 낮다.'},
+      {id:19, chapter:'모형평가', type:'calc', kind:'계산·T/F', level:'함정', prompt:'단순회귀 기울기 t=9.464일 때 전체 회귀 F를 계산하라. “이 값이 크면 새 데이터 정확도가 89.57%다”의 참/거짓과 이유도 쓰라.', answer:'F=t²=9.464²≈89.57. 진술은 거짓. F는 자유도 조정 설명변동/잔차변동 비율이며 테스트 정확도 %가 아니다.'},
+      {id:20, chapter:'코드', type:'concept', kind:'코드', level:'응용', prompt:'YearsExperience와 Salary로 X는 2차원, y는 1차원으로 두고 80/20 분할, 선형회귀 학습, 테스트 MSE 계산 순서를 쓰라. Salary 단위는 만 원.', answer:"X=data[['YearsExperience']], y=data['Salary']; train_test_split(..., test_size=0.2, random_state=0); LinearRegression().fit(X_train,y_train); predict(X_test); mean_squared_error(y_test,y_pred). MSE 단위는 (만 원)². 전처리 fit도 학습자료에만 한다."},
+      {id:21, chapter:'가정 진단', type:'concept', kind:'서술형', level:'핵심', prompt:'선형성·오차 독립성·등분산성·오차 정규성을 각각 어떤 그림이나 맥락으로 점검할지 설명하라. 정규성의 역할도 구별하라.', answer:'선형성=잔차-적합값의 곡률, 등분산성=퍼짐의 부채꼴, 정규성=Q–Q plot/잔차 분포, 오차 독립성=시간·관측 순서별 잔차와 자료 생성 과정. 정규성 없이도 OLS 계산은 가능하지만 소표본 t/F의 정확한 분포에는 관련 조건이 중요하다.'},
+      {id:22, chapter:'다중공선성', type:'calc', kind:'계산', level:'핵심', prompt:'어떤 설명변수를 나머지 설명변수에 회귀한 R²가 0.9다. tolerance와 VIF를 계산하고 VIF=10이면 무조건 삭제해야 하는지 설명하라.', answer:'tolerance=1−0.9=0.1, VIF=1/0.1=10. 공선성 신호지만 변수 삭제는 예측/해석 목적, 도메인 의미, 다른 변수와의 관계, 테스트 성능을 함께 보고 결정한다.'},
+      {id:23, chapter:'가정 진단', type:'concept', kind:'T/F', level:'함정', prompt:'“설명변수들이 서로 강하게 상관되면 오차의 시간적 독립성 가정이 자동으로 위반된다.” 참/거짓과 근거를 쓰라.', answer:'거짓. 설명변수 사이 강한 상관은 다중공선성, 관측 순서에 따른 오차 연관은 오차 독립성 문제다. 함께 나타날 수는 있지만 하나가 다른 하나를 자동으로 뜻하지 않는다.'},
+      {id:24, chapter:'문제 정의', type:'concept', kind:'응용', level:'응용', prompt:'제조 데이터에서 온도·압력·시간으로 제품 품질을 예측한다. 표본, X/Y, 분리, 모델 선택, 지표, 인과 주의를 한 흐름으로 제시하라.', answer:'한 행=한 생산 배치, X=(온도,압력,시간). Y가 연속 품질점수면 회귀, 합격/불합격이면 분류. 시간·설비 반복을 고려해 분리하고 전처리는 학습자료로만 fit. 회귀는 MAE/MSE/R², 분류는 혼동행렬·정밀도·재현율 등을 목적에 맞게 사용. 계수만으로 인과를 단정하지 않는다.'}
+    ];
+
+    const problems = [
+      {id:1,chapter:"다변량 개론",type:"concept",kind:"서술형",level:"핵심",prompt:"샘플·변수·X·Y를 정의하고 X∈R^(n×p)의 n과 p가 무엇인지 쓰라.",answer:"샘플은 분석 단위인 한 관측, 변수는 그 관측에서 측정한 특성이다. X는 n개 샘플×p개 입력변수 행렬, Y는 반응·출력이다. 독립변수라는 이름만으로 X끼리 독립이거나 X가 원인인 것은 아니다."},
+      {id:2,chapter:"다변량 개론",type:"concept",kind:"다지선다",level:"기초",prompt:"다음 중 다변량 데이터가 아닌 것은? ① 사람별 키·몸무게 ② 와인별 산도·당도 ③ 시간별 온도 하나만 측정 ④ 이미지에서 여러 특징 추출",answer:"③. 한 변수만 측정한 단변량 자료다. 이미지도 여러 특징으로 표현하면 다변량 분석이 가능하다."},
+      {id:3,chapter:"다변량 개론",type:"concept",kind:"서술형",level:"핵심",prompt:"데이터마이닝의 5단계를 순서대로 쓰고 각 단계의 대표 점검 한 가지를 적으라.",answer:"문제 정의→데이터 수집→탐색·정제·변환→모델링·검증→결과 요약·배포. 각각 질문/Y/행동, 출처·품질, 결측·이상치, 후보·일반화, 해석·현장 행동을 점검한다."},
+      {id:4,chapter:"다변량 개론",type:"concept",kind:"매칭",level:"핵심",prompt:"빅데이터 3V와 추가 2V를 쓰고 뜻을 연결하라.",answer:"Volume=양, Velocity=생성·처리 속도, Variety=형태 다양성, Veracity=정확성·신뢰성, Value=문제 해결 가치."},
+      {id:5,chapter:"다변량 개론",type:"concept",kind:"다지선다",level:"함정",prompt:"데이터마이닝·AI·ML·DL 관계 설명으로 가장 적절한 것은? ① 모두 완전히 같은 말 ② DL은 ML의 한 방법이고 데이터마이닝은 문제 정의·해석·활용까지 포함 ③ AI는 항상 DL만 사용 ④ 데이터마이닝은 검색만 뜻함",answer:"②. 강의에서는 데이터마이닝을 지식 발견 과정, ML을 데이터 관계 학습, DL을 다층 신경망 ML, AI를 더 넓은 목표로 구분한다."},
+      {id:6,chapter:"다변량 개론",type:"concept",kind:"분류형",level:"핵심",prompt:"Y가 전부 있음, Y가 없음, 일부만 Y가 있음, 환경 보상으로 행동을 학습하는 네 상황의 학습 방식을 순서대로 쓰라.",answer:"지도학습, 비지도학습, 준지도학습, 강화학습."},
+      {id:7,chapter:"다변량 개론",type:"concept",kind:"T/F",level:"함정",prompt:"테스트 세트는 후보 모델과 하이퍼파라미터를 반복 비교하는 데 쓰고 마지막에 검증 세트로 성능을 보고한다. 참/거짓과 이유를 쓰라.",answer:"거짓. 학습은 파라미터 적합, 검증은 후보 선택, 테스트는 마지막 일반화 확인에 쓴다. 테스트를 반복 사용하면 테스트 정보에 과적합된다."},
+      {id:8,chapter:"다변량 개론",type:"concept",kind:"서술형",level:"핵심",prompt:"일반화·과적합·데이터 누출을 구별하고 전처리 fit을 어디서 해야 하는지 쓰라.",answer:"일반화는 보지 않은 자료 성능 유지, 과적합은 학습자료에만 지나치게 맞는 현상, 누출은 평가자료 정보가 학습에 들어가는 현상이다. 표준화·결측대체·오버샘플링 등의 fit은 학습 세트에서만 한다."},
+      {id:9,chapter:"다변량 개론",type:"concept",kind:"응용",level:"응용",prompt:"공장 센서 자료에 레이블이 없다. 이상을 찾고 전문가가 유형을 붙인 뒤 원인을 자동 분류하는 흐름에서 비지도·지도 단계를 구분하라.",answer:"초기 이상 탐지·군집은 Y가 없어 비지도 단계다. 전문가가 유형 레이블을 붙인 뒤 X에서 유형 Y를 예측하는 분류기를 학습하는 부분은 지도 단계다."},
+
+      {id:10,chapter:"선형대수",type:"blank",kind:"교안 p.16",level:"교안 빈칸",prompt:"A=[[1,2,3],[4,5,6]]에서 행렬 크기, A_i2, A_2j를 쓰라.",answer:"A는 2×3. A_i2는 2열 열벡터 (2,5)ᵀ, A_2j는 2행 행벡터 (4,5,6)."},
+      {id:11,chapter:"선형대수",type:"blank",kind:"교안 p.18·22",level:"교안 빈칸",prompt:"전치 성질 네 개를 완성하라: (Aᵀ)ᵀ, (A+B)ᵀ, (kA)ᵀ, (AB)ᵀ.",answer:"(Aᵀ)ᵀ=A, (A+B)ᵀ=Aᵀ+Bᵀ, (kA)ᵀ=kAᵀ, (AB)ᵀ=BᵀAᵀ. 곱의 순서가 뒤집힌다."},
+      {id:12,chapter:"선형대수",type:"calc",kind:"사칙연산",level:"기초",prompt:"A가 3×2, B가 2×4일 때 AB, BA, AᵀA가 정의되는지와 결과 크기를 쓰라.",answer:"AB는 3×4, BA는 안쪽 차원 4와 3이 달라 정의되지 않음, AᵀA는 (2×3)(3×2)이므로 2×2."},
+      {id:13,chapter:"선형대수",type:"blank",kind:"교안 p.21",level:"교안 빈칸",prompt:"A=[[6,7],[2,4],[4,1]], B=(3,1)ᵀ일 때 AB와 크기를 구하라.",answer:"AB=(25,10,13)ᵀ, 크기는 3×1."},
+      {id:14,chapter:"선형대수",type:"blank",kind:"교안 p.25",level:"교안 빈칸",prompt:"다음이 선형 1차 방정식인지 판정하라: (a) x₁−2x₂+33=4 (b) 3x₁+2x₂=7x₁x₂ (c) 2x₁=3√x₂+2 (d) x₃−sin x₂=x₁.",answer:"(a) O. (b) X: 미지수끼리 곱. (c) X: 제곱근. (d) X: sin 함수. 미지수가 1차 선형결합으로만 들어가야 한다."},
+      {id:15,chapter:"선형대수",type:"blank",kind:"교안 p.34",level:"교안 빈칸",prompt:"3x₁+40x₂+50x₃=80, 10x₁+20x₂+2x₃=62, 6x₁+8x₂+9x₃=133의 계수행렬과 첨가행렬을 쓰라.",answer:"A=[[3,40,50],[10,20,2],[6,8,9]], b=(80,62,133)ᵀ. 첨가행렬은 [[3,40,50|80],[10,20,2|62],[6,8,9|133]]."},
+      {id:16,chapter:"선형대수",type:"blank",kind:"교안 p.32",level:"교안 빈칸",prompt:"2차원에서 두 직선이 한 점에서 교차, 완전히 일치, 평행하지만 다를 때 해의 개수를 각각 쓰라.",answer:"한 점 교차=유일해, 일치=무한해, 서로 다른 평행선=해 없음."},
+      {id:17,chapter:"선형대수",type:"concept",kind:"서술형",level:"핵심",prompt:"첨가행렬에 허용되는 세 기본 행 연산과 한 행에 0을 곱하면 안 되는 이유를 쓰라.",answer:"행 교환, 한 행에 0이 아닌 상수 곱, 한 행에 다른 행의 상수배 더하기. 0을 곱하면 원래 방정식 정보가 사라져 역연산이 불가능하고 해집합을 보존하지 못한다."},
+      {id:18,chapter:"선형대수",type:"blank",kind:"교안 p.41",level:"교안 빈칸",prompt:"REF 조건을 쓰고 [[1,−2,−3,−4],[0,2,−1,5],[0,0,1,2]]가 REF가 아닌 이유를 쓰라.",answer:"0행은 아래, 아래 행의 pivot은 위 행 pivot보다 오른쪽. 교안 기준까지 따르면 pivot=1. 제시 행렬은 둘째 행 pivot이 2여서 교안의 판정에서는 X지만 표준 REF 정의에서는 REF가 될 수 있다."},
+      {id:19,chapter:"선형대수",type:"calc",kind:"사칙연산",level:"핵심",prompt:"x₁−2x₂+3x₃=9, −x₁+3x₂=−4, 2x₁−5x₂+5x₃=17을 풀고 검산하라.",answer:"(x₁,x₂,x₃)=(1,−1,2). 대입하면 1+2+6=9, −1−3=−4, 2+5+10=17."},
+      {id:20,chapter:"선형대수",type:"blank",kind:"교안 p.44·46",level:"교안 빈칸",prompt:"A=[[a,b],[c,d]]에서 가역 조건, 역행렬, Ax=b의 해를 완성하라.",answer:"ad−bc≠0일 때 A⁻¹=(1/(ad−bc))[[d,−b],[−c,a]], 그리고 x=A⁻¹b. ad−bc=0이면 특이행렬."},
+      {id:21,chapter:"선형대수",type:"blank",kind:"교안 p.45",level:"교안 빈칸",prompt:"A=[[2,5],[−3,−7]], B=[[−7,−5],[3,2]]의 AB를 계산하고 교안의 AB=Z=BA 표기를 바로잡아라.",answer:"AB=[[1,0],[0,1]]=I이고 BA도 I. 역행렬 정의는 AB=BA=I이며 영행렬 Z가 아니다."},
+      {id:22,chapter:"선형대수",type:"concept",kind:"T/F",level:"함정",prompt:"일반 선형사상 T:R²→R은 단사일 수 있다. 참/거짓과 영공간 관점의 이유를 쓰라.",answer:"거짓. 차원이 2에서 1로 줄어드는 선형사상은 영공간에 0이 아닌 벡터가 존재하므로 단사가 될 수 없다."},
+      {id:23,chapter:"선형대수",type:"blank",kind:"교안 p.56",level:"교안 빈칸",prompt:"A=[[4,2],[3,5]]에 v₁=(2,3), v₂=(−1,1), v₃=(3,−2)를 곱해 고유벡터 여부와 λ를 판정하라.",answer:"Av₁=(14,21)=7v₁이므로 λ=7. Av₂=(−2,2)=2v₂이므로 λ=2. Av₃=(8,−1)은 v₃의 상수배가 아니므로 고유벡터가 아니다."},
+      {id:24,chapter:"선형대수",type:"blank",kind:"교안 p.58–59",level:"교안 빈칸",prompt:"A=[[2,6],[5,3]]에서 λ=8의 고유벡터와 특성다항식·모든 고유값을 구하라.",answer:"(A−8I)v=0에서 x₁=x₂, 따라서 v=c(1,1), c≠0. det(A−λI)=λ²−5λ−24=(λ−8)(λ+3), 고유값은 8과 −3."},
+
+      {id:25,chapter:"기초통계",type:"concept",kind:"서술형",level:"핵심",prompt:"모집단·표본·표본추출·i.i.d.·대표성을 서로 구별하라.",answer:"모집단은 관심 대상 전체, 표본은 관측한 일부, 표본추출은 표본 선택 절차다. i.i.d.는 관측치가 독립이고 동일 분포라는 가정이며 대표성을 자동 보증하지 않는다."},
+      {id:26,chapter:"기초통계",type:"calc",kind:"사칙연산",level:"기초",prompt:"자료 1,2,2,5의 평균·중앙값·최빈값을 구하고 극단값에 상대적으로 덜 민감한 통계를 고르라.",answer:"평균=2.5, 중앙값=2, 최빈값=2. 중앙값이 평균보다 극단값에 덜 민감하다."},
+      {id:27,chapter:"기초통계",type:"calc",kind:"사칙연산",level:"기초",prompt:"자료 1,2,3의 표본분산과 표준편차를 구하고 단위를 설명하라.",answer:"평균 2, 편차제곱합 2. 표본분산=2/(3−1)=1, 표준편차=1. 분산 단위는 원자료 단위², 표준편차는 원자료와 같은 단위."},
+      {id:28,chapter:"기초통계",type:"concept",kind:"매칭",level:"핵심",prompt:"균등·정규·포아송·지수분포를 각각 같은 길이 구간, 종 모양 연속값, 고정 구간 사건 수, 사건 간 대기시간과 연결하라.",answer:"균등=같은 길이 구간에 같은 확률, 정규=평균 중심 대칭 종 모양, 포아송=고정 구간 사건 개수, 지수=사건 사이 대기시간."},
+      {id:29,chapter:"기초통계",type:"concept",kind:"T/F",level:"함정",prompt:"연속형 정규분포에서 밀도 f(30)=0.08이면 P(X=30)=0.08이다. 참/거짓과 이유를 쓰라.",answer:"거짓. 연속형 변수의 한 점 확률은 0이고, 구간 확률은 밀도함수를 적분한 면적이다."},
+      {id:30,chapter:"기초통계",type:"concept",kind:"서술형",level:"핵심",prompt:"확률 p(y|θ)와 우도 L(θ|y)의 무엇을 고정하고 무엇을 변화시키는지 쓰라.",answer:"확률·밀도는 θ를 고정하고 가능한 y를 본다. 우도는 관측 y를 고정하고 θ별 자료 적합도를 비교한다. 우도 자체는 θ에 대한 확률분포가 아니다."},
+      {id:31,chapter:"기초통계",type:"concept",kind:"서술형",level:"함정",prompt:"선택 편향, 추정량 편향, 모델의 귀납 편향을 각각 한 문장으로 구별하라.",answer:"선택 편향은 표본 선택 방식이 모집단을 왜곡, 추정량 편향은 기대값이 참 모수와 체계적으로 다름, 귀납 편향은 모델이 학습을 위해 관계 형태에 두는 선호·가정이다."},
+      {id:32,chapter:"기초통계",type:"concept",kind:"다지선다",level:"함정",prompt:"피어슨 상관계수 r=0에서 반드시 참인 것은? ① 독립 ② 인과 없음 ③ 선형 상관이 없음/약함 ④ 모든 비선형 관계 없음",answer:"③. 0은 선형 관계가 약하다는 뜻이며 독립·인과·비선형 관계 부재를 보장하지 않는다."},
+      {id:33,chapter:"기초통계",type:"concept",kind:"서술형",level:"핵심",prompt:"편향–분산 절충과 과소적합·과대적합을 연결해 설명하라.",answer:"너무 단순한 모형은 구조를 놓쳐 편향이 크고 과소적합하기 쉽다. 너무 복잡한 모형은 표본 변화에 민감해 분산이 크고 과대적합하기 쉽다. 검증·테스트 성능으로 균형을 확인한다."},
+      {id:34,chapter:"기초통계",type:"concept",kind:"T/F",level:"함정",prompt:"오버샘플링은 데이터가 많아지므로 분할 전에 전체 자료에 적용하는 것이 더 정확하다. 참/거짓과 이유를 쓰라.",answer:"거짓. 전체 자료에 먼저 적용하면 검증·테스트 정보가 학습에 새어 평가가 낙관적으로 된다. 학습 세트에만 적용하고 평가 분포는 유지한다."},
+      {id:35,chapter:"베이즈",type:"calc",kind:"사칙연산",level:"핵심",prompt:"유병률 1%, 민감도 90%, 특이도 95%일 때 양성자의 실제 질병 확률을 구하라.",answer:"(0.90×0.01)/[(0.90×0.01)+(0.05×0.99)]=0.009/0.0585≈0.1538, 즉 15.38%. 낮은 사전확률 때문에 양성예측도가 민감도보다 훨씬 낮다."},
+
+      {id:36,chapter:"선형회귀 I",type:"concept",kind:"서술형",level:"핵심",prompt:"단순/다중과 선형/비선형이 서로 다른 분류 축인 이유를 설명하라.",answer:"단순/다중은 설명변수 개수, 선형/비선형은 미지 계수가 모형에 들어가는 방식의 구분이다. 설명변수 하나인 비선형회귀도, 여러 변수인 선형회귀도 가능하다."},
+      {id:37,chapter:"선형회귀 I",type:"concept",kind:"다지선다",level:"함정",prompt:"계수에 대해 선형인 모형은? ① β₀+β₁x+β₂x² ② β₀+e^(β₁x) ③ β₀+β₁²x ④ β₀+sin(β₁x)",answer:"①. x²가 있어도 미지 계수들이 1차 선형결합으로 들어간다."},
+      {id:38,chapter:"선형회귀 I",type:"concept",kind:"서술형",level:"핵심",prompt:"Yᵢ=β₀+β₁Xᵢ+εᵢ에서 E(ε|X)=0과 Var(ε|X)=σ²가 각각 무엇을 뜻하는지 쓰라.",answer:"조건부 평균 오차가 0이므로 E(Y|X)=β₀+β₁X, 조건부 오차분산이 일정하므로 Var(Y|X)=σ²인 등분산성을 뜻한다."},
+      {id:39,chapter:"선형회귀 I",type:"concept",kind:"T/F",level:"함정",prompt:"오차 정규성은 OLS 계수를 계산하기 위한 필수 조건이다. 참/거짓과 정규성의 역할을 쓰라.",answer:"거짓. OLS 계산 자체에는 필수가 아니다. 독립 정규오차는 소표본 신뢰구간·t/F 검정의 정확한 분포 유도에 중요하다."},
+      {id:40,chapter:"선형회귀 I",type:"concept",kind:"서술형",level:"핵심",prompt:"잔차 eᵢ와 모형 오차 εᵢ를 정의하고 어느 쪽을 자료에서 계산할 수 있는지 쓰라.",answer:"eᵢ=yᵢ−ŷᵢ는 적합값과 관측값의 차이로 계산 가능. εᵢ=yᵢ−E(Yᵢ|Xᵢ)는 모집단 조건부 평균과의 차이로 직접 관측하지 못한다."},
+      {id:41,chapter:"선형회귀 I",type:"blank",kind:"교안 p.40",level:"교안 빈칸",prompt:"단순회귀 OLS에서 β̂₀와 β̂₁의 공식을 완성하라.",answer:"β̂₁=Σ(xᵢ−x̄)(yᵢ−ȳ)/Σ(xᵢ−x̄)²=Sxy/Sxx, β̂₀=ȳ−β̂₁x̄."},
+      {id:42,chapter:"선형회귀 I",type:"calc",kind:"사칙연산",level:"핵심",prompt:"(x,y)=(0,1),(1,3),(2,5)의 OLS 직선, 예측값, 잔차, SSE를 구하라.",answer:"x̄=1, ȳ=3, Sxx=2, Sxy=4. ŷ=1+2x. 예측=(1,3,5), 잔차=(0,0,0), SSE=0."},
+      {id:43,chapter:"선형회귀 I",type:"calc",kind:"사칙연산",level:"핵심",prompt:"(x,y)=(0,1),(1,2),(2,2),(3,4)에서 OLS 직선과 SSE를 구하라.",answer:"x̄=1.5, ȳ=2.25, Sxx=5, Sxy=4.5. ŷ=0.9+0.9x. 잔차=(0.1,0.2,−0.7,0.4), SSE=0.70."},
+      {id:44,chapter:"선형회귀 I",type:"concept",kind:"공식",level:"핵심",prompt:"다중회귀 y=Xβ+ε의 OLS 행렬해와 존재 조건을 쓰라.",answer:"β̂=(XᵀX)⁻¹Xᵀy. X가 완전 열랭크여서 XᵀX가 가역이어야 한다. 완전 다중공선성이 있으면 유일한 해가 없다."},
+      {id:45,chapter:"선형회귀 I",type:"calc",kind:"해석",level:"핵심",prompt:"교안의 ŷ=−17.579+3.932X에서 X=20의 예측값과 기울기·절편의 해석 주의를 쓰라.",answer:"ŷ=−17.579+78.64=61.061. X 1단위 증가 시 평균 예측 Y가 3.932단위 증가. X=0이 관측 범위 밖이면 음의 절편을 현실값으로 과해석하지 않고, 계수는 인과를 자동 증명하지 않는다."},
+
+      {id:46,chapter:"선형회귀 II",type:"concept",kind:"서술형",level:"핵심",prompt:"추정량과 추정치를 구별하고 BLUE의 각 글자를 풀어 쓰라.",answer:"추정량은 표본의 함수/확률변수, 추정치는 관측 후 나온 숫자. BLUE=Best Linear Unbiased Estimator, 선형·불편 추정량 중 최소분산."},
+      {id:47,chapter:"선형회귀 II",type:"blank",kind:"교안 p.21",level:"교안 빈칸",prompt:"cars 출력에서 Intercept=−17.5791, speed=3.9324일 때 parameters의 점추정값과 추정 회귀식을 쓰라.",answer:"b̂₀=−17.5791, b̂₁=3.9324, 추정식은 ŷ_dist=−17.5791+3.9324·speed."},
+      {id:48,chapter:"선형회귀 II",type:"blank",kind:"교안 p.22",level:"교안 빈칸",prompt:"같은 출력에서 계수 추정치의 표준오차를 적고 단위를 설명하라.",answer:"SE(b̂₀)=6.7584, SE(b̂₁)=0.4155. 절편 SE는 Y 단위, 기울기 SE는 Y/X 단위."},
+      {id:49,chapter:"선형회귀 II",type:"blank",kind:"교안 p.23",level:"교안 빈칸",prompt:"기울기 양측검정의 H₀/H₁과 t통계량을 쓰고 3.9324/0.4155를 계산하라.",answer:"H₀:β₁=0, H₁:β₁≠0. t=b̂₁/SE(b̂₁)=3.9324/0.4155≈9.464, 자유도 50−2=48."},
+      {id:50,chapter:"선형회귀 II",type:"blank",kind:"교안 p.24",level:"교안 빈칸",prompt:"t=9.464, df=48인 양측검정 p값을 T분포 표현과 숫자로 쓰라.",answer:"p=2P(T₄₈≥|9.464|)≈1.49×10⁻¹². 0이 아니라 매우 작은 양수다."},
+      {id:51,chapter:"선형회귀 II",type:"blank",kind:"교안 p.25",level:"교안 빈칸",prompt:"p≈1.49×10⁻¹²을 α=0.05에서 해석하고 인과 표현을 바로잡아라.",answer:"p<0.05이므로 H₀를 기각하며 속도와 제동거리 사이의 선형 연관이 유의하다. 관측자료의 작은 p값만으로 속도가 제동거리의 인과적 원인이라고 단정할 수 없다."},
+      {id:52,chapter:"선형회귀 II",type:"calc",kind:"사칙연산",level:"핵심",prompt:"b̂₁=3.9324, SE=0.4155, t₀.₉₇₅,₄₈=2.011일 때 95% 신뢰구간을 구하라.",answer:"3.9324±2.011×0.4155=3.9324±0.8356, 약 [3.0968,4.7680]. 0을 포함하지 않아 양측검정 결론과 일치한다."},
+      {id:53,chapter:"선형회귀 II",type:"calc",kind:"사칙연산",level:"핵심",prompt:"SST=200, SSE=50일 때 SSR과 R²를 구하고 해석하라.",answer:"SSR=150, R²=1−50/200=0.75. 절편 포함 OLS의 같은 학습자료에서 평균 기준 총변동의 75%를 적합값이 설명한다."},
+      {id:54,chapter:"선형회귀 II",type:"blank",kind:"교안 p.32",level:"교안 빈칸",prompt:"SSR/SST=1과 0을 각각 해석하라.",answer:"1이면 SSE=0이고 모든 관측점이 회귀선 위에 있어 학습 총변동을 모두 설명한다. 0이면 설명변동이 0이라 평균만 쓰는 모형 대비 개선이 없다."},
+      {id:55,chapter:"선형회귀 II",type:"blank",kind:"교안 p.36",level:"교안 빈칸",prompt:"cars 출력의 R²=0.6511, 수정 R²=0.6438을 쓰고 두 값의 의미 차이를 설명하라.",answer:"R²는 학습자료 변동 설명 비율, 수정 R²는 표본 수와 설명변수 수의 자유도를 보정한 값이다. 65.11%의 새 데이터 정확도라는 뜻이 아니다."},
+      {id:56,chapter:"선형회귀 II",type:"blank",kind:"교안 p.42",level:"교안 빈칸",prompt:"cars ANOVA의 F=89.57, df=(1,48), p=1.49×10⁻¹²를 해석하고 t=9.464와 검산하라.",answer:"전체 귀무가설 β₁=0을 기각해 회귀모형이 통계적으로 유의하다. 단순회귀에서 F=t²이고 9.464²≈89.57. 교안의 7.540 표기는 이 값과 불일치한다."},
+
+      {id:57,chapter:"선형회귀 III",type:"concept",kind:"매칭",level:"핵심",prompt:"선형성·정규성·등분산성·오차 독립성을 각각 잔차–적합값 곡률, Q–Q plot, 부채꼴, 시간순서 패턴과 연결하라.",answer:"선형성=곡률, 정규성=Q–Q plot, 등분산성=부채꼴, 오차 독립성=시간·관측순서 패턴."},
+      {id:58,chapter:"선형회귀 III",type:"concept",kind:"서술형",level:"핵심",prompt:"잔차–적합값 그림이 U자, 부채꼴, 무작위 0 주변일 때 각각 무엇을 시사하는가?",answer:"U자=비선형성·누락된 곡선항 가능성, 부채꼴=이분산성, 0 주변 무작위=일차 점검에서 뚜렷한 선형성·분산 패턴이 없음. 그래프 하나로 가정 충족을 증명하지는 않는다."},
+      {id:59,chapter:"선형회귀 III",type:"concept",kind:"T/F",level:"함정",prompt:"Q–Q plot의 모든 점이 정확히 직선 위에 있어야만 회귀를 사용할 수 있다. 참/거짓과 역할을 쓰라.",answer:"거짓. Q–Q plot은 오차 정규성의 근사적 점검이다. 꼬리·왜도·이상점의 체계적 이탈을 본다. 정규성은 특히 소표본 t/F 추론에 관련되며 OLS 계산의 필요조건은 아니다."},
+      {id:60,chapter:"선형회귀 III",type:"concept",kind:"서술형",level:"핵심",prompt:"다중공선성이 계수, 표준오차, t값, 예측에 미칠 수 있는 영향을 쓰라.",answer:"계수가 작은 자료 변화에 민감해지고 부호·크기가 불안정하며 표준오차가 커져 개별 t값이 작아질 수 있다. 완전 공선성은 유일한 OLS 해를 막는다. 예측은 계수 해석보다 덜 악화될 수도 있어 목적을 구분한다."},
+      {id:61,chapter:"선형회귀 III",type:"calc",kind:"사칙연산",level:"핵심",prompt:"Xⱼ를 나머지 X에 회귀한 Rⱼ²=0.9일 때 tolerance와 VIF를 구하고 의미를 쓰라.",answer:"tolerance=1−0.9=0.1, VIF=1/0.1=10. 다른 설명변수로 Xⱼ가 강하게 설명되는 공선성 신호지만 자동 삭제 규칙은 아니다."},
+      {id:62,chapter:"선형회귀 III",type:"concept",kind:"T/F",level:"함정",prompt:"설명변수끼리 강하게 상관되면 오차의 시간적 독립성 가정도 자동 위반된다. 참/거짓과 이유를 쓰라.",answer:"거짓. X 사이 강한 관계는 다중공선성, 관측 오차의 시간·집단 연관은 오차 독립성 문제다. 서로 다른 진단 대상이다."},
+      {id:63,chapter:"선형회귀 III",type:"concept",kind:"서술형",level:"응용",prompt:"공선성 대응으로 변수 제거·규제화·PCA를 비교하고 무조건 한 방법을 적용하면 안 되는 이유를 쓰라.",answer:"변수 제거·결합은 해석을 단순화, Ridge/Lasso/Elastic Net은 계수를 축소, PCA는 직교한 새 특징을 만든다. 해석가능성·예측 목적·도메인 의미·테스트 성능이 달라 선택 근거가 필요하다. 공지상 구현은 제외다."},
+      {id:64,chapter:"선형회귀 III",type:"concept",kind:"서술형",level:"함정",prompt:"Cook’s distance가 큰 관측을 발견했을 때 자동 삭제하지 말아야 하는 이유와 확인 순서를 쓰라.",answer:"큰 Cook 거리는 영향점 후보일 뿐 오류 확정이 아니다. 입력·측정 오류인지, 실제 중요한 극단 사례인지, 모형 누락·비선형 때문인지 확인하고 포함/제외 민감도와 잔차 진단을 비교한 뒤 결정한다."}
+    ];
+
+    const KEY = 'dm-midterm-notion-v2';
+    let state = JSON.parse(localStorage.getItem(KEY) || '{"answers":{},"grades":{},"checks":{}}');
+    let currentFilter = 'all';
+    let examTimer = null;
+    let examSeconds = 3600;
+    let examSet = [];
+
+    function saveState(){ localStorage.setItem(KEY, JSON.stringify(state)); updateProgress(); renderErrorLog(); }
+    function esc(value=''){ return String(value).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+    function renderProblems(){
+      const list = document.getElementById('questionList');
+      list.innerHTML = problems.map(q => `
+        <article class="question-card" id="q${q.id}" data-type="${q.type}" data-text="${esc((q.prompt+' '+q.chapter).toLowerCase())}">
+          <div class="q-head">
+            <div class="q-number">Q${String(q.id).padStart(2,'0')}</div>
+            <div class="q-title">${q.prompt}</div>
+            <div class="q-meta"><span class="tag">${q.chapter}</span><span class="tag outline">${q.kind}</span><span class="tag outline">${q.level}</span></div>
+          </div>
+          <div class="q-body">
+            <textarea class="answer-box" data-id="${q.id}" placeholder="여기에 직접 풀이하세요…">${esc(state.answers[q.id] || '')}</textarea>
+            <div class="q-actions">
+              <button class="small-btn show-solution" data-id="${q.id}">모범 답안 보기</button>
+              <button class="small-btn" data-copy="${q.id}">문제 복사</button>
+              <span class="tiny muted save-label" id="save${q.id}">자동 저장</span>
+              <div class="grade-group" aria-label="자기 채점">
+                <button class="small-btn grade-btn ${state.grades[q.id]==='again'?'active':''}" data-grade="again" data-id="${q.id}">다시</button>
+                <button class="small-btn grade-btn ${state.grades[q.id]==='unsure'?'active':''}" data-grade="unsure" data-id="${q.id}">애매</button>
+                <button class="small-btn grade-btn ${state.grades[q.id]==='done'?'active':''}" data-grade="done" data-id="${q.id}">완료</button>
+              </div>
+            </div>
+            <div class="solution" id="solution${q.id}"><div class="solution-label">MODEL ANSWER</div>${q.answer}</div>
+          </div>
+        </article>`).join('');
+      bindProblemEvents();
+      applyProblemFilter();
+    }
+
+    function bindProblemEvents(){
+      document.querySelectorAll('.answer-box').forEach(el => el.addEventListener('input', e => {
+        const id=e.target.dataset.id; state.answers[id]=e.target.value;
+        document.getElementById('save'+id).textContent='저장됨'; saveState();
+      }));
+      document.querySelectorAll('.show-solution').forEach(btn => btn.addEventListener('click', () => {
+        const box=document.getElementById('solution'+btn.dataset.id); box.classList.toggle('visible');
+        btn.textContent=box.classList.contains('visible')?'모범 답안 닫기':'모범 답안 보기';
+      }));
+      document.querySelectorAll('.grade-btn').forEach(btn => btn.addEventListener('click', () => {
+        const id=btn.dataset.id; const grade=btn.dataset.grade;
+        state.grades[id]=state.grades[id]===grade?'':grade;
+        document.querySelectorAll(`.grade-btn[data-id="${id}"]`).forEach(b=>b.classList.toggle('active', state.grades[id]===b.dataset.grade));
+        saveState(); applyProblemFilter();
+      }));
+      document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', async () => {
+        const q=problems.find(x=>String(x.id)===btn.dataset.copy); await navigator.clipboard.writeText(`Q${q.id}. ${q.prompt}`); btn.textContent='복사됨'; setTimeout(()=>btn.textContent='문제 복사',900);
+      }));
+    }
+
+    function applyProblemFilter(){
+      const query=document.getElementById('questionSearch').value.trim().toLowerCase(); let shown=0;
+      document.querySelectorAll('.question-card').forEach(card => {
+        const id=card.id.replace('q','');
+        const passType=currentFilter==='all' || (currentFilter==='again' ? ['again','unsure'].includes(state.grades[id]) : card.dataset.type===currentFilter);
+        const passText=!query || card.dataset.text.includes(query);
+        const passExam=!document.body.classList.contains('exam-mode') || examSet.includes(Number(id));
+        card.style.display=passType&&passText&&passExam?'block':'none'; if(passType&&passText&&passExam) shown++;
+      });
+      document.getElementById('emptyState').style.display=shown?'none':'block';
+    }
+
+    function renderErrorLog(){
+      const items=problems.filter(q=>['again','unsure'].includes(state.grades[q.id]));
+      const el=document.getElementById('errorLog');
+      document.getElementById('mistakeCountSide').textContent=items.length;
+      if(!items.length){ el.innerHTML='<div class="empty-state" style="display:block">아직 등록된 오답이 없습니다.</div>'; return; }
+      el.innerHTML=items.map(q=>`<div class="error-item"><span>Q${String(q.id).padStart(2,'0')}</span><a href="#q${q.id}">${q.prompt}</a><button data-clear-error="${q.id}" title="목록에서 제거">×</button></div>`).join('');
+      el.querySelectorAll('[data-clear-error]').forEach(btn=>btn.addEventListener('click',()=>{ state.grades[btn.dataset.clearError]=''; saveState(); renderProblems(); }));
+    }
+
+    function updateProgress(){
+      const doneProblems=problems.filter(q=>state.grades[q.id]==='done').length;
+      const checkboxes=[...document.querySelectorAll('#checklistBox input')];
+      const checks=checkboxes.filter(x=>x.checked).length;
+      const total=problems.length+checkboxes.length, completed=doneProblems+checks;
+      const pct=Math.round(completed/total*100);
+      document.getElementById('readinessNumber').textContent=pct+'%';
+      document.getElementById('readinessFill').style.width=pct+'%';
+      document.getElementById('sideProgressFill').style.width=pct+'%';
+      document.getElementById('sideProgressText').textContent=pct+'%';
+      document.getElementById('readinessCopy').textContent='문제 '+doneProblems+'/'+problems.length+' 완료 · 체크리스트 '+checks+'/'+checkboxes.length+' 완료';
+    }
+
+    function initChecklist(){
+      document.querySelectorAll('#checklistBox input').forEach(box=>{
+        box.checked=!!state.checks[box.id];
+        box.addEventListener('change',()=>{ state.checks[box.id]=box.checked; saveState(); });
+      });
+    }
+
+    function updateCountdown(){
+      const target=new Date('2026-10-16T19:40:00+09:00'); const now=new Date(); const diff=target-now;
+      if(diff<=0){ document.getElementById('daysLeft').textContent='시험 종료'; document.getElementById('daysLabel').textContent=''; document.getElementById('countdownDetail').textContent='일정이 지났습니다.'; return; }
+      const days=Math.floor(diff/86400000), hours=Math.floor((diff%86400000)/3600000), mins=Math.floor((diff%3600000)/60000);
+      const calendarDays=Math.round((new Date(2026,9,16)-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);
+      document.getElementById('daysLeft').textContent=calendarDays===0?'D-DAY':`D−${calendarDays}`;
+      document.getElementById('daysLabel').textContent='남음';
+      document.getElementById('countdownDetail').textContent=`${days}일 ${hours}시간 ${mins}분`;
+    }
+
+    function jumpToQuestion(q){
+      currentFilter='all'; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all')); document.getElementById('questionSearch').value=''; applyProblemFilter();
+      document.getElementById('q'+q.id).scrollIntoView({behavior:'smooth',block:'center'});
+      setTimeout(()=>document.querySelector(`#q${q.id} textarea`).focus(),450);
+    }
+
+    function toggleExamMode(){
+      const active=document.body.classList.toggle('exam-mode'); const btn=document.getElementById('examModeBtn');
+      if(active){
+        examSet=[...problems].sort(()=>Math.random()-.5).slice(0,20).map(q=>q.id);
+        currentFilter='all'; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'));
+        examSeconds=3600; btn.textContent='시험 모드 종료 · 20문제'; applyProblemFilter();
+        document.getElementById('problems').scrollIntoView({behavior:'smooth'});
+        examTimer=setInterval(()=>{ examSeconds--; const m=String(Math.floor(examSeconds/60)).padStart(2,'0'), s=String(examSeconds%60).padStart(2,'0'); document.getElementById('timerText').textContent=`${m}:${s}`; if(examSeconds<=0) toggleExamMode(); },1000);
+      }
+      else { clearInterval(examTimer); examTimer=null; examSet=[]; btn.textContent='60분 시험 모드'; document.getElementById('timerText').textContent='60:00'; applyProblemFilter(); }
+    }
+
+    function setupGlobalSearch(){
+      const overlay=document.getElementById('searchOverlay'), input=document.getElementById('globalSearch'), results=document.getElementById('searchResults');
+      const items=[...document.querySelectorAll('[data-search-title], main h3')].map(el=>({title:el.dataset.searchTitle||el.textContent.trim(), id:el.id, text:el.textContent.trim()}));
+      function render(){ const q=input.value.trim().toLowerCase(); const base=q?items.filter(x=>(x.title+' '+x.text).toLowerCase().includes(q)):items.slice(0,9); results.innerHTML=base.slice(0,16).map(x=>`<a class="search-result" href="#${x.id}"><strong>${x.title}</strong><span>${x.id.startsWith('c')?'개념 노트':'페이지 섹션'}</span></a>`).join('')||'<div class="empty-state" style="display:block">검색 결과가 없습니다.</div>'; results.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>overlay.classList.remove('open'))); }
+      function open(){ overlay.classList.add('open'); input.value=''; render(); setTimeout(()=>input.focus(),0); }
+      document.getElementById('searchBtn').addEventListener('click',open); input.addEventListener('input',render); overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('open')});
+      document.addEventListener('keydown',e=>{ if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();open();} if(e.key==='Escape')overlay.classList.remove('open'); });
+    }
+
+    renderProblems(); initChecklist(); renderErrorLog(); updateProgress(); updateCountdown(); setInterval(updateCountdown,60000); setupGlobalSearch();
+
+    document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{ currentFilter=btn.dataset.filter; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b===btn)); applyProblemFilter(); }));
+    document.getElementById('questionSearch').addEventListener('input',applyProblemFilter);
+    document.getElementById('randomBtn').addEventListener('click',()=>jumpToQuestion(problems[Math.floor(Math.random()*problems.length)]));
+    document.getElementById('unsolvedBtn').addEventListener('click',()=>jumpToQuestion(problems.find(q=>state.grades[q.id]!=='done')||problems[0]));
+    document.getElementById('examModeBtn').addEventListener('click',toggleExamMode);
+    document.getElementById('resetBtn').addEventListener('click',()=>{ if(confirm('저장된 답안과 진도를 모두 초기화할까요?')){ state={answers:{},grades:{},checks:{}}; saveState(); renderProblems(); initChecklist(); } });
+    document.getElementById('printBtn').addEventListener('click',()=>window.print());
+    document.getElementById('menuBtn').addEventListener('click',()=>document.body.classList.toggle('side-open'));
+    document.querySelectorAll('.side-link').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('side-open')));
+    document.getElementById('moreBtn').addEventListener('click',()=>{ const details=[...document.querySelectorAll('details.toggle')]; const shouldOpen=details.some(d=>!d.open); details.forEach(d=>d.open=shouldOpen); document.getElementById('moreBtn').title=shouldOpen?'모든 토글 닫기':'모든 토글 열기'; });
+    document.getElementById('backTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    window.addEventListener('scroll',()=>{ document.getElementById('topbar').classList.toggle('scrolled',scrollY>4); document.getElementById('backTop').classList.toggle('show',scrollY>700); });
+
+    const sections=[...document.querySelectorAll('main section[id], main h3[id]')];
+    const observer=new IntersectionObserver(entries=>{ const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0]; if(!visible)return; document.querySelectorAll('.side-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+visible.target.id)); },{rootMargin:'-15% 0px -72% 0px',threshold:[0,.1,.5]});
+    sections.forEach(s=>observer.observe(s));
+  </script>
+</body>
+</html>
