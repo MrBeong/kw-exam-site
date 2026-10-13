@@ -84,6 +84,10 @@
     }
     .top-actions { margin-left: auto; display: flex; gap: 4px; align-items: center; }
     .top-actions a { text-decoration: none; }
+    .app-tabs { display: flex; align-items: center; gap: 2px; margin-left: 16px; padding: 3px; background: var(--soft); border-radius: 7px; }
+    .app-tab { color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 650; padding: 5px 9px; border-radius: 5px; white-space: nowrap; }
+    .app-tab:hover { background: #fff; color: var(--text); }
+    .app-tab.active { background: #fff; color: var(--text); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
     .icon-btn, .plain-btn {
       border: 0;
       background: transparent;
@@ -137,6 +141,13 @@
 
     .layout { padding-left: var(--sidebar-w); padding-top: var(--topbar-h); }
     main { width: min(var(--page-w), calc(100% - 48px)); margin: 0 auto; padding: 72px 0 140px; }
+    body.view-problems .sidebar, body.view-mistakes .sidebar { display: none; }
+    body.view-notes #problems, body.view-notes #mistakes { display: none; }
+    body.view-problems .layout, body.view-mistakes .layout { padding-left: 0; }
+    body.view-problems main, body.view-mistakes main { width: min(1040px, calc(100% - 36px)); padding-top: 38px; }
+    body.view-problems main > *:not(#problems), body.view-mistakes main > *:not(#mistakes) { display: none !important; }
+    body.view-problems #problems h2, body.view-mistakes #mistakes h2 { margin-top: 0; font-size: 34px; }
+    body.view-problems .mobile-menu, body.view-mistakes .mobile-menu { display: none; }
 
     .page-icon {
       width: 72px; height: 72px;
@@ -292,7 +303,7 @@
     code { padding: 2px 5px; background: var(--soft); border-radius: 3px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
 
     .database { margin: 16px 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-    .db-toolbar { display: flex; align-items: center; gap: 8px; padding: 9px; border-bottom: 1px solid var(--line); background: #fff; }
+    .db-toolbar { display: flex; align-items: center; gap: 4px; padding: 9px; border-bottom: 1px solid var(--line); background: #fff; overflow-x: auto; }
     .db-title { font-size: 13px; font-weight: 700; margin-right: auto; }
     .db-search {
       width: 190px;
@@ -305,14 +316,16 @@
     }
     .db-search:focus { border-color: #a8a8a4; box-shadow: 0 0 0 2px #eee; }
     .filter-btn {
-      border: 0;
+      border: 1px solid transparent;
       background: transparent;
-      border-radius: 4px;
-      padding: 5px 8px;
+      border-radius: 999px;
+      padding: 6px 10px;
       font-size: 12px;
+      white-space: nowrap;
       cursor: pointer;
     }
-    .filter-btn:hover, .filter-btn.active { background: var(--soft); }
+    .filter-btn:hover { background: var(--soft); }
+    .filter-btn.active { background: var(--dark); color: white; border-color: var(--dark); }
     .question-card { border-bottom: 1px solid var(--line); padding: 0; }
     .question-card:last-child { border-bottom: 0; }
     .q-head { display: grid; grid-template-columns: 48px 1fr auto; align-items: start; gap: 8px; padding: 14px 14px 9px; }
@@ -353,6 +366,13 @@
     .quiz-controls button { border: 1px solid var(--line); background: white; border-radius: 5px; padding: 7px 10px; cursor: pointer; font-size: 13px; }
     .quiz-controls button:hover { background: var(--soft); }
     .quiz-controls button.strong { background: var(--dark); border-color: var(--dark); color: white; }
+    .problem-tools { margin: 12px 0; border: 1px solid var(--line); border-radius: 7px; background: var(--soft); }
+    .problem-tools summary { cursor: pointer; list-style: none; padding: 10px 12px; font-size: 13px; font-weight: 650; }
+    .problem-tools summary::-webkit-details-marker { display: none; }
+    .problem-tools summary::before { content: '＋'; margin-right: 7px; color: var(--muted); }
+    .problem-tools[open] summary::before { content: '−'; }
+    .problem-tools .tool-body { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 0 12px 12px; }
+    .problem-tools .quiz-controls { margin: 0; }
     .timer-pill { display: none; align-items: center; gap: 7px; padding: 5px 9px; background: var(--dark); color: white; border-radius: 4px; font-variant-numeric: tabular-nums; font-size: 12px; }
     body.exam-mode .timer-pill { display: inline-flex; }
     body.exam-mode .solution, body.exam-mode .show-solution { display: none !important; }
@@ -388,6 +408,7 @@
       .sidebar { width: 252px; transform: translateX(-100%); box-shadow: 8px 0 28px rgba(0,0,0,.08); }
       body.side-open .sidebar { transform: translateX(0); }
       .mobile-menu { display: grid; }
+      .app-tabs { margin-left: 8px; overflow-x: auto; }
       main { width: min(760px, calc(100% - 32px)); padding-top: 48px; }
       .dash-grid, .two-col, .priority-grid { grid-template-columns: 1fr; }
       .flow { grid-template-columns: 1fr; }
@@ -396,6 +417,11 @@
     }
     @media (max-width: 620px) {
       body { font-size: 14px; }
+      .topbar { padding-inline: 7px; }
+      .crumb { display: none; }
+      .app-tabs { margin-left: 0; gap: 0; }
+      .app-tab { padding-inline: 7px; }
+      .top-actions .plain-btn, .top-actions #moreBtn { display: none; }
       main { width: calc(100% - 28px); }
       h1 { font-size: 34px; }
       h2 { font-size: 24px; margin-top: 48px; }
@@ -428,9 +454,14 @@
   <header class="topbar" id="topbar">
     <button class="icon-btn mobile-menu" id="menuBtn" aria-label="메뉴 열기">☰</button>
     <div class="crumb"><span class="crumb-icon">DM</span><span>데이터마이닝</span><span class="muted">/</span><span>중간고사 Study OS</span></div>
+    <nav class="app-tabs" aria-label="학습 탭">
+      <a class="app-tab" data-view="notes" href="./">개념 정리</a>
+      <a class="app-tab" data-view="ox" href="./ox/">O/X</a>
+      <a class="app-tab" data-view="problems" href="./?view=problems">예상문제</a>
+      <a class="app-tab" data-view="mistakes" href="./?view=mistakes">오답 복습</a>
+    </nav>
     <div class="top-actions">
       <span class="timer-pill" id="timerPill">시험 모드 <strong id="timerText">60:00</strong></span>
-      <a class="plain-btn" href="./ox/">O/X 전수검증</a>
       <button class="plain-btn" id="searchBtn">검색 <span class="kbd">⌘ K</span></button>
       <button class="plain-btn hide-mobile" id="printBtn">인쇄</button>
       <button class="icon-btn" id="moreBtn" aria-label="모든 토글 열기" title="모든 토글 열기">•••</button>
@@ -445,9 +476,9 @@
       <a class="side-link" href="#concepts"><span class="side-icon">▤</span>개념 노트</a>
       <a class="side-link" href="#priority"><span class="side-icon">★</span>Summary·강조 지도</a>
       <a class="side-link" href="#blanks"><span class="side-icon">▣</span>교안 빈칸</a>
-      <a class="side-link" href="#problems"><span class="side-icon">□</span>문제 은행 <span class="side-count">100</span></a>
+      <a class="side-link" href="./?view=problems"><span class="side-icon">□</span>문제 은행 <span class="side-count">100</span></a>
       <a class="side-link" href="./ox/"><span class="side-icon">◉</span>개념 O/X <span class="side-count">195</span></a>
-      <a class="side-link" href="#mistakes"><span class="side-icon">↺</span>오답 노트 <span class="side-count" id="mistakeCountSide">0</span></a>
+      <a class="side-link" href="./?view=mistakes"><span class="side-icon">↺</span>오답 노트 <span class="side-count" id="mistakeCountSide">0</span></a>
       <a class="side-link" href="#checklist"><span class="side-icon">✓</span>직전 체크리스트</a>
     </div>
     <div class="side-group">
@@ -885,15 +916,20 @@
       <section id="problems" data-search-title="문제 은행 100문제">
         <h2>문제 은행</h2>
         <p class="muted">실제 약 20문제 시험을 다섯 번 연습할 수 있도록 100문제로 확장했습니다. Summary 최우선, 교안 빈칸, 실제 사례 → 개념 판정, 다지선다, 단순 사칙연산, 서술형을 모두 섞었습니다.</p>
-        <div class="quiz-controls">
-          <button class="strong" id="randomBtn">무작위 문제</button>
-          <button id="unsolvedBtn">다음 미완료</button>
-          <button id="examModeBtn">60분 시험 모드</button>
-          <button id="resetBtn">진도 초기화</button>
-        </div>
+        <details class="problem-tools">
+          <summary>검색·시험 모드·진도 도구</summary>
+          <div class="tool-body">
+            <div class="quiz-controls">
+              <button class="strong" id="randomBtn">무작위 문제</button>
+              <button id="unsolvedBtn">다음 미완료</button>
+              <button id="examModeBtn">60분 시험 모드</button>
+              <button id="resetBtn">진도 초기화</button>
+            </div>
+            <input class="db-search" id="questionSearch" type="search" placeholder="문제 검색…" aria-label="문제 검색" />
+          </div>
+        </details>
         <div class="database">
           <div class="db-toolbar">
-            <span class="db-title">▦ 전체 문제</span>
             <button class="filter-btn active" data-filter="all">전체</button>
             <button class="filter-btn" data-filter="calc">계산</button>
             <button class="filter-btn" data-filter="concept">개념</button>
@@ -901,7 +937,6 @@
             <button class="filter-btn" data-filter="blank">교안 빈칸</button>
             <button class="filter-btn" data-filter="priority">교수 강조</button>
             <button class="filter-btn" data-filter="again">다시</button>
-            <input class="db-search" id="questionSearch" type="search" placeholder="문제 검색…" aria-label="문제 검색" />
           </div>
           <div id="questionList"></div>
           <div class="empty-state" id="emptyState">조건에 맞는 문제가 없습니다.</div>
@@ -1112,6 +1147,9 @@
     let examTimer = null;
     let examSeconds = 3600;
     let examSet = [];
+    const pageView = new URLSearchParams(location.search).get('view') || 'notes';
+    if(['notes','problems','mistakes'].includes(pageView)) document.body.classList.add(`view-${pageView}`);
+    document.querySelectorAll('.app-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.view===pageView));
 
     function saveState(){ localStorage.setItem(KEY, JSON.stringify(state)); updateProgress(); renderErrorLog(); }
     function esc(value=''){ return String(value).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }

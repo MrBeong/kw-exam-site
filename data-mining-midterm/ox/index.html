@@ -12,25 +12,29 @@
   <style>
     :root{--ink:#202020;--muted:#6f6f6b;--line:#e7e7e4;--soft:#f7f7f5;--hover:#efefec;--ok:#0f7b3d;--ok-bg:#edf8f1;--bad:#b42318;--bad-bg:#fff1ef;--w:1040px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;line-height:1.62}
-    button,input,select{font:inherit;color:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:30;height:54px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.94);backdrop-filter:blur(12px);display:flex;align-items:center;padding:0 18px;gap:10px}.top a{color:inherit;text-decoration:none}.crumb{display:flex;align-items:center;gap:8px;font-size:14px;white-space:nowrap}.crumb .dim{color:var(--muted)}.top-spacer{flex:1}.ghost{border:0;background:transparent;border-radius:6px;padding:7px 9px}.ghost:hover{background:var(--hover)}
+    button,input,select{font:inherit;color:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:30;height:54px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.94);backdrop-filter:blur(12px);display:flex;align-items:center;padding:0 18px;gap:10px}.top a{color:inherit;text-decoration:none}.app-tabs{display:flex;align-items:center;gap:2px;padding:3px;background:var(--soft);border-radius:7px}.app-tab{color:var(--muted)!important;font-size:12px;font-weight:700;padding:5px 10px;border-radius:5px;white-space:nowrap}.app-tab:hover{background:#fff;color:var(--ink)!important}.app-tab.active{background:#fff;color:var(--ink)!important;box-shadow:0 1px 2px rgba(0,0,0,.08)}.top-spacer{flex:1}.top-meta{font-size:12px;color:var(--muted)}
     .page{width:min(var(--w),calc(100% - 36px));margin:0 auto;padding:70px 0 110px}.eyebrow{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.05em}.hero-icon{font-size:54px;line-height:1;margin:15px 0 22px}.hero h1{font-size:42px;line-height:1.18;letter-spacing:-.045em;margin:0 0 14px}.lead{font-size:18px;color:#555;max-width:780px;margin:0}.source-rule{margin-top:28px;border-left:3px solid #222;background:var(--soft);padding:15px 17px;border-radius:2px 7px 7px 2px;font-size:14px}.source-rule strong{display:block;margin-bottom:4px}.source-rule p{margin:0;color:#555}
     .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:34px 0 20px}.stat{border:1px solid var(--line);border-radius:9px;padding:15px 16px;background:#fff}.stat-label{font-size:12px;color:var(--muted);margin-bottom:3px}.stat-value{font-size:24px;font-weight:760;letter-spacing:-.02em}.progress{height:7px;background:var(--soft);border-radius:999px;overflow:hidden;margin:0 0 32px}.progress>div{height:100%;width:0;background:#222;transition:width .25s ease}
     .audit{margin:32px 0}.audit summary{cursor:pointer;font-weight:700;padding:12px 0}.audit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.audit-card{border:1px solid var(--line);border-radius:8px;padding:14px 16px}.audit-card h3{font-size:14px;margin:0 0 5px}.audit-card p{font-size:13px;color:var(--muted);margin:0}.included{border-left:3px solid #222}.excluded{border-left:3px solid #aaa}
-    .toolbar{position:sticky;top:54px;z-index:20;background:rgba(255,255,255,.96);border-block:1px solid var(--line);padding:10px 0;margin:35px 0 24px;display:grid;grid-template-columns:minmax(200px,1fr) 190px 160px auto;gap:8px}.control{border:1px solid var(--line);background:#fff;border-radius:6px;padding:9px 11px;min-width:0}.control:focus{outline:2px solid #222;outline-offset:1px}.toolbar-btn{border:1px solid var(--line);background:#fff;border-radius:6px;padding:9px 12px}.toolbar-btn:hover{background:var(--soft)}
+    .quiz-nav{margin:34px 0 18px}.state-tabs{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--line);padding-bottom:8px}.state-tab{flex:0 0 auto;border:0;background:transparent;border-radius:6px;padding:8px 12px;font-size:13px;font-weight:650;color:var(--muted)}.state-tab:hover{background:var(--soft);color:var(--ink)}.state-tab.active{background:#222;color:#fff}.quiz-tools{margin-top:9px;border:1px solid var(--line);border-radius:7px;background:var(--soft)}.quiz-tools summary{cursor:pointer;list-style:none;padding:9px 12px;font-size:13px;font-weight:650}.quiz-tools summary::-webkit-details-marker{display:none}.quiz-tools summary::before{content:'＋';margin-right:7px;color:var(--muted)}.quiz-tools[open] summary::before{content:'−'}.tool-row{display:grid;grid-template-columns:minmax(200px,1fr) auto auto;gap:8px;padding:0 10px 10px}.control{border:1px solid var(--line);background:#fff;border-radius:6px;padding:9px 11px;min-width:0}.control:focus{outline:2px solid #222;outline-offset:1px}.toolbar-btn{border:1px solid var(--line);background:#fff;border-radius:6px;padding:9px 12px}.toolbar-btn:hover{background:#fff}
     .chapter-strip{display:flex;gap:6px;overflow-x:auto;padding:0 0 16px;scrollbar-width:thin}.chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 11px;font-size:13px}.chip:hover,.chip.active{background:#222;color:#fff;border-color:#222}.chip small{opacity:.65;margin-left:3px}
     .quiz-shell{display:grid;grid-template-columns:74px 1fr;gap:22px;align-items:start}.rail{position:sticky;top:138px;display:grid;gap:5px;max-height:65vh;overflow:auto;padding-right:5px}.rail button{border:0;border-radius:5px;background:transparent;color:var(--muted);font-size:12px;padding:6px}.rail button:hover{background:var(--soft)}.rail button.current{background:#222;color:#fff}.rail button.done:not(.current){background:var(--soft);color:#222}.rail button.wrong:not(.current){color:var(--bad);font-weight:700}
     .quiz-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.03)}.card-head{display:flex;align-items:center;gap:8px;padding:16px 19px;border-bottom:1px solid var(--line);font-size:13px}.badge{background:var(--soft);border-radius:4px;padding:3px 7px;font-weight:700}.source-badge{color:var(--muted)}.bookmark{margin-left:auto;border:0;background:transparent;border-radius:5px;padding:4px 7px;font-size:19px}.bookmark:hover{background:var(--soft)}.bookmark.on{color:#111;background:#f1f1ef}.statement{padding:34px 32px 25px;font-size:23px;line-height:1.52;font-weight:680;letter-spacing:-.018em;min-height:190px;display:flex;align-items:center}.answer-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 32px 30px}.answer{height:72px;border:1.5px solid #222;background:#fff;border-radius:8px;font-size:26px;font-weight:800}.answer:hover{background:#222;color:#fff}.answer.selected.correct{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}.answer.selected.incorrect{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}.answer.reveal{border-color:var(--ok);color:var(--ok)}
     .feedback{display:none;border-top:1px solid var(--line);padding:22px 25px;background:var(--soft)}.feedback.show{display:block}.verdict{font-size:16px;font-weight:800;margin-bottom:8px}.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}.explain{margin:0 0 13px}.source{font-size:13px;color:var(--muted);padding-top:12px;border-top:1px solid #ddd}.source strong{color:#444}.auto-note{text-align:center;color:var(--muted);font-size:12px;margin:-16px 0 18px}.card-foot{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-top:1px solid var(--line)}.nav-btn{border:0;background:transparent;border-radius:6px;padding:8px 12px}.nav-btn:hover{background:var(--soft)}.nav-btn:disabled{opacity:.35;cursor:not-allowed}.position{font-size:13px;color:var(--muted)}
     .empty{display:none;text-align:center;border:1px dashed #bbb;border-radius:10px;padding:54px 20px;color:var(--muted)}.empty.show{display:block}.coverage{margin-top:70px;border-top:1px solid var(--line);padding-top:32px}.coverage h2{font-size:25px;margin:0 0 8px}.coverage>p{color:var(--muted);margin:0 0 18px}.coverage-table{width:100%;border-collapse:collapse;font-size:14px}.coverage-table th,.coverage-table td{text-align:left;padding:11px 9px;border-bottom:1px solid var(--line)}.coverage-table th{color:var(--muted);font-size:12px}.coverage-table td:last-child,.coverage-table th:last-child{text-align:right}.footnote{font-size:13px;color:var(--muted);margin-top:22px}
     mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}
-    @media(max-width:760px){.page{width:min(100% - 26px,var(--w));padding-top:42px}.hero h1{font-size:32px}.lead{font-size:16px}.stats{grid-template-columns:1fr 1fr}.audit-grid{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr 1fr;top:54px}.toolbar input{grid-column:1/-1}.quiz-shell{display:block}.rail{position:static;display:flex;overflow:auto;margin-bottom:10px}.rail button{min-width:34px}.statement{font-size:20px;min-height:210px;padding:28px 22px 20px}.answer-row{padding:0 22px 24px}.crumb .dim{display:none}.top{padding-inline:10px}.coverage-table{font-size:12px}.coverage-table th,.coverage-table td{padding:9px 4px}}
+    @media(max-width:760px){.page{width:min(100% - 26px,var(--w));padding-top:42px}.hero h1{font-size:32px}.lead{font-size:16px}.stats{grid-template-columns:1fr 1fr}.audit-grid{grid-template-columns:1fr}.app-tabs{overflow-x:auto}.app-tab{padding-inline:8px}.top{padding-inline:8px}.top-meta{display:none}.tool-row{grid-template-columns:1fr 1fr}.tool-row input{grid-column:1/-1}.quiz-shell{display:block}.rail{position:static;display:flex;overflow:auto;margin-bottom:10px}.rail button{min-width:34px}.statement{font-size:20px;min-height:210px;padding:28px 22px 20px}.answer-row{padding:0 22px 24px}.coverage-table{font-size:12px}.coverage-table th,.coverage-table td{padding:9px 4px}}
   </style>
 </head>
 <body>
   <header class="top">
-    <div class="crumb"><a class="ghost" href="../">← 전체 노트</a><span class="dim">/</span><strong>개념 O/X 전수검증</strong></div>
-    <div class="top-spacer"></div>
-    <button class="ghost" id="resetBtn" type="button">기록 초기화</button>
+    <nav class="app-tabs" aria-label="학습 탭">
+      <a class="app-tab" href="../">개념 정리</a>
+      <a class="app-tab active" href="./">O/X</a>
+      <a class="app-tab" href="../?view=problems">예상문제</a>
+      <a class="app-tab" href="../?view=mistakes">오답 복습</a>
+    </nav>
+    <div class="top-spacer"></div><span class="top-meta">개념 195</span>
   </header>
   <main class="page">
     <section class="hero">
@@ -60,13 +64,23 @@
       </div>
     </details>
 
-    <section class="toolbar" aria-label="문항 필터">
-      <input class="control" id="search" type="search" placeholder="개념·해설·출처 검색">
-      <select class="control" id="chapterSelect" aria-label="단원"><option value="all">전체 단원</option></select>
-      <select class="control" id="stateSelect" aria-label="상태">
-        <option value="all">모든 상태</option><option value="unanswered">미응답만</option><option value="wrong">오답만</option><option value="bookmarked">북마크만</option>
-      </select>
-      <button class="toolbar-btn" id="shuffleBtn" type="button">순서 섞기</button>
+    <section class="quiz-nav" aria-label="문항 필터">
+      <div class="state-tabs" id="stateTabs">
+        <button class="state-tab active" data-state="all" type="button">전체</button>
+        <button class="state-tab" data-state="unanswered" type="button">미응답</button>
+        <button class="state-tab" data-state="wrong" type="button">오답</button>
+        <button class="state-tab" data-state="bookmarked" type="button">북마크</button>
+      </div>
+      <details class="quiz-tools">
+        <summary>검색·순서·기록 도구</summary>
+        <div class="tool-row">
+          <input class="control" id="search" type="search" placeholder="개념·해설·출처 검색">
+          <button class="toolbar-btn" id="shuffleBtn" type="button">순서 섞기</button>
+          <button class="toolbar-btn" id="resetBtn" type="button">기록 초기화</button>
+        </div>
+      </details>
+      <select id="chapterSelect" hidden aria-label="단원"><option value="all">전체 단원</option></select>
+      <select id="stateSelect" hidden aria-label="상태"><option value="all">모든 상태</option><option value="unanswered">미응답만</option><option value="wrong">오답만</option><option value="bookmarked">북마크만</option></select>
     </section>
     <div class="chapter-strip" id="chapterStrip"></div>
 
@@ -343,6 +357,7 @@
   function applyFilters(keepId){
     clearTimeout(advanceTimer);
     const text=$("#search").value.trim().toLowerCase(),chapter=$("#chapterSelect").value,state=$("#stateSelect").value;
+    $$(".state-tab").forEach(x=>x.classList.toggle("active",x.dataset.state===state));
     filtered=order.filter(x=>{
       if(chapter!=="all"&&x.chapter!==chapter)return false;
       const a=saved.answers[x.id];if(state==="unanswered"&&a)return false;if(state==="wrong"&&(!a||a.correct))return false;if(state==="bookmarked"&&!saved.bookmarks[x.id])return false;
@@ -381,6 +396,7 @@
   $("#prevBtn").addEventListener("click",()=>{clearTimeout(advanceTimer);if(cursor>0){cursor--;render()}});$("#nextBtn").addEventListener("click",()=>{clearTimeout(advanceTimer);if(cursor<filtered.length-1){cursor++;render()}});
   $("#rail").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){clearTimeout(advanceTimer);cursor=Number(b.dataset.i);render()}});
   $("#search").addEventListener("input",()=>applyFilters());$("#chapterSelect").addEventListener("change",()=>{chapterStrip.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.dataset.chapter===$("#chapterSelect").value));applyFilters()});$("#stateSelect").addEventListener("change",()=>applyFilters());
+  $("#stateTabs").addEventListener("click",e=>{const b=e.target.closest(".state-tab");if(!b)return;$("#stateSelect").value=b.dataset.state;applyFilters()});
   chapterStrip.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;$("#chapterSelect").value=b.dataset.chapter;chapterStrip.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x===b));applyFilters()});
   $("#shuffleBtn").addEventListener("click",()=>{const current=filtered[cursor]?.id;order=[...order].sort(()=>Math.random()-.5);applyFilters(current)});
   $("#resetBtn").addEventListener("click",()=>{if(confirm("모든 O/X 응답과 북마크 기록을 초기화할까요?")){saved={answers:{},bookmarks:{}};save();applyFilters()}});
