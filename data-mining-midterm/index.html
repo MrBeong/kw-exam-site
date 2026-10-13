@@ -148,6 +148,27 @@
     body.view-problems main > *:not(#problems), body.view-mistakes main > *:not(#mistakes) { display: none !important; }
     body.view-problems #problems h2, body.view-mistakes #mistakes h2 { margin-top: 0; font-size: 34px; }
     body.view-problems .mobile-menu, body.view-mistakes .mobile-menu { display: none; }
+    body.view-problems { overflow: hidden; overscroll-behavior: none; }
+    body.view-problems .layout { height: 100dvh; overflow: hidden; }
+    body.view-problems main { height: calc(100dvh - var(--topbar-h)); padding: 8px 0; overflow: hidden; }
+    body.view-problems #problems { height: 100%; display: flex; flex-direction: column; }
+    body.view-problems #problems > h2, body.view-problems #problems > p, body.view-problems .problem-tools { display: none; }
+    body.view-problems .database { flex: 1; min-height: 0; margin: 0; display: flex; flex-direction: column; }
+    body.view-problems .db-toolbar { flex: 0 0 auto; }
+    body.view-problems #questionList { flex: 1; min-height: 0; }
+    body.view-problems .question-card { height: 100%; display: none; flex-direction: column; overflow: hidden; }
+    body.view-problems .q-head { flex: 0 0 auto; padding: 10px 12px 7px; }
+    body.view-problems .q-body { flex: 1; min-height: 0; padding: 0 12px 8px 58px; display: flex; flex-direction: column; }
+    body.view-problems .answer-box { flex: 1; min-height: 72px; margin: 5px 0; resize: none; }
+    body.view-problems .q-actions { flex: 0 0 auto; }
+    body.view-problems [data-copy], body.view-problems .save-label { display: none; }
+    body.view-problems .solution.visible { flex: 0 0 auto; display: block; max-height: 165px; overflow-y: auto; overscroll-behavior: contain; margin-top: 7px; padding: 9px 11px; }
+    .practice-pager { display: none; }
+    body.view-problems .practice-pager { flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding: 6px 8px; }
+    .practice-pager button { border: 0; background: transparent; border-radius: 5px; padding: 6px 9px; cursor: pointer; }
+    .practice-pager button:hover { background: var(--soft); }
+    .practice-pager button:disabled { opacity: .35; cursor: default; }
+    .practice-position { color: var(--muted); font-size: 12px; }
 
     .page-icon {
       width: 72px; height: 72px;
@@ -940,6 +961,11 @@
           </div>
           <div id="questionList"></div>
           <div class="empty-state" id="emptyState">조건에 맞는 문제가 없습니다.</div>
+          <div class="practice-pager" id="practicePager">
+            <button id="practicePrev" type="button">← 이전</button>
+            <span class="practice-position" id="practicePosition">1 / 100</span>
+            <button id="practiceNext" type="button">다음 →</button>
+          </div>
         </div>
       </section>
 
@@ -1147,6 +1173,9 @@
     let examTimer = null;
     let examSeconds = 3600;
     let examSet = [];
+    let problemCursor = 0;
+    let visibleProblemCards = [];
+    let targetProblemId = null;
     const pageView = new URLSearchParams(location.search).get('view') || 'notes';
     if(['notes','problems','mistakes'].includes(pageView)) document.body.classList.add(`view-${pageView}`);
     document.querySelectorAll('.app-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.view===pageView));
@@ -1209,15 +1238,35 @@
       }));
     }
 
+    function renderProblemPage(nextCursor=problemCursor){
+      if(pageView!=='problems') return;
+      problemCursor=Math.max(0,Math.min(nextCursor,Math.max(0,visibleProblemCards.length-1)));
+      visibleProblemCards.forEach((card,i)=>card.style.display=i===problemCursor?'flex':'none');
+      document.getElementById('practicePosition').textContent=visibleProblemCards.length?`${problemCursor+1} / ${visibleProblemCards.length}`:'0 / 0';
+      document.getElementById('practicePrev').disabled=problemCursor===0;
+      document.getElementById('practiceNext').disabled=!visibleProblemCards.length||problemCursor===visibleProblemCards.length-1;
+    }
+
     function applyProblemFilter(){
       const query=document.getElementById('questionSearch').value.trim().toLowerCase(); let shown=0;
+      const currentId=visibleProblemCards[problemCursor]?.id;
+      const passing=[];
       document.querySelectorAll('.question-card').forEach(card => {
         const id=card.id.replace('q','');
         const passType=currentFilter==='all' || (currentFilter==='again' ? ['again','unsure'].includes(state.grades[id]) : currentFilter==='priority' ? card.dataset.priority==='1' : card.dataset.type===currentFilter);
         const passText=!query || card.dataset.text.includes(query);
         const passExam=!document.body.classList.contains('exam-mode') || examSet.includes(Number(id));
-        card.style.display=passType&&passText&&passExam?'block':'none'; if(passType&&passText&&passExam) shown++;
+        const pass=passType&&passText&&passExam;
+        if(pass){passing.push(card);shown++}
+        card.style.display=pageView==='problems'?'none':(pass?'block':'none');
       });
+      if(pageView==='problems'){
+        visibleProblemCards=passing;
+        const wanted=targetProblemId||currentId;
+        const wantedIndex=wanted?visibleProblemCards.findIndex(card=>card.id===wanted):-1;
+        targetProblemId=null;
+        renderProblemPage(wantedIndex>=0?wantedIndex:problemCursor);
+      }
       document.getElementById('emptyState').style.display=shown?'none':'block';
     }
 
@@ -1262,7 +1311,12 @@
     }
 
     function jumpToQuestion(q){
-      currentFilter='all'; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all')); document.getElementById('questionSearch').value=''; applyProblemFilter();
+      currentFilter='all'; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all')); document.getElementById('questionSearch').value='';
+      if(pageView==='problems'){
+        targetProblemId='q'+q.id; applyProblemFilter();
+        setTimeout(()=>document.querySelector(`#q${q.id} textarea`)?.focus(),100); return;
+      }
+      applyProblemFilter();
       document.getElementById('q'+q.id).scrollIntoView({behavior:'smooth',block:'center'});
       setTimeout(()=>document.querySelector(`#q${q.id} textarea`).focus(),450);
     }
@@ -1292,11 +1346,13 @@
 
     renderProblems(); initChecklist(); renderErrorLog(); updateProgress(); updateCountdown(); setInterval(updateCountdown,60000); setupGlobalSearch();
 
-    document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{ currentFilter=btn.dataset.filter; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b===btn)); applyProblemFilter(); }));
+    document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{ currentFilter=btn.dataset.filter; problemCursor=0; visibleProblemCards=[]; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b===btn)); applyProblemFilter(); }));
     document.getElementById('questionSearch').addEventListener('input',applyProblemFilter);
     document.getElementById('randomBtn').addEventListener('click',()=>jumpToQuestion(problems[Math.floor(Math.random()*problems.length)]));
     document.getElementById('unsolvedBtn').addEventListener('click',()=>jumpToQuestion(problems.find(q=>state.grades[q.id]!=='done')||problems[0]));
     document.getElementById('examModeBtn').addEventListener('click',toggleExamMode);
+    document.getElementById('practicePrev').addEventListener('click',()=>renderProblemPage(problemCursor-1));
+    document.getElementById('practiceNext').addEventListener('click',()=>renderProblemPage(problemCursor+1));
     document.getElementById('resetBtn').addEventListener('click',()=>{ if(confirm('저장된 답안과 진도를 모두 초기화할까요?')){ state={answers:{},grades:{},checks:{}}; saveState(); renderProblems(); initChecklist(); } });
     document.getElementById('printBtn').addEventListener('click',()=>window.print());
     document.getElementById('menuBtn').addEventListener('click',()=>document.body.classList.toggle('side-open'));
