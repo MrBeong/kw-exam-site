@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>데이터마이닝 중간고사 · 개념 O/X 전수검증</title>
+  <script>
+    window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    :root{--ink:#202020;--muted:#6f6f6b;--line:#e7e7e4;--soft:#f7f7f5;--hover:#efefec;--ok:#0f7b3d;--ok-bg:#edf8f1;--bad:#b42318;--bad-bg:#fff1ef;--w:1040px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;line-height:1.62}
+    button,input,select{font:inherit;color:inherit}button{cursor:pointer}.top{position:sticky;top:0;z-index:30;height:54px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.94);backdrop-filter:blur(12px);display:flex;align-items:center;padding:0 18px;gap:10px}.top a{color:inherit;text-decoration:none}.crumb{display:flex;align-items:center;gap:8px;font-size:14px;white-space:nowrap}.crumb .dim{color:var(--muted)}.top-spacer{flex:1}.ghost{border:0;background:transparent;border-radius:6px;padding:7px 9px}.ghost:hover{background:var(--hover)}
+    .page{width:min(var(--w),calc(100% - 36px));margin:0 auto;padding:70px 0 110px}.eyebrow{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.05em}.hero-icon{font-size:54px;line-height:1;margin:15px 0 22px}.hero h1{font-size:42px;line-height:1.18;letter-spacing:-.045em;margin:0 0 14px}.lead{font-size:18px;color:#555;max-width:780px;margin:0}.source-rule{margin-top:28px;border-left:3px solid #222;background:var(--soft);padding:15px 17px;border-radius:2px 7px 7px 2px;font-size:14px}.source-rule strong{display:block;margin-bottom:4px}.source-rule p{margin:0;color:#555}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:34px 0 20px}.stat{border:1px solid var(--line);border-radius:9px;padding:15px 16px;background:#fff}.stat-label{font-size:12px;color:var(--muted);margin-bottom:3px}.stat-value{font-size:24px;font-weight:760;letter-spacing:-.02em}.progress{height:7px;background:var(--soft);border-radius:999px;overflow:hidden;margin:0 0 32px}.progress>div{height:100%;width:0;background:#222;transition:width .25s ease}
+    .audit{margin:32px 0}.audit summary{cursor:pointer;font-weight:700;padding:12px 0}.audit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.audit-card{border:1px solid var(--line);border-radius:8px;padding:14px 16px}.audit-card h3{font-size:14px;margin:0 0 5px}.audit-card p{font-size:13px;color:var(--muted);margin:0}.included{border-left:3px solid #222}.excluded{border-left:3px solid #aaa}
+    .toolbar{position:sticky;top:54px;z-index:20;background:rgba(255,255,255,.96);border-block:1px solid var(--line);padding:10px 0;margin:35px 0 24px;display:grid;grid-template-columns:minmax(200px,1fr) 190px 160px auto;gap:8px}.control{border:1px solid var(--line);background:#fff;border-radius:6px;padding:9px 11px;min-width:0}.control:focus{outline:2px solid #222;outline-offset:1px}.toolbar-btn{border:1px solid var(--line);background:#fff;border-radius:6px;padding:9px 12px}.toolbar-btn:hover{background:var(--soft)}
+    .chapter-strip{display:flex;gap:6px;overflow-x:auto;padding:0 0 16px;scrollbar-width:thin}.chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 11px;font-size:13px}.chip:hover,.chip.active{background:#222;color:#fff;border-color:#222}.chip small{opacity:.65;margin-left:3px}
+    .quiz-shell{display:grid;grid-template-columns:74px 1fr;gap:22px;align-items:start}.rail{position:sticky;top:138px;display:grid;gap:5px;max-height:65vh;overflow:auto;padding-right:5px}.rail button{border:0;border-radius:5px;background:transparent;color:var(--muted);font-size:12px;padding:6px}.rail button:hover{background:var(--soft)}.rail button.current{background:#222;color:#fff}.rail button.done:not(.current){background:var(--soft);color:#222}.rail button.wrong:not(.current){color:var(--bad);font-weight:700}
+    .quiz-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.03)}.card-head{display:flex;align-items:center;gap:8px;padding:16px 19px;border-bottom:1px solid var(--line);font-size:13px}.badge{background:var(--soft);border-radius:4px;padding:3px 7px;font-weight:700}.source-badge{color:var(--muted)}.bookmark{margin-left:auto;border:0;background:transparent;border-radius:5px;padding:4px 7px;font-size:19px}.bookmark:hover{background:var(--soft)}.bookmark.on{color:#111;background:#f1f1ef}.statement{padding:34px 32px 25px;font-size:23px;line-height:1.52;font-weight:680;letter-spacing:-.018em;min-height:190px;display:flex;align-items:center}.answer-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 32px 30px}.answer{height:72px;border:1.5px solid #222;background:#fff;border-radius:8px;font-size:26px;font-weight:800}.answer:hover{background:#222;color:#fff}.answer.selected.correct{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}.answer.selected.incorrect{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}.answer.reveal{border-color:var(--ok);color:var(--ok)}
+    .feedback{display:none;border-top:1px solid var(--line);padding:22px 25px;background:var(--soft)}.feedback.show{display:block}.verdict{font-size:16px;font-weight:800;margin-bottom:8px}.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}.explain{margin:0 0 13px}.source{font-size:13px;color:var(--muted);padding-top:12px;border-top:1px solid #ddd}.source strong{color:#444}.auto-note{text-align:center;color:var(--muted);font-size:12px;margin:-16px 0 18px}.card-foot{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-top:1px solid var(--line)}.nav-btn{border:0;background:transparent;border-radius:6px;padding:8px 12px}.nav-btn:hover{background:var(--soft)}.nav-btn:disabled{opacity:.35;cursor:not-allowed}.position{font-size:13px;color:var(--muted)}
+    .empty{display:none;text-align:center;border:1px dashed #bbb;border-radius:10px;padding:54px 20px;color:var(--muted)}.empty.show{display:block}.coverage{margin-top:70px;border-top:1px solid var(--line);padding-top:32px}.coverage h2{font-size:25px;margin:0 0 8px}.coverage>p{color:var(--muted);margin:0 0 18px}.coverage-table{width:100%;border-collapse:collapse;font-size:14px}.coverage-table th,.coverage-table td{text-align:left;padding:11px 9px;border-bottom:1px solid var(--line)}.coverage-table th{color:var(--muted);font-size:12px}.coverage-table td:last-child,.coverage-table th:last-child{text-align:right}.footnote{font-size:13px;color:var(--muted);margin-top:22px}
+    mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}
+    @media(max-width:760px){.page{width:min(100% - 26px,var(--w));padding-top:42px}.hero h1{font-size:32px}.lead{font-size:16px}.stats{grid-template-columns:1fr 1fr}.audit-grid{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr 1fr;top:54px}.toolbar input{grid-column:1/-1}.quiz-shell{display:block}.rail{position:static;display:flex;overflow:auto;margin-bottom:10px}.rail button{min-width:34px}.statement{font-size:20px;min-height:210px;padding:28px 22px 20px}.answer-row{padding:0 22px 24px}.crumb .dim{display:none}.top{padding-inline:10px}.coverage-table{font-size:12px}.coverage-table th,.coverage-table td{padding:9px 4px}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="crumb"><a class="ghost" href="../">← 전체 노트</a><span class="dim">/</span><strong>개념 O/X 전수검증</strong></div>
+    <div class="top-spacer"></div>
+    <button class="ghost" id="resetBtn" type="button">기록 초기화</button>
+  </header>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">2026-2 데이터마이닝 · 중간고사</div>
+      <div class="hero-icon">◉</div>
+      <h1>개념 O/X 전수검증</h1>
+      <p class="lead">교안과 제공 전사에서 직접 확인한 암기·구분·해석 개념만 모았습니다. 계산 연습이나 임의의 사례는 빼고, 틀리기 쉬운 조건까지 한 문장씩 점검합니다.</p>
+      <div class="source-rule">
+        <strong>검증 기준</strong>
+        <p>출제 공지 범위의 원본 교안 7종과 제공 전사를 다시 대조했습니다. 문항마다 근거 자료·쪽수를 표시했고, 교안 자체의 오류를 바로잡은 항목은 “검산 교정”으로 명시했습니다.</p>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="학습 현황">
+      <div class="stat"><div class="stat-label">전체 개념</div><div class="stat-value" id="totalStat">0</div></div>
+      <div class="stat"><div class="stat-label">응답 완료</div><div class="stat-value" id="doneStat">0</div></div>
+      <div class="stat"><div class="stat-label">정답률</div><div class="stat-value" id="accuracyStat">—</div></div>
+      <div class="stat"><div class="stat-label">다시 볼 개념</div><div class="stat-value" id="reviewStat">0</div></div>
+    </section>
+    <div class="progress" aria-label="진행률"><div id="progressBar"></div></div>
+
+    <details class="audit">
+      <summary>무엇을 넣고 무엇을 뺐는지 보기</summary>
+      <div class="audit-grid">
+        <div class="audit-card included"><h3>포함</h3><p>교안의 정의·Summary·빈칸, 전사에서 설명한 구분·조건·주의점, 공지에 명시된 회귀 가정·추론·진단, 원문 오류의 검산 교정.</p></div>
+        <div class="audit-card excluded"><h3>제외</h3><p>R/Python 구현, 별첨 실습, 제품명 암기, 시점에 따라 변하는 수치, 단순 말장난, 제가 임의로 만든 사례·수치 계산.</p></div>
+      </div>
+    </details>
+
+    <section class="toolbar" aria-label="문항 필터">
+      <input class="control" id="search" type="search" placeholder="개념·해설·출처 검색">
+      <select class="control" id="chapterSelect" aria-label="단원"><option value="all">전체 단원</option></select>
+      <select class="control" id="stateSelect" aria-label="상태">
+        <option value="all">모든 상태</option><option value="unanswered">미응답만</option><option value="wrong">오답만</option><option value="bookmarked">북마크만</option>
+      </select>
+      <button class="toolbar-btn" id="shuffleBtn" type="button">순서 섞기</button>
+    </section>
+    <div class="chapter-strip" id="chapterStrip"></div>
+
+    <section class="quiz-shell">
+      <nav class="rail" id="rail" aria-label="문항 목록"></nav>
+      <div>
+        <article class="quiz-card" id="quizCard">
+          <div class="card-head"><span class="badge" id="chapterBadge"></span><span class="source-badge" id="kindBadge"></span><button class="bookmark" id="bookmarkBtn" type="button" aria-label="북마크">☆</button></div>
+          <div class="statement" id="statement"></div>
+          <div class="answer-row">
+            <button class="answer" data-answer="true" type="button">O</button>
+            <button class="answer" data-answer="false" type="button">X</button>
+          </div>
+          <div class="auto-note">정답은 자동으로 다음 문항 · 오답은 해설 확인</div>
+          <div class="feedback" id="feedback"><div class="verdict" id="verdict"></div><p class="explain" id="explain"></p><div class="source" id="source"></div></div>
+          <div class="card-foot"><button class="nav-btn" id="prevBtn" type="button">← 이전</button><span class="position" id="position"></span><button class="nav-btn" id="nextBtn" type="button">다음 →</button></div>
+        </article>
+        <div class="empty" id="empty">조건에 맞는 문항이 없습니다. 필터를 바꿔 주세요.</div>
+      </div>
+    </section>
+
+    <section class="coverage">
+      <h2>단원별 전수검증 범위</h2>
+      <p>문항 수가 아니라 개념의 빈칸 여부를 기준으로 대조했습니다.</p>
+      <table class="coverage-table"><thead><tr><th>단원</th><th>검증 묶음</th><th>문항</th></tr></thead><tbody id="coverageBody"></tbody></table>
+      <p class="footnote">정답 기록은 이 브라우저에만 저장됩니다. “검산 교정”은 교안의 오탈자나 조건 누락을 원문 그대로 외우지 않도록 별도로 표시한 것입니다.</p>
+    </section>
+  </main>
+
+  <script>
+  const R=String.raw;
+  const items=[];
+  const q=(chapter,statement,answer,explanation,source,kind="핵심 개념")=>items.push({id:`OX${String(items.length+1).padStart(3,"0")}`,chapter,statement,answer,explanation,source,kind});
+
+  // 0. 과목소개 — 12문항
+  q("과목소개",R`데이터 분석은 사용할 알고리즘을 먼저 고른 뒤 그 알고리즘에 맞는 문제를 찾는 순서로 시작해야 한다.`,false,R`교수님은 모델보다 구체적인 문제, 필요한 의사결정, 목표 출력을 먼저 정하라고 강조했다.`,"Course overview 교안 p.28 · 과목소개 전사 37:23–43:37","교수 강조");
+  q("과목소개",R`데이터마이닝의 문제 해결 흐름은 문제 정의, 수집, 탐색·시각화, 모델링, 해석·요약·배포, 현장 행동으로 이어진다.`,true,R`모델 생성만이 아니라 결과를 실제 행동으로 연결하는 전체 흐름이다.`,"Course overview 교안 p.28 · 과목소개 전사 37:23–43:37","분석 흐름");
+  q("과목소개",R`일반화는 학습에 사용하지 않은 데이터에서도 모델이 유효하게 작동하는 성질이다.`,true,R`학습자료에 잘 맞는 것과 새 자료에서도 잘 작동하는 것은 구분해야 한다.`,"Course overview 교안 p.24 · 과목소개 전사 09:25–11:13","일반화");
+  q("과목소개",R`규제화는 모델이 학습자료에 지나치게 맞는 것을 억제해 일반화를 돕는 방법이다.`,true,R`규제화의 목적은 학습 적합도를 무조건 높이는 것이 아니라 과적합을 줄이는 데 있다.`,"Course overview 교안 p.24 · 과목소개 전사 31:20–32:45","일반화");
+  q("과목소개",R`변수 선택은 기존 변수 중 일부를 고르는 것이고, 변수 추출은 기존 변수로부터 새로운 표현을 만드는 것이다.`,true,R`원변수를 남기는지 새로운 좌표·표현을 만드는지 구분한다.`,"Course overview 교안 p.24 · 과목소개 전사 33:55–34:25","변수 표현");
+  q("과목소개",R`출력 \(Y\)가 수치형이면 선형회귀, 범주형이면 로지스틱 회귀가 강의에서 제시한 대표 연결이다.`,true,R`대표 예시이지 모든 문제에 이 두 모델만 가능하다는 뜻은 아니다.`,"Course overview 교안 p.24 · 과목소개 전사 30:30–31:35","모델과 목적");
+  q("과목소개",R`Naïve Bayes, KNN, SVM은 강의에서 분류 관점으로 소개되었으므로 어떤 변형에서도 회귀에 사용할 수 없다.`,false,R`교수님은 일부 알고리즘에 회귀 변형도 있으므로 이름만으로 목적을 단정하지 말라고 설명했다.`,"과목소개 전사 32:45–34:10","모델과 목적");
+  q("과목소개",R`알고리즘의 원리를 이해하는 일은 AI가 만든 코드와 분석 파이프라인을 검증하는 데도 필요하다.`,true,R`도구가 자동으로 결과를 내더라도 가정·입력·출력·해석을 사람이 점검해야 한다는 강조점이다.`,"과목소개 전사 13:33–15:17","교수 강조");
+  q("과목소개",R`데이터가 부족하거나 품질이 나쁘고 잡음이 커도 복잡한 모델만 쓰면 모든 문제를 해결할 수 있다.`,false,R`가능한 문제와 현재 데이터로 해결 불가능한 문제를 구분해야 한다고 설명했다.`,"과목소개 전사 18:20–20:37","데이터 한계");
+  q("과목소개",R`모델링 전에 데이터의 상태를 탐색하고 시각화하는 단계가 필요하다.`,true,R`분포·품질·패턴을 확인하지 않고 바로 모델을 적용하면 문제와 데이터의 불일치를 놓칠 수 있다.`,"과목소개 전사 39:40–41:50","교수 강조");
+  q("과목소개",R`이미지와 영상은 표 형식이 아니므로 다변량 데이터로 표현할 수 없다.`,false,R`영상에서 특징을 추출하고 행렬·벡터로 변환하면 다변량 표현으로 분석할 수 있다.`,"Course overview 교안 p.26 · 과목소개 전사 34:25–37:23","변수 표현");
+  q("과목소개",R`예측값을 얻는 것만으로 분석이 끝나는 것이 아니라 결과를 해석하고 실제 의사결정·최적화·행동으로 연결해야 한다.`,true,R`벌통 사례도 관측과 예측을 환경 조절 행동으로 연결하는 흐름을 보여준다.`,"과목소개 전사 37:23–46:07","결과 활용");
+
+  // 1. 다변량 데이터 분석 개론 I — 18문항
+  q("개론 I",R`두 변수가 함께 변하는 관찰 결과만으로 한 변수가 다른 변수의 원인이라고 결론 내릴 수 있다.`,false,R`관찰된 연관성은 인과관계를 자동으로 뜻하지 않는다. 교란변수, 표본선택, 확인편향 등을 먼저 의심해야 한다.`,"1.2 교안 p.3–5 · 소개1 전사","인과와 편향");
+  q("개론 I",R`확인편향은 자신의 기존 믿음을 지지하는 정보는 더 받아들이고 반대 정보는 덜 보는 경향이다.`,true,R`강의의 마시멜로 사례는 보이는 관계를 곧바로 믿기 전에 확인편향과 숨은 요인을 점검하라는 도입 사례다.`,"1.2 교안 p.3–5 · 소개1 전사","인과와 편향");
+  q("개론 I",R`빅데이터의 3V는 Volume, Velocity, Variety를 가리킨다.`,true,R`각각 데이터의 규모, 생성·처리 속도, 형태의 다양성이다.`,"1.2 교안 p.6–10","빈칸 핵심");
+  q("개론 I",R`빅데이터의 5V는 3V에 Veracity와 Value를 더한 것이다.`,true,R`신뢰성·진실성과 가치가 추가된다.`,"1.2 교안 p.9–10","빈칸 핵심");
+  q("개론 I",R`데이터의 양과 모델 복잡도가 커지면 데이터 품질과 분석 품질도 반드시 좋아진다.`,false,R`품질이 나쁜 입력은 좋은 결론을 보장하지 않는다. 강의는 데이터의 양뿐 아니라 신뢰성과 가치도 강조한다.`,"1.2 교안 p.6–12 · 소개1 전사","품질");
+  q("개론 I",R`데이터마이닝은 저장된 자료를 검색하거나 조회하는 작업만을 뜻한다.`,false,R`데이터에서 유용한 패턴과 지식을 찾고, 문제 정의·탐색·모델링·해석·활용까지 연결하는 과정이다.`,"1.2 교안 p.13–17 · 소개1 전사","정의");
+  q("개론 I",R`데이터마이닝의 미시적 관점은 데이터 속의 패턴이나 지식을 찾는 데 초점을 둔다.`,true,R`광의의 관점은 수집부터 활용까지의 전체 문제 해결 과정을 함께 본다.`,"1.2 교안 p.13–17","정의");
+  q("개론 I",R`AI, Machine Learning, Deep Learning은 강의에서 완전히 같은 말로 사용된다.`,false,R`AI는 더 넓은 목표·시스템, ML은 데이터로 관계를 학습하는 방법, DL은 다층 신경망을 활용하는 ML의 한 갈래로 구분한다.`,"1.2 교안 p.18–21 · 소개1 전사","용어 구분");
+  q("개론 I",R`Deep Learning은 Machine Learning의 한 갈래로 볼 수 있다.`,true,R`교안은 AI–ML–DL의 포함 관계를 개념적으로 구분한다.`,"1.2 교안 p.18–21","용어 구분");
+  q("개론 I",R`KDD와 knowledge extraction은 데이터에서 지식을 찾는 데이터마이닝의 관련 용어다.`,true,R`교안은 데이터마이닝과 가까운 표현으로 함께 소개한다.`,"1.2 교안 p.13–17","관련 용어");
+  q("개론 I",R`Business Intelligence는 데이터 분석 결과를 조직의 의사결정과 연결하는 맥락의 관련 개념이다.`,true,R`단순 모델 생성보다 결과의 활용과 의사결정 연결을 강조하는 용어다.`,"1.2 교안 p.13–17","관련 용어");
+  q("개론 I",R`정형 데이터는 행과 열처럼 미리 정한 구조로 표현되는 데이터다.`,true,R`테이블 형태가 대표적이며 각 열은 변수, 각 행은 관측 단위로 해석할 수 있다.`,"1.2 교안 p.21–24 · 소개1 전사","데이터 형태");
+  q("개론 I",R`이미지·텍스트·음성은 구조가 없으므로 다변량 분석의 입력으로 사용할 수 없다.`,false,R`비정형 자료도 특징을 추출하거나 수치화하면 다변량 표현으로 분석할 수 있다.`,"1.2 교안 p.21–24 · 소개1 전사","데이터 형태");
+  q("개론 I",R`서로 다른 형태의 데이터가 함께 쓰이는 분석은 multimodal data analysis의 예가 될 수 있다.`,true,R`정형 표, 이미지, 텍스트 등 여러 모달리티를 결합할 수 있다.`,"1.2 교안 p.21–24","데이터 형태");
+  q("개론 I",R`데이터마이닝 사례는 반드시 하나의 출력만 예측해야 한다.`,false,R`교안의 관세 위험·세액 예시는 여러 목적을 함께 다루는 multi-task 사례를 소개한다.`,"1.2 교안 p.22–25","사례 개념");
+  q("개론 I",R`CT 영상 분류, 이미지 복원, 웨이퍼·도로 손상 탐지는 강의가 제시한 데이터마이닝 응용 예다.`,true,R`정형 데이터뿐 아니라 영상·이미지 기반 응용도 데이터마이닝 범주에서 소개한다.`,"1.2 교안 p.22–25","사례 개념");
+  q("개론 I",R`야구의 기록 데이터와 영상 데이터를 함께 쓰는 분석은 정형·비정형 자료의 결합 사례다.`,true,R`서로 다른 데이터 형태를 결합해 새로운 설명이나 예측에 활용할 수 있다.`,"1.2 교안 p.22–25 · 소개1 전사","사례 개념");
+  q("개론 I",R`데이터마이닝의 최종 목적은 모델을 만드는 데서 끝나며 현장 의사결정과는 관계가 없다.`,false,R`강의는 발견한 지식과 예측을 실제 판단·행동·최적화로 연결하는 흐름을 강조한다.`,"1.2 Summary · 과목소개 전사","Summary");
+
+  // 2. 다변량 데이터 분석 개론 II — 27문항
+  q("개론 II",R`표 형식 데이터에서 행은 보통 sample 또는 observation, 열은 variable 또는 feature를 나타낸다.`,true,R`강의의 기본 표기에서 행은 관측 단위, 열은 측정 변수다.`,"1.3 교안 p.3–8 · 소개2 전사","데이터 구조");
+  q("개론 II",R`두 개 이상의 변수를 함께 관측하고 분석하면 다변량 데이터로 볼 수 있다.`,true,R`단변량은 한 변수, 다변량은 여러 변수를 함께 다룬다.`,"1.3 교안 p.3–8","정의");
+  q("개론 II",R`\(X\in\mathbb{R}^{n\times p}\)에서 \(n\)은 변수 수, \(p\)는 표본 수다.`,false,R`강의의 표기에서는 \(n\)이 표본 수, \(p\)가 입력 변수 수다.`,"1.3 교안 p.3–8","수식 표기");
+  q("개론 II",R`\(Y\)는 분석에서 반응변수 또는 출력변수를 나타내는 기호로 사용된다.`,true,R`입력 \(X\)와 구분되는 목표·반응을 \(Y\)로 둔다.`,"1.3 교안 p.6–8","수식 표기");
+  q("개론 II",R`설명변수를 독립변수라고 부르면 설명변수끼리 통계적으로 독립이며 반드시 \(Y\)의 원인이라는 뜻이다.`,false,R`명칭만으로 변수 간 독립성이나 인과성이 보장되지 않는다.`,"1.3 교안 p.7 · 소개2 전사","용어 주의");
+  q("개론 II",R`학습 단계는 \((X_{train},Y_{train})\)으로 함수 \(f_\theta\)의 파라미터 \(\theta\)를 추정하는 과정이다.`,true,R`훈련 자료로 입력과 출력의 관계를 학습한다.`,"1.3 교안 p.9–16 · 소개2 전사","학습과 평가");
+  q("개론 II",R`테스트 데이터는 모델의 파라미터를 반복해서 조정하는 데 사용해야 한다.`,false,R`테스트 자료는 학습에 사용하지 않은 자료에서 최종 일반화 성능을 평가하는 데 둔다. 반복 선택에 쓰면 평가가 낙관적으로 오염된다.`,"1.3 교안 p.9–16 · 소개2 전사","학습과 평가");
+  q("개론 II",R`훈련·테스트를 나누는 주된 이유는 보지 않은 자료에 대한 일반화 성능을 확인하기 위해서다.`,true,R`학습자료 적합도만 보면 과적합을 놓칠 수 있다.`,"1.3 교안 p.9–16 · Summary","Summary");
+  q("개론 II",R`지도학습은 입력 \(X\)와 함께 목표값 \(Y\)가 주어진 자료로 관계를 학습한다.`,true,R`라벨 또는 반응변수가 있다는 점이 핵심이다.`,"1.3 교안 p.12–21","학습 유형");
+  q("개론 II",R`숫자로 코딩된 목표값이면 언제나 회귀 문제다.`,false,R`0, 1, 2처럼 숫자로 저장되어도 값이 범주 라벨이면 분류 문제다.`,"1.3 교안 p.17–18 · Summary","회귀·분류");
+  q("개론 II",R`연속적인 월급 액수를 예측하는 문제는 회귀에 해당한다.`,true,R`수치형 출력값을 맞히는 prediction은 regression이다.`,"1.3 교안 p.17 빈칸","교안 빈칸");
+  q("개론 II",R`손글씨 숫자의 범주를 맞히는 문제는 classification에 해당한다.`,true,R`출력이 범주이므로 분류 문제다.`,"1.3 교안 p.18 빈칸","교안 빈칸");
+  q("개론 II",R`월급과 관련된 변수가 무엇인지 관계를 파악하는 목적은 prediction보다 inference에 가깝다.`,true,R`관계·영향·설명을 이해하려는 목적은 추론에 해당한다.`,"1.3 교안 p.17 빈칸","교안 빈칸");
+  q("개론 II",R`비지도학습은 정답 \(Y\) 없이 데이터 안의 구조나 군집을 찾는다.`,true,R`clustering이 대표적이며 설정에 따라 anomaly detection도 비지도 방식으로 수행할 수 있다.`,"1.3 교안 p.19–21","학습 유형");
+  q("개론 II",R`준지도학습은 모든 표본에 완전한 라벨이 있는 경우만을 뜻한다.`,false,R`일부 표본에만 라벨이 있고 나머지는 비라벨인 상황을 함께 활용한다.`,"1.3 교안 p.19–21","학습 유형");
+  q("개론 II",R`강화학습은 상태, 행동, 보상과 정책의 관계를 학습하는 틀이다.`,true,R`정답 라벨 하나를 그대로 맞히는 지도학습과 학습 신호가 다르다.`,"1.3 교안 p.19–21","학습 유형");
+  q("개론 II",R`clustering, inference, prediction은 강의가 구분한 주요 분석 목적이다.`,true,R`군집은 구조 발견, 추론은 관계 이해, 예측은 새 출력값을 맞히는 데 초점을 둔다.`,"1.3 교안 p.16–21","목적 구분");
+  q("개론 II",R`데이터마이닝 5단계는 문제 정의 → 데이터 수집 → 탐색·정제·변환 → 모델링 → 결과 요약·배포의 흐름이다.`,true,R`각 단계는 실제 분석에서 반복될 수 있다.`,"1.3 교안 p.23–35 · 소개2 전사","분석 절차");
+  q("개론 II",R`분석 절차는 앞 단계로 돌아갈 수 없는 단방향 과정이다.`,false,R`탐색이나 모델링 결과에 따라 문제 정의와 수집 단계로 되돌아가는 반복 과정이다.`,"1.3 교안 p.23–35 · 소개2 전사","분석 절차");
+  q("개론 II",R`문제 정의 단계에서는 목표 \(Y\), 사용할 판단·행동, 분석 범위를 구체화해야 한다.`,true,R`모델 선택보다 먼저 무엇을 해결할지와 결과를 어디에 쓸지를 정한다.`,"1.3 교안 p.23–25 · 과목소개 전사","분석 절차");
+  q("개론 II",R`탐색 단계에서는 분포, 결측, 이상치, 불균형, 변수 수와 표본 수의 관계를 확인한다.`,true,R`모델링 전에 데이터 품질과 구조를 점검하는 내용이다.`,"1.3 교안 p.27–31 · 소개2 전사","분석 절차");
+  q("개론 II",R`AutoML은 문제의 의미를 정의하고 결과의 타당성을 판단하는 인간의 역할까지 완전히 없앤다.`,false,R`AutoML은 반복적인 전처리·후보 비교·탐색·배포를 보조하지만 문제 정의와 의미 검증은 여전히 사람의 판단이 필요하다.`,"1.3 교안 p.36–40 · 소개2 전사","AutoML");
+  q("개론 II",R`ETL의 올바른 순서는 Extract → Transform → Load이다.`,true,R`원천에서 추출하고, 오류·중복 제거와 형식 통일을 한 뒤, 정리된 데이터를 저장소에 적재한다.`,"1.3 교안 p.41 빈칸","교안 빈칸");
+  q("개론 II",R`ETL에서 Transform은 정리된 데이터를 Data Warehouse나 Data Lake에 저장하는 단계다.`,false,R`저장은 Load이고, Transform은 오류·중복 제거와 형식 통일 등 가공 단계다.`,"1.3 교안 p.41 빈칸","교안 빈칸");
+  q("개론 II",R`LLM Data Pipeline은 Prompting으로 여러 Label Map을 만들고, Weak Supervision의 Label Model로 통합한 뒤, 추정 라벨로 End Model을 학습하는 흐름이다.`,true,R`교안의 세 단계 순서를 그대로 확인하는 핵심 빈칸이다.`,"1.3 교안 p.42 빈칸","교안 빈칸");
+  q("개론 II",R`Robust Modeling with LLM은 하나의 프롬프트 답을 그대로 최종 정답으로 확정하는 방식이다.`,false,R`병렬 Prompt Chain으로 여러 noisy prediction을 만들고 Weak Supervision으로 통합해 신뢰도 높은 최종 예측을 정한다.`,"1.3 교안 p.43 빈칸","교안 빈칸");
+  q("개론 II",R`Data Lake는 여러 원천의 데이터를 수집·관리하는 저장 기반으로 소개되며, 메타데이터와 비식별화도 데이터 관리의 고려사항이다.`,true,R`강의는 모델링 이전의 수집·관리·프라이버시를 전체 파이프라인 일부로 다룬다.`,"1.3 교안 p.23–40 · 소개2 전사","데이터 관리");
+
+  // 3. 선형대수 — 36문항
+  q("선형대수",R`선형대수는 데이터와 변환을 표현하고, 통계는 표본과 불확실성을 다루며, 미적분·최적화는 손실을 줄이는 과정과 연결된다.`,true,R`강의는 데이터마이닝의 수학 기초를 역할별로 연결한다.`,"2.1 교안 p.3–6 · 리뷰1 전사","수학의 역할");
+  q("선형대수",R`\(\arg\min_x f(x)\)는 함수의 최솟값 자체를 뜻한다.`,false,R`argmin은 최솟값을 만드는 입력값 \(x\)를 뜻한다. 최솟값은 \(\min_x f(x)\)다.`,"2.1 교안 p.6–8 · 리뷰1 전사","최적화 표기");
+  q("선형대수",R`\(\mathbb{R}\)은 실수 집합, \(\mathbb{Z}\)는 정수 집합, \(\varnothing\)은 공집합을 나타낸다.`,true,R`집합 기호의 기본 뜻을 구분해야 한다.`,"2.1 교안 p.8–12","집합");
+  q("선형대수",R`교집합은 두 집합 중 적어도 하나에 속하는 원소들의 집합이다.`,false,R`적어도 하나에 속하면 합집합이고, 교집합은 양쪽 모두에 속하는 원소다.`,"2.1 교안 p.8–12","집합");
+  q("선형대수",R`\(\mathbb{R}^n\)은 실수 성분을 \(n\)개 갖는 순서쌍들의 집합으로 볼 수 있다.`,true,R`Cartesian product를 반복한 벡터 공간 표기다.`,"2.1 교안 p.10–13","집합");
+  q("선형대수",R`함수 \(f:X\to Y\)는 정의역의 각 입력에 공역의 출력 하나가 대응해야 한다.`,true,R`한 입력에 여러 출력이 대응하면 함수의 기본 정의를 만족하지 않는다.`,"2.1 교안 p.12–14","함수");
+  q("선형대수",R`\(A\in\mathbb{R}^{m\times n}\)은 \(m\)개의 행과 \(n\)개의 열을 갖는 행렬이다.`,true,R`첫 번째 수가 행, 두 번째 수가 열이다.`,"2.1 교안 p.15–16","행렬 표기");
+  q("선형대수",R`2×5 행렬에서 \(A_{i3}\)은 3번째 열벡터, \(A_{1j}\)는 1번째 행벡터를 뜻한다.`,true,R`교안 p.16의 빈칸 핵심이다. 원소 \(A_{ij}\)와 행·열 전체 표기를 구분한다.`,"2.1 교안 p.16 빈칸","교안 빈칸");
+  q("선형대수",R`영행렬은 모든 원소가 0이고, 항등행렬은 주대각 원소가 1이며 나머지가 0인 정방행렬이다.`,true,R`둘은 서로 다른 특수행렬이다.`,"2.1 교안 p.17–18","특수행렬");
+  q("선형대수",R`대칭행렬은 \(A^T=A\)를 만족하는 정방행렬이다.`,true,R`전치해도 같은 행렬이며 반드시 정방행렬이다.`,"2.1 교안 p.17–18","특수행렬");
+  q("선형대수",R`\((AB)^T=A^TB^T\)이다.`,false,R`곱의 전치는 순서가 뒤집혀 \((AB)^T=B^TA^T\)다.`,"2.1 교안 p.18·22 빈칸","교안 빈칸");
+  q("선형대수",R`\((A^T)^T=A\), \((A+B)^T=A^T+B^T\), \((kA)^T=kA^T\)이다.`,true,R`교안 전치 성질 빈칸에 나온 기본 법칙이다.`,"2.1 교안 p.18·22 빈칸","교안 빈칸");
+  q("선형대수",R`\(A\)가 \(m\times n\), \(B\)가 \(n\times p\)이면 \(AB\)는 \(m\times p\)이다.`,true,R`안쪽 차원 \(n\)이 같아야 하고 결과는 바깥 차원을 갖는다.`,"2.1 교안 p.19–22","행렬곱");
+  q("선형대수",R`행렬곱 \(AB\)가 정의되면 \(BA\)도 항상 정의되고 두 값은 같다.`,false,R`역순 곱은 차원 때문에 정의되지 않을 수도 있고, 둘 다 정의되어도 일반적으로 교환법칙이 성립하지 않는다.`,"2.1 교안 p.19–22 · 리뷰1 전사","행렬곱");
+  q("선형대수",R`행렬곱의 \((i,j)\) 원소는 \(A\)의 \(i\)번째 행과 \(B\)의 \(j\)번째 열의 내적이다.`,true,R`행×열 계산이 행렬곱 각 원소의 정의다.`,"2.1 교안 p.19–22","행렬곱");
+  q("선형대수",R`표 데이터에서 행=관측, 열=변수는 흔한 약속이지만 모든 수학 문맥에서 강제되는 법칙은 아니다.`,true,R`데이터 표현의 관례와 행렬 자체의 수학 정의를 구분한다.`,"2.1 교안 p.15–16 · 리뷰1 전사","표현 주의");
+  q("선형대수",R`미지수의 곱, 제곱, 제곱근 또는 \(\sin(x)\)가 들어간 식도 미지수에 대한 선형 1차식이다.`,false,R`선형방정식에서는 미지수가 1차로만 등장하고 미지수끼리 곱하지 않는다.`,"2.1 교안 p.25 빈칸","교안 빈칸");
+  q("선형대수",R`연립선형방정식은 표준 열벡터 표기에서 \(Ax=b\)로 나타낼 수 있다.`,true,R`계수행렬, 미지수 열벡터, 우변 열벡터의 곱이다.`,"2.1 교안 p.27–34 빈칸","교안 빈칸");
+  q("선형대수",R`첨가행렬은 계수행렬에 미지수 벡터를 붙여 만든다.`,false,R`첨가행렬은 계수행렬 \(A\) 오른쪽에 우변 벡터 \(b\)를 붙인 \([A\mid b]\)다.`,"2.1 교안 p.28–34 빈칸","교안 빈칸");
+  q("선형대수",R`동차 연립방정식 \(Ax=0\)은 항상 영벡터 해 \(x=0\)을 갖는다.`,true,R`추가로 자유변수가 있으면 비영해도 존재할 수 있다.`,"2.1 교안 p.31–35","해집합");
+  q("선형대수",R`비동차 연립방정식은 항상 유일해를 갖는다.`,false,R`계수와 rank에 따라 유일해, 무한히 많은 해, 해 없음 중 하나가 될 수 있다.`,"2.1 교안 p.31–35","해집합");
+  q("선형대수",R`행렬의 크기만 알면 연립방정식 해의 개수를 항상 결정할 수 있다.`,false,R`같은 크기라도 계수의 rank와 첨가행렬 관계에 따라 해의 개수가 달라진다.`,"2.1 교안 p.31–35 · 리뷰2 전사","해집합");
+  q("선형대수",R`기본 행 연산은 두 행 교환, 한 행에 0이 아닌 상수배, 한 행에 다른 행의 배를 더하는 것이다.`,true,R`0배는 정보를 없애므로 허용되는 스케일 연산이 아니다.`,"2.1 교안 p.36–40 · 리뷰2 전사","행 연산");
+  q("선형대수",R`기본 행 연산을 적용하면 원래 연립방정식의 해집합이 달라진다.`,false,R`기본 행 연산은 동치인 연립방정식으로 바꾸므로 해집합을 보존한다.`,"2.1 교안 p.36–40","행 연산");
+  q("선형대수",R`REF에서는 각 영이 아닌 행의 선도원소가 아래 행의 선도원소보다 오른쪽에 있고, 영행은 아래에 위치한다.`,true,R`pivot 아래가 0인 계단형 구조가 핵심이다. pivot이 반드시 1일 필요는 없다.`,"2.1 교안 p.40–42 · 검증 기록","REF/RREF");
+  q("선형대수",R`REF의 모든 pivot은 반드시 1이어야 한다.`,false,R`pivot=1과 pivot 열의 위·아래가 모두 0인 조건은 RREF의 더 강한 조건이다.`,"2.1 교안 p.40–42 · 원문 검산","검산 교정");
+  q("선형대수",R`RREF는 각 pivot이 1이고 그 pivot이 있는 열의 다른 원소가 모두 0인 REF다.`,true,R`RREF는 REF보다 더 정리된 형태다.`,"2.1 교안 p.40–42 · 리뷰2 전사","REF/RREF");
+  q("선형대수",R`가우스 소거법은 REF로 만든 뒤 후진대입할 수 있고, 가우스–조던 소거법은 RREF까지 진행한다.`,true,R`두 소거법의 도착 형태와 풀이 방식을 구분한다.`,"2.1 교안 p.36–43 · 리뷰2 전사","소거법");
+  q("선형대수",R`RREF에서 \([0\;0\;\cdots\;0\mid c]\), \(c\ne0\)인 행이 나오면 해가 없다.`,true,R`좌변 0이 우변의 0 아닌 값과 같다는 모순이 생긴다.`,"2.1 교안 p.40–43","해 판정");
+  q("선형대수",R`RREF에서 자유변수가 존재하고 모순 행이 없으면 해가 무한히 많다.`,true,R`자유변수에 여러 값을 줄 수 있어 여러 해가 생긴다.`,"2.1 교안 p.40–43","해 판정");
+  q("선형대수",R`정방행렬 \(A\)가 가역이면 \(AA^{-1}=A^{-1}A=I\)이고 \(Ax=b\)의 해는 \(x=A^{-1}b\)다.`,true,R`역행렬을 이용한 해법의 조건은 \(A\)가 가역이라는 것이다.`,"2.1 교안 p.44–47 빈칸","교안 빈칸");
+  q("선형대수",R`2×2 행렬 \(A=\begin{bmatrix}a&b\\c&d\end{bmatrix}\)는 \(ad-bc=0\)일 때 역행렬을 갖는다.`,false,R`\(ad-bc\ne0\)일 때만 \(A^{-1}=\frac1{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}\)가 존재한다.`,"2.1 교안 p.46 빈칸","교안 빈칸");
+  q("선형대수",R`교안 p.45의 \(AB=Z\)에서 \(Z\)는 표준적으로 항등행렬 \(I\)로 고쳐 읽어야 한다.`,true,R`역행렬의 곱은 영행렬이 아니라 항등행렬이다.`,"2.1 교안 p.45 · 원문 검산","검산 교정");
+  q("선형대수",R`선형변환 \(T:\mathbb{R}^n\to\mathbb{R}^m\)을 행렬로 나타내면 보통 \(A\in\mathbb{R}^{m\times n}\)이다.`,true,R`입력 \(n\)차원을 출력 \(m\)차원으로 보내므로 \(T(x)=Ax\)다.`,"2.1 교안 p.48–54 · 리뷰2 전사","선형변환");
+  q("선형대수",R`선형변환이 단사라는 것은 서로 다른 입력이 같은 출력으로 갈 수 없으며, 핵이 \(\{0\}\)인 것과 연결된다.`,true,R`영벡터로 가는 입력이 0뿐이면 일대일 대응 조건을 만족한다.`,"2.1 교안 p.50–54","선형변환");
+  q("선형대수",R`일반적인 선형사상 \(T:\mathbb{R}^2\to\mathbb{R}\)은 단사가 될 수 있다.`,false,R`정의역 차원이 공역보다 크므로 핵에 비영벡터가 생긴다. 교안의 일반 단사 표현은 조건 누락으로 바로잡아야 한다.`,"2.1 교안 p.50–54 · 원문 검산","검산 교정");
+  q("선형대수",R`고유벡터 \(v\)는 \(v\ne0\)이고 \(Av=\lambda v\)를 만족해야 하며, 고유값은 \(\det(A-\lambda I)=0\)에서 찾는다.`,true,R`영벡터는 모든 \(\lambda\)에 대해 식을 만족하므로 고유벡터에서 제외한다.`,"2.1 교안 p.54–59","고유값");
+  q("선형대수",R`\(A=\begin{bmatrix}2&6\\5&3\end{bmatrix}\)의 고유값은 8과 3이다.`,false,R`특성식은 \((\lambda-8)(\lambda+3)=0\)이므로 고유값은 8과 −3이다.`,"2.1 교안 p.59 빈칸 · 원문 검산","검산 교정");
+  q("선형대수",R`서로 다른 고유값에 대응하는 고유벡터는 항상 서로 직교한다.`,false,R`서로 다른 고유값의 고유벡터는 선형독립이지만, 직교는 실수 대칭행렬 같은 추가 조건에서 보장된다.`,"2.1 교안 p.54–61 · 원문 검산","검산 교정");
+
+  // 4. 기초통계 — 27문항
+  q("기초통계",R`모집단은 관심 대상 전체이고 표본은 실제로 관측한 일부이며, sampling은 그 표본을 고르는 절차다.`,true,R`표본으로 모집단을 추론하려면 대표성을 함께 점검해야 한다.`,"2.2 교안 slide 3–5 · 기초통계 전사","표본");
+  q("기초통계",R`관측치가 i.i.d.이면 그 표본은 모집단을 대표한다는 사실도 자동으로 보장된다.`,false,R`i.i.d.는 관측치 간 독립성과 동일분포 가정이다. 표본선택의 대표성은 별도의 문제다.`,"2.2 교안 slide 3–5 · 전사 대조","표본");
+  q("기초통계",R`기술통계는 관측한 데이터의 중심·산포·형태를 요약하고, 추론통계는 표본으로 모집단의 모수나 관계를 추정·검정한다.`,true,R`두 통계의 목적을 구분한다.`,"2.2 교안 slide 3–5 · 기초통계 전사","통계 구분");
+  q("기초통계",R`평균은 극단값의 영향을 거의 받지 않으므로 중앙값보다 항상 강건하다.`,false,R`평균은 극단값에 민감하고 중앙값은 상대적으로 덜 민감하다.`,"2.2 교안 slide 4–5","기술통계");
+  q("기초통계",R`\(Q_2\)는 중앙값이며 \(IQR=Q_3-Q_1\)은 가운데 50% 자료의 범위를 나타낸다.`,true,R`사분위수와 IQR의 정의다.`,"2.2 교안 slide 4–5","기술통계");
+  q("기초통계",R`표본분산 \(s^2\)은 보통 \(\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar x)^2\)로 계산한다.`,true,R`표본평균을 추정하면서 자유도 하나를 사용해 분모가 \(n-1\)이다.`,"2.2 교안 slide 4–5","수식");
+  q("기초통계",R`표준편차는 분산의 제곱근이므로 원자료와 같은 단위를 갖는다.`,true,R`분산은 원단위의 제곱, 표준편차는 원단위로 돌아온다.`,"2.2 교안 slide 4–5","단위");
+  q("기초통계",R`boxplot에서 \(Q_1-1.5IQR\) 밖이나 \(Q_3+1.5IQR\) 밖의 값은 반드시 측정 오류이므로 삭제해야 한다.`,false,R`그 기준은 이상치 후보를 표시하는 경험적 규칙이다. 오류인지, 드문 정상값인지 맥락을 확인해야 한다.`,"2.2 교안 slide 4–5 · 전사 대조","이상치");
+  q("기초통계",R`균등분포에서는 길이가 같은 구간들이 같은 확률을 갖는다.`,true,R`예를 들어 [0,1]을 10개의 같은 구간으로 나누면 각 구간 확률은 1/10이다.`,"2.2 교안 slide 6–10 · 기초통계 전사","분포");
+  q("기초통계",R`연속형 정규분포에서 특정 한 점의 확률은 양수다.`,false,R`연속분포에서는 한 점의 확률이 0이고 구간의 면적으로 확률을 구한다.`,"2.2 교안 slide 6–10","분포");
+  q("기초통계",R`정규분포는 평균을 중심으로 좌우 대칭인 종 모양의 연속분포다.`,true,R`위치와 퍼짐은 평균과 분산으로 표현된다.`,"2.2 교안 slide 6–10","분포");
+  q("기초통계",R`포아송분포는 일정 구간의 사건 발생 횟수, 지수분포는 일정한 발생률을 가정한 사건 간 대기시간을 나타내는 데 쓰인다.`,true,R`횟수와 대기시간을 구분하는 것이 핵심이다.`,"2.2 교안 slide 6–10 · 전사 대조","분포");
+  q("기초통계",R`확률변수는 표본공간의 각 결과를 수치에 대응시키는 함수다.`,true,R`확률변수는 단순히 '무작위로 변하는 숫자'가 아니라 결과를 수치화하는 함수로 정의한다.`,"2.2 교안 slide 6–10","확률변수");
+  q("기초통계",R`확률은 모수 \(\theta\)를 고정하고 가능한 자료를 변화시키며 보고, 우도는 관측자료를 고정하고 \(\theta\)의 함수로 본다.`,true,R`같은 수식을 사용하더라도 무엇을 고정하고 변화시키는지가 다르다.`,"2.2 교안 slide 8–10 · 기초통계 전사","확률·우도");
+  q("기초통계",R`우도는 모수 \(\theta\)에 대한 확률분포이므로 \(\theta\) 전체에서 합이나 적분이 반드시 1이다.`,false,R`우도는 관측자료가 주어졌을 때 모수의 상대적 적합성을 보는 함수이며, 모수에 대한 확률분포로 정규화될 필요가 없다.`,"2.2 교안 slide 8–10 · 전사 대조","확률·우도");
+  q("기초통계",R`선택편향, 추정량의 편향, 모델의 귀납편향은 모두 같은 수식적 개념이므로 구분할 필요가 없다.`,false,R`같은 'bias'라는 말도 표본선택, \(E[\hat\theta]-\theta\), 모델이 선호하는 가정이라는 서로 다른 문맥을 가진다.`,"2.2 교안 slide 11–12 · 기초통계 전사","편향");
+  q("기초통계",R`단순한 모델은 높은 편향으로 과소적합할 수 있고, 지나치게 복잡한 모델은 높은 분산으로 과적합할 수 있다.`,true,R`bias–variance trade-off의 기본 방향이다.`,"2.2 교안 slide 11–13","편향·분산");
+  q("기초통계",R`데이터의 우연한 잡음은 모델을 충분히 복잡하게 만들면 언제나 완전히 제거할 수 있다.`,false,R`강의는 줄일 수 없는 오차·잡음이 있으며 학습자료 적합만으로 일반화를 보장할 수 없음을 설명한다.`,"2.2 교안 slide 11–13","편향·분산");
+  q("기초통계",R`Pearson 상관계수는 두 변수의 선형 관계 방향과 강도를 \([-1,1]\) 범위로 요약한다.`,true,R`비선형 관계 전체나 인과관계를 나타내는 지표는 아니다.`,"2.2 교안 slide 13–14","상관");
+  q("기초통계",R`Pearson 상관계수 \(r=0\)이면 두 변수는 반드시 독립이다.`,false,R`선형 상관이 없다는 뜻일 뿐 비선형 의존관계가 있을 수 있다.`,"2.2 교안 slide 13–14 · 전사 대조","상관");
+  q("기초통계",R`상관계수의 절댓값이 크면 한 변수가 다른 변수의 원인임이 증명된다.`,false,R`상관은 인과를 증명하지 않는다. 교란·역인과·선택 문제를 고려해야 한다.`,"2.2 교안 slide 13–14","상관");
+  q("기초통계",R`변수 수 \(p\)가 표본 수 \(n\)에 비해 매우 크면 과적합과 추정 불안정 위험이 커질 수 있다.`,true,R`high-dimensional, low-sample-size 상황의 핵심 위험이다.`,"2.2 교안 slide 15–16","차원");
+  q("기초통계",R`feature selection은 원래 변수 중 일부를 고르고, feature extraction은 원변수의 조합으로 새 좌표를 만든다.`,true,R`PCA는 대표적인 feature extraction 예로 소개된다.`,"2.2 교안 slide 15–16","차원");
+  q("기초통계",R`불균형 자료의 over/under-sampling은 검증·테스트 자료에도 동일하게 적용해 클래스 비율을 맞추는 것이 원칙이다.`,false,R`재표본추출은 학습 자료에만 적용하고, 검증·테스트는 실제 평가 분포를 유지해야 한다.`,"2.2 교안 slide 16 · 기초통계 전사","불균형");
+  q("기초통계",R`데이터 증강은 라벨의 의미를 보존해야 하며 평가자료를 늘리는 목적으로 사용해서는 안 된다.`,true,R`유효한 학습 변형이어야 하며 평가 독립성을 지켜야 한다.`,"2.2 교안 slide 16 · 전사 대조","불균형");
+  q("기초통계",R`베이즈 정리는 \(P(H\mid D)=\frac{P(D\mid H)P(H)}{P(D)}\)이며, 사후는 사전과 우도의 곱에 비례한다.`,true,R`prior, likelihood, evidence, posterior의 역할을 구분한다.`,"2.2 교안 slide 17","베이즈");
+  q("기초통계",R`더 많은 대표 데이터, 적절한 규제화·사전정보, 라벨을 보존하는 증강은 일반화를 돕는 방법이 될 수 있다.`,true,R`어느 하나도 자동 보장은 아니지만 과적합을 줄이고 보지 않은 자료의 성능을 개선하려는 방법이다.`,"2.2 교안 slide 18 · 기초통계 전사","일반화");
+
+  // 5. 선형회귀 I — 24문항
+  q("회귀 I",R`반응변수 \(Y\)가 수치형이면 회귀, 범주형이면 분류 문제로 구분한다.`,true,R`저장 형식이 숫자라는 사실보다 값의 의미가 연속 수치인지 범주인지가 중요하다.`,"4 교안 p.3–10 · 회귀 I 전사","회귀·분류");
+  q("회귀 I",R`단순회귀와 다중회귀의 구분, 선형회귀와 비선형회귀의 구분은 같은 기준이다.`,false,R`단순/다중은 설명변수 개수의 축이고, 선형/비선형은 모수에 대한 모형 형태의 축이다.`,"4 교안 p.10–17 · 회귀 I 전사","모형 구분");
+  q("회귀 I",R`\(Y=\beta_0+\beta_1X+\beta_2X^2+\varepsilon\)는 \(X^2\)가 있으므로 반드시 비선형회귀다.`,false,R`미지 모수 \(\beta\)들에 선형이므로 다항항을 포함한 선형회귀로 볼 수 있다.`,"4 교안 p.14–17 · 회귀 I 전사","선형성");
+  q("회귀 I",R`선형회귀에서 '선형'은 설명변수 \(X\) 자체보다 미지의 회귀계수에 대해 선형이라는 뜻이 핵심이다.`,true,R`변환된 설명변수가 있어도 계수에 선형이면 선형모형으로 다룰 수 있다.`,"4 교안 p.14–17 · 회귀 I 전사","선형성");
+  q("회귀 I",R`단순선형회귀의 조건부 평균은 \(E(Y_i\mid X_i)=\beta_0+\beta_1X_i\)로 나타낸다.`,true,R`오차의 조건부 평균이 0이면 회귀선이 \(Y\)의 조건부 평균을 나타낸다.`,"4 교안 p.12, 24–29","모형");
+  q("회귀 I",R`\(\beta_1\)은 \(X\)가 1단위 증가할 때 조건부 평균 \(Y\)가 평균적으로 \(\beta_1\)만큼 변한다는 뜻이며 단위는 [Y]/[X]다.`,true,R`다중회귀에서는 다른 설명변수를 고정한 조건에서 해석한다.`,"4 교안 p.18–23 · 회귀 I 전사","계수 해석");
+  q("회귀 I",R`절편 \(\beta_0\)는 관측된 \(X\) 범위와 관계없이 항상 실제 의미가 크다.`,false,R`\(X=0\)이 관측 범위 밖이거나 현실적으로 불가능하면 절편의 실질 해석은 제한된다.`,"4 교안 p.18–23 · 회귀 I 전사","계수 해석");
+  q("회귀 I",R`다중회귀에서 한 계수는 다른 설명변수를 일정하게 둔 상태에서 해당 변수의 조건부 관계로 해석한다.`,true,R`ceteris paribus 해석이며 인과효과를 자동으로 뜻하지 않는다.`,"4 교안 p.18–23 · 회귀 I 전사","계수 해석");
+  q("회귀 I",R`회귀모형으로 미래 값을 잘 예측하면 설명변수의 인과효과도 증명된다.`,false,R`예측 관계와 인과 추론은 목적과 필요한 가정이 다르다.`,"4 교안 p.18–23 · 회귀 I 전사","추론·예측");
+  q("회귀 I",R`회귀의 추론 목적은 변수 관계와 계수의 의미를 이해하는 데, 예측 목적은 새 관측치의 \(Y\)를 맞히는 데 초점을 둔다.`,true,R`같은 모형을 사용해도 질문이 다를 수 있다.`,"4 교안 p.18–23","추론·예측");
+  q("회귀 I",R`오차의 조건부 평균 0 가정은 \(E(\varepsilon_i\mid X_i)=0\)으로 쓸 수 있다.`,true,R`이 가정 아래 회귀식이 \(Y\)의 조건부 평균을 나타낸다.`,"4 교안 p.24–29","가정");
+  q("회귀 I",R`등분산성은 \(X\) 값과 관계없이 오차의 조건부 분산이 일정하다는 가정이다.`,true,R`\(Var(\varepsilon_i\mid X_i)=\sigma^2\)로 표현한다.`,"4 교안 p.24–29","가정");
+  q("회귀 I",R`오차의 독립성, 등분산성, 정규성은 같은 하나의 가정을 세 가지로 부르는 것이다.`,false,R`서로 다른 가정이다. 독립성은 오차 간 관계, 등분산성은 퍼짐, 정규성은 분포 형태를 말한다.`,"4 교안 p.24–29 · 회귀 I 전사","가정");
+  q("회귀 I",R`정규성 가정이 없으면 OLS 계수 자체를 계산할 수 없다.`,false,R`최소제곱 계산에는 정규성이 필수는 아니다. 정규성은 특히 작은 표본에서 정확한 t·F 추론을 정당화하는 데 쓰인다.`,"4 교안 p.24–29 · 전사 대조","가정");
+  q("회귀 I",R`모형 오차 \(\varepsilon_i\), 잔차 \(e_i=y_i-\hat y_i\), 예측값 \(\hat y_i\)는 서로 같은 양이다.`,false,R`오차는 관측 불가능한 확률항, 잔차는 적합 후 관측되는 차이, 예측값은 모형이 낸 값이다.`,"4 교안 p.30–37 · 회귀 I 전사","오차·잔차");
+  q("회귀 I",R`최소제곱법은 \(SSE=\sum_i(y_i-\hat y_i)^2\)를 최소화하는 계수를 찾는다.`,true,R`잔차 제곱합이 목적함수다.`,"4 교안 p.31–41","OLS");
+  q("회귀 I",R`잔차를 그냥 합하지 않고 제곱하는 이유에는 부호 상쇄 방지와 큰 오차에 더 큰 벌점을 주는 성질이 있다.`,true,R`제곱은 미분 가능한 목적함수를 제공해 최적화도 편리하다.`,"4 교안 p.31–41 · 회귀 I 전사","OLS");
+  q("회귀 I",R`\(\sqrt{SSE}\)와 \(SSE\)는 음이 아닌 영역에서 같은 계수에서 최소가 된다.`,true,R`제곱근이 단조 증가하므로 argmin은 같다.`,"4 교안 p.31–41 · 회귀 I 전사","OLS");
+  q("회귀 I",R`단순회귀 OLS 기울기는 \(\hat\beta_1=S_{xy}/S_{xx}\), 절편은 \(\hat\beta_0=\bar y-\hat\beta_1\bar x\)이다.`,true,R`여기서 \(S_{xy}=\sum(x_i-\bar x)(y_i-\bar y)\), \(S_{xx}=\sum(x_i-\bar x)^2\)다.`,"4 교안 p.40 빈칸 · 5 교안 p.10–11","교안 빈칸");
+  q("회귀 I",R`모든 \(x_i\)가 같아 \(S_{xx}=0\)이어도 단순회귀 기울기는 유일하게 추정된다.`,false,R`\(S_{xx}>0\)이어야 기울기 공식이 정의되고 유일한 직선을 식별할 수 있다.`,"4 교안 p.38–41 · 전사 대조","OLS 조건");
+  q("회귀 I",R`절편을 포함한 OLS 적합에서 정상방정식은 잔차와 설계행렬 열의 직교 관계를 나타낸다.`,true,R`행렬식으로 \(X^T(y-X\hat\beta)=0\)이다.`,"4 교안 p.38–41 · 회귀 I 전사","정상방정식");
+  q("회귀 I",R`\(\beta\)는 모집단의 미지 모수이고 \(\hat\beta\)는 표본으로 계산한 추정값이다.`,true,R`모수와 추정량·추정치를 기호로 구분한다.`,"4 교안 p.18–23, 38–41","표기");
+  q("회귀 I",R`\(X\)의 측정 단위를 바꾸면 기울기 수치는 바뀔 수 있지만 같은 관계를 다른 단위로 표현한 것일 수 있다.`,true,R`계수 단위가 [Y]/[X]이므로 단위 변환에 따라 수치가 변한다.`,"4 교안 p.18–23 · 회귀 I 전사","단위");
+  q("회귀 I",R`관측 범위 밖에서 얻은 회귀선의 예측은 범위 안 예측과 같은 신뢰도로 해석해도 된다.`,false,R`외삽은 관측 범위 밖에서도 같은 관계가 유지된다는 추가 가정을 요구하므로 주의해야 한다.`,"4 교안 p.18–23 · 회귀 I 전사","해석 주의");
+
+  // 6. 선형회귀 II — 27문항
+  q("회귀 II",R`추정량은 표본의 함수이고, 실제 표본을 넣어 얻은 숫자는 추정치다.`,true,R`estimator와 estimate를 구분한다.`,"5 교안 p.3–9 · 회귀 II 추정 전사","추정");
+  q("회귀 II",R`점추정은 하나의 값을, 구간추정은 불확실성을 반영한 값의 범위를 제시한다.`,true,R`표준오차와 신뢰구간은 추정의 불확실성을 표현한다.`,"5 교안 p.3–9","추정");
+  q("회귀 II",R`단순회귀의 오차분산 추정량은 \(s^2=SSE/(n-2)\)이다.`,true,R`절편과 기울기 두 모수를 추정해 잔차 자유도가 \(n-2\)다.`,"5 교안 p.11–16","분산 추정");
+  q("회귀 II",R`\(s^2\)의 단위는 반응변수 \(Y\)와 같다.`,false,R`분산이므로 단위는 \(Y^2\)이고, \(s\)가 \(Y\)와 같은 단위다.`,"5 교안 p.11–16","단위");
+  q("회귀 II",R`BLUE는 Best Linear Unbiased Estimator의 약자다.`,true,R`가우스–마르코프 조건에서 OLS가 선형 불편추정량들 중 최소분산이라는 뜻이다.`,"5 교안 p.12–16 · 회귀 II 전사","BLUE");
+  q("회귀 II",R`BLUE라는 말은 OLS가 가능한 모든 추정량 중 언제나 가장 좋다는 뜻이다.`,false,R`비교 범위는 선형이고 불편한 추정량이며, 가정이 필요하다.`,"5 교안 p.12–16 · 전사 대조","BLUE");
+  q("회귀 II",R`OLS가 BLUE가 되기 위해 오차의 정규성은 필수 가정이다.`,false,R`가우스–마르코프의 BLUE 성질에는 정규성이 필수는 아니다. 정규성은 정확한 소표본 추론에 사용된다.`,"5 교안 p.12–18 · 전사 대조","BLUE");
+  q("회귀 II",R`단순회귀 기울기의 표준오차는 \(SE(\hat\beta_1)=s/\sqrt{S_{xx}}\)로 쓸 수 있다.`,true,R`오차의 크기 \(s\)가 커지면 표준오차가 커지고, \(X\)의 퍼짐이 커지면 작아진다.`,"5 교안 p.16","표준오차");
+  q("회귀 II",R`단순회귀 기울기의 양측 \((1-\alpha)\) 신뢰구간은 \(\hat\beta_1\pm t_{1-\alpha/2,n-2}SE(\hat\beta_1)\)이다.`,true,R`자유도 \(n-2\)의 t 임계값을 사용한다.`,"5 교안 p.16–18","신뢰구간");
+  q("회귀 II",R`계산된 95% 신뢰구간 하나에 대해 고정된 참 모수 \(\beta_1\)가 그 구간 안에 있을 확률이 95%라고 해석하는 것이 빈도주의적 정의다.`,false,R`같은 절차를 반복했을 때 만들어진 구간의 약 95%가 참 모수를 포함한다는 장기적 포함률 해석이다.`,"5 교안 p.16–18 · 회귀 II 전사","신뢰구간");
+  q("회귀 II",R`기울기 양측검정의 귀무가설은 보통 \(H_0:\beta_1=0\), 대립가설은 \(H_1:\beta_1\ne0\)이다.`,true,R`선형 관계가 없다는 귀무가설을 양측으로 검정한다.`,"5 교안 p.17, 23 빈칸","교안 빈칸");
+  q("회귀 II",R`귀무가설 \(H_0:\beta_1=0\)에서 t 통계량은 \(t=\hat\beta_1/SE(\hat\beta_1)\)이다.`,true,R`일반적으로는 \((\hat\beta_1-\beta_{1,0})/SE\)이며 귀무값이 0인 경우다.`,"5 교안 p.17, 23 빈칸","교안 빈칸");
+  q("회귀 II",R`p값은 관측된 데이터가 주어졌을 때 귀무가설이 참일 확률이다.`,false,R`귀무가설이 참이라고 가정했을 때 관측값만큼 또는 더 극단적인 통계량이 나올 확률이다.`,"5 교안 p.17–25 · 회귀 II 전사","p값");
+  q("회귀 II",R`p값이 유의수준 \(\alpha\)보다 작으면 귀무가설을 기각한다.`,true,R`이는 정해 둔 검정 규칙이며 효과 크기나 인과성을 직접 말하지 않는다.`,"5 교안 p.17–25","가설검정");
+  q("회귀 II",R`작은 p값은 효과가 실질적으로 크고 인과관계가 있다는 증거다.`,false,R`통계적 유의성은 효과 크기·실용성·인과성·모형가정의 타당성과 별개의 문제다.`,"5 교안 p.17–25 · 전사 대조","p값");
+  q("회귀 II",R`cars 예제의 추정 회귀식은 \(\hat y=-17.5791+3.9324x\)이다.`,true,R`교안 p.21 빈칸의 점추정 결과다.`,"5 교안 p.21 빈칸","교안 빈칸");
+  q("회귀 II",R`cars 예제에서 \(SE(\hat\beta_0)=6.7584\), \(SE(\hat\beta_1)=0.4155\), 기울기 t값은 약 9.464다.`,true,R`p.22–23 빈칸을 연결한 값이다.`,"5 교안 p.22–23 빈칸","교안 빈칸");
+  q("회귀 II",R`\(SST\)는 총변동, \(SSR\)은 회귀모형이 설명한 변동, \(SSE\)는 잔차변동을 뜻한다.`,true,R`모두 \(Y\) 편차의 제곱합이므로 단위는 \(Y^2\)다.`,"5 교안 p.27–32 · 모형평가 전사","제곱합");
+  q("회귀 II",R`같은 학습자료에서 절편을 포함한 OLS이면 \(SST=SSR+SSE\)가 성립한다.`,true,R`절편 없는 모형이나 다른 평가 자료에서는 이 분해를 그대로 쓰지 못할 수 있다.`,"5 교안 p.27–32","제곱합");
+  q("회귀 II",R`\(R^2=1-SSE/SST=SSR/SST\)는 학습자료 총변동 중 모형이 설명한 비율이다.`,true,R`\(SST>0\)인 절편 포함 OLS의 표준 정의다.`,"5 교안 p.32–36","결정계수");
+  q("회귀 II",R`학습 \(R^2=0.65\)는 미래 관측치를 65% 정확도로 맞힌다는 뜻이다.`,false,R`학습자료의 변동 설명 비율이지 분류 정확도나 미래 일반화 성능이 아니다.`,"5 교안 p.32–36 · 모형평가 전사","결정계수");
+  q("회귀 II",R`설명변수를 추가하면 같은 학습자료의 일반 \(R^2\)는 감소하지 않는다.`,true,R`추가 계수에 0을 둘 수 있어 SSE가 커지지 않기 때문이다. 이 성질이 변수 추가를 자동 정당화하지는 않는다.`,"5 교안 p.33–36","결정계수");
+  q("회귀 II",R`수정 \(R^2\)는 변수 수에 대한 자유도 벌점을 포함하므로 변수를 추가해도 감소할 수 있다.`,true,R`\(R^2_{adj}=1-\frac{SSE/(n-p-1)}{SST/(n-1)}\)이다.`,"5 교안 p.35–36","수정 결정계수");
+  q("회귀 II",R`\(R^2\ge0.3\)이면 분야와 목적에 관계없이 좋은 모델이라는 보편 기준이 성립한다.`,false,R`좋고 나쁨은 분야, 잡음, 목적, 검증 성능에 따라 달라지며 0.3은 보편 임계값이 아니다.`,"5 교안 p.33–36 · 원문 검산","검산 교정");
+  q("회귀 II",R`다중회귀 ANOVA의 전체 F검정 귀무가설은 \(H_0:\beta_1=\cdots=\beta_p=0\)이다.`,true,R`적어도 하나의 기울기가 0이 아니라는 대립가설과 비교한다.`,"5 교안 p.37–42","ANOVA·F");
+  q("회귀 II",R`ANOVA F통계량은 \(F=(SSR/p)/(SSE/(n-p-1))\)로 설명변동의 평균제곱과 잔차 평균제곱을 비교한다.`,true,R`분자 자유도는 \(p\), 분모 자유도는 \(n-p-1\)이다.`,"5 교안 p.37–42","ANOVA·F");
+  q("회귀 II",R`단순선형회귀의 기울기 양측 t검정과 전체 F검정은 \(F=t^2\) 관계를 갖는다.`,true,R`두 검정은 같은 귀무가설을 검사하므로 p값도 일치한다. cars 예제 F는 89.57이다.`,"5 교안 p.42 빈칸 · 원문 검산","교안 빈칸·교정");
+
+  // 7. 선형회귀 III — 21문항
+  q("회귀 III",R`잔차 대 적합값 그림에 뚜렷한 곡선 패턴이 보이면 선형성 가정을 의심한다.`,true,R`선형식이 설명하지 못한 체계적 비선형 구조가 잔차에 남은 신호다.`,"6 교안 선형성·잔차분석 부분","잔차 진단");
+  q("회귀 III",R`잔차의 퍼짐이 적합값에 따라 부채꼴처럼 커지거나 작아지면 등분산성 위반을 의심한다.`,true,R`오차분산이 일정하지 않은 이분산성 패턴이다.`,"6 교안 등분산성 부분","잔차 진단");
+  q("회귀 III",R`정규성은 잔차 Q–Q plot의 점들이 기준 직선에서 체계적으로 벗어나는지로 점검할 수 있다.`,true,R`히스토그램도 보조적으로 볼 수 있지만 Q–Q plot은 분위수를 비교한다.`,"6 교안 정규성 부분","잔차 진단");
+  q("회귀 III",R`관측 순서나 시간에 따라 잔차가 연속적으로 같은 부호를 보이는 패턴은 오차 독립성 위반 신호가 될 수 있다.`,true,R`시간·공간·군집 구조에서 잔차 상관을 의심해야 한다.`,"6 교안 잔차 독립성 부분","잔차 진단");
+  q("회귀 III",R`잔차가 0 주변에 무작위로 흩어지면 모든 회귀가정이 수학적으로 증명된다.`,false,R`뚜렷한 위반 신호가 보이지 않는다는 진단일 뿐, 가정이 참임을 증명하는 것은 아니다.`,"6 교안 잔차분석 부분","진단 해석");
+  q("회귀 III",R`정규성 위반과 등분산성 위반은 같은 잔차 그림 하나만으로 항상 구분할 수 있다.`,false,R`퍼짐 변화는 잔차–적합 그림, 분포 형태는 Q–Q plot 등 목적에 맞는 진단을 함께 사용한다.`,"6 교안 가정 진단 부분","진단 구분");
+  q("회귀 III",R`로그·제곱근·Box–Cox 변환은 비선형성이나 분산 불안정을 완화하기 위한 후보가 될 수 있다.`,true,R`변환 후에도 해석과 가정을 다시 점검해야 한다.`,"6 교안 가정 위반 대응 부분","대응");
+  q("회귀 III",R`곡선 패턴이 보이면 다항항이나 누락변수를 검토할 수 있다.`,true,R`모형의 함수 형태가 충분한지 다시 설계하는 대응이다.`,"6 교안 선형성 대응 부분","대응");
+  q("회귀 III",R`오차의 독립성은 설명변수들끼리 상관이 없어야 한다는 가정이다.`,false,R`오차 간 독립·무상관과 설명변수 간 다중공선성은 서로 다른 문제다.`,"6 교안 독립성·다중공선성 부분","가정 구분");
+  q("회귀 III",R`다중공선성은 설명변수들 사이에 강한 선형 관계가 있는 현상이다.`,true,R`반응변수와 설명변수의 높은 상관 자체를 뜻하지 않는다.`,"6 교안 다중공선성 부분","다중공선성");
+  q("회귀 III",R`다중공선성이 심하면 개별 회귀계수 추정이 불안정해지고 표준오차가 커져 t값이 작아질 수 있다.`,true,R`변수별 효과를 분리해 해석하기 어려워진다.`,"6 교안 다중공선성 영향 부분","다중공선성");
+  q("회귀 III",R`완전한 다중공선성이 있어도 OLS 계수는 항상 유일하게 정해진다.`,false,R`설계행렬 열이 선형종속이면 \(X^TX\)가 특이해져 계수가 유일하게 식별되지 않는다.`,"6 교안 다중공선성 영향 부분","다중공선성");
+  q("회귀 III",R`설명변수 간 상관계수만 낮으면 다중공선성이 절대 없다고 결론 내릴 수 있다.`,false,R`한 변수가 여러 다른 변수의 조합으로 설명되는 공선성은 단순 쌍별 상관만으로 놓칠 수 있다.`,"6 교안 다중공선성 진단 부분","진단");
+  q("회귀 III",R`\(R_j^2\)는 설명변수 \(X_j\)를 나머지 설명변수들로 회귀했을 때의 결정계수다.`,true,R`이를 이용해 tolerance와 VIF를 계산한다.`,"6 교안 VIF 부분","VIF");
+  q("회귀 III",R`\(Tolerance_j=1-R_j^2\), \(VIF_j=1/(1-R_j^2)=1/Tolerance_j\)이다.`,true,R`\(R_j^2\)가 1에 가까울수록 tolerance는 0에, VIF는 크게 간다.`,"6 교안 p.18–22 · 원문 검산","VIF");
+  q("회귀 III",R`tolerance가 0에 가까울수록 다중공선성은 약하고, VIF도 0에 가까워진다.`,false,R`tolerance가 작을수록 공선성이 심하고 VIF는 커진다.`,"6 교안 p.18–22 · 원문 검산","검산 교정");
+  q("회귀 III",R`VIF 5 또는 10은 문맥과 무관한 절대 법칙이다.`,false,R`흔히 쓰는 경험적 경고선일 뿐 표본, 분야, 목적과 함께 판단해야 한다.`,"6 교안 다중공선성 진단 부분","진단 해석");
+  q("회귀 III",R`조건지수는 보통 \(\sqrt{\lambda_{max}/\lambda_j}\) 형태로 고유값의 비율을 이용한다.`,true,R`큰 조건지수는 설계행렬의 거의 선형종속인 방향을 시사한다.`,"6 교안 조건지수 부분 · 원문 검산","검산 교정");
+  q("회귀 III",R`다중공선성 대응에는 중복 변수 제거·결합, Ridge/Lasso/Elastic Net, PCA 기반 회귀 등이 있다.`,true,R`목적과 해석 필요성에 따라 대응을 선택한다. 특정 예제의 변수 제거가 보편 규칙은 아니다.`,"6 교안 다중공선성 대응 부분","대응");
+  q("회귀 III",R`Cook's distance가 큰 관측치는 자동으로 삭제해야 한다.`,false,R`영향이 큰 관측치 후보이므로 입력 오류, 자료 생성 과정, 분석 목적을 먼저 검토해야 한다.`,"6 교안 영향점·Cook 거리 부분","영향점");
+  q("회귀 III",R`회귀 진단은 잔차 그림, Q–Q plot, 공선성 지표, 영향점 지표를 함께 보고 모형 가정과 해석의 신뢰성을 점검하는 과정이다.`,true,R`하나의 수치만으로 모든 가정을 판정하지 않는다.`,"6 교안 Summary","Summary");
+
+  const chapterMeta={
+    "과목소개":"문제 중심 접근·일반화·규제화·변수 선택/추출·모델과 목적·결과 활용",
+    "개론 I":"인과·3V/5V·DM/AI/ML/DL·데이터 형태·사례",
+    "개론 II":"X/Y·학습 유형·추론/예측·5단계·AutoML·ETL·LLM",
+    "선형대수":"집합·함수·행렬·연립방정식·소거·역행렬·선형변환·고유값",
+    "기초통계":"표본·기술/추론·분포·우도·편향/분산·상관·차원·베이즈",
+    "회귀 I":"모형 구분·선형성·가정·계수 해석·잔차·OLS",
+    "회귀 II":"추정·BLUE·신뢰구간·t/p·제곱합·R²·ANOVA/F",
+    "회귀 III":"잔차진단·선형성·정규성·등분산성·독립성·공선성·영향점"
+  };
+  const KEY="dm-midterm-ox-v1";
+  let saved={answers:{},bookmarks:{}};
+  try{saved={...saved,...JSON.parse(localStorage.getItem(KEY)||"{}")} }catch(e){}
+  saved.answers=saved.answers||{};saved.bookmarks=saved.bookmarks||{};
+  let filtered=[...items],cursor=0,order=[...items];
+
+  const $=s=>document.querySelector(s); const $$=s=>[...document.querySelectorAll(s)];
+  const save=()=>localStorage.setItem(KEY,JSON.stringify(saved));
+  const chapters=[...new Set(items.map(x=>x.chapter))];
+  chapters.forEach(c=>{$("#chapterSelect").insertAdjacentHTML("beforeend",`<option value="${c}">${c}</option>`)});
+  const chapterStrip=$("#chapterStrip");
+  chapterStrip.innerHTML=`<button class="chip active" data-chapter="all">전체 <small>${items.length}</small></button>`+chapters.map(c=>`<button class="chip" data-chapter="${c}">${c} <small>${items.filter(x=>x.chapter===c).length}</small></button>`).join("");
+  $("#coverageBody").innerHTML=chapters.map(c=>`<tr><td><strong>${c}</strong></td><td>${chapterMeta[c]}</td><td>${items.filter(x=>x.chapter===c).length}</td></tr>`).join("");
+
+  function updateStats(){
+    const answers=Object.values(saved.answers);const done=answers.length;const correct=answers.filter(x=>x.correct).length;const wrong=answers.filter(x=>!x.correct).length;const marks=Object.values(saved.bookmarks).filter(Boolean).length;
+    $("#totalStat").textContent=items.length;$("#doneStat").textContent=done;$("#accuracyStat").textContent=done?`${Math.round(correct/done*100)}%`:"—";$("#reviewStat").textContent=new Set([...Object.keys(saved.answers).filter(id=>!saved.answers[id].correct),...Object.keys(saved.bookmarks).filter(id=>saved.bookmarks[id])]).size;$("#progressBar").style.width=`${done/items.length*100}%`;
+  }
+  function applyFilters(keepId){
+    clearTimeout(advanceTimer);
+    const text=$("#search").value.trim().toLowerCase(),chapter=$("#chapterSelect").value,state=$("#stateSelect").value;
+    filtered=order.filter(x=>{
+      if(chapter!=="all"&&x.chapter!==chapter)return false;
+      const a=saved.answers[x.id];if(state==="unanswered"&&a)return false;if(state==="wrong"&&(!a||a.correct))return false;if(state==="bookmarked"&&!saved.bookmarks[x.id])return false;
+      if(text&&!`${x.statement} ${x.explanation} ${x.source} ${x.kind}`.toLowerCase().includes(text))return false;return true;
+    });
+    const at=keepId?filtered.findIndex(x=>x.id===keepId):-1;cursor=at>=0?at:Math.min(cursor,Math.max(0,filtered.length-1));render();
+  }
+  function render(){
+    const empty=!filtered.length;$("#quizCard").style.display=empty?"none":"block";$("#empty").classList.toggle("show",empty);$("#rail").innerHTML="";if(empty){updateStats();return}
+    const item=filtered[cursor],answer=saved.answers[item.id];
+    $("#chapterBadge").textContent=item.chapter;$("#kindBadge").textContent=item.kind;$("#statement").innerHTML=item.statement;$("#explain").innerHTML=item.explanation;$("#source").innerHTML=`<strong>근거</strong> · ${item.source}`;$("#position").textContent=`${cursor+1} / ${filtered.length} · ${item.id}`;
+    $("#bookmarkBtn").classList.toggle("on",!!saved.bookmarks[item.id]);$("#bookmarkBtn").textContent=saved.bookmarks[item.id]?"★":"☆";
+    $$(".answer").forEach(b=>{b.className="answer";const v=b.dataset.answer==="true";if(answer){if(v===answer.value)b.classList.add("selected",answer.correct?"correct":"incorrect");if(v===item.answer&&v!==answer.value)b.classList.add("reveal")}});
+    $("#feedback").classList.toggle("show",!!answer);if(answer){$("#verdict").textContent=answer.correct?"정답 · 개념을 정확히 구분했습니다.":`오답 · 정답은 ${item.answer?"O":"X"}입니다.`;$("#verdict").className=`verdict ${answer.correct?"ok":"bad"}`}
+    $("#prevBtn").disabled=cursor===0;$("#nextBtn").disabled=cursor===filtered.length-1;
+    $("#rail").innerHTML=filtered.map((x,i)=>{const a=saved.answers[x.id];return `<button class="${i===cursor?"current ":""}${a?"done ":""}${a&&!a.correct?"wrong":""}" data-i="${i}" title="${x.id}">${i+1}</button>`}).join("");
+    const currentRail=$("#rail .current");if(currentRail)currentRail.scrollIntoView({block:"nearest",inline:"nearest"});
+    updateStats();if(window.MathJax?.typesetPromise)MathJax.typesetPromise([$("#quizCard")]);
+  }
+  let advanceTimer=null;
+  function answer(value){
+    const item=filtered[cursor];if(!item)return;
+    const correct=value===item.answer;
+    saved.answers[item.id]={value,correct};save();render();
+    clearTimeout(advanceTimer);
+    if(correct&&cursor<filtered.length-1){
+      const answeredId=item.id;
+      advanceTimer=setTimeout(()=>{
+        if(filtered[cursor]?.id!==answeredId)return;
+        cursor++;render();
+      },360);
+    }
+  }
+  $$(".answer").forEach(b=>b.addEventListener("click",()=>answer(b.dataset.answer==="true")));
+  $("#bookmarkBtn").addEventListener("click",()=>{const item=filtered[cursor];saved.bookmarks[item.id]=!saved.bookmarks[item.id];save();render()});
+  $("#prevBtn").addEventListener("click",()=>{clearTimeout(advanceTimer);if(cursor>0){cursor--;render()}});$("#nextBtn").addEventListener("click",()=>{clearTimeout(advanceTimer);if(cursor<filtered.length-1){cursor++;render()}});
+  $("#rail").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b){clearTimeout(advanceTimer);cursor=Number(b.dataset.i);render()}});
+  $("#search").addEventListener("input",()=>applyFilters());$("#chapterSelect").addEventListener("change",()=>{chapterStrip.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.dataset.chapter===$("#chapterSelect").value));applyFilters()});$("#stateSelect").addEventListener("change",()=>applyFilters());
+  chapterStrip.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;$("#chapterSelect").value=b.dataset.chapter;chapterStrip.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x===b));applyFilters()});
+  $("#shuffleBtn").addEventListener("click",()=>{const current=filtered[cursor]?.id;order=[...order].sort(()=>Math.random()-.5);applyFilters(current)});
+  $("#resetBtn").addEventListener("click",()=>{if(confirm("모든 O/X 응답과 북마크 기록을 초기화할까요?")){saved={answers:{},bookmarks:{}};save();applyFilters()}});
+  document.addEventListener("keydown",e=>{if(["INPUT","SELECT","TEXTAREA"].includes(document.activeElement.tagName))return;if(e.key.toLowerCase()==="o")answer(true);if(e.key.toLowerCase()==="x")answer(false);if(e.key==="ArrowLeft"&&cursor>0){cursor--;render()}if(e.key==="ArrowRight"&&cursor<filtered.length-1){cursor++;render()}});
+  applyFilters();
+  </script>
+</body>
+</html>

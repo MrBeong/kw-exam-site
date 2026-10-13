@@ -83,6 +83,7 @@
       flex: 0 0 auto;
     }
     .top-actions { margin-left: auto; display: flex; gap: 4px; align-items: center; }
+    .top-actions a { text-decoration: none; }
     .icon-btn, .plain-btn {
       border: 0;
       background: transparent;
@@ -429,6 +430,7 @@
     <div class="crumb"><span class="crumb-icon">DM</span><span>데이터마이닝</span><span class="muted">/</span><span>중간고사 Study OS</span></div>
     <div class="top-actions">
       <span class="timer-pill" id="timerPill">시험 모드 <strong id="timerText">60:00</strong></span>
+      <a class="plain-btn" href="./ox/">O/X 전수검증</a>
       <button class="plain-btn" id="searchBtn">검색 <span class="kbd">⌘ K</span></button>
       <button class="plain-btn hide-mobile" id="printBtn">인쇄</button>
       <button class="icon-btn" id="moreBtn" aria-label="모든 토글 열기" title="모든 토글 열기">•••</button>
@@ -444,6 +446,7 @@
       <a class="side-link" href="#priority"><span class="side-icon">★</span>Summary·강조 지도</a>
       <a class="side-link" href="#blanks"><span class="side-icon">▣</span>교안 빈칸</a>
       <a class="side-link" href="#problems"><span class="side-icon">□</span>문제 은행 <span class="side-count">100</span></a>
+      <a class="side-link" href="./ox/"><span class="side-icon">◉</span>개념 O/X <span class="side-count">195</span></a>
       <a class="side-link" href="#mistakes"><span class="side-icon">↺</span>오답 노트 <span class="side-count" id="mistakeCountSide">0</span></a>
       <a class="side-link" href="#checklist"><span class="side-icon">✓</span>직전 체크리스트</a>
     </div>
