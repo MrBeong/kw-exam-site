@@ -67,6 +67,7 @@
     <nav class="app-tabs" aria-label="학습 탭">
       <a class="app-tab" href="../">개념 정리</a>
       <a class="app-tab active" href="./">O/X</a>
+      <a class="app-tab" href="../multiple-choice/">다지선다</a>
       <a class="app-tab" href="../?view=problems">예상문제</a>
       <a class="app-tab" href="../?view=mistakes">오답 복습</a>
     </nav>
@@ -365,6 +366,7 @@
   q("회귀 III",R`Cook's distance가 큰 관측치는 자동으로 삭제해야 한다.`,false,R`영향이 큰 관측치 후보이므로 입력 오류, 자료 생성 과정, 분석 목적을 먼저 검토해야 한다.`,"6 교안 영향점·Cook 거리 부분","영향점");
   q("회귀 III",R`회귀 진단은 잔차 그림, Q–Q plot, 공선성 지표, 영향점 지표를 함께 보고 모형 가정과 해석의 신뢰성을 점검하는 과정이다.`,true,R`하나의 수치만으로 모든 가정을 판정하지 않는다.`,"6 교안 Summary","Summary");
 
+  window.OX_ITEMS=items;
   const chapterMeta={
     "과목소개":"문제 중심 접근·일반화·규제화·변수 선택/추출·모델과 목적·결과 활용",
     "개론 I":"인과·3V/5V·DM/AI/ML/DL·데이터 형태·사례",
