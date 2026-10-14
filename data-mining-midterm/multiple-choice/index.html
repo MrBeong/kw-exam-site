@@ -1,3 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>데이터마이닝 중간고사 · 다지선다</title>
+  <script>
+    window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    :root{--ink:#191919;--muted:#787774;--line:#e8e7e4;--soft:#f7f6f3;--green:#2f7d4a;--green-bg:#edf7f0;--red:#b42318;--red-bg:#fff1ef}
+    *{box-sizing:border-box}html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none}body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif;color:var(--ink);background:#fff}
+    button{font:inherit;color:inherit;cursor:pointer}.top{height:54px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 18px;background:rgba(255,255,255,.96);backdrop-filter:blur(12px)}.app-tabs{display:flex;align-items:center;gap:2px;padding:3px;background:var(--soft);border-radius:7px;overflow-x:auto}.app-tab{color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;padding:5px 9px;border-radius:5px;white-space:nowrap}.app-tab:hover,.app-tab.active{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+    .page{width:min(760px,calc(100% - 20px));height:calc(100dvh - 54px);margin:auto;padding:9px 0 10px;display:flex;flex-direction:column;overflow:hidden}.controls{flex:0 0 auto;margin-bottom:8px}.mode-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:6px;padding:3px;background:var(--soft);border-radius:7px}.mode-tab{border:0;background:transparent;border-radius:5px;padding:6px 8px;font-size:12px;font-weight:800}.mode-tab.active{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1)}.control-row{display:flex;align-items:center;gap:5px}.state-tabs{display:flex;flex:1;gap:3px;min-width:0}.state-tab,.chapter-toggle,.reset-all{border:0;background:transparent;border-radius:6px;padding:7px 9px;font-size:12px;font-weight:700;white-space:nowrap}.state-tab.active{background:#202020;color:#fff}.state-tab:not(.active):hover,.chapter-toggle:hover,.reset-all:hover{background:var(--soft)}.chapter-toggle,.reset-all{border:1px solid var(--line);background:#fff}.reset-all{color:#555}
+    .chapter-popover{display:none;position:fixed;z-index:50;top:104px;left:50%;transform:translateX(-50%);width:min(740px,calc(100% - 20px));padding:10px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 34px rgba(0,0,0,.14)}.chapter-popover.open{display:block}.chapter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.chapter-chip{border:1px solid var(--line);background:#fff;border-radius:6px;padding:8px 5px;font-size:12px;font-weight:700}.chapter-chip.active{background:#202020;color:#fff;border-color:#202020}
+    .quiz-card{flex:1;min-height:0;border:1px solid var(--line);border-radius:9px;background:#fff;display:flex;flex-direction:column;overflow:hidden}.card-head{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:9px 12px;border-bottom:1px solid var(--line)}.badge{font-size:12px;font-weight:700;background:var(--soft);padding:4px 7px;border-radius:5px}.kind{font-size:12px;color:var(--muted)}.spacer{flex:1}.bookmark{border:0;background:transparent;font-size:22px;line-height:1;padding:2px 4px}.bookmark.on{color:#b87800}
+    .prompt{flex:0 0 auto;padding:11px 14px 8px;font-size:16px;font-weight:800}.claim{display:block;margin-top:7px;padding:8px 10px;border-left:3px solid #222;background:var(--soft);font-size:14px;line-height:1.45}.hint{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:500}.options{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:4px 12px 10px}.option{width:100%;display:grid;grid-template-columns:30px 1fr;gap:8px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 10px;margin:0 0 7px;line-height:1.45}.option:hover{background:#fbfbfa}.option.selected{border-color:#222;box-shadow:inset 0 0 0 1px #222}.letter{width:26px;height:26px;border-radius:6px;background:var(--soft);display:grid;place-items:center;font-size:12px;font-weight:800}.option.selected .letter{background:#222;color:#fff}.option.correct{border-color:#8cc59d;background:var(--green-bg)}.option.wrong-selected{border-color:#e7a39c;background:var(--red-bg)}.option.missed{border-style:dashed;border-color:#70a982;background:#f6fbf7}.option.correct .letter,.option.missed .letter{background:var(--green);color:#fff}.option.wrong-selected .letter{background:var(--red);color:#fff}.option-text{font-size:14px;font-weight:650}.option-explain{grid-column:2;margin-top:4px;padding-top:6px;border-top:1px solid rgba(0,0,0,.08);font-size:12px;color:#555}.truth{font-weight:900;margin-right:4px}.truth.o{color:var(--green)}.truth.x{color:var(--red)}
+    .result-bar{display:none;flex:0 0 auto;padding:8px 12px;border-top:1px solid var(--line);font-size:13px;font-weight:750}.result-bar.show{display:block}.result-bar.good{color:var(--green);background:var(--green-bg)}.result-bar.bad{color:var(--red);background:var(--red-bg)}
+    .actions{flex:0 0 auto;display:flex;gap:7px;padding:8px 12px;border-top:1px solid var(--line)}.action{border:1px solid var(--line);background:#fff;border-radius:6px;padding:9px 12px;font-size:13px;font-weight:750}.action.primary{flex:1;background:#202020;color:#fff;border-color:#202020}.action:disabled{opacity:.35;cursor:default}.retry{display:none}.retry.show{display:block}
+    .card-foot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-top:1px solid var(--line)}.nav-btn{border:0;background:transparent;padding:7px 8px;border-radius:5px;font-size:13px}.nav-btn:hover{background:var(--soft)}.nav-btn:disabled{opacity:.3;cursor:default}.position{font-size:12px;color:var(--muted)}
+    .loading{flex:1;display:grid;place-items:center;color:var(--muted);font-size:14px}.empty{display:none;flex:1;place-items:center;text-align:center;color:var(--muted);padding:24px}.empty.show{display:grid}.quiz-card.hidden{display:none}iframe{display:none}
+    mjx-container:not([display="true"]){display:inline-block!important;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle}
+    mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden}
+    mjx-container svg{max-width:none}
+    @media(max-width:520px){.top{height:48px;padding:0 7px}.app-tabs{gap:0}.app-tab{font-size:10px;padding:5px 6px}.page{width:calc(100% - 14px);height:calc(100dvh - 48px);padding:6px 0 7px}.controls{margin-bottom:5px}.mode-tabs{margin-bottom:4px}.mode-tab{font-size:10px;padding:5px 4px}.state-tabs{gap:1px}.state-tab,.chapter-toggle,.reset-all{font-size:9px;padding:5px 6px}.chapter-popover{top:119px;width:calc(100% - 14px)}.chapter-grid{grid-template-columns:repeat(2,1fr)}.card-head{padding:6px 9px}.prompt{font-size:14px;padding:8px 10px 5px}.claim{font-size:12px;margin-top:5px;padding:6px 8px}.options{padding:3px 9px 5px}.option{grid-template-columns:27px 1fr;gap:6px;padding:7px 8px;margin-bottom:5px}.letter{width:24px;height:24px}.option-text{font-size:12px}.option-explain{font-size:11px}.actions{padding:5px 9px}.action{padding:7px 10px}.card-foot{padding:3px 6px}}
+    .claim,.option-text,.option-explain{min-width:0;overflow-wrap:anywhere}
+    .option{grid-template-columns:30px minmax(0,1fr)}
+    @media(max-width:520px){.option{grid-template-columns:27px minmax(0,1fr)}.prompt mjx-container,.option-text mjx-container,.option-explain mjx-container{font-size:.9em!important}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <nav class="app-tabs" aria-label="학습 탭">
+      <a class="app-tab" href="../">개념 정리</a>
+      <a class="app-tab" href="../ox/">O/X</a>
+      <a class="app-tab active" href="./">다지선다</a>
+      <a class="app-tab" href="../?view=problems">예상문제</a>
+      <a class="app-tab" href="../?view=mistakes">오답 복습</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="controls" aria-label="문항 필터">
+      <div class="mode-tabs" id="modeTabs">
+        <button class="mode-tab active" data-mode="mixed" type="button">실전 혼합</button>
+        <button class="mode-tab" data-mode="single" type="button">개념별</button>
+        <button class="mode-tab" data-mode="multi" type="button">복수정답</button>
+      </div>
+      <div class="control-row">
+        <div class="state-tabs" id="stateTabs">
+          <button class="state-tab active" data-state="all" type="button">전체</button>
+          <button class="state-tab" data-state="unanswered" type="button">미응답</button>
+          <button class="state-tab" data-state="wrong" type="button">오답</button>
+          <button class="state-tab" data-state="bookmarked" type="button">북마크</button>
+        </div>
+        <button class="chapter-toggle" id="chapterToggle" type="button">전체 단원 ▾</button>
+        <button class="reset-all" id="retryAllBtn" type="button">전체 문제 다시</button>
+      </div>
+    </section>
+    <div class="chapter-popover" id="chapterPopover"><div class="chapter-grid" id="chapterGrid"></div></div>
+
+    <div class="loading" id="loading">개념 문항을 불러오는 중…</div>
+    <article class="quiz-card hidden" id="quizCard">
+      <div class="card-head">
+        <span class="badge" id="chapterBadge"></span>
+        <span class="kind" id="conceptCount"></span>
+        <span class="spacer"></span>
+        <button class="bookmark" id="bookmarkBtn" type="button" aria-label="북마크">☆</button>
+      </div>
+      <div class="prompt"><span id="promptText"></span>
+        <span class="claim" id="claimText"></span>
+        <span class="hint" id="hintText"></span>
+      </div>
+      <div class="options" id="options"></div>
+      <div class="result-bar" id="resultBar"></div>
+      <div class="actions">
+        <button class="action retry" id="retryBtn" type="button">이 문제 다시 풀기</button>
+        <button class="action primary" id="submitBtn" type="button">선택 완료</button>
+      </div>
+      <div class="card-foot">
+        <button class="nav-btn" id="prevBtn" type="button">← 이전</button>
+        <span class="position" id="position"></span>
+        <button class="nav-btn" id="nextBtn" type="button">다음 →</button>
+      </div>
+    </article>
+    <div class="empty" id="empty">조건에 맞는 문항이 없습니다.</div>
+  </main>
+
+  <iframe id="conceptSource" src="../ox/?concept-source=1" title="개념 데이터"></iframe>
+
+  <script>
+  const KEY="dm-midterm-multiple-v4";
+  const letters=["A","B","C","D"];
+  let concepts=[],singleBank=[],multiBank=[],caseBank=[],questions=[],filtered=[],cursor=0,stateFilter="all",chapterFilter="all",mode="mixed",selected=new Set(),currentQuestionId=null;
+  let saved={answers:{},bookmarks:{}};
+  try{saved={...saved,...JSON.parse(localStorage.getItem(KEY)||"{}")} }catch(e){}
+  saved.answers=saved.answers||{};saved.bookmarks=saved.bookmarks||{};
+  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+  const save=()=>localStorage.setItem(KEY,JSON.stringify(saved));
   const R=String.raw;
   const DIRECT_SINGLE_MAP={
     OX001:[
