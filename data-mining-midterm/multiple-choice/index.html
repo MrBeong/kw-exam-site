@@ -13,16 +13,16 @@
     :root{--ink:#191919;--muted:#787774;--line:#e8e7e4;--soft:#f7f6f3;--green:#2f7d4a;--green-bg:#edf7f0;--red:#b42318;--red-bg:#fff1ef}
     *{box-sizing:border-box}html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none}body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif;color:var(--ink);background:#fff}
     button{font:inherit;color:inherit;cursor:pointer}.top{height:54px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 18px;background:rgba(255,255,255,.96);backdrop-filter:blur(12px)}.app-tabs{display:flex;align-items:center;gap:2px;padding:3px;background:var(--soft);border-radius:7px;overflow-x:auto}.app-tab{color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;padding:5px 9px;border-radius:5px;white-space:nowrap}.app-tab:hover,.app-tab.active{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
-    .page{width:min(760px,calc(100% - 20px));height:calc(100dvh - 54px);margin:auto;padding:9px 0 10px;display:flex;flex-direction:column;overflow:hidden}.controls{flex:0 0 auto;margin-bottom:8px}.control-row{display:flex;align-items:center;gap:6px}.state-tabs{display:flex;flex:1;gap:3px;min-width:0}.state-tab,.chapter-toggle{border:0;background:transparent;border-radius:6px;padding:7px 9px;font-size:12px;font-weight:700;white-space:nowrap}.state-tab.active{background:#202020;color:#fff}.state-tab:not(.active):hover,.chapter-toggle:hover{background:var(--soft)}.chapter-toggle{border:1px solid var(--line);background:#fff}
+    .page{width:min(760px,calc(100% - 20px));height:calc(100dvh - 54px);margin:auto;padding:9px 0 10px;display:flex;flex-direction:column;overflow:hidden}.controls{flex:0 0 auto;margin-bottom:8px}.mode-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:6px;padding:3px;background:var(--soft);border-radius:7px}.mode-tab{border:0;background:transparent;border-radius:5px;padding:6px 8px;font-size:12px;font-weight:800}.mode-tab.active{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1)}.control-row{display:flex;align-items:center;gap:6px}.state-tabs{display:flex;flex:1;gap:3px;min-width:0}.state-tab,.chapter-toggle{border:0;background:transparent;border-radius:6px;padding:7px 9px;font-size:12px;font-weight:700;white-space:nowrap}.state-tab.active{background:#202020;color:#fff}.state-tab:not(.active):hover,.chapter-toggle:hover{background:var(--soft)}.chapter-toggle{border:1px solid var(--line);background:#fff}
     .chapter-popover{display:none;position:fixed;z-index:50;top:104px;left:50%;transform:translateX(-50%);width:min(740px,calc(100% - 20px));padding:10px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 34px rgba(0,0,0,.14)}.chapter-popover.open{display:block}.chapter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.chapter-chip{border:1px solid var(--line);background:#fff;border-radius:6px;padding:8px 5px;font-size:12px;font-weight:700}.chapter-chip.active{background:#202020;color:#fff;border-color:#202020}
     .quiz-card{flex:1;min-height:0;border:1px solid var(--line);border-radius:9px;background:#fff;display:flex;flex-direction:column;overflow:hidden}.card-head{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:9px 12px;border-bottom:1px solid var(--line)}.badge{font-size:12px;font-weight:700;background:var(--soft);padding:4px 7px;border-radius:5px}.kind{font-size:12px;color:var(--muted)}.spacer{flex:1}.bookmark{border:0;background:transparent;font-size:22px;line-height:1;padding:2px 4px}.bookmark.on{color:#b87800}
-    .prompt{flex:0 0 auto;padding:12px 14px 8px;font-size:17px;font-weight:800}.hint{display:block;margin-top:3px;color:var(--muted);font-size:11px;font-weight:500}.options{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:4px 12px 10px}.option{width:100%;display:grid;grid-template-columns:30px 1fr;gap:8px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 10px;margin:0 0 7px;line-height:1.45}.option:hover{background:#fbfbfa}.option.selected{border-color:#222;box-shadow:inset 0 0 0 1px #222}.letter{width:26px;height:26px;border-radius:6px;background:var(--soft);display:grid;place-items:center;font-size:12px;font-weight:800}.option.selected .letter{background:#222;color:#fff}.option.correct{border-color:#8cc59d;background:var(--green-bg)}.option.wrong-selected{border-color:#e7a39c;background:var(--red-bg)}.option.missed{border-style:dashed;border-color:#70a982;background:#f6fbf7}.option.correct .letter,.option.missed .letter{background:var(--green);color:#fff}.option.wrong-selected .letter{background:var(--red);color:#fff}.option-text{font-size:14px;font-weight:650}.option-explain{grid-column:2;margin-top:4px;padding-top:6px;border-top:1px solid rgba(0,0,0,.08);font-size:12px;color:#555}.truth{font-weight:900;margin-right:4px}.truth.o{color:var(--green)}.truth.x{color:var(--red)}
+    .prompt{flex:0 0 auto;padding:11px 14px 8px;font-size:16px;font-weight:800}.claim{display:block;margin-top:7px;padding:8px 10px;border-left:3px solid #222;background:var(--soft);font-size:14px;line-height:1.45}.hint{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:500}.options{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:4px 12px 10px}.option{width:100%;display:grid;grid-template-columns:30px 1fr;gap:8px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 10px;margin:0 0 7px;line-height:1.45}.option:hover{background:#fbfbfa}.option.selected{border-color:#222;box-shadow:inset 0 0 0 1px #222}.letter{width:26px;height:26px;border-radius:6px;background:var(--soft);display:grid;place-items:center;font-size:12px;font-weight:800}.option.selected .letter{background:#222;color:#fff}.option.correct{border-color:#8cc59d;background:var(--green-bg)}.option.wrong-selected{border-color:#e7a39c;background:var(--red-bg)}.option.missed{border-style:dashed;border-color:#70a982;background:#f6fbf7}.option.correct .letter,.option.missed .letter{background:var(--green);color:#fff}.option.wrong-selected .letter{background:var(--red);color:#fff}.option-text{font-size:14px;font-weight:650}.option-explain{grid-column:2;margin-top:4px;padding-top:6px;border-top:1px solid rgba(0,0,0,.08);font-size:12px;color:#555}.truth{font-weight:900;margin-right:4px}.truth.o{color:var(--green)}.truth.x{color:var(--red)}
     .result-bar{display:none;flex:0 0 auto;padding:8px 12px;border-top:1px solid var(--line);font-size:13px;font-weight:750}.result-bar.show{display:block}.result-bar.good{color:var(--green);background:var(--green-bg)}.result-bar.bad{color:var(--red);background:var(--red-bg)}
     .actions{flex:0 0 auto;display:flex;gap:7px;padding:8px 12px;border-top:1px solid var(--line)}.action{border:1px solid var(--line);background:#fff;border-radius:6px;padding:9px 12px;font-size:13px;font-weight:750}.action.primary{flex:1;background:#202020;color:#fff;border-color:#202020}.action:disabled{opacity:.35;cursor:default}.retry{display:none}.retry.show{display:block}
     .card-foot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-top:1px solid var(--line)}.nav-btn{border:0;background:transparent;padding:7px 8px;border-radius:5px;font-size:13px}.nav-btn:hover{background:var(--soft)}.nav-btn:disabled{opacity:.3;cursor:default}.position{font-size:12px;color:var(--muted)}
     .loading{flex:1;display:grid;place-items:center;color:var(--muted);font-size:14px}.empty{display:none;flex:1;place-items:center;text-align:center;color:var(--muted);padding:24px}.empty.show{display:grid}.quiz-card.hidden{display:none}iframe{display:none}
     mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}
-    @media(max-width:520px){.top{height:48px;padding:0 7px}.app-tabs{gap:0}.app-tab{font-size:10px;padding:5px 6px}.page{width:calc(100% - 14px);height:calc(100dvh - 48px);padding:6px 0 7px}.controls{margin-bottom:6px}.state-tabs{gap:2px}.state-tab,.chapter-toggle{font-size:10px;padding:6px 7px}.chapter-popover{top:91px;width:calc(100% - 14px)}.chapter-grid{grid-template-columns:repeat(2,1fr)}.card-head{padding:7px 10px}.prompt{font-size:15px;padding:10px 11px 6px}.options{padding:3px 9px 6px}.option{grid-template-columns:27px 1fr;gap:6px;padding:7px 8px;margin-bottom:5px}.letter{width:24px;height:24px}.option-text{font-size:12px}.option-explain{font-size:11px}.actions{padding:6px 9px}.action{padding:8px 10px}.card-foot{padding:4px 6px}}
+    @media(max-width:520px){.top{height:48px;padding:0 7px}.app-tabs{gap:0}.app-tab{font-size:10px;padding:5px 6px}.page{width:calc(100% - 14px);height:calc(100dvh - 48px);padding:6px 0 7px}.controls{margin-bottom:5px}.mode-tabs{margin-bottom:4px}.mode-tab{font-size:10px;padding:5px 4px}.state-tabs{gap:2px}.state-tab,.chapter-toggle{font-size:10px;padding:5px 7px}.chapter-popover{top:119px;width:calc(100% - 14px)}.chapter-grid{grid-template-columns:repeat(2,1fr)}.card-head{padding:6px 9px}.prompt{font-size:14px;padding:8px 10px 5px}.claim{font-size:12px;margin-top:5px;padding:6px 8px}.options{padding:3px 9px 5px}.option{grid-template-columns:27px 1fr;gap:6px;padding:7px 8px;margin-bottom:5px}.letter{width:24px;height:24px}.option-text{font-size:12px}.option-explain{font-size:11px}.actions{padding:5px 9px}.action{padding:7px 10px}.card-foot{padding:3px 6px}}
   </style>
 </head>
 <body>
@@ -38,6 +38,11 @@
 
   <main class="page">
     <section class="controls" aria-label="문항 필터">
+      <div class="mode-tabs" id="modeTabs">
+        <button class="mode-tab active" data-mode="mixed" type="button">실전 혼합</button>
+        <button class="mode-tab" data-mode="single" type="button">개념별</button>
+        <button class="mode-tab" data-mode="multi" type="button">복수정답</button>
+      </div>
       <div class="control-row">
         <div class="state-tabs" id="stateTabs">
           <button class="state-tab active" data-state="all" type="button">전체</button>
@@ -58,8 +63,9 @@
         <span class="spacer"></span>
         <button class="bookmark" id="bookmarkBtn" type="button" aria-label="북마크">☆</button>
       </div>
-      <div class="prompt">다음 중 옳은 내용을 모두 고르시오.
-        <span class="hint">정답이 하나 이상일 수 있습니다.</span>
+      <div class="prompt"><span id="promptText"></span>
+        <span class="claim" id="claimText"></span>
+        <span class="hint" id="hintText"></span>
       </div>
       <div class="options" id="options"></div>
       <div class="result-bar" id="resultBar"></div>
@@ -79,18 +85,47 @@
   <iframe id="conceptSource" src="../ox/?concept-source=1" title="개념 데이터"></iframe>
 
   <script>
-  const KEY="dm-midterm-multiple-v1";
+  const KEY="dm-midterm-multiple-v2";
   const letters=["A","B","C","D"];
-  let questions=[],filtered=[],cursor=0,stateFilter="all",chapterFilter="all",selected=new Set(),currentQuestionId=null;
+  let concepts=[],singleBank=[],multiBank=[],caseBank=[],questions=[],filtered=[],cursor=0,stateFilter="all",chapterFilter="all",mode="mixed",selected=new Set(),currentQuestionId=null;
   let saved={answers:{},bookmarks:{}};
   try{saved={...saved,...JSON.parse(localStorage.getItem(KEY)||"{}")} }catch(e){}
   saved.answers=saved.answers||{};saved.bookmarks=saved.bookmarks||{};
   const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
   const save=()=>localStorage.setItem(KEY,JSON.stringify(saved));
 
-  function buildQuestions(concepts){
+  function singleStem(item,index){
+    const trueStems=[
+      "다음 주장에 대한 판단과 근거의 조합으로 가장 적절한 것은?",
+      "학생이 다음 내용을 답안에 적었다. 채점 결과와 근거로 알맞은 것은?",
+      "다음 개념 설명을 가장 정확하게 해석한 내용은?",
+      "다음 설명의 타당성을 정확히 이해한 판단·근거 조합은?"
+    ];
+    const falseStems=[
+      "다음 설명의 오루를 가장 정확히 지적한 것은?",
+      "다음 답안을 바로잡기 위한 판단과 근거로 가장 적절한 것은?",
+      "교수자가 다음 답안을 오답 처리했다. 그 이유로 가장 적절한 것은?",
+      "다음 내용에 대한 판단과 근거로 조합으로 가장 적절한 것은?"
+    ];
+    return (item.answer?trueStems:falseStems)[index%4];
+  }
+  function buildSingleQuestions(all){
+    return all.map((item,index)=>{
+      const label=item.answer?"옳다":"틀리다",opposite=item.answer?"틀리다":"옳다";
+      const wrongReason=item.answer?"이 설명은 교안의 정의와 반대되며 해당 개념을 이 문제에 적용할 수 없다.":"이 설명은 조건이나 예외를 따질 피료가 없으며 문장을 그대로 받아들여야 한다.";
+      const raw=[
+        {id:`S-${item.id}-C`,text:`${label} — ${item.explanation}`,correct:true,explanation:`${label}. ${item.explanation}`},
+        {id:`S-${item.id}-J`,text:`${opposite} — ${item.explanation}`,correct:false,explanation:"근거는 맞지만 판단이 반대이다."},
+        {id:`S-${item.id}-R1`,text:`${label} — ${wrongReason}`,correct:false,explanation:"판단은 맞지만 근거와 반대되며, 정확한 근거는 다르다."},
+        {id:`S-${item.id}-R2`,text:`${opposite} — ${wrongReason}`,correct:false,explanation:"판단과 근거가 모두 문제의 주장에 맞지 않는다."}
+      ];
+      const shift=(index*3)%4,options=raw.slice(shift).concat(raw.slice(0,shift));
+      return {id:`S-${item.id}`,chapter:item.chapter,type:"single",kind:item.kind,stem:singleStem(item,index),claim:item.statement,concepts:[item.id],options};
+    });
+  }
+  function buildMultiQuestions(all){
     const byChapter=new Map();
-    concepts.forEach(item=>{if(!byChapter.has(item.chapter))byChapter.set(item.chapter,[]);byChapter.get(item.chapter).push(item)});
+    all.forEach(item=>{if(!byChapter.has(item.chapter))byChapter.set(item.chapter,[]);byChapter.get(item.chapter).push(item)});
     const output=[];let number=1;
     byChapter.forEach((items,chapter)=>{
       const groupCount=Math.ceil(items.length/4);
@@ -107,22 +142,49 @@
       });
       groups.forEach(options=>{
         options.sort((a,b)=>Number(a.id.slice(2))-Number(b.id.slice(2)));
-        output.push({id:`MC${String(number++).padStart(3,"0")}`,chapter,options});
+        output.push({id:`M-MC${String(number++).padStart(3,"0")}`,chapter,type:"multi",kind:"전 범위 비교",stem:"다음 중 옳은 내용을 모두 고르시오.",claim:"",concepts:options.map(x=>x.id),options:options.map(x=>({id:`M-${x.id}`,text:x.statement,correct:x.answer,explanation:x.explanation}))});
       });
     });
     return output;
   }
 
-  function init(concepts){
-    questions=buildQuestions(concepts);
-    window.MULTIPLE_QUESTIONS=questions;
-    const used=questions.flatMap(q=>q.options.map(x=>x.id));
-    if(used.length!==concepts.length||new Set(used).size!==concepts.length)throw new Error("개념 매핑 검사에 실패했습니다.");
-    if(questions.some(q=>!q.options.some(x=>x.answer)||!q.options.some(x=>!x.answer)))throw new Error("선지 구성 검사에 실패했습니다.");
-    document.body.dataset.questionCount=String(questions.length);
-    document.body.dataset.conceptCount=String(used.length);
-    document.body.dataset.uniqueConceptCount=String(new Set(used).size);
-    const chapters=[...new Set(questions.map(q=>q.chapter))];
+  function buildCaseQuestions(){
+    const make=(id,chapter,kind,stem,choices,correct,explanation)=>({id:`C-${id}`,chapter,type:"single",kind,stem,claim:"",concepts:[],options:choices.map((text,i)=>({id:`C-${id}-${i}`,text,correct:i===correct,explanation:i===correct?explanation:"이 선지는 문제의 조건이나 교안의 구분과 맞지 않는다."}))});
+    return [
+      make("01","개론 I","자료 판별","다음 중 다변량 자료라고 보기 어려운 것은?",["사람별 키·몸무게","와인별 산도·당도","시간별 온도 하나만 측정","이미지별 여러 특징 추출"],2,"한 개체에 변수 하나만 측정한 자료는 다변량이 아니다."),
+      make("02","개론 I","개념 구분","데이터마이닝·AI·ML·DL의 관계를 가장 잘 설명한 것은?",["모두 완전히 가튼 용어다.","DL은 ML의 하나이며, 데이터마이닝은 문제 정의·해석·활용까지 포함한다.","AI는 항상 DL만 사용한다.","데이터마이닝은 SQL 검색만을 뜻한다."],1,"DL은 다층 신경망을 사용하는 ML의 한 분류이다."),
+      make("03","기초통계","함정 해석","피어슨 상관계수 (r=0)이다. 반드시 참인 것은?",["두 변수는 독립이다.","인과관계가 없다.","선형적 관계가 없거나 약하다.","비선형 관계도 존재하지 않는다."],2,"피어슨 (r=0)은 선형 관계만 약할 뿐 독립·인과·비선형 관계 부재를 보장하지 않는다."),
+      make("04","회귀 I","함정 선형성","다음 중 계수에 대해 선형인 모형은?",["\(β_0+β_1x+β_2x^2\)","\(β_0+e^{β_1x}\)","\(β_0+β_1^2x\)","\(β_0+\sin(β_1x)\)"],0,"선형성의 기준은 (x)의 모양이 아니라 미지 계수 β가 1차 선형결합으로 들어가는지이다."),
+      make("05","개론 II","사례형 · 학습분할","모델 A·B·C를 test set에서 30번 비교하고 최고 모델을 골랐다. 가장 적절한 설명은?",["test set을 효율적으로 사용했다.","test 결과에 과적합했을 가능성이 있다.","학습이 불가능했다.","비지도학습으로 바뀐다."],1,"모델 선택은 validation에서, test는 마지막 일반화 평가에서만 사용해야 한다."),
+      make("06","기초통계","용어 구분","확렬과 우도의 방향을 바로 연결한 것은?",["Probability: 샘풀 고정·모수 변화 / Likelihood: 모수 고정·샘풀 변화","Probability: 모수 고정·샘풀 변화 / Likelihood: 관측 샘풀 고정·모수 변화","두 개념은 완전히 가튼 뜻이다.","Likelihood는 확렬의 합이 아니다."],1,"Probability는 θ를 고정하고 샘풀 (y)를, likelihood는 관측 (y)를 고정하고 θ를 본다."),
+      make("07","개론 II","ETL 사례","여러 DB·API에서 가져온 데이터의 오루·중복을 제거하고 형식을 통일한 단계는?",["Extract","Transform","Load","Modeling"],1,"T=Transform은 오루·중복 제거와 형식 통일 가튼 변환 단계다."),
+      make("08","개론 II","LLM Pipeline","복수 Prompt로 Label Map을 만든 다음 추 파이ᄑᄑ라인 순서는?",["End Model Training → Prompting → Load","Prompting → Weak Supervision/Label Model → End Model Training","Extract → Classification → Prompting","Weak Supervision → ETL → Regression"],1,"교안의 순서는 Prompting, Weak Supervision/Label Model, End Model Training이다."),
+      make("09","회귀 III","잔차진단","적합값이 커질수록 퍼지며 ᄔ읜저할수록 퍼진다. 가장 의심할 가정은?",["정규성","등분산성","독립성","다중공선성"],1,"기댓값 모양은 잔차 분산이 증가한다며 주로 잔차의 등분산성 위반을 시사한다."),
+      make("10","회귀 III","다중공선성","어떤 설명변수의 (VIF=18)이고 계수 표준오차가 크게 나왔다. 우선 점검할 문제는?",["종속변수가 너무 많다.","설명변수 간 다중공선성을 진단하되 계수 추정 불안정·표준오차 확대를 검토한다.","잔차의 정규성이 자동으로 확증한다.","오차는 고유분포이다."],1,"VIF가 클수록 주요 설명변수가 나머지 변수로 설명되어 계수가 불안정해진다."),
+      make("11","회귀 II","결정계수","값은 학습자료에 설명변수를 추가했다. 이때 (R^2)와 수정 (R^2)의 변화로 가장 잘 설명한 것은?",["두 값 모두 반드시 증가한다.","이때 (R^2)은 값소하지 않고, 수정 (R^2)은 변수 수 벌점 때문에 감소할 수 있다.","이때 (R^2)은 항상 감소한다.","수정 (R^2)은 항상 1이 된다."],1,"이때 (R^2)은 변수 추가로 감소하지 않지만 수정 (R^2)은 자유도 벌점으로 감소할 수 있다."),
+      make("12","회귀 II","p-value 해석","관측자료 회귀에서 기울기 (p=0.001)이 나왔다. 가장 적절한 해석은?",["기울기가 0일 확료이 99.9%이다.","기울가설 하에 현재와 같거나 더 극단적인 자료의 확료다.","인과관계가 증명됬다.","모형의 예측력이 의문 없다."],1,"p-value는 기울가설 하에서 관측된 것과 같거나 더 극단적인 자료의 확료다. 인과는 증명하지 않는다.")
+    ];
+  }
+
+  function mixedQuestions(single,multi,cases){
+    const out=[];let mi=0,ci=0;
+    single.forEach((q,i)=>{out.push(q);if((i+1)%4===0&&mi<multi.length)out.push(multi[mi++]);if((i+1)%6===0&&ci<cases.length)out.push(cases[ci++])});
+    return out.concat(multi.slice(mi),cases.slice(ci));
+  }
+  function chooseBank(){questions=mode==="single"?singleBank:mode==="multi"?multiBank:mixedQuestions(singleBank,multiBank,caseBank);document.body.dataset.questionCount=String(questions.length)}
+  function init(rawConcepts){
+    concepts=rawConcepts;singleBank=buildSingleQuestions(concepts);multiBank=buildMultiQuestions(concepts);caseBank=buildCaseQuestions();chooseBank();
+    const singleUsed=singleBank.flatMap(q=>q.concepts),multiUsed=multiBank.flatMap(q=>q.concepts);
+    if(singleUsed.length!==concepts.length||new Set(singleUsed).size!==concepts.length)throw new Error("개념별 매핑 검사 실패");
+    if(multiUsed.length!==concepts.length||new Set(multiUsed).size!==concepts.length)throw new Error("복수정답 매핑 검사 실패");
+    if(multiBank.some(q=>!q.options.some(x=>x.correct)||!q.options.some(x=>!x.correct)))throw new Error("복수정답 선지 구성 실패");
+    document.body.dataset.singleQuestionCount=String(singleBank.length);
+    document.body.dataset.multiQuestionCount=String(multiBank.length);
+    document.body.dataset.caseQuestionCount=String(caseBank.length);
+    document.body.dataset.mixedQuestionCount=String(singleBank.length+multiBank.length+caseBank.length);
+    document.body.dataset.conceptCount=String(concepts.length);
+    document.body.dataset.uniqueConceptCount=String(new Set(singleUsed).size);
+    const chapters=[...new Set(concepts.map(q=>q.chapter))];
     $("#chapterGrid").innerHTML=`<button class="chapter-chip active" data-chapter="all">전체</button>`+chapters.map(c=>`<button class="chapter-chip" data-chapter="${c}">${c}</button>`).join("");
     $("#loading").style.display="none";$("#quizCard").classList.remove("hidden");
     applyFilters();
@@ -149,22 +211,25 @@
     const q=filtered[cursor],answer=saved.answers[q.id];
     if(q.id!==currentQuestionId||answer)selected=new Set(answer?.selected||[]);
     currentQuestionId=q.id;
-    $("#chapterBadge").textContent=q.chapter;$("#conceptCount").textContent=`${q.options.length}개 개념 · ${q.id}`;
+    $("#chapterBadge").textContent=q.chapter;$("#conceptCount").textContent=`${q.type==="single"?"단일정답":"복수정답"} · ${q.kind}`;
+    $("#promptText").textContent=q.stem;$("#claimText").innerHTML=q.claim;$("#claimText").style.display=q.claim?"block":"none";
+    $("#hintText").textContent=q.id.startsWith("C-")?"가장 적절한 선지 하나를 고르세요.":q.type==="single"?"판단과 근거가 모두 맞아야 정답입니다.":"정답이 하나 이상일 수 있습니다.";
     $("#bookmarkBtn").classList.toggle("on",!!saved.bookmarks[q.id]);$("#bookmarkBtn").textContent=saved.bookmarks[q.id]?"★":"☆";
     $("#options").innerHTML=q.options.map((opt,i)=>{
       const picked=selected.has(opt.id);let cls=picked?" selected":"";
-      if(answer){if(opt.answer)cls+=" "+(picked?"correct":"missed");else if(picked)cls+=" wrong-selected"}
+      if(answer){if(opt.correct)cls+=" "+(picked?"correct":"missed");else if(picked)cls+=" wrong-selected"}
       return `<button class="option${cls}" data-id="${opt.id}" type="button" aria-pressed="${picked}" ${answer?"disabled":""}>
-        <span class="letter">${letters[i]}</span><span class="option-text">${opt.statement}</span>
-        ${answer?`<span class="option-explain"><span class="truth ${opt.answer?"o":"x"}">${opt.answer?"O":"X"}</span>${opt.explanation}</span>`:""}
+        <span class="letter">${letters[i]}</span><span class="option-text">${opt.text}</span>
+        ${answer?`<span class="option-explain"><span class="truth ${opt.correct?"o":"x"}">${opt.correct?"✓":"×"}</span>${opt.explanation}</span>`:""}
       </button>`;
     }).join("");
-    const correctCount=q.options.filter(x=>x.answer).length;
+    const correctCount=q.options.filter(x=>x.correct).length;
     $("#resultBar").className="result-bar"+(answer?` show ${answer.correct?"good":"bad"}`:"");
-    $("#resultBar").textContent=answer?(answer.correct?`정답입니다. ${correctCount}개를 모두 골랐습니다.`:`오답입니다. O/X 표시와 해설을 항목별로 확인하세요.`):"";
+    const conventional=q.id.startsWith("C-");
+    $("#resultBar").textContent=answer?(answer.correct?(conventional?"정답입니다. 사례와 개념의 연결을 확인하세요.":q.type==="single"?"정답입니다. 판단과 근거를 함께 확인하세요.":`정답입니다. ${correctCount}개를 모두 골랐습니다.`):(conventional?"오답입니다. 사례를 어떤 개념과 연결해 보세요.":q.type==="single"?"오답입니다. 정답 선지의 판단·근거 조합을 확인하세요.":"오답입니다. 선지별 해설을 확인하세요.")):"";
     $("#retryBtn").classList.toggle("show",!!answer);$("#submitBtn").textContent=answer?"다음 문제 →":"선택 완료";
     $("#submitBtn").disabled=!answer&&!selected.size;
-    $("#position").textContent=`${cursor+1} / ${filtered.length} · 개념 ${q.options.length}`;
+    $("#position").textContent=`${cursor+1} / ${filtered.length} · ${q.type==="single"?"단일":"복수"}`;
     $("#prevBtn").disabled=cursor===0;$("#nextBtn").disabled=cursor===filtered.length-1;
     typeset();
   }
@@ -172,7 +237,7 @@
   function typeset(){if(window.MathJax?.typesetPromise){MathJax.typesetClear?.([$("#quizCard")]);MathJax.typesetPromise([$("#quizCard")]).catch(()=>{})}}
   function toggleOption(id){
     const q=filtered[cursor];if(saved.answers[q.id])return;
-    selected.has(id)?selected.delete(id):selected.add(id);renderDraft();
+    if(q.type==="single"){selected.clear();selected.add(id)}else{selected.has(id)?selected.delete(id):selected.add(id)}renderDraft();
   }
   function renderDraft(){
     $$(".option").forEach(btn=>{const on=selected.has(btn.dataset.id);btn.classList.toggle("selected",on);btn.setAttribute("aria-pressed",String(on))});
@@ -182,7 +247,7 @@
     const q=filtered[cursor],prior=saved.answers[q.id];
     if(prior){move(1);return}
     if(!selected.size)return;
-    const correctIds=q.options.filter(x=>x.answer).map(x=>x.id);
+    const correctIds=q.options.filter(x=>x.correct).map(x=>x.id);
     const correct=correctIds.length===selected.size&&correctIds.every(id=>selected.has(id));
     saved.answers[q.id]={selected:[...selected],correct,at:Date.now()};save();render();
   }
@@ -197,6 +262,7 @@
   $("#submitBtn").addEventListener("click",submit);$("#retryBtn").addEventListener("click",retry);
   $("#prevBtn").addEventListener("click",()=>move(-1));$("#nextBtn").addEventListener("click",()=>move(1));
   $("#bookmarkBtn").addEventListener("click",()=>{const q=filtered[cursor];saved.bookmarks[q.id]=!saved.bookmarks[q.id];save();render()});
+  $("#modeTabs").addEventListener("click",e=>{const b=e.target.closest(".mode-tab");if(!b)return;mode=b.dataset.mode;cursor=0;currentQuestionId=null;$$('.mode-tab').forEach(x=>x.classList.toggle('active',x===b));chooseBank();applyFilters()});
   $("#stateTabs").addEventListener("click",e=>{const b=e.target.closest(".state-tab");if(!b)return;stateFilter=b.dataset.state;cursor=0;$$('.state-tab').forEach(x=>x.classList.toggle('active',x===b));applyFilters()});
   $("#chapterToggle").addEventListener("click",e=>{e.stopPropagation();$("#chapterPopover").classList.toggle("open")});
   $("#chapterPopover").addEventListener("click",e=>e.stopPropagation());document.addEventListener("click",()=>$("#chapterPopover").classList.remove("open"));
