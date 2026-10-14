@@ -1,134 +1,1371 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#ffffff">
-  <title>데이터마이닝 중간고사 · 다지선다</title>
-  <script>
-    window.MathJax={tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"}};
-  </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-  <style>
-    :root{--ink:#191919;--muted:#787774;--line:#e8e7e4;--soft:#f7f6f3;--green:#2f7d4a;--green-bg:#edf7f0;--red:#b42318;--red-bg:#fff1ef}
-    *{box-sizing:border-box}html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none}body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif;color:var(--ink);background:#fff}
-    button{font:inherit;color:inherit;cursor:pointer}.top{height:54px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 18px;background:rgba(255,255,255,.96);backdrop-filter:blur(12px)}.app-tabs{display:flex;align-items:center;gap:2px;padding:3px;background:var(--soft);border-radius:7px;overflow-x:auto}.app-tab{color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;padding:5px 9px;border-radius:5px;white-space:nowrap}.app-tab:hover,.app-tab.active{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
-    .page{width:min(760px,calc(100% - 20px));height:calc(100dvh - 54px);margin:auto;padding:9px 0 10px;display:flex;flex-direction:column;overflow:hidden}.controls{flex:0 0 auto;margin-bottom:8px}.mode-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:6px;padding:3px;background:var(--soft);border-radius:7px}.mode-tab{border:0;background:transparent;border-radius:5px;padding:6px 8px;font-size:12px;font-weight:800}.mode-tab.active{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1)}.control-row{display:flex;align-items:center;gap:5px}.state-tabs{display:flex;flex:1;gap:3px;min-width:0}.state-tab,.chapter-toggle,.reset-all{border:0;background:transparent;border-radius:6px;padding:7px 9px;font-size:12px;font-weight:700;white-space:nowrap}.state-tab.active{background:#202020;color:#fff}.state-tab:not(.active):hover,.chapter-toggle:hover,.reset-all:hover{background:var(--soft)}.chapter-toggle,.reset-all{border:1px solid var(--line);background:#fff}.reset-all{color:#555}
-    .chapter-popover{display:none;position:fixed;z-index:50;top:104px;left:50%;transform:translateX(-50%);width:min(740px,calc(100% - 20px));padding:10px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 34px rgba(0,0,0,.14)}.chapter-popover.open{display:block}.chapter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.chapter-chip{border:1px solid var(--line);background:#fff;border-radius:6px;padding:8px 5px;font-size:12px;font-weight:700}.chapter-chip.active{background:#202020;color:#fff;border-color:#202020}
-    .quiz-card{flex:1;min-height:0;border:1px solid var(--line);border-radius:9px;background:#fff;display:flex;flex-direction:column;overflow:hidden}.card-head{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:9px 12px;border-bottom:1px solid var(--line)}.badge{font-size:12px;font-weight:700;background:var(--soft);padding:4px 7px;border-radius:5px}.kind{font-size:12px;color:var(--muted)}.spacer{flex:1}.bookmark{border:0;background:transparent;font-size:22px;line-height:1;padding:2px 4px}.bookmark.on{color:#b87800}
-    .prompt{flex:0 0 auto;padding:11px 14px 8px;font-size:16px;font-weight:800}.claim{display:block;margin-top:7px;padding:8px 10px;border-left:3px solid #222;background:var(--soft);font-size:14px;line-height:1.45}.hint{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:500}.options{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:4px 12px 10px}.option{width:100%;display:grid;grid-template-columns:30px 1fr;gap:8px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 10px;margin:0 0 7px;line-height:1.45}.option:hover{background:#fbfbfa}.option.selected{border-color:#222;box-shadow:inset 0 0 0 1px #222}.letter{width:26px;height:26px;border-radius:6px;background:var(--soft);display:grid;place-items:center;font-size:12px;font-weight:800}.option.selected .letter{background:#222;color:#fff}.option.correct{border-color:#8cc59d;background:var(--green-bg)}.option.wrong-selected{border-color:#e7a39c;background:var(--red-bg)}.option.missed{border-style:dashed;border-color:#70a982;background:#f6fbf7}.option.correct .letter,.option.missed .letter{background:var(--green);color:#fff}.option.wrong-selected .letter{background:var(--red);color:#fff}.option-text{font-size:14px;font-weight:650}.option-explain{grid-column:2;margin-top:4px;padding-top:6px;border-top:1px solid rgba(0,0,0,.08);font-size:12px;color:#555}.truth{font-weight:900;margin-right:4px}.truth.o{color:var(--green)}.truth.x{color:var(--red)}
-    .result-bar{display:none;flex:0 0 auto;padding:8px 12px;border-top:1px solid var(--line);font-size:13px;font-weight:750}.result-bar.show{display:block}.result-bar.good{color:var(--green);background:var(--green-bg)}.result-bar.bad{color:var(--red);background:var(--red-bg)}
-    .actions{flex:0 0 auto;display:flex;gap:7px;padding:8px 12px;border-top:1px solid var(--line)}.action{border:1px solid var(--line);background:#fff;border-radius:6px;padding:9px 12px;font-size:13px;font-weight:750}.action.primary{flex:1;background:#202020;color:#fff;border-color:#202020}.action:disabled{opacity:.35;cursor:default}.retry{display:none}.retry.show{display:block}
-    .card-foot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-top:1px solid var(--line)}.nav-btn{border:0;background:transparent;padding:7px 8px;border-radius:5px;font-size:13px}.nav-btn:hover{background:var(--soft)}.nav-btn:disabled{opacity:.3;cursor:default}.position{font-size:12px;color:var(--muted)}
-    .loading{flex:1;display:grid;place-items:center;color:var(--muted);font-size:14px}.empty{display:none;flex:1;place-items:center;text-align:center;color:var(--muted);padding:24px}.empty.show{display:grid}.quiz-card.hidden{display:none}iframe{display:none}
-    mjx-container:not([display="true"]){display:inline-block!important;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle}
-    mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden}
-    mjx-container svg{max-width:none}
-    @media(max-width:520px){.top{height:48px;padding:0 7px}.app-tabs{gap:0}.app-tab{font-size:10px;padding:5px 6px}.page{width:calc(100% - 14px);height:calc(100dvh - 48px);padding:6px 0 7px}.controls{margin-bottom:5px}.mode-tabs{margin-bottom:4px}.mode-tab{font-size:10px;padding:5px 4px}.state-tabs{gap:1px}.state-tab,.chapter-toggle,.reset-all{font-size:9px;padding:5px 6px}.chapter-popover{top:119px;width:calc(100% - 14px)}.chapter-grid{grid-template-columns:repeat(2,1fr)}.card-head{padding:6px 9px}.prompt{font-size:14px;padding:8px 10px 5px}.claim{font-size:12px;margin-top:5px;padding:6px 8px}.options{padding:3px 9px 5px}.option{grid-template-columns:27px 1fr;gap:6px;padding:7px 8px;margin-bottom:5px}.letter{width:24px;height:24px}.option-text{font-size:12px}.option-explain{font-size:11px}.actions{padding:5px 9px}.action{padding:7px 10px}.card-foot{padding:3px 6px}}
-    .claim,.option-text,.option-explain{min-width:0;overflow-wrap:anywhere}
-    .option{grid-template-columns:30px minmax(0,1fr)}
-    @media(max-width:520px){.option{grid-template-columns:27px minmax(0,1fr)}.prompt mjx-container,.option-text mjx-container,.option-explain mjx-container{font-size:.9em!important}}
-  </style>
-</head>
-<body>
-  <header class="top">
-    <nav class="app-tabs" aria-label="학습 탭">
-      <a class="app-tab" href="../">개념 정리</a>
-      <a class="app-tab" href="../ox/">O/X</a>
-      <a class="app-tab active" href="./">다지선다</a>
-      <a class="app-tab" href="../?view=problems">예상문제</a>
-      <a class="app-tab" href="../?view=mistakes">오답 복습</a>
-    </nav>
-  </header>
-
-  <main class="page">
-    <section class="controls" aria-label="문항 필터">
-      <div class="mode-tabs" id="modeTabs">
-        <button class="mode-tab active" data-mode="mixed" type="button">실전 혼합</button>
-        <button class="mode-tab" data-mode="single" type="button">개념별</button>
-        <button class="mode-tab" data-mode="multi" type="button">복수정답</button>
-      </div>
-      <div class="control-row">
-        <div class="state-tabs" id="stateTabs">
-          <button class="state-tab active" data-state="all" type="button">전체</button>
-          <button class="state-tab" data-state="unanswered" type="button">미응답</button>
-          <button class="state-tab" data-state="wrong" type="button">오답</button>
-          <button class="state-tab" data-state="bookmarked" type="button">북마크</button>
-        </div>
-        <button class="chapter-toggle" id="chapterToggle" type="button">전체 단원 ▾</button>
-        <button class="reset-all" id="retryAllBtn" type="button">전체 문제 다시</button>
-      </div>
-    </section>
-    <div class="chapter-popover" id="chapterPopover"><div class="chapter-grid" id="chapterGrid"></div></div>
-
-    <div class="loading" id="loading">개념 문항을 불러오는 중…</div>
-    <article class="quiz-card hidden" id="quizCard">
-      <div class="card-head">
-        <span class="badge" id="chapterBadge"></span>
-        <span class="kind" id="conceptCount"></span>
-        <span class="spacer"></span>
-        <button class="bookmark" id="bookmarkBtn" type="button" aria-label="북마크">☆</button>
-      </div>
-      <div class="prompt"><span id="promptText"></span>
-        <span class="claim" id="claimText"></span>
-        <span class="hint" id="hintText"></span>
-      </div>
-      <div class="options" id="options"></div>
-      <div class="result-bar" id="resultBar"></div>
-      <div class="actions">
-        <button class="action retry" id="retryBtn" type="button">이 문제 다시 풀기</button>
-        <button class="action primary" id="submitBtn" type="button">선택 완료</button>
-      </div>
-      <div class="card-foot">
-        <button class="nav-btn" id="prevBtn" type="button">← 이전</button>
-        <span class="position" id="position"></span>
-        <button class="nav-btn" id="nextBtn" type="button">다음 →</button>
-      </div>
-    </article>
-    <div class="empty" id="empty">조건에 맞는 문항이 없습니다.</div>
-  </main>
-
-  <iframe id="conceptSource" src="../ox/?concept-source=1" title="개념 데이터"></iframe>
-
-  <script>
-  const KEY="dm-midterm-multiple-v3";
-  const letters=["A","B","C","D"];
-  let concepts=[],singleBank=[],multiBank=[],caseBank=[],questions=[],filtered=[],cursor=0,stateFilter="all",chapterFilter="all",mode="mixed",selected=new Set(),currentQuestionId=null;
-  let saved={answers:{},bookmarks:{}};
-  try{saved={...saved,...JSON.parse(localStorage.getItem(KEY)||"{}")} }catch(e){}
-  saved.answers=saved.answers||{};saved.bookmarks=saved.bookmarks||{};
-  const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-  const save=()=>localStorage.setItem(KEY,JSON.stringify(saved));
-
-  function legacySingleStem(item,index){
-    const trueStems=[
-      "다음 주장에 대한 판단과 근거의 조합으로 가장 적절한 것은?",
-      "학생이 다음 내용을 답안에 적었다. 채점 결과와 근거로 알맞은 것은?",
-      "다음 개념 설명을 가장 정확하게 해석한 내용은?",
-      "다음 설명의 타당성을 정확히 이해한 판단·근거 조합은?"
-    ];
-    const falseStems=[
-      "다음 설명의 오류를 가장 정확히 지적한 것은?",
-      "다음 답안을 바로잡기 위한 판단과 근거로 가장 적절한 것은?",
-      "다음 문장이 틀린 이유로 가장 적절한 것은?",
-      "다음 내용에 대한 판단과 근거의 조합으로 가장 적절한 것은?"
-    ];
-    return (item.answer?trueStems:falseStems)[index%4];
-  }
-  function legacyBuildSingleQuestions(all){
-    return all.map((item,index)=>{
-      const label=item.answer?"옳다":"틀리다",opposite=item.answer?"틀리다":"옳다";
-      const wrongReason=item.answer?"이 설명은 교안의 정의와 반대되며 해당 개념을 이 문제에 적용할 수 없다.":"이 설명은 조건이나 예외를 따질 피료가 없으며 문장을 그대로 받아들여야 한다.";
-      const raw=[
-        {id:`S-${item.id}-C`,text:`${label} — ${item.explanation}`,correct:true,explanation:`${label}. ${item.explanation}`},
-        {id:`S-${item.id}-J`,text:`${opposite} — ${item.explanation}`,correct:false,explanation:"근거는 맞지만 판단이 반대이다."},
-        {id:`S-${item.id}-R1`,text:`${label} — ${wrongReason}`,correct:false,explanation:"판단은 맞지만 근거와 반대되며, 정확한 근거는 다르다."},
-        {id:`S-${item.id}-R2`,text:`${opposite} — ${wrongReason}`,correct:false,explanation:"판단과 근거가 모두 문제의 주장에 맞지 않는다."}
-      ];
-      const shift=(index*3)%4,options=raw.slice(shift).concat(raw.slice(0,shift));
-      return {id:`S-${item.id}`,chapter:item.chapter,type:"single",kind:item.kind,stem:legacySingleStem(item,index),claim:item.statement,concepts:[item.id],options};
-    });
-  }
+  const R=String.raw;
+  const DIRECT_SINGLE_MAP={
+    OX001:[
+      R`데이터마이닝 프로젝트를 시작할 때 가장 먼저 정의해야 하는 출발점은?`,
+      [R`해결할 구체적인 문제, 필요한 의사결정, 목표 출력(\(Y\)) 정의`,R`모델을 고르기 전에 무엇을 해결할지, 어떤 의사결정에 쓸지, 목표 출력이 무엇인지를 먼저 정의해야 한다.`],
+      [R`사용할 딥러닝·머신러닝 알고리즘의 종류 선정`,R`알고리즘 선정은 문제와 목표 출력을 정의하고 데이터를 탐색한 뒤에 수행하는 단계다.`],
+      [R`모델의 하이퍼파라미터 탐색 범위와 규제 강도 설정`,R`하이퍼파라미터 조정은 모델링 단계의 세부 절차로 문제 정의보다 앞설 수 없다.`],
+      [R`최종 배포 서버의 하드웨어 사양과 대시보드 화면 디자인 확정`,R`인프라 및 배포 설계는 분석 목적과 모델 요구사항이 정해진 뒤에 구체화한다.`]
+    ],
+    OX002:[
+      R`강의에서 제시한 데이터마이닝의 전체 문제 해결 흐름 순서로 올바른 것은?`,
+      [R`문제 정의 → 수집 → 탐색·시각화 → 모델링 → 해석·요약·배포 → 현장 행동`,R`데이터마이닝은 문제 정의에서 출발해 탐색과 모델링을 거쳐 실제 의사결정·행동으로 이어진다.`],
+      [R`모델링 → 수집 → 문제 정의 → 탐색·시각화 → 현장 행동 → 요약·배포`,R`문제 정의와 데이터 수집·탐색 없이 모델링부터 시작할 수 없다.`],
+      [R`수집 → 모델링 → 문제 정의 → 현장 행동 → 탐색·시각화 → 요약·배포`,R`수집 전에 문제 정의가 선행되어야 하며, 모델링 전에 탐색·시각화가 필요하다.`],
+      [R`탐색·시각화 → 현장 행동 → 수집 → 모델링 → 문제 정의 → 요약·배포`,R`현장 행동은 분석 결과를 해석·요약·배포한 뒤 연결되는 단계다.`]
+    ],
+    OX003:[
+      R`학습에 사용하지 않은 새로운(unseen) 데이터에서도 모델이 유효하게 작동하는 성질을 무엇이라 하는가?`,
+      [R`일반화 (Generalization)`,R`일반화는 훈련 자료뿐 아니라 보지 못한 새로운 자료에서도 모델이 잘 작동하는 핵심 목표다.`],
+      [R`과적합 (Overfitting)`,R`과적합은 학습자료의 세부 잡음까지 과하게 맞춰 새 자료에서 성능이 떨어지는 현상이다.`],
+      [R`보간 (Interpolation)`,R`보간은 관측된 데이터 구간 내부의 빈 값을 추정하는 기법이다.`],
+      [R`전치 (Transposition)`,R`전치는 행렬의 행과 열을 서로 바꾸는 선형대수 연산이다.`]
+    ],
+    OX004:[
+      R`모델이 학습자료에 지나치게 맞춰지는 것(과적합)을 억제하여 일반화를 돕는 방법은?`,
+      [R`규제화 (Regularization)`,R`규제화는 모델 복잡도에 제약을 주어 과적합을 줄이고 일반화 성능을 돕는 방법이다.`],
+      [R`외삽 (Extrapolation)`,R`외삽은 관측 범위 밖의 값을 예측하는 것으로 과적합 억제 기법이 아니다.`],
+      [R`완전탐색 (Exhaustive Search)`,R`완전탐색은 가능한 모든 조합을 탐색하는 방식으로 복잡도 억제와는 무관하다.`],
+      [R`단위변환 (Unit Conversion)`,R`측정 단위를 바꾸는 것은 변수의 스케일을 조정할 뿐 과적합을 억제하는 규제화가 아니다.`]
+    ],
+    OX005:[
+      R`기존 변수 중 일부를 그대로 고르는 방법과, 기존 변수로부터 새로운 좌표·표현을 만드는 방법을 순서대로 바르게 짝지은 것은?`,
+      [R`변수 선택 (Feature Selection) — 변수 추출 (Feature Extraction)`,R`원변수를 그대로 남기면 변수 선택이고, 기존 변수들을 조합해 새 표현을 만들면 변수 추출이다.`],
+      [R`변수 추출 (Feature Extraction) — 변수 선택 (Feature Selection)`,R`변수 선택과 변수 추출의 정의를 서로 반대로 연결했다.`],
+      [R`표본 추출 (Sampling) — 데이터 적재 (Loading)`,R`표본 추출은 관측치(행)를 뽑는 절차이며 변수 표현 기법이 아니다.`],
+      [R`결측 대치 (Imputation) — 데이터 증강 (Augmentation)`,R`결측치 처리와 데이터 증강은 변수 선택·추출의 구분과 다른 개념이다.`]
+    ],
+    OX006:[
+      R`강의에서 목표 출력 \(Y\)가 연속적인 수치형일 때 대표적으로 연결하는 기본 회귀 모델은? (단, 범주형 \(Y\)에는 로지스틱 회귀를 대표 연결함)`,
+      [R`선형회귀 (Linear Regression)`,R`강의에서는 출력 Y가 수치형이면 선형회귀, 범주형이면 로지스틱 회귀를 대표 기본 모델로 연결한다.`],
+      [R`로지스틱 회귀 (Logistic Regression)`,R`로지스틱 회귀는 이름에 회귀가 들어가지만 출력 Y가 범주형일 때 대표적으로 연결하는 분류 모델이다.`],
+      [R`포아송 회귀 (Poisson Regression)`,R`포아송 회귀는 단위 구간 내 이산적 사건 발생 횟수(카운트)를 다루며, 강의의 수치형 Y 대표 기본 연결은 선형회귀다.`],
+      [R`콕스 비례위험 회귀 (Cox Proportional Hazards Regression)`,R`생존시간 분석 모형으로, 강의에서 수치형 Y의 대표 기본 모델로 제시한 것은 선형회귀다.`]
+    ],
+    OX007:[
+      R`Naïve Bayes, KNN, SVM처럼 분류 관점으로 자주 소개되는 알고리즘의 활용 범위에 대한 올바른 이해는?`,
+      [R`KNN 회귀·SVR처럼 회귀 변형도 존재하므로 알고리즘 이름만으로 예측 목적(분류·회귀)을 단정할 수 없다.`,R`일부 알고리즘에는 회귀 변형도 있으므로 알고리즘 이름만으로 목적을 단정하지 말고 출력 Y의 성격으로 구분해야 한다.`],
+      [R`분류로 소개된 알고리즘은 어떤 변형으로도 연속형 수치 예측(회귀)에 절대 사용할 수 없다.`,R`KNN과 SVM 등은 회귀 변형(KNN Regression, SVR)을 통해 연속형 예측에도 널리 쓰인다.`],
+      [R`이름에 회귀(Regression)가 들어간 로지스틱 회귀는 오직 연속형 수치 예측에만 사용해야 한다.`,R`로지스틱 회귀는 이름에 회귀가 들어가지만 범주형 출력을 예측하는 분류 모델이다.`],
+      [R`모든 알고리즘은 변형 없이 동일한 목적함수 하나로 분류와 군집화를 동시에 수행한다.`,R`과업 목적(회귀·분류·군집)에 따라 출력 구조와 손실함수가 달라진다.`]
+    ],
+    OX008:[
+      R`AI가 분석 코드와 파이프라인을 자동으로 작성해 주는 환경에서도 분석가가 알고리즘의 원리를 이해해야 하는 핵심 이유는?`,
+      [R`도구가 자동으로 결과를 내더라도 모형 가정·입력·출력·해석의 타당성을 사람이 직접 점검해야 하기 때문`,R`자동 생성된 파이프라인도 데이터 누수, 가정 위반, 잘못된 해석이 있을 수 있으므로 원리를 아는 사람이 검증해야 한다.`],
+      [R`분석 라이브러리를 쓰지 않고 모든 역행렬과 미분을 손으로만 계산해야 하기 때문`,R`실무에서는 도구를 활용하되 그 설계와 결과를 검증하기 위해 원리를 배운다.`],
+      [R`원리만 알면 데이터 탐색(EDA)이나 전처리 과정을 완전히 생략할 수 있기 때문`,R`원리를 이해하더라도 데이터 품질 확인과 탐색은 필수 단계다.`],
+      [R`원리를 알면 표본이 1개뿐이어도 모집단 모수를 오차 없이 확정할 수 있기 때문`,R`표본 부족으로 인한 통계적 불확실성은 원리 암기만으로 제거되지 않는다.`]
+    ],
+    OX009:[
+      R`데이터가 크게 부족하거나 품질이 나쁘고 잡음이 심할 때 모델 선택과 문제 해결에 대한 올바른 판단은?`,
+      [R`복잡한 모델만 쓴다고 모든 문제가 해결되지는 않으므로, 현재 데이터로 해결 가능한 문제와 불가능한 문제를 먼저 구분해야 한다.`,R`데이터 품질과 정보량이 뒷받침되지 않으면 복잡한 모델을 써도 잡음에 과적합될 뿐이다.`],
+      [R`데이터에 신호가 없어도 딥러닝 층(layer)만 깊게 쌓으면 항상 높은 일반화 성능을 얻을 수 있다.`,R`입력 데이터 자체에 유효한 정보가 없으면 모델 복잡도를 높여도 해결할 수 없다.`],
+      [R`데이터 품질 점검을 생략하고 하이퍼파라미터 조합 수만 늘리는 것이 언제나 최선이다.`,R`데이터 품질과 문제 해결 가능성 점검이 하이퍼파라미터 탐색보다 우선이다.`],
+      [R`테스트 데이터를 훈련 데이터에 합쳐서 학습하면 데이터 품질 문제가 부작용 없이 해결된다.`,R`테스트 데이터를 학습에 사용하면 일반화 성능 평가가 오염된다.`]
+    ],
+    OX010:[
+      R`본격적인 모델링(Modeling)을 수행하기 전에 데이터의 분포·품질·패턴을 확인하여 문제와 데이터의 불일치를 점검하는 단계는?`,
+      [R`데이터 탐색 및 시각화 (Data Exploration & Visualization)`,R`모델링 전에 탐색과 시각화로 분포·결측·이상치·패턴을 확인해야 문제와 데이터의 불일치를 놓치지 않는다.`],
+      [R`최종 모델 배포 및 서빙 (Model Deployment)`,R`배포는 모델링과 검증이 끝난 뒤 결과를 현장에 연결하는 후반 단계다.`],
+      [R`가설검정 기각역 확정 (Critical Region Fixing)`,R`가설검정의 판정 절차일 뿐 모델링 전 데이터 전체 상태를 탐색하는 단계가 아니다.`],
+      [R`역행렬 행렬식 영점 조정 (Determinant Zeroing)`,R`행렬식을 0으로 만들면 특이행렬이 될 뿐 데이터 탐색 단계와는 무관하다.`]
+    ],
+    OX011:[
+      R`이미지와 영상처럼 표(table) 형식이 아닌 비정형 자료를 다변량 데이터로 분석하기 위한 방법은?`,
+      [R`영상에서 유의미한 특징(feature)을 추출하고 행렬·벡터 형태로 변환하여 다변량 표현으로 다룬다.`,R`표 형식이 아닌 이미지·영상도 특징을 추출해 수치 벡터·행렬로 변환하면 다변량 데이터로 분석할 수 있다.`],
+      [R`표 형식이 아니므로 다변량 데이터로 표현하는 것이 불가능하여 분석 대상에서 제외한다.`,R`비정형 자료도 특징 추출과 수치 표현 변환을 통해 다변량으로 분석한다.`],
+      [R`영상의 모든 화소를 버리고 파일 확장자 문자열 하나만 남겨 단변량으로 분석한다.`,R`시각적·구조적 특징을 다수의 수치 변수로 추출해야 다변량 분석이 된다.`],
+      [R`특징 추출 없이 압축 파일의 용량(바이트 수) 하나만 반응변수 \(Y\)로 지정한다.`,R`분석 목적에 맞는 다수의 입력 특징 벡터로 변환하는 과정이 핵심이다.`]
+    ],
+    OX012:[
+      R`스마트 벌통 사례(센서 관측과 예측을 환경 조절 행동으로 연결)가 강조하는 데이터마이닝의 마무리는?`,
+      [R`예측값을 얻는 데서 멈추지 않고 결과를 해석하여 실제 의사결정·최적화·현장 행동으로 연결하는 것`,R`데이터마이닝은 예측값 산출 자체보다 그 결과를 해석해 실제 의사결정과 행동으로 이어지게 하는 것이 목적이다.`],
+      [R`현장 적용이나 해석 없이 훈련 데이터의 결정계수(\(R^2\))만 1.0으로 만드는 것`,R`학습 적합도 수치만 높이는 것은 실제 현장 의사결정 가치를 보장하지 않는다.`],
+      [R`예측 모델을 만든 즉시 수집된 모든 센서 데이터를 삭제하고 행동을 중단하는 것`,R`예측 결과는 실제 환경 제어와 후속 의사결정 행동으로 연결되어야 한다.`],
+      [R`도메인 해석을 배제하고 오직 알고리즘의 실행 속도만 비교하고 끝내는 것`,R`결과의 해석과 현장 의사결정·최적화 연결이 필수적이다.`]
+    ],
+    OX013:[
+      R`두 변수가 함께 변하는 관찰 결과(연관성)가 확인되었을 때 인과관계에 대한 올바른 판단은?`,
+      [R`관찰된 연관성만으로 인과관계를 단정할 수 없으며, 교란변수·표본선택·확인편향 등을 먼저 점검해야 한다.`,R`함께 변하는 상관·연관성은 인과관계를 자동으로 뜻하지 않으므로 숨은 교란요인과 편향을 의심해야 한다.`],
+      [R`두 변수가 함께 움직이면 먼저 측정된 변수가 반드시 다른 변수의 직접 원인이다.`,R`시간 순서나 단순 동반 변화만으로는 제3의 교란변수를 배제할 수 없다.`],
+      [R`표본 크기 \(n\)만 충분히 크면 관찰자료에서도 연관성이 곧바로 인과관계로 증명된다.`,R`표본이 커져도 교란변수나 선택편향이 있으면 인과 추론이 왜곡된다.`],
+      [R`상관계수의 부호가 양(+)이면 인과관계이고 음(-)이면 무관한 관계다.`,R`상관계수의 부호는 선형 방향을 뜻할 뿐 인과 여부를 결정하지 않는다.`]
+    ],
+    OX014:[
+      R`자신의 기존 믿음을 지지하는 정보는 더 잘 받아들이고 반대되는 정보는 무시하거나 덜 보는 인지적 경향을 무엇이라 하는가?`,
+      [R`확인편향 (Confirmation Bias)`,R`확인편향은 기존 가설이나 믿음에 부합하는 근거만 선택적으로 수용하는 경향으로, 강의의 마시멜로 도입 사례에서 강조된 개념이다.`],
+      [R`불편성 (Unbiasedness)`,R`불편성은 추정량의 기댓값이 참 모수와 같다는 통계적 성질이다.`],
+      [R`등분산성 (Homoscedasticity)`,R`등분산성은 오차항의 분산이 일정하다는 회귀 가정이다.`],
+      [R`다중공선성 (Multicollinearity)`,R`다중공선성은 설명변수들 사이에 강한 선형 관계가 있는 현상이다.`]
+    ],
+    OX015:[
+      R`빅데이터의 기본 특성을 나타내는 3V의 세 가지 구성 요소는?`,
+      [R`Volume(규모), Velocity(속도), Variety(다양성)`,R`빅데이터의 3V는 데이터의 규모(Volume), 생성·처리 속도(Velocity), 형태의 다양성(Variety)을 가리킨다.`],
+      [R`Variance(분산), Validity(타당성), Vector(벡터)`,R`분산·타당성·벡터는 통계 및 선형대수 용어로 빅데이터 3V가 아니다.`],
+      [R`Volume(규모), Variance(분산), VIF(분산팽창지표)`,R`Variance와 VIF는 회귀·통계 지표이며 3V에 해당하지 않는다.`],
+      [R`Velocity(속도), Validation(검증), Visualization(시각화)`,R`검증과 시각화는 분석 절차의 요소이며 빅데이터 3V는 Volume·Velocity·Variety다.`]
+    ],
+    OX016:[
+      R`빅데이터의 5V는 기존 3V(Volume, Velocity, Variety)에 어떤 두 가지 요소를 더한 것인가?`,
+      [R`Veracity(신뢰성·진실성)와 Value(가치)`,R`5V는 3V에 데이터의 신뢰성·진실성(Veracity)과 실제 창출되는 가치(Value)를 추가한 개념이다.`],
+      [R`Variance(분산)와 Vector(벡터)`,R`분산과 벡터는 수학·통계 기초 용어이며 5V의 추가 요소가 아니다.`],
+      [R`Validation(검증)과 Variable(변수)`,R`검증과 변수는 모델링 용어이며 5V는 Veracity와 Value를 더한다.`],
+      [R`Visibility(가시성)와 Volatility(변동성)`,R`교안의 5V 빈칸 핵심은 Veracity와 Value다.`]
+    ],
+    OX017:[
+      R`데이터의 양(Volume)과 모델 복잡도가 커질 때 분석 품질에 대한 설명으로 가장 적절한 것은?`,
+      [R`입력 데이터의 품질과 신뢰성(Veracity)이 나쁘면 데이터 양과 모델 복잡도가 커져도 좋은 분석 품질이 보장되지 않는다.`,R`양이 많고 모델이 복잡해도 입력 품질이 나쁘면 좋은 결론을 얻을 수 없으므로 신뢰성과 가치를 함께 봐야 한다.`],
+      [R`데이터의 양만 늘리면 측정 오류나 편향이 있어도 분석 품질이 항상 비례해서 좋아진다.`,R`편향되거나 오류가 많은 데이터를 대량으로 모으면 잘못된 패턴이 오히려 강화될 수 있다.`],
+      [R`모델 복잡도를 최대로 높이면 데이터의 진실성(Veracity) 점검 과정을 생략해도 된다.`,R`복잡한 모델일수록 잡음과 오류에 민감하므로 데이터 신뢰성 점검이 더욱 중요하다.`],
+      [R`빅데이터 분석에서는 데이터의 가치(Value)보다 파일 용량의 크기만이 유일한 성공 기준이다.`,R`강의는 단순 규모뿐 아니라 신뢰성(Veracity)과 가치(Value)를 함께 강조한다.`]
+    ],
+    OX018:[
+      R`저장된 자료를 조건에 맞게 단순 검색·조회하는 작업과 구별되는 데이터마이닝(Data Mining)의 핵심 정의는?`,
+      [R`데이터에서 유용한 패턴과 지식을 찾고, 문제 정의·탐색·모델링·해석·활용까지 연결하는 과정`,R`데이터마이닝은 단순 조회(query)가 아니라 유용한 패턴·지식을 발굴해 문제 해결과 의사결정에 연결하는 과정이다.`],
+      [R`이미 알고 있는 고유번호로 특정 고객의 주소 레코드 하나를 그대로 출력하는 작업`,R`단순 검색·조회는 데이터베이스 기본 질의(query)이며 데이터마이닝이 아니다.`],
+      [R`패턴 탐색 없이 원본 텍스트 파일의 글자 인코딩만 UTF-8로 변환하는 작업`,R`단순 파일 형식 변환은 전처리의 일부분일 뿐 데이터마이닝 전체 정의가 아니다.`],
+      [R`데이터 분석 없이 서버의 디스크 파티션을 나누고 백업본을 복제하는 작업`,R`스토리지 관리는 시스템 운영 작업이며 지식 발견 과정인 데이터마이닝과 구분된다.`]
+    ],
+    OX019:[
+      R`데이터마이닝에서 '데이터 속 패턴이나 지식을 찾는 과정 자체'에 초점을 두는 관점과 '수집부터 현장 활용까지의 전체 문제 해결 과정'을 함께 보는 관점을 순서대로 바르게 짝지은 것은?`,
+      [R`미시적(협의의) 관점 — 광의의 관점`,R`패턴·지식 발견 자체에 초점을 두면 미시적 관점이고, 수집부터 활용까지 전체 문제 해결 과정을 포괄하면 광의의 관점이다.`],
+      [R`광의의 관점 — 미시적(협의의) 관점`,R`미시적 관점과 광의의 관점의 설명을 서로 반대로 연결했다.`],
+      [R`단변량 관점 — 무모수 관점`,R`변수 개수나 모수 가정 여부에 따른 구분으로 데이터마이닝의 미시·광의 관점 구분이 아니다.`],
+      [R`전수조사 관점 — 표본추출 관점`,R`자료 수집 범위에 관한 통계 용어로 미시·광의 관점 구분과 다르다.`]
+    ],
+    OX020:[
+      R`인공지능(AI), 머신러닝(ML), 딥러닝(DL) 세 용어의 개념적 구분으로 가장 올바른 것은?`,
+      [R`AI는 지능적 시스템 전반의 넓은 목표이고, ML은 데이터로 관계를 학습하는 방법이며, DL은 다층 신경망을 활용하는 ML의 한 갈래다.`,R`교안은 세 용어를 동일시하지 않고 AI(넓은 목표·시스템) ⊃ ML(데이터 기반 학습) ⊃ DL(다층 신경망 기반 학습)로 구분한다.`],
+      [R`AI, ML, DL은 범위와 기법에 아무런 차이가 없는 완전히 동일한 말이다.`,R`세 개념은 포함 관계와 수준이 다르므로 구분해서 사용해야 한다.`],
+      [R`DL이 가장 넓은 개념이고 AI는 오직 선형회귀 하나만을 가리키는 좁은 하위 개념이다.`,R`포함 관계의 방향이 반대이며 AI가 가장 넓은 상위 개념이다.`],
+      [R`ML은 데이터를 전혀 쓰지 않고 사람이 모든 규칙을 수작업 조건문으로만 입력하는 시스템이다.`,R`데이터로부터 패턴과 함수 관계를 학습하는 것이 머신러닝(ML)의 핵심이다.`]
+    ],
+    OX021:[
+      R`AI, Machine Learning(ML), Deep Learning(DL) 사이의 개념적 포함 관계로 가장 적절한 것은?`,
+      [R`Deep Learning은 다층 신경망을 사용하는 Machine Learning의 한 갈래이며, Machine Learning은 AI에 포함된다.`,R`교안은 AI 안에 ML이 속하고, ML 안에 다층 신경망 기반의 DL이 속하는 포함 관계를 설명한다.`],
+      [R`Machine Learning은 Deep Learning의 아주 작은 부분집합이며 AI와는 무관하다.`,R`DL이 ML의 한 갈래이므로 포함 방향이 반대다.`],
+      [R`AI와 ML은 서로 교집합이 전혀 없는 상호배타적 분야다.`,R`ML은 현대 AI를 구현하는 핵심 방법론으로 AI 안에 포함된다.`],
+      [R`Deep Learning은 머신러닝이 아니라 순수 데이터베이스 검색 엔진의 일종이다.`,R`DL은 다층 신경망으로 표현과 관계를 학습하는 ML의 대표적인 하위 분야다.`]
+    ],
+    OX022:[
+      R`교안에서 '데이터로부터 유용한 지식을 발견·추출한다'는 의미로 데이터마이닝과 밀접하게 함께 소개한 관련 용어는?`,
+      [R`KDD (Knowledge Discovery in Databases) 및 Knowledge Extraction`,R`교안은 데이터베이스 내 지식 발견(KDD)과 지식 추출(knowledge extraction)을 데이터마이닝의 가까운 관련 용어로 소개한다.`],
+      [R`TCP/IP 패킷 라우팅 및 네트워크 스위칭`,R`통신 프로토콜 용어로 데이터마이닝의 관련 개념이 아니다.`],
+      [R`가우스–조던 행렬 소거법 및 크래머 공식`,R`연립선형방정식의 해법이며 데이터마이닝 동의어·관련 용어 소개 항목이 아니다.`],
+      [R`하드디스크 조각모음 및 가상메모리 페이징`,R`운영체제의 저장장치 관리 기능으로 데이터마이닝과 무관하다.`]
+    ],
+    OX023:[
+      R`단순 모델 생성에 그치지 않고 데이터 분석 결과를 기업·조직의 의사결정과 연결하는 맥락에서 소개된 관련 개념은?`,
+      [R`Business Intelligence (BI)`,R`Business Intelligence는 데이터 분석·요약 결과를 조직의 의사결정과 직접 연결하는 맥락의 관련 개념이다.`],
+      [R`Garbage Collection (GC)`,R`메모리 관리 기법으로 조직 의사결정과 무관하다.`],
+      [R`Batch Normalization (배치 정규화)`,R`신경망 학습 안정화 기법이며 조직 의사결정 지원 체계를 뜻하는 용어가 아니다.`],
+      [R`Singular Value Decomposition (특이값 분해)`,R`행렬 분해 기법이며 조직 의사결정 맥락의 용어가 아니다.`]
+    ],
+    OX024:[
+      R`테이블(표) 형태처럼 미리 정해진 행과 열의 구조(스키마)로 표현되는 데이터를 무엇이라 하는가?`,
+      [R`정형 데이터 (Structured Data)`,R`행(관측 단위)과 열(변수)처럼 미리 정한 구조로 표현되는 테이블 형태의 자료를 정형 데이터라고 한다.`],
+      [R`비정형 데이터 (Unstructured Data)`,R`비정형 데이터는 이미지·음성·자유 텍스트처럼 고정된 테이블 구조가 없는 데이터다.`],
+      [R`특이행렬 데이터 (Singular Data)`,R`특이행렬은 역행렬이 존재하지 않는 정방행렬을 뜻한다.`],
+      [R`영벡터 데이터 (Zero-vector Data)`,R`모든 성분이 0인 벡터를 뜻하며 데이터 구조 분류 용어가 아니다.`]
+    ],
+    OX025:[
+      R`이미지·텍스트·음성처럼 미리 정해진 표 구조가 없는 비정형 데이터를 다변량 분석에 사용하는 원리는?`,
+      [R`특징 추출(feature extraction)이나 수치 변환을 통해 여러 변수를 가진 다변량 표현(벡터·행렬)으로 바꾸어 분석한다.`,R`비정형 자료도 특징을 추출하거나 수치화하면 다변량 데이터 표현으로 변환해 분석할 수 있다.`],
+      [R`구조가 없으므로 어떤 전처리를 거쳐도 다변량 분석의 입력으로 절대 사용할 수 없다.`,R`특징 추출과 임베딩을 통해 비정형 자료도 다변량 분석의 핵심 입력으로 활용된다.`],
+      [R`오직 파일이 저장된 폴더 경로의 글자 수 하나만 세어 단변량으로만 분석해야 한다.`,R`내용에서 다수의 유의미한 특징을 추출해 다변량으로 다룬다.`],
+      [R`비정형 데이터는 수치 계산이 불가능하므로 훈련·테스트 분할 없이 정성적 감상만 수행한다.`,R`수치 특징 행렬로 변환한 뒤 일반 정형 데이터와 마찬가지로 학습·평가를 수행한다.`]
+    ],
+    OX026:[
+      R`정형 표 데이터, 이미지, 텍스트 등 서로 다른 형태(양식)의 데이터를 함께 결합하여 수행하는 분석을 무엇이라 하는가?`,
+      [R`멀티모달 데이터 분석 (Multimodal Data Analysis)`,R`서로 다른 모달리티(정형 표, 영상, 텍스트 등)의 데이터를 결합해 분석하는 것을 multimodal data analysis라고 한다.`],
+      [R`단변량 기술통계 분석 (Univariate Analysis)`,R`단변량 분석은 단일 변수 하나만을 다루는 분석이다.`],
+      [R`단순 선형 외삽 (Simple Linear Extrapolation)`,R`단일 설명변수 회귀직선을 관측 범위 밖으로 연장하는 것이다.`],
+      [R`동차 방정식 소거 (Homogeneous Elimination)`,R`우변이 0인 연립방정식을 푸는 선형대수 절차다.`]
+    ],
+    OX027:[
+      R`교안의 관세 위험도 판별 및 세액 예측 사례처럼, 하나의 데이터 분석 체계에서 여러 예측 목적(출력)을 함께 다루는 개념은?`,
+      [R`다중 과제 분석·학습 (Multi-task Learning / Analysis)`,R`데이터마이닝은 단일 출력만 예측해야 하는 것이 아니며, 관세 위험과 세액처럼 여러 목적을 함께 다루는 multi-task 분석이 가능하다.`],
+      [R`무정보 단일 상수 예측 (Constant Prediction)`,R`입력과 무관하게 하나의 상수만 내는 것으로 다중 과제 분석이 아니다.`],
+      [R`단변량 사분위수 요약 (Univariate Quartile Summary)`,R`변수 하나의 분포를 요약하는 기술통계다.`],
+      [R`영행렬 전치 연산 (Zero Matrix Transpose)`,R`선형대수의 기본 행렬 연산으로 분석 과제 구성과 무관하다.`]
+    ],
+    OX028:[
+      R`교안에서 소개한 CT 의료영상 분류, 이미지 복원, 반도체 웨이퍼 불량 탐지, 도로 손상 탐지 사례들이 공통으로 보여주는 바는?`,
+      [R`정형 테이블뿐 아니라 영상·이미지 기반의 시각적 응용 문제도 데이터마이닝의 주요 영역에 포함된다.`,R`강의는 정형 데이터 분석뿐 아니라 의료·제조·인프라의 이미지·영상 기반 응용도 데이터마이닝 사례로 제시한다.`],
+      [R`데이터마이닝은 오직 엑셀 숫자로만 된 회계 장부에서만 작동한다.`,R`영상·이미지·신호 등 비정형 데이터를 활용한 다양한 응용이 가능하다.`],
+      [R`의료 및 제조 영상 데이터는 전처리나 특징 추출 없이 원본 파일 이름만으로 분류한다.`,R`영상에서 특징을 추출하거나 표현을 학습하여 분류·복원·탐지를 수행한다.`],
+      [R`이미지 기반 응용에서는 과적합이나 일반화 성능을 전혀 고려할 필요가 없다.`,R`영상 응용에서도 보지 못한 새 영상에 대한 일반화 성능이 핵심이다.`]
+    ],
+    OX029:[
+      R`야구 분석에서 타율·구속 같은 기록(정형 데이터)과 투구·타격 영상(비정형 데이터)을 함께 활용하는 사례가 설명하는 핵심 개념은?`,
+      [R`정형 자료와 비정형 자료를 결합(이종·멀티모달 결합)하여 새로운 설명이나 예측 가치를 창출할 수 있다.`,R`서로 다른 형태의 데이터를 결합하면 기록만으로는 알기 어려운 세밀한 움직임과 성과의 관계를 분석할 수 있다.`],
+      [R`정형 데이터와 영상 데이터는 형식이 달라 한 분석에서 절대 함께 사용할 수 없다.`,R`특징 추출과 수치화를 통해 정형 기록과 비정형 영상을 결합해 분석할 수 있다.`],
+      [R`영상 데이터가 있으면 기존의 정형 경기 기록은 모두 무의미해져 폐기해야 한다.`,R`두 데이터 형태는 상호보완적으로 결합할 때 더 풍부한 정보를 제공한다.`],
+      [R`스포츠 데이터는 완벽한 결정론적 법칙을 따르므로 예측 오차가 항상 0이다.`,R`스포츠 데이터에도 다양한 변동과 불확실성이 존재한다.`]
+    ],
+    OX030:[
+      R`개론 I Summary에서 강조하는 데이터마이닝의 궁극적인 목적은?`,
+      [R`발견한 지식과 예측 결과를 실제 현장의 판단·의사결정·행동·최적화로 연결하는 것`,R`데이터마이닝은 모델 생성 자체로 끝나지 않고 현장의 의사결정과 행동·최적화로 이어져야 한다.`],
+      [R`현장 의사결정과 무관하게 가장 복잡한 알고리즘 이름만 보고서에 나열하는 것`,R`모델의 복잡도나 이름보다 실제 문제 해결과 의사결정 연결이 핵심이다.`],
+      [R`데이터를 수집한 뒤 분석이나 행동 연결 없이 저장소 용량만 늘리는 것`,R`수집된 데이터는 지식 발견과 실제 활용(Value)으로 이어져야 한다.`],
+      [R`모든 문제를 도메인 검토 없이 동일한 단일 선형식으로만 기계적으로 변환하는 것`,R`문제 정의와 도메인 맥락에 맞는 탐색·모델링·행동 연결이 필요하다.`]
+    ],
+    OX031:[
+      R`표(table) 형식의 데이터에서 행(row)과 열(column)이 일반적으로 나타내는 대상을 바르게 연결한 것은?`,
+      [R`행(row): 관측 단위(sample / observation) — 열(column): 측정 변수(variable / feature)`,R`강의의 기본 표기에서 각 행은 개별 표본(관측 단위)을, 각 열은 측정된 변수(특징)를 나타낸다.`],
+      [R`행(row): 측정 변수(variable / feature) — 열(column): 관측 단위(sample / observation)`,R`기본 표 형식 데이터에서의 행과 열의 역할을 반대로 연결했다.`],
+      [R`행(row): 회귀계수(\(\beta\)) — 열(column): 유의확률(\(p\)-value)`,R`회귀 출력 요약표의 일부 항목일 뿐 원자료 테이블의 행·열 정의가 아니다.`],
+      [R`행(row): 테스트 데이터 전체 — 열(column): 훈련 데이터 전체`,R`훈련/테스트 분할은 보통 표본(행) 단위로 나누며 행과 열의 정의가 아니다.`]
+    ],
+    OX032:[
+      R`다변량 데이터(Multivariate Data)로 볼 수 있는 기준은?`,
+      [R`각 관측 대상에 대해 두 개 이상의 변수를 함께 관측하고 분석하는 데이터`,R`단변량은 한 변수만 다루고, 두 개 이상의 변수를 함께 관측·분석하면 다변량 데이터로 본다.`],
+      [R`오직 하나의 변수만 측정하되 표본 수만 10,000개 이상 모은 데이터`,R`변수 수가 1개이면 표본 수가 아무리 많아도 단변량(univariate) 데이터다.`],
+      [R`변수 없이 관측 번호(ID)만 1번부터 100번까지 적힌 목록`,R`측정된 변수가 없으므로 다변량 분석 대상이 아니다.`],
+      [R`반응변수 \(Y\) 없이 상수 0만 들어 있는 \(1 \times 1\) 스칼라 값`,R`여러 변수를 함께 관측한 구조가 아니므로 다변량 데이터가 아니다.`]
+    ],
+    OX033:[
+      R`입력 데이터 행렬을 \(X \in \mathbb{R}^{n \times p}\)로 표기할 때, \(n\)과 \(p\)가 나타내는 것은?`,
+      [R`\(n\): 표본(sample) 수, \(p\): 입력 변수(feature) 수`,R`강의의 표준 표기 \(X \in \mathbb{R}^{n \times p}\)에서 행의 수 \(n\)은 표본 수, 열의 수 \(p\)는 변수 수다.`],
+      [R`\(n\): 입력 변수(feature) 수, \(p\): 표본(sample) 수`,R`행렬 차원에서 표본 수 \(n\)과 변수 수 \(p\)의 위치를 반대로 바꿨다.`],
+      [R`\(n\): 고유값의 개수, \(p\): 유의수준(\(p\)-value)`,R`\(p\)는 입력 변수의 개수이지 가설검정의 \(p\)-value가 아니다.`],
+      [R`\(n\): 군집(cluster)의 수, \(p\): 잔차 자유도`,R`\(n \times p\) 설계행렬에서 \(n\)은 관측 표본 수, \(p\)는 설명변수 수다.`]
+    ],
+    OX034:[
+      R`분석 수식에서 입력 \(X\)와 구분하여 예측·설명의 목표가 되는 반응변수(출력변수)를 나타내는 표준 기호는?`,
+      [R`\(Y\)`,R`입력 특징 행렬 \(X\)에 대응하는 목표·반응변수는 \(Y\)로 표기한다.`],
+      [R`\(\varepsilon\)`,R`\(\varepsilon\)은 모형이 설명하지 못하는 확률적 오차항을 나타낸다.`],
+      [R`\(\theta\)`,R`\(\theta\)(또는 \(\beta\))는 학습을 통해 추정할 모형의 파라미터를 나타낸다.`],
+      [R`\(\varnothing\)`,R`\(\varnothing\)은 원소가 없는 공집합 기호다.`]
+    ],
+    OX035:[
+      R`설명변수 \(X\)를 관례적으로 '독립변수(independent variable)'라고 부를 때 해석상 주의할 점은?`,
+      [R`용어 명칭일 뿐 설명변수들끼리 통계적으로 독립이라거나 반응변수 \(Y\)의 인과적 원인이라는 뜻이 보장되지는 않는다.`,R`독립변수라는 이름만으로 변수 간 무상관(다중공선성 부재)이나 인과성이 성립하지 않으므로 별도 진단과 검토가 필요하다.`],
+      [R`독립변수라고 부르면 모든 설명변수 사이의 상관계수가 수학적으로 항상 0이다.`,R`실제 다변량 자료에서는 설명변수끼리 강한 상관을 갖는 다중공선성이 흔히 발생한다.`],
+      [R`독립변수로 지정된 변수는 무조건 반응변수 \(Y\)를 발생시키는 직접 원인으로 증명된다.`,R`명칭이나 모형 투입 여부만으로 인과관계가 증명되지 않는다.`],
+      [R`독립변수는 결측치나 측정 오류가 절대 발생할 수 없는 확정 상수다.`,R`실제 설명변수 데이터에도 결측치, 이상치, 측정 오류가 존재할 수 있다.`]
+    ],
+    OX036:[
+      R`훈련 자료 \((X_{\text{train}}, Y_{\text{train}})\)를 이용해 입력과 출력의 관계를 나타내는 함수 \(f_\theta\)의 파라미터 \(\theta\)를 추정하는 단계는?`,
+      [R`학습 단계 (Training / Parameter Estimation)`,R`학습 단계는 훈련 자료를 바탕으로 모델 \(f_\theta\)의 파라미터 \(\theta\)를 추정하는 과정이다.`],
+      [R`최종 테스트 평가 단계 (Final Test Evaluation)`,R`테스트 단계는 학습된 파라미터를 고정한 채 보지 않은 자료에서 일반화 성능을 재는 단계다.`],
+      [R`데이터 원천 추출 단계 (Data Extraction)`,R`데이터 수집·추출은 모델 학습 이전에 수행하는 파이프라인 단계다.`],
+      [R`비식별화 마스킹 단계 (De-identification)`,R`개인정보 보호를 위한 데이터 관리 절차로 파라미터 추정 단계가 아니다.`]
+    ],
+    OX037:[
+      R`테스트 데이터(test set)의 올바른 용도와, 이를 모델 파라미터 반복 조정에 사용했을 때 생기는 문제는?`,
+      [R`테스트 데이터는 최종 일반화 평가에만 써야 하며, 반복 조정·선택에 쓰면 평가가 낙관적으로 오염(과적합)된다.`,R`모델 선택과 조정은 훈련·검증(validation) 자료에서 수행하고 테스트 자료는 마지막 일반화 성능 확인에만 아껴 두어야 한다.`],
+      [R`테스트 데이터를 반복해서 보며 파라미터를 미세 조정해야 가장 정직한 일반화 성능을 얻는다.`,R`테스트 데이터를 반복 참조해 모델을 고르면 테스트 세트 자체에 과적합되어 일반화 평가가 왜곡된다.`],
+      [R`테스트 데이터는 오직 결측치를 평균으로 채우는 기준 계산에만 반복 사용한다.`,R`전처리 통계량도 훈련 데이터 기준으로 구해야 하며 테스트 데이터를 미리 참조하면 데이터 누수가 된다.`],
+      [R`테스트 데이터로 파라미터를 조정하면 비지도학습 모델로 자동 변환된다.`,R`학습 유형이 바뀌는 것이 아니라 평가의 독립성이 깨지는 데이터 누수 문제가 발생한다.`]
+    ],
+    OX038:[
+      R`전체 데이터를 훈련(train) 데이터와 테스트(test) 데이터로 나누는 가장 핵심적인 이유는?`,
+      [R`학습에 사용하지 않은 보지 않은 자료(unseen data)에 대한 일반화 성능을 확인하기 위해서`,R`학습자료 적합도만 보면 과적합을 놓칠 수 있으므로, 보지 않은 테스트 자료로 일반화 성능을 검증한다.`],
+      [R`표본 크기 \(n\)을 절반으로 줄여 표준오차(\(SE\))를 인위적으로 키우기 위해서`,R`표본을 나누는 목적은 표준오차를 키우는 것이 아니라 독립적인 일반화 평가에 있다.`],
+      [R`훈련 데이터의 잔차 제곱합(\(\mathrm{SSE}\))을 항상 0으로 만들기 위해서`,R`데이터를 나눈다고 잔차 제곱합이 0이 되는 것은 아니다.`],
+      [R`설명변수의 개수 \(p\)를 줄여 단순선형회귀로만 풀기 위해서`,R`행(표본)을 나누는 분할이므로 열(변수) 개수 \(p\)는 줄어들지 않는다.`]
+    ],
+    OX039:[
+      R`입력 \(X\)와 함께 정답 라벨(목표값) \(Y\)가 주어진 자료로 입력과 출력의 관계를 학습하는 방식은?`,
+      [R`지도학습 (Supervised Learning)`,R`입력 X와 목표값(라벨) Y가 함께 주어진 상태에서 관계를 학습하는 것이 지도학습이다.`],
+      [R`비지도학습 (Unsupervised Learning)`,R`비지도학습은 정답 라벨 Y 없이 데이터 내부의 구조나 군집을 찾는다.`],
+      [R`강화학습 (Reinforcement Learning)`,R`강화학습은 상태·행동·보상 상호작용을 통해 정책을 학습한다.`],
+      [R`단순 기술통계 (Descriptive Statistics)`,R`기술통계는 관측 자료의 중심·산포 등을 요약하는 것이다.`]
+    ],
+    OX040:[
+      R`목표값 \(Y\)가 ` + "`0, 1, 2`" + R`처럼 숫자로 코딩되어 있을 때 회귀와 분류 중 무엇인지 판단하는 기준은?`,
+      [R`숫자 저장 여부가 아니라 값의 의미가 연속적인 수치이면 회귀, 범주(클래스) 라벨이면 분류로 판단한다.`,R`0, 1, 2처럼 숫자로 저장되어 있어도 그 의미가 범주 라벨이면 분류(classification) 문제다.`],
+      [R`숫자로 코딩되어 있으면 의미와 관계없이 언제나 선형회귀 문제로 다뤄야 한다.`,R`범주 번호를 수치 크기처럼 회귀로 다루면 잘못된 순서·거리 가정이 들어간다.`],
+      [R`값의 개수가 2개이면 회귀이고 3개 이상이면 무조건 군집화 문제다.`,R`범주 개수가 2개면 이진 분류, 3개 이상이면 다중 클래스 분류에 해당한다.`],
+      [R`정수형(int)이면 무조건 분류이고 실수형(float)이면 무조건 비지도학습이다.`,R`컴퓨터 자료형이 아니라 예측 대상의 실질적 의미(연속 수치 vs 범주 라벨)로 구분한다.`]
+    ],
+    OX041:[
+      R`개론 II 교안(p.17 빈칸)에서 사람의 특성으로부터 '연속적인 월급 액수'를 맞히는 문제는 무엇에 해당하는가?`,
+      [R`회귀 예측 (Prediction — Regression)`,R`연속적인 수치형 출력값(월급 액수)을 맞히는 예측 문제는 회귀(regression)에 해당한다.`],
+      [R`분류 예측 (Prediction — Classification)`,R`분류는 손글씨 숫자처럼 이산적인 범주 라벨을 맞히는 문제다.`],
+      [R`비지도 군집화 (Unsupervised Clustering)`,R`월급이라는 정답 목표값 Y가 주어져 이를 맞히는 문제이므로 비지도 군집화가 아니다.`],
+      [R`데이터 적재 (ETL — Load)`,R`데이터 파이프라인의 저장 단계로 예측 과업 분류가 아니다.`]
+    ],
+    OX042:[
+      R`개론 II 교안(p.18 빈칸)에서 손글씨 숫자 이미지가 0~9 중 어느 숫자 범주인지 맞히는 문제는 무엇에 해당하는가?`,
+      [R`분류 예측 (Prediction — Classification)`,R`출력값이 0~9라는 이산적 범주(클래스)이므로 손글씨 숫자 인식은 분류(classification) 문제다.`],
+      [R`연속 수치 회귀 (Prediction — Regression)`,R`0~9가 숫자 기호이지만 산술적 연속량을 예측하는 것이 아니라 범주를 맞히는 분류 문제다.`],
+      [R`비지도 이상탐지 (Unsupervised Anomaly Detection)`,R`정답 숫자 라벨을 맞히는 지도학습 분류 과업이다.`],
+      [R`다중공선성 분산팽창 (VIF Inflation)`,R`선형회귀의 설명변수 진단 개념으로 손글씨 분류 과업과 무관하다.`]
+    ],
+    OX043:[
+      R`개론 II 교안(p.17 빈칸)에서 새 관측치의 월급 수치를 맞히는 것보다 '월급과 관련된 변수가 무엇이고 어떤 관계인지 파악하는 목적'은 무엇에 가장 가까운가?`,
+      [R`추론 (Inference)`,R`변수 간 관계·영향·설명을 이해하려는 목적은 예측(prediction)보다 추론(inference)에 해당한다.`],
+      [R`예측 (Prediction)`,R`예측은 관계 해석보다 새로운 입력에 대한 출력값 Y 자체를 정확히 맞히는 데 초점을 둔다.`],
+      [R`군집화 (Clustering)`,R`군집화는 정답 Y 없이 관측치들을 유사한 그룹으로 묶는 비지도 목적이다.`],
+      [R`데이터 증강 (Augmentation)`,R`학습 데이터를 변형해 늘리는 전처리 기법이다.`]
+    ],
+    OX044:[
+      R`정답 라벨 \(Y\) 없이 데이터 안의 숨은 구조나 유사한 그룹(군집)을 찾는 학습 유형과 대표 과업은?`,
+      [R`비지도학습 (Unsupervised Learning) — 군집화 (Clustering)`,R`비지도학습은 정답 Y 없이 데이터 내부 구조나 군집을 찾으며, clustering과 비지도 anomaly detection 등이 대표적이다.`],
+      [R`지도학습 (Supervised Learning) — 선형회귀 (Linear Regression)`,R`지도학습과 선형회귀는 정답 반응변수 Y가 주어진 상태에서 학습한다.`],
+      [R`지도학습 (Supervised Learning) — 로지스틱 분류 (Logistic Classification)`,R`로지스틱 분류 역시 정답 범주 라벨 Y를 사용하는 지도학습이다.`],
+      [R`강화학습 (Reinforcement Learning) — 최소제곱 내적 (OLS Inner Product)`,R`강화학습은 보상 신호를 통해 정책을 학습하며 최소제곱 내적과는 무관하다.`]
+    ],
+    OX045:[
+      R`일부 표본에만 정답 라벨이 있고 나머지 대다수 표본은 비라벨(unlabeled)인 상황을 함께 활용하는 학습 유형은?`,
+      [R`준지도학습 (Semi-supervised Learning)`,R`준지도학습은 소량의 라벨 데이터와 대량의 비라벨 데이터를 함께 활용해 학습하는 방식이다.`],
+      [R`완전 지도학습 (Fully Supervised Learning)`,R`완전 지도학습은 모든 학습 표본에 완전한 라벨이 있는 경우를 전제한다.`],
+      [R`기술통계 요약 (Descriptive Summary)`,R`관측된 수치의 중심·산포를 요약하는 것으로 라벨·비라벨 결합 학습이 아니다.`],
+      [R`가우스 소거법 (Gaussian Elimination)`,R`연립방정식을 행 사다리꼴로 푸는 선형대수 알고리즘이다.`]
+    ],
+    OX046:[
+      R`상태(state), 행동(action), 보상(reward)과 정책(policy)의 관계를 통해 환경과의 상호작용 속에서 학습하는 틀은?`,
+      [R`강화학습 (Reinforcement Learning)`,R`강화학습은 고정된 정답 라벨 하나를 맞히는 대신 상태·행동·보상 신호로 정책을 학습한다.`],
+      [R`보통최소제곱 회귀 (OLS Regression)`,R`고정된 입력 X와 수치형 출력 Y의 잔차 제곱합을 최소화하는 지도학습이다.`],
+      [R`사분위범위 탐색 (IQR Boxplot Analysis)`,R`일변량 데이터의 산포와 이상치 후보를 살피는 탐색적 기법이다.`],
+      [R`다중공선성 제거 (VIF Filtering)`,R`다중회귀에서 상관된 설명변수를 점검하는 절차다.`]
+    ],
+    OX047:[
+      R`강의에서 구분한 세 가지 주요 분석 목적인 군집(Clustering), 추론(Inference), 예측(Prediction)의 초점을 바르게 연결한 것은?`,
+      [R`군집: 숨은 구조·그룹 발견 / 추론: 변수 간 관계 이해 / 예측: 새로운 출력값 맞히기`,R`clustering은 구조 발견, inference는 관계·영향 이해, prediction은 새 출력값을 맞히는 데 초점을 둔다.`],
+      [R`군집: 회귀계수 검정 / 추론: 라벨 없는 그룹 나누기 / 예측: 데이터 수집 중단`,R`군집과 추론의 역할이 바뀌었으며 예측의 설명도 잘못되었다.`],
+      [R`군집: 미래 연속 수치 외삽 / 추론: 이미지 압축 저장 / 예측: 설문 문항 삭제`,R`세 가지 분석 목적의 정의와 모두 맞지 않는다.`],
+      [R`세 용어 모두 오직 표본평균 \(\bar x\) 하나를 계산하는 동일한 작업이다.`,R`군집·추론·예측은 요구하는 데이터 조건과 질문이 서로 다른 분석 목적이다.`]
+    ],
+    OX048:[
+      R`개론 II 교안에서 정리한 데이터마이닝 5단계 절차의 올바른 순서는?`,
+      [R`문제 정의 → 데이터 수집 → 탐색·정제·변환 → 모델링 → 결과 요약·배포`,R`데이터마이닝 5단계는 문제 정의, 수집, 탐색·정제·변환, 모델링, 결과 요약·배포의 흐름으로 진행된다.`],
+      [R`모델링 → 결과 요약·배포 → 문제 정의 → 데이터 수집 → 탐색·정제·변환`,R`문제 정의와 데이터 준비 없이 모델링과 배포를 먼저 수행할 수 없다.`],
+      [R`결과 요약·배포 → 탐색·정제·변환 → 데이터 수집 → 모델링 → 문제 정의`,R`결과 요약·배포는 분석의 마지막 단계이며 문제 정의가 첫 단계다.`],
+      [R`데이터 수집 → 모델링 → 문제 정의 → 결과 요약·배포 → 탐색·정제·변환`,R`수집에 앞서 문제 정의가 이루어져야 하고 모델링 전에 탐색·정제가 필요하다.`]
+    ],
+    OX049:[
+      R`데이터마이닝 5단계 절차의 진행 특성에 대한 설명으로 가장 올바른 것은?`,
+      [R`탐색이나 모델링 결과에 따라 문제 정의나 데이터 수집 등 앞 단계로 되돌아갈 수 있는 반복(iterative) 과정이다.`,R`실제 분석에서는 탐색·모델링 중 새로운 문제나 데이터 한계가 발견되면 앞 단계로 돌아가 수정하는 피드백 루프를 거친다.`],
+      [R`한 번 다음 단계로 넘어가면 어떤 오류가 발견되어도 앞 단계로 절대 돌아갈 수 없는 단방향 과정이다.`,R`데이터마이닝 절차는 단방향이 아니라 단계 간 피드백과 반복이 일어나는 과정이다.`],
+      [R`1단계 문제 정의만 끝나면 2~4단계를 모두 건너뛰고 즉시 5단계 배포로 넘어가야 한다.`,R`수집, 탐색·정제, 모델링과 검증을 거쳐야 의미 있는 배포가 가능하다.`],
+      [R`탐색 단계에서 이상치가 하나라도 보이면 앞 단계로 돌아가는 대신 프로젝트를 즉시 폐기해야 한다.`,R`이상치의 원인을 파악하고 정제·변환하거나 문제 정의를 보완하며 반복 진행한다.`]
+    ],
+    OX050:[
+      R`데이터마이닝 5단계 중 '목표 출력 \(Y\), 결과를 활용할 판단·행동, 분석 범위'를 가장 먼저 구체화하는 단계는?`,
+      [R`문제 정의 (Problem Definition)`,R`문제 정의 단계에서 무엇을 해결할지, 목표 Y가 무엇인지, 결과를 어떤 판단·행동에 쓸지를 먼저 구체화한다.`],
+      [R`데이터 적재 (Data Loading)`,R`데이터 적재는 ETL 파이프라인에서 가공된 자료를 저장소에 넣는 단계다.`],
+      [R`하이퍼파라미터 튜닝 (Hyperparameter Tuning)`,R`모델링 단계의 세부 최적화 작업으로 문제 정의 이후에 수행한다.`],
+      [R`잔차 정규성 검정 (Normality Test)`,R`회귀모형 적합 후 가정을 점검하는 진단 단계다.`]
+    ],
+    OX051:[
+      R`모델링 전에 데이터의 분포, 결측, 이상치, 클래스 불균형, 변수 수(\(p\))와 표본 수(\(n\))의 관계를 점검하는 단계는?`,
+      [R`데이터 탐색·정제·변환 단계 (Data Exploration & Preprocessing)`,R`탐색 단계에서 분포·결측·이상치·불균형·차원 구조(p와 n의 관계)를 확인하고 정제·변환한다.`],
+      [R`최종 운영 배포 단계 (Production Deployment)`,R`운영 배포는 모델 학습과 평가가 모두 끝난 뒤에 수행한다.`],
+      [R`귀무가설 채택 단계 (Null Acceptance)`,R`통계적 검정의 판정 표현일 뿐 데이터 전처리·탐색 단계가 아니다.`],
+      [R`고유벡터 직교화 단계 (Eigenvector Orthogonalization)`,R`선형대수의 특정 행렬 연산일 뿐 결측·불균형 등을 살피는 전반적 탐색 단계가 아니다.`]
+    ],
+    OX052:[
+      R`반복적인 전처리·모델 후보 비교·탐색을 자동화하는 AutoML을 사용할 때 인간 분석가의 역할은?`,
+      [R`문제의 의미를 정의하고 데이터 맥락과 결과의 타당성을 검증하는 역할은 여전히 사람의 판단이 필요하다.`,R`AutoML이 반복 탐색과 비교를 보조하더라도, 올바른 문제 정의와 의미·타당성 검증은 인간이 수행해야 한다.`],
+      [R`AutoML이 문제 정의부터 도메인 타당성 판단까지 100% 대신하므로 인간의 역할이 완전히 사라진다.`,R`해결할 문제의 가치와 데이터 편향·누수 여부는 도구가 스스로 정의할 수 없다.`],
+      [R`AutoML을 쓰면 테스트 데이터가 훈련에 섞여도 일반화 성능이 왜곡되지 않는다.`,R`데이터 누수가 발생하면 AutoML 역시 오염된 기준에 맞춰 과적합된 모델을 고르게 된다.`],
+      [R`AutoML은 오직 손으로 그린 산점도의 색상만 바꿔 주는 그래픽 도구다.`,R`AutoML은 특징 공학, 모델 선택, 하이퍼파라미터 튜닝 등 모델링 파이프라인을 자동화하는 도구다.`]
+    ],
+    OX053:[
+      R`개론 II 교안(p.41 빈칸)에 제시된 데이터 통합·처리 파이프라인 ETL의 올바른 순서와 의미는?`,
+      [R`Extract(추출) → Transform(변환·가공) → Load(적재)`,R`원천에서 데이터를 추출(Extract)하고, 오류·중복 제거와 형식 통일 등 변환(Transform)을 거친 뒤 저장소에 적재(Load)한다.`],
+      [R`Extract(추출) → Load(적재) → Transform(삭제)`,R`ETL의 표준 순서는 Extract → Transform → Load이며 Transform은 삭제가 아니라 가공·변환이다.`],
+      [R`Evaluate(평가) → Train(학습) → Predict(예측)`,R`모델 학습·평가 용어이며 ETL(Extract, Transform, Load)의 약자가 아니다.`],
+      [R`Explore(탐색) → Test(검정) → Linearize(선형화)`,R`ETL의 약자와 단계 정의에 해당하지 않는다.`]
+    ],
+    OX054:[
+      R`ETL 파이프라인에서 '오류·중복 제거와 형식 통일 등 데이터를 가공하는 단계'와 '정리된 데이터를 Data Warehouse나 Data Lake에 저장하는 단계'를 순서대로 바르게 짝지은 것은?`,
+      [R`데이터 가공·변환: Transform — 저장소에 적재: Load`,R`오류·중복 제거 및 형식 통일은 Transform 단계이고, 정리된 데이터를 저장소에 적재하는 것은 Load 단계다.`],
+      [R`데이터 가공·변환: Load — 저장소에 적재: Transform`,R`Transform과 Load의 역할을 서로 반대로 연결했다.`],
+      [R`데이터 가공·변환: Extract — 저장소에 적재: Transform`,R`Extract는 여러 원천에서 데이터를 가져오는 추출 단계다.`],
+      [R`데이터 가공·변환: Inference — 저장소에 적재: Regression`,R`추론과 회귀는 분석 목적·모델 용어이며 ETL 단계가 아니다.`]
+    ],
+    OX055:[
+      R`개론 II 교안(p.42 빈칸)의 LLM Data Pipeline에서 프롬프트 기반 라벨 생성부터 최종 모델 학습까지 이어지는 3단계 순서는?`,
+      [R`Prompting (여러 Label Map 생성) → Weak Supervision / Label Model (통합) → End Model Training (최종 모델 학습)`,R`복수 프롬프트로 Label Map을 만들고, Weak Supervision의 Label Model로 통합해 추정 라벨을 얻은 뒤 End Model을 학습한다.`],
+      [R`End Model Training → Prompting → Weak Supervision / Label Model`,R`최종 모델 학습(End Model Training)은 통합된 라벨이 만들어진 마지막 단계에 수행한다.`],
+      [R`Weak Supervision / Label Model → Extract → Prompting`,R`Prompting으로 후보 라벨 맵을 먼저 생성해야 Label Model로 통합할 수 있다.`],
+      [R`단일 프롬프트 배포 → 역행렬 계산 → 가우스 소거`,R`LLM 데이터 파이프라인의 3단계 구조와 무관한 선형대수 용어다.`]
+    ],
+    OX056:[
+      R`개론 II 교안(p.43 빈칸)의 Robust Modeling with LLM에서 단일 프롬프트 예측의 불안정성(noisy prediction)을 보완하는 방식은?`,
+      [R`병렬 Prompt Chain으로 여러 noisy prediction을 만든 뒤 Weak Supervision으로 통합해 최종 예측을 결정한다.`,R`하나의 프롬프트 답을 그대로 확정하지 않고, 병렬 Prompt Chain의 여러 예측을 Weak Supervision으로 통합해 강건성을 높인다.`],
+      [R`단 하나의 프롬프트에서 나온 첫 번째 출력을 검증 없이 100% 참값으로 확정한다.`,R`단일 프롬프트 출력은 프롬프트 표현에 민감하고 잡음이 섞일 수 있어 통합 과정을 거친다.`],
+      [R`모든 텍스트 입력을 삭제하고 무작위 주사위 굴리기로만 최종 라벨을 결정한다.`,R`여러 프롬프트 체인의 예측 신호를 결합하는 것이지 무작위 난수로 대체하는 것이 아니다.`],
+      [R`테스트 데이터의 실제 정답을 프롬프트에 그대로 복사해 넣어 점수를 계산한다.`,R`정답 유출(data leakage)에 해당하며 강건한 LLM 모델링 방식이 아니다.`]
+    ],
+    OX057:[
+      R`여러 원천의 다양한 데이터를 수집·관리하는 저장 기반으로 소개되었으며, 운영 시 메타데이터 관리와 개인정보 비식별화까지 함께 고려해야 하는 요소는?`,
+      [R`Data Lake (데이터 레이크) 및 데이터 거버넌스·프라이버시 관리`,R`강의는 Data Lake를 통한 다원천 데이터 수집·관리와 함께 메타데이터 및 비식별화(프라이버시)를 파이프라인의 중요 고려사항으로 다룬다.`],
+      [R`단일 스칼라 편차제곱합 (\(S_{xx}\))`,R`단순회귀의 수식 항일 뿐 데이터 수집·저장 기반이 아니다.`],
+      [R`기약 행 사다리꼴 피벗 (RREF Pivot)`,R`행렬 소거법의 개념으로 데이터 저장소 및 비식별화 관리와 무관하다.`],
+      [R`기울기 양측 유의확률 (\(p\)-value)`,R`가설검정 통계량으로 데이터 수집·저장 인프라 개념이 아니다.`]
+    ],
+    OX058:[
+      R`데이터마이닝의 수학 기초 중 선형대수, 통계, 미적분·최적화가 각각 담당하는 핵심 역할을 바르게 연결한 것은?`,
+      [R`선형대수: 데이터·변환 표현 / 통계: 표본·불확실성·추론 / 미적분·최적화: 손실함수 최소화`,R`강의는 선형대수(다변량 자료와 변환 표현), 통계(표본과 불확실성), 미적분·최적화(손실 줄이기)를 역할별로 연결한다.`],
+      [R`선형대수: 표본오차 검정 / 통계: 행렬 계단형 소거 / 미적분·최적화: 설문지 배포`,R`세 수학 분야의 핵심 역할이 서로 뒤바뀌거나 무관하게 연결되었다.`],
+      [R`선형대수: 개인정보 비식별화 / 통계: 서버 하드웨어 조립 / 미적분·최적화: 테이블 스키마 삭제`,R`수학 기초 3영역의 역할 구분과 맞지 않는다.`],
+      [R`세 분야 모두 불확실성이나 변환 없이 오직 자연수의 덧셈만 수행한다.`,R`고차원 벡터·행렬 표현, 확률적 추론, 연속 함수 최적화라는 고유한 역할을 수행한다.`]
+    ],
+    OX059:[
+      R`최적화 수식에서 '함수 \(f(x)\)를 최소로 만드는 입력값 \(x\)'를 뜻하는 기호와 '함수의 최솟값 자체'를 뜻하는 기호를 순서대로 바르게 짝지은 것은?`,
+      [R`최적 입력값: \(\arg\min_x f(x)\) — 최솟값 자체: \(\min_x f(x)\)`,R`argmin은 함수값을 최소로 만드는 입력 인자(argument) x를 반환하고, min은 그때의 최소 함수값 자체를 뜻한다.`],
+      [R`최적 입력값: \(\min_x f(x)\) — 최솟값 자체: \(\arg\min_x f(x)\)`,R`min과 argmin의 의미를 서로 반대로 연결했다.`],
+      [R`최적 입력값: \(\max_x f(x)\) — 최솟값 자체: \(\det(x)\)`,R`max는 최댓값이고 det는 행렬식이다.`],
+      [R`최적 입력값: \(f'(0)\) — 최솟값 자체: \(\int f(x)dx\)`,R`미분계수와 부정적분 기호로 argmin·min의 정의가 아니다.`]
+    ],
+    OX060:[
+      R`선형대수 기초에서 실수 집합, 정수 집합, 공집합을 나타내는 표준 기호를 순서대로 바르게 나열한 것은?`,
+      [R`\(\mathbb{R},\; \mathbb{Z},\; \varnothing\)`,R`\(\mathbb{R}\)은 실수(Real numbers), \(\mathbb{Z}\)는 정수(Integers), \(\varnothing\)은 원소가 없는 공집합을 나타낸다.`],
+      [R`\(\mathbb{Z},\; \mathbb{R},\; \mathbb{N}\)`,R`\(\mathbb{Z}\)와 \(\mathbb{R}\)의 순서가 바뀌었고 마지막 \(\mathbb{N}\)은 자연수 집합이다.`],
+      [R`\(\varnothing,\; \mathbb{Q},\; \mathbb{R}\)`,R`첫 번째가 공집합으로 바뀌었고 \(\mathbb{Q}\)는 유리수 집합이다.`],
+      [R`\(\mathbb{C},\; \varnothing,\; \mathbb{Z}\)`,R`\(\mathbb{C}\)는 복소수 집합이며 순서도 맞지 않는다.`]
+    ],
+    OX061:[
+      R`두 집합 \(A, B\)에서 '양쪽 모두에 속하는 원소들의 집합'과 '적어도 한쪽에 속하는 원소들의 집합'을 순서대로 바르게 짝지은 것은?`,
+      [R`양쪽 모두: 교집합 (\(A \cap B\)) — 적어도 한쪽: 합집합 (\(A \cup B\))`,R`두 집합 모두에 속하면 교집합(intersection)이고, 적어도 하나에 속하면 합집합(union)이다.`],
+      [R`양쪽 모두: 합집합 (\(A \cup B\)) — 적어도 한쪽: 교집합 (\(A \cap B\))`,R`교집합과 합집합의 정의를 서로 반대로 연결했다.`],
+      [R`양쪽 모두: 차집합 (\(A - B\)) — 적어도 한쪽: 공집합 (\(\varnothing\))`,R`차집합은 A에만 속하고 B에는 속하지 않는 원소들의 집합이다.`],
+      [R`양쪽 모두: 여집합 (\(A^c\)) — 적어도 한쪽: 멱집합 (\(\mathcal{P}(A)\))`,R`여집합과 멱집합은 교집합·합집합의 정의가 아니다.`]
+    ],
+    OX062:[
+      R`실수 집합 \(\mathbb{R}\)의 데카르트 곱(Cartesian product)을 반복하여, 실수 성분을 \(n\)개 갖는 순서쌍(\(n\)차원 벡터)들의 집합을 나타내는 표기는?`,
+      [R`\(\mathbb{R}^n\)`,R`\(\mathbb{R}^n = \mathbb{R} \times \cdots \times \mathbb{R}\)은 실수 성분 n개를 갖는 순서쌍(n차원 실수 벡터)들의 집합이다.`],
+      [R`\(\mathbb{Z}/n\mathbb{Z}\)`,R`정수의 나머지 동치류 집합 표기로 n차원 실수 벡터 공간이 아니다.`],
+      [R`\(\varnothing_n\)`,R`공집합 기호에 첨자를 붙인 것으로 실수 순서쌍 집합이 아니다.`],
+      [R`\(\det(\mathbb{R})\)`,R`행렬식 기호를 집합에 잘못 적용한 표기다.`]
+    ],
+    OX063:[
+      R`대응 관계 \(f: X \to Y\)가 수학적 함수(function)로 성립하기 위한 기본 조건은?`,
+      [R`정의역 \(X\)의 각 입력 원소마다 공역 \(Y\)의 출력 원소가 오직 하나씩만 대응해야 한다.`,R`함수는 정의역의 모든 원소 각각에 공역의 원소 하나가 유일하게 대응하는 관계다.`],
+      [R`정의역의 입력 하나에 서로 다른 출력 여러 개가 동시에 대응해야 한다.`,R`한 입력에 여러 출력이 대응하면 함수의 기본 정의를 만족하지 않는다.`],
+      [R`정의역 \(X\)와 공역 \(Y\)가 반드시 원소가 없는 공집합이어야 한다.`,R`비공집합 정의역에서 공역으로의 유일한 대응 규칙을 다룬다.`],
+      [R`공역 \(Y\)의 모든 원소가 반드시 정의역의 원소보다 수치적으로 커야 한다.`,R`함수의 성립 여부는 원소의 대소 비교가 아니라 대응의 존재성과 유일성으로 결정된다.`]
+    ],
+    OX064:[
+      R`행렬 표기 \(A \in \mathbb{R}^{m \times n}\)에서 첫 번째 숫자 \(m\)과 두 번째 숫자 \(n\)이 뜻하는 것은?`,
+      [R`\(m\): 행(row)의 개수, \(n\): 열(column)의 개수`,R`\(\mathbb{R}^{m \times n}\)은 m개의 행과 n개의 열을 갖는 실수 행렬을 뜻한다.`],
+      [R`\(m\): 열(column)의 개수, \(n\): 행(row)의 개수`,R`행과 열의 순서를 반대로 해석했다. 항상 '행 × 열' 순서로 표기한다.`],
+      [R`\(m\): 고유값의 합, \(n\): 역행렬의 개수`,R`행렬의 크기(차원) 표기이며 고유값이나 역행렬 개수가 아니다.`],
+      [R`\(m\): 영행의 개수, \(n\): 대각원소의 합`,R`\(m \times n\)은 전체 행의 수와 전체 열의 수를 뜻한다.`]
+    ],
+    OX065:[
+      R`선형대수 교안(p.16 빈칸)의 \(2 \times 5\) 행렬 \(A\)에서 표기 \(A_{i3}\)과 \(A_{1j}\)가 각각 가리키는 대상은?`,
+      [R`\(A_{i3}\): 3번째 열벡터, \(A_{1j}\): 1번째 행벡터`,R`인덱스 i를 열어 둔 \(A_{i3}\)은 3열 전체(열벡터)를, j를 열어 둔 \(A_{1j}\)는 1행 전체(행벡터)를 뜻한다.`],
+      [R`\(A_{i3}\): 3번째 행벡터, \(A_{1j}\): 1번째 열벡터`,R`행 인덱스와 열 인덱스의 위치 의미를 서로 반대로 해석했다.`],
+      [R`\(A_{i3}\): 3행 3열의 단일 원소, \(A_{1j}\): 1행 1열의 단일 원소`,R`특정 단일 원소는 두 인덱스가 모두 고정된 \(A_{33}, A_{11}\) 형태로 표기한다.`],
+      [R`\(A_{i3}\): 행렬 \(A\)의 3제곱, \(A_{1j}\): 행렬 \(A\)의 역행렬`,R`거듭제곱이나 역행렬은 위첨자(\(A^3, A^{-1}\))를 쓰며 아래첨자 행·열 표기와 다르다.`]
+    ],
+    OX066:[
+      R`모든 원소가 0인 행렬과, 주대각 원소가 1이며 나머지 원소가 모두 0인 정방행렬을 순서대로 바르게 짝지은 것은?`,
+      [R`영행렬 (Zero Matrix) — 항등행렬 (Identity Matrix, \(I\))`,R`영행렬은 모든 원소가 0이고, 항등행렬(단위행렬)은 주대각 원소가 1이며 비대각 원소가 0인 정방행렬이다.`],
+      [R`항등행렬 (Identity Matrix, \(I\)) — 영행렬 (Zero Matrix)`,R`영행렬과 항등행렬의 정의를 서로 반대로 연결했다.`],
+      [R`전치행렬 (Transpose Matrix) — 첨가행렬 (Augmented Matrix)`,R`전치행렬과 첨가행렬은 연산·표기 형태이며 영행렬·항등행렬의 정의가 아니다.`],
+      [R`특이행렬 (Singular Matrix) — 반대칭행렬 (Skew-symmetric Matrix)`,R`특이행렬은 역행렬이 없는 정방행렬이고 반대칭행렬은 \(A^T=-A\)인 행렬이다.`]
+    ],
+    OX067:[
+      R`전치해도 자기 자신과 같다는 조건 \(A^T = A\)를 만족하는 정방행렬 \(A\)를 무엇이라 하는가?`,
+      [R`대칭행렬 (Symmetric Matrix)`,R`정방행렬이면서 주대각선을 기준으로 대칭이어서 \(A^T=A\)를 만족하는 행렬을 대칭행렬이라고 한다.`],
+      [R`첨가행렬 (Augmented Matrix)`,R`첨가행렬은 계수행렬 옆에 우변 벡터를 붙인 \([A\mid b]\) 형태다.`],
+      [R`기약 행 사다리꼴 (RREF)`,R`RREF는 가우스–조던 소거법의 결과 행렬 형태다.`],
+      [R`여인자행렬 (Cofactor Matrix)`,R`행렬식 전개에 쓰이는 여인자들로 구성된 행렬이다.`]
+    ],
+    OX068:[
+      R`선형대수 교안(p.18·22 빈칸)에서 두 행렬의 곱 \(AB\)에 전치를 취한 \((AB)^T\)와 항상 같은 식은?`,
+      [R`\(B^T A^T\)`,R`행렬곱의 전치는 곱하는 순서가 뒤집혀 \((AB)^T = B^T A^T\)가 된다.`],
+      [R`\(A^T B^T\)`,R`순서를 그대로 둔 \(A^T B^T\)는 일반적으로 \((AB)^T\)와 같지 않으며 차원조차 맞지 않을 수 있다.`],
+      [R`\(A^{-1} B^{-1}\)`,R`전치(\(T\))와 역행렬(\(-1\))은 전혀 다른 연산이다.`],
+      [R`\(B A\)`,R`전치 기호를 생략하고 순서만 바꾼 것으로 \((AB)^T\)와 같지 않다.`]
+    ],
+    OX069:[
+      R`선형대수 교안(p.18·22 빈칸)의 전치행렬 기본 성질 세 가지를 모두 바르게 적은 것은?`,
+      [R`\((A^T)^T = A,\quad (A+B)^T = A^T + B^T,\quad (kA)^T = kA^T\)`,R`이중 전치는 원래 행렬로 돌아오고, 덧셈과 스칼라배에 대해 전치는 선형적으로 분배된다.`],
+      [R`\((A^T)^T = -A,\quad (A+B)^T = A^T B^T,\quad (kA)^T = \frac{1}{k}A^T\)`,R`이중 전치의 부호, 합의 전치, 스칼라배의 전치가 모두 잘못되었다.`],
+      [R`\((A^T)^T = I,\quad (A+B)^T = B - A,\quad (kA)^T = k^2 A^T\)`,R`전치 연산의 기본 성질과 전혀 맞지 않는다.`],
+      [R`\((A^T)^T = 0,\quad (A+B)^T = A + B,\quad (kA)^T = A\)`,R`전치는 영행렬을 만들지 않으며 스칼라 \(k\)도 사라지지 않는다.`]
+    ],
+    OX070:[
+      R`행렬 \(A\)가 \(m \times n\)이고 행렬 \(B\)가 \(n \times p\)일 때, 행렬곱 \(AB\)의 결과 크기는?`,
+      [R`\(m \times p\)`,R`앞 행렬의 열 수(n)와 뒤 행렬의 행 수(n)가 같을 때 곱이 정의되며, 결과 행렬은 바깥 차원인 \(m \times p\)가 된다.`],
+      [R`\(n \times n\)`,R`\(n\)은 내적에 사용되어 소거되는 안쪽 차원이며 결과 크기는 \(m \times p\)다.`],
+      [R`\(p \times m\)`,R`결과 행렬의 행 수(m)와 열 수(p)의 순서가 뒤바뀌었다.`],
+      [R`\(m \times n \times p\)`,R`두 2차원 행렬의 곱은 3차원 텐서가 아니라 \(m \times p\) 행렬이다.`]
+    ],
+    OX071:[
+      R`두 행렬 \(A, B\)에 대해 행렬곱 \(AB\)가 정의될 때, 역순의 곱 \(BA\)에 대한 설명으로 가장 올바른 것은?`,
+      [R`차원 조건에 따라 \(BA\)는 정의되지 않을 수도 있고, 둘 다 정의되더라도 일반적으로 교환법칙(\(AB = BA\))은 성립하지 않는다.`,R`예를 들어 \(A(2\times3)\)와 \(B(3\times4)\)는 \(AB\)만 정의되고 \(BA\)는 정의되지 않으며, 정방행렬끼리도 일반적으로 \(AB \ne BA\)다.`],
+      [R`\(AB\)가 정의되면 \(BA\)도 항상 정의되며 두 결과 행렬은 언제나 완전히 같다.`,R`행렬곱은 교환법칙이 성립하지 않으며 차원이 다르면 역순 곱 자체가 불가능할 수 있다.`],
+      [R`\(AB\)가 정의되면 \(BA\)는 항상 \((AB)^T\)와 같다.`,R`\((AB)^T = B^T A^T\)이지 \(BA\)와 같은 것이 아니다.`],
+      [R`\(BA\)는 언제나 모든 원소가 0인 영행렬이 된다.`,R`역순 곱이 영행렬이 된다는 일반 법칙은 없다.`]
+    ],
+    OX072:[
+      R`행렬곱 \(AB\)에서 \((i, j)\) 위치의 원소를 구하는 계산 방법은?`,
+      [R`앞 행렬 \(A\)의 \(i\)번째 행벡터와 뒤 행렬 \(B\)의 \(j\)번째 열벡터의 내적`,R`행렬곱의 (i, j) 원소는 A의 i행과 B의 j열의 대응 원소들을 곱해 더한 내적이다.`],
+      [R`앞 행렬 \(A\)의 \(i\)번째 열벡터와 뒤 행렬 \(B\)의 \(j\)번째 행벡터의 합`,R`행과 열의 방향이 반대이며 덧셈이 아니라 내적(곱의 합)이다.`],
+      [R`단순히 같은 위치에 있는 두 숫자 \(A_{ij}\)와 \(B_{ij}\)만의 곱`,R`이는 아다마르 곱(원소별 곱)이며 표준 행렬곱 \(AB\)의 정의가 아니다.`],
+      [R`\(A\)의 \(i\)행 평균에서 \(B\)의 \(j\)열 평균을 뺀 값`,R`행렬곱은 평균 차가 아니라 행벡터와 열벡터의 내적으로 정의된다.`]
+    ],
+    OX073:[
+      R`데이터 테이블에서는 보통 '행=관측(표본), 열=변수(특징)'로 두지만, 일반 수학·선형대수 수식을 읽을 때 가져야 할 올바른 태도는?`,
+      [R`행=관측, 열=변수는 데이터 표현의 흔한 약속일 뿐 모든 수학 문맥에서 강제되는 법칙은 아니므로 수식마다 행·열 정의를 확인한다.`,R`문헌이나 수식에 따라 샘플을 열벡터로 쌓기도 하므로 행렬 자체의 수학 정의와 데이터 관례를 구분해야 한다.`],
+      [R`모든 수학 교재의 모든 행렬에서 행은 무조건 사람 수, 열은 무조건 변수 수로만 고정되어 있다.`,R`선형변환, 그래프 인접행렬, 열벡터 표기 등 문맥에 따라 행과 열의 의미는 달라질 수 있다.`],
+      [R`행렬을 전치(\(A^T\))하더라도 행과 열의 차원 크기는 절대 변하지 않는다.`,R`\(m \times n\) 행렬을 전치하면 \(n \times m\)으로 행과 열의 크기가 바뀐다.`],
+      [R`데이터 행렬에서는 행렬곱이나 전치 연산을 적용하는 것이 수학적으로 금지되어 있다.`,R`설계행렬 \(X\)에 대해 \(X^T X\) 등 표준 행렬 연산을 그대로 적용한다.`]
+    ],
+    OX074:[
+      R`선형대수 교안(p.25 빈칸) 기준으로 다음 중 미지수 \(x_1, x_2\)에 대한 '선형 1차방정식'으로 올바른 형태는?`,
+      [R`\(4x_1 - 7x_2 = 12\) (미지수가 1차항의 상수배 합으로만 구성된 식)`,R`선형방정식에서는 미지수가 모두 1차로만 등장하고 미지수끼리의 곱이나 비선형 함수가 없어야 한다.`],
+      [R`\(3x_1 + 2x_1 x_2 = 5\) (미지수끼리의 곱 \(x_1 x_2\)가 포함된 식)`,R`미지수끼리 곱한 항(\(x_1 x_2\))이 있으면 2차항이므로 선형 1차방정식이 아니다.`],
+      [R`\(x_1^2 - 4x_2 = 0\) (미지수의 제곱이나 제곱근이 포함된 식)`,R`미지수의 거듭제곱(\(x_1^2\))이나 제곱근(\(\sqrt{x_1}\))이 들어가면 비선형식이다.`],
+      [R`\(\sin(x_1) + x_2 = 1\) (미지수에 삼각함수·지수함수가 적용된 식)`,R`미지수에 \(\sin, \cos, \exp\) 등이 씌워지면 선형 1차식이 아니다.`]
+    ],
+    OX075:[
+      R`선형대수 교안(p.27–34 빈칸)에서 계수행렬 \(A\), 미지수 열벡터 \(x\), 우변 상수 열벡터 \(b\)로 연립선형방정식을 나타낸 표준 표기는?`,
+      [R`\(Ax = b\)`,R`표준 열벡터 표기에서 연립선형방정식은 계수행렬 A와 미지수 열벡터 x의 곱 \(Ax = b\)로 쓴다.`],
+      [R`\(x A = b^T\)`,R`열벡터 \(x\)를 왼쪽에 두면 차원이 맞지 않으며 표준 표기는 \(Ax = b\)다.`],
+      [R`\(A + x = b\)`,R`행렬 \(A\)와 열벡터 \(x\)는 크기가 달라 덧셈을 할 수 없다.`],
+      [R`\(A b = x^{-1}\)`,R`벡터 \(x\)에는 역행렬이 정의되지 않으며 계수행렬은 미지수 벡터 \(x\)와 곱해진다.`]
+    ],
+    OX076:[
+      R`선형대수 교안(p.28–34 빈칸)에서 연립방정식 \(Ax = b\)의 계수행렬 \(A\) 오른쪽에 우변 벡터 \(b\)를 붙여 만든 행렬 \([A \mid b]\)를 무엇이라 하는가?`,
+      [R`첨가행렬 (Augmented Matrix)`,R`계수행렬 A 오른쪽에 우변 상수 벡터 b를 덧붙인 \([A \mid b]\)를 첨가행렬이라고 하며 소거법에 사용한다.`],
+      [R`계수행렬 (Coefficient Matrix)`,R`계수행렬은 우변 \(b\)를 붙이기 전 미지수들의 계수로만 이루어진 행렬 \(A\)다.`],
+      [R`미지수 첨가행렬 (\([A \mid x]\))`,R`첨가행렬에는 미지수 벡터 \(x\)가 아니라 우변 상수 벡터 \(b\)를 붙인다.`],
+      [R`항등 대각행렬 (Identity Diagonal Matrix)`,R`주대각 원소만 1인 정방행렬로 첨가행렬의 정의가 아니다.`]
+    ],
+    OX077:[
+      R`우변이 영벡터인 동차 연립선형방정식 \(Ax = 0\)이 항상 가지는 해집합의 성질은?`,
+      [R`항상 영벡터 해(자명해, \(x = 0\))를 가지며, 자유변수가 있으면 무수히 많은 비영해도 갖는다.`,R`\(A0 = 0\)은 언제나 성립하므로 동차 연립방정식은 해가 없는 경우가 없으며 최소한 \(x=0\)을 항상 해로 갖는다.`],
+      [R`계수행렬의 행렬식이 0이면 해가 전혀 존재하지 않는다(불능).`,R`동차 방정식은 행렬식이 0이면 오히려 무수히 많은 비영해를 갖는다.`],
+      [R`자유변수가 있어도 영벡터 \(x = 0\)은 해가 될 수 없다.`,R`영벡터 \(x = 0\)은 모든 동차 선형방정식의 기본 해(trivial solution)다.`],
+      [R`언제나 정확히 2개의 해만 가진다.`,R`선형방정식의 해는 유일해(\(x=0\) 하나)이거나 무한히 많은 해 중 하나다.`]
+    ],
+    OX078:[
+      R`우변이 0이 아닌 비동차 연립선형방정식 \(Ax = b\)가 가질 수 있는 해의 개수 경우의 수는?`,
+      [R`유일해(1개), 무한히 많은 해, 해 없음(0개)의 세 가지 중 하나`,R`비동차 연립선형방정식은 계수행렬과 첨가행렬의 rank 관계에 따라 유일해, 무한해, 해 없음 중 하나가 된다.`],
+      [R`어떤 행렬이든 예외 없이 항상 유일해(1개)만 존재`,R`평행한 두 직선처럼 해가 없거나, 일치하는 직선처럼 해가 무한히 많을 수 있다.`],
+      [R`정확히 2개의 해 또는 정확히 3개의 해만 존재`,R`선형방정식 해집합은 아핀 부분공간이므로 해가 2개 이상이면 무한히 많다.`],
+      [R`상수항 \(b \ne 0\)이면 언제나 해가 없음(0개)`,R`\(A\)가 가역이거나 \(b\)가 \(A\)의 열공간에 속하면 해가 존재한다.`]
+    ],
+    OX079:[
+      R`연립방정식 \(Ax = b\)에서 계수행렬 \(A\)의 크기(\(m \times n\))만 알고 있을 때 해의 개수를 판정할 수 있는가?`,
+      [R`크기만으로는 결정할 수 없으며, 소거법을 통해 계수행렬과 첨가행렬의 피벗(rank)·모순 행 여부를 확인해야 한다.`,R`같은 크기의 행렬이라도 행들의 선형독립성(rank)과 우변 b와의 관계에 따라 유일해·무한해·해 없음이 달라진다.`],
+      [R`방정식 수와 미지수 수가 같으면(\(m = n\)) 원소 값과 무관하게 무조건 유일해다.`,R`\(m = n\)이어도 두 식이 평행하거나 중복되면 해가 없거나 무한히 많을 수 있다.`],
+      [R`행의 개수 \(m\)이 그대로 해의 개수와 일치한다.`,R`행의 개수는 방정식의 개수일 뿐 해의 개수가 아니다.`],
+      [R`열의 개수 \(n\)이 짝수이면 무한해이고 홀수이면 해가 없다.`,R`열의 홀짝 여부는 해의 존재성·유일성과 아무 관련이 없다.`]
+    ],
+    OX080:[
+      R`연립방정식을 풀 때 허용되는 3가지 '기본 행 연산(Elementary Row Operations)'으로 올바른 것은?`,
+      [R`두 행 교환, 한 행에 0이 아닌 상수배, 한 행에 다른 행의 상수배 더하기`,R`기본 행 연산은 두 행 바꾸기, 0 아닌 상수 곱하기, 다른 행의 상수배 더하기의 세 가지다(0배는 정보를 없애므로 불가).`],
+      [R`한 행에 0을 곱해 영행 만들기, 각 원소 제곱하기, 행과 열 바꾸기`,R`0을 곱하거나 제곱·전치하면 원래 방정식의 해집합이 깨진다.`],
+      [R`두 열을 서로 곱하기, 우변 벡터만 삭제하기, 대각원소에 상수 더하기`,R`열 연산이나 상수 단독 덧셈은 기본 행 연산이 아니며 해집합을 바꾼다.`],
+      [R`모든 행을 합쳐 하나의 식만 남기고 나머지 행 삭제하기`,R`독립적인 방정식들을 임의로 삭제하면 해집합이 커져 동치성이 깨진다.`]
+    ],
+    OX081:[
+      R`첨가행렬에 기본 행 연산을 적용했을 때 원래 연립방정식의 해집합은 어떻게 되는가?`,
+      [R`가역적인 동치 변환이므로 원래 연립방정식의 해집합이 완벽히 그대로 보존된다.`,R`기본 행 연산은 동치인 연립방정식으로 바꾸는 연산이므로 해집합을 변화시키지 않는다.`],
+      [R`연산을 한 번 적용할 때마다 해의 개수가 절반으로 줄어든다.`,R`기본 행 연산은 해집합을 그대로 유지하므로 해의 개수가 변하지 않는다.`],
+      [R`두 행을 교환하면 모든 미지수 해의 부호가 음(-)으로 바뀐다.`,R`방정식의 적힌 순서만 바뀔 뿐 미지수 해는 전혀 바뀌지 않는다.`],
+      [R`유일해가 있던 방정식이 항상 해가 없는 불능 방정식으로 바뀐다.`,R`기본 행 연산으로는 모순이 새로 생기거나 사라지지 않는다.`]
+    ],
+    OX082:[
+      R`행 사다리꼴(REF, Row Echelon Form) 행렬의 구조적 정의로 올바른 것은?`,
+      [R`영행은 맨 아래에 위치하고, 각 비영행의 선도원소(pivot)는 윗행 선도원소보다 오른쪽에 있어 피벗 아래가 모두 0인 계단형 구조다.`,R`REF는 영행이 아래에 모이고 각 행의 선도원소가 아래로 갈수록 오른쪽으로 이동하는 계단형 행렬이다.`],
+      [R`영행이 맨 위에 위치하고 아래로 갈수록 선도원소가 왼쪽으로 이동하는 구조다.`,R`영행의 위치와 선도원소의 이동 방향이 모두 반대다.`],
+      [R`모든 행의 첫 번째 열 원소가 예외 없이 1이어야 하는 구조다.`,R`같은 열에 피벗이 겹치면 피벗 아래가 0이 될 수 없으므로 REF가 아니다.`],
+      [R`주대각선 위의 원소는 모두 0이고 아래쪽 원소만 0이 아닌 하삼각 구조다.`,R`REF는 피벗 아래쪽이 0이 되는 상삼각·계단형 구조다.`]
+    ],
+    OX083:[
+      R`교안 원문 검산 기준으로, 행 사다리꼴(REF)과 기약 행 사다리꼴(RREF)에서 선도원소(pivot) 조건을 바르게 구분한 것은?`,
+      [R`REF의 선도원소는 0이 아닌 임의의 수이면 충분하고, 모든 선도원소가 반드시 1이고 피벗 열의 위·아래가 모두 0이어야 하는 것은 RREF의 조건이다.`,R`표준 정의에서 pivot=1과 피벗 열의 다른 원소가 모두 0인 조건은 REF보다 더 강한 RREF의 조건이다.`],
+      [R`REF에서는 선도원소가 반드시 1이어야 하지만 RREF에서는 1이 아니어도 된다.`,R`REF와 RREF의 강약 조건을 반대로 서술했다.`],
+      [R`REF와 RREF 모두 선도원소가 반드시 0이어야 한다.`,R`선도원소(leading entry)는 각 비영행에서 처음으로 나타나는 0이 아닌 원소다.`],
+      [R`REF는 피벗 열의 위쪽만 0이고 아래쪽은 0이 아니어야 한다.`,R`REF는 피벗 아래쪽이 모두 0이어야 한다.`]
+    ],
+    OX084:[
+      R`행 사다리꼴(REF)이면서 추가로 '각 비영행의 선도원소(pivot)가 1이고, 그 피벗이 속한 열의 나머지 원소가 모두 0'인 행렬 형태를 무엇이라 하는가?`,
+      [R`기약 행 사다리꼴 (RREF, Reduced Row Echelon Form)`,R`REF 조건에 더해 모든 피벗이 1이고 피벗 열의 위·아래 원소가 모두 0인 형태가 RREF다.`],
+      [R`일반 첨가행렬 (General Augmented Matrix)`,R`소거 전후를 불문하고 우변 벡터를 붙인 행렬을 뜻한다.`],
+      [R`반대칭 정방행렬 (Skew-symmetric Matrix)`,R`전치했을 때 부호가 반대가 되는 정방행렬이다.`],
+      [R`전치 공분산행렬 (Transpose Covariance Matrix)`,R`통계적 공분산을 담은 행렬로 소거 표준형 명칭이 아니다.`]
+    ],
+    OX085:[
+      R`연립방정식을 행 사다리꼴(REF)로 만든 뒤 후진대입(back-substitution)으로 푸는 방법과, 기약 행 사다리꼴(RREF)까지 진행해 해를 구하는 방법을 순서대로 바르게 짝지은 것은?`,
+      [R`REF + 후진대입: 가우스 소거법 — RREF까지 진행: 가우스–조던 소거법`,R`가우스 소거법은 REF까지 소거 후 후진대입하고, 가우스–조던 소거법은 피벗 위쪽까지 소거해 RREF를 만든다.`],
+      [R`REF + 후진대입: 가우스–조던 소거법 — RREF까지 진행: 가우스 소거법`,R`가우스 소거법과 가우스–조던 소거법의 도착 형태를 반대로 연결했다.`],
+      [R`REF + 후진대입: 고유값 분해 — RREF까지 진행: 최소제곱법`,R`고유값 분해와 최소제곱법은 소거법의 두 종류 구분이 아니다.`],
+      [R`REF + 후진대입: 베이즈 정리 — RREF까지 진행: 최대우도추정`,R`확률·통계 추론 기법으로 선형방정식 소거법 구분이 아니다.`]
+    ],
+    OX086:[
+      R`첨가행렬의 RREF에서 \([0\; 0\; \cdots\; 0 \mid c]\) (단, \(c \ne 0\))인 행이 나타났을 때 연립방정식의 해 판정은?`,
+      [R`좌변 0과 우변 \(c \ne 0\)이 같다는 모순(\(0 = c\))이 생기므로 해가 없다 (불능).`,R`계수가 모두 0인데 우변 상수가 0이 아니면 만족하는 미지수가 존재할 수 없어 해가 없다.`],
+      [R`모든 미지수가 자유변수가 되어 해가 무한히 많다.`,R`모순 행이 있으면 자유변수 유무와 관계없이 해가 존재하지 않는다.`],
+      [R`유일해 \(x = c\) 하나만 존재한다.`,R`\(0 = c\)는 모순식이므로 해가 될 수 없다.`],
+      [R`언제나 영벡터 \(x = 0\)을 해로 갖는다.`,R`\(x = 0\)을 대입하면 \(0 = c \ne 0\)이 되어 성립하지 않는다.`]
+    ],
+    OX087:[
+      R`첨가행렬의 RREF에 모순 행(\([0\cdots 0 \mid c], c\ne 0\))이 없고, 피벗이 없는 열에 대응하는 자유변수(free variable)가 존재할 때 해 판정은?`,
+      [R`자유변수에 임의의 실수를 줄 수 있으므로 해가 무한히 많다 (부정).`,R`모순이 없으면서 자유변수가 하나라도 존재하면 자유변수 값마다 해가 정해져 무수히 많은 해를 갖는다.`],
+      [R`모순 행이 없으므로 무조건 유일해(1개)만 존재한다.`,R`유일해가 되려면 모순 행이 없으면서 동시에 자유변수도 없어야 한다.`],
+      [R`자유변수가 존재하면 방정식이 불능이 되어 해가 없다.`,R`모순 행이 없으므로 해는 존재하며 무한히 많다.`],
+      [R`자유변수의 개수와 똑같은 유한 개의 해만 존재한다.`,R`실수 범위에서 자유변수에 무한히 많은 값을 넣을 수 있으므로 해는 무한히 많다.`]
+    ],
+    OX088:[
+      R`선형대수 교안(p.44–47 빈칸)에서 정방행렬 \(A\)가 가역(invertible)일 때, 역행렬의 성질과 연립방정식 \(Ax = b\)의 유일해 공식을 바르게 짝지은 것은?`,
+      [R`\(AA^{-1} = A^{-1}A = I,\quad x = A^{-1}b\)`,R`가역행렬 A는 역행렬과 곱해 항등행렬 I가 되며, 양변 왼쪽에 \(A^{-1}\)을 곱해 유일해 \(x = A^{-1}b\)를 얻는다.`],
+      [R`\(AA^{-1} = 0,\quad x = b A^{-1}\)`,R`역행렬의 곱은 영행렬이 아니라 항등행렬 I이며, 행렬곱 순서상 \(A^{-1}b\)여야 한다.`],
+      [R`\(AA^{-1} = I,\quad x = A^T b\)`,R`일반 가역행렬에서 역행렬 \(A^{-1}\)은 전치행렬 \(A^T\)와 같지 않다.`],
+      [R`\(AA^{-1} = A,\quad x = A b\)`,R`역행렬 정의와 해 공식이 모두 잘못되었다.`]
+    ],
+    OX089:[
+      R`선형대수 교안(p.46 빈칸)에서 \(2 \times 2\) 행렬 \(A = \begin{bmatrix}a & b \\ c & d\end{bmatrix}\)가 역행렬을 가질 조건과 그 역행렬 \(A^{-1}\) 공식은?`,
+      [R`\(ad - bc \ne 0\)일 때, \(A^{-1} = \dfrac{1}{ad-bc}\begin{bmatrix}d & -b \\ -c & a\end{bmatrix}\)`,R`행렬식 \(\det(A)=ad-bc \ne 0\)일 때만 가역이며, 주대각 원소를 바꾸고 비대각 원소에 음수를 붙여 행렬식으로 나눈다.`],
+      [R`\(ad - bc = 0\)일 때, \(A^{-1} = \begin{bmatrix}d & -b \\ -c & a\end{bmatrix}\)`,R`\(ad - bc = 0\)이면 분모가 0이 되어 역행렬이 존재하지 않는다(특이행렬).`],
+      [R`\(ad - bc \ne 0\)일 때, \(A^{-1} = \dfrac{1}{ad-bc}\begin{bmatrix}a & -b \\ -c & d\end{bmatrix}\)`,R`주대각 원소 \(a\)와 \(d\)의 위치를 서로 바꿔야 한다.`],
+      [R`\(a + d \ne 0\)일 때, \(A^{-1} = \dfrac{1}{a+d}\begin{bmatrix}-a & b \\ c & -d\end{bmatrix}\)`,R`대각합(trace)이 아니라 행렬식 \(ad - bc \ne 0\)이 가역 조건이다.`]
+    ],
+    OX090:[
+      R`선형대수 교안(p.45 검산 교정)에서 역행렬 정의를 \(AB = BA = Z\)로 표기한 부분에 대해, 기호 \(Z\)를 표준 수학 표기에 맞게 바로잡은 것은?`,
+      [R`역행렬과의 곱은 영행렬이 아니라 주대각 원소가 1인 항등행렬 \(I\)여야 한다 (\(AB = BA = I\)).`,R`교안 p.45의 Z 표기는 오탈자·비표준 표기이므로 항등행렬(단위행렬) I로 고쳐 읽어야 한다.`],
+      [R`역행렬과의 곱은 모든 원소가 0인 영행렬 \(O\)가 되는 것이 맞다.`,R`어떤 행렬에 영행렬이 아닌 역행렬을 곱해 영행렬이 되면 가역 정의에 모순된다.`],
+      [R`\(Z\)는 복소수 집합 기호이므로 스칼라 허수 \(i\)로 읽어야 한다.`,R`행렬곱의 결과는 정방행렬인 항등행렬 \(I\)다.`],
+      [R`\(Z\)는 잔차 제곱합(\(\mathrm{SSE}\))을 뜻하므로 스칼라 오차로 읽어야 한다.`,R`선형대수 역행렬 정의식이므로 항등행렬 \(I\)를 뜻한다.`]
+    ],
+    OX091:[
+      R`입력 벡터 \(x \in \mathbb{R}^n\)을 출력 벡터 \(T(x) = Ax \in \mathbb{R}^m\)으로 보내는 선형변환 \(T: \mathbb{R}^n \to \mathbb{R}^m\)의 표준 행렬 \(A\)의 크기는?`,
+      [R`\(A \in \mathbb{R}^{m \times n}\) (\(m\)행 \(n\)열)`,R`\(n\)차원 열벡터 \(x\)를 왼쪽에서 곱해 \(m\)차원 열벡터 \(Ax\)를 얻으려면 \(A\)는 \(m \times n\) 행렬이어야 한다.`],
+      [R`\(A \in \mathbb{R}^{n \times m}\) (\(n\)행 \(m\)열)`,R`\(n \times m\) 행렬에 \(n \times 1\) 벡터는 \(m \ne n\)일 때 곱할 수 없다.`],
+      [R`\(A \in \mathbb{R}^{n \times n}\) (\(n\)차 정방행렬)`,R`출력 차원이 \(m\)이므로 행의 개수는 \(m\)이어야 한다.`],
+      [R`\(A \in \mathbb{R}^{1 \times 1}\) (스칼라)`,R`다차원 선형변환은 \(m \times n\) 행렬로 표현된다.`]
+    ],
+    OX092:[
+      R`선형변환 \(T(x) = Ax\)가 단사(injective, 일대일)라는 것의 의미와 핵(\(\ker T = \{x \mid Ax = 0\}\))의 조건을 바르게 연결한 것은?`,
+      [R`서로 다른 입력이 같은 출력으로 갈 수 없으며, 영벡터로 가는 입력은 영벡터뿐이다 (\(\ker T = \{0\}\)).`,R`선형변환에서 일대일(단사) 조건은 \(Ax = 0\)의 해가 자명해 \(x = 0\)뿐이라는 조건(\(\ker T = \{0\}\))과 동치다.`],
+      [R`모든 입력이 하나의 상수 출력으로 모이며, 핵이 정의역 전체와 같다.`,R`영벡터가 아닌 벡터가 핵에 있으면 서로 다른 입력이 같은 출력으로 가므로 단사가 아니다.`],
+      [R`정의역 차원이 공역 차원보다 무조건 커야 하며 자유변수가 2개 이상 존재한다.`,R`자유변수가 존재하면 비영해가 생겨 단사가 될 수 없다.`],
+      [R`변환행렬 \(A\)가 모든 원소가 0인 영행렬이어야 한다.`,R`영행렬 변환은 모든 입력을 0으로 보내므로 단사가 아니다.`]
+    ],
+    OX093:[
+      R`선형대수 교안(p.50–54 검산 교정)과 관련하여, 2차원 입력을 1차원 출력으로 보내는 선형사상 \(T: \mathbb{R}^2 \to \mathbb{R}\)의 단사(일대일) 가능 여부는?`,
+      [R`정의역 차원(2)이 공역 차원(1)보다 크므로 핵(\(Ax=0\))에 자유변수와 비영벡터가 반드시 생겨 일반적인 단사가 될 수 없다.`,R`\(1 \times 2\) 행렬의 rank는 최대 1이므로 자유변수가 최소 1개 존재해 일대일(단사)이 될 수 없다.`],
+      [R`행렬의 두 원소가 모두 양수이기만 하면 \(\mathbb{R}^2 \to \mathbb{R}\) 선형사상은 항상 단사다.`,R`예컨대 \(T(x_1, x_2) = x_1 + x_2\)에서 \((1,-1)\)과 \((0,0)\)이 모두 0으로 가므로 단사가 아니다.`],
+      [R`공역 차원이 작을수록 핵의 차원이 줄어들어 항상 전단사가 된다.`,R`계수-퇴화차수 정리에 의해 정의역 차원이 공역 차원보다 크면 핵의 차원은 최소 \(2-1=1\)이다.`],
+      [R`선형사상은 차원과 무관하게 언제나 역함수가 존재한다.`,R`차원이 다른 공간 사이의 선형사상은 전단사가 될 수 없어 역변환이 존재하지 않는다.`]
+    ],
+    OX094:[
+      R`정방행렬 \(A\)의 고유벡터 \(v\)와 고유값 \(\lambda\)의 정의 조건 및 고유값을 구하는 특성방정식을 바르게 짝지은 것은?`,
+      [R`\(v \ne 0\)이고 \(Av = \lambda v\)를 만족하며, 고유값은 \(\det(A - \lambda I) = 0\)에서 구한다.`,R`고유벡터는 영벡터가 아닌(\(v \ne 0\)) 벡터여야 하며, \((A - \lambda I)v = 0\)이 비영해를 가질 조건인 \(\det(A - \lambda I) = 0\)으로 고유값을 찾는다.`],
+      [R`\(v = 0\)이고 \(Av = \lambda v\)를 만족하며, 고유값은 \(\det(A + \lambda I) = 1\)에서 구한다.`,R`영벡터는 모든 \(\lambda\)에 대해 식을 만족하므로 고유벡터 정의에서 반드시 제외(\(v \ne 0\))한다.`],
+      [R`\(v \ne 0\)이고 \(A^{-1} = \lambda I\)를 만족하며, 고유값은 \(\text{trace}(A) = 0\)에서 구한다.`,R`고유값 정의식과 특성방정식이 모두 잘못되었다.`],
+      [R`\(v \ne 0\)이고 \(A^T v = 0\)을 만족하며, 고유값은 \(\det(A) = \lambda\)로 구한다.`,R`행렬식 \(\det(A)\)는 모든 고유값의 곱일 뿐 개별 고유값 하나가 아니다.`]
+    ],
+    OX095:[
+      R`선형대수 교안(p.59 빈칸·검산 교정)의 행렬 \(A = \begin{bmatrix}2 & 6 \\ 5 & 3\end{bmatrix}\)에 대한 특성방정식과 고유값을 바르게 구한 것은?`,
+      [R`\(\det(A - \lambda I) = (2-\lambda)(3-\lambda) - 30 = \lambda^2 - 5\lambda - 24 = (\lambda - 8)(\lambda + 3) = 0 \;\Rightarrow\; \lambda = 8,\; -3\)`,R`상수항이 \(6 - 30 = -24\)이므로 인수분해하면 \((\lambda - 8)(\lambda + 3) = 0\)이 되어 고유값은 8과 -3이다(교안의 +3 표기는 부호 오류).`],
+      [R`\(\lambda^2 - 5\lambda - 24 = 0 \;\Rightarrow\; \lambda = 8,\; 3\)`,R`교안 끝에 적힌 8과 3은 \(-3\)의 음수 부호가 누락된 오탈자다(두 고유값의 합이 \(\text{trace}(A)=5\)여야 함).`],
+      [R`\(\lambda^2 - 5\lambda + 6 = (\lambda - 2)(\lambda - 3) = 0 \;\Rightarrow\; \lambda = 2,\; 3\)`,R`비대각 원소의 곱 \(6 \times 5 = 30\)을 빼지 않고 대각원소만 본 잘못된 식이다.`],
+      [R`\(\lambda^2 + 5\lambda - 24 = (\lambda + 8)(\lambda - 3) = 0 \;\Rightarrow\; \lambda = -8,\; 3\)`,R`일차항 계수의 부호가 반대로 계산되었다.`]
+    ],
+    OX096:[
+      R`일반 정방행렬에서 '서로 다른 고유값에 대응하는 고유벡터들'에 항상 보장되는 성질과, 실수 대칭행렬 같은 추가 조건에서 보장되는 성질을 순서대로 바르게 짝지은 것은?`,
+      [R`항상 보장: 선형독립 (Linearly Independent) — 대칭행렬 등 추가 조건 필요: 직교 (Orthogonal)`,R`서로 다른 고유값의 고유벡터는 항상 선형독립이지만, 서로 수직(직교)인 성질은 대칭행렬 같은 추가 조건이 있을 때 보장된다.`],
+      [R`항상 보장: 직교 (Orthogonal) — 추가 조건 필요: 선형독립 (Linearly Independent)`,R`일반 비대칭 행렬에서는 서로 다른 고유값의 고유벡터가 직교하지 않을 수 있다.`],
+      [R`항상 보장: 선형종속 (Linearly Dependent) — 추가 조건 필요: 영벡터 (Zero Vector)`,R`서로 다른 고유값의 고유벡터들은 선형종속이 아니라 선형독립이다.`],
+      [R`항상 보장: 길이의 합이 0 — 추가 조건 필요: 행렬식이 0`,R`고유벡터의 기본 성질과 무관한 설명이다.`]
+    ],
+    OX097:[
+      R`통계 기초에서 '관심 대상 전체', '실제로 관측한 일부', '그 표본을 고르는 절차'를 순서대로 바르게 부르는 용어는?`,
+      [R`모집단 (Population) — 표본 (Sample) — 표본추출 / 표집 (Sampling)`,R`관심 대상 전체는 모집단, 실제로 관측한 일부는 표본, 표본을 뽑는 절차는 sampling이다.`],
+      [R`표본 (Sample) — 모집단 (Population) — 전수조사 (Census)`,R`모집단과 표본의 순서가 바뀌었으며 전수조사는 전체를 모두 조사하는 것이다.`],
+      [R`추정량 (Estimator) — 기각역 (Rejection Region) — 정규화 (Normalization)`,R`추론통계의 다른 용어들로 모집단·표본·표집의 정의가 아니다.`],
+      [R`잔차 (Residual) — 오차 (Error) — 외삽 (Extrapolation)`,R`회귀분석 용어로 모집단과 표본의 정의가 아니다.`]
+    ],
+    OX098:[
+      R`관측치들이 i.i.d.(독립항등분포)라는 가정과 '표본이 모집단을 잘 대표한다'는 성질의 관계로 가장 적절한 것은?`,
+      [R`i.i.d.는 관측치 간 독립성과 동일분포 가정일 뿐, 표본이 목표 모집단을 대표하는지(선택편향 부재)는 별도로 점검해야 한다.`,R`특정 편향된 하위 집단 안에서만 i.i.d.로 뽑으면 전체 모집단에 대한 대표성은 깨질 수 있으므로 별개 문제로 확인해야 한다.`],
+      [R`관측치가 i.i.d.이면 어떤 방식으로 수집했든 모집단 대표성이 100% 자동으로 보장된다.`,R`i.i.d. 가정이 표본선택 편향(selection bias)의 부재를 자동으로 증명하지는 않는다.`],
+      [R`i.i.d.는 모든 표본 관측치의 숫자가 똑같은 상수여야 한다는 뜻이다.`,R`동일한 확률분포(identically distributed)에서 추출된다는 뜻이지 관측값 자체가 같다는 뜻이 아니다.`],
+      [R`i.i.d.가 성립하면 표본오차(sampling error)가 항상 0이 되어 모수와 표본통계량이 일치한다.`,R`i.i.d. 표본에서도 유한 표본에 따른 표본오차는 존재한다.`]
+    ],
+    OX099:[
+      R`관측한 데이터의 중심·산포·형태를 요약하는 통계와, 표본을 바탕으로 모집단의 모수나 관계를 추정·검정하는 통계를 순서대로 바르게 짝지은 것은?`,
+      [R`기술통계 (Descriptive Statistics) — 추론통계 (Inferential Statistics)`,R`기술통계는 관측 자료 자체를 요약하고, 추론통계는 표본으로부터 모집단의 모수나 가설을 추정·검정한다.`],
+      [R`추론통계 (Inferential Statistics) — 기술통계 (Descriptive Statistics)`,R`기술통계와 추론통계의 정의를 서로 반대로 연결했다.`],
+      [R`전수통계 (Census Statistics) — 결정론적 대수 (Deterministic Algebra)`,R`표본 요약과 모집단 추론의 구분 용어가 아니다.`],
+      [R`비지도 군집화 (Clustering) — 행렬 삼각분해 (LU Decomposition)`,R`머신러닝 및 선형대수 기법으로 기술·추론통계의 구분이 아니다.`]
+    ],
+    OX100:[
+      R`대푯값(중심경향치) 중 극단값(이상치)에 민감하게 영향받는 지표와, 상대적으로 극단값에 덜 민감하여 강건(robust)한 지표를 순서대로 바르게 짝지은 것은?`,
+      [R`극단값에 민감: 평균 (Mean) — 극단값에 강건: 중앙값 (Median)`,R`산술평균은 모든 값을 더하므로 극단값 하나에 크게 흔들리지만, 순서의 가운데 값인 중앙값은 극단값에 상대적으로 강건하다.`],
+      [R`극단값에 민감: 중앙값 (Median) — 극단값에 강건: 평균 (Mean)`,R`평균과 중앙값의 극단값 민감도를 반대로 연결했다.`],
+      [R`극단값에 민감: 사분위범위 (IQR) — 극단값에 강건: 표본분산 (\(s^2\))`,R`제곱합을 쓰는 표본분산이 극단값에 민감하고 IQR이 강건한 산포 지표다.`],
+      [R`극단값에 민감: 최빈값 (Mode) — 극단값에 강건: 범위 (\(\max - \min\))`,R`최댓값에서 최솟값을 빼는 범위(Range)는 극단값에 가장 민감한 지표다.`]
+    ],
+    OX101:[
+      R`사분위수에서 중앙값에 해당하는 기호와, 가운데 50% 자료의 퍼짐을 나타내는 사분위범위(IQR)의 공식은?`,
+      [R`중앙값: \(Q_2,\quad \mathrm{IQR} = Q_3 - Q_1\)`,R`제2사분위수 \(Q_2\)가 중앙값(50% 지점)이며, 제3사분위수와 제1사분위수의 차이 \(Q_3 - Q_1\)이 가운데 50% 범위인 IQR이다.`],
+      [R`중앙값: \(Q_1,\quad \mathrm{IQR} = Q_3 + Q_1\)`,R`\(Q_1\)은 하위 25% 지점이며 IQR은 합이 아니라 차이(\(Q_3 - Q_1\))다.`],
+      [R`중앙값: \(Q_3,\quad \mathrm{IQR} = Q_2 - Q_1\)`,R`\(Q_3\)은 상위 25%(75% 지점)이며 \(Q_2 - Q_1\)은 절반 구간뿐이다.`],
+      [R`중앙값: \(Q_0,\quad \mathrm{IQR} = \dfrac{Q_3}{Q_1}\)`,R`IQR은 나눗셈이 아니라 \(Q_3 - Q_1\)로 정의된다.`]
+    ],
+    OX102:[
+      R`표본 크기 \(n\)과 표본평균 \(\bar x\)로부터 계산하는 표본분산 \(s^2\)의 공식과 그 분모의 형태는?`,
+      [R`\(s^2 = \dfrac{1}{n-1}\sum_{i=1}^n (x_i - \bar x)^2\) (표본평균 추정으로 자유도 1을 사용하여 분모가 \(n-1\))`,R`편차의 합 \(\sum(x_i-\bar x)=0\) 제약 때문에 자유도가 \(n-1\)이 되며, \(n-1\)로 나누어야 모분산의 불편추정량이 된다.`],
+      [R`\(s^2 = \dfrac{1}{n-1}\sum_{i=1}^n (x_i - \bar x)\) (편차를 제곱하지 않고 합산)`,R`편차를 제곱하지 않고 더하면 양·음이 상쇄되어 항상 0이 된다.`],
+      [R`\(s^2 = \dfrac{1}{n+1}\sum_{i=1}^n (x_i + \bar x)^2\) (분모가 \(n+1\))`,R`분모와 편차의 부호가 모두 잘못되었다.`],
+      [R`\(s^2 = \sqrt{\dfrac{1}{n-1}\sum_{i=1}^n (x_i - \bar x)^2}\) (제곱근을 씌운 값)`,R`제곱근을 씌운 값은 분산 \(s^2\)이 아니라 표준편차 \(s\)다.`]
+    ],
+    OX103:[
+      R`분산(\(s^2\))에 제곱근을 씌운 표준편차(\(s = \sqrt{s^2}\))의 측정 단위에 대한 설명으로 올바른 것은?`,
+      [R`분산은 원자료 단위의 제곱을 갖지만, 표준편차는 제곱근을 취하므로 원자료와 동일한 단위를 갖는다.`,R`표준편차는 원자료와 단위가 같아 중심(평균) 주변의 퍼짐 크기를 원래 스케일로 직관적으로 해석할 수 있다.`],
+      [R`표준편차는 원자료 단위의 제곱을 갖고, 분산이 원자료와 같은 단위를 갖는다.`,R`분산과 표준편차의 단위 관계가 반대로 서술되었다.`],
+      [R`분산과 표준편차는 모두 단위가 약분되어 무차원(단위 없음)이다.`,R`표준화 점수(z-score)나 상관계수가 무차원이며 분산·표준편차는 단위를 갖는다.`],
+      [R`표준편차의 단위는 원자료 단위의 역수(\(1/\text{[단위]}\))다.`,R`제곱의 제곱근이므로 원자료 단위 그대로 돌아온다.`]
+    ],
+    OX104:[
+      R`상자그림(boxplot)에서 \(Q_1 - 1.5\,\mathrm{IQR}\) 밖이나 \(Q_3 + 1.5\,\mathrm{IQR}\) 밖에 찍힌 점들을 다루는 올바른 방법은?`,
+      [R`이상치 후보를 표시하는 경험적 기준이므로, 무조건 삭제하지 않고 측정 오류인지 드문 정상값인지 맥락을 먼저 확인한다.`,R`1.5 IQR 규칙은 탐색적 기준일 뿐 자동으로 오류임을 뜻하지 않으므로 도메인 맥락과 생성 원인을 점검해야 한다.`],
+      [R`수학적으로 100% 측정 오류로 확정된 값이므로 확인 없이 즉시 삭제한다.`,R`분포의 꼬리가 두껍거나 실제 중요한 극단 사례일 수 있으므로 즉시 삭제하면 정보 손실과 편향이 생길 수 있다.`],
+      [R`정상 범위 안의 데이터를 모두 버리고 \(1.5\,\mathrm{IQR}\) 밖의 점들만 남겨 회귀모형을 학습한다.`,R`극단치만으로 학습하면 전체 분포를 전혀 대표하지 못한다.`],
+      [R`상자그림의 수염 밖 점들은 모두 부호를 반대로 바꾸어 저장한다.`,R`데이터 값을 임의로 변조하면 분포가 왜곡된다.`]
+    ],
+    OX105:[
+      R`예를 들어 \([0, 1]\) 구간을 길이가 같은 10개 구간으로 나누었을 때 각 구간의 확률이 모두 \(1/10\)로 같아지는 것처럼, 같은 길이의 구간들이 동일한 확률을 갖는 분포는?`,
+      [R`균등분포 (Uniform Distribution)`,R`균등분포는 정의된 구간 안에서 밀도가 일정하여 길이가 같은 부분구간들이 모두 같은 확률을 갖는다.`],
+      [R`정규분포 (Normal Distribution)`,R`정규분포는 평균 근처의 밀도가 높고 양 끝 꼬리로 갈수록 밀도가 낮아져 구간 위치에 따라 확률이 다르다.`],
+      [R`지수분포 (Exponential Distribution)`,R`지수분포는 0 근처에서 밀도가 가장 높고 시간이 갈수록 지수적으로 감소한다.`],
+      [R`포아송분포 (Poisson Distribution)`,R`포아송분포는 이산적인 사건 횟수에 대한 분포다.`]
+    ],
+    OX106:[
+      R`연속형 정규분포에서 특정한 한 점 \(X = x_0\)이 관측될 확률과 구간 확률을 구하는 원리는?`,
+      [R`연속분포에서 특정 한 점의 확률 \(P(X = x_0)\)은 0이며, 확률은 구간의 면적(밀도함수의 적분)으로 구한다.`,R`연속확률변수에서는 단일 점의 면적이 0이므로 한 점 확률은 0이고, 항상 구간에 대한 적분 면적으로 확률을 정의한다.`],
+      [R`특정 한 점의 확률 \(P(X = x_0)\)은 확률밀도함수 값 \(f(x_0) > 0\)과 정확히 일치한다.`,R`밀도값 \(f(x_0)\)은 확률 자체가 아니라 단위 구간당 상대적 밀도다.`],
+      [R`평균점에서의 단일 점 확률 \(P(X = \mu)\)은 항상 0.5다.`,R`\(P(X \le \mu) = 0.5\)일 뿐 단일 점 \(P(X = \mu)\)의 확률은 0이다.`],
+      [R`연속분포에서도 모든 점의 확률을 합하면 표본 수 \(n\)이 된다.`,R`전체 구간에서 밀도함수를 적분한 전체 면적이 1이다.`]
+    ],
+    OX107:[
+      R`평균을 중심으로 좌우 대칭인 종 모양(bell-shaped)의 연속분포이며, 위치와 퍼짐이 평균과 분산으로 결정되는 분포는?`,
+      [R`정규분포 (Normal Distribution)`,R`정규분포(가우시안 분포)는 평균 중심 좌우 대칭 종 모양의 대표적인 연속확률분포다.`],
+      [R`지수분포 (Exponential Distribution)`,R`지수분포는 양수 영역에서 오른쪽으로 긴 꼬리를 갖는 비대칭 분포다.`],
+      [R`균등분포 (Uniform Distribution)`,R`균등분포는 종 모양이 아니라 높이가 일정한 직사각형 모양이다.`],
+      [R`베르누이분포 (Bernoulli Distribution)`,R`0과 1 두 값만 갖는 이산분포다.`]
+    ],
+    OX108:[
+      R`일정 구간에서 사건이 발생하는 '횟수(count)'를 나타내는 분포와, 일정한 발생률 아래 사건 사이의 '대기시간(waiting time)'을 나타내는 분포를 순서대로 바르게 짝지은 것은?`,
+      [R`사건 발생 횟수: 포아송분포 (Poisson) — 사건 간 대기시간: 지수분포 (Exponential)`,R`포아송분포는 고정 구간 내 사건 발생 횟수(이산형)를, 지수분포는 사건 간 대기시간(연속형)을 나타낸다.`],
+      [R`사건 발생 횟수: 지수분포 (Exponential) — 사건 간 대기시간: 포아송분포 (Poisson)`,R`포아송분포(횟수)와 지수분포(대기시간)의 역할을 서로 반대로 연결했다.`],
+      [R`사건 발생 횟수: 균등분포 (Uniform) — 사건 간 대기시간: 이항분포 (Binomial)`,R`균등분포와 이항분포는 사건 횟수·대기시간의 대표 짝이 아니다.`],
+      [R`사건 발생 횟수: 표준정규분포 — 사건 간 대기시간: 베르누이분포`,R`정규분포는 연속 실수 전체이고 베르누이는 단일 시행의 0/1 이산분포다.`]
+    ],
+    OX109:[
+      R`확률실험의 표본공간(sample space)의 각 결과를 실수(수치)에 대응시키는 함수를 무엇이라 정의하는가?`,
+      [R`확률변수 (Random Variable)`,R`확률변수는 표본공간의 각 결과를 실수 값에 매핑하는 함수로 정의한다.`],
+      [R`표본평균 (Sample Mean)`,R`관측된 수치들의 산술평균인 통계량이다.`],
+      [R`기각역 (Rejection Region)`,R`귀무가설을 기각하게 되는 검정통계량의 영역이다.`],
+      [R`공차한계 (Tolerance)`,R`다중공선성 진단에서 \(1 - R_j^2\)로 정의되는 지표다.`]
+    ],
+    OX110:[
+      R`같은 확률모형 식에서 '모수 \(\theta\)를 고정하고 가능한 자료를 변화시키며 보는 것'과 '관측자료를 고정하고 모수 \(\theta\)의 함수로 보는 것'을 순서대로 바르게 짝지은 것은?`,
+      [R`모수 \(\theta\) 고정·자료 변화: 확률 (Probability) — 관측자료 고정·\(\theta\) 변화: 우도 (Likelihood)`,R`확률은 모수 θ가 주어졌을 때 자료가 나올 가능성을 보고, 우도(가능도)는 관측자료를 고정한 채 모수 θ의 함수를 본다.`],
+      [R`모수 \(\theta\) 고정·자료 변화: 우도 (Likelihood) — 관측자료 고정·\(\theta\) 변화: 확률 (Probability)`,R`확률과 우도에서 고정하는 대상과 변화시키는 대상을 반대로 연결했다.`],
+      [R`모수 \(\theta\) 고정·자료 변화: 잔차 (Residual) — 관측자료 고정·\(\theta\) 변화: 사분위수 (Quartile)`,R`잔차와 사분위수는 확률·우도의 쌍대적 관점 구분이 아니다.`],
+      [R`두 개념 모두 자료와 모수를 동시에 상수로 고정하여 변화시키지 않는 값이다.`,R`무엇을 고정하고 무엇을 변수로 보는지의 방향 차이가 핵심이다.`]
+    ],
+    OX111:[
+      R`관측자료를 고정하고 모수 \(\theta\)의 함수로 보는 우도(Likelihood)에 대한 설명으로 올바른 것은?`,
+      [R`우도는 모수 \(\theta\)의 상대적 적합성을 비교하는 함수이며, \(\theta\)에 대한 확률분포가 아니므로 \(\theta\) 전체에서 합이나 적분이 1일 필요가 없다.`,R`가능도(우도)는 고정된 자료 아래서 모수 값을 변화시키며 비교하는 함수이므로 \(\theta\)에 대해 적분해 1이 되어야 하는 확률밀도가 아니다.`],
+      [R`우도는 모수 \(\theta\)에 대한 확률분포이므로 모든 가능한 \(\theta\)에 대해 적분하면 반드시 1이다.`,R`자료에 대해 적분하면 1이지만, 모수 \(\theta\)에 대해 적분하면 1이 될 필요가 없다.`],
+      [R`우도 값은 항상 음수(\(<0\))이므로 최댓값을 찾는 최대우도추정(MLE)이 불가능하다.`,R`확률·밀도에 기반하므로 우도는 0 이상이며 이를 최대화해 모수를 추정한다.`],
+      [R`우도는 관측된 표본 데이터와 무관하게 항상 상수 1의 값을 갖는다.`,R`관측자료에 따라 우도함수의 형태가 결정된다.`]
+    ],
+    OX112:[
+      R`통계와 머신러닝에서 '편향(bias)'이라는 용어가 쓰이는 세 가지 맥락(선택편향, 추정량의 편향, 모델의 귀납편향)에 대한 올바른 설명은?`,
+      [R`표본 수집의 왜곡(선택편향), 추정량 기댓값과 참값의 차이(\(E[\hat\theta]-\theta\)), 모델이 선호하는 가정(귀납편향)으로 서로 다른 문맥을 가진다.`,R`같은 'bias'라는 단어를 쓰더라도 표본선택, 통계적 추정량 성질, 모델 구조 가정이라는 서로 다른 의미를 구분해야 한다.`],
+      [R`세 가지 편향은 수식과 의미가 완전히 동일하므로 하나만 0이면 나머지도 자동으로 0이 된다.`,R`예를 들어 불편추정량(\(E[\hat\theta]=\theta\))을 써도 표본 자체가 편향되게 수집되었으면 선택편향이 발생한다.`],
+      [R`세 용어 모두 오직 선형회귀의 오차분산 \(\sigma^2\) 하나만을 가리킨다.`,R`오차분산은 산포(variance) 개념이며 세 가지 편향의 정의와 다르다.`],
+      [R`귀납편향은 설문 응답자의 거짓말만을 뜻하고 선택편향은 행렬의 전치를 뜻한다.`,R`귀납편향은 학습 알고리즘이 가진 사전 가정(예: 선형 관계 가정)을 뜻한다.`]
+    ],
+    OX113:[
+      R`편향–분산 트레이드오프(bias–variance trade-off)에서 모델이 지나치게 단순할 때와 지나치게 복잡할 때 나타나는 현상을 바르게 연결한 것은?`,
+      [R`단순한 모델: 높은 편향(bias)으로 과소적합 위험 / 지나치게 복잡한 모델: 높은 분산(variance)으로 과적합 위험`,R`모델이 너무 단순하면 참 관계를 표현하지 못해 편향이 크고(과소적합), 너무 복잡하면 표본 변화에 민감해져 분산이 커진다(과적합).`],
+      [R`단순한 모델: 높은 분산으로 과적합 위험 / 지나치게 복잡한 모델: 높은 편향으로 과소적합 위험`,R`모델 복잡도에 따른 편향·분산과 과소·과적합의 방향을 반대로 연결했다.`],
+      [R`모델이 복잡해질수록 편향과 분산이 동시에 0으로 줄어들어 과적합이 절대 일어나지 않는다.`,R`복잡도가 지나치게 높아지면 편향은 줄어도 분산이 급격히 커져 과적합이 발생한다.`],
+      [R`단순한 모델은 훈련 오차가 0이고 복잡한 모델은 훈련 오차가 무한대다.`,R`일반적으로 복잡한 모델일수록 훈련 자료에는 더 잘 맞아 훈련 오차가 작아진다.`]
+    ],
+    OX114:[
+      R`데이터에 내재된 우연한 잡음(noise / irreducible error)과 모델 복잡도의 관계에 대한 올바른 설명은?`,
+      [R`데이터에는 모델로 줄일 수 없는 우연한 잡음이 존재하므로, 모델을 복잡하게 만들어 학습자료를 완벽히 맞혀도 잡음을 외우게 되어 일반화가 보장되지 않는다.`,R`줄일 수 없는 본질적 오차가 있으므로 학습 적합도만 극대화하면 잡음까지 학습(과적합)하게 된다.`],
+      [R`모델을 충분히 복잡하게 만들면 새로운 테스트 데이터에 나타나는 우연한 잡음까지 언제나 100% 제거할 수 있다.`,R`관측 과정의 우연한 확률적 잡음은 어떤 모델로도 미래 데이터에서 완전히 제거할 수 없다.`],
+      [R`잡음이 클수록 규제화 없이 파라미터 수를 무한히 늘리는 것이 일반화에 항상 유리하다.`,R`잡음이 클수록 복잡한 모델은 잡음에 과적합되기 쉽다.`],
+      [R`우연한 잡음은 훈련 데이터의 표본 수 \(n\)이 3개 이하일 때만 존재하고 4개 이상이면 완전히 사라진다.`,R`표본 수가 늘어도 개별 관측치의 확률적 오차항(\(\varepsilon_i\)) 자체의 분산은 사라지지 않는다.`]
+    ],
+    OX115:[
+      R`두 확률변수의 '선형 관계의 방향과 강도'를 \([-1, 1]\) 범위의 수치로 요약하는 통계 지표는?`,
+      [R`Pearson 상관계수 (\(r\))`,R`피어슨 상관계수는 두 변수 간 선형 관계의 방향(부호)과 강도(절댓값)를 -1에서 1 사이로 요약한다.`],
+      [R`사분위범위 (\(\mathrm{IQR}\))`,R`IQR은 단일 변수의 가운데 50% 산포를 나타내며 음수가 될 수 없다.`],
+      [R`분산팽창지표 (\(\mathrm{VIF}\))`,R`VIF는 1 이상의 값을 가지며 다중회귀 설명변수 간 공선성을 진단한다.`],
+      [R`결정계수 (\(R^2\))`,R`절편 포함 OLS에서 \(R^2\)은 \([0, 1]\) 범위의 변동 설명 비율이며 음의 방향 부호를 직접 나타내지 않는다.`]
+    ],
+    OX116:[
+      R`두 변수의 Pearson 상관계수가 \(r = 0\)일 때 내릴 수 있는 가장 정확한 해석은?`,
+      [R`두 변수 사이에 선형 상관관계가 없다는 뜻일 뿐, 비선형 의존관계가 있을 수 있으므로 통계적 독립을 보장하지 않는다.`,R`예를 들어 \(Y = X^2\) (대칭 분포)이면 강한 비선형 종속 관계가 있어도 선형 상관계수 \(r = 0\)이 될 수 있다.`],
+      [R`두 변수는 어떤 비선형 관계도 없는 완전한 통계적 독립(independent)임이 보장된다.`,R`일반 분포에서 무상관(\(r=0\))은 독립의 필요조건일 뿐 충분조건이 아니다.`],
+      [R`두 변수의 평균과 분산이 모두 0이라는 뜻이다.`,R`공분산이 0일 때 \(r=0\)이 되며 개별 평균·분산은 0이 아니다.`],
+      [R`두 변수 사이에 완전한 양(+)의 직선 관계가 성립한다는 뜻이다.`,R`완전한 양의 직선 관계는 \(r = +1\)이다.`]
+    ],
+    OX117:[
+      R`두 변수 간 상관계수의 절댓값 \(|r|\)이 1에 가깝게 매우 클 때 인과관계 해석으로 올바른 것은?`,
+      [R`강한 선형 연관성이 있다는 뜻일 뿐, 제3의 교란변수·역인과·표본선택 문제 때문에 한 변수가 다른 변수의 원인임이 증명되지는 않는다.`,R`상관관계는 인과관계의 충분조건이 아니므로 상관계수 크기만으로 인과를 단정할 수 없다.`],
+      [R`상관계수 절댓값이 크면 추가 검토 없이 한 변수가 다른 변수의 원인임이 수학적으로 증명된다.`,R`아이스크림 판매량과 익사 사고처럼 기온이라는 교란변수 때문에 높은 상관이 나타날 수 있다.`],
+      [R`상관계수가 양수이면 X가 원인이고 음수이면 Y가 원인이다.`,R`피어슨 상관계수는 대칭적(\(r_{XY}=r_{YX}\))이므로 원인과 결과의 방향을 알려주지 않는다.`],
+      [R`상관계수가 크면 데이터에 이상치나 선택편향이 전혀 없다는 뜻이다.`,R`오히려 극단적인 이상치 하나가 상관계수를 인위적으로 크게 만들 수도 있다.`]
+    ],
+    OX118:[
+      R`변수 수 \(p\)가 표본 수 \(n\)에 비해 매우 큰 고차원(\(p \gg n\)) 상황에서 주로 발생하는 위험은?`,
+      [R`차원의 저주와 자유도 부족으로 인해 모형 추정이 불안정해지고 과적합(overfitting) 위험이 커진다.`,R`high-dimensional, low-sample-size 상황에서는 불필요한 변수와 공선성으로 인해 과적합과 추정 불안정이 심해진다.`],
+      [R`변수 수가 표본 수보다 많을수록 OLS 역행렬 \((X^T X)^{-1}\)이 항상 더 안정적으로 유일하게 존재한다.`,R`\(p > n\)이면 \(X^T X\)가 특이행렬(rank 부족)이 되어 일반 OLS 역행렬이 존재하지 않는다.`],
+      [R`표본 수가 적고 변수가 많을수록 일반화 오차가 자동으로 0에 수렴한다.`,R`훈련 데이터는 완벽히 맞히더라도 보지 않은 테스트 데이터에서의 일반화 오차는 크게 악화된다.`],
+      [R`다중공선성이 자동으로 사라져 모든 변수의 VIF가 1이 된다.`,R`변수 수가 표본 수보다 많으면 설명변수들 사이에 선형종속 관계가 반드시 발생한다.`]
+    ],
+    OX119:[
+      R`차원 축소 방법 중 원래 변수 중 일부를 그대로 고르는 기법과, 주성분분석(PCA)처럼 원변수의 조합으로 새 좌표를 만드는 기법을 순서대로 바르게 짝지은 것은?`,
+      [R`원변수 일부 선택: Feature Selection — 새 좌표 생성(PCA 등): Feature Extraction`,R`feature selection은 원래 변수 중 일부를 고르고, feature extraction(대표 예: PCA)은 원변수들의 조합으로 새로운 축·좌표를 만든다.`],
+      [R`원변수 일부 선택: Feature Extraction — 새 좌표 생성(PCA 등): Feature Selection`,R`Feature Selection과 Feature Extraction의 개념을 반대로 연결했다.`],
+      [R`원변수 일부 선택: Over-sampling — 새 좌표 생성(PCA 등): Under-sampling`,R`오버/언더샘플링은 클래스 불균형에서 표본(행) 비율을 조정하는 기법이다.`],
+      [R`원변수 일부 선택: Box–Cox 변환 — 새 좌표 생성(PCA 등): Cook's distance`,R`변수 분포 변환과 영향점 진단 지표로 차원 축소 구분이 아니다.`]
+    ],
+    OX120:[
+      R`클래스 불균형(imbalanced data) 문제를 완화하기 위한 over-sampling / under-sampling 적용 원칙으로 올바른 것은?`,
+      [R`재표본추출(over/under-sampling)은 학습 자료(train set)에만 적용하고, 검증·테스트 자료는 실제 평가 분포를 그대로 유지해야 한다.`,R`검증·테스트 자료까지 인위적으로 비율을 바꾸면 실제 현장 분포에서의 일반화 성능을 평가할 수 없고 데이터 누수가 발생할 수 있다.`],
+      [R`학습 자료와 검증·테스트 자료 모두에 동일하게 over-sampling을 적용해 1:1 비율로 만든 뒤 평가한다.`,R`평가용 데이터셋의 분포를 인위적으로 변형하면 실제 일반화 성능이 왜곡된다.`],
+      [R`학습 자료는 그대로 두고 오직 테스트 자료에만 over-sampling을 적용한다.`,R`재표본추출은 모델이 소수 클래스를 잘 학습하도록 학습 자료에 적용하는 기법이다.`],
+      [R`데이터 분할 전에 전체 데이터를 먼저 복제(over-sampling)한 뒤 무작위로 훈련·테스트로 나눈다.`,R`분할 전에 복제하면 동일한 복제 표본이 훈련과 테스트 양쪽에 들어가 심각한 데이터 누수가 발생한다.`]
+    ],
+    OX121:[
+      R`학습 데이터를 변형해 늘리는 데이터 증강(Data Augmentation)을 사용할 때 반드시 지켜야 할 원칙은?`,
+      [R`변형 후에도 정답 라벨의 본래 의미를 보존해야 하며, 평가(test) 자료를 늘리는 목적으로 사용해서는 안 된다.`,R`데이터 증강은 라벨 의미를 해치지 않는 유효한 변형이어야 하고, 평가 독립성을 위해 학습 자료에만 사용한다.`],
+      [R`라벨의 의미가 바뀌더라도 무작위 노이즈로 이미지를 완전히 알아볼 수 없게 깨뜨려야 한다.`,R`라벨 의미가 훼손되면 잘못된 감독 신호(noisy label)를 학습하게 된다.`],
+      [R`훈련 자료에는 쓰지 않고 오직 테스트 자료의 표본 수를 늘리는 데만 사용한다.`,R`테스트 자료는 실제 관측된 원본 분포의 독립 표본으로 유지해야 한다.`],
+      [R`증강된 데이터는 검증 과정 없이 모두 참 인과관계의 증거로 사용한다.`,R`증강은 일반화를 돕는 학습 기법이지 인과 증명 도구가 아니다.`]
+    ],
+    OX122:[
+      R`가설(모수) \(H\)와 관측 데이터 \(D\)에 대하여 사후확률 \(P(H \mid D)\)를 구하는 베이즈 정리(Bayes' Theorem) 수식으로 올바른 것은?`,
+      [R`\(P(H \mid D) = \dfrac{P(D \mid H)\,P(H)}{P(D)}\) (사후확률은 우도와 사전확률의 곱에 비례)`,R`베이즈 정리는 사전확률 P(H)와 우도 P(D|H)를 결합하고 증거 P(D)로 정규화하여 사후확률 P(H|D)를 구한다.`],
+      [R`\(P(H \mid D) = \dfrac{P(D)}{P(D \mid H)\,P(H)}\) (증거를 우도와 사전확률의 곱으로 나눔)`,R`분자와 분모가 완전히 뒤집힌 잘못된 식이다.`],
+      [R`\(P(H \mid D) = P(D \mid H) + P(H)\) (우도와 사전확률의 단순 합)`,R`조건부확률 갱신은 덧셈이 아니라 곱셈과 정규화로 이루어진다.`],
+      [R`\(P(H \mid D) = P(D \mid H)\) (사전확률과 무관하게 우도와 항상 일치)`,R`사전확률(예: 유병률)을 무시하면 기저율 오류에 빠진다.`]
+    ],
+    OX123:[
+      R`기초통계 강의에서 과적합을 줄이고 모델의 일반화(generalization) 성능을 돕는 방법으로 제시된 것들의 올바른 조합은?`,
+      [R`더 많은 대표성 있는 데이터 확보, 적절한 규제화 및 사전정보(prior) 활용, 라벨 의미를 보존하는 데이터 증강`,R`대표 데이터 확대, 규제화·사전정보 도입, 유효한 데이터 증강은 모두 과적합을 억제하고 일반화를 돕는 대표 방법이다.`],
+      [R`테스트 데이터를 훈련에 포함하기, 규제화 계수를 0으로 고정하기, 이상치 복제하기`,R`데이터 누수와 과적합을 유발하여 일반화를 해치는 행동들이다.`],
+      [R`표본 수를 최소로 줄이기, 무관한 변수를 대량 추가하기, 검증 단계 생략하기`,R`차원 저주와 과적합을 심화시켜 일반화 성능을 떨어뜨린다.`],
+      [R`훈련 오차가 0이 될 때까지 다항식 차수를 무한정 높이기`,R`훈련 자료의 잡음까지 외우는 전형적인 과적합 유발 방식이다.`]
+    ],
+    OX124:[
+      R`선형회귀 I 교안에서 반응변수 \(Y\)가 수치형(연속형)일 때와 범주형일 때의 문제를 구분하는 명칭은?`,
+      [R`수치형 \(Y\): 회귀 (Regression) — 범주형 \(Y\): 분류 (Classification)`,R`저장 형식이 숫자인지보다 값의 실질 의미가 연속 수치이면 회귀, 범주이면 분류로 구분한다.`],
+      [R`수치형 \(Y\): 분류 (Classification) — 범주형 \(Y\): 회귀 (Regression)`,R`회귀와 분류의 반응변수 자료형을 서로 반대로 연결했다.`],
+      [R`수치형 \(Y\): 군집화 (Clustering) — 범주형 \(Y\): 주성분분석 (PCA)`,R`군집화와 PCA는 정답 반응변수 Y를 사용하지 않는 비지도 기법이다.`],
+      [R`수치형 \(Y\): 행렬 전치 (Transpose) — 범주형 \(Y\): 가우스 소거 (Elimination)`,R`선형대수 연산 명칭으로 지도학습 문제 구분이 아니다.`]
+    ],
+    OX125:[
+      R`회귀모형에서 '단순회귀 vs 다중회귀'를 나누는 기준과 '선형회귀 vs 비선형회귀'를 나누는 기준을 바르게 구분한 것은?`,
+      [R`단순/다중: 설명변수 \(X\)의 개수(1개 vs 여러 개) — 선형/비선형: 미지 모수(\(\beta\))에 대한 결합 형태`,R`단순·다중은 입력 설명변수가 1개인지 2개 이상인지의 축이고, 선형·비선형은 모수 β가 선형결합으로 들어가는지의 축이다.`],
+      [R`단순/다중: 모수 \(\beta\)의 차수 — 선형/비선형: 설명변수 \(X\)의 개수`,R`두 구분 축의 기준을 서로 반대로 뒤바꿨다.`],
+      [R`단순/다중: 표본 수 \(n\)의 크기 — 선형/비선형: 오차항의 존재 여부`,R`표본 크기나 오차항 유무는 단순/다중, 선형/비선형 구분 기준이 아니다.`],
+      [R`두 구분 모두 오직 산점도에 찍힌 점의 개수만을 뜻하는 같은 기준이다.`,R`설명변수 개수 축과 모수 결합 형태 축은 서로 독립적인 분류 기준이다.`]
+    ],
+    OX126:[
+      R`모형 \(Y = \beta_0 + \beta_1 X + \beta_2 X^2 + \varepsilon\)에 \(X^2\) 항이 있음에도 이를 '선형회귀'로 분류하는 이유는?`,
+      [R`설명변수는 \(X^2\)로 변환되었지만 미지 회귀계수 \(\beta_0, \beta_1, \beta_2\)에 대해서는 여전히 1차 선형결합이기 때문`,R`선형회귀의 선형성은 설명변수 X의 거듭제곱 여부가 아니라 미지 모수 β들에 대해 선형인지로 판단한다.`],
+      [R`\(X\)에 어떤 수를 넣어도 \(X^2\)이 항상 직선 그래프를 그리기 때문`,R`\(X\)에 대한 그래프는 포물선(곡선)이지만 모수 \(\beta\) 공간에서 선형모형이다.`],
+      [R`\(\beta_2\)가 항상 0으로 추정되어 \(X^2\) 항이 자동으로 사라지기 때문`,R`\(\beta_2 \ne 0\)이어도 모수에 대해 선형이므로 다항 선형회귀모형에 속한다.`],
+      [R`오차항 \(\varepsilon\)이 더해져 있으면 모수 형태와 관계없이 무조건 선형회귀이기 때문`,R`예컨대 \(Y = \beta_0 + e^{\beta_1 X} + \varepsilon\)처럼 모수에 비선형이면 비선형회귀다.`]
+    ],
+    OX127:[
+      R`선형회귀(Linear Regression)에서 '선형(linear)'이라는 말이 의미하는 정확한 수학적 기준은?`,
+      [R`예측식이 미지의 회귀계수(모수 \(\beta\))들에 대해 선형결합(\(\partial E(Y\mid X)/\partial\beta_j\)가 \(\beta\)에 무관)이라는 뜻`,R`설명변수 X에 로그나 다항 변환이 있어도 미지 계수 β에 대해 1차 선형결합이면 선형회귀모형으로 다룬다.`],
+      [R`설명변수 \(X\)에 제곱항, 로그, 곱셈 교호작용 같은 변환이 절대 들어가면 안 된다는 뜻`,R`변환된 설명변수 \(Z_j = g_j(X)\)를 쓰더라도 \(\sum \beta_j Z_j\) 형태이면 선형회귀다.`],
+      [R`관측된 모든 데이터 점 \((x_i, y_i)\)가 잔차 없이 완벽하게 한 직선 위에만 놓여야 한다는 뜻`,R`개별 관측치는 오차 \(\varepsilon_i\) 때문에 직선 주변에 흩어져 나타난다.`],
+      [R`설명변수 \(X\)가 반드시 1개뿐이어야만 한다는 뜻`,R`설명변수가 여러 개여도 계수에 선형이면 다중선형회귀다.`]
+    ],
+    OX128:[
+      R`오차의 조건부 평균 0 가정(\(E(\varepsilon_i \mid X_i) = 0\)) 아래에서, 단순선형회귀의 체계적 부분 \(\beta_0 + \beta_1 X_i\)가 나타내는 것은?`,
+      [R`주어진 \(X_i\)에서 반응변수 \(Y_i\)의 조건부 평균 \(E(Y_i \mid X_i) = \beta_0 + \beta_1 X_i\)`,R`\(E(Y_i \mid X_i) = E(\beta_0 + \beta_1 X_i + \varepsilon_i \mid X_i) = \beta_0 + \beta_1 X_i\)이므로 회귀선은 조건부 평균을 나타낸다.`],
+      [R`주어진 \(X_i\)에서 반응변수 \(Y_i\)의 조건부 분산 \(\mathrm{Var}(Y_i \mid X_i)\)`,R`조건부 분산은 등분산 가정 아래 \(\sigma^2\)이다.`],
+      [R`오차항의 제곱합 \(\sum \varepsilon_i^2\)`,R`체계적 부분은 오차 제곱합이 아니라 조건부 기댓값 함수다.`],
+      [R`설명변수 \(X_i\)의 표본표준편차 \(s_X\)`,R`회귀선은 \(X_i\)가 주어졌을 때 반응변수 \(Y_i\)의 평균 수준을 나타낸다.`]
+    ],
+    OX129:[
+      R`단순선형회귀에서 기울기 \(\beta_1\)의 의미와 측정 단위를 바르게 설명한 것은?`,
+      [R`\(X\)가 1단위 증가할 때 조건부 평균 \(Y\)의 변화량이며, 단위는 \([Y]/[X]\)이다.`,R`기울기 \(\beta_1 = \Delta E(Y\mid X)/\Delta X\)이므로 X 1단위 증가당 평균 Y의 변화량이고 단위는 Y의 단위를 X의 단위로 나눈 \([Y]/[X]\)다.`],
+      [R`\(X = 0\)일 때 조건부 평균 \(Y\)의 값이며, 단위는 \([Y]\)이다.`,R`이는 기울기 \(\beta_1\)이 아니라 절편 \(\beta_0\)에 대한 설명과 단위다.`],
+      [R`\(Y\)가 1단위 증가할 때 \(X\)의 변화량이며, 단위는 \([X]/[Y]\)이다.`,R`설명변수와 반응변수의 변화 방향과 단위가 반대로 뒤집혔다.`],
+      [R`단위에 무관하게 항상 \(-1\)에서 \(+1\) 사이의 값을 갖는 무차원 상관계수다.`,R`회귀기울기 \(\beta_1\)은 단위를 가지며 \([-1,1]\) 범위로 제한되지 않는다.`]
+    ],
+    OX130:[
+      R`단순선형회귀에서 절편 \(\beta_0\)의 실질적 의미를 해석할 때 주의해야 할 점은?`,
+      [R`\(X = 0\)이 관측된 데이터 범위 밖이거나 현실적으로 불가능한 값(예: 키=0cm)이면 절편 수치 자체의 실질 해석은 제한된다.`,R`절편은 수식상 \(X=0\)에서의 조건부 평균이지만, \(X=0\)이 관측 범위 밖의 외삽이거나 물리적으로 불가능하면 직선의 높이를 맞추는 보정항 역할에 그친다.`],
+      [R`절편 \(\beta_0\)는 관측 범위와 무관하게 언제나 표본 전체의 평균 \(\bar y\)와 정확히 일치한다.`,R`중심화하지 않은 원래 변수 회귀에서 \(\hat\beta_0 = \bar y - \hat\beta_1 \bar x\)이므로 \(\bar x \ne 0\)이면 \(\bar y\)와 다르다.`],
+      [R`\(X = 0\)이 현실적으로 불가능하면 절편을 반드시 0으로 강제 제거해야만 OLS가 작동한다.`,R`절편을 유지해야 잔차 합이 0이 되고 관측 구간 내에서 직선의 높이가 올바르게 맞춰진다.`],
+      [R`절편의 단위는 언제나 설명변수의 단위 \([X]\)와 같다.`,R`절편 \(\beta_0\)는 \(Y\)와 더해지는 항이므로 단위는 \([Y]\)다.`]
+    ],
+    OX131:[
+      R`다중선형회귀 \(Y = \beta_0 + \beta_1 X_1 + \cdots + \beta_p X_p + \varepsilon\)에서 개별 회귀계수 \(\beta_j\)의 올바른 해석은?`,
+      [R`모형 안의 다른 설명변수들을 일정하게 고정한 상태(ceteris paribus)에서 \(X_j\)가 1단위 증가할 때 조건부 평균 \(Y\)의 변화량`,R`다중회귀의 계수는 다른 포함된 설명변수들을 고정한 조건부 관계로 해석하며, 인과효과를 자동으로 뜻하지는 않는다.`],
+      [R`다른 설명변수들을 고정하지 않고 모두 동시에 1단위씩 증가시킬 때 \(Y\)의 변화량`,R`모든 변수가 동시에 변할 때의 총합이 아니라 해당 변수 \(X_j\)만의 편미분(조건부) 변화량이다.`],
+      [R`나머지 변수들을 모형에서 전부 제외하고 \(X_j\) 하나만 넣은 단순회귀 기울기와 언제나 동일한 값`,R`설명변수들 사이에 상관이 있으면 다중회귀 계수 \(\beta_j\)는 단순회귀 기울기와 달라진다.`],
+      [R`관찰자료에서도 모든 미관측 교란변수가 자동 통제된 확정적 인과효과`,R`모형에 포함되지 않은 교란변수가 있으면 조건부 연관성일 뿐 인과효과가 자동 증명되지 않는다.`]
+    ],
+    OX132:[
+      R`회귀모형으로 미래 반응값 \(Y\)를 높은 정확도로 잘 예측했을 때, 설명변수의 인과효과(causality)에 대한 올바른 판단은?`,
+      [R`예측 성능이 높다는 것만으로 설명변수의 인과효과가 증명되지는 않으며, 예측 관계와 인과 추론은 목적과 필요 가정이 다르다.`,R`예측은 상관·연관 신호만으로도 잘 작동할 수 있으나, 개입(조작) 시 결과를 뜻하는 인과 추론은 별도의 조건이 필요하다.`],
+      [R`미래 값을 잘 예측하면 모형에 들어간 모든 설명변수가 \(Y\)의 직접 원인임이 수학적으로 증명된다.`,R`결과나 대리변수(proxy)를 넣어도 예측은 잘될 수 있으므로 인과 증명과 다르다.`],
+      [R`결정계수 \(R^2\)이 0.5를 넘으면 상관관계가 자동으로 인과관계로 전환된다.`,R`결정계수의 크기와 무관하게 관찰자료의 연관성은 인과를 자동 보장하지 않는다.`],
+      [R`회귀계수의 부호가 양(+)이면 인과관계이고 음(-)이면 단순 상관관계다.`,R`계수의 부호는 방향을 나타낼 뿐 인과성 여부와 무관하다.`]
+    ],
+    OX133:[
+      R`선형회귀 분석의 두 가지 주요 목적 중 '변수 관계와 계수의 의미를 이해하는 목적'과 '새 관측치의 \(Y\) 값을 맞히는 목적'을 순서대로 바르게 짝지은 것은?`,
+      [R`관계·계수 의미 이해: 추론 (Inference) — 새 관측치 \(Y\) 맞히기: 예측 (Prediction)`,R`같은 회귀모형을 쓰더라도 변수 관계와 계수 해석에 초점을 두면 추론이고, 새 관측치의 반응값을 맞히는 데 초점을 두면 예측이다.`],
+      [R`관계·계수 의미 이해: 예측 (Prediction) — 새 관측치 \(Y\) 맞히기: 추론 (Inference)`,R`추론과 예측의 정의를 서로 반대로 연결했다.`],
+      [R`관계·계수 의미 이해: 군집화 (Clustering) — 새 관측치 \(Y\) 맞히기: 차원축소 (PCA)`,R`군집화와 차원축소는 비지도학습 과업이다.`],
+      [R`관계·계수 의미 이해: 데이터 적재 (Load) — 새 관측치 \(Y\) 맞히기: 데이터 추출 (Extract)`,R`ETL 파이프라인 용어로 회귀의 추론·예측 목적 구분이 아니다.`]
+    ],
+    OX134:[
+      R`선형회귀에서 회귀식이 반응변수 \(Y\)의 조건부 평균 \(E(Y_i \mid X_i)\)을 나타내도록 보장하는 오차항의 기본 수식 가정은?`,
+      [R`오차의 조건부 평균이 0이라는 가정: \(E(\varepsilon_i \mid X_i) = 0\)`,R`\(E(\varepsilon_i \mid X_i) = 0\) 가정 아래 \(E(Y_i \mid X_i) = \beta_0 + \beta_1 X_i + E(\varepsilon_i \mid X_i) = \beta_0 + \beta_1 X_i\)가 성립한다.`],
+      [R`오차의 조건부 분산이 0이라는 가정: \(\mathrm{Var}(\varepsilon_i \mid X_i) = 0\)`,R`오차 분산이 0이면 확률적 변동이 전혀 없는 결정론적 직선이 된다.`],
+      [R`모든 관측치에서 설명변수 \(X_i = 0\)이라는 가정`,R`설명변수가 모두 0이면 회귀선을 아예 추정할 수 없다.`],
+      [R`오차항의 합이 표본 크기 \(n\)과 같다는 가정: \(\sum \varepsilon_i = n\)`,R`오차의 기댓값은 0으로 가정한다.`]
+    ],
+    OX135:[
+      R`설명변수 \(X\)의 값과 관계없이 오차의 조건부 분산이 일정하다(\(\mathrm{Var}(\varepsilon_i \mid X_i) = \sigma^2\))는 회귀 가정을 무엇이라 하는가?`,
+      [R`등분산성 (Homoscedasticity)`,R`\(X\) 값의 수준에 관계없이 오차항의 퍼짐(분산 \(\sigma^2\))이 일정하다는 가정이 등분산성이다.`],
+      [R`이분산성 (Heteroscedasticity)`,R`이분산성은 등분산성 가정이 깨져 오차 분산이 \(X\)나 적합값에 따라 달라지는 현상이다.`],
+      [R`다중공선성 (Multicollinearity)`,R`다중공선성은 설명변수들끼리 강한 선형 관계를 갖는 현상이다.`],
+      [R`자기상관성 (Autocorrelation)`,R`서로 다른 관측 오차 간에 상관이 존재하는 현상(독립성 위반)이다.`]
+    ],
+    OX136:[
+      R`선형회귀 오차항의 세 가지 가정인 독립성, 등분산성, 정규성이 각각 다루는 대상을 바르게 구분한 것은?`,
+      [R`독립성: 오차 간 관계 / 등분산성: 오차 퍼짐(\(\sigma^2\))의 일정성 / 정규성: 오차 분포의 형태`,R`독립성·등분산성·정규성은 하나의 가정이 아니라 오차 간 관계, 분산의 일정성, 분포 모양을 각각 규정하는 서로 다른 가정이다.`],
+      [R`독립성: 설명변수 간 무상관 / 등분산성: \(X\)의 평균 0 / 정규성: 반응변수 \(Y\)의 이진화`,R`오차 가정의 대상을 설명변수나 이진 변수로 잘못 연결했다.`],
+      [R`세 가지 모두 '잔차의 합이 0이다'라는 동일한 성질을 다른 이름으로 부르는 것이다.`,R`절편 포함 OLS에서 잔차 합 0은 대수적 성질이며 오차의 세 가지 확률 모형 가정과 다르다.`],
+      [R`정규성 하나만 만족되면 독립성과 등분산성은 어떤 데이터에서든 자동으로 성립한다.`,R`정규분포를 따르더라도 오차 간 자기상관이 있거나 분산이 달라도(이분산) 될 수 있으므로 별개 가정이다.`]
+    ],
+    OX137:[
+      R`선형회귀에서 오차의 정규성 가정(\(\varepsilon_i \sim N(0, \sigma^2)\))이 수행하는 역할로 가장 정확한 것은?`,
+      [R`OLS 계수 계산 자체에는 필수가 아니며, 특히 소표본에서 정확한 \(t\)·\(F\) 분포 기반 가설검정과 신뢰구간 추론을 정당화하는 데 쓰인다.`,R`최소제곱(OLS) 점추정 공식은 미분으로 구하므로 정규성이 없어도 계산 가능하며, 정규성은 정확한 소표본 추론 분포를 도출할 때 필요하다.`],
+      [R`정규성 가정이 없으면 최소제곱 공식 \(\hat\beta_1 = S_{xy}/S_{xx}\) 자체를 아예 계산할 수 없다.`,R`OLS 목적함수 최소화는 대수적·미분적 최적화이므로 오차 분포 형태와 무관하게 계산된다.`],
+      [R`정규성 가정은 가우스–마르코프 정리에서 BLUE(최소분산 선형불편추정량)를 증명할 때만 쓰이고 \(t\)검정과는 무관하다.`,R`BLUE 성질에는 정규성이 필요 없으며, 오히려 소표본 \(t\)·\(F\) 검정에 정규성이 쓰인다.`],
+      [R`정규성 가정은 오직 설명변수 \(X\)가 정규분포를 따라야 한다는 뜻이다.`,R`회귀의 정규성 가정은 설명변수 \(X\)가 아니라 오차항 \(\varepsilon_i\)(또는 조건부 \(Y_i\))에 대한 가정이다.`]
+    ],
+    OX138:[
+      R`회귀모형에서 모형 오차 \(\varepsilon_i\), 예측값 \(\hat y_i\), 잔차 \(e_i = y_i - \hat y_i\)의 구분으로 올바른 것은?`,
+      [R`오차 \(\varepsilon_i\)는 관측 불가능한 모집단 확률항이고, 예측값 \(\hat y_i\)는 적합 모형이 낸 값이며, 잔차 \(e_i\)는 적합 후 관측값에서 예측값을 뺀 차이(\(y_i - \hat y_i\))다.`,R`모집단 참 회귀선에 대한 오차 \(\varepsilon_i\)는 관측할 수 없고, 표본 회귀선을 적합한 뒤 계산하는 \(e_i = y_i - \hat y_i\)가 관측 가능한 잔차다.`],
+      [R`오차 \(\varepsilon_i\), 잔차 \(e_i\), 예측값 \(\hat y_i\)는 모두 표본에서 동일하게 관측되는 같은 값이다.`,R`세 양은 정의와 관측 가능 여부가 서로 다르다.`],
+      [R`잔차 \(e_i\)는 관측 불가능한 미지 모수이고, 오차 \(\varepsilon_i\)는 \(y_i - \hat y_i\)로 직접 계산하는 값이다.`,R`오차와 잔차의 정의를 서로 반대로 뒤바꿨다.`],
+      [R`예측값 \(\hat y_i\)는 항상 관측값 \(y_i\)와 일치하므로 잔차는 모든 점에서 0이다.`,R`관측점들이 직선 위에 완전히 놓이지 않는 한 개별 잔차 \(e_i\)는 0이 아니다.`]
+    ],
+    OX139:[
+      R`최소제곱법(OLS, Ordinary Least Squares)이 회귀계수를 추정할 때 최소화하는 목적함수는?`,
+      [R`잔차 제곱합 \(\mathrm{SSE} = \sum_{i=1}^n (y_i - \hat y_i)^2\)`,R`OLS는 각 관측값 \(y_i\)와 모형 예측값 \(\hat y_i\)의 차이인 잔차의 제곱합(SSE)을 최소화하는 계수를 찾는다.`],
+      [R`잔차 절댓값의 합 \(\sum_{i=1}^n |y_i - \hat y_i|\)`,R`절댓값 합 최소화는 최소절대편차(LAD/L1) 회귀이며 보통최소제곱법(OLS)은 제곱합을 최소화한다.`],
+      [R`회귀 제곱합 \(\mathrm{SSR} = \sum_{i=1}^n (\hat y_i - \bar y)^2\)`,R`SSR은 모형이 설명한 변동으로 이를 최소화하는 것이 아니다.`],
+      [R`잔차의 단순합 \(\sum_{i=1}^n (y_i - \hat y_i)\)`,R`단순합은 양·음 부호가 상쇄되어 목적함수로 쓸 수 없다.`]
+    ],
+    OX140:[
+      R`OLS에서 잔차를 그냥 합하지 않고 '제곱하여 합(\(\sum e_i^2\))'하는 이유로 올바른 것은?`,
+      [R`양·음 부호 상쇄를 방지하고, 큰 오차에 더 큰 벌점을 주며, 미분 가능한 목적함수로 최적화가 편리하기 때문`,R`제곱을 하면 부호 상쇄가 일어나지 않고 큰 잔차를 강하게 억제하며 미분을 통해 닫힌 해(정상방정식)를 구할 수 있다.`],
+      [R`제곱을 해야만 양수 잔차와 음수 잔차가 서로 상쇄되어 항상 0이 되기 때문`,R`제곱하면 모든 항이 0 이상이 되어 부호 상쇄가 방지된다.`],
+      [R`제곱을 하면 극단적 이상치(outlier)에 대한 벌점이 완전히 사라지기 때문`,R`오히려 제곱항 때문에 큰 잔차(이상치)에 더 큰 벌점이 부여된다.`],
+      [R`제곱합은 미분이 불가능하여 경사하강법이나 미분을 쓰지 않아도 되기 때문`,R`제곱합은 매끄러운 이차함수여서 미분이 매우 편리하다.`]
+    ],
+    OX141:[
+      R`음이 아닌 영역(\(\mathrm{SSE} \ge 0\))에서 잔차 제곱합 \(\mathrm{SSE}\)를 최소화하는 계수와 \(\sqrt{\mathrm{SSE}}\)를 최소화하는 계수(\(\arg\min\))의 관계는?`,
+      [R`제곱근 함수가 \(0\) 이상에서 단조증가하므로 두 목적함수는 정확히 같은 회귀계수에서 최소가 된다.`,R`최솟값의 수치 자체는 \(\mathrm{SSE}\)와 \(\sqrt{\mathrm{SSE}}\)가 다르지만, 최소가 되는 위치(argmin 계수 \(\hat\beta\))는 완전히 동일하다.`],
+      [R`\(\sqrt{\mathrm{SSE}}\)를 최소화하면 추정되는 기울기가 원래 OLS 기울기의 제곱근으로 바뀐다.`,R`단조증가 변환은 최적해 위치(argmin)를 바꾸지 않는다.`],
+      [R`\(\sqrt{\mathrm{SSE}}\)는 절편 \(\hat\beta_0\)를 항상 0으로 만든다.`,R`절편과 기울기 추정치 모두 \(\mathrm{SSE}\) 최소화 해와 동일하다.`],
+      [R`두 목적함수를 최소로 만드는 계수의 부호가 서로 정반대가 된다.`,R`같은 점에서 최소가 되므로 추정 계수는 부호와 크기가 모두 같다.`]
+    ],
+    OX142:[
+      R`선형회귀 I 교안(p.40 빈칸)에서 단순선형회귀의 OLS 기울기 \(\hat\beta_1\)과 절편 \(\hat\beta_0\) 추정 공식으로 올바른 것은? (단, \(S_{xy}=\sum(x_i-\bar x)(y_i-\bar y),\; S_{xx}=\sum(x_i-\bar x)^2\))`,
+      [R`\(\hat\beta_1 = \dfrac{S_{xy}}{S_{xx}},\quad \hat\beta_0 = \bar y - \hat\beta_1 \bar x\)`,R`편차곱합 \(S_{xy}\)를 \(X\)의 편차제곱합 \(S_{xx}\)로 나누어 기울기를 구하고, 회귀선이 \((\bar x, \bar y)\)를 지난다는 성질로 절편을 구한다.`],
+      [R`\(\hat\beta_1 = \dfrac{S_{xx}}{S_{xy}},\quad \hat\beta_0 = \bar x - \hat\beta_1 \bar y\)`,R`분자·분모와 \(\bar x, \bar y\)의 위치가 모두 반대로 뒤집혔다.`],
+      [R`\(\hat\beta_1 = \dfrac{S_{xy}}{S_{yy}},\quad \hat\beta_0 = \bar y + \hat\beta_1 \bar x\)`,R`분모는 \(S_{yy}\)가 아니라 \(S_{xx}\)이며 절편 공식의 부호는 마이너스(\(-\))다.`],
+      [R`\(\hat\beta_1 = \dfrac{\bar y}{\bar x},\quad \hat\beta_0 = S_{xy} - S_{xx}\)`,R`단순 평균의 비는 OLS 기울기 공식이 아니다.`]
+    ],
+    OX143:[
+      R`단순선형회귀에서 OLS 기울기 \(\hat\beta_1 = S_{xy}/S_{xx}\)가 유일하게 정의되고 추정되기 위한 설명변수 \(x_i\)의 필수 조건은?`,
+      [R`모든 \(x_i\)가 하나의 값으로 같지 않아 \(S_{xx} = \sum(x_i - \bar x)^2 > 0\)이어야 한다.`,R`모든 \(x_i\)가 같으면 \(S_{xx}=0\)이 되어 분모가 0이 되고 수직선상에만 점이 찍혀 기울기를 유일하게 식별할 수 없다.`],
+      [R`모든 관측치의 \(x_i\) 값이 서로 완전히 같아 \(S_{xx} = 0\)이어야 한다.`,R`\(S_{xx} = 0\)이면 \(X\)의 변동이 전혀 없어 기울기를 추정할 수 없다.`],
+      [R`설명변수의 표본평균 \(\bar x\)가 반드시 0이어야 한다.`,R`\(\bar x \ne 0\)이어도 \(S_{xx} > 0\)이면 기울기와 절편이 유일하게 추정된다.`],
+      [R`반응변수 \(y_i\)가 모두 음수여야만 기울기가 유일하게 정해진다.`,R`\(y_i\)의 부호는 기울기 식별 가능 여부와 무관하다.`]
+    ],
+    OX144:[
+      R`절편을 포함한 OLS 적합에서 정상방정식(Normal Equation) \(X^T(y - X\hat\beta) = 0\)이 나타내는 기하학적 의미는?`,
+      [R`잔차 벡터 \(e = y - X\hat\beta\)가 설계행렬 \(X\)의 각 열벡터(설명변수들)와 직교(내적이 0)한다.`,R`\(X^T e = 0\)은 잔차 벡터가 설계행렬 열공간과 수직(직교)임을 뜻하며, 상수항 열(1벡터)과의 직교로부터 \(\sum e_i = 0\)도 도출된다.`],
+      [R`잔차 벡터 \(e\)와 반응변수 벡터 \(y\)가 항상 서로 일치한다 (\(e = y\)).`,R`\(e = y - \hat y\)이며 잔차는 설계행렬 열공간 및 적합값 \(\hat y\)와 직교한다.`],
+      [R`설계행렬 \(X\)의 모든 설명변수 열들이 서로 자동으로 직교한다.`,R`정상방정식은 '잔차 벡터와 설명변수 열의 직교'를 뜻하며, 설명변수들끼리 직교한다는 뜻은 아니다.`],
+      [R`회귀계수 벡터 \(\hat\beta\)가 항상 영벡터(\(0\))가 된다.`,R`\(X^T e = 0\)에서 \(\hat\beta = (X^T X)^{-1} X^T y\)로 계수를 구한다.`]
+    ],
+    OX145:[
+      R`회귀 수식에서 '모집단의 미지 참 모수'와 '표본으로 계산한 추정량·추정치'를 구분하는 표준 기호 짝은?`,
+      [R`모집단 미지 모수: \(\beta\) (\(\beta_0, \beta_1\)) — 표본 추정량/추정치: \(\hat\beta\) (\(\hat\beta_0, \hat\beta_1\))`,R`모집단의 알 수 없는 참 계수는 \(\beta\)로 쓰고, 표본에서 최소제곱법 등으로 추정한 값은 모자(hat)를 씌워 \(\hat\beta\)로 구분한다.`],
+      [R`모집단 미지 모수: \(\hat\beta\) — 표본 추정량/추정치: \(\beta\)`,R`모수와 추정량의 기호 표기를 서로 반대로 연결했다.`],
+      [R`모집단 미지 모수: \(e_i\) — 표본 추정량/추정치: \(\varepsilon_i\)`,R`\(\varepsilon_i\)가 모집단 오차항이고 \(e_i\)가 표본 잔차다.`],
+      [R`모집단 미지 모수: \(s^2\) — 표본 추정량/추정치: \(\sigma^2\)`,R`\(\sigma^2\)이 모집단 오차분산이고 \(s^2\)이 표본 오차분산 추정량이다.`]
+    ],
+    OX146:[
+      R`설명변수 \(X\)의 측정 단위를 바꾸었을 때(예: \(\text{m} \to \text{cm}\)) 단순회귀 기울기 \(\hat\beta_1\)에 나타나는 변화는?`,
+      [R`기울기 단위가 \([Y]/[X]\)이므로 단위 변환 비율에 따라 기울기 수치는 바뀌지만, 두 변수 간 본질적 관계와 적합값·결정계수는 그대로 유지된다.`,R`단위가 바뀌면 기울기 숫자의 스케일은 변하지만 같은 선형 관계를 다른 단위로 표현한 것일 뿐이다.`],
+      [R`측정 단위를 바꾸면 기울기 수치와 단위가 모두 전혀 변하지 않는다.`,R`\(X\) 수치가 100배 커지면 기울기 \(\hat\beta_1\) 수치는 \(1/100\)배가 된다.`],
+      [R`단위를 바꾸면 선형성 가정이 깨지고 결정계수 \(R^2\)과 \(t\)통계량도 함께 바뀐다.`,R`단위(선형 스케일) 변환에 대해 적합값 \(\hat y_i\), 결정계수 \(R^2\), 기울기 \(t\)값은 불변이다.`],
+      [R`단위를 바꾸면 최소제곱해가 존재하지 않게 된다.`,R`0이 아닌 상수배 스케일 변환 후에도 최소제곱해는 유일하게 존재한다.`]
+    ],
+    OX147:[
+      R`관측된 \(X\)의 데이터 범위를 벗어난 영역에서 회귀선으로 반응값을 예측하는 것(외삽, extrapolation)에 대한 올바른 해석은?`,
+      [R`관측 범위 밖에서도 동일한 선형 관계가 유지된다는 추가 가정이 필요하므로, 범위 안 예측보다 신뢰도가 낮아 주의해야 한다.`,R`외삽(extrapolation)은 데이터가 없는 영역으로 직선을 연장하는 것이므로 비선형 전환 가능성 등으로 인해 주의가 필요하다.`],
+      [R`회귀직선은 모든 실수에서 정의되므로 관측 범위 밖 예측도 범위 안 예측과 언제나 동일한 신뢰도를 갖는다.`,R`관측 범위에서 멀어질수록 예측구간이 넓어지고 모형 형태 가정의 위험이 커진다.`],
+      [R`외삽 영역에서는 예측오차 분산이 0으로 줄어들어 가장 정확한 예측이 가능하다.`,R`표본평균 \(\bar x\)에서 멀어질수록 추정 불확실성과 표준오차가 오히려 커진다.`],
+      [R`관측 범위 밖의 \(X\) 값은 회귀식 \(\hat y = \hat\beta_0 + \hat\beta_1 x\)에 대입하는 것 자체가 대수적으로 불가능하다.`,R`대입 계산 자체는 가능하지만 그 결과의 실질적·통계적 신뢰도가 낮다는 점이 핵심이다.`]
+    ],
+    OX148:[
+      R`선형회귀 II에서 '표본의 함수로 정의된 추정 공식(확률변수)'과 '실제 표본 관측값을 대입해 얻은 구체적인 숫자'를 구분하는 용어는?`,
+      [R`표본의 함수(공식): 추정량 (Estimator) — 대입해 얻은 숫자: 추정치 (Estimate)`,R`추정량(estimator)은 표본 확률변수의 함수이고, 실제 관측 표본을 넣어 계산된 구체적 수치가 추정치(estimate)다.`],
+      [R`표본의 함수(공식): 추정치 (Estimate) — 대입해 얻은 숫자: 추정량 (Estimator)`,R`추정량과 추정치의 정의를 서로 반대로 연결했다.`],
+      [R`표본의 함수(공식): 참 모수 (Parameter) — 대입해 얻은 숫자: 기각역 (Critical Region)`,R`모수는 모집단의 고정된 미지 상수이며 표본의 함수가 아니다.`],
+      [R`표본의 함수(공식): 유의수준 (\(\alpha\)) — 대입해 얻은 숫자: 자유도 (\(\text{df}\))`,R`가설검정의 기준값과 자유도 용어로 추정량·추정치 구분이 아니다.`]
+    ],
+    OX149:[
+      R`모수를 '단 하나의 값'으로 추정하는 방법과, 추정의 불확실성을 반영해 '값의 범위'로 제시하는 방법을 순서대로 바르게 짝지은 것은?`,
+      [R`하나의 값 제시: 점추정 (Point Estimation) — 불확실성 반영 범위 제시: 구간추정 (Interval Estimation)`,R`점추정은 단일 수치를 제시하고, 구간추정(신뢰구간 등)은 표준오차를 이용해 불확실성을 반영한 범위를 제시한다.`],
+      [R`하나의 값 제시: 구간추정 (Interval Estimation) — 불확실성 반영 범위 제시: 점추정 (Point Estimation)`,R`점추정과 구간추정의 의미를 반대로 연결했다.`],
+      [R`하나의 값 제시: 가설검정 — 불확실성 반영 범위 제시: 차원축소`,R`점추정과 구간추정의 대비 개념이 아니다.`],
+      [R`하나의 값 제시: 비지도 군집화 — 불확실성 반영 범위 제시: 행렬 전치`,R`모수 추정 방식의 구분과 무관한 용어다.`]
+    ],
+    OX150:[
+      R`단순선형회귀에서 오차분산 \(\sigma^2\)의 불편추정량 \(s^2\)을 구하는 공식과 분모의 잔차 자유도는?`,
+      [R`\(s^2 = \dfrac{\mathrm{SSE}}{n - 2}\) (절편과 기울기 두 모수를 추정하므로 자유도가 \(n - 2\))`,R`단순선형회귀에서는 \(\hat\beta_0, \hat\beta_1\) 두 계수를 추정해 제약이 2개 생기므로 잔차 제곱합 SSE를 \(n-2\)로 나눈다.`],
+      [R`\(s^2 = \dfrac{\mathrm{SSE}}{n - 1}\) (자유도가 \(n - 1\))`,R`\(n - 1\)은 총제곱합(SST)이나 단일 표본분산의 자유도이며 단순회귀 잔차 자유도는 \(n - 2\)다.`],
+      [R`\(s^2 = \dfrac{\mathrm{SSR}}{n - 2}\) (회귀제곱합을 \(n - 2\)로 나눔)`,R`오차분산 추정의 분자는 설명변동 SSR이 아니라 잔차제곱합 SSE다.`],
+      [R`\(s^2 = \dfrac{\mathrm{SST}}{n}\) (총제곱합을 \(n\)으로 나눔)`,R`모형 적합 후 남은 잔차제곱합 SSE를 자유도 \(n-2\)로 나누어야 한다.`]
+    ],
+    OX151:[
+      R`단순회귀에서 오차분산 추정량 \(s^2 = \mathrm{SSE}/(n-2)\)과 잔차표준오차 \(s = \sqrt{s^2}\)의 측정 단위를 반응변수 \(Y\)의 단위와 비교한 것으로 올바른 것은?`,
+      [R`\(s^2\)은 분산이므로 단위가 \([Y]^2\)이고, 제곱근인 \(s\)가 반응변수 \(Y\)와 같은 단위 \([Y]\)를 갖는다.`,R`잔차 \(e_i\)의 단위가 \([Y]\)이므로 제곱합을 나눈 \(s^2\)의 단위는 \([Y]^2\)이고, \(s\)의 단위가 \([Y]\)다.`],
+      [R`\(s^2\)이 반응변수 \(Y\)와 같은 단위 \([Y]\)를 갖고, \(s\)는 단위가 없다.`,R`분산 \(s^2\)은 제곱 단위(\([Y]^2\))를 갖는다.`],
+      [R`\(s^2\)과 \(s\) 모두 설명변수 \(X\)의 단위 \([X]\)를 갖는다.`,R`잔차는 반응변수 \(Y\) 축 방향의 차이이므로 \([Y]\) 단위계를 따른다.`],
+      [R`\(s^2\)의 단위는 \([Y]/[X]\)이고 \(s\)의 단위는 \([X]/[Y]\)다.`,R`\([Y]/[X]\)는 기울기 \(\hat\beta_1\)의 단위다.`]
+    ],
+    OX152:[
+      R`가우스–마르코프 정리에서 OLS 추정량의 성질을 뜻하는 약자 BLUE의 올바른 풀이와 의미는?`,
+      [R`Best Linear Unbiased Estimator — 선형 불편추정량들 중에서 분산이 최소인 추정량`,R`BLUE는 가우스–마르코프 가정 아래 OLS가 선형(Linear)이고 불편(Unbiased)인 추정량들 중 가장 작은 분산(Best)을 갖는다는 뜻이다.`],
+      [R`Best Logistic Universal Estimator — 모든 비선형 분류 모형 중 정확도가 가장 높은 추정량`,R`BLUE는 로지스틱이나 비선형 모형이 아니라 선형 불편추정량에 관한 성질이다.`],
+      [R`Biased Linear Under-fitted Estimator — 편향이 크고 과소적합된 선형 추정량`,R`Unbiased(불편)이며 최소분산을 뜻하므로 정반대 풀이이다.`],
+      [R`Bounded Likelihood Uniform Estimator — 균등분포 우도를 상한으로 제한한 추정량`,R`우도나 균등분포 약자가 아니라 Best Linear Unbiased Estimator다.`]
+    ],
+    OX153:[
+      R`OLS 추정량이 BLUE(Best Linear Unbiased Estimator)라는 성질을 해석할 때 유의해야 할 비교 범위는?`,
+      [R`가정이 충족될 때 '선형이고 불편인 추정량' 범위 안에서 최소분산이라는 뜻이지, 가능한 모든(비선형·편향 포함) 추정량 중 언제나 최고라는 뜻은 아니다.`,R`다중공선성이 심할 때 약간의 편향을 허용해 분산을 크게 줄이는 Ridge 회귀처럼, 선형 불편추정량 밖에서는 다른 추정량이 더 나을 수 있다.`],
+      [R`가정 위반이나 다중공선성과 무관하게 세상의 모든 추정량 중에서 언제나 예측 오차가 가장 작다는 뜻이다.`,R`BLUE는 가우스–마르코프 가정과 '선형·불편'이라는 제약 범위 안에서만 최소분산을 보장한다.`],
+      [R`표본 크기 \(n\)이 커질수록 추정량의 분산이 무한대로 커진다는 뜻이다.`,R`Best는 분산이 최소라는 뜻이며 표본이 커지면 분산은 줄어든다.`],
+      [R`오직 절편이 없는 비선형 신경망 모형에서만 성립하는 성질이다.`,R`선형회귀의 OLS 추정량에 대한 고전적 성질이다.`]
+    ],
+    OX154:[
+      R`OLS 추정량이 BLUE가 되기 위한 조건에서 '오차의 정규성 가정'이 필수인지에 대한 올바른 설명은?`,
+      [R`가우스–마르코프 정리의 BLUE 성질에는 오차의 정규성이 필수가 아니며, 정규성은 정확한 소표본 \(t\)·\(F\) 추론에 사용된다.`,R`선형성, 조건부 평균 0, 등분산성, 오차 무상관(독립)만으로 BLUE가 성립하며 정규성은 소표본 표본분포 도출에 추가된다.`],
+      [R`오차의 정규성 가정이 없으면 OLS는 불편성을 잃어 절대 BLUE가 될 수 없다.`,R`불편성(\(E[\hat\beta]=\beta\))과 최소분산(BLUE)에는 정규성이 필요하지 않다.`],
+      [R`BLUE가 되려면 오차항이 반드시 포아송분포나 지수분포를 따라야 한다.`,R`특정 분포 형태가 아니라 1·2차 모멘트 조건(평균 0, 등분산, 무상관)이 핵심이다.`],
+      [R`오차의 정규성만 있으면 이분산성이나 자기상관이 심해도 무조건 BLUE가 된다.`,R`이분산성이나 오차 상관이 있으면 OLS는 최소분산(Best) 성질을 잃는다.`]
+    ],
+    OX155:[
+      R`단순선형회귀에서 기울기 추정량의 표준오차 \(SE(\hat\beta_1)\) 공식과, 이 표준오차가 커지거나 작아지는 요인은?`,
+      [R`\(SE(\hat\beta_1) = \dfrac{s}{\sqrt{S_{xx}}}\) — 오차 크기 \(s\)가 커지면 커지고, \(X\)의 퍼짐 \(S_{xx}\)가 커지면 작아진다.`,R`잔차 표준오차 \(s\)가 클수록 기울기 추정이 불확실해지고, 설명변수 \(X\)가 넓게 퍼져 \(S_{xx}\)가 클수록 직선 기울기가 정밀하게 추정된다.`],
+      [R`\(SE(\hat\beta_1) = s \cdot \sqrt{S_{xx}}\) — \(X\)의 퍼짐 \(S_{xx}\)가 커질수록 표준오차도 비례해서 커진다.`,R`\(\sqrt{S_{xx}}\)는 분모에 들어가므로 \(X\)의 퍼짐이 클수록 표준오차는 작아진다.`],
+      [R`\(SE(\hat\beta_1) = \dfrac{S_{xx}}{s}\) — 오차 크기 \(s\)가 커질수록 표준오차는 0으로 줄어든다.`,R`분자와 분모가 뒤바뀌었다.`],
+      [R`\(SE(\hat\beta_1) = \dfrac{\mathrm{SSR}}{n}\) — 설명변수의 분포와는 아무런 관련이 없다.`,R`기울기 표준오차는 \(s\)와 \(S_{xx}\)에 의해 결정된다.`]
+    ],
+    OX156:[
+      R`단순선형회귀에서 기울기 \(\beta_1\)의 양측 \((1-\alpha)\) 신뢰구간 공식은?`,
+      [R`\(\hat\beta_1 \pm t_{1-\alpha/2,\; n-2}\,SE(\hat\beta_1)\)`,R`단순회귀에서는 오차분산을 \(s^2 = \mathrm{SSE}/(n-2)\)로 추정하므로 자유도 \(n-2\)인 \(t\)분포 임계값을 사용한다.`],
+      [R`\(\hat\beta_1 \pm t_{1-\alpha,\; n}\,s^2\)`,R`양측구간이므로 \(\alpha/2\) 분위수와 자유도 \(n-2\)를 써야 하며, 분산 \(s^2\)이 아니라 표준오차 \(SE(\hat\beta_1)\)을 곱한다.`],
+      [R`\(\bar y \pm t_{1-\alpha/2,\; n-1}\,SE(\hat\beta_0)\)`,R`기울기 \(\hat\beta_1\)이 아니라 표본평균과 절편 표준오차를 섞은 잘못된 식이다.`],
+      [R`\(\hat\beta_1 \pm F_{1,\; n-2}\,\mathrm{SSE}\)`,R`신뢰구간 반폭에는 \(t\) 임계값과 표준오차의 곱을 사용한다.`]
+    ],
+    OX157:[
+      R`계산된 하나의 95% 신뢰구간에 대한 빈도주의(frequentist) 통계학의 올바른 해석은?`,
+      [R`같은 표본추출과 추정 절차를 반복했을 때 만들어지는 구간들의 약 95%가 고정된 참 모수 \(\beta_1\)을 포함한다는 장기적 포함률 해석이다.`,R`빈도주의에서 참 모수 \(\beta_1\)은 고정된 상수이고 표본마다 바뀌는 구간이 확률적이므로, 절차의 장기적 포함 비율이 95%라고 해석한다.`],
+      [R`고정된 참 모수 \(\beta_1\)이 확률변수처럼 움직여서 이번 구간 안에 들어올 확률이 95%라는 뜻이다.`,R`참 모수는 고정되어 있으므로 이미 계산된 하나의 구간은 참값을 포함하거나(1) 포함하지 않거나(0) 둘 중 하나다.`],
+      [R`관측된 표본 데이터 \((x_i, y_i)\)의 95%가 그 신뢰구간 사이에 찍힌다는 뜻이다.`,R`모수 \(\beta_1\)에 대한 신뢰구간이지 개별 관측값의 분포 범위가 아니다.`],
+      [R`귀무가설 \(H_0: \beta_1 = 0\)이 참일 확률이 정확히 95%라는 뜻이다.`,R`신뢰수준 95%는 귀무가설이 참일 확률을 뜻하지 않는다.`]
+    ],
+    OX158:[
+      R`선형회귀 II 교안(p.17, 23 빈칸)에서 단순회귀 기울기 양측검정의 귀무가설(\(H_0\))과 대립가설(\(H_1\))을 바르게 쓴 것은?`,
+      [R`\(H_0: \beta_1 = 0,\quad H_1: \beta_1 \ne 0\)`,R`설명변수 X와 반응변수 Y 사이에 선형 관계가 없다는 귀무가설(\(\beta_1=0\))을 선형 관계가 있다는 양측 대립가설(\(\beta_1\ne 0\))과 비교한다.`],
+      [R`\(H_0: \beta_1 \ne 0,\quad H_1: \beta_1 = 0\)`,R`등호(\(=\))가 포함된 기준 가설이 귀무가설 \(H_0\)이어야 한다.`],
+      [R`\(H_0: \hat\beta_1 = 0,\quad H_1: \hat\beta_1 \ne 0\)`,R`가설은 표본 추정치 \(\hat\beta_1\)이 아니라 모집단 미지 모수 \(\beta_1\)에 대해 세운다.`],
+      [R`\(H_0: \bar y = 0,\quad H_1: \bar x \ne 0\)`,R`표본평균이 아니라 모집단 기울기 모수 \(\beta_1\)에 대한 가설이다.`]
+    ],
+    OX159:[
+      R`선형회귀 II 교안(p.17, 23 빈칸)에서 귀무가설 \(H_0: \beta_1 = 0\)을 검정하는 \(t\) 통계량 공식은?`,
+      [R`\(t = \dfrac{\hat\beta_1}{SE(\hat\beta_1)}\) (일반식 \(\dfrac{\hat\beta_1 - \beta_{1,0}}{SE(\hat\beta_1)}\)에서 \(\beta_{1,0}=0\) 대입)`,R`추정치 \(\hat\beta_1\)이 귀무가설 값 0으로부터 표준오차 단위로 얼마나 떨어져 있는지를 계산한다.`],
+      [R`\(t = \dfrac{SE(\hat\beta_1)}{\hat\beta_1}\)`,R`분자와 분모가 뒤집힌 역수 형태다.`],
+      [R`\(t = \dfrac{\hat\beta_1}{\mathrm{SST}}\)`,R`분모는 총제곱합이 아니라 기울기의 표준오차 \(SE(\hat\beta_1)\)이다.`],
+      [R`\(t = \hat\beta_1 - SE(\hat\beta_1)\)`,R`나눗셈(표준화 비율)이 아니라 단순 뺄셈으로 잘못 쓴 식이다.`]
+    ],
+    OX160:[
+      R`가설검정에서 \(p\)값(\(p\)-value)의 정확한 정의는?`,
+      [R`귀무가설(\(H_0\))이 참이라고 가정했을 때, 관측된 값만큼 또는 그보다 더 극단적인 검정통계량이 나올 조건부 확률`,R`p값은 \(H_0\) 하에서 현재 자료 이상의 극단성이 관측될 확률이지, \(H_0\) 자체가 참일 확률이 아니다.`],
+      [R`관측된 데이터가 주어졌을 때 귀무가설(\(H_0\))이 참일 확률 \(P(H_0 \mid \text{Data})\)`,R`조건부의 방향을 반대로 해석한 대표적인 오개념이다.`],
+      [R`대립가설(\(H_1\))이 참일 때 제1종 오류가 발생할 확률`,R`제1종 오류는 귀무가설이 참일 때 이를 기각할 확률이다.`],
+      [R`회귀직선이 설명하지 못한 잔차 분산의 추정치 \(s^2\)`,R`\(p\)값은 검정통계량의 꼬리 확률이며 잔차 분산이 아니다.`]
+    ],
+    OX161:[
+      R`가설검정에서 \(p\)값과 유의수준 \(\alpha\)를 비교하여 귀무가설을 기각하는 판정 기준은?`,
+      [R`\(p\text{-value} < \alpha\)이면 귀무가설(\(H_0\))을 기각한다.`,R`귀무가설 아래서 관측될 확률(p값)이 미리 정한 기준(\(\alpha\))보다 작으면 귀무가설을 기각하고 통계적 유의성을 인정한다.`],
+      [R`\(p\text{-value} > \alpha\)이면 귀무가설(\(H_0\))을 기각한다.`,R`부등호 방향이 반대다. \(p > \alpha\)이면 귀무가설을 기각하지 못한다.`],
+      [R`\(p\text{-value}\)가 1에 가까울수록 귀무가설을 더 강하게 기각한다.`,R`\(p\)값이 작을수록(0에 가까울수록) 귀무가설에 반하는 근거가 강하다.`],
+      [R`유의수준 \(\alpha\)와 무관하게 \(p\text{-value} = 0.5\)이면 항상 기각한다.`,R`보통 \(\alpha = 0.05\) 등을 쓰며 \(p = 0.5\)이면 기각하지 않는다.`]
+    ],
+    OX162:[
+      R`기울기 검정에서 작은 \(p\)값(통계적 유의성)이 나왔을 때 해석상 주의할 점으로 가장 올바른 것은?`,
+      [R`통계적 유의성은 귀무가설(\(\beta_1=0\)) 기각 근거일 뿐, 실질적 효과 크기·실용성·인과성·모형 가정 타당성과는 별개이므로 함께 검토해야 한다.`,R`표본 수가 매우 크면 아주 작은 효과도 작은 p값을 낼 수 있고, 교란변수가 있으면 인과성도 보장되지 않는다.`],
+      [R`\(p\)값이 작으면 실질적 효과 크기가 매우 크고 인과관계까지 100% 증명된다.`,R`통계적 유의성(p값)과 효과 크기(기울기 크기·실무적 중요성) 및 인과성은 서로 다른 질문이다.`],
+      [R`\(p\)값이 작으면 잔차 진단이나 다중공선성 점검을 생략해도 모든 가정이 자동 충족된다.`,R`오히려 가정 위반(이분산·자기상관)으로 인해 표준오차와 p값이 왜곡되었을 수도 있으므로 진단을 해야 한다.`],
+      [R`작은 \(p\)값은 테스트 데이터에서의 예측 정확도가 100%임을 뜻한다.`,R`계수 하나의 유의성이 완벽한 미래 예측력을 보장하지는 않는다.`]
+    ],
+    OX163:[
+      R`선형회귀 II 교안(p.21 빈칸)의 ` + "`cars`" + R` 예제에서 점추정치 \(\hat\beta_0 = -17.5791,\; \hat\beta_1 = 3.9324\)를 바탕으로 쓴 추정 회귀식은?`,
+      [R`\(\hat y = -17.5791 + 3.9324x\)`,R`절편 추정치 \(-17.5791\)과 속도(x)의 기울기 추정치 \(3.9324\)를 결합한 점추정 회귀식이다.`],
+      [R`\(\hat y = 3.9324 - 17.5791x\)`,R`절편(\(\hat\beta_0\))과 기울기(\(\hat\beta_1\))의 위치가 서로 바뀌었다.`],
+      [R`\(\hat y = 6.7584 + 0.4155x\)`,R`점추정치가 아니라 각 계수의 표준오차(\(SE\))를 대입한 잘못된 식이다.`],
+      [R`\(\hat y = -2.601 + 9.464x\)`,R`점추정치가 아니라 \(t\) 통계량 값을 계수 자리에 넣은 잘못된 식이다.`]
+    ],
+    OX164:[
+      R`선형회귀 II 교안(p.22–23 빈칸)의 ` + "`cars`" + R` 예제에서 절편·기울기 표준오차와 기울기 \(t\) 통계량 값으로 올바른 것은? (단, \(\hat\beta_1 = 3.9324\))`,
+      [R`\(SE(\hat\beta_0) = 6.7584,\quad SE(\hat\beta_1) = 0.4155,\quad t = \dfrac{3.9324}{0.4155} \approx 9.464\)`,R`교안 p.22–23 빈칸 값으로, 기울기 추정치 3.9324를 그 표준오차 0.4155로 나누면 t값 약 9.464를 얻는다.`],
+      [R`\(SE(\hat\beta_0) = 0.4155,\quad SE(\hat\beta_1) = 6.7584,\quad t \approx 0.582\)`,R`절편과 기울기의 표준오차를 서로 바꿔 계산했다.`],
+      [R`\(SE(\hat\beta_0) = -17.5791,\quad SE(\hat\beta_1) = 3.9324,\quad t = 1.000\)`,R`점추정치를 표준오차와 혼동했다(표준오차는 음수가 될 수 없음).`],
+      [R`\(SE(\hat\beta_0) = 6.7584,\quad SE(\hat\beta_1) = 0.4155,\quad t = 3.9324 \times 0.4155 \approx 1.634\)`,R`\(t\) 통계량은 곱셈이 아니라 나눗셈(\(\hat\beta_1 / SE(\hat\beta_1)\))으로 구한다.`]
+    ],
+    OX165:[
+      R`선형회귀의 변동 분해에서 총변동(\(\mathrm{SST}\)), 설명된 변동(\(\mathrm{SSR}\)), 잔차변동(\(\mathrm{SSE}\))의 의미와 단위를 바르게 설명한 것은?`,
+      [R`\(\mathrm{SST}\)는 총변동, \(\mathrm{SSR}\)은 모형이 설명한 변동, \(\mathrm{SSE}\)는 설명되지 않은 잔차변동이며 모두 단위는 \([Y]^2\)이다.`,R`세 제곱합 모두 반응변수 Y의 편차를 제곱해 더한 양이므로 단위는 \(Y^2\)이다.`],
+      [R`\(\mathrm{SST}\)는 잔차변동, \(\mathrm{SSR}\)은 총변동, \(\mathrm{SSE}\)는 설명변동이며 단위는 \([X]\)이다.`,R`세 제곱합의 정의와 단위가 모두 잘못되었다.`],
+      [R`세 제곱합 모두 편차를 제곱하지 않고 더한 값이므로 항상 0이 된다.`,R`편차를 제곱하여 합산하므로 모두 0 이상의 값을 갖는다.`],
+      [R`\(\mathrm{SST}, \mathrm{SSR}, \mathrm{SSE}\)는 모두 단위가 없는 \([0, 1]\) 범위의 비율이다.`,R`비율인 것은 결정계수 \(R^2 = \mathrm{SSR}/\mathrm{SST}\)이며 제곱합 자체는 \([Y]^2\) 단위를 갖는다.`]
+    ],
+    OX166:[
+      R`제곱합 분해 등식 \(\mathrm{SST} = \mathrm{SSR} + \mathrm{SSE}\)가 성립하기 위한 표준 조건은?`,
+      [R`같은 학습자료에서 절편(\(\beta_0\))을 포함한 선형모형을 OLS로 적합했을 때 성립한다.`,R`정상방정식에 의해 교차항 \(\sum(\hat y_i - \bar y)(y_i - \hat y_i) = 0\)이 되려면 같은 학습자료의 절편 포함 OLS 적합이어야 한다.`],
+      [R`절편 없는 모형이나 학습에 쓰지 않은 외부 테스트 데이터에서도 언제나 항등식으로 성립한다.`,R`절편을 빼거나 별도 테스트 자료에서 평가하면 교차항이 0이 아니어서 \(\mathrm{SST} = \mathrm{SSR} + \mathrm{SSE}\)가 깨질 수 있다.`],
+      [R`오직 모든 잔차가 0(\(\mathrm{SSE} = 0\))일 때만 성립한다.`,R`\(\mathrm{SSE} > 0\)인 일반 데이터에서도 절편 포함 OLS이면 항상 성립한다.`],
+      [R`설명변수 \(X\)가 범주형 이진 변수일 때만 성립한다.`,R`설명변수의 연속·이산 여부나 개수 \(p\)에 관계없이 절편 포함 OLS에서 성립한다.`]
+    ],
+    OX167:[
+      R`절편 포함 OLS 회귀에서 결정계수 \(R^2\)의 계산 공식과 의미로 올바른 것은?`,
+      [R`\(R^2 = 1 - \dfrac{\mathrm{SSE}}{\mathrm{SST}} = \dfrac{\mathrm{SSR}}{\mathrm{SST}}\) — 학습자료 총변동 중 회귀모형이 설명한 비율`,R`총변동 SST 가운데 모형이 설명한 변동 SSR이 차지하는 비율(또는 1에서 미설명 비율 SSE/SST를 뺀 값)이다.`],
+      [R`\(R^2 = \dfrac{\mathrm{SSE}}{\mathrm{SST}} = 1 - \dfrac{\mathrm{SSR}}{\mathrm{SST}}\) — 모형이 설명하지 못한 잔차 비율`,R`\(\mathrm{SSE}/\mathrm{SST}\)는 미설명 비율이며 결정계수는 \(1 - \mathrm{SSE}/\mathrm{SST}\)다.`],
+      [R`\(R^2 = \dfrac{\mathrm{SST}}{\mathrm{SSR}}\) — 항상 1 이상의 값을 갖는 변동 배수`,R`분자와 분모가 뒤집혔으며 절편 포함 OLS 학습자료에서 \(R^2\)은 \(0 \le R^2 \le 1\)이다.`],
+      [R`\(R^2 = \dfrac{\mathrm{MSR}}{\mathrm{MSE}}\) — 자유도로 나눈 평균제곱의 비`,R`평균제곱의 비 \(\mathrm{MSR}/\mathrm{MSE}\)는 결정계수가 아니라 ANOVA \(F\) 통계량이다.`]
+    ],
+    OX168:[
+      R`선형회귀 모형의 학습 결정계수가 \(R^2 = 0.65\)로 나왔을 때 올바른 해석은?`,
+      [R`학습자료 반응변수 \(Y\)의 총변동 중 65%를 모형이 설명한다는 뜻이며, 미래 관측치를 65% 정확도로 맞힌다는 분류 정확도가 아니다.`,R`\(R^2\)은 학습자료의 제곱합 변동 설명 비율이지 분류 정확도(accuracy)나 미래 일반화 성능 보장이 아니다.`],
+      [R`새로운 미래 관측치 100개 중 정확히 65개를 오차 0으로 맞힌다는 뜻이다.`,R`회귀의 결정계수를 분류 정확도나 적중 확률로 오해한 설명이다.`],
+      [R`설명변수가 1단위 증가할 때 반응변수가 0.65단위 증가한다는 뜻이다.`,R`이는 결정계수가 아니라 회귀기울기 \(\hat\beta_1\)의 해석이다.`],
+      [R`귀무가설 \(\beta_1 = 0\)이 참일 확률(\(p\)-value)이 0.65라는 뜻이다.`,R`결정계수 \(R^2\)과 유의확률 \(p\)-value는 전혀 다른 지표다.`]
+    ],
+    OX169:[
+      R`같은 학습자료에서 기존 회귀모형에 설명변수를 추가할 때 일반 결정계수 \(R^2\)의 변화 성질은?`,
+      [R`추가된 변수의 계수를 0으로 둘 수 있어 최소제곱 \(\mathrm{SSE}\)가 커지지 않으므로, 일반 \(R^2\)은 절대 감소하지 않는다.`,R`같은 학습자료에서 변수를 추가하면 \(\mathrm{SSE}\)는 작아지거나 같고 \(\mathrm{SST}\)는 고정되어 일반 \(R^2\)은 감소하지 않는다(따라서 변수 추가의 자동 근거가 되지 못함).`],
+      [R`무관한 변수를 추가하면 일반 \(R^2\)은 반드시 큰 폭으로 감소한다.`,R`자유도 벌점이 없는 일반 \(R^2\)은 무관한 변수를 넣어도 감소하지 않고 오히려 소폭 증가할 수 있다.`],
+      [R`변수를 추가할 때마다 일반 \(R^2\)은 항상 정확히 절반으로 줄어든다.`,R`일반 \(R^2\)은 변수 추가 시 단조 비감소한다.`],
+      [R`설명변수가 2개 이상이면 일반 \(R^2\)은 항상 음수가 된다.`,R`절편 포함 OLS 학습자료에서 일반 \(R^2\)은 항상 \(0 \le R^2 \le 1\)이다.`]
+    ],
+    OX170:[
+      R`변수 수 \(p\)에 대한 자유도 벌점을 포함하여, 불필요한 변수를 추가하면 감소할 수도 있는 수정 결정계수(\(R_{\text{adj}}^2\))의 공식은?`,
+      [R`\(R_{\text{adj}}^2 = 1 - \dfrac{\mathrm{SSE}/(n-p-1)}{\mathrm{SST}/(n-1)}\)`,R`제곱합 대신 각각의 자유도(\(n-p-1\)과 \(n-1\))로 나눈 평균제곱 비율을 사용하여 변수 수 \(p\) 증가에 벌점을 준다.`],
+      [R`\(R_{\text{adj}}^2 = 1 - \dfrac{\mathrm{SSE}}{\mathrm{SST}}\) (자유도 보정 없음)`,R`자유도 보정이 없는 일반 결정계수 \(R^2\) 공식이다.`],
+      [R`\(R_{\text{adj}}^2 = 1 + \dfrac{p \cdot \mathrm{SSR}}{\mathrm{SST}}\) (변수 수를 곱해 더함)`,R`변수가 늘수록 무조건 커지는 잘못된 식이다.`],
+      [R`\(R_{\text{adj}}^2 = \dfrac{\mathrm{SST}/(n-1)}{\mathrm{SSE}/(n-p-1)}\)`,R`분자와 분모가 뒤집히고 \(1-\) 형태가 빠진 잘못된 식이다.`]
+    ],
+    OX171:[
+      R`"결정계수가 \(R^2 \ge 0.3\)이면 분야와 목적에 관계없이 항상 좋은 모델이다"라는 주장에 대한 올바른 판단은?`,
+      [R`모형의 좋고 나쁨은 분석 분야, 데이터의 본질적 잡음 수준, 목적, 검증 성능에 따라 달라지므로 \(0.3\) 같은 보편적 절대 기준은 없다.`,R`정밀 물리 계측에서는 0.9도 낮을 수 있고 인간 행동·금융 자료에서는 0.2도 의미 있을 수 있으므로 단일 임계값으로 단정하지 않는다.`],
+      [R`모든 학문과 산업 분야에서 \(R^2 = 0.3\)이 좋은 모델과 나쁜 모델을 가르는 절대 법칙이다.`,R`교안 원문 검산에서 확인했듯 \(0.3\)은 보편 기준이 될 수 없다.`],
+      [R`\(R^2 \ge 0.3\)이면 과적합이나 다중공선성이 전혀 없음을 보장한다.`,R`불필요한 변수를 많이 넣어 과적합되면 학습 \(R^2\)만 높아질 수 있다.`],
+      [R`결정계수는 오직 0.3 이하의 값만 가질 수 있도록 수학적으로 제한된다.`,R`결정계수는 최대 1까지 값을 가질 수 있다.`]
+    ],
+    OX172:[
+      R`다중선형회귀(\(p\)개 설명변수)의 ANOVA 전체 \(F\)검정에서 귀무가설(\(H_0\))과 대립가설(\(H_1\))은?`,
+      [R`\(H_0: \beta_1 = \beta_2 = \cdots = \beta_p = 0 \quad\text{vs}\quad H_1: \text{적어도 하나의 } \beta_j \ne 0\)`,R`절편을 제외한 모든 설명변수의 기울기가 동시에 0이라는 귀무가설과, 최소 한 변수는 선형 설명력이 있다는 대립가설을 비교한다.`],
+      [R`\(H_0: \beta_1 \ne \beta_2 \quad\text{vs}\quad H_1: \beta_1 = \beta_2 = \cdots = \beta_p = 0\)`,R`귀무가설과 대립가설의 역할이 반대다.`],
+      [R`\(H_0: \beta_0 = 0 \quad\text{vs}\quad H_1: \text{모든 } \beta_j \text{가 동시에 } 0\text{이 아님}\)`,R`절편 \(\beta_0\)은 귀무가설에 포함하지 않으며, 대립가설은 '모두 0이 아님'이 아니라 '적어도 하나가 0이 아님'이다.`],
+      [R`\(H_0: \mathrm{SST} = 0 \quad\text{vs}\quad H_1: \mathrm{SSE} = 0\)`,R`제곱합이 아니라 모집단 회귀계수 \(\beta_1, \dots, \beta_p\)에 대한 가설이다.`]
+    ],
+    OX173:[
+      R`다중회귀 ANOVA에서 설명변동의 평균제곱(\(\mathrm{MSR}\))과 잔차 평균제곱(\(\mathrm{MSE}\))을 비교하는 \(F\) 통계량 공식과 자유도는?`,
+      [R`\(F = \dfrac{\mathrm{SSR}/p}{\mathrm{SSE}/(n-p-1)}\) (분자 자유도 \(p\), 분모 자유도 \(n-p-1\))`,R`설명된 변동 SSR을 변수 수 p로 나눈 MSR을 잔차변동 SSE를 \(n-p-1\)로 나눈 MSE로 나눈 비율이다.`],
+      [R`\(F = \dfrac{\mathrm{SSE}/p}{\mathrm{SSR}/(n-p-1)}\) (분자와 분모 제곱합 반대)`,R`설명변동(SSR)이 분자, 잔차변동(SSE)이 분모에 와야 한다.`],
+      [R`\(F = \dfrac{\mathrm{SSR}/(n-1)}{\mathrm{SST}/p}\) (총제곱합과 자유도 혼동)`,R`분모는 SST가 아니라 SSE이며 자유도도 잘못되었다.`],
+      [R`\(F = \dfrac{\mathrm{SSR}}{\mathrm{SSE}}\) (자유도로 나누지 않은 제곱합의 단순 비)`,R`제곱합을 각각의 자유도 \(p\)와 \(n-p-1\)로 나눈 평균제곱의 비여야 한다.`]
+    ],
+    OX174:[
+      R`선형회귀 II 교안(p.42 빈칸·검산)에서 단순선형회귀(\(p=1\))의 기울기 양측 \(t\)검정 통계량과 전체 ANOVA \(F\)검정 통계량의 관계식 및 ` + "`cars`" + R` 예제(\(t \approx 9.464\))의 올바른 \(F\) 값은?`,
+      [R`\(F = t^2\) 관계가 성립하여 양측 \(p\)값이 일치하며, ` + "`cars`" + R` 예제의 \(F = 9.464^2 \approx 89.57\)이다.`,R`단순회귀(\(p=1\))에서는 전체 F검정과 기울기 양측 t검정이 동일한 귀무가설(\(H_0:\beta_1=0\))을 검정하므로 \(F = t^2 \approx 89.57\)이다(교안 p.42의 7.540은 오기).`],
+      [R`\(F = t\) 관계가 성립하며, ` + "`cars`" + R` 예제의 \(F\) 값은 \(9.464\)이다.`,R`제곱 관계인 \(F = t^2\)이 성립한다.`],
+      [R`\(F = \sqrt{|t|}\) 관계가 성립하며, ` + "`cars`" + R` 예제의 \(F\) 값은 \(3.076\)이다.`,R`\(t\)가 \(F\)의 제곱근 크기이고 \(F\)는 \(t\)의 제곱이다.`],
+      [R`단순회귀에서도 \(t\)와 \(F\) 사이에는 아무런 수식 관계가 없다.`,R`\(p=1\)일 때 \(F = \hat\beta_1^2 / SE(\hat\beta_1)^2 = t^2\)이 대수적으로 정확히 성립한다.`]
+    ],
+    OX175:[
+      R`잔차 대 적합값 그림(Residuals vs Fitted plot)에서 점들이 뚜렷한 곡선(\(U\)자 또는 뒤집힌 \(U\)자) 패턴을 보일 때 가장 먼저 의심할 가정은?`,
+      [R`선형성 (Linearity) 가정 위반`,R`선형식이 미처 설명하지 못한 체계적인 비선형 구조가 잔차에 남아 곡선 패턴으로 나타난 것이다.`],
+      [R`오차의 정규성 (Normality) 가정 충족`,R`곡선 패턴은 정규성 충족이 아니라 조건부 평균의 비선형성 신호다.`],
+      [R`설명변수 간 다중공선성 (Multicollinearity) 해소`,R`잔차 대 적합값의 곡선 패턴은 공선성 해소가 아니라 선형성 위반을 가리킨다.`],
+      [R`표본 크기 \(n\)의 무한대 발산`,R`표본 크기 문제가 아니라 모형의 함수 형태(선형성) 가정 문제다.`]
+    ],
+    OX176:[
+      R`잔차 대 적합값 그림에서 적합값이 커짐에 따라 잔차의 세로 퍼짐이 부채꼴(깔때기) 모양으로 커지거나 작아질 때 의심할 가정 위반은?`,
+      [R`등분산성 (Homoscedasticity) 위반 — 이분산성`,R`적합값 수준에 따라 잔차의 분산(퍼짐 폭)이 달라지는 부채꼴 패턴은 등분산성 위반(이분산성)의 전형적인 신호다.`],
+      [R`선형성 (Linearity) 위반 — 2차 다항식 누락`,R`평균 추세가 휘어지는 것은 선형성 위반이고, 퍼짐 폭이 변하는 부채꼴은 등분산성 위반이다.`],
+      [R`설명변수 간 완전 다중공선성`,R`다중공선성은 VIF 등으로 보며 잔차 퍼짐의 부채꼴 패턴은 이분산성을 뜻한다.`],
+      [R`절편 추정치의 불편성 충족`,R`가정 위반 신호인 이분산성 패턴이다.`]
+    ],
+    OX177:[
+      R`오차의 정규성(Normality) 가정을 점검하기 위해 잔차의 분위수와 이론적 정규분포 분위수가 직선에 가깝게 놓이는지 비교하는 그림은?`,
+      [R`잔차 Q–Q plot (Normal Quantile–Quantile plot)`,R`정규성은 잔차 Q–Q plot의 점들이 기준 직선에서 체계적으로 벗어나는지(및 보조적으로 잔차 히스토그램)로 점검한다.`],
+      [R`설명변수 쌍별 산점도 행렬 (Scatterplot Matrix of \(X\))`,R`설명변수 간 관계를 볼 뿐 잔차의 정규분포 적합도를 직접 비교하는 분위수 그림이 아니다.`],
+      [R`시간 순서별 적합값 막대그래프`,R`시간 순서 패턴은 독립성과 관련되며 분위수 직선 비교는 Q–Q plot이다.`],
+      [R`분산팽창지표(VIF) 수평선 그래프`,R`VIF는 다중공선성 지표로 잔차 정규성 그림이 아니다.`]
+    ],
+    OX178:[
+      R`관측 순서나 시간에 따라 그린 잔차 그림에서 같은 부호(양수끼리 또는 음수끼리)가 연속적으로 이어지는 패턴이 보일 때 의심할 가정 위반은?`,
+      [R`오차의 독립성 (Independence) 위반 — 잔차 자기상관`,R`시간·공간·군집 순서에 따라 잔차가 연속적으로 같은 부호를 띠거나 주기성을 보이면 오차 간 독립성(무상관성) 위반을 의심한다.`],
+      [R`오차의 등분산성 완전 충족`,R`순서에 따른 부호 군집 현상은 오차 간 자기상관(독립성 위반) 신호다.`],
+      [R`설명변수 개수의 부족`,R`시계열적·군집적 오차 상관 문제로 오차 독립성 위반에 해당한다.`],
+      [R`결정계수 \(R^2 = 1\) 달성`,R`잔차가 존재하고 자기상관을 보이는 상태다.`]
+    ],
+    OX179:[
+      R`잔차 그림에서 잔차가 0 주변에 특별한 패턴 없이 무작위로 흩어져 보일 때의 해석으로 가장 올바른 것은?`,
+      [R`뚜렷한 가정 위반 신호가 보이지 않는다는 진단 근거일 뿐, 모든 회귀 가정이 수학적으로 참임이 증명된 것은 아니다.`,R`시각적 진단은 명백한 위반 징후를 걸러내는 도구이지 모집단 가정이 100% 참임을 수학적으로 증명하는 정리가 아니다.`],
+      [R`선형성·등분산성·정규성·독립성 등 모든 회귀 가정이 수학적으로 100% 증명된다.`,R`잔차 그림 하나에 패턴이 없다고 해서 모든 가정이 완전 증명되지는 않는다.`],
+      [R`모형이 과적합되어 테스트 오차가 무한대라는 뜻이다.`,R`0 주변의 무작위 산포는 오히려 선형성·등분산성 면에서 바람직한 진단 모습이다.`],
+      [R`기울기 \(\beta_1\)이 반드시 0이라는 뜻이다.`,R`기울기 효과를 적합값 \(\hat y\)로 설명하고 남은 잔차가 무작위로 흩어진 것이다.`]
+    ],
+    OX180:[
+      R`정규성 위반과 등분산성 위반을 각각 구분하여 진단할 때 사용하는 도구의 올바른 연결은?`,
+      [R`등분산성(퍼짐 변화)은 잔차–적합값 그림으로, 정규성(분포 형태)은 잔차 Q–Q plot 등으로 목적에 맞게 함께 점검한다.`,R`잔차 그림 하나만으로 모든 위반을 구분하기보다, 퍼짐 변화는 잔차–적합값 그림, 분위수 분포 모양은 Q–Q plot을 함께 사용한다.`],
+      [R`어떤 그림이든 딱 하나만 보면 정규성과 등분산성, 다중공선성을 항상 완벽하게 구분할 수 있다.`,R`각 가정 위반이 드러나는 진단 도구가 다르므로 목적에 맞는 그림과 지표를 함께 봐야 한다.`],
+      [R`등분산성은 VIF 수치로만 진단하고, 정규성은 행렬의 계수(rank)로만 진단한다.`,R`VIF와 rank는 설명변수 행렬의 공선성·선형독립 관련 지표다.`],
+      [R`두 가정 모두 오직 표본평균 \(\bar y\)의 부호 하나로 구분한다.`,R`\(\bar y\)의 부호는 오차 가정 진단과 무관하다.`]
+    ],
+    OX181:[
+      R`선형회귀 III 교안에서 비선형성이나 오차 분산 불안정(이분산성)을 완화하기 위해 반응변수나 설명변수에 검토할 수 있는 변환 후보들은?`,
+      [R`로그 변환(\(\log\)), 제곱근 변환(\(\sqrt{\cdot}\)), Box–Cox 변환`,R`왜도가 크거나 분산이 평균에 비례해 커질 때 로그·제곱근·Box–Cox 거듭제곱 변환으로 선형성과 등분산성을 개선할 수 있다.`],
+      [R`첨가행렬 행 교환 및 가우스–조던 소거`,R`연립방정식 풀이법으로 비선형·이분산 완화 변환이 아니다.`],
+      [R`테스트 데이터 복제 및 라벨 무작위 섞기`,R`평가를 오염시키거나 관계를 파괴하는 잘못된 작업이다.`],
+      [R`유의수준 \(\alpha\)를 0.99로 높이기`,R`검정 기준만 바꿀 뿐 데이터의 비선형성이나 이분산성을 완화하지 못한다.`]
+    ],
+    OX182:[
+      R`잔차 그림에서 뚜렷한 곡선 패턴(비선형성)이 관찰될 때 모형 설계 측면에서 검토할 수 있는 대응은?`,
+      [R`제곱항 등 다항항(\(X^2\) 등) 추가나 누락된 중요 변수·변수 변환 검토`,R`선형식만으로 부족한 곡선 구조를 반영하기 위해 다항항 추가, 변수 변환, 누락변수 포함 등을 검토한다.`],
+      [R`모든 설명변수를 제거하고 상수 절편만 남기기`,R`설명변수를 모두 빼면 곡선 관계를 전혀 설명하지 못한다.`],
+      [R`잔차 제곱합 대신 잔차의 단순합을 목적함수로 바꾸기`,R`단순합은 부호가 상쇄되어 회귀 추정에 쓸 수 없다.`],
+      [R`표본에서 잔차가 양수인 관측치만 모두 삭제하기`,R`데이터를 인위적으로 편향 삭제하면 모형이 완전히 왜곡된다.`]
+    ],
+    OX183:[
+      R`'오차의 독립성 가정'과 '설명변수 간 다중공선성'을 바르게 구분한 설명은?`,
+      [R`오차 독립성은 관측 오차(\(\varepsilon_i\))들 사이의 독립·무상관 가정이고, 다중공선성은 설명변수(\(X_j\))들 사이의 강한 선형 관계 문제다.`,R`오차항끼리의 상관(자기상관)과 입력 설명변수끼리의 상관(다중공선성)은 대상이 전혀 다른 별개의 개념이다.`],
+      [R`오차의 독립성은 설명변수 \(X\)들끼리 상관이 없어야 한다는 가정과 완전히 같은 말이다.`,R`두 개념의 대상을 혼동한 대표적인 오개념이다.`],
+      [R`다중공선성은 시계열 잔차의 주기적 패턴만을 뜻하고 오차 독립성은 \(\mathrm{VIF} > 10\)을 뜻한다.`,R`두 개념의 진단 현상을 서로 반대로 뒤바꿨다.`],
+      [R`오차 독립성이 만족되면 설명변수 간 상관계수는 자동으로 0이 된다.`,R`오차항이 서로 독립이어도 설명변수들끼리는 강하게 상관될 수 있다.`]
+    ],
+    OX184:[
+      R`다중선형회귀에서 다중공선성(Multicollinearity)이 뜻하는 현상은?`,
+      [R`설명변수(\(X_1, \dots, X_p\))들 사이에 강한 선형 관계(높은 상관 또는 선형결합 관계)가 존재하는 현상`,R`다중공선성은 반응변수와 설명변수의 상관이 아니라 입력 설명변수들 내부의 강한 선형 종속성을 뜻한다.`],
+      [R`반응변수 \(Y\)와 설명변수 \(X\) 사이에 강한 선형 관계가 존재하는 현상`,R`\(Y\)와 \(X\)의 강한 선형 관계는 회귀모형의 높은 설명력을 뜻하며 다중공선성 문제가 아니다.`],
+      [R`오차항의 분산이 적합값에 따라 증가하는 현상`,R`이는 다중공선성이 아니라 이분산성(등분산성 위반)이다.`],
+      [R`잔차 Q–Q plot의 양 끝 꼬리가 직선에서 벗어나는 현상`,R`이는 오차의 정규성 위반 신호다.`]
+    ],
+    OX185:[
+      R`다중공선성이 심할 때 개별 회귀계수의 추정과 가설검정에 나타나는 영향은?`,
+      [R`개별 회귀계수 추정이 불안정해지고 표준오차(\(SE\))가 커져 \(t\) 통계량이 작아지며 변수별 효과를 분리해 해석하기 어려워진다.`,R`변수들이 함께 움직이므로 표본이 조금만 바뀌어도 계수가 크게 흔들리고 표준오차가 팽창해 개별 변수가 유의하지 않게 나올 수 있다.`],
+      [R`개별 회귀계수의 표준오차(\(SE\))가 0으로 줄어들어 모든 변수의 \(t\)값이 무한대로 커진다.`,R`분산팽창지표(VIF)라는 이름처럼 분산과 표준오차가 작아지는 것이 아니라 커진다.`],
+      [R`모형 전체의 결정계수(\(R^2\))와 전체 \(F\)검정 값까지 반드시 0으로 떨어진다.`,R`전체 설명력(\(R^2\))과 \(F\)검정은 높게 나오면서도 개별 계수의 \(t\)검정만 유의하지 않게 되는 경우가 흔하다.`],
+      [R`잔차들의 합 \(\sum e_i\)이 0이 아닌 매우 큰 양수로 바뀐다.`,R`절편이 포함된 한 잔차 합은 여전히 0이다.`]
+    ],
+    OX186:[
+      R`설계행렬 \(X\)의 열들이 완전히 선형종속인 '완전한 다중공선성(perfect multicollinearity)'이 있을 때 OLS 추정은 어떻게 되는가?`,
+      [R`\(X^T X\)가 특이행렬(역행렬 존재 안 함)이 되어 OLS 계수 \(\hat\beta\)가 유일하게 식별되지 않는다.`,R`한 설명변수가 다른 설명변수들의 정확한 선형결합이면 \(\det(X^T X)=0\)이 되어 \((X^T X)^{-1}\)가 존재하지 않고 무수히 많은 해가 생긴다.`],
+      [R`완전한 다중공선성이 있어도 OLS 계수는 항상 공식 \(\hat\beta = (X^T X)^{-1} X^T y\)로 유일하게 정해진다.`,R`역행렬 \((X^T X)^{-1}\) 자체가 존재하지 않아 유일한 OLS 계수를 구할 수 없다.`],
+      [R`완전한 다중공선성이 있으면 모든 설명변수의 \(\mathrm{VIF}\)가 정확히 1이 된다.`,R`\(R_j^2 = 1\)이 되어 \(\mathrm{Tolerance} = 0\)이고 \(\mathrm{VIF}\)는 무한대로 발산한다.`],
+      [R`오차항의 정규성만 만족되면 역행렬 없이도 유일한 OLS 계수가 자동 결정된다.`,R`정규성 가정은 설계행렬 \(X\)의 열 선형종속 문제를 해결해주지 못한다.`]
+    ],
+    OX187:[
+      R`설명변수들 간의 1:1 쌍별 상관계수(pairwise correlation)가 모두 낮더라도 다중공선성이 존재할 수 있는 이유는?`,
+      [R`한 설명변수가 다른 여러 설명변수들의 선형 조합(\(X_3 \approx a X_1 + b X_2\) 등)으로 설명되는 공선성은 단순 쌍별 상관만으로 놓칠 수 있기 때문`,R`쌍별 상관은 두 변수만의 관계만 보므로, 세 개 이상의 변수가 얽힌 다중 선형 관계는 보조회귀 결정계수 \(R_j^2\)와 VIF로 확인해야 한다.`],
+      [R`쌍별 상관계수가 0에 가까울수록 무조건 \(\mathrm{VIF}\)가 무한대로 커지기 때문`,R`모든 변수가 완전히 직교하면 \(R_j^2 = 0\)이어서 \(\mathrm{VIF} = 1\)이다.`],
+      [R`다중공선성은 설명변수가 아니라 반응변수 \(Y\)의 왜도(skewness)에 의해서만 발생하기 때문`,R`다중공선성은 설명변수 행렬 \(X\) 내부의 선형 관계 문제다.`],
+      [R`피어슨 상관계수는 항상 음수만 가질 수 있어 양의 공선성을 재지 못하기 때문`,R`피어슨 상관계수는 \([-1, 1]\) 범위를 모두 가진다.`]
+    ],
+    OX188:[
+      R`다중공선성 지표인 \(\mathrm{Tolerance}_j\)와 \(\mathrm{VIF}_j\)를 계산할 때 쓰이는 \(R_j^2\)의 정의는?`,
+      [R`설명변수 \(X_j\)를 반응변수처럼 두고 나머지 모든 설명변수들로 회귀(보조회귀)했을 때의 결정계수`,R`\(X_j\)가 다른 설명변수들의 선형결합으로 얼마나 잘 설명되는지를 나타내는 보조회귀 결정계수가 \(R_j^2\)이다.`],
+      [R`원래 반응변수 \(Y\)를 \(X_j\) 하나만으로 단순회귀했을 때의 결정계수`,R`반응변수 \(Y\)는 \(\mathrm{VIF}_j\) 계산에 들어가지 않으며 오직 설명변수들끼리의 보조회귀로 구한다.`],
+      [R`전체 다중회귀모형의 수정 결정계수 \(R_{\text{adj}}^2\)`,R`전체 모형의 설명력이 아니라 \(j\)번째 설명변수에 대한 보조회귀 결정계수다.`],
+      [R`\(j\)번째 잔차 \(e_j\)를 제곱하여 총제곱합으로 나눈 값`,R`개별 관측치 잔차가 아니라 \(j\)번째 설명변수의 보조회귀 결정계수다.`]
+    ],
+    OX189:[
+      R`선형회귀 III 교안(p.18–22)에서 보조회귀 결정계수 \(R_j^2\)를 이용한 공차(\(\mathrm{Tolerance}_j\))와 분산팽창지표(\(\mathrm{VIF}_j\))의 공식은?`,
+      [R`\(\mathrm{Tolerance}_j = 1 - R_j^2,\quad \mathrm{VIF}_j = \dfrac{1}{1 - R_j^2} = \dfrac{1}{\mathrm{Tolerance}_j}\)`,R`공차(Tolerance)는 다른 설명변수로 설명되지 않는 고유 변동 비율 \(1-R_j^2\)이고, VIF는 그 역수 \(1/(1-R_j^2)\)이다.`],
+      [R`\(\mathrm{Tolerance}_j = R_j^2,\quad \mathrm{VIF}_j = 1 - R_j^2\)`,R`\(R_j^2\)과 \(1-R_j^2\), 그리고 역수 관계가 모두 잘못되었다.`],
+      [R`\(\mathrm{Tolerance}_j = \dfrac{1}{R_j^2},\quad \mathrm{VIF}_j = R_j^2\)`,R`공차와 VIF의 정의식이 아니다.`],
+      [R`\(\mathrm{Tolerance}_j = 1 + R_j^2,\quad \mathrm{VIF}_j = \dfrac{R_j^2}{1 - R_j^2}\)`,R`공차는 \(1 - R_j^2\)이고 VIF는 \(1/(1 - R_j^2)\)이다.`]
+    ],
+    OX190:[
+      R`선형회귀 III 교안(p.18–22 검산 교정)과 관련하여, 다중공선성이 심해질 때(\(R_j^2 \to 1\)) \(\mathrm{Tolerance}_j\)와 \(\mathrm{VIF}_j\)의 값 변화로 올바른 것은?`,
+      [R`\(\mathrm{Tolerance}_j\)는 0에 가까워지고(작아지고), \(\mathrm{VIF}_j\)는 크게 증가한다.`,R`\(R_j^2\)이 1에 가까울수록 \(\mathrm{Tolerance}_j = 1 - R_j^2\)은 0에 가까워지고 역수인 \(\mathrm{VIF}_j\)는 급격히 커진다.`],
+      [R`\(\mathrm{Tolerance}_j\)가 0에 가까울수록 다중공선성은 약하고 \(\mathrm{VIF}_j\)도 0에 가까워진다.`,R`공차(Tolerance)가 작을수록 공선성이 심하고 VIF는 최소 1 이상으로 커진다.`],
+      [R`다중공선성이 심할수록 \(\mathrm{Tolerance}_j\)와 \(\mathrm{VIF}_j\)가 모두 1로 수렴한다.`,R`공선성이 전혀 없을 때(\(R_j^2 = 0\)) 두 지표가 모두 1이다.`],
+      [R`\(\mathrm{Tolerance}_j\)는 10 이상으로 커지고 \(\mathrm{VIF}_j\)는 음수가 된다.`,R`\(0 \le R_j^2 \le 1\)이므로 Tolerance는 \([0,1]\) 범위이고 VIF는 \(1\) 이상의 양수다.`]
+    ],
+    OX191:[
+      R`다중공선성 진단에서 흔히 쓰는 '\(\mathrm{VIF} > 5\) 또는 \(\mathrm{VIF} > 10\)' 기준의 의미로 가장 적절한 것은?`,
+      [R`주의가 필요함을 알리는 경험적 경고선(rule of thumb)이므로 표본 크기, 분야, 분석 목적과 함께 종합 판단해야 한다.`,R`5나 10은 절대적 물리 법칙이 아니라 경험적 기준이므로 변수의 역할·목적·표본 크기를 함께 고려해 해석한다.`],
+      [R`문맥과 무관한 절대 법칙이므로 \(\mathrm{VIF} = 5.01\)이면 변수의 의미와 상관없이 무조건 즉시 삭제해야 한다.`,R`핵심 통제변수이거나 다항항·교호작용항인 경우 높은 VIF가 자연스러울 수 있으므로 기계적으로 삭제하지 않는다.`],
+      [R`\(\mathrm{VIF} < 5\)이면 오차의 정규성과 등분산성까지 모두 자동으로 증명된다.`,R`VIF는 설명변수 간 공선성만 볼 뿐 오차 가정과는 별개다.`],
+      [R`\(\mathrm{VIF}\)는 수학적으로 10을 초과할 수 없는 상한값이다.`,R`\(R_j^2 \to 1\)이면 VIF는 수십, 수백 이상으로 얼마든지 커질 수 있다.`]
+    ],
+    OX192:[
+      R`선형회귀 III 교안(검산 교정)에서 고유값의 비율을 이용해 설계행렬의 거의 선형종속인 방향(다중공선성)을 진단하는 조건지수(Condition Index)의 형태는?`,
+      [R`\(\sqrt{\dfrac{\lambda_{\max}}{\lambda_j}}\) (최대 고유값과 \(j\)번째 고유값 비율의 제곱근)`,R`작은 고유값 \(\lambda_j\)가 0에 가까울수록 조건지수 \(\sqrt{\lambda_{\max}/\lambda_j}\)가 커져 거의 선형종속인 공선성 방향을 시사한다.`],
+      [R`\(\lambda_{\max} + \lambda_{\min}\) (최대 고유값과 최소 고유값의 단순 합)`,R`고유값의 합은 대각합(trace)과 관련되며 조건지수는 비율의 제곱근 형태다.`],
+      [R`\(\dfrac{\lambda_j}{\lambda_{\max}}\) (1 이하의 비율로 클수록 공선성 심화)`,R`분자와 분모가 반대여서 공선성이 심할 때 오히려 0에 가까워진다.`],
+      [R`\(\det(X^T X - \lambda I)\) (특성다항식 자체)`,R`특성다항식은 고유값을 구하는 방정식이며 조건지수 공식이 아니다.`]
+    ],
+    OX193:[
+      R`다중공선성이 심각할 때 검토할 수 있는 대표적인 대응 방법들로 바르게 묶인 것은?`,
+      [R`중복 변수 제거·결합, Ridge/Lasso/Elastic Net 등 규제화 회귀, PCA(주성분) 기반 회귀`,R`목적과 해석 필요성에 따라 중복 변수를 정리하거나, L1/L2 규제화 회귀 또는 직교 주성분(PCA) 회귀를 활용할 수 있다.`],
+      [R`완전히 동일한 설명변수를 복사해 열을 2배로 늘리기, 규제 계수를 음수로 두기`,R`동일 변수를 복제하면 완전 다중공선성이 발생해 추정이 불가능해진다.`],
+      [R`표본 크기 \(n\)을 2개로 줄이기, 테스트 데이터를 훈련에 섞기`,R`표본을 줄이면 추정이 더 불안정해지고 데이터 누수가 발생한다.`],
+      [R`반응변수 \(Y\)를 상수로 고정하기, 절편항만 제거하기`,R`다중공선성 해결책이 아니며 모형 자체를 훼손한다.`]
+    ],
+    OX194:[
+      R`회귀 적합 결과에 큰 영향을 미치는 관측치를 찾는 지표인 Cook's distance(쿡의 거리)가 크게 나왔을 때의 올바른 대응은?`,
+      [R`영향이 큰 관측치 후보이므로 무조건 자동 삭제하지 않고 입력 오류 여부, 자료 생성 과정, 분석 목적을 먼저 검토한다.`,R`Cook's distance가 큰 점은 기록 오류일 수도 있지만 실제로 매우 중요한 극단 사례일 수도 있으므로 원인과 맥락을 먼저 확인해야 한다.`],
+      [R`Cook's distance가 기준보다 크면 원인을 불문하고 데이터셋에서 즉시 자동 삭제해야 한다.`,R`자동 삭제는 정당한 극단 관측치의 정보를 잃고 표본을 왜곡할 수 있다.`],
+      [R`Cook's distance는 설명변수(열)의 공선성 지표이므로 해당 설명변수 열 전체를 삭제한다.`,R`Cook's distance는 설명변수(열)가 아니라 개별 관측치(행)의 영향력을 재는 지표다.`],
+      [R`해당 관측치의 반응값 \(y_i\)를 0으로 바꾼 뒤 그대로 보고한다.`,R`관측값을 임의로 0으로 조작하면 회귀선이 심각하게 왜곡된다.`]
+    ],
+    OX195:[
+      R`선형회귀 III Summary가 강조하는 회귀 진단(Regression Diagnostics)의 올바른 원칙은?`,
+      [R`잔차 그림, Q–Q plot, 다중공선성 지표(VIF 등), 영향점 지표(Cook's distance 등)를 함께 종합하여 모형 가정과 해석의 신뢰성을 점검한다.`,R`어느 하나의 수치(\(R^2\)나 단일 \(p\)값)만으로 모든 가정을 판정하지 않고 여러 진단 그림과 지표를 함께 확인해야 한다.`],
+      [R`결정계수 \(R^2\) 하나만 높으면 잔차 그림이나 공선성·영향점 진단은 전혀 볼 필요가 없다.`,R`이상치나 가정 위반이 있어도 \(R^2\)이 높게 나올 수 있으므로 진단이 필수다.`],
+      [R`Q–Q plot 하나만 보면 선형성, 등분산성, 독립성, 다중공선성이 모두 동시에 판정된다.`,R`Q–Q plot은 정규성 진단 도구이며 선형성·등분산성·공선성은 각각의 진단 도구를 함께 봐야 한다.`],
+      [R`회귀 진단은 모형을 적합하기 전에 설명변수 이름만 보고 완료하는 절차다.`,R`적합 후 얻은 잔차와 설계행렬 지표를 바탕으로 점검하는 과정이다.`]
+    ]
+  };
   function coreText(text){
     const replacements=new Map([
       ["교수님은 모델보다 구체적인 문제, 필요한 의사결정, 목표 출력을 먼저 정하라고 강조했다.","사용할 모델을 고르기 전에 구체적인 문제, 필요한 의사결정, 목표 출력을 먼저 정의해야 한다."],
@@ -143,35 +1380,30 @@
   function cleanKind(kind){return kind==="교수 강조"?"핵심 개념":kind}
   function terms(text){return new Set(text.replace(/\\\([^)]*\\\)|\\\[[^\]]*\\\]/g," ").toLowerCase().split(/[^0-9a-zA-Z가-힣βθ²]+/u).filter(x=>x.length>1))}
   function overlapScore(a,b){let score=0;const aTerms=terms(a),bTerms=terms(b);aTerms.forEach(x=>{if(bTerms.has(x))score++});return score}
-  function distractorTexts(item,all){
-    const target=`${item.statement} ${coreText(item.explanation)}`;
-    const ranked=all.filter(x=>x.id!==item.id).map(x=>({
-      text:coreText(x.explanation),sameChapter:x.chapter===item.chapter?1:0,sameKind:x.kind===item.kind?1:0,
-      score:overlapScore(target,`${x.statement} ${x.explanation}`),id:Number(String(x.id).replace(/\D/g,""))||0
-    })).filter(x=>x.text&&x.text!==coreText(item.explanation))
-      .sort((a,b)=>b.sameChapter-a.sameChapter||b.score-a.score||b.sameKind-a.sameKind||a.id-b.id);
-    const ordered=ranked;
-    const unique=[];const seen=new Set([coreText(item.explanation)]);
-    for(const candidate of ordered){if(seen.has(candidate.text))continue;seen.add(candidate.text);unique.push(candidate.text);if(unique.length===3)break}
-    return unique;
-  }
-  function singleStem(item,index){
-    const trueStems=["다음 문장의 핵심 의미로 가장 적절한 것은?","다음 설명과 직접 연결되는 근거는?","다음 개념을 가장 정확히 해석한 것은?","다음 문장을 구체적으로 설명한 내용은?"];
-    const falseStems=["다음 문장이 틀린 이유로 가장 적절한 것은?","다음 문장의 오류를 바로잡은 설명은?","다음 설명에서 잘못 이해한 부분은?","다음 문장을 수정한 내용으로 가장 적절한 것은?"];
-    return (item.answer?trueStems:falseStems)[index%4];
-  }
+
   function buildSingleQuestions(all){
+    const seenWrong=new Set();
     return all.map((item,index)=>{
-      const correctText=coreText(item.explanation),distractors=distractorTexts(item,all);
-      if(distractors.length!==3)throw new Error(`선지 생성 실패: ${item.id}`);
+      const entry=DIRECT_SINGLE_MAP[item.id];
+      if(!entry||entry.length!==5)throw new Error(`단일선택 문항 정의 누락: ${item.id}`);
+      const [stem,correctPair,...wrongPairs]=entry;
+      const distractors=wrongPairs.map(([text,explanation],i)=>{
+        let finalText=String(text).trim();
+        if(seenWrong.has(finalText)){
+          finalText=`${finalText} (${cleanKind(item.kind)} 오답 선지)`;
+        }
+        seenWrong.add(finalText);
+        return {id:`S-${item.id}-D${i+1}`,text:finalText,correct:false,explanation:String(explanation).trim()};
+      });
       const raw=[
-        {id:`S-${item.id}-C`,text:correctText,correct:true,explanation:`핵심 근거: ${correctText}`},
-        ...distractors.map((text,i)=>({id:`S-${item.id}-D${i+1}`,text,correct:false,explanation:"이 선택지는 다른 개념에 대한 설명으로, 제시된 문장의 핵심 근거와 직접 연결되지 않는다."}))
+        {id:`S-${item.id}-C`,text:String(correctPair[0]).trim(),correct:true,explanation:String(correctPair[1]).trim()},
+        ...distractors
       ];
       const shift=(index*3)%4,options=raw.slice(shift).concat(raw.slice(0,shift));
-      return {id:`S-${item.id}`,chapter:item.chapter,type:"single",kind:cleanKind(item.kind),stem:singleStem(item,index),claim:item.statement,concepts:[item.id],options};
+      return {id:`S-${item.id}`,chapter:item.chapter,type:"single",kind:cleanKind(item.kind),stem:String(stem).trim(),claim:"",concepts:[item.id],options};
     });
   }
+
   function buildMultiQuestions(all){
     const byChapter=new Map();
     all.forEach(item=>{if(!byChapter.has(item.chapter))byChapter.set(item.chapter,[]);byChapter.get(item.chapter).push(item)});
@@ -191,35 +1423,154 @@
       });
       groups.forEach(options=>{
         options.sort((a,b)=>Number(a.id.slice(2))-Number(b.id.slice(2)));
-        output.push({id:`M-MC${String(number++).padStart(3,"0")}`,chapter,type:"multi",kind:"전 범위 비교",stem:"다음 중 옳은 내용을 모두 고르시오.",claim:"",concepts:options.map(x=>x.id),options:options.map(x=>({id:`M-${x.id}`,text:x.statement,correct:x.answer,explanation:coreText(x.explanation)}))});
+        const topicNames=[...new Set(options.map(x=>cleanKind(x.kind)))].slice(0,2).join("·");
+        output.push({
+          id:`M-MC${String(number++).padStart(3,"0")}`,
+          chapter,
+          type:"multi",
+          kind:`복수 판별 · ${topicNames}`,
+          stem:`[${chapter} · ${topicNames}] 다음 설명 중 옳은 것을 모두 고르시오.`,
+          claim:"",
+          concepts:options.map(x=>x.id),
+          options:options.map(x=>({id:`M-${x.id}`,text:coreText(x.statement),correct:x.answer,explanation:coreText(x.explanation)}))
+        });
       });
     });
     return output;
   }
 
   function buildCaseQuestions(){
-    const make=(id,chapter,kind,stem,choices,correct,explanation)=>({id:`C-${id}`,chapter,type:"single",kind,stem,claim:"",concepts:[],options:choices.map((text,i)=>({id:`C-${id}-${i}`,text,correct:i===correct,explanation:i===correct?explanation:"이 선지는 문제의 조건이나 교안의 구분과 맞지 않는다."}))});
+    const make=(id,chapter,kind,stem,choices,correct)=>({
+      id:`C-${id}`,
+      chapter,
+      type:"single",
+      kind,
+      stem,
+      claim:"",
+      concepts:[],
+      options:choices.map(([text,explanation],i)=>({id:`C-${id}-${i}`,text,correct:i===correct,explanation}))
+    });
     return [
-      make("01","개론 I","자료 판별","다음 중 다변량 자료라고 보기 어려운 것은?",["사람별 키·몸무게","와인별 산도·당도","시간별 온도 하나만 측정","이미지별 여러 특징 추출"],2,"한 개체에 변수 하나만 측정한 자료는 다변량이 아니다."),
-      make("02","개론 I","개념 구분","데이터마이닝·AI·ML·DL의 관계를 가장 잘 설명한 것은?",["모두 완전히 같은 용어다.","DL은 ML의 하나이며, 데이터마이닝은 문제 정의·해석·활용까지 포함한다.","AI는 항상 DL만 사용한다.","데이터마이닝은 SQL 검색만을 뜻한다."],1,"DL은 다층 신경망을 사용하는 ML의 한 분류이다."),
-      make("03","기초통계","함정 해석","피어슨 상관계수가 (r=0)이다. 반드시 참인 것은?",["두 변수는 독립이다.","인과관계가 없다.","선형적 관계가 없거나 약하다.","비선형 관계도 존재하지 않는다."],2,"피어슨 상관계수가 (r=0)일 때는 선형 관계만 약할 뿐 독립·인과·비선형 관계 부재를 보장하지 않는다."),
-      make("04","회귀 I","함정 선형성","다음 중 계수에 대해 선형인 모형은?",[String.raw`\(β_0+β_1x+β_2x^2\)`,String.raw`\(β_0+e^{β_1x}\)`,String.raw`\(β_0+β_1^2x\)`,String.raw`\(β_0+\sin(β_1x)\)`],0,"선형성의 기준은 (x)의 모양이 아니라 미지 계수 β가 1차 선형결합으로 들어가는지이다."),
-      make("05","개론 II","사례형 · 학습분할","모델 A·B·C를 test set에서 30번 비교하고 최고 모델을 골랐다. 가장 적절한 설명은?",["test set을 효율적으로 사용했다.","test 결과에 과적합했을 가능성이 있다.","학습이 불가능했다.","비지도학습으로 바뀐다."],1,"모델 선택은 validation에서, test는 마지막 일반화 평가에서만 사용해야 한다."),
-      make("06","기초통계","용어 구분","확률과 우도의 방향을 바로 연결한 것은?",["Probability: 샘플 고정·모수 변화 / Likelihood: 모수 고정·샘플 변화","Probability: 모수 고정·샘플 변화 / Likelihood: 관측 샘플 고정·모수 변화","두 개념은 완전히 같은 뜻이다.","Likelihood는 확률의 합이 아니다."],1,"Probability는 θ를 고정하고 샘플 (y)를, likelihood는 관측 (y)를 고정하고 θ를 본다."),
-      make("07","개론 II","ETL 사례","여러 DB·API에서 가져온 데이터의 오류·중복을 제거하고 형식을 통일한 단계는?",["Extract","Transform","Load","Modeling"],1,"T=Transform은 오류·중복 제거와 형식 통일 같은 변환 단계다."),
-      make("08","개론 II","LLM Pipeline","복수 Prompt로 Label Map을 만든 이후의 파이프라인 순서로 적절한 것은?",["End Model Training → Prompting → Load","Prompting → Weak Supervision/Label Model → End Model Training","Extract → Classification → Prompting","Weak Supervision → ETL → Regression"],1,"교안의 순서는 Prompting, Weak Supervision/Label Model, End Model Training이다."),
-      make("09","회귀 III","잔차진단","잔차–적합값 그림에서 적합값이 커질수록 잔차의 퍼짐도 커진다. 가장 의심할 가정은?",["정규성","등분산성","독립성","다중공선성"],1,"깔때기 모양은 잔차 분산이 증가함을 보여 등분산성 위반을 시사한다."),
-      make("10","회귀 III","다중공선성","어떤 설명변수의 (VIF=18)이며 계수 표준오차가 크게 나왔다. 우선 점검할 문제는?",["종속변수가 너무 많다.","설명변수 간 다중공선성을 진단하되 계수 추정 불안정·표준오차 확대를 검토한다.","잔차의 정규성이 자동으로 확보된다.","오차의 독립성만 위반된다."],1,"VIF가 클수록 주요 설명변수가 나머지 변수로 설명되어 계수가 불안정해진다."),
-      make("11","회귀 II","결정계수","같은 학습자료에 설명변수를 추가했다. 이때 (R^2)와 수정 (R^2)의 변화로 가장 잘 설명한 것은?",["두 값 모두 반드시 증가한다.","이때 (R^2) 값은 감소하지 않고, 수정 (R^2)은 변수 수 벌점 때문에 감소할 수 있다.","이때 (R^2) 값은 항상 감소한다.","수정 (R^2)은 항상 1이 된다."],1,"이때 (R^2) 값은 변수 추가로 감소하지 않지만 수정 (R^2)은 자유도 벌점으로 감소할 수 있다."),
-      make("12","회귀 II","p-value 해석","관측자료 회귀에서 기울기의 p-value가 (p=0.001)로 나왔다. 가장 적절한 해석은?",["기울기가 0일 확률이 99.9%라는 뜻이다.","귀무가설 하에서 현재와 같거나 더 극단적인 자료가 관측될 확률이다.","인과관계가 증명됐다.","모형의 예측력이 충분하다는 뜻이다."],1,"p-value는 귀무가설 하에서 관측된 것과 같거나 더 극단적인 자료가 관측될 확률이다. 인과는 증명하지 않는다.")
-      ,make("13","선형대수","계산형 · 행렬곱",String.raw`\(A=\begin{bmatrix}1&2\\3&4\end{bmatrix}\), \(B=\begin{bmatrix}2&0\\1&2\end{bmatrix}\)일 때 \(AB\)는?`,[String.raw`\(\begin{bmatrix}4&4\\10&8\end{bmatrix}\)`,String.raw`\(\begin{bmatrix}2&4\\3&8\end{bmatrix}\)`,String.raw`\(\begin{bmatrix}4&10\\4&8\end{bmatrix}\)`,String.raw`\(\begin{bmatrix}3&2\\7&4\end{bmatrix}\)`],0,String.raw`행×열 내적으로 \(AB=\begin{bmatrix}1\cdot2+2\cdot1&1\cdot0+2\cdot2\\3\cdot2+4\cdot1&3\cdot0+4\cdot2\end{bmatrix}=\begin{bmatrix}4&4\\10&8\end{bmatrix}\)이다.`),
-      make("14","기초통계","계산형 · 베이즈",String.raw`유병률 \(1\%\), 민감도 \(90\%\), 특이도 \(95\%\)인 검사에서 양성자가 실제 질병일 확률에 가장 가까운 값은?`,[String.raw`\(0.90\)`,String.raw`\(0.01\)`,String.raw`\(\dfrac{0.90\cdot0.01}{0.90\cdot0.01+0.05\cdot0.99}\)`,String.raw`\(\dfrac{0.95\cdot0.99}{0.90\cdot0.01}\)`],2,String.raw`사후확률은 우도만이 아니라 사전확률과 위양성 확률까지 포함해야 한다.`),
-      make("15","회귀 I","계산형 · OLS",String.raw`\((x,y)=(0,1),(1,3),(2,5)\)에 대한 절편을 포함한 OLS 추정식은?`,[String.raw`\(\hat y=1+2x\)`,String.raw`\(\hat y=2+x\)`,String.raw`\(\hat y=1+3x\)`,String.raw`\(\hat y=3+2x\)`],0,String.raw`\(\bar x=1\), \(\bar y=3\), \(S_{xy}=4\), \(S_{xx}=2\)이므로 \(\hat\beta_1=2\), \(\hat\beta_0=1\)이다.`),
-      make("16","회귀 II","계산형 · 결정계수",String.raw`\(SST=200\), \(SSE=50\)인 절편 포함 OLS에서 \((SSR,R^2)\)의 값은?`,[String.raw`\((150,0.75)\)`,String.raw`\((250,0.25)\)`,String.raw`\((150,0.25)\)`,String.raw`\((50,0.75)\)`],0,String.raw`\(SSR=SST-SSE=150\), \(R^2=1-SSE/SST=0.75\)이다.`),
-      make("17","회귀 II","계산형 · 신뢰구간",String.raw`\(\hat\beta_1=3.9324\), \(SE=0.4155\), \(t^*=2.011\)일 때 95% 신뢰구간은?`,[String.raw`\([3.0968,4.7680]\)`,String.raw`\([3.5169,4.3479]\)`,String.raw`\([-3.0968,4.7680]\)`,String.raw`\([2.011,3.9324]\)`],0,String.raw`\(3.9324\pm2.011(0.4155)=3.9324\pm0.8356\)이다.`),
-      make("18","회귀 II","계산형 · ANOVA",String.raw`\(SSR=120\), \(SSE=80\), \(n=22\), 설명변수 수 \(p=2\)일 때 \(F\)는?`,[String.raw`\(14.25\)`,String.raw`\(1.50\)`,String.raw`\(28.50\)`,String.raw`\(4.21\)`],0,String.raw`\(MSR=120/2=60\), \(MSE=80/(22-2-1)=80/19\), 따라서 \(F=60/(80/19)=14.25\)이다.`),
-      make("19","회귀 III","계산형 · VIF",String.raw`보조회귀의 \(R_j^2=0.9\)일 때 \((\mathrm{Tolerance}_j,\mathrm{VIF}_j)\)의 값은?`,[String.raw`\((0.1,10)\)`,String.raw`\((0.9,1.11)\)`,String.raw`\((0.1,0.1)\)`,String.raw`\((10,0.1)\)`],0,String.raw`\(\mathrm{Tolerance}_j=1-R_j^2=0.1\), \(\mathrm{VIF}_j=1/0.1=10\)이다.`),
-      make("20","회귀 III","진단 · 가정",String.raw`잔차–적합값 그림이 \(U\)자 모양이고, 적합값이 커질수록 잔차의 퍼짐도 증가한다. 함께 의심할 가정 위반의 조합은?`,["정규성·등분산성","선형성·등분산성","독립성·정규성","다중공선성·오차 독립성"],1,"곡률은 조건부 평균의 비선형성, 깔때기꼴은 이분산성을 시사한다.")
+      make("01","개론 I","자료 판별","다음 측정 사례 중 한 개체에 대해 두 개 이상의 변수를 함께 측정한 다변량(multivariate) 자료에 해당하는 것은?",[
+        ["한 도시의 시간별 기온 하나만 기록한 자료","온도 변수 1개만 측정한 단변량 시계열 자료다."],
+        ["학생별 수학 점수 하나만 나열한 명단","변수가 1개뿐이므로 단변량 자료다."],
+        ["와인 시료별 산도·당도·알코올 도수를 함께 측정한 자료","한 개체(와인)마다 여러 변수를 동시에 측정했으므로 다변량 자료다."],
+        ["동전을 던져 앞면이 나온 총횟수 숫자 하나만 적은 기록","단일 스칼라 집계값으로 다변량 자료가 아니다."]
+      ],2),
+      make("02","개론 I","개념 구분","데이터마이닝·AI·ML·DL의 관계를 가장 잘 설명한 것은?",[
+        ["네 용어는 범위와 역할이 완전히 똑같은 동의어다.","포함 관계와 초점이 서로 다르다."],
+        ["DL은 다층 신경망을 쓰는 ML의 한 분야이며, 데이터마이닝은 문제 정의·해석·현장 활용까지 포괄한다.","AI ⊃ ML ⊃ DL의 포함 관계와 데이터마이닝의 전체 문제 해결 흐름을 정확히 설명한 선지다."],
+        ["AI는 오직 딥러닝(DL)만을 뜻하며 선형회귀는 포함하지 않는다.","AI가 가장 넓은 개념이고 ML과 DL이 그 안에 포함된다."],
+        ["데이터마이닝은 데이터베이스에서 단순 SQL 검색만 수행하는 작업이다.","단순 검색이 아니라 유용한 패턴·지식을 찾아 의사결정에 연결하는 과정이다."]
+      ],1),
+      make("03","기초통계","함정 해석",String.raw`두 확률변수의 피어슨 상관계수가 \(r=0\)일 때 반드시 참인 설명은?`,[
+        ["두 변수는 통계적으로 완전히 독립이다.",String.raw`비선형 종속 관계(예: \(Y=X^2\))가 있어도 \(r=0\)일 수 있으므로 독립을 보장하지 않는다.`],
+        ["두 변수 사이에 어떤 인과관계나 함수관계도 없다.","비선형 함수관계가 존재할 수 있다."],
+        ["두 변수 사이에 선형적 상관관계가 없거나 매우 약하다.",String.raw`피어슨 상관계수 \(r=0\)은 선형 상관관계가 없다는 뜻이다.`],
+        ["비선형 관계까지 포함해 모든 의존성이 0이다.","피어슨 상관계수는 선형 관계만 측정한다."]
+      ],2),
+      make("04","회귀 I","함정 선형성","다음 모형 중 미지 회귀계수(모수)에 대해 선형인 선형회귀모형은?",[
+        [String.raw`\(\beta_0+\beta_1x+\beta_2x^2\)`,String.raw`설명변수에 \(x^2\)이 있어도 미지 계수 \(\beta_0,\beta_1,\beta_2\)에 대해 1차 선형결합이므로 선형회귀모형이다.`],
+        [String.raw`\(\beta_0+e^{\beta_1x}\)`,String.raw`미지 계수 \(\beta_1\)이 지수함수 안에 들어가 있으므로 비선형회귀모형이다.`],
+        [String.raw`\(\beta_0+\beta_1^2x\)`,String.raw`미지 계수 \(\beta_1\)이 제곱 형태이므로 계수에 대해 비선형이다.`],
+        [String.raw`\(\beta_0+\sin(\beta_1x)\)`,String.raw`미지 계수 \(\beta_1\)이 삼각함수 안에 들어가 있어 비선형회귀모형이다.`]
+      ],0),
+      make("05","개론 II","사례형 · 학습분할","모델 A·B·C를 test set에서 30번 반복 비교해 점수가 가장 높은 모델을 최종 선택했다. 이때 발생하는 문제는?",[
+        ["test set을 효율적으로 재활용하여 일반화 성능이 향상되었다.","테스트 세트를 모델 선택에 반복 사용하면 일반화 평가가 오염된다."],
+        ["test set 결과에 맞춘 선택 편향(과적합)이 생겨 최종 일반화 성능이 낙관적으로 왜곡될 수 있다.","모델 비교·선택은 validation에서 수행하고 test는 마지막 최종 평가에 한 번만 써야 한다."],
+        ["파라미터 추정이 불가능해져 학습 자체가 중단된다.","학습은 되지만 평가 지표의 신뢰성이 무너진다."],
+        ["지도학습 문제가 비지도 군집화 문제로 바뀐다.","학습 유형이 바뀌는 것이 아니라 데이터 누수(leakage)가 발생한 것이다."]
+      ],1),
+      make("06","기초통계","용어 구분","확률(Probability)과 우도(Likelihood)에서 고정하는 대상과 변화시키는 대상을 바르게 연결한 것은?",[
+        ["Probability: 관측 샘플 고정·모수 변화 / Likelihood: 모수 고정·샘플 변화","두 개념의 고정·변화 대상이 서로 반대로 뒤집혔다."],
+        ["Probability: 모수 고정·가능한 샘플 변화 / Likelihood: 관측 샘플 고정·모수 변화",String.raw`확률은 모수 \(\theta\)를 고정하고 샘플 \(y\)를 변화시키며 보고, 우도는 관측된 \(y\)를 고정하고 \(\theta\)를 변화시키며 본다.`],
+        ["두 개념 모두 모수와 샘플을 동시에 상수로 고정한다.","함수로서 변화시키는 변수가 서로 다르다."],
+        ["Probability는 모수에 대한 적분이 1이 아니고, Likelihood는 모수에 대한 적분이 항상 1이다.","우도는 모수에 대한 확률분포가 아니므로 모수에 대한 적분이 1일 필요가 없다."]
+      ],1),
+      make("07","개론 II","ETL 사례","여러 DB·API에서 추출한 데이터의 오류·중복을 제거하고 형식을 통일하는 ETL 단계는?",[
+        ["Extract (추출)","Extract는 여러 원천에서 데이터를 가져오는 첫 단계다."],
+        ["Transform (변환·정제)","오류·중복 제거와 스키마·형식 통일은 Transform 단계에 해당한다."],
+        ["Load (적재)","Load는 가공된 데이터를 Data Warehouse나 Data Lake에 저장하는 단계다."],
+        ["Deployment (모델 배포)","ETL 데이터 준비 이후의 모델 운영 단계다."]
+      ],1),
+      make("08","개론 II","LLM Pipeline","복수 Prompt로 여러 Label Map을 만든 뒤 이어지는 LLM Data Pipeline의 올바른 순서는?",[
+        ["End Model Training → Prompting → Load","최종 모델 학습은 라벨 통합이 끝난 뒤에 수행한다."],
+        ["Prompting → Weak Supervision / Label Model → End Model Training","교안 p.42 빈칸의 핵심 순서로, 복수 프롬프트 결과를 Label Model로 통합한 뒤 최종 모델을 학습한다."],
+        ["Extract → 단순 다수결 삭제 → 역행렬 소거","LLM 파이프라인의 단계 구성이 아니다."],
+        ["Weak Supervision → 데이터 삭제 → 단일 프롬프트 확정","프롬프팅이 먼저 수행되어야 하며 단일 프롬프트 확정이 아니라 통합 학습을 거친다."]
+      ],1),
+      make("09","회귀 III","잔차진단","잔차–적합값 그림에서 적합값이 커질수록 잔차의 세로 퍼짐 폭도 깔때기 모양으로 넓어진다. 가장 먼저 의심할 가정 위반은?",[
+        ["오차의 정규성 위반","정규성은 주로 Q–Q plot에서 분위수 이탈로 점검한다."],
+        ["등분산성 위반 (이분산성)","적합값에 따라 잔차 분산(퍼짐)이 커지는 깔때기 모양은 등분산성 위반을 시사한다."],
+        ["오차의 독립성 충족","가정 위반 신호이며 독립성 충족을 뜻하지 않는다."],
+        ["설명변수 간 완전 다중공선성","다중공선성은 설명변수 간 관계로 VIF 등으로 진단한다."]
+      ],1),
+      make("10","회귀 III","다중공선성",String.raw`다중회귀에서 어떤 설명변수의 \(\mathrm{VIF}=18\)이고 계수 표준오차가 크게 나왔다. 가장 적절한 진단은?`,[
+        ["반응변수 Y의 개수가 너무 많아서 생긴 문제다.","VIF는 설명변수들 사이의 선형 종속성 지표다."],
+        ["설명변수 간 다중공선성이 높다는 신호이므로 계수 추정 불안정과 표준오차 확대를 검토한다.",String.raw`\(\mathrm{VIF}>10\)은 해당 설명변수가 나머지 설명변수들로 강하게 설명되어 표준오차가 팽창했음을 시사한다.`],
+        ["잔차의 정규성이 완벽히 확보되었다는 증거다.","VIF는 정규성과 무관한 다중공선성 지표다."],
+        ["오차항끼리의 시간적 자기상관만 위반된 상태다.","오차 독립성과 설명변수 간 다중공선성은 별개의 문제다."]
+      ],1),
+      make("11","회귀 II","결정계수",String.raw`같은 학습자료에서 설명변수를 추가했을 때 일반 결정계수 \(R^2\)와 수정 결정계수 \(R_{\text{adj}}^2\)의 변화는?`,[
+        ["두 지표 모두 변수 추가 시 무조건 증가한다.",String.raw`수정 \(R^2\)는 자유도 벌점 때문에 불필요한 변수 추가 시 감소할 수 있다.`],
+        [String.raw`일반 \(R^2\)는 감소하지 않고, 수정 \(R_{\text{adj}}^2\)는 변수 수 벌점 때문에 감소할 수 있다.`,String.raw`같은 학습자료에서 변수 추가 시 SSE는 커지지 않아 \(R^2\)는 비감소하지만, \(R_{\text{adj}}^2\)는 자유도 벌점으로 감소할 수 있다.`],
+        [String.raw`일반 \(R^2\)는 항상 감소하고 수정 \(R_{\text{adj}}^2\)만 증가한다.`,"두 지표의 성질을 반대로 설명했다."],
+        [String.raw`수정 \(R_{\text{adj}}^2\)는 변수 수와 무관하게 항상 1이 된다.`,"완벽한 적합이 아닌 한 1이 되지 않는다."]
+      ],1),
+      make("12","회귀 II","p-value 해석",String.raw`관측자료 회귀에서 기울기 검정의 유의확률이 \(p=0.001\)로 나왔다. 가장 적절한 해석은?`,[
+        ["귀무가설이 참일 확률이 0.1%이고 대립가설이 참일 확률이 99.9%라는 뜻이다.","p-value는 가설 자체의 사후확률이 아니다."],
+        ["귀무가설(기울기=0)이 참이라고 가정할 때 현재와 같거나 더 극단적인 통계량이 관측될 확률이 0.001이다.","p-value의 정확한 정의이며, 유의수준 0.05 등에서 귀무가설을 기각하는 근거가 된다."],
+        ["설명변수가 반응변수의 직접적인 인과적 원인임이 증명되었다.","통계적 유의성만으로 관찰자료의 인과관계가 증명되지는 않는다."],
+        ["새로운 테스트 데이터에서의 예측 오차가 0.1% 이하로 보장된다.","p-value는 미래 예측 오차 크기를 직접 뜻하지 않는다."]
+      ],1),
+      make("13","선형대수","계산형 · 행렬곱",String.raw`\(A=\begin{bmatrix}1&2\\3&4\end{bmatrix}\), \(B=\begin{bmatrix}2&0\\1&2\end{bmatrix}\)일 때 행렬곱 \(AB\)는?`,[
+        [String.raw`\(\begin{bmatrix}4&4\\10&8\end{bmatrix}\)`,String.raw`행×열 내적으로 \(\begin{bmatrix}1\cdot2+2\cdot1 & 1\cdot0+2\cdot2\\3\cdot2+4\cdot1 & 3\cdot0+4\cdot2\end{bmatrix}=\begin{bmatrix}4&4\\10&8\end{bmatrix}\)이다.`],
+        [String.raw`\(\begin{bmatrix}2&0\\3&8\end{bmatrix}\)`,`같은 위치 원소끼리만 단순 곱한 결과로 행렬곱이 아니다.`],
+        [String.raw`\(\begin{bmatrix}4&10\\4&8\end{bmatrix}\)`,`결과 행렬이 전치된 형태로 행과 열 위치를 혼동했다.`],
+        [String.raw`\(\begin{bmatrix}2&4\\7&8\end{bmatrix}\)`,String.raw`순서를 바꾼 \(BA\)에 해당하는 값으로 \(AB\)와 다르다.`]
+      ],0),
+      make("14","기초통계","계산형 · 베이즈",String.raw`유병률 \(P(D)=1\%\), 민감도 \(P(+\mid D)=90\%\), 특이도 \(P(-\mid D^c)=95\%\)인 검사에서 양성 판정자가 실제 질병일 사후확률 \(P(D\mid +)\) 식은?`,[
+        [String.raw`\(0.90\)`,`민감도(우도)만 본 것으로 사전확률(유병률)과 위양성을 무시했다.`],
+        [String.raw`\(0.01\)`,`검사 결과를 반영하지 않은 사전확률(유병률) 그대로의 값이다.`],
+        [String.raw`\(\dfrac{0.90\times 0.01}{0.90\times 0.01 + 0.05\times 0.99}\)`,String.raw`베이즈 정리에 따라 분모에 진양성(\(0.90\times0.01\))과 위양성(\((1-0.95)\times0.99\))을 모두 더해 계산한다.`],
+        [String.raw`\(\dfrac{0.95\times 0.99}{0.90\times 0.01}\)`,`특이도와 민감도의 위치를 잘못 대입한 식이다.`]
+      ],2),
+      make("15","회귀 I","계산형 · OLS",String.raw`세 관측점 \((x,y)=(0,1),(1,3),(2,5)\)에 대한 절편 포함 단순선형회귀 OLS 추정식은?`,[
+        [String.raw`\(\hat y = 1 + 2x\)`,String.raw`\(\bar x=1,\;\bar y=3,\;S_{xy}=4,\;S_{xx}=2\)이므로 \(\hat\beta_1=4/2=2,\;\hat\beta_0=3-2(1)=1\)이다.`],
+        [String.raw`\(\hat y = 2 + x\)`,`절편과 기울기 값을 서로 바꾸어 대입한 식이다.`],
+        [String.raw`\(\hat y = 1 + 3x\)`,`기울기가 3이면 x=2일 때 7이 되어 관측점 (2,5)와 맞지 않는다.`],
+        [String.raw`\(\hat y = 3 + 2x\)`,String.raw`절편 자리에 \(\hat\beta_0\) 대신 \(\bar y=3\)을 그대로 넣은 식이다.`]
+      ],0),
+      make("16","회귀 II","계산형 · 결정계수",String.raw`절편 포함 OLS 회귀에서 \(\mathrm{SST}=200,\;\mathrm{SSE}=50\)일 때 \((\mathrm{SSR},\; R^2)\)의 값은?`,[
+        [String.raw`\((150,\; 0.75)\)`,String.raw`\(\mathrm{SSR}=\mathrm{SST}-\mathrm{SSE}=150\)이고, \(R^2=1-50/200=150/200=0.75\)이다.`],
+        [String.raw`\((250,\; 0.25)\)`,`SST에 SSE를 더했고 미설명 비율(0.25)을 결정계수로 착각했다.`],
+        [String.raw`\((150,\; 0.25)\)`,String.raw`\(\mathrm{SSR}=150\)은 맞지만 \(R^2\)에 \(\mathrm{SSE}/\mathrm{SST}=0.25\)를 넣었다.`],
+        [String.raw`\((50,\; 0.75)\)`,`SSR과 SSE의 값을 혼동했다.`]
+      ],0),
+      make("17","회귀 II","계산형 · 신뢰구간",String.raw`\(\hat\beta_1=3.9324,\; SE(\hat\beta_1)=0.4155,\; t^*=2.011\)일 때 기울기 \(\beta_1\)의 95% 신뢰구간은?`,[
+        [String.raw`\([3.0968,\; 4.7680]\)`,String.raw`\(3.9324 \pm 2.011\times 0.4155 = 3.9324 \pm 0.8356 = [3.0968,\; 4.7680]\)이다.`],
+        [String.raw`\([3.5169,\; 4.3479]\)`,String.raw`임계값 \(t^*=2.011\)을 곱하지 않고 \(\hat\beta_1 \pm SE\)만 계산한 구간이다.`],
+        [String.raw`\([-3.0968,\; 4.7680]\)`,`하한의 부호를 잘못 계산했다.`],
+        [String.raw`\([0.4155,\; 3.9324]\)`,`표준오차와 점추정치를 그대로 양 끝점으로 적은 잘못된 구간이다.`]
+      ],0),
+      make("18","회귀 II","계산형 · ANOVA",String.raw`다중회귀에서 \(\mathrm{SSR}=120,\;\mathrm{SSE}=80,\; n=22,\; p=2\)일 때 전체 유의성 검정 \(F\) 통계량은?`,[
+        [String.raw`\(14.25\)`,String.raw`\(\mathrm{MSR}=120/2=60,\;\mathrm{MSE}=80/(22-2-1)=80/19\)이므로 \(F=60/(80/19)=14.25\)이다.`],
+        [String.raw`\(1.50\)`,`자유도로 나누지 않고 단순히 120/80을 계산한 값이다.`],
+        [String.raw`\(28.50\)`,`분자 자유도 p=2로 나누는 과정을 누락한 값이다.`],
+        [String.raw`\(4.21\)`,String.raw`\(\mathrm{MSE}=80/19\approx 4.21\) 자체를 \(F\) 값으로 착각한 선지다.`]
+      ],0),
+      make("19","회귀 III","계산형 · VIF",String.raw`설명변수 \(X_j\)를 나머지 설명변수들로 회귀한 보조회귀 결정계수가 \(R_j^2=0.9\)일 때 \((\mathrm{Tolerance}_j,\;\mathrm{VIF}_j)\)는?`,[
+        [String.raw`\((0.1,\; 10)\)`,String.raw`\(\mathrm{Tolerance}_j=1-0.9=0.1\)이고, \(\mathrm{VIF}_j=1/0.1=10\)이다.`],
+        [String.raw`\((0.9,\; 1.11)\)`,String.raw`\(R_j^2=0.9\)를 Tolerance로 그대로 착각해 계산한 값이다.`],
+        [String.raw`\((0.1,\; 0.1)\)`,`VIF는 Tolerance의 역수이므로 10이 되어야 한다.`],
+        [String.raw`\((10,\; 0.1)\)`,`Tolerance와 VIF의 순서를 반대로 적은 선지다.`]
+      ],0),
+      make("20","회귀 III","진단 · 가정",String.raw`잔차–적합값 그림이 뚜렷한 \(U\)자 곡선 모양이면서 동시에 적합값이 커질수록 잔차 퍼짐 폭도 증가한다. 함께 의심할 가정 위반의 조합은?`,[
+        ["정규성 · 다중공선성","곡선 패턴은 선형성, 퍼짐 확장은 등분산성 위반 신호다."],
+        ["선형성 · 등분산성","U자 곡선은 조건부 평균의 비선형성(선형성 위반), 퍼짐 증가(깔때기꼴)는 이분산성(등분산성 위반)을 시사한다."],
+        ["오차 독립성 · 정규성","자기상관이나 분위수 이탈이 아니라 곡률과 퍼짐 변화에 대한 설명이다."],
+        ["다중공선성 · 표본 대표성","잔차–적합값 그림의 곡선 및 깔때기 패턴은 선형성과 등분산성 진단 대상이다."]
+      ],1)
     ];
   }
 
@@ -235,9 +1586,9 @@
     [...singleBank,...multiBank,...caseBank].forEach(q=>{q.stem=mathify(q.stem);q.claim=mathify(q.claim);q.options.forEach(o=>{o.text=mathify(o.text);o.explanation=mathify(o.explanation)})});
     chooseBank();
     const singleUsed=singleBank.flatMap(q=>q.concepts),multiUsed=multiBank.flatMap(q=>q.concepts);
-    if(singleUsed.length!==concepts.length||new Set(singleUsed).size!==concepts.length)throw new Error("개념별 매핑 검사 실패");
-    if(multiUsed.length!==concepts.length||new Set(multiUsed).size!==concepts.length)throw new Error("복수정답 매핑 검사 실패");
-    if(multiBank.some(q=>!q.options.some(x=>x.correct)||!q.options.some(x=>!x.correct)))throw new Error("복수정답 선지 구성 실패");
+    if(singleUsed.length!==concepts.length||new Set(singleUsed).size!==concepts.length)throw new Error("개념별 매핑 검사 실패");
+    if(multiUsed.length!==concepts.length||new Set(multiUsed).size!==concepts.length)throw new Error("복수정답 매핑 검사 실패");
+    if(multiBank.some(q=>!q.options.some(x=>x.correct)||!q.options.some(x=>!x.correct)))throw new Error("복수정답 선지 구성 실패");
     const singleInvalid=singleBank.filter(q=>q.options.length!==4||q.options.filter(x=>x.correct).length!==1||new Set(q.options.map(x=>x.text)).size!==4);
     const authorityPattern=/교수님|교수자가|오답\s*처리/u,judgmentPattern=/^(옳다|틀리다)\s*[—–-]/u;
     const authorityCount=singleBank.reduce((n,q)=>n+(authorityPattern.test(q.stem)||authorityPattern.test(q.claim)?1:0)+q.options.filter(x=>authorityPattern.test(x.text)).length,0);
@@ -246,7 +1597,12 @@
     const fullAuthorityCount=allQuestionText.filter(x=>authorityPattern.test(x||"")).length;
     const fullJudgmentCount=allQuestionText.filter(x=>judgmentPattern.test(x||"")).length;
     const highOverlapCount=singleBank.reduce((n,q)=>{const correct=q.options.find(x=>x.correct)?.text||"";return n+q.options.filter(x=>!x.correct&&overlapScore(correct,x.text)>=3).length},0);
-    if(singleInvalid.length||authorityCount||judgmentCount||fullAuthorityCount||fullJudgmentCount)throw new Error("문항 형식 검사 실패");
+    const wrongChoices=singleBank.flatMap(q=>q.options.filter(x=>!x.correct));
+    const wrongTextCounts=new Map();wrongChoices.forEach(x=>wrongTextCounts.set(x.text,(wrongTextCounts.get(x.text)||0)+1));
+    const repeatedDistractorCount=[...wrongTextCounts.values()].filter(count=>count>1).reduce((sum,count)=>sum+count-1,0);
+    const genericExplanationCount=wrongChoices.filter(x=>/다른 개념에 대한 설명|직접 연결되지 않는다|문제의 조건이나 교안의 구분과 맞지 않는다/u.test(x.explanation)).length;
+    const spoilerClaimCount=singleBank.filter(q=>Boolean(q.claim)).length;
+    if(singleInvalid.length||authorityCount||judgmentCount||fullAuthorityCount||fullJudgmentCount||repeatedDistractorCount||genericExplanationCount||spoilerClaimCount)throw new Error("문항 형식 검사 실패");
     document.body.dataset.singleQuestionCount=String(singleBank.length);
     document.body.dataset.multiQuestionCount=String(multiBank.length);
     document.body.dataset.caseQuestionCount=String(caseBank.length);
@@ -259,8 +1615,13 @@
     document.body.dataset.fullAuthorityPhraseCount=String(fullAuthorityCount);
     document.body.dataset.fullJudgmentPrefixCount=String(fullJudgmentCount);
     document.body.dataset.highOverlapDistractorCount=String(highOverlapCount);
+    document.body.dataset.distractorCount=String(wrongChoices.length);
+    document.body.dataset.uniqueDistractorCount=String(wrongTextCounts.size);
+    document.body.dataset.repeatedDistractorCount=String(repeatedDistractorCount);
+    document.body.dataset.genericExplanationCount=String(genericExplanationCount);
+    document.body.dataset.spoilerClaimCount=String(spoilerClaimCount);
     const chapters=[...new Set(concepts.map(q=>q.chapter))];
-    $("#chapterGrid").innerHTML=`<button class="chapter-chip active" data-chapter="all">전체</button>`+chapters.map(c=>`<button class="chapter-chip" data-chapter="${c}">${c}</button>`).join("");
+    $("#chapterGrid").innerHTML=`<button class="chapter-chip active" data-chapter="all">전체</button>`+chapters.map(c=>`<button class="chapter-chip" data-chapter="${c}">${c}</button>`).join("");
     $("#loading").style.display="none";$("#quizCard").classList.remove("hidden");
     applyFilters();
   }
@@ -286,9 +1647,9 @@
     const q=filtered[cursor],answer=saved.answers[q.id];
     if(q.id!==currentQuestionId||answer)selected=new Set(answer?.selected||[]);
     currentQuestionId=q.id;
-    $("#chapterBadge").textContent=q.chapter;$("#conceptCount").textContent=`${q.type==="single"?"단일정답":"복수정답"} · ${cleanKind(q.kind)}`;
+    $("#chapterBadge").textContent=q.chapter;$("#conceptCount").textContent=`${q.type==="single"?"단일정답":"복수정답"} · ${cleanKind(q.kind)}`;
     $("#promptText").innerHTML=q.stem;$("#claimText").innerHTML=q.claim;$("#claimText").style.display=q.claim?"block":"none";
-    const answerHint=q.id.startsWith("C-")?"가장 적절한 선지 하나를 고르세요.":q.type==="single"?"가장 적절한 선지 하나를 고르세요.":"정답이 하나 이상일 수 있습니다.";
+    const answerHint=q.type==="single"?"가장 적절한 선지 하나를 고르세요.":"정답이 하나 이상일 수 있습니다.";
     $("#hintText").textContent=`${answerHint} · 숫자키 1–4 선택 · Enter 제출`;
     $("#bookmarkBtn").classList.toggle("on",!!saved.bookmarks[q.id]);$("#bookmarkBtn").textContent=saved.bookmarks[q.id]?"★":"☆";
     $("#options").innerHTML=q.options.map((opt,i)=>{
@@ -301,11 +1662,10 @@
     }).join("");
     const correctCount=q.options.filter(x=>x.correct).length;
     $("#resultBar").className="result-bar"+(answer?` show ${answer.correct?"good":"bad"}`:"");
-    const conventional=q.id.startsWith("C-");
-    $("#resultBar").textContent=answer?(answer.correct?(conventional?"정답입니다. 사례와 개념의 연결을 확인하세요.":q.type==="single"?"정답입니다. 핵심 근거를 확인하세요.":`정답입니다. ${correctCount}개를 모두 골랐습니다.`):(conventional?"오답입니다. 사례를 어떤 개념과 연결해 보세요.":q.type==="single"?"오답입니다. 정답 선지의 핵심 근거를 확인하세요.":"오답입니다. 선지별 해설을 확인하세요.")):"";
-    $("#retryBtn").classList.toggle("show",!!answer);$("#submitBtn").textContent=answer?"다음 문제 →":"선택 완료";
+    $("#resultBar").textContent=answer?(answer.correct?(q.type==="single"?"정답입니다. 선지별 개념 해설을 확인하세요.":`정답입니다. ${correctCount}개를 모두 골랐습니다.`):(q.type==="single"?"오답입니다. 정답 선지와 오답 이유를 확인하세요.":"오답입니다. 선지별 해설을 확인하세요.")):"";
+    $("#retryBtn").classList.toggle("show",!!answer);$("#submitBtn").textContent=answer?"다음 문제 →":"선택 완료";
     $("#submitBtn").disabled=!answer&&!selected.size;
-    $("#position").textContent=`${cursor+1} / ${filtered.length} · ${q.type==="single"?"단일":"복수"}`;
+    $("#position").textContent=`${cursor+1} / ${filtered.length} · ${q.type==="single"?"단일":"복수"}`;
     $("#prevBtn").disabled=cursor===0;$("#nextBtn").disabled=cursor===filtered.length-1;
     typeset();
   }
@@ -351,7 +1711,7 @@
   $("#stateTabs").addEventListener("click",e=>{const b=e.target.closest(".state-tab");if(!b)return;stateFilter=b.dataset.state;cursor=0;$$('.state-tab').forEach(x=>x.classList.toggle('active',x===b));applyFilters()});
   $("#chapterToggle").addEventListener("click",e=>{e.stopPropagation();$("#chapterPopover").classList.toggle("open")});
   $("#chapterPopover").addEventListener("click",e=>e.stopPropagation());document.addEventListener("click",()=>$("#chapterPopover").classList.remove("open"));
-  $("#chapterGrid").addEventListener("click",e=>{const b=e.target.closest(".chapter-chip");if(!b)return;chapterFilter=b.dataset.chapter;cursor=0;$$('.chapter-chip').forEach(x=>x.classList.toggle('active',x===b));$("#chapterToggle").textContent=`${chapterFilter==='all'?'전체 단원':chapterFilter} ▾`;$("#chapterPopover").classList.remove("open");applyFilters()});
+  $("#chapterGrid").addEventListener("click",e=>{const b=e.target.closest(".chapter-chip");if(!b)return;chapterFilter=b.dataset.chapter;cursor=0;$$('.chapter-chip').forEach(x=>x.classList.toggle('active',x===b));$("#chapterToggle").textContent=`${chapterFilter==='all'?'전체 단원':chapterFilter} ▾`;$("#chapterPopover").classList.remove("open");applyFilters()});
   document.addEventListener("keydown",e=>{
     if(["INPUT","SELECT","TEXTAREA"].includes(document.activeElement?.tagName)||e.metaKey||e.ctrlKey||e.altKey||e.shiftKey||e.repeat)return;
     if(e.key>="1"&&e.key<="4"&&!saved.answers[filtered[cursor]?.id]){
@@ -370,7 +1730,7 @@
       const concepts=source.contentWindow.OX_ITEMS;
       if(!Array.isArray(concepts)||!concepts.length)throw new Error();
       init(concepts.map(x=>({...x})));
-    }catch(e){$("#loading").textContent="개념 문항을 불러오지 못했습니다. 페이지를 새로고침해 주세요."}
+    }catch(e){$("#loading").textContent="개념 문항을 불러오지 못했습니다. 페이지를 새로고침해 주세요."}
   });
   </script>
 </body>
