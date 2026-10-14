@@ -351,7 +351,7 @@
     .question-card:last-child { border-bottom: 0; }
     .q-head { display: grid; grid-template-columns: 48px 1fr auto; align-items: start; gap: 8px; padding: 14px 14px 9px; }
     .q-number { color: var(--muted); font-size: 12px; padding-top: 2px; }
-    .q-title { font-weight: 650; line-height: 1.55; }
+    .q-title { min-width: 0; max-width: 100%; font-weight: 650; line-height: 1.55; overflow-wrap: anywhere; word-break: normal; }
     .q-meta { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; }
     .q-body { padding: 0 14px 15px 70px; }
     .answer-box {
@@ -378,9 +378,12 @@
     .small-btn.primary { background: var(--dark); color: white; border-color: var(--dark); }
     .grade-group { margin-left: auto; display: flex; gap: 4px; }
     .grade-btn.active { background: var(--dark); color: white; border-color: var(--dark); }
-    .solution { display: none; margin-top: 12px; padding: 13px 14px; background: var(--soft); border-radius: 4px; font-size: 13px; }
+    .solution { display: none; min-width: 0; max-width: 100%; margin-top: 12px; padding: 13px 14px; background: var(--soft); border-radius: 4px; font-size: 13px; overflow-wrap: anywhere; word-break: normal; }
     .solution.visible { display: block; }
     .solution-label { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .04em; margin-bottom: 4px; }
+    .q-title mjx-container:not([display="true"]), .solution mjx-container:not([display="true"]) { display: inline-block !important; max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: middle; }
+    .q-title mjx-container[display="true"], .solution mjx-container[display="true"] { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; margin: .45em 0 !important; }
+    .q-title mjx-container svg, .solution mjx-container svg { max-width: none; }
     .empty-state { display: none; padding: 40px 20px; text-align: center; color: var(--muted); }
 
     .quiz-controls { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0; }
@@ -457,6 +460,7 @@
       .grade-group { width: 100%; margin-left: 0; margin-top: 4px; }
       .source-grid { grid-template-columns: 1fr; }
       .block::before { display: none; }
+      body.view-problems .q-title mjx-container, body.view-problems .solution mjx-container { font-size: .9em !important; }
     }
     @media print {
       .topbar, .sidebar, .back-top, .quiz-controls, .db-toolbar, .q-actions, textarea { display: none !important; }
@@ -1165,6 +1169,53 @@
       {id:99,chapter:"선형회귀 III",type:"case",kind:"사례형",level:"응용",prompt:"변수 상관과 VIF로 중복 후보를 찾았고 Cook’s distance가 큰 관측도 발견했다. 안전한 모형 진단 순서를 서술하라.",answer:"기초 탐색·의미 확인 → 상관/VIF로 중복 변수 검토 → 모형 후보를 비교 → 잔차로 선형성·등분산성·정규성·오차 독립성 점검 → Cook 관측의 오류/실제 극단/모형 누락 확인 → 포함/제외 민감도와 보지 못한 자료 성능 비교."},
       {id:100,chapter:"종합",type:"case",kind:"실전 서술형",level:"최우선",prompt:"바이탈 센서·진료 기록·이미지로 입원 일수를 예측한다. ETL, $X/Y$, 회귀/분류, 학습 분할, 가정 진단, 배포 후 모니터링을 한 흐름으로 제시하라.",answer:"DB·API·파일에서 Extract→중복·단위·결측 Transform→Lake/Warehouse Load. 한 행=환자/입원 시점, X=센서·진료·이미지 특징, Y=연속형 입원 일수이므로 회귀. 환자 단위로 train/validation/test를 분리하고 전처리는 train에만 fit. 잔차로 선형성·등분산성·정규성·독립성, VIF·영향점을 점검. 배포 후 오차·분포 변화·편향·프라이버시를 모니터링하고 새 문제를 재정의."}
     ];
+
+    const problemMathUpgrades = {
+      1:{prompt:String.raw`샘플과 변수, \(X\)와 \(Y\)를 정의하고 \(X\in\mathbb{R}^{n\times p}\)의 \(n\)과 \(p\)가 무엇인지 쓰라.`,answer:String.raw`샘플은 분석 단위인 한 관측, 변수는 각 관측에서 측정한 특성이다. \(X\)는 \(n\)개 샘플×\(p\)개 입력변수 행렬, \(Y\)는 반응·출력이다.`},
+      10:{prompt:String.raw`\(A=\begin{bmatrix}1&2&3\\4&5&6\end{bmatrix}\)에서 행렬 크기, \(A_{i2}\), \(A_{2j}\)를 쓰라.`,answer:String.raw`\(A\)는 \(2\times3\). \(A_{i2}=\begin{bmatrix}2&5\end{bmatrix}^{\top}\)는 2열 열벡터, \(A_{2j}=\begin{bmatrix}4&5&6\end{bmatrix}\)는 2행 행벡터다.`},
+      11:{prompt:String.raw`전치 성질 네 개를 완성하라: \((A^\top)^\top\), \((A+B)^\top\), \((kA)^\top\), \((AB)^\top\).`,answer:String.raw`\((A^\top)^\top=A\), \((A+B)^\top=A^\top+B^\top\), \((kA)^\top=kA^\top\), \((AB)^\top=B^\top A^\top\). 곱의 순서가 뒤집힌다.`},
+      12:{prompt:String.raw`\(A\)가 \(3\times2\), \(B\)가 \(2\times4\)일 때 \(AB\), \(BA\), \(A^\top A\)가 정의되는지와 결과 크기를 쓰라.`,answer:String.raw`\(AB:(3\times2)(2\times4)=3\times4\). \(BA\)는 안쪽 차원 \(4\ne3\)이라 정의되지 않는다. \(A^\top A:(2\times3)(3\times2)=2\times2\).`},
+      20:{prompt:String.raw`\(A=\begin{bmatrix}a&b\\c&d\end{bmatrix}\)에서 가역 조건, 역행렬, \(Ax=b\)의 해를 완성하라.`,answer:String.raw`\(ad-bc\ne0\)일 때 \(A^{-1}=\dfrac1{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}\), 그리고 \(x=A^{-1}b\). \(ad-bc=0\)이면 특이행렬이다.`},
+      24:{prompt:String.raw`\(A=\begin{bmatrix}2&6\\5&3\end{bmatrix}\)에서 \(\lambda=8\)의 고유벡터와 특성다항식·모든 고유값을 구하라.`,answer:String.raw`\((A-8I)v=0\)에서 \(x_1=x_2\), 따라서 \(v=c(1,1),\ c\ne0\). \(\det(A-\lambda I)=\lambda^2-5\lambda-24=(\lambda-8)(\lambda+3)\), 고유값은 \(8,-3\).`},
+      30:{prompt:String.raw`확률 \(p(y\mid\theta)\)와 우도 \(L(\theta\mid y)\)의 무엇을 고정하고 무엇을 변화시키는지 쓰라.`,answer:String.raw`확률·밀도는 \(\theta\)를 고정하고 가능한 \(y\)를 본다. 우도는 관측 \(y\)를 고정하고 \(\theta\)별 자료 적합도를 비교한다.`},
+      35:{prompt:String.raw`유병률 \(P(D)=0.01\), 민감도 \(P(+\mid D)=0.90\), 특이도 \(P(-\mid D^c)=0.95\)일 때 \(P(D\mid+)\)를 구하라.`,answer:String.raw`\(P(D\mid+)=\dfrac{0.90\cdot0.01}{0.90\cdot0.01+0.05\cdot0.99}\approx0.1538\), 즉 \(15.38\%\)다. 낮은 사전확률 때문에 양성예측도가 민감도보다 훨씬 낮다.`},
+      37:{prompt:String.raw`다음 중 계수에 대해 선형인 모형은? ① \(\beta_0+\beta_1x+\beta_2x^2\) ② \(\beta_0+e^{\beta_1x}\) ③ \(\beta_0+\beta_1^2x\) ④ \(\beta_0+\sin(\beta_1x)\)`,answer:String.raw`①. \(x^2\)가 있어도 미지 계수 \(\beta\)들이 1차 선형결합으로 들어간다.`},
+      38:{prompt:String.raw`\(Y_i=\beta_0+\beta_1X_i+\varepsilon_i\)에서 \(E(\varepsilon\mid X)=0\)과 \(\operatorname{Var}(\varepsilon\mid X)=\sigma^2\)가 각각 무엇을 뜻하는지 쓰라.`,answer:String.raw`조건부 평균 오차가 0이므로 \(E(Y\mid X)=\beta_0+\beta_1X\), 조건부 오차분산이 일정하므로 \(\operatorname{Var}(Y\mid X)=\sigma^2\)인 등분산성을 뜻한다.`},
+      41:{prompt:String.raw`단순회귀 OLS에서 \(\hat\beta_0\)와 \(\hat\beta_1\)의 공식을 완성하라.`,answer:String.raw`\(\hat\beta_1=\dfrac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2}=\dfrac{S_{xy}}{S_{xx}}\), \(\hat\beta_0=\bar y-\hat\beta_1\bar x\).`},
+      44:{prompt:String.raw`다중회귀 \(y=X\beta+\varepsilon\)의 OLS 행렬해와 존재 조건을 쓰라.`,answer:String.raw`\(\hat\beta=(X^\top X)^{-1}X^\top y\). \(X\)가 완전 열랭크이어야 \(X^\top X\)가 가역이다.`},
+      49:{prompt:String.raw`기울기 양측검정의 \(H_0/H_1\)과 \(t\) 통계량을 쓰고 \(3.9324/0.4155\)를 계산하라.`,answer:String.raw`\(H_0:\beta_1=0\), \(H_1:\beta_1\ne0\). \(t=\hat\beta_1/SE(\hat\beta_1)=3.9324/0.4155\approx9.464\), 자유도는 \(50-2=48\).`},
+      50:{prompt:String.raw`\(t=9.464\), \(df=48\)인 양측검정 \(p\)값을 \(T\)분포 표현과 숫자로 쓰라.`,answer:String.raw`\(p=2P(T_{48}\ge|9.464|)\approx1.49\times10^{-12}\). 0이 아니라 매우 작은 양수다.`},
+      52:{prompt:String.raw`\(\hat\beta_1=3.9324\), \(SE=0.4155\), \(t_{0.975,48}=2.011\)일 때 95% 신뢰구간을 구하라.`,answer:String.raw`\(3.9324\pm2.011(0.4155)=3.9324\pm0.8356\), 약 \([3.0968,4.7680]\). 0을 포함하지 않아 양측검정 결론과 일치한다.`},
+      53:{prompt:String.raw`\(SST=200\), \(SSE=50\)일 때 \(SSR\)과 \(R^2\)를 구하고 해석하라.`,answer:String.raw`\(SSR=SST-SSE=150\), \(R^2=1-SSE/SST=1-50/200=0.75\). 절편 포함 OLS의 같은 학습자료에서 평균 기준 총변동의 75%를 적합값이 설명한다.`},
+      56:{prompt:String.raw`cars ANOVA의 \(F=89.57\), \(df=(1,48)\), \(p=1.49\times10^{-12}\) 값을 해석하고 \(t=9.464\)와 검산하라.`,answer:String.raw`전체 귀무가설 \(\beta_1=0\)을 기각해 회귀모형이 통계적으로 유의하다. 단순회귀에서 \(F=t^2\)이고 \(9.464^2\approx89.57\)이다.`},
+      61:{prompt:String.raw`\(X_j\)를 나머지 \(X\)에 회귀한 \(R_j^2=0.9\)일 때 tolerance와 VIF를 구하고 의미를 쓰라.`,answer:String.raw`\(\mathrm{Tolerance}_j=1-R_j^2=0.1\), \(\mathrm{VIF}_j=1/(1-R_j^2)=10\). 공선성 신호지만 자동 삭제 규칙이 아니다.`}
+    };
+    Object.assign(problemMathUpgrades, {
+      40:{prompt:String.raw`잔차 \(e_i\)와 모형 오차 \(\varepsilon_i\)를 정의하고 어느 쪽을 자료에서 계산할 수 있는지 쓰라.`,answer:String.raw`\(e_i=y_i-\hat y_i\)는 관측값과 적합값의 차이로 계산한다. \(\varepsilon_i=y_i-E(Y_i\mid X_i)\)는 모집단 조건부 평균과의 차이로 직접 관측하지 못한다.`},
+      13:{prompt:String.raw`\(A=\begin{bmatrix}6&7\\2&4\\4&1\end{bmatrix}\), \(B=\begin{bmatrix}3\\1\end{bmatrix}\)일 때 \(AB\)와 크기를 구하라.`,answer:String.raw`\(AB=\begin{bmatrix}25\\10\\13\end{bmatrix}\), 크기는 \(3\times1\)이다.`},
+      14:{prompt:String.raw`다음이 선형 1차 방정식인지 판정하라: (a) \(x_1-2x_2+33=4\) (b) \(3x_1+2x_2=7x_1x_2\) (c) \(2x_1=3\sqrt{x_2}+2\) (d) \(x_3-\sin x_2=x_1\).`,answer:String.raw`(a) O. (b) X: 미지수끼리 곱. (c) X: 제곱근. (d) X: \(\sin\) 함수. 미지수가 1차 선형결합으로만 들어가야 한다.`},
+      15:{prompt:String.raw`\(3x_1+40x_2+50x_3=80\), \(10x_1+20x_2+2x_3=62\), \(6x_1+8x_2+9x_3=133\)의 계수행렬과 첨가행렬을 쓰라.`,answer:String.raw`\(A=\begin{bmatrix}3&40&50\\10&20&2\\6&8&9\end{bmatrix}\), \(b=\begin{bmatrix}80\\62\\133\end{bmatrix}\). 첨가행렬은 \([A\mid b]\)이다.`},
+      18:{prompt:String.raw`REF 조건을 쓰고 \(\begin{bmatrix}1&-2&-3&-4\\0&2&-1&5\\0&0&1&2\end{bmatrix}\)의 판정을 교안 기준과 표준 REF 정의로 구별하라.`,answer:String.raw`표준 REF에서 pivot=1은 필수가 아니다. 교안은 두 번째 행 pivot이 2이므로 오답으로 표시했지만 표준 REF는 맞다.`},
+      19:{prompt:String.raw`\(x_1-2x_2+3x_3=9\), \(-x_1+3x_2=-4\), \(2x_1-5x_2+5x_3=17\)을 풀고 검산하라.`,answer:String.raw`\((x_1,x_2,x_3)=(1,-1,2)\). 대입하면 \(1+2+6=9\), \(-1-3=-4\), \(2+5+10=17\)이다.`},
+      21:{prompt:String.raw`\(A=\begin{bmatrix}2&5\\-3&-7\end{bmatrix}\), \(B=\begin{bmatrix}-7&-5\\3&2\end{bmatrix}\)의 \(AB\)를 계산하고 교안의 \(AB=Z=BA\) 표기를 바로잡아라.`,answer:String.raw`\(AB=BA=I=\begin{bmatrix}1&0\\0&1\end{bmatrix}\). 역행렬 정의에서 영행렬 \(Z\)가 아니라 단위행렬 \(I\)다.`},
+      22:{prompt:String.raw`일반 선형사상 \(T:\mathbb R^2\to\mathbb R\)은 단사일 수 있다. 참/거짓과 영공간 관점의 이유를 쓰라.`,answer:String.raw`거짓. 차원이 2에서 1로 줄어드는 선형사상은 \(\ker T\)에 0이 아닌 벡터가 있어 단사가 될 수 없다.`},
+      23:{prompt:String.raw`\(A=\begin{bmatrix}4&2\\3&5\end{bmatrix}\)에 \(v_1=(2,3)^\top\), \(v_2=(-1,1)^\top\), \(v_3=(3,-2)^\top\)를 곱해 고유벡터 여부와 \(\lambda\)를 판정하라.`,answer:String.raw`\(Av_1=(14,21)^\top=7v_1\), \(Av_2=(-2,2)^\top=2v_2\). \(Av_3=(8,-1)^\top\)은 \(v_3\)의 상수배가 아니다.`},
+      27:{prompt:String.raw`자료 \(1,2,3\)의 표본분산과 표준편차를 구하고 단위를 설명하라.`,answer:String.raw`\(\bar x=2\), \(\sum(x_i-\bar x)^2=2\). \(s^2=2/(3-1)=1\), \(s=1\). 분산의 단위는 원자료 단위의 제곱, 표준편차는 원자료와 같다.`},
+      29:{prompt:String.raw`연속형 정규분포에서 밀도 \(f(30)=0.08\)이면 \(P(X=30)=0.08\)이다. 참/거짓과 이유를 쓰라.`,answer:String.raw`거짓. 연속형 변수의 한 점 확률은 \(P(X=30)=0\)이고, 구간 확률은 밀도함수를 적분한 면적이다.`},
+      32:{prompt:String.raw`피어슨 상관계수 \(r=0\)에서 반드시 참인 것은? ① 독립 ② 인과 없음 ③ 선형 상관이 없음/약함 ④ 모든 비선형 관계 없음`,answer:String.raw`③. \(r=0\)은 선형 관계가 약하다는 뜻이며 독립·인과·비선형 관계 부재를 보장하지 않는다.`},
+      42:{prompt:String.raw`\((x,y)=(0,1),(1,3),(2,5)\)의 OLS 직선, 예측값, 잔차, \(SSE\)를 구하라.`,answer:String.raw`\(\bar x=1\), \(\bar y=3\), \(S_{xx}=2\), \(S_{xy}=4\). \(\hat y=1+2x\). 예측은 \((1,3,5)\), 잔차는 \((0,0,0)\), \(SSE=0\).`},
+      43:{prompt:String.raw`\((x,y)=(0,1),(1,2),(2,2),(3,4)\)에서 OLS 직선과 \(SSE\)를 구하라.`,answer:String.raw`\(\bar x=1.5\), \(\bar y=2.25\), \(S_{xx}=5\), \(S_{xy}=4.5\). \(\hat y=0.9+0.9x\). 잔차는 \((0.1,0.2,-0.7,0.4)\), \(SSE=0.70\).`},
+      45:{prompt:String.raw`교안의 \(\hat y=-17.579+3.932X\)에서 \(X=20\)의 예측값과 기울기·절편 해석 시 주의점을 쓰라.`,answer:String.raw`\(\hat y=-17.579+3.932(20)=61.061\). \(X\) 1단위 증가 시 평균 예측 \(Y\)가 3.932단위 증가한다. \(X=0\)이 관측 범위 밖이면 절편을 현실적으로 과해석하지 않는다.`},
+      47:{prompt:String.raw`cars 출력에서 Intercept=\(-17.5791\), speed=\(3.9324\)일 때 parameters의 점추정값과 추정 회귀식을 쓰라.`,answer:String.raw`\(\hat\beta_0=-17.5791\), \(\hat\beta_1=3.9324\), \(\widehat{dist}=-17.5791+3.9324\,speed\).`},
+      48:{prompt:String.raw`같은 출력에서 계수 추정치의 표준오차를 적고 단위를 설명하라.`,answer:String.raw`\(SE(\hat\beta_0)=6.7584\), \(SE(\hat\beta_1)=0.4155\). 절편의 SE는 \(Y\) 단위, 기울기 SE는 \(Y/X\) 단위다.`},
+      51:{prompt:String.raw`\(p\approx1.49\times10^{-12}\)을 \(\alpha=0.05\)에서 해석하고 인과 표현을 바로잡아라.`,answer:String.raw`\(p<\alpha\)이므로 \(H_0\)를 기각한다. 속도와 제동거리 사이의 선형 연관이 유의하지만, 관측자료의 작은 \(p\)값만으로 인과를 증명할 수 없다.`},
+      54:{prompt:String.raw`\(SSR/SST=1\)과 \(0\)을 각각 해석하라.`,answer:String.raw`1이면 \(SSE=0\)이고 학습 총변동을 모두 설명한다. 0이면 \(SSR=0\)이라 평균만 쓰는 모형 대비 개선이 없다.`},
+      55:{prompt:String.raw`cars 출력의 \(R^2=0.6511\), 수정 \(R^2=0.6438\)을 쓰고 두 값의 의미 차이를 설명하라.`,answer:String.raw`\(R^2\)는 학습자료 변동 설명 비율, 수정 \(R^2\)는 표본 수와 설명변수 수의 자유도 벌점으로 보정한 값이다.`},
+      59:{prompt:String.raw`Q–Q plot의 모든 점이 정확히 직선 위에 있어야만 회귀를 사용할 수 있다. 참/거짓과 정규성의 역할을 쓰라.`,answer:String.raw`거짓. Q–Q plot은 오차 정규성의 근사적 점검이며, 정규성은 특히 소표본 \(t/F\) 추론의 정확한 분포와 관련된다.`},
+      60:{prompt:String.raw`다중공선성이 계수, 표준오차, \(t\)값, 예측에 미칠 수 있는 영향을 쓰라.`,answer:String.raw`계수가 작은 자료 변화에 민감해지고 표준오차가 커져 개별 \(t\)가 작아질 수 있다.`},
+      62:{prompt:String.raw`설명변수 \(X\)끼리 강하게 상관되면 오차의 시간적 독립성 가정도 자동 위반된다. 참/거짓과 이유를 쓰라.`,answer:String.raw`거짓. \(X\) 사이의 강한 관계는 다중공선성, 관측 오차의 연관은 오차 독립성 문제다.`}
+    });
+    Object.entries(problemMathUpgrades).forEach(([id, upgrade]) => Object.assign(problems.find(problem => problem.id === Number(id)), upgrade));
 
     const PRIORITY_IDS = new Set([1,3,4,5,6,7,8,10,11,14,17,20,23,24,25,28,30,33,36,38,39,41,44,46,47,48,49,50,51,53,54,55,56,57,58,60,61,65,66,67,68,69,70,71,72,73,74,77,78,79,84,85,86,87,88,89,90,92,93,94,95,96,97,98,100]);
     const KEY = 'dm-midterm-notion-v3';
