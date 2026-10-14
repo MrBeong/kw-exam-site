@@ -276,12 +276,13 @@
     currentQuestionId=q.id;
     $("#chapterBadge").textContent=q.chapter;$("#conceptCount").textContent=`${q.type==="single"?"단일정답":"복수정답"} · ${cleanKind(q.kind)}`;
     $("#promptText").textContent=q.stem;$("#claimText").innerHTML=q.claim;$("#claimText").style.display=q.claim?"block":"none";
-    $("#hintText").textContent=q.id.startsWith("C-")?"가장 적절한 선지 하나를 고르세요.":q.type==="single"?"가장 적절한 선지 하나를 고르세요.":"정답이 하나 이상일 수 있습니다.";
+    const answerHint=q.id.startsWith("C-")?"가장 적절한 선지 하나를 고르세요.":q.type==="single"?"가장 적절한 선지 하나를 고르세요.":"정답이 하나 이상일 수 있습니다.";
+    $("#hintText").textContent=`${answerHint} · 숫자키 1–4 선택 · Enter 제출`;
     $("#bookmarkBtn").classList.toggle("on",!!saved.bookmarks[q.id]);$("#bookmarkBtn").textContent=saved.bookmarks[q.id]?"★":"☆";
     $("#options").innerHTML=q.options.map((opt,i)=>{
       const picked=selected.has(opt.id);let cls=picked?" selected":"";
       if(answer){if(opt.correct)cls+=" "+(picked?"correct":"missed");else if(picked)cls+=" wrong-selected"}
-      return `<button class="option${cls}" data-id="${opt.id}" type="button" aria-pressed="${picked}" ${answer?"disabled":""}>
+      return `<button class="option${cls}" data-id="${opt.id}" type="button" aria-pressed="${picked}" aria-keyshortcuts="${i+1}" title="단축키 ${i+1}" ${answer?"disabled":""}>
         <span class="letter">${letters[i]}</span><span class="option-text">${opt.text}</span>
         ${answer?`<span class="option-explain"><span class="truth ${opt.correct?"o":"x"}">${opt.correct?"✓":"×"}</span>${opt.explanation}</span>`:""}
       </button>`;
@@ -339,7 +340,17 @@
   $("#chapterToggle").addEventListener("click",e=>{e.stopPropagation();$("#chapterPopover").classList.toggle("open")});
   $("#chapterPopover").addEventListener("click",e=>e.stopPropagation());document.addEventListener("click",()=>$("#chapterPopover").classList.remove("open"));
   $("#chapterGrid").addEventListener("click",e=>{const b=e.target.closest(".chapter-chip");if(!b)return;chapterFilter=b.dataset.chapter;cursor=0;$$('.chapter-chip').forEach(x=>x.classList.toggle('active',x===b));$("#chapterToggle").textContent=`${chapterFilter==='all'?'전체 단원':chapterFilter} ▾`;$("#chapterPopover").classList.remove("open");applyFilters()});
-  document.addEventListener("keydown",e=>{if(e.key>="1"&&e.key<="4"&&!saved.answers[filtered[cursor]?.id]){const opt=filtered[cursor]?.options[Number(e.key)-1];if(opt)toggleOption(opt.id)}if(e.key==="Enter")submit();if(e.key==="ArrowLeft")move(-1);if(e.key==="ArrowRight")move(1)});
+  document.addEventListener("keydown",e=>{
+    if(["INPUT","SELECT","TEXTAREA"].includes(document.activeElement?.tagName)||e.metaKey||e.ctrlKey||e.altKey||e.shiftKey||e.repeat)return;
+    if(e.key>="1"&&e.key<="4"&&!saved.answers[filtered[cursor]?.id]){
+      const opt=filtered[cursor]?.options[Number(e.key)-1];
+      if(opt){e.preventDefault();toggleOption(opt.id)}
+      return;
+    }
+    if(e.key==="Enter"){e.preventDefault();submit();return}
+    if(e.key==="ArrowLeft"){e.preventDefault();move(-1);return}
+    if(e.key==="ArrowRight"){e.preventDefault();move(1)}
+  });
 
   const source=$("#conceptSource");
   source.addEventListener("load",()=>{

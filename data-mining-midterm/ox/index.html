@@ -134,10 +134,10 @@
           <div class="card-head"><span class="badge" id="chapterBadge"></span><span class="source-badge" id="kindBadge"></span><button class="bookmark" id="bookmarkBtn" type="button" aria-label="북마크">☆</button></div>
           <div class="statement" id="statement"></div>
           <div class="answer-row">
-            <button class="answer" data-answer="true" type="button">O</button>
-            <button class="answer" data-answer="false" type="button">X</button>
+            <button class="answer" data-answer="true" type="button" aria-label="O, 단축키 쉼표" title="단축키 ,">O</button>
+            <button class="answer" data-answer="false" type="button" aria-label="X, 단축키 마침표" title="단축키 .">X</button>
           </div>
-          <div class="auto-note">정답은 자동으로 다음 문항 · 오답은 해설 확인</div>
+          <div class="auto-note">단축키 , = O · . = X · 정답은 자동으로 다음 문항</div>
           <div class="feedback" id="feedback"><div class="verdict" id="verdict"></div><p class="explain" id="explain"></p><div class="source" id="source"></div></div>
           <div class="card-foot"><button class="nav-btn" id="prevBtn" type="button">← 이전</button><span class="position" id="position"></span><button class="nav-btn" id="nextBtn" type="button">다음 →</button></div>
         </article>
@@ -448,7 +448,13 @@
   chapterStrip.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;$("#chapterSelect").value=b.dataset.chapter;chapterStrip.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x===b));$("#chapterPopover").classList.remove("open");applyFilters()});
   $("#shuffleBtn").addEventListener("click",()=>{const current=filtered[cursor]?.id;order=[...order].sort(()=>Math.random()-.5);applyFilters(current)});
   $("#resetBtn").addEventListener("click",()=>{if(confirm("모든 O/X 응답과 북마크 기록을 초기화할까요?")){saved={answers:{},bookmarks:{}};save();applyFilters()}});
-  document.addEventListener("keydown",e=>{if(["INPUT","SELECT","TEXTAREA"].includes(document.activeElement.tagName))return;if(e.key.toLowerCase()==="o")answer(true);if(e.key.toLowerCase()==="x")answer(false);if(e.key==="ArrowLeft"&&cursor>0){cursor--;render()}if(e.key==="ArrowRight"&&cursor<filtered.length-1){cursor++;render()}});
+  document.addEventListener("keydown",e=>{
+    if(["INPUT","SELECT","TEXTAREA"].includes(document.activeElement?.tagName)||e.metaKey||e.ctrlKey||e.altKey||e.shiftKey||e.repeat)return;
+    if(e.code==="Comma"||e.key===","){e.preventDefault();answer(true);return}
+    if(e.code==="Period"||e.key==="."){e.preventDefault();answer(false);return}
+    if(e.key==="ArrowLeft"&&cursor>0){e.preventDefault();cursor--;render()}
+    if(e.key==="ArrowRight"&&cursor<filtered.length-1){e.preventDefault();cursor++;render()}
+  });
   applyFilters();
   </script>
 </body>
