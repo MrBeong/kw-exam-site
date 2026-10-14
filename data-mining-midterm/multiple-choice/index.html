@@ -13,7 +13,7 @@
     :root{--ink:#191919;--muted:#787774;--line:#e8e7e4;--soft:#f7f6f3;--green:#2f7d4a;--green-bg:#edf7f0;--red:#b42318;--red-bg:#fff1ef}
     *{box-sizing:border-box}html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none}body{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif;color:var(--ink);background:#fff}
     button{font:inherit;color:inherit;cursor:pointer}.top{height:54px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 18px;background:rgba(255,255,255,.96);backdrop-filter:blur(12px)}.app-tabs{display:flex;align-items:center;gap:2px;padding:3px;background:var(--soft);border-radius:7px;overflow-x:auto}.app-tab{color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;padding:5px 9px;border-radius:5px;white-space:nowrap}.app-tab:hover,.app-tab.active{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
-    .page{width:min(760px,calc(100% - 20px));height:calc(100dvh - 54px);margin:auto;padding:9px 0 10px;display:flex;flex-direction:column;overflow:hidden}.controls{flex:0 0 auto;margin-bottom:8px}.mode-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:6px;padding:3px;background:var(--soft);border-radius:7px}.mode-tab{border:0;background:transparent;border-radius:5px;padding:6px 8px;font-size:12px;font-weight:800}.mode-tab.active{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1)}.control-row{display:flex;align-items:center;gap:6px}.state-tabs{display:flex;flex:1;gap:3px;min-width:0}.state-tab,.chapter-toggle{border:0;background:transparent;border-radius:6px;padding:7px 9px;font-size:12px;font-weight:700;white-space:nowrap}.state-tab.active{background:#202020;color:#fff}.state-tab:not(.active):hover,.chapter-toggle:hover{background:var(--soft)}.chapter-toggle{border:1px solid var(--line);background:#fff}
+    .page{width:min(760px,calc(100% - 20px));height:calc(100dvh - 54px);margin:auto;padding:9px 0 10px;display:flex;flex-direction:column;overflow:hidden}.controls{flex:0 0 auto;margin-bottom:8px}.mode-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:6px;padding:3px;background:var(--soft);border-radius:7px}.mode-tab{border:0;background:transparent;border-radius:5px;padding:6px 8px;font-size:12px;font-weight:800}.mode-tab.active{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1)}.control-row{display:flex;align-items:center;gap:5px}.state-tabs{display:flex;flex:1;gap:3px;min-width:0}.state-tab,.chapter-toggle,.reset-all{border:0;background:transparent;border-radius:6px;padding:7px 9px;font-size:12px;font-weight:700;white-space:nowrap}.state-tab.active{background:#202020;color:#fff}.state-tab:not(.active):hover,.chapter-toggle:hover,.reset-all:hover{background:var(--soft)}.chapter-toggle,.reset-all{border:1px solid var(--line);background:#fff}.reset-all{color:#555}
     .chapter-popover{display:none;position:fixed;z-index:50;top:104px;left:50%;transform:translateX(-50%);width:min(740px,calc(100% - 20px));padding:10px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 34px rgba(0,0,0,.14)}.chapter-popover.open{display:block}.chapter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.chapter-chip{border:1px solid var(--line);background:#fff;border-radius:6px;padding:8px 5px;font-size:12px;font-weight:700}.chapter-chip.active{background:#202020;color:#fff;border-color:#202020}
     .quiz-card{flex:1;min-height:0;border:1px solid var(--line);border-radius:9px;background:#fff;display:flex;flex-direction:column;overflow:hidden}.card-head{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:9px 12px;border-bottom:1px solid var(--line)}.badge{font-size:12px;font-weight:700;background:var(--soft);padding:4px 7px;border-radius:5px}.kind{font-size:12px;color:var(--muted)}.spacer{flex:1}.bookmark{border:0;background:transparent;font-size:22px;line-height:1;padding:2px 4px}.bookmark.on{color:#b87800}
     .prompt{flex:0 0 auto;padding:11px 14px 8px;font-size:16px;font-weight:800}.claim{display:block;margin-top:7px;padding:8px 10px;border-left:3px solid #222;background:var(--soft);font-size:14px;line-height:1.45}.hint{display:block;margin-top:4px;color:var(--muted);font-size:11px;font-weight:500}.options{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:4px 12px 10px}.option{width:100%;display:grid;grid-template-columns:30px 1fr;gap:8px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 10px;margin:0 0 7px;line-height:1.45}.option:hover{background:#fbfbfa}.option.selected{border-color:#222;box-shadow:inset 0 0 0 1px #222}.letter{width:26px;height:26px;border-radius:6px;background:var(--soft);display:grid;place-items:center;font-size:12px;font-weight:800}.option.selected .letter{background:#222;color:#fff}.option.correct{border-color:#8cc59d;background:var(--green-bg)}.option.wrong-selected{border-color:#e7a39c;background:var(--red-bg)}.option.missed{border-style:dashed;border-color:#70a982;background:#f6fbf7}.option.correct .letter,.option.missed .letter{background:var(--green);color:#fff}.option.wrong-selected .letter{background:var(--red);color:#fff}.option-text{font-size:14px;font-weight:650}.option-explain{grid-column:2;margin-top:4px;padding-top:6px;border-top:1px solid rgba(0,0,0,.08);font-size:12px;color:#555}.truth{font-weight:900;margin-right:4px}.truth.o{color:var(--green)}.truth.x{color:var(--red)}
@@ -22,7 +22,7 @@
     .card-foot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-top:1px solid var(--line)}.nav-btn{border:0;background:transparent;padding:7px 8px;border-radius:5px;font-size:13px}.nav-btn:hover{background:var(--soft)}.nav-btn:disabled{opacity:.3;cursor:default}.position{font-size:12px;color:var(--muted)}
     .loading{flex:1;display:grid;place-items:center;color:var(--muted);font-size:14px}.empty{display:none;flex:1;place-items:center;text-align:center;color:var(--muted);padding:24px}.empty.show{display:grid}.quiz-card.hidden{display:none}iframe{display:none}
     mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}
-    @media(max-width:520px){.top{height:48px;padding:0 7px}.app-tabs{gap:0}.app-tab{font-size:10px;padding:5px 6px}.page{width:calc(100% - 14px);height:calc(100dvh - 48px);padding:6px 0 7px}.controls{margin-bottom:5px}.mode-tabs{margin-bottom:4px}.mode-tab{font-size:10px;padding:5px 4px}.state-tabs{gap:2px}.state-tab,.chapter-toggle{font-size:10px;padding:5px 7px}.chapter-popover{top:119px;width:calc(100% - 14px)}.chapter-grid{grid-template-columns:repeat(2,1fr)}.card-head{padding:6px 9px}.prompt{font-size:14px;padding:8px 10px 5px}.claim{font-size:12px;margin-top:5px;padding:6px 8px}.options{padding:3px 9px 5px}.option{grid-template-columns:27px 1fr;gap:6px;padding:7px 8px;margin-bottom:5px}.letter{width:24px;height:24px}.option-text{font-size:12px}.option-explain{font-size:11px}.actions{padding:5px 9px}.action{padding:7px 10px}.card-foot{padding:3px 6px}}
+    @media(max-width:520px){.top{height:48px;padding:0 7px}.app-tabs{gap:0}.app-tab{font-size:10px;padding:5px 6px}.page{width:calc(100% - 14px);height:calc(100dvh - 48px);padding:6px 0 7px}.controls{margin-bottom:5px}.mode-tabs{margin-bottom:4px}.mode-tab{font-size:10px;padding:5px 4px}.state-tabs{gap:1px}.state-tab,.chapter-toggle,.reset-all{font-size:9px;padding:5px 6px}.chapter-popover{top:119px;width:calc(100% - 14px)}.chapter-grid{grid-template-columns:repeat(2,1fr)}.card-head{padding:6px 9px}.prompt{font-size:14px;padding:8px 10px 5px}.claim{font-size:12px;margin-top:5px;padding:6px 8px}.options{padding:3px 9px 5px}.option{grid-template-columns:27px 1fr;gap:6px;padding:7px 8px;margin-bottom:5px}.letter{width:24px;height:24px}.option-text{font-size:12px}.option-explain{font-size:11px}.actions{padding:5px 9px}.action{padding:7px 10px}.card-foot{padding:3px 6px}}
   </style>
 </head>
 <body>
@@ -51,6 +51,7 @@
           <button class="state-tab" data-state="bookmarked" type="button">북마크</button>
         </div>
         <button class="chapter-toggle" id="chapterToggle" type="button">전체 단원 ▾</button>
+        <button class="reset-all" id="retryAllBtn" type="button">전체 문제 다시</button>
       </div>
     </section>
     <div class="chapter-popover" id="chapterPopover"><div class="chapter-grid" id="chapterGrid"></div></div>
@@ -70,7 +71,7 @@
       <div class="options" id="options"></div>
       <div class="result-bar" id="resultBar"></div>
       <div class="actions">
-        <button class="action retry" id="retryBtn" type="button">다시 풀기</button>
+        <button class="action retry" id="retryBtn" type="button">이 문제 다시 풀기</button>
         <button class="action primary" id="submitBtn" type="button">선택 완료</button>
       </div>
       <div class="card-foot">
@@ -85,7 +86,7 @@
   <iframe id="conceptSource" src="../ox/?concept-source=1" title="개념 데이터"></iframe>
 
   <script>
-  const KEY="dm-midterm-multiple-v2";
+  const KEY="dm-midterm-multiple-v3";
   const letters=["A","B","C","D"];
   let concepts=[],singleBank=[],multiBank=[],caseBank=[],questions=[],filtered=[],cursor=0,stateFilter="all",chapterFilter="all",mode="mixed",selected=new Set(),currentQuestionId=null;
   let saved={answers:{},bookmarks:{}};
@@ -94,7 +95,7 @@
   const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
   const save=()=>localStorage.setItem(KEY,JSON.stringify(saved));
 
-  function singleStem(item,index){
+  function legacySingleStem(item,index){
     const trueStems=[
       "다음 주장에 대한 판단과 근거의 조합으로 가장 적절한 것은?",
       "학생이 다음 내용을 답안에 적었다. 채점 결과와 근거로 알맞은 것은?",
@@ -109,7 +110,7 @@
     ];
     return (item.answer?trueStems:falseStems)[index%4];
   }
-  function buildSingleQuestions(all){
+  function legacyBuildSingleQuestions(all){
     return all.map((item,index)=>{
       const label=item.answer?"옳다":"틀리다",opposite=item.answer?"틀리다":"옳다";
       const wrongReason=item.answer?"이 설명은 교안의 정의와 반대되며 해당 개념을 이 문제에 적용할 수 없다.":"이 설명은 조건이나 예외를 따질 피료가 없으며 문장을 그대로 받아들여야 한다.";
@@ -120,7 +121,50 @@
         {id:`S-${item.id}-R2`,text:`${opposite} — ${wrongReason}`,correct:false,explanation:"판단과 근거가 모두 문제의 주장에 맞지 않는다."}
       ];
       const shift=(index*3)%4,options=raw.slice(shift).concat(raw.slice(0,shift));
-      return {id:`S-${item.id}`,chapter:item.chapter,type:"single",kind:item.kind,stem:singleStem(item,index),claim:item.statement,concepts:[item.id],options};
+      return {id:`S-${item.id}`,chapter:item.chapter,type:"single",kind:item.kind,stem:legacySingleStem(item,index),claim:item.statement,concepts:[item.id],options};
+    });
+  }
+  function coreText(text){
+    const replacements=new Map([
+      ["교수님은 모델보다 구체적인 문제, 필요한 의사결정, 목표 출력을 먼저 정하라고 강조했다.","사용할 모델을 고르기 전에 구체적인 문제, 필요한 의사결정, 목표 출력을 먼저 정의해야 한다."],
+      ["교수님은 일부 알고리즘에 회귀 변형도 있으므로 이름만으로 목적을 단정하지 말라고 설명했다.","일부 알고리즘에는 회귀 변형도 있으므로 알고리즘 이름만으로 예측 목적을 단정할 수 없다."]
+    ]);
+    let result=replacements.get(text)||text;
+    result=result.replace(/^\s*(옳다|틀리다)[.·:]?\s*/u,"")
+      .replace(/교수님은\s*/gu,"").replace(/교수자가\s*/gu,"")
+      .replace(/\s*강조했다[.]?$/u,".").replace(/\s*설명했다[.]?$/u,".");
+    return result.trim();
+  }
+  function cleanKind(kind){return kind==="교수 강조"?"핵심 개념":kind}
+  function terms(text){return new Set(text.replace(/\\\([^)]*\\\)|\\\[[^\]]*\\\]/g," ").toLowerCase().split(/[^0-9a-zA-Z가-힣βθ²]+/u).filter(x=>x.length>1))}
+  function overlapScore(a,b){let score=0;const aTerms=terms(a),bTerms=terms(b);aTerms.forEach(x=>{if(bTerms.has(x))score++});return score}
+  function distractorTexts(item,all){
+    const target=`${item.statement} ${coreText(item.explanation)}`;
+    const ranked=all.filter(x=>x.id!==item.id).map(x=>({
+      text:coreText(x.explanation),sameChapter:x.chapter===item.chapter?1:0,sameKind:x.kind===item.kind?1:0,
+      score:overlapScore(target,`${x.statement} ${x.explanation}`),id:Number(String(x.id).replace(/\D/g,""))||0
+    })).filter(x=>x.text&&x.text!==coreText(item.explanation))
+      .sort((a,b)=>b.sameChapter-a.sameChapter||a.score-b.score||b.sameKind-a.sameKind||a.id-b.id);
+    const ordered=ranked;
+    const unique=[];const seen=new Set([coreText(item.explanation)]);
+    for(const candidate of ordered){if(seen.has(candidate.text))continue;seen.add(candidate.text);unique.push(candidate.text);if(unique.length===3)break}
+    return unique;
+  }
+  function singleStem(item,index){
+    const trueStems=["다음 문장의 핵심 의미로 가장 적절한 것은?","다음 설명과 직접 연결되는 근거는?","다음 개념을 가장 정확히 해석한 것은?","다음 문장을 구체적으로 설명한 내용은?"];
+    const falseStems=["다음 문장이 틀린 이유로 가장 적절한 것은?","다음 문장의 오류를 바로잡은 설명은?","다음 설명에서 잘못 이해한 부분은?","다음 문장을 수정한 내용으로 가장 적절한 것은?"];
+    return (item.answer?trueStems:falseStems)[index%4];
+  }
+  function buildSingleQuestions(all){
+    return all.map((item,index)=>{
+      const correctText=coreText(item.explanation),distractors=distractorTexts(item,all);
+      if(distractors.length!==3)throw new Error(`선지 생성 실패: ${item.id}`);
+      const raw=[
+        {id:`S-${item.id}-C`,text:correctText,correct:true,explanation:`핵심 근거: ${correctText}`},
+        ...distractors.map((text,i)=>({id:`S-${item.id}-D${i+1}`,text,correct:false,explanation:"이 선택지는 다른 개념에 대한 설명으로, 제시된 문장의 핵심 근거와 직접 연결되지 않는다."}))
+      ];
+      const shift=(index*3)%4,options=raw.slice(shift).concat(raw.slice(0,shift));
+      return {id:`S-${item.id}`,chapter:item.chapter,type:"single",kind:cleanKind(item.kind),stem:singleStem(item,index),claim:item.statement,concepts:[item.id],options};
     });
   }
   function buildMultiQuestions(all){
@@ -142,7 +186,7 @@
       });
       groups.forEach(options=>{
         options.sort((a,b)=>Number(a.id.slice(2))-Number(b.id.slice(2)));
-        output.push({id:`M-MC${String(number++).padStart(3,"0")}`,chapter,type:"multi",kind:"전 범위 비교",stem:"다음 중 옳은 내용을 모두 고르시오.",claim:"",concepts:options.map(x=>x.id),options:options.map(x=>({id:`M-${x.id}`,text:x.statement,correct:x.answer,explanation:x.explanation}))});
+        output.push({id:`M-MC${String(number++).padStart(3,"0")}`,chapter,type:"multi",kind:"전 범위 비교",stem:"다음 중 옳은 내용을 모두 고르시오.",claim:"",concepts:options.map(x=>x.id),options:options.map(x=>({id:`M-${x.id}`,text:x.statement,correct:x.answer,explanation:coreText(x.explanation)}))});
       });
     });
     return output;
@@ -178,12 +222,27 @@
     if(singleUsed.length!==concepts.length||new Set(singleUsed).size!==concepts.length)throw new Error("개념별 매핑 검사 실패");
     if(multiUsed.length!==concepts.length||new Set(multiUsed).size!==concepts.length)throw new Error("복수정답 매핑 검사 실패");
     if(multiBank.some(q=>!q.options.some(x=>x.correct)||!q.options.some(x=>!x.correct)))throw new Error("복수정답 선지 구성 실패");
+    const singleInvalid=singleBank.filter(q=>q.options.length!==4||q.options.filter(x=>x.correct).length!==1||new Set(q.options.map(x=>x.text)).size!==4);
+    const authorityPattern=/교수님|교수자가|오답\s*처리/u,judgmentPattern=/^(옳다|틀리다)\s*[—–-]/u;
+    const authorityCount=singleBank.reduce((n,q)=>n+(authorityPattern.test(q.stem)||authorityPattern.test(q.claim)?1:0)+q.options.filter(x=>authorityPattern.test(x.text)).length,0);
+    const judgmentCount=singleBank.reduce((n,q)=>n+q.options.filter(x=>judgmentPattern.test(x.text)).length,0);
+    const allQuestionText=[...singleBank,...multiBank,...caseBank].flatMap(q=>[q.stem,q.claim,q.kind,...q.options.flatMap(x=>[x.text,x.explanation])]);
+    const fullAuthorityCount=allQuestionText.filter(x=>authorityPattern.test(x||"")).length;
+    const fullJudgmentCount=allQuestionText.filter(x=>judgmentPattern.test(x||"")).length;
+    const highOverlapCount=singleBank.reduce((n,q)=>{const correct=q.options.find(x=>x.correct)?.text||"";return n+q.options.filter(x=>!x.correct&&overlapScore(correct,x.text)>=3).length},0);
+    if(singleInvalid.length||authorityCount||judgmentCount||fullAuthorityCount||fullJudgmentCount)throw new Error("문항 형식 검사 실패");
     document.body.dataset.singleQuestionCount=String(singleBank.length);
     document.body.dataset.multiQuestionCount=String(multiBank.length);
     document.body.dataset.caseQuestionCount=String(caseBank.length);
     document.body.dataset.mixedQuestionCount=String(singleBank.length+multiBank.length+caseBank.length);
     document.body.dataset.conceptCount=String(concepts.length);
     document.body.dataset.uniqueConceptCount=String(new Set(singleUsed).size);
+    document.body.dataset.singleInvalidCount=String(singleInvalid.length);
+    document.body.dataset.authorityPhraseCount=String(authorityCount);
+    document.body.dataset.judgmentPrefixCount=String(judgmentCount);
+    document.body.dataset.fullAuthorityPhraseCount=String(fullAuthorityCount);
+    document.body.dataset.fullJudgmentPrefixCount=String(fullJudgmentCount);
+    document.body.dataset.highOverlapDistractorCount=String(highOverlapCount);
     const chapters=[...new Set(concepts.map(q=>q.chapter))];
     $("#chapterGrid").innerHTML=`<button class="chapter-chip active" data-chapter="all">전체</button>`+chapters.map(c=>`<button class="chapter-chip" data-chapter="${c}">${c}</button>`).join("");
     $("#loading").style.display="none";$("#quizCard").classList.remove("hidden");
@@ -211,9 +270,9 @@
     const q=filtered[cursor],answer=saved.answers[q.id];
     if(q.id!==currentQuestionId||answer)selected=new Set(answer?.selected||[]);
     currentQuestionId=q.id;
-    $("#chapterBadge").textContent=q.chapter;$("#conceptCount").textContent=`${q.type==="single"?"단일정답":"복수정답"} · ${q.kind}`;
+    $("#chapterBadge").textContent=q.chapter;$("#conceptCount").textContent=`${q.type==="single"?"단일정답":"복수정답"} · ${cleanKind(q.kind)}`;
     $("#promptText").textContent=q.stem;$("#claimText").innerHTML=q.claim;$("#claimText").style.display=q.claim?"block":"none";
-    $("#hintText").textContent=q.id.startsWith("C-")?"가장 적절한 선지 하나를 고르세요.":q.type==="single"?"판단과 근거가 모두 맞아야 정답입니다.":"정답이 하나 이상일 수 있습니다.";
+    $("#hintText").textContent=q.id.startsWith("C-")?"가장 적절한 선지 하나를 고르세요.":q.type==="single"?"가장 적절한 선지 하나를 고르세요.":"정답이 하나 이상일 수 있습니다.";
     $("#bookmarkBtn").classList.toggle("on",!!saved.bookmarks[q.id]);$("#bookmarkBtn").textContent=saved.bookmarks[q.id]?"★":"☆";
     $("#options").innerHTML=q.options.map((opt,i)=>{
       const picked=selected.has(opt.id);let cls=picked?" selected":"";
@@ -226,7 +285,7 @@
     const correctCount=q.options.filter(x=>x.correct).length;
     $("#resultBar").className="result-bar"+(answer?` show ${answer.correct?"good":"bad"}`:"");
     const conventional=q.id.startsWith("C-");
-    $("#resultBar").textContent=answer?(answer.correct?(conventional?"정답입니다. 사례와 개념의 연결을 확인하세요.":q.type==="single"?"정답입니다. 판단과 근거를 함께 확인하세요.":`정답입니다. ${correctCount}개를 모두 골랐습니다.`):(conventional?"오답입니다. 사례를 어떤 개념과 연결해 보세요.":q.type==="single"?"오답입니다. 정답 선지의 판단·근거 조합을 확인하세요.":"오답입니다. 선지별 해설을 확인하세요.")):"";
+    $("#resultBar").textContent=answer?(answer.correct?(conventional?"정답입니다. 사례와 개념의 연결을 확인하세요.":q.type==="single"?"정답입니다. 핵심 근거를 확인하세요.":`정답입니다. ${correctCount}개를 모두 골랐습니다.`):(conventional?"오답입니다. 사례를 어떤 개념과 연결해 보세요.":q.type==="single"?"오답입니다. 정답 선지의 핵심 근거를 확인하세요.":"오답입니다. 선지별 해설을 확인하세요.")):"";
     $("#retryBtn").classList.toggle("show",!!answer);$("#submitBtn").textContent=answer?"다음 문제 →":"선택 완료";
     $("#submitBtn").disabled=!answer&&!selected.size;
     $("#position").textContent=`${cursor+1} / ${filtered.length} · ${q.type==="single"?"단일":"복수"}`;
@@ -249,9 +308,18 @@
     if(!selected.size)return;
     const correctIds=q.options.filter(x=>x.correct).map(x=>x.id);
     const correct=correctIds.length===selected.size&&correctIds.every(id=>selected.has(id));
-    saved.answers[q.id]={selected:[...selected],correct,at:Date.now()};save();render();
+    saved.answers[q.id]={selected:[...selected],correct,at:Date.now()};save();
+    if(correct&&cursor<filtered.length-1){cursor+=1;currentQuestionId=null;render();return}
+    render();
   }
   function retry(){const q=filtered[cursor];delete saved.answers[q.id];selected.clear();save();render()}
+  function retryAll(){
+    if(!Object.keys(saved.answers).length)return;
+    if(!window.confirm("저장된 모든 다지선다 답안을 지우고 처음부터 다시 풀까요?"))return;
+    saved.answers={};selected.clear();cursor=0;currentQuestionId=null;stateFilter="all";
+    $$(".state-tab").forEach(x=>x.classList.toggle("active",x.dataset.state==="all"));
+    save();applyFilters();
+  }
   function move(delta){
     if(delta>0&&cursor>=filtered.length-1)return;
     if(delta<0&&cursor<=0)return;
@@ -259,7 +327,7 @@
   }
 
   $("#options").addEventListener("click",e=>{const b=e.target.closest(".option");if(b)toggleOption(b.dataset.id)});
-  $("#submitBtn").addEventListener("click",submit);$("#retryBtn").addEventListener("click",retry);
+  $("#submitBtn").addEventListener("click",submit);$("#retryBtn").addEventListener("click",retry);$("#retryAllBtn").addEventListener("click",retryAll);
   $("#prevBtn").addEventListener("click",()=>move(-1));$("#nextBtn").addEventListener("click",()=>move(1));
   $("#bookmarkBtn").addEventListener("click",()=>{const q=filtered[cursor];saved.bookmarks[q.id]=!saved.bookmarks[q.id];save();render()});
   $("#modeTabs").addEventListener("click",e=>{const b=e.target.closest(".mode-tab");if(!b)return;mode=b.dataset.mode;cursor=0;currentQuestionId=null;$$('.mode-tab').forEach(x=>x.classList.toggle('active',x===b));chooseBank();applyFilters()});
