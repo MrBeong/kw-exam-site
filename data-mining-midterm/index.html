@@ -502,8 +502,8 @@
       <a class="side-link" href="#concepts"><span class="side-icon">▤</span>개념 노트</a>
       <a class="side-link" href="#priority"><span class="side-icon">★</span>Summary·강조 지도</a>
       <a class="side-link" href="#blanks"><span class="side-icon">▣</span>교안 빈칸</a>
-      <a class="side-link" href="./?view=problems"><span class="side-icon">□</span>문제 은행 <span class="side-count">100</span></a>
-      <a class="side-link" href="./ox/"><span class="side-icon">◉</span>개념 O/X <span class="side-count">195</span></a>
+      <a class="side-link" href="./?view=problems"><span class="side-icon">□</span>문제 은행 <span class="side-count">94</span></a>
+      <a class="side-link" href="./ox/"><span class="side-icon">◉</span>개념 O/X <span class="side-count">184</span></a>
       <a class="side-link" href="./?view=mistakes"><span class="side-icon">↺</span>오답 노트 <span class="side-count" id="mistakeCountSide">0</span></a>
       <a class="side-link" href="#checklist"><span class="side-icon">✓</span>직전 체크리스트</a>
     </div>
@@ -532,16 +532,17 @@
 
         <div class="properties">
           <div class="prop-row"><div class="prop-key"><span class="prop-icon">◷</span>시험</div><div><strong>2026년 10월 16일(금) 19:40–20:40</strong></div></div>
-          <div class="prop-row"><div class="prop-key"><span class="prop-icon">⌖</span>장소</div><div>새빛관 2층 202·203·204·205호 · 조교 안내 지정 좌석</div></div>
-          <div class="prop-row"><div class="prop-key"><span class="prop-icon">◎</span>방식</div><div><span class="tag dark">약 20문제 ±2</span><span class="tag outline">다지선다</span><span class="tag outline">단순 계산</span><span class="tag outline">서술형</span></div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">⌖</span>장소</div><div>새빛관 102·202·203·204·205호 · 2층 게시 명단 확인 후 조교 안내에 따라 지정 좌석 착석</div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">◎</span>방식</div><div><span class="tag dark">18문제</span><span class="tag outline">O/X</span><span class="tag outline">1개 선택</span><span class="tag outline">복수 선택</span><span class="tag outline">OMR</span></div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">✎</span>준비물</div><div>샤프·지우개 또는 펜·수정테이프 · OMR 카드 형식 답안지 제출</div></div>
           <div class="prop-row"><div class="prop-key"><span class="prop-icon">≡</span>확정 범위</div><div>다변량 분석 개론 · 선형대수 · 확률통계 · 선형회귀 I–III</div></div>
-          <div class="prop-row"><div class="prop-key"><span class="prop-icon">×</span>제외</div><div>별첨 자료 · R/Python 구현체 · 전자기기 · 치팅 시트</div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">×</span>제외</div><div>별첨 자료 · R/Python 구현체 · 자동화 파이프라인·AutoML · data science application 사례 소개</div></div>
           <div class="prop-row"><div class="prop-key"><span class="prop-icon">◇</span>검증</div><div>원본 교안 화면 + PDF/PPT 텍스트 + 제공 전사 + 대조 정리</div></div>
         </div>
 
         <div class="callout black block">
           <div class="callout-icon">!</div>
-          <div><strong>2026-10-13 제공된 시험 공지와 각 교안의 Summary, 제공 전사의 강조 발언을 최종 기준으로 재검증했습니다.</strong><br />빈칸 페이지는 개별 페이지 단위로 모두 정리했고, 사례형·빈칸형·객관식·계산·서술형을 100문제로 확장했습니다.</div>
+          <div><strong>최신 시험 형식과 2026-10-13 범위 추가 공지를 모두 반영했습니다.</strong><br />실제 시험은 18문항의 O/X·단일선택·복수선택으로 출제되며 OMR 답안지를 사용합니다. 영상 강의에서 설명하지 않은 부분, 자동화 관련 pipeline·AutoML, data science application 사례 소개는 개념과 문제에서 제외했습니다.</div>
         </div>
 
         <div class="dash-grid">
@@ -566,10 +567,10 @@
         <table class="study-table block">
           <thead><tr><th>순서</th><th>할 일</th><th>완료 기준</th><th>상태</th></tr></thead>
           <tbody>
-            <tr><td>01</td><td><strong>Summary 회수</strong></td><td>각 교안 마지막 학습목표를 사례와 함께 설명</td><td><span class="status-dot open"></span>진행</td></tr>
+            <tr><td>01</td><td><strong>Summary 회수</strong></td><td>각 교안 마지막 학습목표를 정의·조건과 함께 설명</td><td><span class="status-dot open"></span>진행</td></tr>
             <tr><td>02</td><td><strong>교안 빈칸 전체 회수</strong></td><td>모든 빈칸 페이지를 답 없이 재현</td><td><span class="status-dot wait"></span>대기</td></tr>
-            <tr><td>03</td><td><strong>사례 → 개념 판정</strong></td><td>ETL·학습분할·분포·잔차패턴을 개념으로 매칭</td><td><span class="status-dot wait"></span>대기</td></tr>
-            <tr><td>04</td><td><strong>실전 60분</strong></td><td>빈칸 5·사례 5·계산 4·개념 6문제 풀이</td><td><span class="status-dot wait"></span>대기</td></tr>
+            <tr><td>03</td><td><strong>상황 → 개념 판정</strong></td><td>학습분할·분포·잔차패턴을 핵심 개념으로 매칭</td><td><span class="status-dot wait"></span>대기</td></tr>
+            <tr><td>04</td><td><strong>실전 60분</strong></td><td>O/X·1개 선택·복수 선택 18문항 풀이</td><td><span class="status-dot wait"></span>대기</td></tr>
           </tbody>
         </table>
         <div class="callout block"><div class="callout-icon">→</div><div><strong>추천 루프</strong>　개념 토글 닫기 → 문제 풀이 → 모범 답안 확인 → 자신감 표시 → “다시”만 오답 노트에서 재풀이.</div></div>
@@ -598,13 +599,13 @@
         <div class="priority-grid">
           <div class="priority-card"><span class="stars">★★★</span><strong>Summary에 직접 제시</strong><p>정의·구별·순서를 묻는 빈칸·객관식 최우선.</p></div>
           <div class="priority-card"><span class="stars">★★★</span><strong>전사에서 반복·직접 강조</strong><p>교수님이 “기억”·“중요”·“이해”라고 표현한 개념.</p></div>
-          <div class="priority-card"><span class="stars">★★☆</span><strong>실제 사례와 연결</strong><p>상황을 주고 학습 유형·분포·가정·진단을 고르는 변별력 문제.</p></div>
+          <div class="priority-card"><span class="stars">★★☆</span><strong>상황에서 개념 판별</strong><p>상황을 주고 학습 유형·분포·가정·진단을 고르는 변별력 문제.</p></div>
         </div>
         <table class="study-table block">
           <thead><tr><th>교안</th><th>Summary·전사가 직접 가리킨 핵심</th><th>우선도</th></tr></thead>
           <tbody>
-            <tr><td>1.2 다변량 소개 I</td><td>데이터마이닝 배경, 3V·5V, 협의/광의 정의, DM–AI–ML–DL 구별, data-driven 사례</td><td><span class="tag dark">★★★</span></td></tr>
-            <tr><td>1.3 다변량 소개 II</td><td>training/test 분할 이유, 수치/범주 예측, 회귀/분류, 5단계, AutoML, ETL·LLM 파이프라인</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td>1.2 다변량 소개 I</td><td>데이터마이닝 배경, 3V·5V, 협의/광의 정의, DM–AI–ML–DL 구별</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td>1.3 다변량 소개 II</td><td>training/test 분할 이유, 수치/범주 예측, 회귀/분류, 5단계</td><td><span class="tag dark">★★★</span></td></tr>
             <tr><td>2.1 선형대수</td><td>집합→행렬, 선형방정식, 가우스 소거, 투영/선형변환, 고유값·고유벡터</td><td><span class="tag dark">★★★</span></td></tr>
             <tr><td>2.2 기초통계</td><td>확률변수는 함수, 확률↔우도의 방향, 편향–분산, 상관, 차원, 불균형, 베이즈, 일반화</td><td><span class="tag dark">★★★</span></td></tr>
             <tr><td>4. 선형회귀 I</td><td>단순/다중/비선형 구별, 선형관계, 회귀 가정, cost function, OLS, 잔차</td><td><span class="tag dark">★★★</span></td></tr>
@@ -620,17 +621,7 @@
               <li>연속형 \(Y\)를 맞히면 회귀, 범주형 \(Y\)를 맞히면 분류다.</li>
               <li>추론은 관계 해석, 예측은 새 \(X\)의 \(Y\)를 맞히는 목적이다.</li>
               <li>문제 정의→수집→탐색·정제·변환→모델링→요약·배포의 순환 구조를 이해한다.</li>
-              <li>AutoML은 반복 작업을 자동화하지만 문제 정의·의미 검증을 대체하지 않는다.</li>
-              <li>LLM 파이프라인에서 Prompting→Weak Supervision→End Model Training, 병렬 Prompt Chain→noisy prediction 통합을 구별한다.</li>
             </ol>
-          </div>
-        </details>
-        <details class="toggle block">
-          <summary>ETL·LLM 파이프라인 개념 답안</summary>
-          <div class="toggle-content">
-            <p><strong>ETL</strong>: <strong>E</strong>xtract—DB·API·파일에서 필요 데이터 추출 → <strong>T</strong>ransform—오류·중복 제거, 형식 통일 → <strong>L</strong>oad—정제 데이터를 Warehouse/Lake에 적재.</p>
-            <p><strong>Data Pipeline with LLM</strong>: 전문가 Prompt로 복수 Label Map 생성 → Label Model의 Weak Supervision으로 추정 label 통합 → 추정 label과 비라벨 자료로 End Model 학습·평가.</p>
-            <p><strong>Robust Modeling with LLM</strong>: 동일 입력에 병렬 Prompt Chain을 실행해 여러 noisy prediction을 만들고 Weak Supervision으로 통합해 최종 예측의 신뢰도를 높인다.</p>
           </div>
         </details>
 
@@ -677,7 +668,7 @@
           <summary>3V·5V와 비판적 데이터 읽기</summary>
           <div class="toggle-content">
             <p><strong>Volume</strong> 양 · <strong>Velocity</strong> 생성/처리 속도 · <strong>Variety</strong> 정형/비정형 형태 + <strong>Veracity</strong> 신뢰성 · <strong>Value</strong> 문제 해결 가치.</p>
-            <p>데이터가 많아도 결측·오표기·선택 편향·교란이 있으면 좋은 답이 자동으로 나오지 않는다. 마시멜로 사례처럼 관측 관계를 인과로 옮기기 전에 가정환경·경제적 배경 같은 교란을 확인한다.</p>
+            <p>데이터가 많아도 결측·오표기·선택 편향·교란이 있으면 좋은 답이 자동으로 나오지 않는다. 관측된 관계를 인과로 옮기기 전에 교란변수·표본선택·측정 방식과 역인과 가능성을 확인한다.</p>
           </div>
         </details>
 
@@ -933,22 +924,22 @@
         <div class="callout block"><div class="callout-icon">!</div><div><strong>빈칸 해석 원칙</strong><br />교안에 숨은 문구가 있더라도 계산·정의와 충돌하면 검산값을 사용합니다. 대표적으로 p.45의 \(Z\to I\), p.59의 고유값 \(3\to-3\), 회귀 II p.42의 \(7.540\to89.57\)을 바로잡았습니다.</div></div>
 
         <h3 id="scope">확정 제외와 경계</h3>
-        <div class="callout black block"><div class="callout-icon">×</div><div><strong>시험 공지상 제외</strong><br />별첨 자료와 R·Python 등 구현체는 일체 범위가 아닙니다. 로지스틱 회귀도 공지의 다섯 범위에 없으므로 문제은행에서 제거했습니다.</div></div>
+        <div class="callout black block"><div class="callout-icon">×</div><div><strong>시험 공지상 제외</strong><br />별첨 자료와 R·Python 등 구현체, 영상 강의에서 설명하지 않은 부분, 자동화 pipeline·AutoML, data science application 사례 소개는 범위가 아닙니다. 로지스틱 회귀도 공지의 다섯 범위에 없으므로 문제은행에서 제거했습니다.</div></div>
         <div class="callout block"><div class="callout-icon">i</div><div>Ridge/Lasso/Elastic Net은 회귀 III 교안에서 다중공선성 대응 후보로 언급된 <strong>개념 이름</strong>만 남겼습니다. 구현·목적함수 계산은 출제 범위로 다루지 않습니다.</div></div>
       </section>
 
       <hr class="divider" />
 
-      <section id="problems" data-search-title="문제 은행 100문제">
+      <section id="problems" data-search-title="문제 은행 94문제">
         <h2>문제 은행</h2>
-        <p class="muted">실제 약 20문제 시험을 다섯 번 연습할 수 있도록 100문제로 확장했습니다. Summary 최우선, 교안 빈칸, 실제 사례 → 개념 판정, 다지선다, 단순 사칙연산, 서술형을 모두 섞었습니다.</p>
+        <p class="muted">실제 18문항(O/X·단일선택·복수선택)에 필요한 개념을 깊게 복습하는 94문제입니다. 실제 답안 형식 연습은 상단의 O/X와 객관식 전용 탭에서 할 수 있습니다.</p>
         <details class="problem-tools">
           <summary>검색·시험 모드·진도 도구</summary>
           <div class="tool-body">
             <div class="quiz-controls">
               <button class="strong" id="randomBtn">무작위 문제</button>
               <button id="unsolvedBtn">다음 미완료</button>
-              <button id="examModeBtn">60분 시험 모드</button>
+              <button id="examModeBtn">60분 · 18문제 복습</button>
               <button id="resetBtn">진도 초기화</button>
             </div>
             <input class="db-search" id="questionSearch" type="search" placeholder="문제 검색…" aria-label="문제 검색" />
@@ -968,7 +959,7 @@
           <div class="empty-state" id="emptyState">조건에 맞는 문제가 없습니다.</div>
           <div class="practice-pager" id="practicePager">
             <button id="practicePrev" type="button">← 이전</button>
-            <span class="practice-position" id="practicePosition">1 / 100</span>
+            <span class="practice-position" id="practicePosition">1 / 94</span>
             <button id="practiceNext" type="button">다음 →</button>
           </div>
         </div>
@@ -1003,8 +994,7 @@
           <div class="checkline"><input type="checkbox" id="ck17" /><label for="ck17">교안 빈칸을 답안 없이 한 번씩 재현했다.</label></div>
           <div class="checkline"><input type="checkbox" id="ck18" /><label for="ck18">교안 오류 항목에 정확한 조건과 검산 결과를 붙여 답한다.</label></div>
           <div class="checkline"><input type="checkbox" id="ck19" /><label for="ck19">1.2·1.3·선형대수·회귀 I–III의 Summary를 자료 없이 말한다.</label></div>
-          <div class="checkline"><input type="checkbox" id="ck20" /><label for="ck20">ETL·LLM Label Pipeline·Robust Modeling의 순서와 목적을 구별한다.</label></div>
-          <div class="checkline"><input type="checkbox" id="ck21" /><label for="ck21">사례를 보고 학습 유형·확률분포·회귀 가정 위반을 판정한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck20" /><label for="ck20">상황을 보고 학습 유형·확률분포·회귀 가정 위반을 판정한다.</label></div>
         </div>
       </section>
 
@@ -1040,7 +1030,6 @@
       {id:3, chapter:'일반화', type:'concept', kind:'개념형', level:'핵심', prompt:'일반화와 규제화의 관계를 설명하고 학습 데이터 성능만 확인했을 때 생길 수 있는 문제를 쓰라.', answer:'일반화는 보지 않은 데이터에서도 성능을 유지하는 성질이다. 규제화는 모델 복잡도나 계수에 제약을 두어 과적합을 줄이고 일반화를 돕는다. 학습 성능만 보면 과적합을 놓칠 수 있어 검증·테스트 성능을 따로 확인해야 한다.'},
       {id:4, chapter:'학습 목적', type:'concept', kind:'분류형', level:'기초', prompt:'다음 목표에 선형회귀와 로지스틱 회귀 중 더 직접적으로 연결되는 모델과 이유를 쓰라. (a) 다음 달 매출액 (b) 고객 이탈 여부', answer:'(a) 매출액은 수치형 출력이므로 선형회귀. (b) 이탈 여부는 범주형 출력이므로 로지스틱 회귀. 실제 선택에서는 관계 형태·가정·평가 지표도 확인한다.'},
       {id:5, chapter:'학습 목적', type:'concept', kind:'T/F', level:'함정', prompt:'“Naïve Bayes, KNN, SVM은 수업에서 분류 관점으로 소개되므로 어떤 형태로도 회귀에 사용할 수 없다.” 참/거짓과 근거를 쓰라.', answer:'거짓. 수업에서는 분류 관점으로 다루지만 KNN과 SVM 등은 회귀 변형도 있다. 알고리즘 이름이 아니라 출력 형태·손실함수·구현을 확인해야 한다.'},
-      {id:6, chapter:'문제 정의', type:'concept', kind:'응용', level:'응용', prompt:'벌통 온도와 벌 활동량을 분석한다. 가능한 X, Y, 표본 단위, 최종 행동과 인과 주장 전 확인할 교란 요인 두 가지를 제시하라.', answer:'예: X=온도·시간대·영상 활동 특징, Y=10분간 출입 벌 수 또는 건강 이상 여부, 표본=벌통 하나의 10분 구간, 행동=위험 시 환기·차광·냉각 검토. 교란은 시간대·계절·날씨·먹이·벌통 규모·질병·카메라 조건 등.'},
       {id:7, chapter:'선형회귀', type:'concept', kind:'객관식', level:'함정', prompt:'다음 중 계수에 대해 선형인 회귀식은? ① y=β₀+β₁x+ε ② y=β₀+e^(β₁x)+ε ③ y=β₀+β₁²x+ε ④ y=β₀+sin(β₁x)+ε. 기준도 설명하라.', answer:'①. 선형의 기준은 x가 아니라 미지 계수 β에 대한 선형성이다. x² 같은 변환을 써도 계수가 1차로 더해지면 선형회귀가 가능하다.'},
       {id:8, chapter:'선형대수', type:'calc', kind:'계산', level:'기초', prompt:'A가 3×2, B가 2×4일 때 AB, BA, AᵀA가 정의되는지 판정하고 결과 크기를 쓰라.', answer:'AB=(3×2)(2×4)→3×4. BA=(2×4)(3×2)는 안쪽 차원 4≠3으로 정의되지 않는다. AᵀA=(2×3)(3×2)→2×2.'},
       {id:9, chapter:'선형대수', type:'calc', kind:'계산', level:'기초', prompt:'2x+y=5, x−y=1을 소거법으로 풀고 두 원식에 대입해 검산하라.', answer:'x=y+1을 첫 식에 넣으면 2(y+1)+y=5, y=1, x=2. 검산: 2·2+1=5, 2−1=1.'},
@@ -1132,18 +1121,13 @@
       {id:63,chapter:"선형회귀 III",type:"concept",kind:"서술형",level:"응용",prompt:"공선성 대응으로 변수 제거·규제화·PCA를 비교하고 무조건 한 방법을 적용하면 안 되는 이유를 쓰라.",answer:"변수 제거·결합은 해석을 단순화, Ridge/Lasso/Elastic Net은 계수를 축소, PCA는 직교한 새 특징을 만든다. 해석가능성·예측 목적·도메인 의미·테스트 성능이 달라 선택 근거가 필요하다. 공지상 구현은 제외다."},
       {id:64,chapter:"선형회귀 III",type:"concept",kind:"서술형",level:"함정",prompt:"Cook’s distance가 큰 관측을 발견했을 때 자동 삭제하지 말아야 하는 이유와 확인 순서를 쓰라.",answer:"큰 Cook 거리는 영향점 후보일 뿐 오류 확정이 아니다. 입력·측정 오류인지, 실제 중요한 극단 사례인지, 모형 누락·비선형 때문인지 확인하고 포함/제외 민감도와 잔차 진단을 비교한 뒤 결정한다."},
 
-      {id:65,chapter:"1.3·ETL",type:"blank",kind:"교안 p.41",level:"최우선",prompt:"ETL의 E·T·L을 풀어 쓰고, DB·API·파일→오류·중복 제거→Warehouse/Lake의 각 단계와 연결하라.",answer:"E=Extract(추출): 원천에서 필요 데이터 가져오기. T=Transform(변환): 오류·중복 제거, 형식 통일. L=Load(적재): 정제된 데이터를 Data Warehouse/Lake에 저장."},
-      {id:66,chapter:"1.3·LLM",type:"blank",kind:"교안 p.42",level:"최우선",prompt:"LLM Data Pipeline의 세 단계를 빈칸으로 완성하라: ( ① )로 복수 Label Map 생성 → ( ② )으로 추정 Label 통합 → ( ③ )으로 최종 예측 모델 학습.",answer:"① Prompting ② Weak Supervision/Label Model ③ End Model Training. 복수의 noisy label을 통합한 후 추정 label과 비라벨 자료로 최종 모델을 학습한다."},
-      {id:67,chapter:"1.3·LLM",type:"case",kind:"사례형",level:"최우선",prompt:"동일 문장에 12개 Prompt Chain을 병렬로 실행해 서로 다른 예측을 얻고 Label Model로 통합했다. 교안의 어떤 개념인가?",answer:"Robust Modeling with LLM. 복수 noisy prediction을 Weak Supervision으로 통합해 단일 프롬프트 응답의 변동성을 줄이고 신뢰도 높은 최종 예측을 결정하는 구조다."},
       {id:68,chapter:"1.3·학습분할",type:"case",kind:"다지선다",level:"최우선",prompt:"모델 A·B·C를 test set에서 30번 비교하고 최고 모델을 선택했다. 가장 적절한 설명은? ① test를 잘 활용 ② test 결과에 과적합 가능 ③ 훈련 불가 ④ 비지도학습",answer:"②. 모델 선택과 하이퍼파라미터 비교는 validation을 사용하고, test는 마지막 일반화 평가에 보존해야 한다."},
       {id:69,chapter:"1.3·예측",type:"case",kind:"사례형",level:"최우선",prompt:"다음 Y에 회귀/분류를 연결하라: (a) 내일 기온 23.7°C (b) 암 0/1 (c) 손글씨 숫자 0–9 (d) 다음 달 매출액.",answer:"(a) 회귀, (b) 분류, (c) 분류, (d) 회귀. 숫자로 코딩된 라벨 0–9는 연속 크기가 아니라 범주이므로 분류다."},
-      {id:70,chapter:"1.3·AutoML",type:"case",kind:"T/F",level:"최우선",prompt:"AutoML의 목표가 '데이터 과학자 없는 ML'이므로 문제 정의·라벨 의미·프라이버시 검토도 모두 자동화해야 한다. 참/거짓?",answer:"거짓. 교수님 전사에서 AutoML은 데이터 과학자를 없애는 시스템이 아니라 획득·EDA·전처리·모델/하이퍼파라미터 비교·배포·모니터링의 반복 작업을 보조하는 도구로 강조했다."},
       {id:71,chapter:"1.3·추론/예측",type:"blank",kind:"교안 p.17–18",level:"교안 빈칸",prompt:"월급에 관련된 변수를 찾는 목적과 새 사람의 월급을 맞히는 목적, 손글씨 숫자를 맞히는 목적을 교안 용어로 쓰라.",answer:"관계 파악=Inference, 새 월급 수치 예측=Prediction (regression), 손글씨 숫자 범주 예측=Prediction (classification)."},
       {id:72,chapter:"데이터마이닝 절차",type:"case",kind:"사례형",level:"최우선",prompt:"공장이 '운반 이상 원인을 알 수 없고 라벨도 없다'고 한다. 문제 정의부터 배포 후 재정의까지 5단계로 설계하라.",answer:"문제·Y·현장 행동 정의 → 센서 시계열 수집 → time window 분할·정제·시각화 → 라벨 없으므로 이상탐지·군집, 전문가 라벨 후 분류 → 유형·원인 해석·배포, 새 유형은 open-set 문제로 재정의."},
       {id:73,chapter:"1.2·빅데이터",type:"case",kind:"사례형",level:"최우선",prompt:"초당 10만 건의 센서값, 텍스트·영상·표 혼합, 측정 오류 8%, 불량 비용 절감 가능성을 5V와 연결하라.",answer:"초당 10만 건=Velocity(상황에 따라 Volume도 관련), 여러 형태=Variety, 오류 8%=Veracity, 비용 절감=Value, 전체 저장량=Volume."},
       {id:74,chapter:"1.2·DM/AI",type:"concept",kind:"다지선다",level:"최우선",prompt:"강의의 구분으로 가장 적절한 것은? ① DM은 SQL 검색만 의미 ② DL은 ML과 무관 ③ DM은 패턴·지식 발견의 전체 과정, AI는 판단·행동의 더 넓은 목표 ④ 모두 동의어",answer:"③. ML은 데이터 관계를 학습하는 방법, DL은 다층 신경망을 쓰는 ML의 한 부류로 이해한다."},
-      {id:75,chapter:"1.2·상관/인과",type:"case",kind:"사례형",level:"함정",prompt:"마시멜로를 오래 참은 아이의 성취가 더 높았다. '인내심 교육이 성취를 높인다'고 단정하기 전 확인할 개념과 변수를 쓰라.",answer:"관측 상관과 인과를 구별하고 교란·선택 편향을 확인한다. 가정의 경제적 여건, 부모 교육, 안정성, 실험 환경 등이 대안 설명이 될 수 있다."},
-      {id:76,chapter:"1.2·다양한 데이터",type:"case",kind:"사례형",level:"응용",prompt:"야구 선수의 표 수치 기록과 타구 분포 이미지를 함께 쓴다. 정형/비정형과 다중양식 개념으로 설명하라.",answer:"수치 표는 정형 데이터, 타구 이미지는 비정형 데이터다. 두 형태의 정보를 함께 사용하므로 multimodal 분석 사례다."},
+      {id:75,chapter:"1.2·상관/인과",type:"concept",kind:"개념 판정",level:"함정",prompt:"관찰자료에서 두 변수 사이에 강한 상관관계가 나타났다. 인과관계를 바로 주장할 수 없는 이유와 먼저 점검할 항목을 쓰라.",answer:"상관은 동반 변화를 뜻할 뿐 원인 방향을 확정하지 않는다. 교란변수, 표본선택 편향, 측정 방식, 역인과 가능성과 확인편향을 점검해야 한다."},
       {id:77,chapter:"기초통계",type:"concept",kind:"빈칸",level:"최우선",prompt:"전사의 '확률변수는 변수가 아니라 (   )이다'를 완성하고 주사위 사례로 설명하라.",answer:"함수. 표본공간의 결과를 실수에 대응시킨다. 예를 들어 주사위 면을 1–6에 매핑하거나 검은색/흰색을 0/1에 매핑할 수 있다."},
       {id:78,chapter:"기초통계",type:"concept",kind:"다지선다",level:"최우선",prompt:"올바른 방향은? ① probability: 샘플 고정→모수 변화 ② likelihood: 모수 고정→샘플 변화 ③ probability: 모수 고정→샘플, likelihood: 관측 샘플 고정→모수 ④ 동일",answer:"③. $p(y\\mid\\theta)$는 $\\theta$를 고정하고 $y$를 보며, $L(\\theta\\mid y)$는 관측 $y$를 고정하고 $\\theta$별 적합도를 비교한다."},
       {id:79,chapter:"기초통계",type:"case",kind:"사례형",level:"함정",prompt:"콜센터에 10분 동안 들어온 전화 수와 다음 전화까지의 대기시간에 각각 어떤 분포를 연결하는가?",answer:"고정 10분 구간의 사건 개수=포아송분포, 다음 사건까지의 대기시간=지수분포(일정 발생률의 포아송 과정 가정)."},
@@ -1167,7 +1151,6 @@
       {id:97,chapter:"선형회귀 III",type:"case",kind:"사례형",level:"최우선",prompt:"잔차–적합값 그림이 (a) U자 (b) 부채꼴 (c) 0 주위 무작위, 시간순 잔차가 (d) 주기적일 때 각각 무엇을 의심하는가?",answer:"(a) 선형성 위반/곡선항·누락변수 (b) 이분산성 (c) 두 가정의 뚜렷한 패턴이 일차적으로 보이지 않음 (d) 오차 독립성/자기상관 문제."},
       {id:98,chapter:"선형회귀 III",type:"case",kind:"사례형",level:"최우선",prompt:"전체 F 검정은 유의하고 $R^2$도 높지만 개별 계수의 SE가 크고 부호가 표본마다 바뀐다. 가장 의심할 개념과 진단값은?",answer:"다중공선성. 설명변수 상관·산점도와 보조회귀 $R_j^2$로 $Tolerance_j=1-R_j^2$, $VIF_j=1/(1-R_j^2)$를 확인한다. 오차 독립성과는 다른 문제다."},
       {id:99,chapter:"선형회귀 III",type:"case",kind:"사례형",level:"응용",prompt:"변수 상관과 VIF로 중복 후보를 찾았고 Cook’s distance가 큰 관측도 발견했다. 안전한 모형 진단 순서를 서술하라.",answer:"기초 탐색·의미 확인 → 상관/VIF로 중복 변수 검토 → 모형 후보를 비교 → 잔차로 선형성·등분산성·정규성·오차 독립성 점검 → Cook 관측의 오류/실제 극단/모형 누락 확인 → 포함/제외 민감도와 보지 못한 자료 성능 비교."},
-      {id:100,chapter:"종합",type:"case",kind:"실전 서술형",level:"최우선",prompt:"바이탈 센서·진료 기록·이미지로 입원 일수를 예측한다. ETL, $X/Y$, 회귀/분류, 학습 분할, 가정 진단, 배포 후 모니터링을 한 흐름으로 제시하라.",answer:"DB·API·파일에서 Extract→중복·단위·결측 Transform→Lake/Warehouse Load. 한 행=환자/입원 시점, X=센서·진료·이미지 특징, Y=연속형 입원 일수이므로 회귀. 환자 단위로 train/validation/test를 분리하고 전처리는 train에만 fit. 잔차로 선형성·등분산성·정규성·독립성, VIF·영향점을 점검. 배포 후 오차·분포 변화·편향·프라이버시를 모니터링하고 새 문제를 재정의."}
     ];
 
     const problemMathUpgrades = {
@@ -1217,7 +1200,7 @@
     });
     Object.entries(problemMathUpgrades).forEach(([id, upgrade]) => Object.assign(problems.find(problem => problem.id === Number(id)), upgrade));
 
-    const PRIORITY_IDS = new Set([1,3,4,5,6,7,8,10,11,14,17,20,23,24,25,28,30,33,36,38,39,41,44,46,47,48,49,50,51,53,54,55,56,57,58,60,61,65,66,67,68,69,70,71,72,73,74,77,78,79,84,85,86,87,88,89,90,92,93,94,95,96,97,98,100]);
+    const PRIORITY_IDS = new Set([1,3,4,5,6,7,8,10,11,14,17,20,23,24,25,28,30,33,36,38,39,41,44,46,47,48,49,50,51,53,54,55,56,57,58,60,61,68,69,71,72,73,74,77,78,79,84,85,86,87,88,89,90,92,93,94,95,96,97,98]);
     const KEY = 'dm-midterm-notion-v3';
     const previousState = localStorage.getItem(KEY) || localStorage.getItem('dm-midterm-notion-v2');
     let state = JSON.parse(previousState || '{"answers":{},"grades":{},"checks":{}}');
@@ -1378,13 +1361,13 @@
       if(active){
         const shuffle=items=>[...items].sort(()=>Math.random()-.5);
         const pick=(type,count)=>shuffle(problems.filter(q=>q.type===type)).slice(0,count);
-        examSet=shuffle([...pick('blank',5),...pick('case',5),...pick('calc',4),...pick('concept',6)]).map(q=>q.id);
+        examSet=shuffle([...pick('blank',4),...pick('case',4),...pick('calc',4),...pick('concept',6)]).map(q=>q.id);
         currentFilter='all'; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'));
-        examSeconds=3600; btn.textContent='시험 모드 종료 · 20문제'; applyProblemFilter();
+        examSeconds=3600; btn.textContent='복습 모드 종료 · 18문제'; applyProblemFilter();
         document.getElementById('problems').scrollIntoView({behavior:'smooth'});
         examTimer=setInterval(()=>{ examSeconds--; const m=String(Math.floor(examSeconds/60)).padStart(2,'0'), s=String(examSeconds%60).padStart(2,'0'); document.getElementById('timerText').textContent=`${m}:${s}`; if(examSeconds<=0) toggleExamMode(); },1000);
       }
-      else { clearInterval(examTimer); examTimer=null; examSet=[]; btn.textContent='60분 시험 모드'; document.getElementById('timerText').textContent='60:00'; applyProblemFilter(); }
+      else { clearInterval(examTimer); examTimer=null; examSet=[]; btn.textContent='60분 · 18문제 복습'; document.getElementById('timerText').textContent='60:00'; applyProblemFilter(); }
     }
 
     function setupGlobalSearch(){
