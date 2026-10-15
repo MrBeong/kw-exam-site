@@ -420,6 +420,8 @@
     .timer-pill { display: none; align-items: center; gap: 7px; padding: 5px 9px; background: var(--dark); color: white; border-radius: 4px; font-variant-numeric: tabular-nums; font-size: 12px; }
     body.exam-mode .timer-pill { display: inline-flex; }
     body.exam-mode .solution, body.exam-mode .show-solution { display: none !important; }
+    body.exam-mode #examBar { display: flex !important; }
+    body.exam-mode #toolbarExamBtn { background: #222 !important; color: #fff !important; }
 
     .error-log { margin-top: 14px; }
     .error-item { display: grid; grid-template-columns: 50px 1fr auto; gap: 10px; padding: 10px 9px; border-bottom: 1px solid var(--line); font-size: 13px; }
@@ -980,7 +982,20 @@
             <button class="filter-btn" data-filter="blank">교안 빈칸</button>
             <button class="filter-btn" data-filter="priority">핵심</button>
             <button class="filter-btn" data-filter="again">오답</button>
-            <button class="filter-btn" id="toolbarExamBtn" type="button">실전 18문항 모의</button>
+            <button class="filter-btn" id="toolbarExamBtn" type="button" style="font-weight:750;">⏱ 실전 18문항 시험 시작</button>
+            <button class="filter-btn" id="toolbarResetBtn" type="button" style="margin-left:auto;color:var(--muted);" title="답안 초기화">문제 초기화</button>
+          </div>
+          <div class="exam-bar" id="examBar" style="display:none;align-items:center;justify-content:space-between;gap:8px;padding:9px 12px;background:#1e1e1e;color:#fff;border-radius:6px;margin:6px 6px 8px;">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <span style="font-weight:750;font-size:12.5px;">📝 실전 18문항 모의고사 (전 범위 6개 단원 각 3문항 균등 추출)</span>
+              <span id="examTimerBadge" style="background:#383838;padding:2px 7px;border-radius:4px;font-size:11.5px;font-variant-numeric:tabular-nums;color:#6ee7b7;font-weight:700;">60:00</span>
+              <span id="examProgressBadge" style="font-size:11.5px;color:#cbd5e1;">0 / 18 완료</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+              <button class="small-btn" id="examRerollBtn" type="button" style="background:#fff;color:#1e1e1e;font-weight:750;border-color:#fff;">🎲 다른 18문제 풀기 (새 시험)</button>
+              <button class="small-btn" id="examResetAnswersBtn" type="button" style="background:transparent;color:#fff;border-color:#666;">↺ 현재 답안 초기화</button>
+              <button class="small-btn" id="examExitBtn" type="button" style="background:transparent;color:#bbb;border-color:#555;">✕ 시험 종료 (전체 문제)</button>
+            </div>
           </div>
           <div id="questionList"></div>
           <div class="empty-state" id="emptyState">조건에 맞는 문제가 없습니다.</div>
@@ -1349,7 +1364,7 @@
       const correctIndexes=q.options.map((option,index)=>option.correct?index:-1).filter(index=>index>=0);
       const correct=selected.size===correctIndexes.length&&correctIndexes.every(index=>selected.has(index));
       state.objectiveAnswers[id]={selected:[...selected],correct,at:Date.now()};
-      state.grades[id]=correct?'done':'again';saveState();renderProblems();
+      state.grades[id]=correct?'done':'again';saveState();renderProblems();updateExamProgressBadge();
       if(correct&&pageView==='problems'&&problemCursor<visibleProblemCards.length-1)setTimeout(()=>renderProblemPage(problemCursor+1),260);
     }
     function retryObjective(id){delete state.objectiveAnswers[id];delete state.grades[id];delete draftSelections[id];saveState();renderProblems()}
@@ -1438,29 +1453,128 @@
       setTimeout(()=>document.querySelector(`#q${q.id} .objective-option`)?.focus(),450);
     }
 
-    function toggleExamMode(){
-      const active=document.body.classList.toggle('exam-mode');
-      const btn=document.getElementById('examModeBtn'), tbtn=document.getElementById('toolbarExamBtn');
-      if(active){
-        const shuffle=items=>[...items].sort(()=>Math.random()-.5);
-        const allObj=getObjectiveProblems();
-        const pickObj=(otype,count)=>shuffle(allObj.filter(q=>q.objectiveType===otype)).slice(0,count);
-        examSet=shuffle([...pickObj('single',10),...pickObj('multi',5),...pickObj('ox',3)]).map(q=>String(q.id));
-        currentFilter='all'; problemCursor=0;
-        document.querySelectorAll('.filter-btn[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'));
-        tbtn?.classList.add('active');
-        examSeconds=3600;
-        if(btn) btn.textContent='실전 모의 종료 · 18문제';
-        if(tbtn) tbtn.textContent='실전 18문항 종료';
-        applyProblemFilter();
-        document.getElementById('problems').scrollIntoView({behavior:'smooth'});
-        examTimer=setInterval(()=>{ examSeconds--; const m=String(Math.floor(examSeconds/60)).padStart(2,'0'), s=String(examSeconds%60).padStart(2,'0'); document.getElementById('timerText').textContent=`${m}:${s}`; if(examSeconds<=0) toggleExamMode(); },1000);
+    function getScopeCategory(ch){
+      ch = String(ch || '');
+      if(/개론|1\.2|1\.3|절차|데이터마이닝/u.test(ch)) return '1_intro';
+      if(/선형대수/u.test(ch)) return '2_linalg';
+      if(/기초통계|베이즈/u.test(ch)) return '3_prob';
+      if(/선형회귀\s*I|회귀\s*I/u.test(ch)) return '4_reg1';
+      if(/선형회귀\s*II|회귀\s*II/u.test(ch)) return '5_reg2';
+      if(/선형회귀\s*III|회귀\s*III/u.test(ch)) return '6_reg3';
+      return '1_intro';
+    }
+
+    function generate18ExamSet(){
+      const shuffle = items => [...items].sort(() => Math.random() - .5);
+      const allObj = getObjectiveProblems();
+      const byDomain = { '1_intro':[], '2_linalg':[], '3_prob':[], '4_reg1':[], '5_reg2':[], '6_reg3':[] };
+      allObj.forEach(q => {
+        const cat = getScopeCategory(q.chapter);
+        if(byDomain[cat]) byDomain[cat].push(q);
+        else byDomain['1_intro'].push(q);
+      });
+      // Pick exactly 3 questions from each of the 6 scope domains = 18 questions!
+      const selectedSet = [];
+      const domainNames = {
+        '1_intro': '개론', '2_linalg': '선형대수', '3_prob': '확률통계',
+        '4_reg1': '회귀I', '5_reg2': '회귀II', '6_reg3': '회귀III'
+      };
+      Object.keys(byDomain).forEach(cat => {
+        const picked = shuffle(byDomain[cat]).slice(0, 3);
+        selectedSet.push(...picked);
+      });
+      // If any domain had fewer than 3, fill from remaining
+      if(selectedSet.length < 18){
+        const usedIds = new Set(selectedSet.map(q => String(q.id)));
+        const rem = shuffle(allObj.filter(q => !usedIds.has(String(q.id))));
+        selectedSet.push(...rem.slice(0, 18 - selectedSet.length));
       }
-      else {
-        clearInterval(examTimer); examTimer=null; examSet=[]; problemCursor=0;
-        if(btn) btn.textContent='60분 · 18문제 복습';
-        if(tbtn){ tbtn.textContent='실전 18문항 모의'; tbtn.classList.remove('active'); }
-        document.getElementById('timerText').textContent='60:00'; applyProblemFilter();
+      return shuffle(selectedSet).map(q => String(q.id));
+    }
+
+    function updateExamProgressBadge(){
+      if(!document.body.classList.contains('exam-mode')) return;
+      const answeredCount = examSet.filter(id => Boolean(state.objectiveAnswers[id])).length;
+      const pBadge = document.getElementById('examProgressBadge');
+      if(pBadge) pBadge.textContent = `${answeredCount} / ${examSet.length} 완료`;
+    }
+
+    function startExamMode(isReroll = false){
+      document.body.classList.add('exam-mode');
+      const btn = document.getElementById('examModeBtn');
+      const tbtn = document.getElementById('toolbarExamBtn');
+      examSet = generate18ExamSet();
+      currentFilter = 'all';
+      problemCursor = 0;
+      targetProblemId = examSet[0] ? 'q' + examSet[0] : null;
+      document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+      if(btn) btn.textContent = '실전 모의 종료 · 18문제';
+      if(tbtn) tbtn.textContent = '실전 18문항 진행 중';
+      examSeconds = 3600;
+      if(examTimer) clearInterval(examTimer);
+      updateExamProgressBadge();
+      const updateTimerDisplay = () => {
+        const m = String(Math.floor(examSeconds / 60)).padStart(2, '0');
+        const s = String(examSeconds % 60).padStart(2, '0');
+        const tStr = `${m}:${s}`;
+        document.getElementById('timerText').textContent = tStr;
+        const eBadge = document.getElementById('examTimerBadge');
+        if(eBadge) eBadge.textContent = tStr;
+      };
+      updateTimerDisplay();
+      applyProblemFilter();
+      document.getElementById('problems')?.scrollIntoView({ behavior: 'smooth' });
+      examTimer = setInterval(() => {
+        examSeconds--;
+        updateTimerDisplay();
+        if(examSeconds <= 0){
+          alert('시험 시간 60분이 종료되었습니다! 답안을 검토하세요.');
+          stopExamMode();
+        }
+      }, 1000);
+      if(isReroll){
+        alert('새로운 18문제가 출제되었습니다! (6개 전 단원 각 3문항 무작위 추출, 타이머 60:00 리셋)');
+      }
+    }
+
+    function stopExamMode(){
+      document.body.classList.remove('exam-mode');
+      if(examTimer){ clearInterval(examTimer); examTimer = null; }
+      examSet = [];
+      problemCursor = 0;
+      targetProblemId = null;
+      const btn = document.getElementById('examModeBtn');
+      const tbtn = document.getElementById('toolbarExamBtn');
+      if(btn) btn.textContent = '60분 · 18문제 복습';
+      if(tbtn) tbtn.textContent = '⏱ 실전 18문항 시험 시작';
+      document.getElementById('timerText').textContent = '60:00';
+      const eBadge = document.getElementById('examTimerBadge');
+      if(eBadge) eBadge.textContent = '60:00';
+      applyProblemFilter();
+    }
+
+    function toggleExamMode(){
+      if(document.body.classList.contains('exam-mode')) stopExamMode();
+      else startExamMode(false);
+    }
+
+    function rerollExam(){
+      startExamMode(true);
+    }
+
+    function resetCurrentExamAnswers(){
+      if(!examSet.length) return;
+      if(confirm('현재 18문제의 답안을 초기화하고 다시 풀까요?')){
+        examSet.forEach(id => {
+          delete state.objectiveAnswers[id];
+          delete state.grades[id];
+          delete draftSelections[id];
+        });
+        saveState();
+        problemCursor = 0;
+        targetProblemId = 'q' + examSet[0];
+        renderProblems();
+        updateExamProgressBadge();
       }
     }
 
@@ -1492,6 +1606,16 @@
     renderProblems(); initChecklist(); renderErrorLog(); updateProgress(); updateCountdown(); setInterval(updateCountdown,60000); setupGlobalSearch();
 
     document.getElementById('toolbarExamBtn')?.addEventListener('click',toggleExamMode);
+    document.getElementById('examRerollBtn')?.addEventListener('click',rerollExam);
+    document.getElementById('examResetAnswersBtn')?.addEventListener('click',resetCurrentExamAnswers);
+    document.getElementById('examExitBtn')?.addEventListener('click',stopExamMode);
+    document.getElementById('toolbarResetBtn')?.addEventListener('click',()=>{
+      if(confirm('전체 예상문제 답안을 모두 초기화할까요?')){
+        state.answers={}; state.objectiveAnswers={}; state.grades={};
+        Object.keys(draftSelections).forEach(k=>delete draftSelections[k]);
+        saveState(); renderProblems();
+      }
+    });
     document.querySelectorAll('.filter-btn[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{ currentFilter=btn.dataset.filter; problemCursor=0; visibleProblemCards=[]; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b===btn)); applyProblemFilter(); }));
     document.getElementById('questionSearch').addEventListener('input',applyProblemFilter);
     document.getElementById('randomBtn').addEventListener('click',()=>{const bank=getPracticeProblems();jumpToQuestion(bank[Math.floor(Math.random()*bank.length)])});
