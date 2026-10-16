@@ -446,7 +446,6 @@
     .timer-pill { display: none; align-items: center; gap: 7px; padding: 5px 9px; background: var(--dark); color: white; border-radius: 4px; font-variant-numeric: tabular-nums; font-size: 12px; }
     body.exam-mode .timer-pill { display: inline-flex; }
     body.exam-mode .solution, body.exam-mode .show-solution { display: none !important; }
-    body.exam-mode #examBar { display: flex !important; }
     body.exam-mode #toolbarExamBtn { background: #222 !important; color: #fff !important; }
 
     .error-log { margin-top: 14px; }
@@ -1008,8 +1007,8 @@
             <button class="filter-btn" data-filter="blank">교안 빈칸</button>
             <button class="filter-btn" data-filter="priority">핵심</button>
             <button class="filter-btn" data-filter="unanswered">미응답</button>
-            <button class="filter-btn" data-filter="again">오답</button>
-            <button class="filter-btn" id="toolbarExamBtn" type="button" style="font-weight:750;">⏱ 실전 18문항 시험 시작</button>
+            <button class="filter-btn" data-filter="again" id="againFilterBtn">오답 <span id="againArrow" style="display:inline-block;font-size:10px;margin-left:3px;">▾</span></button>
+            <button class="filter-btn" id="toolbarExamBtn" type="button" style="font-weight:750;">⏱ 실전 18문항 시험 시작 <span id="examArrow" style="display:inline-block;font-size:10px;margin-left:3px;">▾</span></button>
             <button class="filter-btn" id="toolbarResetBtn" type="button" style="margin-left:auto;color:var(--muted);" title="답안 초기화">문제 초기화</button>
           </div>
           <div class="again-bar" id="againBar" style="display:none;align-items:center;justify-content:space-between;gap:8px;padding:9px 12px;background:#fff1ef;border:1px solid #fecdd3;border-radius:6px;margin:6px 6px 8px;color:#991b1b;">
@@ -1330,6 +1329,8 @@
     let examSeconds = 3600;
     let examSet = [];
     let againReviewSet = null;
+    let againBarOpen = false;
+    let examBarOpen = false;
     let problemCursor = 0;
     let visibleProblemCards = [];
     let targetProblemId = null;
@@ -1493,15 +1494,35 @@
 
     function updateAgainBar(){
       const bar = document.getElementById('againBar');
+      const arrow = document.getElementById('againArrow');
+      if(arrow){
+        arrow.textContent = (currentFilter === 'again' && againBarOpen) ? '▴' : '▾';
+      }
       if(!bar) return;
-      if(currentFilter === 'again'){
+      const total = againReviewSet ? againReviewSet.size : getPracticeProblems().filter(q => ['again', 'unsure'].includes(state.grades[q.id])).length;
+      const solved = againReviewSet ? [...againReviewSet].filter(id => state.grades[id] === 'done').length : 0;
+      const cBadge = document.getElementById('againCountBadge');
+      const pBadge = document.getElementById('againProgressBadge');
+      if(cBadge) cBadge.textContent = `${total}문제`;
+      if(pBadge) pBadge.textContent = `${solved} / ${total} 해결`;
+      if(currentFilter === 'again' && againBarOpen){
         bar.style.display = 'flex';
-        const total = againReviewSet ? againReviewSet.size : getPracticeProblems().filter(q => ['again', 'unsure'].includes(state.grades[q.id])).length;
-        const solved = againReviewSet ? [...againReviewSet].filter(id => state.grades[id] === 'done').length : 0;
-        document.getElementById('againCountBadge').textContent = `${total}문제`;
-        document.getElementById('againProgressBadge').textContent = `${solved} / ${total} 해결`;
       } else {
         bar.style.display = 'none';
+      }
+    }
+
+    function updateExamBar(){
+      const isExam = document.body.classList.contains('exam-mode');
+      const bar = document.getElementById('examBar');
+      const tbtn = document.getElementById('toolbarExamBtn');
+      if(bar){
+        bar.style.display = (isExam && examBarOpen) ? 'flex' : 'none';
+      }
+      if(tbtn){
+        const arrowChar = (isExam && examBarOpen) ? '▴' : '▾';
+        const labelText = isExam ? '실전 18문항 진행 중' : '⏱ 실전 18문항 시험 시작';
+        tbtn.innerHTML = `${labelText} <span id="examArrow" style="display:inline-block;font-size:10px;margin-left:3px;">${arrowChar}</span>`;
       }
     }
 
@@ -1666,18 +1687,21 @@
 
     function startExamMode(isReroll = false){
       document.body.classList.add('exam-mode');
+      if(!isReroll) examBarOpen = false;
       const btn = document.getElementById('examModeBtn');
-      const tbtn = document.getElementById('toolbarExamBtn');
       examSet = generate18ExamSet();
       currentFilter = 'all';
+      againBarOpen = false;
+      againReviewSet = null;
       problemCursor = 0;
       targetProblemId = examSet[0] ? 'q' + examSet[0] : null;
       document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
       if(btn) btn.textContent = '실전 모의 종료 · 18문제';
-      if(tbtn) tbtn.textContent = '실전 18문항 진행 중';
       examSeconds = 3600;
       if(examTimer) clearInterval(examTimer);
       updateExamProgressBadge();
+      updateAgainBar();
+      updateExamBar();
       const updateTimerDisplay = () => {
         const m = String(Math.floor(examSeconds / 60)).padStart(2, '0');
         const s = String(examSeconds % 60).padStart(2, '0');
@@ -1704,14 +1728,14 @@
 
     function stopExamMode(){
       document.body.classList.remove('exam-mode');
+      examBarOpen = false;
       if(examTimer){ clearInterval(examTimer); examTimer = null; }
       examSet = [];
       problemCursor = 0;
       targetProblemId = null;
       const btn = document.getElementById('examModeBtn');
-      const tbtn = document.getElementById('toolbarExamBtn');
       if(btn) btn.textContent = '60분 · 18문제 복습';
-      if(tbtn) tbtn.textContent = '⏱ 실전 18문항 시험 시작';
+      updateExamBar();
       document.getElementById('timerText').textContent = '60:00';
       const eBadge = document.getElementById('examTimerBadge');
       if(eBadge) eBadge.textContent = '60:00';
@@ -1771,10 +1795,59 @@
     renderProblems(); initChecklist(); renderErrorLog(); updateProgress(); updateCountdown(); setInterval(updateCountdown,60000); setupGlobalSearch();
     setPageView(pageView, false);
 
-    document.getElementById('toolbarExamBtn')?.addEventListener('click',toggleExamMode);
+    document.getElementById('toolbarExamBtn')?.addEventListener('click', () => {
+      if(!document.body.classList.contains('exam-mode')){
+        examBarOpen = false;
+        startExamMode(false);
+      } else {
+        examBarOpen = !examBarOpen;
+        updateExamBar();
+      }
+    });
     document.getElementById('examRerollBtn')?.addEventListener('click',rerollExam);
     document.getElementById('examResetAnswersBtn')?.addEventListener('click',resetCurrentExamAnswers);
     document.getElementById('examExitBtn')?.addEventListener('click',stopExamMode);
+
+    document.getElementById('retryAllAgainBtn')?.addEventListener('click', () => {
+      if(!againReviewSet || !againReviewSet.size){
+        syncAgainReviewSet(false);
+      }
+      if(!againReviewSet || !againReviewSet.size){
+        alert('현재 다시 풀 오답 문제가 없습니다.');
+        return;
+      }
+      againReviewSet.forEach(id => {
+        delete state.objectiveAnswers[id];
+        delete state.grades[id];
+        delete draftSelections[id];
+      });
+      saveState();
+      problemCursor = 0;
+      const firstId = [...againReviewSet][0];
+      targetProblemId = firstId ? 'q' + firstId : null;
+      renderProblems();
+      updateAgainBar();
+    });
+
+    document.getElementById('refreshAgainListBtn')?.addEventListener('click', () => {
+      syncAgainReviewSet(false);
+      problemCursor = 0;
+      visibleProblemCards = [];
+      applyProblemFilter();
+      updateAgainBar();
+    });
+
+    document.getElementById('exitAgainBtn')?.addEventListener('click', () => {
+      currentFilter = 'all';
+      againReviewSet = null;
+      againBarOpen = false;
+      problemCursor = 0;
+      visibleProblemCards = [];
+      document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+      updateAgainBar();
+      applyProblemFilter();
+    });
+
     document.getElementById('toolbarResetBtn')?.addEventListener('click',()=>{
       if(confirm('전체 예상문제 답안을 모두 초기화할까요?')){
         state.answers={}; state.objectiveAnswers={}; state.grades={};
@@ -1782,9 +1855,33 @@
         saveState(); renderProblems();
       }
     });
-    document.querySelectorAll('.filter-btn[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{ currentFilter=btn.dataset.filter; problemCursor=0; visibleProblemCards=[];
-        if(currentFilter==='again'){ syncAgainReviewSet(false); } else { againReviewSet = null; }
-        updateAgainBar(); document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b===btn)); applyProblemFilter(); }));
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{
+      const f = btn.dataset.filter;
+      if(f === 'again'){
+        if(currentFilter === 'again'){
+          againBarOpen = !againBarOpen;
+          updateAgainBar();
+          return;
+        }
+        currentFilter = 'again';
+        againBarOpen = false;
+        problemCursor = 0;
+        visibleProblemCards = [];
+        syncAgainReviewSet(false);
+        updateAgainBar();
+        document.querySelectorAll('.filter-btn[data-filter]').forEach(b=>b.classList.toggle('active',b===btn));
+        applyProblemFilter();
+        return;
+      }
+      currentFilter = f;
+      againBarOpen = false;
+      againReviewSet = null;
+      problemCursor = 0;
+      visibleProblemCards = [];
+      updateAgainBar();
+      document.querySelectorAll('.filter-btn[data-filter]').forEach(b=>b.classList.toggle('active',b===btn));
+      applyProblemFilter();
+    }));
     document.getElementById('questionSearch').addEventListener('input',applyProblemFilter);
     document.getElementById('randomBtn').addEventListener('click',()=>{const bank=getPracticeProblems();jumpToQuestion(bank[Math.floor(Math.random()*bank.length)])});
     document.getElementById('unsolvedBtn').addEventListener('click',()=>{const bank=getPracticeProblems();jumpToQuestion(bank.find(q=>state.grades[q.id]!=='done')||bank[0])});
