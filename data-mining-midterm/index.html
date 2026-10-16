@@ -141,18 +141,44 @@
 
     .layout { padding-left: var(--sidebar-w); padding-top: var(--topbar-h); }
     main { width: min(var(--page-w), calc(100% - 48px)); margin: 0 auto; padding: 72px 0 140px; }
-    body.view-problems .sidebar, body.view-mistakes .sidebar { display: none; }
-    body.view-notes #problems, body.view-notes #mistakes { display: none; }
-    body.view-problems .layout, body.view-mistakes .layout { padding-left: 0; }
-    body.view-problems main, body.view-mistakes main { width: min(1040px, calc(100% - 36px)); padding-top: 38px; }
-    body.view-problems main > *:not(#problems), body.view-mistakes main > *:not(#mistakes) { display: none !important; }
-    body.view-problems #problems h2, body.view-mistakes #mistakes h2 { margin-top: 0; font-size: 34px; }
-    body.view-problems .mobile-menu, body.view-mistakes .mobile-menu { display: none; }
+    /* View switching rules - explicit and foolproof */
+    body.view-notes #problems, body.view-notes #mistakes { display: none !important; }
+    body.view-notes #dashboard, body.view-notes #now, body.view-notes #concepts, body.view-notes #checklist, body.view-notes #sources { display: block !important; }
+
+    body.view-problems .sidebar, body.view-mistakes .sidebar { display: none !important; }
+    body.view-problems .layout, body.view-mistakes .layout { padding-left: 0 !important; }
+    body.view-problems main, body.view-mistakes main { width: min(1040px, calc(100% - 36px)) !important; }
+    body.view-problems .mobile-menu, body.view-mistakes .mobile-menu { display: none !important; }
+
+    /* Problems view: explicitly hide other sections */
+    body.view-problems #dashboard,
+    body.view-problems #now,
+    body.view-problems #concepts,
+    body.view-problems #mistakes,
+    body.view-problems #checklist,
+    body.view-problems #sources,
+    body.view-problems .divider {
+      display: none !important;
+    }
     body.view-problems { overflow: hidden; overscroll-behavior: none; }
     body.view-problems .layout { height: 100dvh; overflow: hidden; }
     body.view-problems main { height: calc(100dvh - var(--topbar-h)); padding: 8px 0; overflow: hidden; }
-    body.view-problems #problems { height: 100%; display: flex; flex-direction: column; }
-    body.view-problems #problems > h2, body.view-problems #problems > p, body.view-problems .problem-tools { display: none; }
+    body.view-problems #problems { height: 100%; display: flex !important; flex-direction: column; }
+    body.view-problems #problems > h2, body.view-problems #problems > p, body.view-problems .problem-tools { display: none !important; }
+
+    /* Mistakes view: explicitly hide other sections */
+    body.view-mistakes #dashboard,
+    body.view-mistakes #now,
+    body.view-mistakes #concepts,
+    body.view-mistakes #problems,
+    body.view-mistakes #checklist,
+    body.view-mistakes #sources,
+    body.view-mistakes .divider {
+      display: none !important;
+    }
+    body.view-mistakes main { padding: 48px 0 120px; min-height: calc(100vh - var(--topbar-h)); }
+    body.view-mistakes #mistakes { display: block !important; }
+    body.view-mistakes #mistakes h2 { margin-top: 0; font-size: 34px; }
     body.view-problems .database { flex: 1; min-height: 0; margin: 0; display: flex; flex-direction: column; }
     body.view-problems .db-toolbar { flex: 0 0 auto; }
     body.view-problems #questionList { flex: 1; min-height: 0; }
@@ -510,7 +536,7 @@
       <a class="app-tab" data-view="ox" href="./ox/">O/X</a>
       <a class="app-tab" href="./multiple-choice/">다지선다</a>
       <a class="app-tab" data-view="problems" href="./?view=problems">예상문제</a>
-      <a class="app-tab" data-view="mistakes" href="./?view=mistakes">오답 복습</a>
+      <a class="app-tab" data-view="mistakes" href="./?view=mistakes">오답 정리</a>
     </nav>
     <div class="top-actions">
       <span class="timer-pill" id="timerPill">시험 모드 <strong id="timerText">60:00</strong></span>
@@ -1309,6 +1335,34 @@
     let targetProblemId = null;
     const draftSelections = {};
     let pageView = 'notes';
+
+    function updateSectionVisibility(view){
+      const secMap = {
+        dashboard: document.getElementById('dashboard'),
+        now: document.getElementById('now'),
+        concepts: document.getElementById('concepts'),
+        problems: document.getElementById('problems'),
+        mistakes: document.getElementById('mistakes'),
+        checklist: document.getElementById('checklist'),
+        sources: document.getElementById('sources')
+      };
+      Object.entries(secMap).forEach(([id, el]) => {
+        if(!el) return;
+        if(view === 'problems'){
+          el.style.display = (id === 'problems') ? 'flex' : 'none';
+        } else if(view === 'mistakes'){
+          el.style.display = (id === 'mistakes') ? 'block' : 'none';
+        } else {
+          el.style.display = (id === 'problems' || id === 'mistakes') ? 'none' : 'block';
+        }
+      });
+      document.querySelectorAll('.divider').forEach(d => {
+        d.style.display = (view === 'notes') ? 'block' : 'none';
+      });
+      const side = document.getElementById('sidebar');
+      if(side) side.style.display = (view === 'notes') ? '' : 'none';
+    }
+
     function setPageView(newView, updateUrl = true){
       if(!['notes','problems','mistakes'].includes(newView)) newView = 'notes';
       pageView = newView;
@@ -1317,6 +1371,7 @@
       document.querySelectorAll('.app-tab').forEach(tab => {
         tab.classList.toggle('active', tab.dataset.view === pageView);
       });
+      updateSectionVisibility(pageView);
       if(updateUrl){
         try {
           const url = new URL(location.href);
@@ -1714,6 +1769,7 @@
     });
 
     renderProblems(); initChecklist(); renderErrorLog(); updateProgress(); updateCountdown(); setInterval(updateCountdown,60000); setupGlobalSearch();
+    setPageView(pageView, false);
 
     document.getElementById('toolbarExamBtn')?.addEventListener('click',toggleExamMode);
     document.getElementById('examRerollBtn')?.addEventListener('click',rerollExam);
