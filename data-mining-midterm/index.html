@@ -1308,13 +1308,45 @@
     let visibleProblemCards = [];
     let targetProblemId = null;
     const draftSelections = {};
-    const pageView = new URLSearchParams(location.search).get('view') || 'notes';
-    if(['notes','problems','mistakes'].includes(pageView)) document.body.classList.add(`view-${pageView}`);
-    if(new URLSearchParams(location.search).get('filter') === 'again'){
+    let pageView = 'notes';
+    function setPageView(newView, updateUrl = true){
+      if(!['notes','problems','mistakes'].includes(newView)) newView = 'notes';
+      pageView = newView;
+      document.body.classList.remove('view-notes', 'view-problems', 'view-mistakes');
+      document.body.classList.add(`view-${pageView}`);
+      document.querySelectorAll('.app-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.view === pageView);
+      });
+      if(updateUrl){
+        try {
+          const url = new URL(location.href);
+          if(newView === 'notes'){
+            url.searchParams.delete('view');
+          } else {
+            url.searchParams.set('view', newView);
+          }
+          history.pushState({ view: newView }, '', url.toString());
+        } catch(e){}
+      }
+      if(pageView === 'problems'){
+        applyProblemFilter();
+      } else if(pageView === 'mistakes'){
+        renderErrorLog();
+      }
+    }
+
+    const initialParams = new URLSearchParams(location.search);
+    let initialView = initialParams.get('view');
+    if(!initialView){
+      if(location.hash === '#problems') initialView = 'problems';
+      else if(location.hash === '#mistakes') initialView = 'mistakes';
+      else initialView = 'notes';
+    }
+    setPageView(initialView, false);
+    if(initialParams.get('filter') === 'again'){
       currentFilter = 'again';
       syncAgainReviewSet(false);
     }
-    document.querySelectorAll('.app-tab').forEach(tab=>tab.classList.toggle('active',tab.dataset.view===pageView));
 
     function saveState(){ localStorage.setItem(KEY, JSON.stringify(state)); updateProgress(); renderErrorLog(); }
     function esc(value=''){ return String(value).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
@@ -1449,8 +1481,6 @@
         const id=card.id.replace('q','');
         const isAnswered=Boolean(state.objectiveAnswers[id] || (state.grades[id] && state.grades[id] !== 'unsure'));
         const isUnanswered=!isAnswered;
-        const isAnswered=Boolean(state.objectiveAnswers[id] || (state.grades[id] && state.grades[id] !== 'unsure'));
-        const isUnanswered=!isAnswered;
         const passAgain = againReviewSet ? againReviewSet.has(String(id)) : (['again','unsure'].includes(state.grades[id]) || currentId==='q'+id);
         const passType=currentFilter==='all' || (currentFilter==='unanswered' ? (isUnanswered || currentId==='q'+id) : currentFilter==='again' ? passAgain : currentFilter==='priority' ? card.dataset.priority==='1' : ['single','multi','ox'].includes(currentFilter) ? card.dataset.objtype===currentFilter : card.dataset.type===currentFilter);
         const passText=!query || card.dataset.text.includes(query);
@@ -1483,6 +1513,17 @@
       if(!items.length){ el.innerHTML='<div class="empty-state" style="display:block">아직 등록된 오답이 없습니다.</div>'; return; }
       el.innerHTML=items.map(q=>`<div class="error-item"><span>Q${String(q.id).padStart(2,'0')}</span><a href="#q${q.id}">${q.prompt}</a><button data-clear-error="${q.id}" title="목록에서 제거">×</button></div>`).join('');
       el.querySelectorAll('[data-clear-error]').forEach(btn=>btn.addEventListener('click',()=>{ state.grades[btn.dataset.clearError]=''; saveState(); renderProblems(); }));
+      el.querySelectorAll('.error-item a').forEach(a=>{
+        a.addEventListener('click', e=>{
+          e.preventDefault();
+          const qid = a.getAttribute('href').replace('#q','');
+          const q = findObjective(qid) || problems.find(p => String(p.id) === qid);
+          if(q){
+            setPageView('problems');
+            jumpToQuestion(q);
+          }
+        });
+      });
       typesetMath(el);
     }
 
@@ -1715,6 +1756,49 @@
     const sections=[...document.querySelectorAll('main section[id], main h3[id]')];
     const observer=new IntersectionObserver(entries=>{ const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0]; if(!visible)return; document.querySelectorAll('.side-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+visible.target.id)); },{rootMargin:'-15% 0px -72% 0px',threshold:[0,.1,.5]});
     sections.forEach(s=>observer.observe(s));
+
+    document.querySelectorAll('.app-tab, .side-link').forEach(link => {
+      link.addEventListener('click', e => {
+        let view = link.dataset.view;
+        const href = link.getAttribute('href') || '';
+        if(!view){
+          if(href.includes('view=problems') || href === '#problems') view = 'problems';
+          else if(href.includes('view=mistakes') || href === '#mistakes') view = 'mistakes';
+          else if(href === './' || href === '.' || href === 'index.html' || href === '#dashboard') view = 'notes';
+        }
+        if(view && ['notes', 'problems', 'mistakes'].includes(view)){
+          e.preventDefault();
+          setPageView(view);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
+
+    window.addEventListener('popstate', () => {
+      const v = new URLSearchParams(location.search).get('view') || 'notes';
+      setPageView(v, false);
+    });
+
+    document.getElementById('goSolveMistakesBtn')?.addEventListener('click', () => {
+      currentFilter = 'again';
+      syncAgainReviewSet(false);
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === 'again'));
+      setPageView('problems');
+    });
+
+    document.getElementById('resetAndSolveMistakesBtn')?.addEventListener('click', () => {
+      const wrongList = getPracticeProblems().filter(q => ['again', 'unsure'].includes(state.grades[q.id]));
+      if(!wrongList.length){
+        alert('다시 풀 오답 문제가 없습니다.');
+        return;
+      }
+      if(confirm(`오답 ${wrongList.length}문제의 이전 답안을 초기화하고 다시 풀까요?`)){
+        currentFilter = 'again';
+        syncAgainReviewSet(true);
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === 'again'));
+        setPageView('problems');
+      }
+    });
   </script>
 </body>
 </html>
