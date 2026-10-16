@@ -1,0 +1,2135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="1~6주차 강의교안, 제공 전사 10편, R 실습 및 시험 공지를 100% 무누락 반영한 인터랙티브심리학 중간고사 Study OS" />
+  <title>인터랙티브심리학 중간고사 · Study OS</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\\\(', '\\\\)'], ['$', '$']],
+        displayMath: [['\\\\[', '\\\\]']],
+        processEscapes: true
+      },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --sidebar: #fbfbfa;
+      --text: #191919;
+      --muted: #787774;
+      --faint: #9b9a97;
+      --line: #e9e9e7;
+      --soft: #f7f7f5;
+      --hover: #efefed;
+      --dark: #222222;
+      --radius: 4px;
+      --sidebar-w: 252px;
+      --topbar-h: 45px;
+      --page-w: 920px;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+    button, input, textarea, select { font: inherit; }
+    button { color: inherit; }
+    a { color: inherit; text-decoration-color: #b4b4b1; text-underline-offset: 3px; }
+    ::selection { background: #dcdcdc; }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--topbar-h);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 12px;
+      background: rgba(255,255,255,.94);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(12px);
+      z-index: 50;
+    }
+    .topbar.scrolled { border-color: var(--line); }
+    .crumb {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .crumb-icon {
+      width: 22px; height: 22px;
+      display: grid; place-items: center;
+      background: var(--dark); color: white;
+      border-radius: 4px;
+      font-weight: 700; font-size: 12px;
+      flex: 0 0 auto;
+    }
+    .top-actions { margin-left: auto; display: flex; gap: 4px; align-items: center; }
+    .top-actions a { text-decoration: none; }
+    .app-tabs { display: flex; align-items: center; gap: 2px; margin-left: 16px; padding: 3px; background: var(--soft); border-radius: 7px; }
+    .app-tab { color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 650; padding: 5px 9px; border-radius: 5px; white-space: nowrap; }
+    .app-tab:hover { background: #fff; color: var(--text); }
+    .app-tab.active { background: #fff; color: var(--text); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+    .icon-btn, .plain-btn {
+      border: 0;
+      background: transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      padding: 5px 8px;
+      color: #37352f;
+    }
+    .icon-btn:hover, .plain-btn:hover { background: var(--soft); }
+    .icon-btn { width: 30px; height: 30px; display: grid; place-items: center; }
+    .plain-btn { font-size: 13px; }
+
+    .sidebar {
+      position: fixed;
+      top: var(--topbar-h); bottom: 0; left: 0;
+      width: var(--sidebar-w);
+      background: var(--sidebar);
+      border-right: 1px solid var(--line);
+      padding: 12px 8px 24px;
+      overflow-y: auto;
+      z-index: 40;
+      transition: transform .2s ease;
+    }
+    .side-group { margin-bottom: 16px; }
+    .side-label {
+      padding: 5px 9px;
+      color: var(--faint);
+      font-size: 11px;
+      font-weight: 650;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .side-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      padding: 5px 9px;
+      border-radius: var(--radius);
+      color: #4b4a47;
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .side-link:hover, .side-link.active { background: var(--hover); color: var(--text); }
+    .side-icon { width: 17px; text-align: center; color: #72716e; font-size: 12px; }
+    .side-count { margin-left: auto; color: var(--faint); font-size: 11px; }
+    .side-progress { padding: 8px 9px 0; }
+    .mini-track { height: 4px; border-radius: 99px; background: #e2e2df; overflow: hidden; }
+    .mini-fill { width: 0%; height: 100%; background: var(--dark); transition: width .25s ease; }
+    .mini-copy { display: flex; justify-content: space-between; margin-top: 6px; color: var(--muted); font-size: 11px; }
+
+    .layout { padding-left: var(--sidebar-w); padding-top: var(--topbar-h); }
+    main { width: min(var(--page-w), calc(100% - 48px)); margin: 0 auto; padding: 72px 0 140px; }
+    /* View switching rules - explicit and foolproof */
+    body.view-notes #problems, body.view-notes #mistakes { display: none !important; }
+    body.view-notes #dashboard, body.view-notes #now, body.view-notes #concepts, body.view-notes #checklist, body.view-notes #sources { display: block !important; }
+
+    body.view-problems .sidebar, body.view-mistakes .sidebar { display: none !important; }
+    body.view-problems .layout, body.view-mistakes .layout { padding-left: 0 !important; }
+    body.view-problems main, body.view-mistakes main { width: min(1040px, calc(100% - 36px)) !important; }
+    body.view-problems .mobile-menu, body.view-mistakes .mobile-menu { display: none !important; }
+
+    /* Problems view: explicitly hide other sections */
+    body.view-problems #dashboard,
+    body.view-problems #now,
+    body.view-problems #concepts,
+    body.view-problems #mistakes,
+    body.view-problems #checklist,
+    body.view-problems #sources,
+    body.view-problems .divider {
+      display: none !important;
+    }
+    body.view-problems { overflow: hidden; overscroll-behavior: none; }
+    body.view-problems .layout { height: 100dvh; overflow: hidden; }
+    body.view-problems main { height: calc(100dvh - var(--topbar-h)); padding: 8px 0; overflow: hidden; }
+    body.view-problems #problems { height: 100%; display: flex !important; flex-direction: column; }
+    body.view-problems #problems > h2, body.view-problems #problems > p, body.view-problems .problem-tools { display: none !important; }
+
+    /* Mistakes view: explicitly hide other sections */
+    body.view-mistakes #dashboard,
+    body.view-mistakes #now,
+    body.view-mistakes #concepts,
+    body.view-mistakes #problems,
+    body.view-mistakes #checklist,
+    body.view-mistakes #sources,
+    body.view-mistakes .divider {
+      display: none !important;
+    }
+    body.view-mistakes main { padding: 48px 0 120px; min-height: calc(100vh - var(--topbar-h)); }
+    body.view-mistakes #mistakes { display: block !important; }
+    body.view-mistakes #mistakes h2 { margin-top: 0; font-size: 34px; }
+    body.view-problems .database { flex: 1; min-height: 0; margin: 0; display: flex; flex-direction: column; }
+    body.view-problems .db-toolbar { flex: 0 0 auto; }
+    body.view-problems #questionList { flex: 1; min-height: 0; }
+    body.view-problems .question-card { height: 100%; display: none; flex-direction: column; overflow: hidden; }
+    body.view-problems .q-head { flex: 0 0 auto; padding: 10px 12px 7px; }
+    body.view-problems .q-body { flex: 1; min-height: 0; padding: 0 12px 8px 58px; display: flex; flex-direction: column; }
+    body.view-problems .q-actions { flex: 0 0 auto; }
+    body.view-problems [data-copy], body.view-problems .save-label { display: none; }
+    body.view-problems .solution.visible { flex: 0 0 auto; display: block; max-height: 165px; overflow-y: auto; overscroll-behavior: contain; margin-top: 7px; padding: 9px 11px; }
+    .practice-pager { display: none; }
+    body.view-problems .practice-pager { flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding: 6px 8px; }
+    .practice-pager button { border: 0; background: transparent; border-radius: 5px; padding: 6px 9px; cursor: pointer; }
+    .practice-pager button:hover { background: var(--soft); }
+    .practice-pager button:disabled { opacity: .35; cursor: default; }
+    .practice-position { color: var(--muted); font-size: 12px; }
+
+    .page-icon {
+      width: 72px; height: 72px;
+      display: grid; place-items: center;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      font-family: Georgia, serif;
+      font-size: 34px;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+    h1, h2, h3 { line-height: 1.25; letter-spacing: -.025em; }
+    h1 { margin: 0 0 10px; font-size: clamp(34px, 5vw, 48px); font-weight: 750; }
+    h2 { margin: 62px 0 16px; font-size: 27px; scroll-margin-top: 68px; }
+    h3 { margin: 28px 0 10px; font-size: 19px; scroll-margin-top: 68px; }
+    .subtitle { max-width: 720px; margin: 0 0 24px; color: var(--muted); font-size: 16px; }
+
+    .properties { max-width: 720px; margin: 24px 0 30px; }
+    .prop-row {
+      display: grid;
+      grid-template-columns: 138px 1fr;
+      min-height: 34px;
+      align-items: center;
+      font-size: 14px;
+    }
+    .prop-key { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+    .prop-icon { width: 16px; color: var(--faint); text-align: center; }
+    .tag {
+      display: inline-flex; align-items: center;
+      padding: 1px 7px;
+      border-radius: 4px;
+      background: #ededeb;
+      color: #4f4e49;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+    .tag.dark { background: #2f2f2f; color: white; }
+    .tag.outline { background: white; border: 1px solid #d7d7d4; }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      padding: 15px 16px;
+      margin: 18px 0;
+      background: var(--soft);
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .callout strong { font-weight: 700; }
+    .callout-icon { font-weight: 800; text-align: center; }
+    .callout.black { background: var(--dark); color: white; }
+    .callout.black a { text-decoration-color: #888; }
+
+    .divider { border: 0; border-top: 1px solid var(--line); margin: 38px 0; }
+    .block { position: relative; }
+    .block::before {
+      content: "⋮⋮";
+      position: absolute;
+      left: -27px; top: 3px;
+      color: transparent;
+      font-size: 12px;
+      letter-spacing: -3px;
+    }
+    .block:hover::before { color: #c2c2bf; }
+
+    .dash-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 14px; margin: 18px 0 10px; }
+    .card { border: 1px solid var(--line); border-radius: 7px; background: white; padding: 18px; }
+    .card-title { margin: 0 0 3px; font-size: 13px; font-weight: 700; }
+    .card-sub { color: var(--muted); font-size: 12px; }
+    .big-number { font-size: 36px; font-weight: 750; letter-spacing: -.04em; line-height: 1.15; margin: 16px 0 8px; }
+    .progress-track { height: 8px; border-radius: 99px; background: #e8e8e5; overflow: hidden; }
+    .progress-fill { width: 0%; height: 100%; background: var(--dark); transition: width .3s ease; }
+    .countdown { display: flex; align-items: baseline; gap: 6px; margin-top: 18px; }
+    .countdown strong { font-size: 27px; letter-spacing: -.03em; }
+    .countdown span { font-size: 12px; color: var(--muted); }
+
+    .study-table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13px; }
+    .study-table th, .study-table td { padding: 10px 9px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .study-table th { color: var(--muted); font-weight: 550; font-size: 12px; }
+    .study-table tr:hover td { background: #fafafa; }
+    .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #373737; }
+    .status-dot.open { background: white; border: 1px solid #8f8f8b; }
+    .status-dot.wait { background: #aaa9a5; }
+    .checkline { display: flex; gap: 9px; align-items: flex-start; padding: 4px 0; }
+    .checkline input { margin-top: 5px; accent-color: #222; }
+    .checkline label { cursor: pointer; }
+    .checkline input:checked + label { text-decoration: line-through; color: var(--muted); }
+
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); margin: 20px 0; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+    .flow-step { min-height: 116px; padding: 14px 12px; border-right: 1px solid var(--line); background: white; }
+    .flow-step:last-child { border-right: 0; }
+    .flow-num { color: var(--muted); font-size: 11px; }
+    .flow-step strong { display: block; margin: 6px 0 4px; font-size: 14px; }
+    .flow-step p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
+
+    details.toggle { margin: 4px 0; border-radius: var(--radius); }
+    details.toggle > summary {
+      position: relative;
+      list-style: none;
+      cursor: pointer;
+      padding: 8px 8px 8px 30px;
+      font-weight: 650;
+      border-radius: var(--radius);
+    }
+    details.toggle > summary::-webkit-details-marker { display: none; }
+    details.toggle > summary::before {
+      content: "▶";
+      position: absolute;
+      left: 9px; top: 10px;
+      color: #66645f;
+      font-size: 10px;
+      transition: transform .15s ease;
+    }
+    details.toggle[open] > summary::before { transform: rotate(90deg); }
+    details.toggle > summary:hover { background: var(--soft); }
+    .toggle-content { margin: 0 8px 12px 30px; padding: 2px 0 4px; }
+    .toggle-content p { margin: 8px 0; }
+    .toggle-content ul { margin: 7px 0; padding-left: 22px; }
+
+    .formula {
+      margin: 10px 0;
+      padding: 12px 14px;
+      background: #f7f7f5;
+      border: 1px solid #ededeb;
+      border-radius: 4px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .formula mjx-container { margin: 0 !important; }
+    .priority-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0 22px; }
+    .priority-card { border: 1px solid var(--line); border-radius: 6px; padding: 14px; background: #fff; }
+    .priority-card strong { display: block; margin-bottom: 5px; }
+    .priority-card p { margin: 0; color: var(--muted); font-size: 12px; }
+    .stars { letter-spacing: 1px; font-size: 12px; }
+    .blank-page { white-space: nowrap; font-weight: 650; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .note-list { margin: 8px 0; padding-left: 23px; }
+    .note-list li { margin: 5px 0; }
+    .muted { color: var(--muted); }
+    .tiny { font-size: 12px; }
+    .quote {
+      margin: 18px 0;
+      padding-left: 16px;
+      border-left: 3px solid #222;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    mark { background: #ebebea; color: inherit; padding: 1px 2px; }
+    code { padding: 2px 5px; background: var(--soft); border-radius: 3px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+
+    .database { margin: 16px 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+    .db-toolbar { display: flex; align-items: center; gap: 4px; padding: 9px; border-bottom: 1px solid var(--line); background: #fff; overflow-x: auto; }
+    .db-title { font-size: 13px; font-weight: 700; margin-right: auto; }
+    .db-search {
+      width: 190px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 5px 8px;
+      background: white;
+      outline: none;
+      font-size: 12px;
+    }
+    .db-search:focus { border-color: #a8a8a4; box-shadow: 0 0 0 2px #eee; }
+    .filter-btn {
+      border: 1px solid transparent;
+      background: transparent;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .filter-btn:hover { background: var(--soft); }
+    .filter-btn.active { background: var(--dark); color: white; border-color: var(--dark); }
+    .question-card { border-bottom: 1px solid var(--line); padding: 0; }
+    .question-card:last-child { border-bottom: 0; }
+    .q-head { display: grid; grid-template-columns: 48px 1fr auto; align-items: start; gap: 8px; padding: 14px 14px 9px; }
+    .q-number { color: var(--muted); font-size: 12px; padding-top: 2px; }
+    .q-title { min-width: 0; max-width: 100%; font-weight: 650; line-height: 1.55; overflow-wrap: anywhere; word-break: normal; }
+    .q-meta { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; }
+    .q-body { padding: 0 14px 15px 70px; }
+    .answer-box {
+      width: 100%; min-height: 86px; resize: vertical;
+      margin: 8px 0;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      outline: none;
+      line-height: 1.55;
+      background: #fff;
+    }
+    .answer-box:focus { border-color: #9b9a97; box-shadow: 0 0 0 2px #efefed; }
+    .objective-hint { color: var(--muted); font-size: 11px; margin: 0 0 6px; }
+    .objective-options { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 2px 1px 5px; }
+    .objective-option { width: 100%; display: grid; grid-template-columns: 30px minmax(0,1fr); gap: 8px; align-items: start; margin: 0 0 7px; padding: 9px 10px; border: 1px solid var(--line); border-radius: 7px; background: #fff; text-align: left; line-height: 1.45; cursor: pointer; }
+    .objective-option:hover { background: #fafaf9; }
+    .objective-option.selected { border-color: #222; box-shadow: inset 0 0 0 1px #222; }
+    .objective-option.correct { border-color: #83b893; background: #edf7f0; }
+    .objective-option.wrong { border-color: #dfa19a; background: #fff1ef; }
+    .objective-option.missed { border-style: dashed; border-color: #70a982; background: #f6fbf7; }
+    .objective-key { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 5px; background: var(--soft); font-size: 12px; font-weight: 800; }
+    .objective-option.selected .objective-key { background: #222; color: #fff; }
+    .objective-option.correct .objective-key, .objective-option.missed .objective-key { background: #2f7d4a; color: #fff; }
+    .objective-option.wrong .objective-key { background: #b42318; color: #fff; }
+    .objective-text { min-width: 0; overflow-wrap: anywhere; font-size: 13px; font-weight: 620; }
+    .objective-result { display: none; flex: 0 0 auto; margin-top: 5px; padding: 9px 11px; border-radius: 5px; font-size: 12px; line-height: 1.5; overflow-y: auto; max-height: 145px; }
+    .objective-result.show { display: block; }
+    .objective-result.good { color: #23663a; background: #edf7f0; }
+    .objective-result.bad { color: #8e1f17; background: #fff1ef; }
+    .objective-actions { flex: 0 0 auto; display: flex; gap: 6px; margin-top: 6px; }
+    .objective-actions .small-btn.primary { flex: 1; }
+    .objective-actions .retry-one { display: none; }
+    .objective-actions .retry-one.show { display: inline-block; }
+    .q-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+    .small-btn {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 4px;
+      padding: 5px 9px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .small-btn:hover { background: var(--soft); }
+    .small-btn.primary { background: var(--dark); color: white; border-color: var(--dark); }
+    .grade-group { margin-left: auto; display: flex; gap: 4px; }
+    .grade-btn.active { background: var(--dark); color: white; border-color: var(--dark); }
+    .solution { display: none; min-width: 0; max-width: 100%; margin-top: 12px; padding: 13px 14px; background: var(--soft); border-radius: 4px; font-size: 13px; overflow-wrap: anywhere; word-break: normal; }
+    .solution.visible { display: block; }
+    .solution-label { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .04em; margin-bottom: 4px; }
+    .q-title mjx-container:not([display="true"]), .solution mjx-container:not([display="true"]) { display: inline-block !important; max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: middle; }
+    .q-title mjx-container[display="true"], .solution mjx-container[display="true"] { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; margin: .45em 0 !important; }
+    .q-title mjx-container svg, .solution mjx-container svg { max-width: none; }
+    .empty-state { display: none; padding: 40px 20px; text-align: center; color: var(--muted); }
+
+    .quiz-controls { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0; }
+    .quiz-controls button { border: 1px solid var(--line); background: white; border-radius: 5px; padding: 7px 10px; cursor: pointer; font-size: 13px; }
+    .quiz-controls button:hover { background: var(--soft); }
+    .quiz-controls button.strong { background: var(--dark); border-color: var(--dark); color: white; }
+    .problem-tools { margin: 12px 0; border: 1px solid var(--line); border-radius: 7px; background: var(--soft); }
+    .problem-tools summary { cursor: pointer; list-style: none; padding: 10px 12px; font-size: 13px; font-weight: 650; }
+    .problem-tools summary::-webkit-details-marker { display: none; }
+    .problem-tools summary::before { content: '＋'; margin-right: 7px; color: var(--muted); }
+    .problem-tools[open] summary::before { content: '−'; }
+    .problem-tools .tool-body { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 0 12px 12px; }
+    .problem-tools .quiz-controls { margin: 0; }
+    .timer-pill { display: none; align-items: center; gap: 7px; padding: 5px 9px; background: var(--dark); color: white; border-radius: 4px; font-variant-numeric: tabular-nums; font-size: 12px; }
+    body.exam-mode .timer-pill { display: inline-flex; }
+    body.exam-mode .solution, body.exam-mode .show-solution { display: none !important; }
+    body.exam-mode #toolbarExamBtn { background: #222 !important; color: #fff !important; }
+
+    .error-log { margin-top: 14px; }
+    .error-item { display: grid; grid-template-columns: 50px 1fr auto; gap: 10px; padding: 10px 9px; border-bottom: 1px solid var(--line); font-size: 13px; }
+    .error-item button { border: 0; background: none; cursor: pointer; color: var(--muted); }
+
+    .source-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .source-link { display: block; padding: 11px 12px; border: 1px solid var(--line); border-radius: 5px; text-decoration: none; }
+    .source-link:hover { background: var(--soft); }
+    .source-link strong { display: block; font-size: 13px; }
+    .source-link span { color: var(--muted); font-size: 11px; }
+
+    .search-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.18); z-index: 100; padding: 80px 16px; }
+    .search-overlay.open { display: block; }
+    .search-panel { width: min(620px, 100%); margin: 0 auto; background: white; border: 1px solid #d6d6d3; border-radius: 7px; box-shadow: 0 12px 44px rgba(0,0,0,.16); overflow: hidden; }
+    .search-input-wrap { display: flex; align-items: center; gap: 9px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+    .search-input-wrap input { flex: 1; border: 0; outline: 0; font-size: 15px; }
+    .search-results { max-height: 55vh; overflow-y: auto; padding: 7px; }
+    .search-result { display: block; padding: 9px 10px; border-radius: 4px; text-decoration: none; }
+    .search-result:hover { background: var(--soft); }
+    .search-result strong { display: block; font-size: 13px; }
+    .search-result span { color: var(--muted); font-size: 12px; }
+    .kbd { padding: 2px 5px; border: 1px solid #d8d8d5; border-bottom-width: 2px; border-radius: 3px; color: var(--muted); font-size: 10px; }
+
+    .mobile-menu { display: none; }
+    .back-top { position: fixed; right: 18px; bottom: 18px; border: 1px solid var(--line); border-radius: 50%; background: white; width: 36px; height: 36px; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .back-top.show { opacity: 1; pointer-events: auto; }
+
+    @media (max-width: 900px) {
+      :root { --sidebar-w: 0px; }
+      .sidebar { width: 252px; transform: translateX(-100%); box-shadow: 8px 0 28px rgba(0,0,0,.08); }
+      body.side-open .sidebar { transform: translateX(0); }
+      .mobile-menu { display: grid; }
+      .app-tabs { margin-left: 8px; overflow-x: auto; }
+      main { width: min(760px, calc(100% - 32px)); padding-top: 48px; }
+      .dash-grid, .two-col, .priority-grid { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; }
+      .flow-step { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+      .flow-step:last-child { border-bottom: 0; }
+    }
+    @media (max-width: 620px) {
+      body { font-size: 14px; }
+      .topbar { padding-inline: 7px; }
+      .crumb { display: none; }
+      .app-tabs { margin-left: 0; gap: 0; }
+      .app-tab { padding-inline: 7px; }
+      .top-actions .plain-btn, .top-actions #moreBtn { display: none; }
+      main { width: calc(100% - 28px); }
+      h1 { font-size: 34px; }
+      h2 { font-size: 24px; margin-top: 48px; }
+      .plain-btn.hide-mobile { display: none; }
+      .topbar .kbd { display: none; }
+      .properties .prop-row { grid-template-columns: 105px 1fr; }
+      .db-toolbar { flex-wrap: wrap; }
+      .db-search { order: 4; width: 100%; }
+      .q-head { grid-template-columns: 34px 1fr; }
+      .q-meta { grid-column: 2; justify-content: flex-start; }
+      .q-body { padding-left: 48px; }
+      .grade-group { width: 100%; margin-left: 0; margin-top: 4px; }
+      .source-grid { grid-template-columns: 1fr; }
+      .block::before { display: none; }
+      body.view-problems .q-body { padding-left: 10px; padding-right: 10px; }
+      body.view-problems .q-title mjx-container, body.view-problems .solution mjx-container, body.view-problems .objective-text mjx-container { font-size: .86em !important; }
+      .objective-option { grid-template-columns: 27px minmax(0,1fr); padding: 7px 8px; margin-bottom: 5px; }
+      .objective-key { width: 24px; height: 24px; }
+      .objective-text { font-size: 12px; }
+    }
+    @media print {
+      .topbar, .sidebar, .back-top, .quiz-controls, .db-toolbar, .q-actions, textarea { display: none !important; }
+      .layout { padding: 0; }
+      main { width: 100%; padding: 0; }
+      .toggle { break-inside: avoid; }
+      details.toggle > .toggle-content { display: block; }
+      .question-card { break-inside: avoid; }
+      .q-body { padding-bottom: 8px; }
+      .solution { display: block !important; background: #f5f5f5; }
+      h2 { page-break-before: auto; }
+    }
+  
+    .code-box {
+      margin: 10px 0;
+      padding: 11px 14px;
+      background: #1e1e1e;
+      color: #f8f8f2;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.55;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .code-box .comment { color: #94a3b8; }
+    .code-box .kw { color: #93c5fd; font-weight: 700; }
+    .code-box .hl { color: #fde047; font-weight: 700; }
+    .r-output-box {
+      margin: 10px 0;
+      padding: 11px 14px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #1e293b;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12.5px;
+      line-height: 1.55;
+      overflow-x: auto;
+      white-space: pre;
+      color: #0f172a;
+    }
+    .eng-badge {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+  </style>
+</head>
+<body class="view-notes">
+  <header class="topbar" id="topbar">
+    <button class="icon-btn mobile-menu" id="menuBtn" aria-label="목차 열기">☰</button>
+    <div class="crumb">
+      <span class="crumb-icon">Ψ</span>
+      <span>2026-2 · 인터랙티브심리학 · 중간고사 Study OS</span>
+    </div>
+    <nav class="app-tabs" aria-label="학습 보기 선택">
+      <a class="app-tab active" data-view="notes" href="./">개념 정리</a>
+      <a class="app-tab" data-view="ox" href="./ox/">O/X</a>
+      <a class="app-tab" href="./multiple-choice/">다지선다</a>
+      <a class="app-tab" data-view="problems" href="./?view=problems">예상문제</a>
+      <a class="app-tab" data-view="mistakes" href="./?view=mistakes">오답 정리</a>
+    </nav>
+    <div class="top-actions">
+      <span class="timer-pill" id="timerPill">120:00</span>
+      <button class="plain-btn" id="searchBtn" title="검색 (⌘K)">⌕ 검색 <span class="kbd">⌘K</span></button>
+      <button class="icon-btn" id="moreBtn" title="모든 토글 열기">▤</button>
+      <button class="icon-btn" id="printBtn" title="인쇄 / PDF">⎙</button>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="side-group">
+      <div class="side-label">Study OS</div>
+      <a class="side-link active" href="#dashboard"><span class="side-icon">⌂</span>시험 대시보드</a>
+      <a class="side-link" href="#now"><span class="side-icon">→</span>지금 먼저</a>
+      <a class="side-link" href="#concepts"><span class="side-icon">▤</span>개념 노트</a>
+      <a class="side-link" href="#priority"><span class="side-icon">★</span>기출 족보·강조 지도</a>
+      <a class="side-link" href="#englishTerms"><span class="side-icon">A</span>주관식 영문 용어 사전</a>
+      <a class="side-link" href="#blanks"><span class="side-icon">▣</span>교안 계산·R코드·출력</a>
+      <a class="side-link" href="./?view=problems"><span class="side-icon">□</span>예상문제 <span class="side-count" id="expectedCountSide">준비중</span></a>
+      <a class="side-link" href="./ox/"><span class="side-icon">◉</span>개념 O/X <span class="side-count" id="oxCountSide">준비중</span></a>
+      <a class="side-link" href="./?view=mistakes"><span class="side-icon">↺</span>오답 노트 <span class="side-count" id="mistakeCountSide">0</span></a>
+      <a class="side-link" href="#checklist"><span class="side-icon">✓</span>직전 체크리스트</a>
+    </div>
+    <div class="side-group">
+      <div class="side-label">개념 목차 (1~6주차 전수)</div>
+      <a class="side-link" href="#c1"><span class="side-icon">1</span>개론·인간공학 역사</a>
+      <a class="side-link" href="#c2"><span class="side-icon">2</span>HFE 연구방법론·표본·타당도</a>
+      <a class="side-link" href="#c3"><span class="side-icon">3</span>정보처리모형·정보량·중복도</a>
+      <a class="side-link" href="#c4"><span class="side-icon">4</span>정보전달·기억·Sternberg·Hick</a>
+      <a class="side-link" href="#c5"><span class="side-icon">5</span>Fitts 법칙·운동제어·양립성</a>
+      <a class="side-link" href="#c6"><span class="side-icon">6</span>기초통계·T-검정·R 실습</a>
+      <a class="side-link" href="#c7"><span class="side-icon">7</span>회귀분석·SRT/CRT/Sternberg</a>
+      <a class="side-link" href="#scope"><span class="side-icon">✓</span>원문 검증·주의점</a>
+    </div>
+    <div class="side-progress">
+      <div class="mini-track"><div class="mini-fill" id="sideProgressFill"></div></div>
+      <div class="mini-copy"><span>전체 학습 진도</span><span id="sideProgressText">0%</span></div>
+    </div>
+  </aside>
+
+  <div class="layout">
+    <main>
+      <section id="dashboard" data-search-title="시험 대시보드">
+        <div class="page-icon">Ψ</div>
+        <h1>인터랙티브심리학 중간고사</h1>
+        <p class="subtitle">1~6주차 강의교안 7종, 제공 전사 10편, R 실습 코드·출력 및 시험 공지를 단 하나의 누락도 없이 통합한 흑백 Study OS.</p>
+
+        <div class="properties">
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">◷</span>시험 일시</div><div><strong>2026년 10월 19일(월) 저녁 6:00–8:00 (18:00–20:00, 120분)</strong></div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">⌖</span>장소</div><div><strong>새빛관 102호</strong> (대면 시험)</div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">◎</span>출제 형식</div><div><span class="tag dark">객관식(단일·복수·T/F)</span><span class="tag dark">주관식(영어 용어 필수)</span><span class="tag outline">서술식(한글)</span><span class="tag outline">간단한 R 코드 작성(영어)</span></div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">✎</span>준비물·언어</div><div><strong>연필, 지우개</strong> · 문제 및 객관식/서술식은 한글 / <strong>주관식 용어와 R 코드는 반드시 영어(English)로 작성</strong></div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">≡</span>확정 범위</div><div><strong>1주차 ~ 6주차 수업 전체 범위</strong> (개론·역사 · HFE 연구방법론 · 정보처리 I~III[정보량·전달·기억·Sternberg·Donders·Hick·Fitts·운동제어·양립성] · 기초통계/t-test/단순회귀/SRT·CRT·Sternberg 실습)</div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">★</span>기출 핵심</div><div>① 정보량 \(H\)·중복도 계산 ② 표 보고 \(H(A), H(B), H(A|B), H(B|A), T(A;B)\) 소수점 계산 ③ R 코드 빈칸 넣기 ④ R 회귀 <code>summary</code> 값 의미 서술 ⑤ 개념 복수선택(맞는 것 모두 고르기) ⑥ T/F 다수(<code>Hick's law</code>, <code>Fitts' law</code>, <code>therblig</code> 등)</div></div>
+          <div class="prop-row"><div class="prop-key"><span class="prop-icon">◇</span>검증 기준</div><div>원본 PDF 7종 전 페이지 텍스트/도식 + 제공 전사 10편 + 엑셀(<code>regression1.xlsx</code>) + 실습 로그 전수 대조</div></div>
+        </div>
+
+        <div class="callout black block">
+          <div class="callout-icon">!</div>
+          <div><strong>김현경 교수님 중간고사 공지 및 기출 출제 방향 완벽 반영</strong><br />
+          1) <strong>주관식(단답형)</strong>은 반드시 <strong>영어 용어(English term)</strong>로 작성해야 합니다 (예: <code>therbligs</code>, <code>Deficiency</code>, <code>Contamination</code>, <code>Equivocation</code>, <code>Chunking</code>, <code>Ballistic movement</code>, <code>Population stereotype</code>, <code>Affordance</code> 등).<br />
+          2) <strong>계산 문제</strong>는 교안의 표와 공식을 그대로 적용해 소수점까지 계산하는 연습(정보량 \(H\), 중복도, 전달정보량 \(H(X\\cap Y)\)·모호도 \(H(X|Y)\)·잡음 \(H(Y|X)\), 표본 수 \(n\), Hick의 \(\\mathrm{RT}\), Fitts의 \(\\mathrm{ID}\\cdot\\mathrm{MT}\), 회귀 \(b_0,b_1,R^2,F\))이 필수입니다.<br />
+          3) <strong>R 통계 파트</strong>는 R 코드 빈칸 채우기와 <code>summary(model)</code> 결과표의 각 수치(<code>Estimate</code>, <code>Pr(&gt;|t|)</code>, <code>Multiple/Adjusted R-squared</code>, <code>F-statistic p-value</code>)가 의미하는 바를 한글로 정확히 서술해야 합니다.</div>
+        </div>
+
+        <div class="dash-grid">
+          <div class="card block">
+            <p class="card-title">나의 준비도</p>
+            <p class="card-sub">개념 체크리스트 + 문제 풀이 기준</p>
+            <div class="big-number" id="readinessNumber">0%</div>
+            <div class="progress-track"><div class="progress-fill" id="readinessFill"></div></div>
+            <p class="tiny muted" id="readinessCopy">체크리스트와 문제를 완료하면 자동으로 올라갑니다.</p>
+          </div>
+          <div class="card block">
+            <p class="card-title">시험까지</p>
+            <p class="card-sub">Asia/Seoul · 2026.10.19(월) 18:00</p>
+            <div class="countdown"><strong id="daysLeft">—</strong><span id="daysLabel">남음</span></div>
+            <p class="tiny muted" id="countdownDetail">시간을 계산하는 중…</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="now" data-search-title="지금 먼저 할 일">
+        <h2>지금 먼저</h2>
+        <table class="study-table block">
+          <thead><tr><th>순서</th><th>할 일</th><th>완료 기준</th><th>상태</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td><strong>1~6주차 전수 개념 + 영문 용어 암기</strong></td><td>교안 모든 슬라이드 개념과 주관식 필수 영문 철자 65개를 백지에 재현</td><td><span class="status-dot open"></span>진행</td></tr>
+            <tr><td>02</td><td><strong>정보량·혼동행렬·Hick·Fitts·표본수 계산</strong></td><td>\(H(X), H(Y), H(X|Y), H(Y|X), T(X;Y)\) 소수점 계산 및 \(n=16\)(추가 11명) 완벽 검산</td><td><span class="status-dot wait"></span>대기</td></tr>
+            <tr><td>03</td><td><strong>R 코드 빈칸 &amp; <code>summary</code> 서술 공식 숙지</strong></td><td>기초통계·t-test 3종·회귀 R 코드 22줄과 <code>summary(model)</code> 3대 영역 서술</td><td><span class="status-dot wait"></span>대기</td></tr>
+            <tr><td>04</td><td><strong>O/X → 다지선다 → 단답·서술·코드 → 기출 5세트</strong></td><td>단계별 문제은행으로 T/F 함정, 복수선택, 주관식 영문 용어, R 코드 완전 정복</td><td><span class="status-dot wait"></span>대기</td></tr>
+          </tbody>
+        </table>
+        <div class="callout block"><div class="callout-icon">→</div><div><strong>추천 학습 루프</strong>　① 단원별 개념 토글 정독 → ② <a href="#englishTerms">주관식 영문 용어 사전</a> 철자 점검 → ③ <a href="#blanks">교안 계산·R코드·출력 표</a> 손계산 → ④ O/X·다지선다·서술형·기출 5세트 실전 풀이.</div></div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="concepts" data-search-title="개념 노트">
+        <h2>개념 노트 (1주차 ~ 6주차 무누락 전수 정리)</h2>
+        <p class="muted">강의교안 PDF 7종(총 128쪽)과 강의 녹화 전사 10편의 모든 문장, 영문 용어, 수식, 예제, R 코드 및 원문 검증 사항을 단 하나의 누락 없이 구조화했습니다.</p>
+
+        <h3 id="priority">출제 경향 · 교수 강조 · 기출 족보 지도</h3>
+        <div class="priority-grid">
+          <div class="priority-card"><span class="stars">★★★</span><strong>기출 100% 출제 계산 &amp; R 코드</strong><p>정보량·중복도, 혼동행렬 \(H(A),H(B),H(A|B),H(B|A),T\), 표본 수 \(n\), Hick/Fitts, R 코드 빈칸 및 <code>summary</code> 해석 서술.</p></div>
+          <div class="priority-card"><span class="stars">★★★</span><strong>주관식 영문 용어 (English Only)</strong><p><code>therbligs</code>, <code>Deficiency</code>, <code>Contamination</code>, <code>Equivocation</code>, <code>Noise</code>, <code>Chunking</code>, <code>Ballistic</code>, <code>Affordance</code> 등 영문 철자.</p></div>
+          <div class="priority-card"><span class="stars">★★★</span><strong>T/F &amp; 복수선택 단골 개념</strong><p>Hick 절편/기울기 요인(촉각&gt;청각&gt;시각), Fitts 관절 수(팔뚝&gt;손목&gt;손가락), Range effect(Overshoot/Undershoot), 양립성 4유형.</p></div>
+        </div>
+
+        <table class="study-table block">
+          <thead><tr><th>단원 (주차)</th><th>원본 교안 및 전사</th><th>핵심 출제 포인트 (기출 &amp; 교수 강조)</th><th>중요도</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ch 1. 개론·인간공학 역사</strong> (1주)</td><td><code>1._Introduction_(1).pdf</code><br><code>1_Introduction_2.pdf</code></td><td>UX 시점/요소, UX 심리학(Design &amp; Science), 선택적 주의(고릴라), <code>Ergonomics</code> 어원·동의어, 설계 철학 전환(시스템을 사람에 맞춤), <strong>Gilbreth 부부의 <code>therbligs</code></strong>, <code>Physical</code> vs <code>Cognitive</code> vs <code>UX</code></td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td><strong>Ch 2. HFE 연구방법론</strong> (2~3주)</td><td><code>2._HFE_Research_Methodology.pdf</code><br>전사 1·2</td><td><code>Descriptive</code>(BMI)·<code>Experimental</code>(스마트글래스 코 압력, SE)·<code>Evaluation</code>(청소기 3종) 비교, <code>Laboratory</code> vs <code>Field</code> 장단점, <code>IV/DV/Control/Stratification</code>, <strong>표본 수 공식 \(n=16\)(추가 11명)</strong>, 실무요건(<code>Unobtrusive</code>), <code>Reliability</code> vs <code>Accuracy</code> 과녁, <code>Internal/External/Construct Validity</code>(<strong><code>Deficiency</code> vs <code>Contamination</code></strong>)</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td><strong>Ch 3. 정보처리모형·정보량·중복도</strong> (4주)</td><td><code>3._Information_Processing.pdf</code> (p.1–14)<br>전사 1·2</td><td>인간 정보처리 모형 단계(<code>STSS → Perception → Decision → Execution</code>, <code>Working memory</code> 20~30초, <code>Attention</code>, <code>Feedback</code>), Hartley \(\\log_2 N\) &amp; Shannon \(-\\sum p_i\\log_2 p_i\), 동전 역U자 곡선, <strong><code>% Redundancy</code> 계산(휜 동전 53.2%, 8경고등 21.44%, 카운트다운 100%)</strong></td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td><strong>Ch 4. 정보전달·기억·Sternberg·Hick</strong> (5주)</td><td><code>3._Information_Processing.pdf</code> (p.15–41)<br>전사 2·3</td><td><strong>혼동행렬 \(H(X), H(Y), H(X\\cup Y), H(X\\cap Y), H(X|Y), H(Y|X)\) 소수점 계산</strong>, 전달정보량 함정(<code>Trap</code>), 채널용량(2.8 bits/s), 마법의 숫자 \(7\\pm 2\), 작업기억 시연(<code>Rehearsal</code>), 용량 향상 3전략(<code>Relative judgment</code>, 다차원, <code>Chunking</code>), Sternberg(<code>Serial</code>, <code>Self-terminating</code> vs <code>Exhaustive</code>), Donders A/B/C, <strong>Hick 법칙 \(\\mathrm{RT}=a+bH\) 및 \(a,b\) 결정 요인</strong></td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td><strong>Ch 5. Fitts 법칙·운동제어·양립성</strong> (5~6주)</td><td><code>3._Information_Processing.pdf</code> (p.42–67)<br>피츠·전사 4</td><td><strong>Fitts 법칙 원형 \(\\log_2(2A/W)\) vs ISO \(\\log_2(D/W+1)\) 계산</strong>, 신체 부위별 기울기(팔뚝 105 &gt; 손목 43 &gt; 손가락 26), <strong><code>Positioning(Closed loop)</code> vs <code>Ballistic(Open loop)</code></strong>, <strong><code>Range effect</code>(짧은 거리 Overshoot, 긴 거리 Undershoot)</strong>, 양립성(<code>Population stereotype</code>, <code>Affordance</code>, <code>Spatial/Movement/Conceptual/Modality</code> 4분류, 문화·경험 차이)</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td><strong>Ch 6. 기초통계 및 R T-검정</strong> (6주)</td><td><code>R통계_설치.pdf</code><br><code>data_분석_t_test.pdf</code> &amp; 전사</td><td>RStudio 4창 구조, 기초통계 함수(<code>sort</code>, <code>mean</code>, <code>median</code>, <code>var</code>, <code>sd</code>, <code>quantile</code>, <code>boxplot</code>, <code>summary</code>), <strong>단일·독립·대응표본 t-test 구분</strong>, 정규성(<code>shapiro.test</code>) &amp; 등분산성(<code>levene.test</code>) R 코드 빈칸 및 \(p\)-value 판정</td><td><span class="tag dark">★★★</span></td></tr>
+            <tr><td><strong>Ch 7. 단순선형회귀 &amp; SRT·CRT·Sternberg 실습</strong> (6주)</td><td><code>Regression_analysis.pdf</code><br><code>data_분석_SRTCRTSterberg.pdf</code> &amp; 전사</td><td>상관(\(r\)) vs 회귀, 최소제곱법(OLS \(b_1,b_0\)), 분산분석(\(\\mathrm{SST}=\\mathrm{SSR}+\\mathrm{SSE}, F, R^2\)), <strong>회귀 R 코드(<code>plot, lm, summary, abline</code>) 및 <code>summary(model)</code> 3대 영역 서술</strong>, SRT·CRT(0,1,2 bit) &amp; Sternberg(YES/NO 분리, Timeout 5000ms) 로그 회귀 해석</td><td><span class="tag dark">★★★</span></td></tr>
+          </tbody>
+        </table>
+
+        <!-- ==================== CHAPTER 1 ==================== -->
+        <h3 id="c1">1. 개론 · UX 심리학 · 인간공학(Ergonomics)의 역사와 영역 (1주차)</h3>
+        <div class="quote block">“The application of Psychology knowledge and methods to User Experience — <strong>This is about DESIGN AND SCIENCE.</strong>” (교안 1-1 p.4)</div>
+        <div class="flow block">
+          <div class="flow-step"><span class="flow-num">ERA 1 (1900–1945)</span><strong>Old Age · 태동기</strong><p>Gilbreth 부부의 Time &amp; Motion study, <strong>therbligs</strong> · 사람을 작업/기계에 맞춤</p></div>
+          <div class="flow-step"><span class="flow-num">ERA 2 (1945–1980)</span><strong>Middle/Modern Age</strong><p>2차 대전 항공기 조종석 → 학회 창립 · 군사/항공/자동차/소비재 · 인지인간공학 등장</p></div>
+          <div class="flow-step"><span class="flow-num">ERA 3 (1990–2020~)</span><strong>Information Age</strong><p>HCI(1990s~ UI/Usability) → UX(2010s~ 스마트폰·GUI·AI 시스템)</p></div>
+        </div>
+
+        <details class="toggle block" open>
+          <summary>1.1 UX(사용자 경험)의 정의, 시간적 범위, 구성 요소 및 학문 영역 (교안 1-1 p.2–8)</summary>
+          <div class="toggle-content">
+            <ul class="note-list">
+              <li><strong>UX의 시간적 범위 (<span class="eng-badge">UX Scope</span>)</strong>: 제품·서비스를 사용하기 전(<span class="eng-badge">Previous Experience</span>), 사용하는 도중(<span class="eng-badge">Present Experience</span>), 사용한 후(<span class="eng-badge">Future Experience</span>)의 모든 시점을 포괄하며 고객 생애주기(<span class="eng-badge">Customer Life Cycle</span>) 전반에 걸쳐 형성된다.</li>
+              <li><strong>UX의 3대 핵심 구성 요소 (<span class="eng-badge">UX Elements</span>, 교안 1-1 p.2 다이어그램)</strong>:
+                <ol class="note-list">
+                  <li><strong>브랜드 경험 (<span class="eng-badge">Brand Experience</span>) — 주로 이전 경험(Previous Experience)과 연결</strong>: 브랜드 인지도(<span class="eng-badge">Brand Awareness</span>), 브랜드 태도(<span class="eng-badge">Attitude to brand</span>), 브랜드 윤리(<span class="eng-badge">Brand Ethics</span>), 브랜드 충성도(<span class="eng-badge">Brand Loyalty</span>).</li>
+                  <li><strong>제품/서비스 경험 (<span class="eng-badge">Product/Service Experience</span>) — 주로 현재 경험(Present Experience)과 연결</strong>: 감성/정서(<span class="eng-badge">Affect</span>), 사용성(<span class="eng-badge">Usability</span>), 사용자 가치(<span class="eng-badge">User Value</span>).</li>
+                  <li><strong>개인·사회적 배경 요인</strong>: 종교(<span class="eng-badge">Religion</span>), 대인관계(<span class="eng-badge">Interpersonal relations</span>), 운동/활동(<span class="eng-badge">Exercise</span>) 등.</li>
+                </ol>
+              </li>
+              <li><strong>UX 심리학의 정의 (<span class="eng-badge">UX Psychology Definition</span>, p.4)</strong>: 심리학의 지식과 방법론을 사용자 경험(UX)에 적용하는 학문으로, <strong>디자인과 과학의 결합(<span class="eng-badge">DESIGN AND SCIENCE</span>)</strong>이다.</li>
+              <li><strong>UX 연구의 4대 학문적 기반 (p.8 벤 다이어그램)</strong>: 인간공학(<span class="eng-badge">Ergonomics</span>), 공학(<span class="eng-badge">Engineering</span>), 심리학(<span class="eng-badge">Psychology</span>), 사회학(<span class="eng-badge">Sociology</span>) 4개 영역이 교차하는 중심에 <strong><span class="eng-badge">UX Design</span></strong>이 위치한다.</li>
+              <li><strong>선택적 주의 실험 (<span class="eng-badge">Selective Attention Test</span>, p.9–10)</strong>: Simons &amp; Chabris의 <em>The Monkey Business Illusion</em> 영상 실험. 흰 옷 입은 팀의 농구공 패스 횟수를 세는 과제에 주의를 집중하면 화면 중앙을 가로지르는 고릴라, 커튼 색상 변화, 선수 퇴장을 보지 못하는 <strong>무주의 맹시(<span class="eng-badge">Inattentional Blindness</span>)</strong>가 발생한다. 즉, 인간의 주의 자원(<span class="eng-badge">Attention resources</span>)은 제한되어 있다.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>1.2 UX의 역사적 진화 3단계 &amp; 인간공학(Ergonomics)의 어원·정의·동의어 (교안 1-2 p.2–7)</summary>
+          <div class="toggle-content">
+            <table class="study-table">
+              <thead><tr><th>시기</th><th>교안 명칭</th><th>핵심 주체 및 특징</th></tr></thead>
+              <tbody>
+                <tr><td><strong>1960s ~ 1980s</strong></td><td><strong><span class="eng-badge">The Dark Ages</span></strong> (암흑기)</td><td><strong><span class="eng-badge">DEVELOPER</span> (개발자)</strong> 단독 중심. 컴퓨터가 거대하고 비싸며(Old computer), 사용자가 기계와 복잡한 명령어에 자신을 맞춰야 했던 시기.</td></tr>
+                <tr><td><strong>1990s</strong></td><td><strong><span class="eng-badge">Proto UX</span></strong> (원형 UX기)</td><td>개인용 PC 보급과 함께 <strong>인지인간공학(<span class="eng-badge">Cognitive Ergonomics</span>)</strong>, <strong>정보 설계자(<span class="eng-badge">Information Architects</span>)</strong>, <strong>인터페이스 디자인(<span class="eng-badge">Interface Design</span>)</strong>이 분화·결합하기 시작함.</td></tr>
+                <tr><td><strong>2010s ~ 현재</strong></td><td><strong><span class="eng-badge">The UX Gold Rush</span></strong> (황금기)</td><td>스마트폰 시대의 도래와 함께 <strong><span class="eng-badge">UX/UI Design</span></strong>과 <strong>사용자 조사(<span class="eng-badge">User Research</span>)</strong>가 핵심 전문 영역으로 정착함.</td></tr>
+              </tbody>
+            </table>
+            <ul class="note-list" style="margin-top:10px;">
+              <li><strong>인간공학(<span class="eng-badge">Ergonomics</span>)의 어원 (p.7)</strong>: 그리스어 <strong><span class="eng-badge">Ergon</span> (work, 일·작업)</strong> + <strong><span class="eng-badge">Nomos</span> (laws, 법칙·원리)</strong>의 합성어 (= 작업의 법칙).</li>
+              <li><strong>인간공학의 공식 정의 (p.7)</strong>:
+                <ol class="note-list">
+                  <li>인간의 신체적·정신적·사회적 특성(해부학 <span class="eng-badge">anatomy</span>, 인체측정학 <span class="eng-badge">anthropometry</span>, 생체역학 <span class="eng-badge">biomechanics</span>, 생리학 <span class="eng-badge">physiology</span>, 정신물리학 <span class="eng-badge">psychophysics</span>, 심리학 <span class="eng-badge">psychology</span>, 사회학 <span class="eng-badge">sociology</span>)을 이해하고,</li>
+                  <li>그 이론·원리·데이터·방법론을 설계(<span class="eng-badge">design</span>)에 적용하여 <strong>인간의 안녕(<span class="eng-badge">human well-being</span>)과 시스템 성능(<span class="eng-badge">system performance</span>)을 최적화(<span class="eng-badge">optimize / improve</span>)</strong>하는 학문.</li>
+                </ol>
+              </li>
+              <li><strong>국가·분야별 동의어 (<span class="eng-badge">Synonyms</span>, p.7 — 객관식·단답형 포인트!)</strong>:
+                <ul class="note-list">
+                  <li>미국 일반 산업·학계: <strong><span class="eng-badge">Human Factors</span></strong> 또는 <strong><span class="eng-badge">Human Factors Engineering (HFE)</span></strong></li>
+                  <li>미국 군대(US Military): <strong><span class="eng-badge">Human Engineering</span></strong></li>
+                  <li>미국 심리학계(Psychologists in US): <strong><span class="eng-badge">Engineering Psychology</span></strong> (공학심리학), <strong><span class="eng-badge">Applied Psychology</span></strong> (응용심리학)</li>
+                  <li>유럽(Europe): <strong><span class="eng-badge">Ergonomics</span></strong></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>1.3 설계 패러다임의 전환, Gilbreth의 therbligs, 인간공학 발전사 및 3대 세부 영역 (교안 1-2 p.8–17)</summary>
+          <div class="toggle-content">
+            <div class="formula">전통적 설계: \(\text{Fitting the Human to the System (Selection \& Training)} \;\Longrightarrow\; \text{HFE 설계: Fitting the System to the Human (Ergonomic Design)}\)</div>
+            <ul class="note-list">
+              <li><strong>설계 패러다임의 전환 (<span class="eng-badge">Paradigm Shift in Design</span>, p.8–11)</strong>:
+                <ul class="note-list">
+                  <li><strong>전통적 설계 철학 (<span class="eng-badge">Traditional design philosophy</span>)</strong>: <strong>사람을 시스템에 맞춤 (<span class="eng-badge">Fitting the Human to the System</span>)</strong> — 까다로운 기계에 맞춰 사람을 <strong>선발(<span class="eng-badge">selection</span>)</strong>하고 <strong>훈련(<span class="eng-badge">training</span>)</strong>시킴.</li>
+                  <li><strong>인간공학적 설계 철학 (<span class="eng-badge">HFE design philosophy</span>)</strong>: <strong>시스템을 사람에게 맞춤 (<span class="eng-badge">Fitting the System to the Human</span>)</strong> — 사람의 한계와 특성에 맞게 제품·환경을 <strong>인간공학적으로 설계(<span class="eng-badge">ergonomic design</span>)</strong>함.</li>
+                  <li><strong>교안 비교 사례 (p.10–11)</strong>: ① <strong>전기 플러그(<span class="eng-badge">Electric Plug</span>)</strong>: 방향을 알기 어렵고 뽑기 힘든 대칭형 플러그(전통) vs 손가락 그립 홈·돌기 표시·당김 고리를 넣어 직관적이고 힘들이지 않고 뽑는 플러그(HFE 설계). ② <strong>지능형 자동차(<span class="eng-badge">Intelligent Vehicle</span>)</strong>: 복잡한 계기판(전통) vs 운전자 시야와 인지에 맞춘 HUD·직관적 클러스터(HFE 설계).</li>
+                </ul>
+              </li>
+              <li><strong>인간공학의 역사적 발전 3단계 (p.12–14 — T/F 및 단답형 필수!)</strong>:
+                <ol class="note-list">
+                  <li><strong><span class="eng-badge">Old Age (1900 ~ 1945)</span></strong>:
+                    <ul>
+                      <li><strong>Frank &amp; Lillian Gilbreth (길브레스 부부)</strong>: 작업방법공학(<span class="eng-badge">Methods Engineering</span>)의 일환으로 <strong>시간 및 동작 연구(<span class="eng-badge">Time &amp; Motion study</span>)</strong>와 <strong>미세동작분석(<span class="eng-badge">Micro-motion analysis</span>)</strong>을 창시함.</li>
+                      <li><strong><span class="eng-badge">therbligs</span> (서블리그 — 기출 출제 용어!)</strong>: Gilbreth 부부가 벽돌 쌓기·수술 등 인간의 수작업을 분석하기 위해 정의한 <strong>18가지 기본 손동작 단위</strong>(찾기 Search, 잡기 Grasp, 빈손 이동 Transport Empty 등). 명칭은 <code>Gilbreth</code> 철자를 거꾸로 뒤집어(<code>th</code>는 유지) 명명함.</li>
+                      <li>이 시기(제2차 세계대전 이전)까지는 여전히 <strong>사람을 작업/장비에 맞추는(<span class="eng-badge">Fitting the human to the job/equipment</span>)</strong> 관점이 지배적이었다.</li>
+                    </ul>
+                  </li>
+                  <li><strong><span class="eng-badge">Middle / Modern Age (1945 ~ 1980)</span></strong>:
+                    <ul>
+                      <li><strong>전문 학문 탄생기 (<span class="eng-badge">Birth of Profession, 1945~1960</span>)</strong>: 제2차 세계대전 중 숙련된 조종사조차 복잡한 조종석 설계 결함으로 추락 사고를 겪으면서 "기계를 인간에 맞춰야 한다"는 인간공학이 본격 탄생함. (1945 미국 Engineering Psychology Lab 설립 → 1950 영국 Ergonomics Society 창립 → 1957 학술지 <em>Journal Ergonomics</em> 및 미국 Human Factors Society 창립 → 1959 국제인간공학회 <span class="eng-badge">IEA: International Ergonomics Association</span> 설립).</li>
+                      <li><strong>급성장기 (<span class="eng-badge">Rapid Growth, 1960~1980</span>)</strong>: 1960년대 군사 및 항공 분야(<span class="eng-badge">Military applications, Ergonomics in aviation</span>) → 1970~1980년대 자동차 및 일반 소비재(<span class="eng-badge">Automobiles, consumer products</span>)로 확산되었으며, <strong>인지인간공학(<span class="eng-badge">Cognitive ergonomics</span>: 정보처리이론 <span class="eng-badge">Information processing theory</span>, 인지작업부하 <span class="eng-badge">Cognitive workload</span>)</strong>이 핵심 분야로 부상함.</li>
+                    </ul>
+                  </li>
+                  <li><strong><span class="eng-badge">Information Age (1990 ~ 2020~)</span></strong>:
+                    <ul>
+                      <li><strong>1990 ~ 2010</strong>: <strong>인간-컴퓨터 상호작용(<span class="eng-badge">Human Computer Interaction, HCI</span>)</strong> — 사용자 인터페이스와 사용성(<span class="eng-badge">User Interface / Usability</span>), 설계·평가·구현(<span class="eng-badge">Design / Evaluation / Implementation</span>).</li>
+                      <li><strong>2010 ~ 2020~</strong>: <strong>사용자 경험(<span class="eng-badge">User Experience, UX</span>)</strong> — 스마트폰 시대(<span class="eng-badge">Smartphone era</span>), 인터랙션·정보·GUI 디자인, 그리고 최신 연구 주제인 <strong>AI 시스템(<span class="eng-badge">AI system &amp; AI technology</span>)과의 상호작용</strong>으로 확장.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+            </ul>
+            <table class="study-table" style="margin-top:10px;">
+              <thead><tr><th>HFE 3대 영역 (p.15)</th><th>영문 정의 (교안 원문)</th><th>핵심 다루는 내용</th></tr></thead>
+              <tbody>
+                <tr><td><strong>신체 인간공학<br>(<span class="eng-badge">Physical Ergonomics</span>)</strong></td><td><code>Anthropometric, Physiological &amp; Biomechanical characteristic</code></td><td>인체측정학(신체 치수), 생리학, 생체역학적 특성 (자세, 힘, 작업 공간, 근골격계 부담 등)</td></tr>
+                <tr><td><strong>인지 인간공학<br>(<span class="eng-badge">Cognitive Ergonomics</span>)</strong></td><td><code>Mental process (perception / memory / reasoning / motor response)</code></td><td>지각, 기억, 추론, 의사결정, 운동 반응 등 인간의 정신적 정보처리 과정</td></tr>
+                <tr><td><strong>사용자 경험<br>(<span class="eng-badge">UX</span>)</strong></td><td><code>User’s overall satisfaction using a product</code></td><td>제품·시스템 사용에 따른 사용자의 전반적인 만족도와 정서·가치 경험</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <!-- ==================== CHAPTER 2 ==================== -->
+        <h3 id="c2">2. HFE 연구방법론 · 실험 설계 · 적정 표본 수 · 신뢰도와 타당도 (2~3주차)</h3>
+        <div class="quote block">사용자 친화적 제품 설계(<span class="eng-badge">Design Process for User-friendly Products</span>)는 <strong>인간 특성 파악(Human Characteristics) → 연구 방법·프로토콜·장비 적용(Method: Protocol &amp; Equipment) → 설계 적용 및 평가(Design Application)</strong>의 순환 과정이다. (교안 2 p.3)</div>
+
+        <details class="toggle block" open>
+          <summary>2.1 HFE 연구의 3대 분류: Descriptive · Experimental · Evaluation Research (교안 2 p.4–13)</summary>
+          <div class="toggle-content">
+            <table class="study-table">
+              <thead><tr><th>연구 유형</th><th>영문 정의 및 목적</th><th>교안 핵심 사례 및 세부 수치 (전수 수록)</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>① 기술 연구<br>(<span class="eng-badge">Descriptive Research</span>)</strong></td>
+                  <td><code>characterize human attributes</code><br>인간의 신체·심리적 속성이나 분포를 있는 그대로 측정·기술 (인과관계 규명 아님)</td>
+                  <td>
+                    • 신체 치수(<span class="eng-badge">Body size</span>) 및 근력(<span class="eng-badge">Force</span>) 측정, 한국인 인체치수 조사(<strong>Size Korea</strong>, <code>sizekorea.kr</code>)<br>
+                    • <strong>체질량지수(<span class="eng-badge">BMI: Body Mass Index</span>, p.5)</strong>: \(\mathrm{BMI} = \dfrac{\text{weight (kg)}}{\text{stature}^2\text{ (m}^2\text{)}}\) (단위: \(\text{kg/m}^2\))<br>
+                    • 백분위수(<span class="eng-badge">Percentile</span>, p.6): 집단 분포에서의 상대적 위치 (예: 상위 25% 경계 = <strong>75th percentile</strong>)
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>② 실험 연구<br>(<span class="eng-badge">Experimental Research</span>)</strong></td>
+                  <td><code>test the effect of some variables on behavior and performance</code><br>독립변수를 조작하여 행동·수행(종속변수)에 미치는 효과를 검정</td>
+                  <td>
+                    • <strong>전자책 가독성 실험(p.4, 8–9)</strong>: 글꼴 3종 비교, 화면 방향(가로형 <span class="eng-badge">Landscape</span> \(8\times 6\text{ cm}\), 4:3 vs 세로형 <span class="eng-badge">Portrait</span> \(6\times 8\text{ cm}\), 3:4), 디스플레이 형태(<span class="eng-badge">Flat</span> 평면 vs <span class="eng-badge">Foldable</span> 폴더블)<br>
+                    • <strong>스마트글래스 무게 중심 위치 실험(p.10)</strong>: 독립변수 = 무게 위치(<span class="eng-badge">Weight Location</span> 4수준), 종속변수 = 코에 가해지는 압력(<span class="eng-badge">Pressure on the nose</span>, 단위 \(\text{N}\)).<br>
+                    &nbsp;&nbsp;→ 결과: <strong><code>Front</code>(앞) \(0.34\text{ N}\) &gt; <code>Middle</code>(중간) \(0.22\text{ N}\) &gt; <code>Ear</code>(귀 근처) \(0.20\text{ N}\) &gt; <code>Rear</code>(뒤) \(0.16\text{ N}\)</strong> (앞쪽일수록 압력 최대). 그래프의 오차막대는 <strong><span class="eng-badge">SE (Standard Error, 표준오차)</span></strong>로 표기됨.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>③ 평가 연구<br>(<span class="eng-badge">Evaluation Research</span>)</strong></td>
+                  <td><code>assess the effectiveness (called usability) of product or system</code><br>완성된 제품·시스템의 효과성(<strong>사용성 <span class="eng-badge">usability</span></strong>)을 평가</td>
+                  <td>
+                    • <strong>진공청소기 3종 사용성 평가(p.11)</strong>: 브러시 장착 과업에 대해 5점 척도 만족도 평가(오차막대 <strong><span class="eng-badge">SD</span></strong>).<br>
+                    &nbsp;&nbsp;→ <strong>삼성 국내용 모델 A</strong>(연장관 \(290\text{ g}\)으로 가벼움, 브러시 체결 방향 <strong>화살표 시각 정보</strong> 제공, 체결 완료 시 딸깍 소리 <strong>청각 피드백 <span class="eng-badge">sound feedback</span></strong> 제공 → 가장 우수) vs <strong>삼성 수출용 모델 B</strong>(SC4010, \(513\text{ g}\)) vs <strong>Miele 모델 C</strong>(S5310, \(545\text{ g}\), 장착/해체에 큰 힘 요구).<br>
+                    • 휴대폰 사용성 설문지 평가(p.12) 및 손 인체측정 기반 손잡이 설계 4단계(p.13: 손 쥐기 특성 파악 → 설계·인체변수 선정 → 설계식 수립 → 시제품 평가).
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>2.2 연구 환경 비교(Laboratory vs. Field) 및 실험 변수(IV · DV · Control · Stratification) (교안 2 p.14–16)</summary>
+          <div class="toggle-content">
+            <table class="study-table">
+              <thead><tr><th>구분</th><th>실험실 연구 (<span class="eng-badge">Laboratory Study</span>)</th><th>현장 연구 (<span class="eng-badge">Field Study</span>)</th></tr></thead>
+              <tbody>
+                <tr><td><strong>장점 (<span class="eng-badge">Advantage</span>)</strong></td><td>• 불필요한 외생변수 통제 용이 (<code>Easy to control unwanted factors</code>)<br>• 반복 실험 용이 (<code>Ease of repetition</code>)<br>• 정밀하고 정확한 데이터 획득 (<code>Accurate data acquisition</code>)</td><td>• 높은 현장 충실도·현실성 (<code>High fidelity</code>)<br>• 실제 환경으로 결과 일반화 용이 (<code>Easy to generalize</code>, 높은 외적 타당도)</td></tr>
+                <tr><td><strong>단점 (<span class="eng-badge">Disadvantage</span>)</strong></td><td>• 낮은 현장 충실도 (<code>Low fidelity</code>)<br>• 실제 상황으로 일반화 어려움 (<code>Difficult to generalize</code>)</td><td>• 높은 비용과 시간 소요 (<code>High cost</code>)<br>• 외생변수 통제 어려움 (<code>Difficult to control unwanted factors</code>)<br>• <strong>참가자 안전 문제 (<code>Safety issue of participants</code>)</strong> (예: 실제 도로 주행 실험)</td></tr>
+              </tbody>
+            </table>
+            <ul class="note-list" style="margin-top:10px;">
+              <li><strong>독립변수 (<span class="eng-badge">Independent Variable, IV</span>, p.15)</strong>: 연구자가 관심을 가지고 의도적으로 조작·변경하는 요인 (<code>manipulated factor that we are interested in</code>, 예: 마우스 종류 <code>mouse type</code>, 화면 방향, 무게 위치).</li>
+              <li><strong>종속변수 (<span class="eng-badge">Dependent Variable, DV / Metrics</span>, p.15–16)</strong>: 독립변수에 따라 측정되는 결과값 (<code>measured value</code>, 예: 클릭 시간 <code>click time</code>, 7점 만족도 척도 <code>1 Very dissatisfaction ~ 4 Neutral ~ 7 Very satisfaction</code>).
+                <ul class="note-list">
+                  <li><strong>종속변수 선정 시 필수 고려사항 2가지 (p.16)</strong>: ① <strong><span class="eng-badge">Level of target</span> (목표 수준의 적합성)</strong>, ② <strong><span class="eng-badge">Metric comprehensiveness</span> (측정 지표의 포괄성 — 공정한 평가를 위해 누락 없이 포괄해야 함)</strong>.</li>
+                  <li><strong>인간 측정 지표의 3대 측면 (전사 2 강조)</strong>: ① <strong><span class="eng-badge">Performance</span> (수행도)</strong>: 작업 시간, 에러율, 빈도 등 / ② <strong><span class="eng-badge">Physical / Biomechanical</span> (신체·생체역학)</strong>: 근전도(EMG), 심박수, 코 압력 등 생체신호 / ③ <strong><span class="eng-badge">Subjective</span> (주관적 평가)</strong>: 리커트 척도, 100점 척도 설문.</li>
+                </ul>
+              </li>
+              <li><strong>기타 외생변수 처리 (<span class="eng-badge">Other Variable</span>, p.15)</strong>:
+                <ul class="note-list">
+                  <li><strong>통제 (<span class="eng-badge">Control</span>)</strong>: 외생변수가 결과에 영향을 주지 못하도록 특정 조건(예: 모두 20대 오른손잡이 남성, 동일 조도)으로 고정함.</li>
+                  <li><strong>층화 (<span class="eng-badge">Stratification</span>)</strong>: 모집단의 구성 비율(예: 연령대별, 성별, 숙련도별)에 맞춰 계층을 나누어 표본을 균형 있게 배정함.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>2.3 피험자 대표성 및 적정 표본 수(\(n\)) 산정 공식·예제 (교안 2 p.17–19 — 계산 필수!)</summary>
+          <div class="toggle-content">
+            <ul class="note-list">
+              <li><strong>피험자 선정의 핵심 원칙 (<span class="eng-badge">Participant Selection</span>, p.17)</strong>:
+                <ul class="note-list">
+                  <li><strong>대표성 (<span class="eng-badge">Representativity</span>)</strong>: 표본이 목표 모집단(<code>target population</code>)을 대표해야 함. 예: 왼손잡이 10%, 오른손잡이 90%인 모집단에서 편향(<span class="eng-badge">Bias</span>)을 막으려면 그 비율을 반영하거나 <strong>무작위 표집(<span class="eng-badge">Random sampling</span>)</strong>을 수행해야 함.</li>
+                  <li><strong>경험적 표본 수 기준 (p.17)</strong>: 일반 통계학 관점(<code>Statistics view</code>)에서는 \(n \ge 30\)을 권장하나, 인간공학 실무 조사(<code>HFE practice</code>, Simon 1976)에서는 \(n &lt; 9\)명이 50%, \(n = 9 \sim 11\)명이 25%, \(n &gt; 11\)명이 5%로 소규모 실험도 흔히 수행됨.</li>
+                </ul>
+              </li>
+              <li><strong>적정 표본 수 계산 공식 (<span class="eng-badge">Sample Size Formula</span>, p.17–19)</strong>:</li>
+            </ul>
+            <div class="formula">\[n = \left(\frac{z_{\alpha/2} \times s}{k \times \bar{x}}\right)^2\]</div>
+            <ul class="note-list">
+              <li><strong>각 기호의 의미와 표본 수 \(n\)에 미치는 영향 (p.18 — T/F 및 복수선택 단골!)</strong>:
+                <ol class="note-list">
+                  <li>\(\alpha\) (<strong>유의수준, <span class="eng-badge">Significant level</span></strong>): 감수하고자 하는 오류 위험(<code>risk of error</code>). 양측 임계값 \(z_{\alpha/2}\)로 변환됨:
+                    <ul>
+                      <li><strong>\(\alpha = 0.05\) (95% 신뢰수준) \(\Longrightarrow z_{\alpha/2} = \mathbf{1.96}\)</strong></li>
+                      <li><strong>\(\alpha = 0.01\) (99% 신뢰수준) \(\Longrightarrow z_{\alpha/2} = \mathbf{2.576}\)</strong></li>
+                      <li>유의수준 \(\alpha\)를 낮출수록(더 엄격하게 할수록) \(\Rightarrow\) \(z_{\alpha/2}\)가 커짐 \(\Rightarrow\) <strong>필요한 표본 수 \(n\)이 증가한다 (Lower \(\alpha \to\) higher \(z \to\) larger \(n\))</strong>.</li>
+                    </ul>
+                  </li>
+                  <li>\(s\) (<strong>표준편차, <span class="eng-badge">Standard deviation</span></strong>): 파일럿 연구(<code>pilot study</code>)에서 얻은 데이터의 변동성(<code>variability</code>). 분자에 있으므로 <strong>데이터가 들쑥날쑥하여 \(s\)가 클수록 \(\Rightarrow\) 필요한 표본 수 \(n\)이 증가한다 (More variable data \(\to\) larger \(n\))</strong>.</li>
+                  <li>\(k\) (<strong>정밀도 / 상대 허용오차, <span class="eng-badge">Precision</span></strong>): 평균 대비 허용 가능한 오차 한계 비율(<code>allowed margin of error, as a % of the mean</code>; 절대 허용오차 \(\text{Absolute error} = k \times \bar{x}\)). 분모에 있으므로 <strong>더 정밀한 결과를 원해 \(k\)를 작게 설정할수록 \(\Rightarrow\) 필요한 표본 수 \(n\)이 증가한다 (Smaller \(k \to\) larger \(n\))</strong>.</li>
+                  <li>\(\bar{x}\) (<strong>파일럿 표본평균, <span class="eng-badge">Mean</span></strong>): 파일럿 연구에서 측정된 평균값. (\(s\)와 \(\bar{x}\)는 수집된 데이터에서 결정되는 값이고, \(\alpha\)와 \(k\)는 연구자가 과업의 안전성 <code>safety</code> 중요도에 따라 설정하는 값이다.)</li>
+                </ol>
+              </li>
+              <li><strong>교안 p.19 계산 예제 완벽 풀이</strong>:
+                <ul>
+                  <li><strong>조건</strong>: 파일럿 연구 표본 크기 \(n_0 = 5\)명에서 평균 \(\bar{x} = 100\), 표준편차 \(s = 10\)이 나왔을 때, 유의수준 \(\alpha = 0.05\) (\(z_{\alpha/2} = 1.96\)), 정밀도 \(k = 0.05\)를 만족하기 위한 적정 표본 수 \(n\)과 추가 모집 인원은?</li>
+                  <li><strong>계산</strong>:
+                    \[n = \left(\frac{1.96 \times 10}{0.05 \times 100}\right)^2 = \left(\frac{19.6}{5}\right)^2 = (3.92)^2 = 15.3664 \approx \mathbf{16\text{명 (무조건 올림)}}\]
+                  </li>
+                  <li><strong>추가 필요 인원</strong>: 이미 파일럿에서 5명을 측정했으므로, <strong>추가로 \(16 - 5 = \mathbf{11\text{명}}\) (<code>needs 11 more samples</code>)</strong>을 더 모집하면 된다.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>2.4 측정 기준의 실무 요건 · 신뢰도(Reliability) vs 정확도(Accuracy) · 타당도(Validity: Deficiency vs Contamination) (교안 2 p.20–22)</summary>
+          <div class="toggle-content">
+            <ul class="note-list">
+              <li><strong>측정 기준의 실무적 요건 6가지 (<span class="eng-badge">Practical Requirements</span>, p.20)</strong>:
+                ① 객관적일 것(<strong><span class="eng-badge">Objective</span></strong>), ② 정량적일 것(<strong><span class="eng-badge">Quantitative</span></strong>), ③ <strong>피험자의 과업 수행을 방해하지 않을 것(<span class="eng-badge">Unobtrusive</span>)</strong>, ④ 데이터 수집이 쉬울 것(<strong><span class="eng-badge">Easy to collect</span></strong>), ⑤ 특수한 수집 기법이나 장비가 필요 없을 것(<strong><span class="eng-badge">No special data collection techniques or instrumentation</span></strong>), ⑥ 비용이 최소일 것(<strong><span class="eng-badge">Cost as little as possible</span></strong>).</li>
+              <li><strong>신뢰도 (<span class="eng-badge">Reliability</span>, p.20–21)</strong>: 시간이 지나거나 대표 표본들에 걸쳐 반복 측정했을 때 <strong>측정 결과가 일관되고 안정적인 정도 (<code>consistency or stability of the measures over time or across representative samples</code>)</strong>.</li>
+              <li><strong>타당도 (<span class="eng-badge">Validity</span>, p.20, 22)</strong>: 측정하고자 의도한 대상을 실제로 정확히 측정하고 있는 정도.
+                <ul class="note-list">
+                  <li><strong>내적 타당도 (<span class="eng-badge">Internal Validity</span>)</strong>: <strong>교란/혼동변수(<span class="eng-badge">No confounding</span>)가 배제</strong>되어 결과의 차이가 순전히 독립변수 때문이라고 확신할 수 있는 정도 (예: 웹 검색 실험에서 참가자의 사전 웹 검색 경험 <code>experience</code>을 통제하지 않으면 내적 타당도가 깨짐).</li>
+                  <li><strong>외적 타당도 (<span class="eng-badge">External Validity</span>)</strong>: 연구 결과를 다른 사람·환경·상황으로 <strong>일반화할 수 있는 정도 (<span class="eng-badge">Generalizability</span>)</strong>.</li>
+                  <li><strong>구성타당도 (<span class="eng-badge">Construct Validity</span>, p.22 벤 다이어그램 — 주관식 영문 용어 1순위!)</strong>:
+                    <ul>
+                      <li><strong>결핍 (<span class="eng-badge">Deficiency</span>)</strong>: 이론적 구성개념(<code>CONSTRUCT</code>)에는 포함되지만 실제 측정 도구(<code>MEASURE</code>)가 <strong>평가하지 못하고 빠뜨린 부분</strong> (<code>things in the construct not assessed by the measure</code>).</li>
+                      <li><strong>오염 (<span class="eng-badge">Contamination</span>)</strong>: 실제 측정 도구(<code>MEASURE</code>)에 의해 측정되었으나 원래 구성개념(<code>CONSTRUCT</code>)의 일부가 아닌 <strong>무관한 외생 요인이 섞여든 부분</strong> (<code>things assessed by the measure that are not part of the construct</code>).</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div class="visual-box" style="margin:12px 0 6px;padding:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;">
+              <div style="font-size:12px;font-weight:700;color:#334155;margin-bottom:8px;">📊 [교안 2 p.21–22 핵심 도식] (좌) Accuracy vs. Reliability 과녁 비교 &amp; (우) Construct Validity (Deficiency vs. Contamination)</div>
+              <svg viewBox="0 0 680 175" style="width:100%;max-width:660px;height:auto;display:block;margin:0 auto;font-family:sans-serif;">
+                <!-- Left Panel: Dartboards L and R -->
+                <rect x="5" y="5" width="315" height="165" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                <text x="162" y="22" font-size="11.5" font-weight="700" text-anchor="middle" fill="#0f172a">p.21 Accuracy vs. Reliability (L vs. R)</text>
+                <!-- Target L -->
+                <circle cx="85" cy="85" r="42" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+                <circle cx="85" cy="85" r="26" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+                <circle cx="85" cy="85" r="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+                <!-- Scattered shots around center -->
+                <circle cx="65" cy="62" r="3.5" fill="#1e293b"/><circle cx="108" cy="68" r="3.5" fill="#1e293b"/>
+                <circle cx="72" cy="108" r="3.5" fill="#1e293b"/><circle cx="102" cy="102" r="3.5" fill="#1e293b"/>
+                <circle cx="85" cy="52" r="3.5" fill="#1e293b"/><circle cx="55" cy="88" r="3.5" fill="#1e293b"/>
+                <text x="85" y="143" font-size="10.5" font-weight="700" text-anchor="middle" fill="#b91c1c">L: 탄착군 넓게 분산</text>
+                <text x="85" y="157" font-size="9.5" text-anchor="middle" fill="#475569">Reliable: X (일관성 낮음)</text>
+                <!-- Target R -->
+                <circle cx="235" cy="85" r="42" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+                <circle cx="235" cy="85" r="26" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+                <circle cx="235" cy="85" r="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+                <!-- Tightly clustered shots off-center -->
+                <circle cx="260" cy="58" r="3.5" fill="#2563eb"/><circle cx="266" cy="62" r="3.5" fill="#2563eb"/>
+                <circle cx="258" cy="65" r="3.5" fill="#2563eb"/><circle cx="264" cy="55" r="3.5" fill="#2563eb"/>
+                <circle cx="262" cy="60" r="3.5" fill="#2563eb"/>
+                <text x="235" y="143" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1d4ed8">R: 한곳에 촘촘히 밀집(편향)</text>
+                <text x="235" y="157" font-size="9.5" text-anchor="middle" fill="#475569">Reliable: O / Accurate: X</text>
+
+                <!-- Right Panel: Construct Validity Venn -->
+                <rect x="330" y="5" width="345" height="165" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                <text x="502" y="22" font-size="11.5" font-weight="700" text-anchor="middle" fill="#0f172a">p.22 Construct Validity 벤 다이어그램</text>
+                <circle cx="455" cy="92" r="50" fill="rgba(59,130,246,0.14)" stroke="#2563eb" stroke-width="2"/>
+                <circle cx="545" cy="92" r="50" fill="rgba(239,68,68,0.14)" stroke="#dc2626" stroke-width="2"/>
+                <text x="422" y="85" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1d4ed8">DEFICIENCY</text>
+                <text x="422" y="99" font-size="9" text-anchor="middle" fill="#1e3a8a">(결핍: 측정 누락)</text>
+                <text x="500" y="86" font-size="9.5" font-weight="700" text-anchor="middle" fill="#0f172a">CONSTRUCT</text>
+                <text x="500" y="98" font-size="9.5" font-weight="700" text-anchor="middle" fill="#0f172a">VALIDITY</text>
+                <text x="578" y="85" font-size="10" font-weight="700" text-anchor="middle" fill="#b91c1c">CONTAMINATION</text>
+                <text x="578" y="99" font-size="9" text-anchor="middle" fill="#7f1d1d">(오염: 외생 혼입)</text>
+                <text x="440" y="156" font-size="10" font-weight="700" text-anchor="middle" fill="#2563eb">CONSTRUCT (이론 개념)</text>
+                <text x="560" y="156" font-size="10" font-weight="700" text-anchor="middle" fill="#dc2626">MEASURE (실제 측정치)</text>
+              </svg>
+            </div>
+          </div>
+        </details>
+
+        <!-- ==================== CHAPTER 3 ==================== -->
+        <h3 id="c3">3. 인간 정보처리 모형 · 정보이론(Hartley &amp; Shannon 정보량) · 중복도(% Redundancy) (4주차)</h3>
+        <div class="quote block">불확실성(<span class="eng-badge">Uncertainty</span>)이 클수록 과업 수행에 필요한 정보량(<span class="eng-badge">Information amount</span>, \(H\))이 커지며, 빈번한 신호의 확률을 높이거나 단서를 주면 중복도(<span class="eng-badge">% Redundancy</span>)가 높아져 인간이 처리해야 할 정보 부담이 줄어든다. (교안 3 p.7–14)</div>
+
+        <details class="toggle block" open>
+          <summary>3.1 인간 정보처리 모형 (Human Information Processing Model, 교안 3 p.5–6)</summary>
+          <div class="toggle-content">
+            <div class="visual-box" style="margin:8px 0 10px;padding:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;">
+              <div style="font-size:12px;font-weight:700;color:#334155;margin-bottom:8px;">📊 [교안 3 p.6] 인간 정보처리 모형 (Information Processing Model) 영문 구조도</div>
+              <svg viewBox="0 0 680 170" style="width:100%;max-width:660px;height:auto;display:block;margin:0 auto;font-family:sans-serif;">
+                <defs>
+                  <marker id="arrIp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155"/>
+                  </marker>
+                </defs>
+                <!-- Attention resources top bar -->
+                <rect x="175" y="6" width="410" height="24" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+                <text x="380" y="22" font-size="11" font-weight="700" text-anchor="middle" fill="#92400e">Attention resources (주의 자원 배분)</text>
+                <line x1="225" y1="30" x2="225" y2="52" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrIp)"/>
+                <line x1="365" y1="30" x2="365" y2="52" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrIp)"/>
+                <line x1="515" y1="30" x2="515" y2="52" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrIp)"/>
+                <!-- Main stages -->
+                <text x="26" y="76" font-size="11" font-weight="700" text-anchor="middle" fill="#0f172a">Stimuli</text>
+                <line x1="48" y1="72" x2="68" y2="72" stroke="#334155" stroke-width="1.5" marker-end="url(#arrIp)"/>
+                <rect x="70" y="52" width="90" height="40" rx="5" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+                <text x="115" y="69" font-size="10" font-weight="700" text-anchor="middle">Short-term</text>
+                <text x="115" y="83" font-size="10" font-weight="700" text-anchor="middle">sensory store</text>
+                <line x1="160" y1="72" x2="180" y2="72" stroke="#334155" stroke-width="1.5" marker-end="url(#arrIp)"/>
+                <rect x="182" y="52" width="88" height="40" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+                <text x="226" y="76" font-size="11" font-weight="700" text-anchor="middle" fill="#1d4ed8">Perception</text>
+                <line x1="270" y1="72" x2="298" y2="72" stroke="#334155" stroke-width="1.5" marker-end="url(#arrIp)"/>
+                <rect x="300" y="52" width="130" height="40" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+                <text x="365" y="69" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1d4ed8">Decision &amp;</text>
+                <text x="365" y="83" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1d4ed8">response selection</text>
+                <line x1="430" y1="72" x2="458" y2="72" stroke="#334155" stroke-width="1.5" marker-end="url(#arrIp)"/>
+                <rect x="460" y="52" width="105" height="40" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+                <text x="512" y="69" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1d4ed8">Response</text>
+                <text x="512" y="83" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1d4ed8">execution</text>
+                <line x1="565" y1="72" x2="592" y2="72" stroke="#334155" stroke-width="1.5" marker-end="url(#arrIp)"/>
+                <text x="632" y="76" font-size="11" font-weight="700" text-anchor="middle" fill="#0f172a">Responses</text>
+                <!-- Memory boxes -->
+                <rect x="182" y="110" width="110" height="36" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+                <text x="237" y="125" font-size="10" font-weight="700" text-anchor="middle">Long-Term</text>
+                <text x="237" y="139" font-size="10" font-weight="700" text-anchor="middle">memory</text>
+                <rect x="315" y="110" width="145" height="36" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+                <text x="387" y="125" font-size="10" font-weight="700" text-anchor="middle">Working memory (STM)</text>
+                <text x="387" y="139" font-size="9" text-anchor="middle" fill="#b91c1c">Duration: 20~30 sec</text>
+                <line x1="226" y1="92" x2="226" y2="110" stroke="#475569" stroke-width="1.2" marker-end="url(#arrIp)"/>
+                <line x1="365" y1="92" x2="365" y2="110" stroke="#475569" stroke-width="1.2" marker-end="url(#arrIp)"/>
+                <line x1="292" y1="128" x2="315" y2="128" stroke="#475569" stroke-width="1.2" marker-end="url(#arrIp)"/>
+                <!-- Feedback loop -->
+                <path d="M 630 85 L 630 158 L 115 158 L 115 94" fill="none" stroke="#64748b" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrIp)"/>
+                <text x="370" y="167" font-size="9.5" font-weight="700" text-anchor="middle" fill="#475569">Feedback (결과 피드백 루프)</text>
+              </svg>
+            </div>
+            <ul class="note-list">
+              <li><strong>배경 (p.3–5)</strong>: 정보혁명(<span class="eng-badge">Information Revolution</span>)으로 공항 관제탑, 우주선 통제실 등에서 한 사람이 수많은 화면을 동시에 감시하며 즉각 의사결정을 내려야 하는 <strong>정보처리 과부하(<span class="eng-badge">Overload of Information Processing</span>)</strong>가 발생함. 인간을 입력(<code>Input</code>)을 받아 처리 후 출력(<code>Output</code>)을 내는 <strong>정보처리자(<span class="eng-badge">Human as Information Processor</span>)</strong>로 모델링함.</li>
+              <li><strong>단계별 영문 명칭 및 특징 (p.6 — 빈칸 단골!)</strong>:
+                <ol class="note-list">
+                  <li><strong>단기감각기억 (<span class="eng-badge">Short-term sensory store, STSS</span>)</strong>: 외부 자극(<code>Stimuli</code>)이 감각 기관에 아주 잠깐 원형 그대로 머무는 단계.</li>
+                  <li><strong>지각 (<span class="eng-badge">Perception</span>)</strong>: 감각 정보에 장기기억(<span class="eng-badge">Long-Term memory</span>)의 과거 경험·지식을 결합하여 의미를 부여하고 해석하는 단계.</li>
+                  <li><strong>기억 (<span class="eng-badge">Memory</span>)</strong>: <strong>작업기억/단기기억(<span class="eng-badge">Working memory / Short-term memory</span>)</strong>은 현재 처리 중인 정보를 일시 유지하며 <strong>지속 시간(<span class="eng-badge">Memory duration</span>)이 약 <code>20~30 sec</code></strong>에 불과하다.</li>
+                  <li><strong>의사결정 및 반응 선택 (<span class="eng-badge">Decision &amp; response selection</span>)</strong>: 지각된 정보와 작업기억을 바탕으로 어떤 행동을 할지 결정.</li>
+                  <li><strong>반응 실행 (<span class="eng-badge">Response execution</span>)</strong>: 선택된 반응을 근육 운동으로 실행하여 최종 반응(<code>Responses</code>)을 출력하고, 그 결과는 <strong>피드백(<span class="eng-badge">Feedback</span>)</strong>을 통해 다시 초기 감각 단계로 돌아간다.</li>
+                  <li><strong>주의 자원 (<span class="eng-badge">Attention resources</span>)</strong>: 지각, 작업기억, 의사결정/반응선택, 반응실행 단계에 제한된 주의 자원이 공급된다.</li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>3.2 정보량 공식 (Hartley vs. Shannon) &amp; 동전 확률 역 U자 곡선 (교안 3 p.7–10 — 계산 1순위!)</summary>
+          <div class="toggle-content">
+            <div class="formula">
+              \[\text{[Equation 1: 등확률 (Ralph Hartley)]}\quad H = \log_2 N = \log_2\left(\frac{1}{P}\right)\;\text{[bits]} \quad \left(\text{단, } P = \frac{1}{N}\right)\]
+              \[\text{[Equation 2: 비등확률 (Claude Shannon, 가중평균)]}\quad H = \sum_{i=1}^{N} p_i \log_2\left(\frac{1}{p_i}\right) = -\sum_{i=1}^{N} p_i \log_2 p_i\;\text{[bits]}\]
+            </div>
+            <ul class="note-list">
+              <li><strong>정보의 단위 (<span class="eng-badge">bit: binary digit</span>, p.8)</strong>:
+                <ul class="note-list">
+                  <li><strong><code>1 bit</code></strong>: 동등한 확률을 가진 <strong>2개의 대안(\(2^1\))</strong> 중 하나를 결정할 때 필요한 정보량.</li>
+                  <li><strong><code>k bits</code></strong>: 동등한 확률을 가진 <strong>\(2^k\)개의 대안</strong>을 처리할 때 필요한 정보량 (\(1\text{ bit} = 2^1 = 2\)개, \(2\text{ bits} = 2^2 = 4\)개, \(3\text{ bits} = 2^3 = 8\)개, <strong>\(4\text{ bits} = 2^4 = \mathbf{16\text{개 대안}}\)</strong>).</li>
+                </ul>
+              </li>
+              <li><strong>교안 p.9 가중평균(Weighted Average) 예제</strong>:
+                <ul>
+                  <li>사건 1의 확률 \(P_1 = 0.2 \Rightarrow H_1 = \log_2(1/0.2) = \log_2 5 \approx \mathbf{2.322\text{ bits}}\) (드문 사건일수록 개별 놀람/정보량이 큼)</li>
+                  <li>사건 2의 확률 \(P_2 = 0.8 \Rightarrow H_2 = \log_2(1/0.8) = \log_2 1.25 \approx \mathbf{0.322\text{ bits}}\) (흔한 사건일수록 개별 정보량이 작음)</li>
+                  <li>평균 정보량 \(H_{\text{avg}} = 0.2 \times 2.322 + 0.8 \times 0.322 = 0.4644 + 0.2576 = \mathbf{0.722\text{ bits}}\) (정밀값 \(0.7219\text{ bits}\)).</li>
+                </ul>
+              </li>
+              <li><strong>교안 p.10 확률이 정보량에 미치는 영향 (Fair Coin vs. Bent Coin)</strong>:
+                <ul>
+                  <li><strong>Case 1: 공정한 동전 (<span class="eng-badge">Fair coin</span>, 등확률 \(P(\text{head}) = P(\text{tail}) = 0.5\))</strong> \(\Rightarrow H = \log_2(1/0.5) = \mathbf{1.0\text{ bit}}\) (불확실성 최대!).</li>
+                  <li><strong>Case 2: 휜 동전 (<span class="eng-badge">Bent coin</span>, 비등확률 \(P(\text{head}) = 0.9, P(\text{tail}) = 0.1\))</strong> \(\Rightarrow H = 0.9 \log_2(1/0.9) + 0.1 \log_2(1/0.1) \approx 0.9(0.1520) + 0.1(3.3219) \approx \mathbf{0.468\text{ bit}}\) (교안 표기값 <code>0.468 bit</code>, 정밀 계산값 <code>0.469 bit</code>).</li>
+                  <li><strong>핵심 원리</strong>: <strong>“The more equally likely in probability, the higher the uncertainty.”</strong> 확률이 균등할수록(\(P=0.5\)) 불확실성과 정보량 \(H\)가 가장 높고(역 U자 곡선의 꼭짓점), 한쪽으로 치우칠수록(\(P \to 0\) 또는 \(P \to 1\)) 결과를 미리 예측하기 쉬워져 정보량 \(H\)는 \(0\text{ bit}\)으로 줄어든다.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>3.3 중복도 (% Redundancy) 공식 및 교안 3대 계산 예제 전수 풀이 (교안 3 p.11–14)</summary>
+          <div class="toggle-content">
+            <div class="formula">\[\%\text{Redundancy} = \left(1 - \frac{H_{\text{target}}}{H_{\max}}\right) \times 100 \quad \left(\text{단, } H_{\max} = \log_2 N\right)\]</div>
+            <p><strong>정의</strong>: 대안들이 모두 등확률일 때의 최대 정보량(\(H_{\max}\))으로부터 확률 비대칭이나 사전 단서 제공을 통해 <strong>정보량이 몇 퍼센트 감소했는지를 나타내는 효과성 척도(<span class="eng-badge">effectiveness measure</span>)</strong>이다.</p>
+            <table class="study-table">
+              <thead><tr><th>교안 예제</th><th>조건 및 \(H_{\max}\)</th><th>\(H_{\text{target}}\) 및 \(\%\text{Redundancy}\) 계산 과정</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>예제 0: 동전 비교</strong><br>(교안 p.11)</td>
+                  <td>• Fair coin: \(H_{\max} = 1\text{ bit}\)<br>• Bent coin (\(0.9, 0.1\)): \(H_{\text{target}} = 0.468\text{ bit}\)</td>
+                  <td>\[\%\text{Redundancy} = \left(1 - \frac{0.468}{1}\right) \times 100 = \mathbf{53.2\%}\]<br>→ 휜 동전을 사용하면 원래 정보량의 <strong>53.2%</strong>를 줄일 수 있다.</td>
+                </tr>
+                <tr>
+                  <td><strong>예제 1: 8개 경고등 감시</strong><br>(<span class="eng-badge">Warning Signal</span>, 교안 p.12–13)</td>
+                  <td>• 8개 경고등의 사전 빈도 정보가 없을 때(등확률 \(p_i = 1/8\)):<br>\[H_{\max} = \log_2 8 = \mathbf{3\text{ bits}}\]</td>
+                  <td>• 자주 발생하는 1, 2번 경고등을 크게 설계하여 \(P_1 = P_2 = 0.35\) (2개), 나머지 \(P_3 \sim P_8 = 0.05\) (6개)일 때:<br>\[H_{\text{target}} = 2\left(0.35 \log_2 \frac{1}{0.35}\right) + 6\left(0.05 \log_2 \frac{1}{0.05}\right)\]<br>\[= 0.70(1.5146) + 0.30(4.3219) \approx 1.0602 + 1.2966 = \mathbf{2.3568\text{ bits}}\]<br>\[\%\text{Redundancy} = \left(1 - \frac{2.3568}{3}\right) \times 100 \approx \mathbf{21.44\%}\]</td>
+                </tr>
+                <tr>
+                  <td><strong>예제 2: 카운트다운 신호등</strong><br>(<span class="eng-badge">Traffic Signal</span>, 교안 p.14)</td>
+                  <td>• 현재 신호등(바뀔지/안 바뀔지 2대안 등확률 가정):<br>\[H_{\text{current}} = \log_2 2 = \mathbf{1\text{ bit}}\]</td>
+                  <td>• 새 카운트다운 신호등(4초 뒤 바뀜을 100% 확실히 앎, \(P=1\)):<br>\[H_{\text{new}} = 1 \times \log_2(1/1) = \mathbf{0\text{ bit}}\]<br>\[\%\text{Redundancy} = \left(1 - \frac{0}{1}\right) \times 100 = \mathbf{100\%}\]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <!-- ==================== CHAPTER 4 ==================== -->
+        <h3 id="c4">4. 정보전달이론 · 채널 용량 · 작업기억(7±2) · Sternberg · Donders · Hick의 법칙 (5주차)</h3>
+        <div class="quote block">인간을 자극(\(X\))과 반응(\(Y\)) 사이의 통신 채널(<span class="eng-badge">Channel</span>)로 볼 때, 전달정보량 \(H(X \cap Y)\)는 클수록 좋고 모호도(\(\text{Equivocation } H(X|Y)\))와 잡음(\(\text{Noise } H(Y|X)\))은 작을수록 좋다. (교안 3 p.15–16)</div>
+
+        <details class="toggle block" open>
+          <summary>4.1 정보전달이론 (Information Transmission Theory) 공식 및 16문항 시험 표 계산 (교안 3 p.15–20 — 기출 계산 1순위!)</summary>
+          <div class="toggle-content">
+            <div class="visual-box" style="margin:8px 0 10px;padding:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;">
+              <div style="font-size:12px;font-weight:700;color:#334155;margin-bottom:8px;">📊 [교안 3 p.15–16] 정보전달 모델 및 엔트로피 벤 다이어그램 관계식</div>
+              <svg viewBox="0 0 660 150" style="width:100%;max-width:640px;height:auto;display:block;margin:0 auto;font-family:sans-serif;">
+                <!-- Left: Input -> Human Channel -> Output -->
+                <rect x="10" y="38" width="85" height="44" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+                <text x="52" y="57" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1d4ed8">Input (X)</text>
+                <text x="52" y="72" font-size="9.5" text-anchor="middle" fill="#1e3a8a">(Stimuli)</text>
+                <line x1="95" y1="60" x2="125" y2="60" stroke="#334155" stroke-width="1.5"/>
+                <rect x="125" y="32" width="115" height="56" rx="6" fill="#1e293b"/>
+                <text x="182" y="56" font-size="11" font-weight="700" text-anchor="middle" fill="#ffffff">Human</text>
+                <text x="182" y="72" font-size="10" text-anchor="middle" fill="#cbd5e1">(Channel)</text>
+                <line x1="240" y1="60" x2="270" y2="60" stroke="#334155" stroke-width="1.5"/>
+                <rect x="270" y="38" width="85" height="44" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+                <text x="312" y="57" font-size="10.5" font-weight="700" text-anchor="middle" fill="#b91c1c">Output (Y)</text>
+                <text x="312" y="72" font-size="9.5" text-anchor="middle" fill="#7f1d1d">(Response)</text>
+                <text x="115" y="112" font-size="10" font-weight="700" text-anchor="middle" fill="#1d4ed8">Equivocation (miss): H(X|Y)</text>
+                <text x="255" y="112" font-size="10" font-weight="700" text-anchor="middle" fill="#b91c1c">Noise (false): H(Y|X)</text>
+
+                <!-- Right: Venn Diagram H(X) and H(Y) -->
+                <circle cx="475" cy="78" r="52" fill="rgba(37,99,235,0.12)" stroke="#2563eb" stroke-width="2"/>
+                <circle cx="555" cy="78" r="52" fill="rgba(220,38,38,0.12)" stroke="#dc2626" stroke-width="2"/>
+                <text x="455" y="20" font-size="11" font-weight="700" text-anchor="middle" fill="#1d4ed8">H(X): 입력 정보량</text>
+                <text x="575" y="20" font-size="11" font-weight="700" text-anchor="middle" fill="#b91c1c">H(Y): 출력 정보량</text>
+                <text x="442" y="75" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1e3a8a">H(X|Y)</text>
+                <text x="442" y="90" font-size="9" text-anchor="middle" fill="#1e3a8a">Equivocation</text>
+                <text x="515" y="68" font-size="10" font-weight="700" text-anchor="middle" fill="#0f172a">T(X,Y)</text>
+                <text x="515" y="82" font-size="10" font-weight="700" text-anchor="middle" fill="#0f172a">H(X∩Y)</text>
+                <text x="515" y="95" font-size="8.5" text-anchor="middle" fill="#166534">전달정보량</text>
+                <text x="588" y="75" font-size="10.5" font-weight="700" text-anchor="middle" fill="#7f1d1d">H(Y|X)</text>
+                <text x="588" y="90" font-size="9" text-anchor="middle" fill="#7f1d1d">Noise</text>
+                <text x="515" y="144" font-size="10.5" font-weight="700" text-anchor="middle" fill="#334155">전체 합집합 = 결합 엔트로피 H(X∪Y) = H(X,Y)</text>
+              </svg>
+            </div>
+            <div class="formula">
+              \[\begin{aligned}
+              H(X) &= \sum_i P(X_i)\log_2\frac{1}{P(X_i)}, \qquad H(Y) = \sum_j P(Y_j)\log_2\frac{1}{P(Y_j)} \\
+              H(X \cup Y) &= H(X,Y) = \sum_i \sum_j p_{ij} \log_2\frac{1}{p_{ij}} \quad (\text{모든 결합 확률 } p_{ij}\text{의 가중평균}) \\
+              \text{Transmitted Information: }\; H(X \cap Y) &= T(X,Y) = H(X) + H(Y) - H(X \cup Y) \quad (\text{클수록 좋음: larger the better}) \\
+              \text{Equivocation (miss): }\; H(X|Y) &= H(X) - H(X \cap Y) = H(X \cup Y) - H(Y) \quad (\text{작을수록 좋음: smaller the better}) \\
+              \text{Noise (false): }\; H(Y|X) &= H(Y) - H(X \cap Y) = H(X \cup Y) - H(X) \quad (\text{작을수록 좋음: smaller the better})
+              \end{aligned}\]
+            </div>
+            <p><strong>교안 p.17–18 예제: 4지선다 16문항 시험 응답 표 계산 (소수점 계산 절차 완벽 숙지!)</strong></p>
+            <table class="study-table">
+              <thead><tr><th>자극 \(X\) \ 반응 \(Y\)</th><th>\(Y=1\)</th><th>\(Y=2\)</th><th>\(Y=3\)</th><th>\(Y=4\)</th><th>행 합계 / \(P(X)\)</th></tr></thead>
+              <tbody>
+                <tr><td><strong>\(X=1\)</strong></td><td><strong>4</strong> (\(p_{11}=1/4\))</td><td>0 (\(0\))</td><td>0 (\(0\))</td><td>0 (\(0\))</td><td>4 / \(P(X_1)=1/4\)</td></tr>
+                <tr><td><strong>\(X=2\)</strong></td><td><strong>4</strong> (\(p_{21}=1/4\))</td><td>0 (\(0\))</td><td>0 (\(0\))</td><td>0 (\(0\))</td><td>4 / \(P(X_2)=1/4\)</td></tr>
+                <tr><td><strong>\(X=3\)</strong></td><td>0 (\(0\))</td><td>0 (\(0\))</td><td><strong>4</strong> (\(p_{33}=1/4\))</td><td>0 (\(0\))</td><td>4 / \(P(X_3)=1/4\)</td></tr>
+                <tr><td><strong>\(X=4\)</strong></td><td>0 (\(0\))</td><td>0 (\(0\))</td><td>0 (\(0\))</td><td><strong>4</strong> (\(p_{44}=1/4\))</td><td>4 / \(P(X_4)=1/4\)</td></tr>
+                <tr><td><strong>열 합계 / \(P(Y)\)</strong></td><td>8 / \(P(Y_1)=\mathbf{1/2}\)</td><td>0 / \(P(Y_2)=\mathbf{0}\)</td><td>4 / \(P(Y_3)=\mathbf{1/4}\)</td><td>4 / \(P(Y_4)=\mathbf{1/4}\)</td><td><strong>총 16문항 (\(1.00\))</strong></td></tr>
+              </tbody>
+            </table>
+            <ol class="note-list">
+              <li><strong>입력 정보량 \(H(X)\)</strong>: 4개 자극이 각 \(1/4\)씩 등확률이므로 \(H(X) = \log_2 4 = \mathbf{2.0\text{ bits}}\).</li>
+              <li><strong>출력 정보량 \(H(Y)\)</strong>: \(P(Y) = (1/2, 0, 1/4, 1/4)\)이므로 \(H(Y) = \frac{1}{2}\log_2 2 + \frac{1}{4}\log_2 4 + \frac{1}{4}\log_2 4 = 0.5(1) + 0.25(2) + 0.25(2) = \mathbf{1.5\text{ bits}}\).</li>
+              <li><strong>결합 정보량 \(H(X \cup Y)\)</strong>: 표 내부에서 \(p_{ij} &gt; 0\)인 칸은 \(1/4\)이 총 4개이므로 \(H(X \cup Y) = 4 \times \left(\frac{1}{4}\log_2 4\right) = \mathbf{2.0\text{ bits}}\).</li>
+              <li><strong>전달정보량 \(H(X \cap Y)\)</strong>: \(H(X) + H(Y) - H(X \cup Y) = 2.0 + 1.5 - 2.0 = \mathbf{1.5\text{ bits}}\).</li>
+              <li><strong>모호도 (<span class="eng-badge">Equivocation</span>) \(H(X|Y)\)</strong>: \(H(X) - H(X \cap Y) = 2.0 - 1.5 = \mathbf{0.5\text{ bits}}\) (학생이 \(X=1\)과 \(X=2\)를 둘 다 \(Y=1\)로 찍어 \(0.5\text{ bit}\)의 자극 구분 정보가 유실됨).</li>
+              <li><strong>잡음 (<span class="eng-badge">Noise</span>) \(H(Y|X)\)</strong>: \(H(Y) - H(X \cap Y) = 1.5 - 1.5 = \mathbf{0\text{ bits}}\) (각 자극 \(X\)에 대한 반응이 하나로 일관되어 무작위 잡음은 없음).</li>
+            </ol>
+            <div class="callout block">
+              <div class="callout-icon">!</div>
+              <div><strong>정보전달이론의 함정 (<span class="eng-badge">A Trap in Information Transmission Theory</span>, 교안 p.19 — 서술형 단골!)</strong><br />
+              \(X \in \{1,2\}\) 각 10회(총 20회)에서 ① 1을 1로(10회), 2를 2로(10회) 완벽히 맞힌 경우(<span class="eng-badge">Perfect transmission</span>)와 ② 1을 모두 2로(10회), 2를 모두 1로(10회) 정반대로 틀리게 답한 경우(<span class="eng-badge">Imperfect transmission</span>) 모두 \(H(X)=1, H(Y)=1, H(X\cup Y)=1\)이 되어 <strong>전달정보량이 \(H(X\cap Y) = 1\text{ bit}\) (100%, Equivocation=0, Noise=0)로 똑같이 계산된다!</strong><br />
+              → <strong>이유와 대책</strong>: 정보전달이론은 자극과 반응 사이의 일대일 대응 일관성(확률 분포)만 볼 뿐 실제 정답 여부를 구분하지 못하므로, 시스템 평가 시에는 반드시 <strong>정성적 검토 및 실제 정답률(Accuracy) 확인을 병행</strong>해야 한다.</div>
+            </div>
+            <ul class="note-list">
+              <li><strong>채널 용량 (<span class="eng-badge">Channel Capacity</span>, p.20)</strong>: 인간이 단위 시간당 처리할 수 있는 최대 정보량(단위: <strong><span class="eng-badge">bits/sec</span></strong>). 입력 정보량 \(H(X)\)가 증가할수록 전달정보량 \(H(X\cap Y)\)도 증가하다가 어느 한계치(<strong>점근값 <span class="eng-badge">asymptotic value</span></strong>, 교안 그래프 예시: <code>2.8 bits/sec</code>)에서 평평해진다(<code>levels off</code>).</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>4.2 마법의 숫자 7±2 · 작업기억(Working Memory) · 채널 용량 향상 3대 전략 (교안 3 p.21–29)</summary>
+          <div class="toggle-content">
+            <ul class="note-list">
+              <li><strong>마법의 숫자 (<span class="eng-badge">The Magical Number 7 ± 2</span>, G. A. Miller, p.21–24)</strong>:
+                <ul class="note-list">
+                  <li>인간이 한 번에 식별·처리할 수 있는 단일 차원 자극의 수는 약 <strong>\(7 \pm 2\)개 (5~9개)</strong>이다 (예: 7자리 전화번호 <code>259-2709</code>; 4자리 <code>7248</code>이나 6자리 <code>348135</code>는 쉽지만 9자리 <code>680263147</code>은 한 번에 외우기 어려움).</li>
+                  <li><strong>단일 자극 차원별 평균 식별 개수와 비트 수 (p.21 표)</strong>:
+                    <code>Pure tone</code>(순음 높낮이): <strong>5개 (2.3 bits)</strong> / <code>Loudness</code>(음량): <strong>4~5개 (2~2.3 bits)</strong> / <code>Size of viewed objects</code>(물체 크기): <strong>5~7개 (2.3~2.8 bits)</strong> / <code>Brightness</code>(밝기): <strong>3~5개 (1.7~2.3 bits)</strong>.</li>
+                </ul>
+              </li>
+              <li><strong>작업기억의 성질 (<span class="eng-badge">Nature of Working Memory</span>, p.25 두 그래프)</strong>:
+                <ol class="note-list">
+                  <li><strong>기억 용량 실험 (<code>Experiment on memory size</code>)</strong>: 항목 수가 4~6개일 때는 정확도(<code>% Accuracy</code>)가 거의 100%에 가깝다가 <strong>마법의 숫자(7개) 부근에서 급격히 하락</strong>한다.</li>
+                  <li><strong>기억 지속시간 실험 (<code>Experiment on memory duration</code>)</strong>: <strong>시연(<span class="eng-badge">rehearsal</span>, 마음속 되뇌기)</strong>을 허용하면 시간이 지나도 회상률(<code>% Recall</code>)이 높게 유지되지만, 숫자를 거꾸로 세게 하여 <strong>시연을 막으면(<code>w/o rehearsal</code>) 15초 내에 회상률이 0% 가까이 급락</strong>한다.</li>
+                </ol>
+              </li>
+              <li><strong>채널 용량(정보처리 성능) 향상 3대 설계 전략 (<span class="eng-badge">Channel Capacity Enhancement</span>, p.26–29 — 주관식·서술형 필수!)</strong>:
+                <ol class="note-list">
+                  <li><strong>절대 판단 대신 상대 판단 사용 (<code>Use relative rather than absolute judgment</code>)</strong>:
+                    <ul>
+                      <li><strong>절대 판단 (<span class="eng-badge">Absolute judgment</span>)</strong>: 단일 자극을 제시하고 기억 속의 기준과 단독 비교하여 맞히게 함 (식별 한계 낮음).</li>
+                      <li><strong>상대 판단 (<span class="eng-badge">Relative judgment</span>)</strong>: 두 개 이상의 자극을 <strong>나란히 두고 비교(<code>comparison of two stimuli side by side</code>)</strong>하게 함 (훨씬 정밀한 구별 가능).</li>
+                    </ul>
+                  </li>
+                  <li><strong>자극의 차원 수 증가 (<code>Increase the number of stimulus dimensions</code>)</strong>:
+                    <ul>
+                      <li>1차원(<code>Location</code> 위치만 사용) 대신 <strong>2차원 이상 결합(<code>Location + Color</code> 위치 + 색상)</strong>을 사용하면 식별 가능한 정보량이 크게 늘어난다.</li>
+                    </ul>
+                  </li>
+                  <li><strong>청킹 활용 (<span class="eng-badge">Chunking</span>, p.29)</strong>:
+                    <ul>
+                      <li>정의: 정보들을 <strong>묶거나 구획화(<code>grouping or parsing</code>)</strong>하고, 뇌 속의 <strong>기존 장기기억 지식과 연결(<code>linking/connecting to the knowledge in the brain</code>)</strong>하여 작업기억을 효율적으로 사용하는 전략.</li>
+                      <li>교안 예시: <code>821030329381</code> (채널 용량 초과) \(\to\) <code>8210 3032 9381</code> (단순 Grouping) \(\to\) <strong><code>+82-10-3032-9381</code></strong> (국제전화 국가번호 <code>+82</code>, 휴대전화/연구실 <code>10-3032</code>, 익숙한 뒷자리 <code>9381</code>로 장기기억 지식과 연결 = <strong>Chunking</strong>).</li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>4.3 Sternberg 기억탐색 과제 · Donders 반응시간(A/B/C) · Hick의 법칙 (교안 3 p.30–41)</summary>
+          <div class="toggle-content">
+            <div class="visual-box" style="margin:8px 0 10px;padding:12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;">
+              <div style="font-size:12px;font-weight:700;color:#334155;margin-bottom:8px;">📊 [교안 3 p.31–32] (좌) Sternberg 기억탐색 실험 그래프 &amp; (우) Donders의 A·B·C 반응시간 단계 비교</div>
+              <svg viewBox="0 0 680 165" style="width:100%;max-width:660px;height:auto;display:block;margin:0 auto;font-family:sans-serif;">
+                <!-- Left: Sternberg Graph -->
+                <rect x="5" y="5" width="310" height="155" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                <text x="160" y="22" font-size="11" font-weight="700" text-anchor="middle" fill="#0f172a">p.31 Sternberg’s Classical Test (RT vs. PSS)</text>
+                <line x1="45" y1="132" x2="290" y2="132" stroke="#334155" stroke-width="1.5"/>
+                <line x1="45" y1="32" x2="45" y2="132" stroke="#334155" stroke-width="1.5"/>
+                <text x="25" y="45" font-size="9" text-anchor="end" fill="#475569">400</text>
+                <text x="25" y="70" font-size="9" text-anchor="end" fill="#475569">300</text>
+                <text x="25" y="95" font-size="9" text-anchor="end" fill="#475569">200</text>
+                <text x="25" y="120" font-size="9" text-anchor="end" fill="#475569">100</text>
+                <text x="275" y="146" font-size="10" font-weight="700" text-anchor="middle" fill="#0f172a">PSS (집합 크기)</text>
+                <!-- NO line (exhaustive, higher) -->
+                <line x1="55" y1="95" x2="255" y2="42" stroke="#dc2626" stroke-width="2.2"/>
+                <text x="215" y="40" font-size="10" font-weight="700" fill="#b91c1c">"NO" (exhaustive)</text>
+                <!-- YES line (self-terminating, lower) -->
+                <line x1="55" y1="108" x2="255" y2="68" stroke="#2563eb" stroke-width="2.2"/>
+                <text x="210" y="84" font-size="10" font-weight="700" fill="#1d4ed8">"YES" (self-terminating)</text>
+                <text x="160" y="154" font-size="9.5" text-anchor="middle" fill="#334155">PSS 증가 시 RT 선형 증가 ⇒ Serial processor (NO &gt; YES)</text>
+
+                <!-- Right: Donders A, B, C -->
+                <rect x="325" y="5" width="350" height="155" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+                <text x="500" y="22" font-size="11" font-weight="700" text-anchor="middle" fill="#0f172a">p.32 Psychologist Donders’ Reaction Time (A, B, C)</text>
+                <rect x="340" y="34" width="95" height="26" rx="4" fill="#e2e8f0"/><text x="387" y="51" font-size="9.5" font-weight="700" text-anchor="middle">Nerve Conduction</text>
+                <rect x="445" y="34" width="105" height="26" rx="4" fill="#dbeafe"/><text x="497" y="51" font-size="9.5" font-weight="700" text-anchor="middle" fill="#1e3a8a">Mental Identification</text>
+                <rect x="560" y="34" width="100" height="26" rx="4" fill="#fee2e2"/><text x="610" y="51" font-size="9.5" font-weight="700" text-anchor="middle" fill="#991b1b">Mental Selection</text>
+                <!-- Bars for A, C, B -->
+                <rect x="340" y="68" width="95" height="18" rx="3" fill="#475569"/><text x="387" y="81" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">A = SRT (1S-1R)</text>
+                <rect x="340" y="92" width="210" height="18" rx="3" fill="#2563eb"/><text x="445" y="105" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">C = Discrimination RT (MS-1R: 자극식별만 Y)</text>
+                <rect x="340" y="116" width="320" height="18" rx="3" fill="#dc2626"/><text x="500" y="129" font-size="9.5" font-weight="700" fill="#fff" text-anchor="middle">B = CRT (MS-MR: 자극식별 Y + 반응선택 Y)</text>
+                <text x="500" y="151" font-size="9.5" font-weight="700" text-anchor="middle" fill="#0f172a">자극 식별 시간 = C − A  |  반응 선택 시간 = B − C</text>
+              </svg>
+            </div>
+            <ul class="note-list">
+              <li><strong>Sternberg의 고전 기억탐색 실험 (<span class="eng-badge">Sternberg’s Classical Test</span>, 교안 p.30–31)</strong>:
+                <ul class="note-list">
+                  <li><strong>절차</strong>: 짧은 숫자/문자 목록인 <strong>기억집합(<span class="eng-badge">Positive set</span>)</strong>을 외우게 한 뒤, <strong>검사 자극(<span class="eng-badge">Probe digit</span>)</strong>을 제시하고 그 숫자가 기억집합 안에 있었는지(<code>YES</code>/<code>NO</code>) 판단하는 반응시간(<code>RT</code>)을 측정함.</li>
+                  <li><strong>교안 p.31의 4대 핵심 결과 (<span class="eng-badge">Findings</span>)</strong>:
+                    <ol class="note-list">
+                      <li>기억집합 크기(<span class="eng-badge">PSS: Positive Set Size</span>)가 커질수록 반응시간(<code>RT</code>)이 선형적으로 증가하므로, 인간은 한 번에 하나씩 비교하는 <strong>직렬 처리자(<span class="eng-badge">Serial processor</span>)</strong>이다.</li>
+                      <li>탐색 방식은 목표를 찾는 즉시 멈추는 <strong>자기종료 탐색(<span class="eng-badge">Self-terminating search</span>)</strong>과 끝까지 다 확인하는 <strong>전수 탐색(<span class="eng-badge">Exhaustive search</span>)</strong>으로 구분된다 (교안 그래프는 <code>"YES" (self-terminating)</code>, <code>"NO" (exhaustive)</code>로 표기).</li>
+                      <li>Probe를 부호화(<code>encode</code>)하고 결정을 실행(<code>execute decision</code>)하는 데 일정한 상수 시간(<code>constant time</code>, 그래프의 y절편)이 소요된다.</li>
+                      <li><strong><code>NO &gt; YES</code></strong>: 망설임(<code>hesitation</code>)과 전수 탐색(<code>exhaustive search</code>) 때문에 집합에 없었을 때(<code>NO</code>)가 있었을 때(<code>YES</code>)보다 반응시간이 더 길다.</li>
+                    </ol>
+                  </li>
+                </ul>
+              </li>
+              <li><strong>심리학자 Donders의 반응시간 3유형 비교 (교안 p.32 — 표 완벽 암기!)</strong>:</li>
+            </ul>
+            <table class="study-table">
+              <thead><tr><th>구분</th><th>Donders’ A (<span class="eng-badge">SRT</span>)</th><th>Donders’ B (<span class="eng-badge">CRT</span>)</th><th>Donders’ C (변별 반응)</th></tr></thead>
+              <tbody>
+                <tr><td><strong>자극–반응 매핑</strong></td><td><strong><code>1S, 1R</code></strong> (자극 1, 반응 1)</td><td><strong><code>MS - MR</code></strong> (자극 다수, 반응 다수)</td><td><strong><code>MS - 1R</code></strong> (자극 다수, 반응 1)</td></tr>
+                <tr><td><strong>자극 식별 (<span class="eng-badge">Stimulus Identification</span>)</strong></td><td><strong>N (불필요)</strong></td><td><strong>Y (필요)</strong></td><td><strong>Y (필요)</strong></td></tr>
+                <tr><td><strong>반응 선택 (<span class="eng-badge">Response Selection</span>)</strong></td><td><strong>N (불필요)</strong></td><td><strong>Y (필요)</strong></td><td><strong>N (불필요)</strong></td></tr>
+                <tr><td><strong>교안 예시</strong></td><td>육상 출발 신호 (<code>Start of Race</code>)</td><td>빨간불=브레이크, 초록불=엑셀 (<code>Red-brake, Green-acc</code>)</td><td>미식축구 작전 신호 (<code>Football play</code>)</td></tr>
+              </tbody>
+            </table>
+            <div class="formula">\[\text{Hick's Law: }\quad \mathrm{RT} = a + b H \quad \text{또는} \quad \mathrm{RT} = a + b H_T \quad \left(\text{채널 용량 } = \frac{1}{b}\;[\text{bits/sec}]\right)\]</div>
+            <ul class="note-list">
+              <li><strong>선택반응시간과 힉의 법칙 (<span class="eng-badge">Choice Reaction Time: Hick’s Law</span>, 교안 p.34–41 — T/F 및 계산 1순위!)</strong>:
+                <ul class="note-list">
+                  <li>기호 의미: \(\mathrm{RT}\) = 반응시간(<code>ms</code>), \(H\) (또는 \(H_T\)) = 자극 정보량/전달정보량(<code>bits</code>, 등확률 \(N\)개 대안이면 \(\log_2 N\)), \(a\) = \(H=0\)일 때의 절편(<code>ms</code>), \(b\) = 정보량 1 bit 증가당 추가 반응시간(<code>ms/bit</code>, 교안 표현: <code>rate of gain of information / information processing speed</code>).</li>
+                  <li><strong>교안 p.36 핵심 수치</strong>:
+                    <ul>
+                      <li>전형적인 기울기 \(b = \mathbf{150\text{ ms/bit}}\) (최대 \(200\text{ ms/bit}\)) \(\Rightarrow\) 역수인 눈-손 협응 과업(<code>E-H task</code>)의 채널 용량 <strong>\(1/b = 1 / 0.15\text{ sec} \approx \mathbf{6.67\text{ bits/sec}}\)</strong> (비교: 말하기 <code>spoken language</code> \(\approx \mathbf{10\text{ bits/sec}}\), 글 읽기 <code>written language</code> \(\approx \mathbf{50\text{ bits/sec}}\)).</li>
+                      <li><strong>단순반응(150~180 ms)의 생리적 경로 시간</strong>: 자극 \(\to\) <code>eye → brain (10~30 ms)</code> \(\to\) <code>central processing (90 ms)</code> \(\to\) <code>brain → muscle (20 ms)</code> \(\to\) <code>muscle twitch (30 ms)</code> \(\Rightarrow\) 합계 <strong><code>150 ~ 180 ms</code></strong>.</li>
+                      <li><strong>RT 증감 요인</strong>: 나이 증가(<code>↑ age</code>)·식별성 감소(<code>↓ discriminability</code>) 시 RT 증가 / 연습(<code>↑ practice</code>)·사전 경고 신호(<code>↑ warning</code>) 제공 시 RT 감소(<strong>약 20% 단축</strong>).</li>
+                    </ul>
+                  </li>
+                  <li><strong>교안 p.37 절편 \(a\)와 기울기 \(b\)를 결정하는 요인 (객관식·T/F 최빈출!)</strong>:
+                    <ul>
+                      <li><strong>절편 \(a\)에 영향을 주는 4가지 요인</strong>:
+                        ① 개인차(<code>Inter-subject difference</code>: 나이 등, 약 \(50\text{ ms}\)),
+                        ② <strong>감각–반응 양식(<span class="eng-badge">S-R Modality</span>) 속도 순서</strong>:
+                        <strong>자극(<code>S</code>) 빠른 순: <code>Touch(vib, 촉각/진동) &gt; Hearing(청각) &gt; Vision(시각) &gt; Thermal(온각) &gt; Chemical(화학감각)</code></strong> (촉각과 청각이 시각보다 빠름!),
+                        <strong>반응(<code>R</code>) 빠른 순: <code>Eye(눈) &gt; Hand(손) &gt; Foot(발)</code></strong>,
+                        ③ 자극 강도(<code>Stimulus intensity</code>),
+                        ④ 기대/예측성(<code>Expectancy</code>: 시간적 불확실성 <code>Temporal uncertainty</code>, 결과지식 <code>KR</code>; 전혀 예상치 못한 사건 <code>Completely unexpected event</code>에서는 절편 \(a = \mathbf{750\text{ ms}}\)까지 커짐).</li>
+                      <li><strong>기울기 \(b\)에 영향을 주는 3가지 요인</strong>:
+                        ① <strong>자극–반응 양립성(<span class="eng-badge">S-R Compatibility</span>)</strong> (양립성이 높으면 선택지가 늘어도 RT가 조금만 증가해 기울기 \(b\)가 작아짐),
+                        ② <strong>학습/숙련(<span class="eng-badge">Learning</span>)</strong>,
+                        ③ <strong>연령(<span class="eng-badge">Age</span>)</strong>.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- ==================== CHAPTER 5 ==================== -->
+        <h3 id="c5">5. Fitts의 법칙(Movement Time) · 운동 제어(Motor Control) · 양립성(Compatibility) (5~6주차)</h3>
+        <div class="quote block">목표가 멀고(\(A, D \uparrow\)) 폭이 좁을수록(\(W \downarrow\)) 난이도 지수(\(\mathrm{ID}\))가 커져 운동시간(\(\mathrm{MT}\))이 선형 증가하며(Fitts’ Law), 제어-표시 장치가 사용자의 기대(Population stereotype)와 일치할수록(Compatibility) 학습과 반응이 빨라지고 오류가 줄어든다. (교안 3 p.42–66)</div>
+
+        <details class="toggle block" open>
+          <summary>5.1 피츠의 법칙 (Fitts’ Law, Paul Fitts 1954) 두 공식 및 신체 부위별 기울기 (교안 3 p.42–49)</summary>
+          <div class="toggle-content">
+            <div class="formula">
+              \[\mathrm{MT} = a + b \cdot \mathrm{ID}\]
+              \[\text{[1954 원형 (Serial tapping task, p.43)]}\quad \mathrm{ID} = \log_2\left(\frac{A}{W/2}\right) = \log_2\left(\frac{2A}{W}\right)\;\text{[bits]}\]
+              \[\text{[ISO 9241-9 표준형 (Shannon form, p.46–47)]}\quad \mathrm{ID} = \log_2\left(\frac{D}{W} + 1\right)\;\text{[bits]}\]
+            </div>
+            <ul class="note-list">
+              <li><strong>핵심 개념 (p.42–46)</strong>:
+                <ul class="note-list">
+                  <li><strong>속도와 정확성의 교환 관계 (<span class="eng-badge">Speed vs. Accuracy trade-off</span>)</strong>: 스타일러스(<code>stylus</code>)나 마우스 포인터로 표적을 가리킬 때, 표적 간 거리/진폭(\(D\) 또는 \(A\))이 멀어질수록, 그리고 표적의 너비(\(W\))가 좁아질수록 처리해야 할 공간적 정보량인 <strong>난이도 지수(<span class="eng-badge">ID: Index of Difficulty</span>, 단위 <code>bits</code>)</strong>가 증가하여 <strong>운동시간(<span class="eng-badge">MT: Movement Time</span>)</strong>이 선형적으로 증가한다.</li>
+                  <li>절편 \(a\)와 기울기 \(b\)는 포인팅 장치(마우스, 터치패드, 스타일러스 등)나 조건을 비교할 때 실험적으로 결정(<code>experimentally determined</code>)되는 상수이다.</li>
+                </ul>
+              </li>
+              <li><strong>교안 p.47 수치 계산 예제 (ISO 표준식 \(\mathrm{ID} = \log_2(D/W + 1)\), \(a = 50\text{ ms}, b = 150\text{ ms/bit}\))</strong>:
+                <ol class="note-list">
+                  <li><strong>Target 1 (\(D = 80, W = 20\))</strong>: \(\mathrm{ID} = \log_2(80/20 + 1) = \log_2 5 \approx \mathbf{2.3219\text{ bits}} \;\Rightarrow\; \mathrm{MT} = 50 + 150 \times 2.3219 \approx \mathbf{398.29\text{ ms}}\).</li>
+                  <li><strong>Target 2 (\(D = 100, W = 10\))</strong>: \(\mathrm{ID} = \log_2(100/10 + 1) = \log_2 11 \approx \mathbf{3.4594\text{ bits}} \;\Rightarrow\; \mathrm{MT} = 50 + 150 \times 3.4594 \approx \mathbf{568.91\text{ ms}}\).</li>
+                </ol>
+              </li>
+              <li><strong>교안 p.48 신체 부위별 기울기 \(b\) 비교 (T/F 단골!)</strong>:
+                <ul class="note-list">
+                  <li><strong>팔뚝 (<span class="eng-badge">Forearm</span>): <code>105 ms/bit</code> &gt; 손목 (<span class="eng-badge">Wrist</span>): <code>43 ms/bit</code> &gt; 손가락 (<span class="eng-badge">Finger</span>): <code>26 ms/bit</code></strong></li>
+                  <li><strong>원리</strong>: <strong>“More joints need more sensory information. More processing \(\Rightarrow\) increase RT(MT).”</strong> 움직임에 관여하는 관절(joint)이 많을수록 더 많은 감각 정보를 처리해야 하므로 기울기 \(b\)가 커지고 이동시간이 길어진다 (손가락이 가장 빠르고 팔뚝이 가장 느림).</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>5.2 운동 제어 (Motor Control): Positioning(Closed loop) vs. Ballistic(Open loop) 및 Range Effect (교안 3 p.50–56)</summary>
+          <div class="toggle-content">
+            <table class="study-table">
+              <thead><tr><th>구분</th><th>위치 조정 운동 (<span class="eng-badge">Positioning Movement</span>)</th><th>탄도 운동 (<span class="eng-badge">Ballistic Movement</span>)</th></tr></thead>
+              <tbody>
+                <tr><td><strong>제어 루프 방식</strong></td><td><strong>폐회로 제어 (<span class="eng-badge">Closed Loop with feedback</span>)</strong></td><td><strong>개회로 제어 (<span class="eng-badge">Open Loop</span>, 무피드백)</strong></td></tr>
+                <tr><td><strong>특징 및 메커니즘</strong></td><td>시각·고유수용감각 등 감각 <strong>피드백(<code>feedback</code>)</strong>을 실시간으로 받아 목표 위치와의 오차를 정밀하게 수정하며 도달하는 움직임</td><td>중간에 피드백으로 수정할 겨를 없이 미리 계획된 운동 프로그램대로 한 번에 빠르게 실행되는 움직임 (예: 공 던지기)</td></tr>
+                <tr><td><strong>이동 단계에서의 역할</strong></td><td>목표 근처에서 정밀하게 멈추는 <strong>후반부 미세 조정(<code>Secondary travel</code>)</strong> 구간에서 작동</td><td>목표를 향해 처음 빠르게 뻗는 <strong>초반부 주 이동(<code>Primary travel</code>)</strong> 구간에서 작동</td></tr>
+              </tbody>
+            </table>
+            <ul class="note-list" style="margin-top:10px;">
+              <li><strong>연습 효과 (<span class="eng-badge">Practice: More learning</span>, p.51)</strong>: 반복 연습을 통해 숙련될수록 피드백에 의존하던 <strong><code>Closed loop</code> 운동이 점차 빠르고 자동화된 <code>Open loop</code> 운동으로 전환</strong>된다.</li>
+              <li><strong>범위 효과 (<span class="eng-badge">Range Effect</span>, p.51 — T/F 및 객관식 최빈출 함정!)</strong>:
+                <ul class="note-list">
+                  <li>짧은 거리(<span class="eng-badge">Short distance</span>) 이동 시: 목표 지점을 지나쳐 더 멀리 가는 <strong>과도 도달 (<span class="eng-badge">Overshoot short distance</span>)</strong> 발생!</li>
+                  <li>긴 거리(<span class="eng-badge">Long distance</span>) 이동 시: 목표 지점에 못 미치는 <strong>미달 (<span class="eng-badge">Undershoot long distance</span>)</strong> 발생!</li>
+                  <li><em>주의: 시험에서 “짧은 거리는 Undershoot, 긴 거리는 Overshoot”라고 반대로 바꾸어 내는 T/F 함정에 절대 속지 말 것!</em></li>
+                </ul>
+              </li>
+              <li><strong>VR 손가락 선택 실험 사례 (p.53–56)</strong>:
+                <ul class="note-list">
+                  <li><strong>Task 1 (<span class="eng-badge">Stimulus-based selection based on visual saliency</span>)</strong>: 시각적 현저성(빨간색 버튼)만 보고 9개 위치 중 즉시 클릭 (9위치 × 3회 = 27시행).</li>
+                  <li><strong>Task 2 (<span class="eng-badge">Goal-based selection based on task instructions</span>)</strong>: 화면 중앙의 텍스트 지시어(예: “사진 찍기” \(\to\) 1번 위치 “갤러리” 버튼)의 의미를 해석해 클릭. 속도 그래프에서 의미 해석 및 위치 재조정 때문에 <strong>두 번째 속도 정점(<code>second peak</code>)이 더 늦고 뚜렷하게 나타남</strong>.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>5.3 양립성 (Compatibility): 정의 · Population Stereotype · Affordance · 4대 분류 · 문화/경험 차이 (교안 3 p.57–66)</summary>
+          <div class="toggle-content">
+            <ul class="note-list">
+              <li><strong>양립성(<span class="eng-badge">Compatibility</span>)의 정의 (p.57)</strong>: 제어장치(<code>Control</code>)와 표시장치(<code>Display</code>)의 관계가 <strong>사용자의 기대(<code>user expectations</code>)와 일치하는 정도</strong>.</li>
+              <li><strong>핵심 관련 영문 개념 2가지 (p.57 — 주관식 단답형 1순위!)</strong>:
+                <ol class="note-list">
+                  <li><strong>집단 고정관념 (<span class="eng-badge">Population stereotype</span>)</strong>: 제어–표시 관계에 대해 특정 인구 집단의 사람들이 공통적으로 가지고 있는 기대 (<code>the expectation of population on control-display relationships</code>).</li>
+                  <li><strong>행동유도성 / 어포던스 (<span class="eng-badge">Affordance</span>)</strong>: 사물의 외형이나 속성이 사용자로 하여금 직관적으로 특정 행동을 수행하도록 유도하는 성질 (<code>induce a person to perform an action / intuitive operation</code>).</li>
+                </ol>
+              </li>
+              <li><strong>양립성 설계의 4대 이점 (<span class="eng-badge">Benefits of compatible design</span>, p.57)</strong>:
+                ① 빠른 학습(<strong><code>Faster learning</code></strong>), ② 오류 감소(<strong><code>Fewer errors</code></strong>), ③ 빠른 반응시간(<strong><code>Faster reaction time</code></strong>), ④ 높은 사용자 만족도(<strong><code>Higher user satisfaction</code></strong>).</li>
+            </ul>
+            <table class="study-table" style="margin-top:8px;">
+              <thead><tr><th>양립성 4대 분류 (p.58–61)</th><th>영문 정의 (교안 원문)</th><th>교안 대표 사례</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><strong>① 공간 양립성<br>(<span class="eng-badge">Spatial Compatibility</span>)</strong></td>
+                  <td><code>degree to which physical control-display arrangement (or similarity) corresponds to user expectations</code></td>
+                  <td>• <strong>가스레인지 4구 화구와 손잡이(knobs) 배치</strong>: 화구는 2×2인데 손잡이가 일렬(<code>Spatial incompatibility</code>)이면 헷갈리므로, 손잡이도 화구와 같은 공간 배열로 맞추거나 연결선을 그림.<br>• VR 로봇 틸트(Tilt) 조작 실험(p.63–66): 몸의 기울임 방향과 레버 조작 방향이 일치할 때 정확도(<code>Accuracy</code>)·반응시간·자신감(<code>Confidence</code>)이 모두 우수함.</td>
+                </tr>
+                <tr>
+                  <td><strong>② 운동 양립성<br>(<span class="eng-badge">Movement Compatibility</span>)</strong></td>
+                  <td><code>degree to which control movement corresponds with display movement</code></td>
+                  <td>• <strong>다이얼(dial)과 눈금 표시창(display)</strong>: 조절 노브를 시계방향(오른쪽)으로 돌릴 때 표시창의 바늘이나 수치도 같은 방향(오른쪽/위쪽)으로 이동해야 함.</td>
+                </tr>
+                <tr>
+                  <td><strong>③ 개념 양립성<br>(<span class="eng-badge">Conceptual Compatibility</span>)</strong></td>
+                  <td><code>degree to which codes and symbols correspond with conceptual associations</code></td>
+                  <td>• 색상·기호의 개념적 연상: <strong>빨간색(<code>red</code>) = 뜨거움(<code>hot</code>), 위험(<code>danger</code>)</strong> / <strong>파란색(<code>blue</code>) = 차가움(<code>cold</code>), 정상(<code>normal</code>)</strong>.</td>
+                </tr>
+                <tr>
+                  <td><strong>④ 양식 양립성<br>(<span class="eng-badge">Modality Compatibility</span>)</strong></td>
+                  <td><code>degree to which controls and displays utilize the same sensory modality</code></td>
+                  <td>• 누군가 음성으로 <strong>“왼손(a left hand)”</strong>이라고 말할 때:<br>&nbsp;&nbsp;– 실제로 왼손을 드는 반응(<code>control[spatial] ≠ display[verbal]</code>): 양식 불일치(<code>Modality incompatibility</code>) → <strong>느린 반응(<code>slow response</code>)</strong><br>&nbsp;&nbsp;– 입으로 “왼손”이라고 따라 말하는 반응(<code>control[verbal] = display[verbal]</code>): 양식 일치(<code>Modality compatibility</code>) → <strong>빠른 반응(<code>fast response</code>)</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="note-list" style="margin-top:10px;">
+              <li><strong>양립성의 개인·집단 간 차이 (<span class="eng-badge">Individual Difference in Compatibility</span>, p.62)</strong>:
+                <ul class="note-list">
+                  <li><strong>문화적 차이 (<span class="eng-badge">Cultural difference</span>)</strong>: 한국에서는 죽은 사람의 이름을 쓸 때 빨간색을 썼기 때문에 이름·간판에 빨간색을 피하지만, 중국에서는 빨간색이 행운(<code>good fortune</code>)을 상징하므로 이름·간판에 선호한다.</li>
+                  <li><strong>경험적 차이 (<span class="eng-badge">Empirical difference</span>)</strong>: 일반 사람들은 빨간색이 위험·나쁨을 뜻해 초록색보다 싫어하지만, <strong>주식 투자자(<span class="eng-badge">stockholder</span>)</strong>는 빨간색이 주가 상승(<code>stock price is going up</code>)을 뜻하므로 초록색보다 빨간색을 선호한다.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- ==================== CHAPTER 6 ==================== -->
+        <h3 id="c6">6. 기초통계량 · R 스튜디오 · T-검정(단일·독립·대응표본) 실습 (6주차-1)</h3>
+        <div class="quote block">모집단을 대표하는 표본으로부터 추정된 표준편차를 이용해 집단 간 평균 차이를 검정하는 방법이 <strong>T-test</strong>이며, 자료 구조에 따라 <strong>단일표본(One-sample) · 독립표본(Independent sample) · 대응표본(Paired sample)</strong>을 정확히 선택해야 한다. (교안 t-test p.10)</div>
+
+        <details class="toggle block" open>
+          <summary>6.1 R &amp; RStudio 구조 및 기초통계량 R 명령어 완벽 정리 (R통계_설치.pdf &amp; data_분석_t_test.pdf p.1–9)</summary>
+          <div class="toggle-content">
+            <ul class="note-list">
+              <li><strong>Python vs. R의 특징 (R통계_설치 p.2)</strong>: Python은 범용 프로그래밍 언어 특성이 강한 반면, <strong>R은 데이터 분석과 통계·시각화를 목적으로 개발</strong>된 언어이다(R로 일반 소프트웨어를 만들지는 못함).</li>
+              <li><strong>RStudio의 4대 창 구성 (p.12–16)</strong>:
+                ① <strong><span class="eng-badge">Script 창</span></strong>: R 명령문(R 스크립트, 확장자 <code>.R</code>)을 작성하고 실행(드래그 후 <code>Run</code> 또는 단축키 <strong><code>Ctrl + Enter</code></strong>)하는 영역 /
+                ② <strong><span class="eng-badge">Console 창</span></strong>: 명령문 실행 과정 및 수치 결과를 출력하는 영역 /
+                ③ <strong><span class="eng-badge">Environment 창</span></strong>: 생성된 변수나 데이터셋 구조를 보여주는 영역 /
+                ④ <strong><span class="eng-badge">Files / Plots / Packages / Help 창</span></strong>: 작업 폴더 파일 조회, 그래프(<code>Plots</code>) 출력, 패키지 설치/로드, 도움말 검색 영역.</li>
+              <li><strong>모수(<span class="eng-badge">Parameter</span>, 모집단 특성) vs. 통계량(<span class="eng-badge">Statistic</span>, 표본 특성) 및 기초통계 R 코드 (t-test 교안 p.2–9)</strong>:</li>
+            </ul>
+            <div class="code-box"><span class="comment"># [기초통계 필수 R 코드 — baseball 데이터셋의 '득점' 열 기준]</span>
+<span class="kw">sort</span>(baseball$득점)                         <span class="comment"># 작은 값부터 큰 값까지 오름차순 정렬</span>
+<span class="kw">sort</span>(baseball$득점, decreasing=<span class="hl">TRUE</span>)        <span class="comment"># 큰 값부터 작은 값까지 내림차순 정렬 (교안 p.3의 대문자 Sort는 오타!)</span>
+<span class="kw">sort</span>(baseball$득점, decreasing=<span class="hl">TRUE</span>)[<span class="hl">1</span>]     <span class="comment"># 내림차순 정렬된 벡터의 첫 번째 원소(=최댓값) 추출</span>
+<span class="kw">min</span>(baseball$득점)                          <span class="comment"># 최솟값 (16)</span>
+<span class="kw">max</span>(baseball$득점)                          <span class="comment"># 최댓값 (128)</span>
+
+a &lt;- baseball$득점                          <span class="comment"># 변수 a에 득점 벡터 할당</span>
+<span class="kw">mean</span>(a)                                     <span class="comment"># 평균 (무게중심: 전체 합 / n = 67.17778)</span>
+<span class="kw">median</span>(a)                                   <span class="comment"># 중앙값 (순서상 50% 중간 위치 값 = 63)</span>
+<span class="kw">var</span>(a)                                      <span class="comment"># 표본분산 (편차 제곱의 평균 = 769.0586; 평균과 단위가 달라 함께 못 씀!)</span>
+<span class="kw">sd</span>(a)                                       <span class="comment"># 표본표준편차 (분산의 제곱근 = 27.73191; 평균과 단위가 같아 함께 사용!)</span>
+<span class="kw">quantile</span>(a)                                 <span class="comment"># 사분위수 (0%=16, 25%=46, 50%=63, 75%=86, 100%=128)</span>
+<span class="kw">boxplot</span>(a)                                  <span class="comment"># 상자수염그림(Boxplot) 그리기</span>
+<span class="kw">summary</span>(baseball)                           <span class="comment"># 전체 데이터프레임의 열별 요약 통계량(Min, 1st Qu, Median, Mean, 3rd Qu, Max)</span></div>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>6.2 T-검정 3대 유형(단일·독립·대응표본) 비교, 사전 가정 검정 및 R 코드·결과 해석 (data_분석_t_test.pdf p.10–24)</summary>
+          <div class="toggle-content">
+            <table class="study-table">
+              <thead><tr><th>구분</th><th>① 단일표본 t-검정<br>(<span class="eng-badge">One-sample t-test</span>)</th><th>② 독립표본 t-검정<br>(<span class="eng-badge">Independent sample t-test</span>)</th><th>③ 대응표본 t-검정<br>(<span class="eng-badge">Paired sample t-test</span>)</th></tr></thead>
+              <tbody>
+                <tr><td><strong>개념 및 용도</strong></td><td><strong>한 집단의 평균</strong>이 특정 기준 숫자와 같은지 다른지 검정</td><td><strong>서로 독립적인 두 집단</strong> 간의 평균 차이가 있는지 검정</td><td><strong>동일한 대상</strong>에게서 측정된 <strong>사전/사후(전/후) 차이의 평균</strong>이 0인지 검정</td></tr>
+                <tr><td><strong>교안 사례</strong></td><td>음료수 용량이 350ml인지 /<br><strong>대구 초1 평균 키가 150cm인가?</strong></td><td>남녀 소득 차이, A·B사 타이어 수명 /<br><strong>대구 초1 vs 서울 초1 평균 키 비교</strong></td><td>과외 전후 성적 변화 /<br><strong>고혈압 환자 A약 복용 전/후 혈압 비교</strong></td></tr>
+                <tr><td><strong>사전 조건(가정)</strong></td><td>• 표본의 <strong>정규성 가정</strong><br>(관측치 20개 이상이면 만족 가정 가능)</td><td>• 두 표본 집단 각각의 <strong>정규성</strong><br>• 두 집단 간의 <strong>등분산성</strong><br>• 두 표본의 독립 추출</td><td>• 비교할 <strong>전/후 차이값(<code>datadiff</code>)의 정규성 가정</strong></td></tr>
+                <tr><td><strong>귀무가설 (\(H_0\))</strong></td><td>\(H_0: \mu = \mu_0\) (평균은 150이다)</td><td>\(H_0: \mu_1 = \mu_2\) (두 집단 평균은 같다)</td><td>\(H_0: \mu_d = 0\) (전/후 차이의 평균은 0이다)</td></tr>
+              </tbody>
+            </table>
+
+            <div class="code-box"><span class="comment"># [1] 단일표본 t-test (p.11~14: 대구 지역 초1의 평균 키가 150cm인가?)</span>
+<span class="comment"># Step 1. 정규성 확인 (H0: 정규성을 따른다 / H1: 따르지 않는다)</span>
+<span class="kw">shapiro.test</span>(datat[datat$group==<span class="hl">"Deagu"</span>, ]$height)
+<span class="comment"># → 결과: W = 0.95445, p-value = 0.4397 (&gt; 0.05이므로 H0 채택 → 정규성 가정 만족!)</span>
+
+<span class="comment"># Step 2. 단일표본 t-test 수행 (기준값 mu = 150)</span>
+<span class="kw">t.test</span>(datat[datat$group==<span class="hl">"Deagu"</span>, ]$height, <span class="hl">mu=150</span>)
+<span class="comment"># → 결과: t = 3.8148, df = 19, p-value = 0.001169 (&lt; 0.05이므로 H0 기각!)</span>
+<span class="comment"># → 표본평균(mean of x) = 156.1165cm, 95% 신뢰구간 [152.7607, 159.4723] → 대구 초1 평균 키는 150cm가 아니다.</span>
+
+<span class="comment"># -------------------------------------------------------------------------</span>
+<span class="comment"># [2] 독립표본 t-test (p.15~20: 대구 초1 vs 서울 초1 평균 키 비교)</span>
+<span class="comment"># Step 1. 두 그룹 각각의 정규성 확인</span>
+<span class="kw">shapiro.test</span>(datat[datat$group==<span class="hl">"Deagu"</span>, ]$height)  <span class="comment"># p-value = 0.4397 (&gt; 0.05 정규성 만족)</span>
+<span class="kw">shapiro.test</span>(datat[datat$group==<span class="hl">"Seoul"</span>, ]$height)  <span class="comment"># p-value = 0.4412 (&gt; 0.05 정규성 만족)</span>
+
+<span class="comment"># Step 2. 등분산성 확인 (H0: 두 집단의 분산은 같다 / H1: 분산은 다르다)</span>
+<span class="kw">install.packages</span>(<span class="hl">"lawstat"</span>)
+<span class="kw">library</span>(lawstat)
+<span class="kw">levene.test</span>(datat$height, datat$group, location=<span class="hl">'mean'</span>)
+<span class="comment"># → 결과: Test Statistic = 1.9199, p-value = 0.1742 (&gt; 0.05이므로 H0 채택 → 등분산성 만족!)</span>
+
+<span class="comment"># Step 3. 등분산 가정(var.equal=TRUE) 독립표본 t-test 수행</span>
+<span class="kw">t.test</span>(data=datat, <span class="hl">height ~ group</span>, <span class="hl">var.equal=TRUE</span>)
+<span class="comment"># → 결과: t = 3.9898, df = 38, p-value = 0.0002911 (&lt; 0.05이므로 H0 기각!)</span>
+<span class="comment"># → 대구 평균(156.1165)과 서울 평균(144.9822)은 통계적으로 유의미한 차이가 있다.</span>
+
+<span class="comment"># -------------------------------------------------------------------------</span>
+<span class="comment"># [3] 대응표본 t-test (p.21~24: 고혈압 환자 A약 복용 전/후 혈압 비교)</span>
+<span class="comment"># Step 1. 전/후 차이 변수(datadiff) 생성 및 차이값의 정규성 확인</span>
+<span class="hl">datadiff = datat2$after - datat2$before</span>
+<span class="kw">shapiro.test</span>(datadiff)
+<span class="comment"># → 결과: W = 0.91098, p-value = 0.06655 (&gt; 0.05이므로 H0 채택 → 차이값의 정규성 만족!)</span>
+
+<span class="comment"># Step 2. 대응표본 t-test 수행</span>
+<span class="kw">t.test</span>(datadiff)
+<span class="comment"># → 결과: t = -7.6951, df = 19, p-value = 2.97e-07 (&lt; 0.05이므로 H0 기각!)</span>
+<span class="comment"># → 평균 차이(mean of x) = -33.65 → A약 복용 전/후 혈압에는 통계적으로 유의미한 차이가 있다.</span></div>
+          </div>
+        </details>
+
+        <!-- ==================== CHAPTER 7 ==================== -->
+        <h3 id="c7">7. 상관분석 · 단순선형회귀분석 · R 회귀 <code>summary</code> 해석 · SRT/CRT/Sternberg 회귀 실습 (6주차-2)</h3>
+        <div class="quote block">상관분석(<span class="eng-badge">Correlation analysis</span>)은 두 변수 간 선형 관계의 강도(\(r\))를 대칭적으로 보고, 회귀분석(<span class="eng-badge">Regression analysis</span>)은 독립변수(\(X\))가 종속변수(\(Y\))에 미치는 함수식을 최소제곱법(OLS)으로 추정해 설명·예측한다. (회귀 교안 p.2–15)</div>
+
+        <details class="toggle block" open>
+          <summary>7.1 공분산 · 피어슨 상관계수(\(r\)) · 단순선형회귀 OLS · 분산분석(ANOVA) 및 결정계수(\(R^2\)) (회귀 교안 p.2–20)</summary>
+          <div class="toggle-content">
+            <div class="formula">
+              \[\text{모집단 공분산: }\mathrm{Cov}(X,Y) = E[(X-\mu_X)(Y-\mu_Y)], \qquad \text{모집단 상관계수: }\rho = \frac{\mathrm{Cov}(X,Y)}{\sigma_X \sigma_Y}\]
+              \[\text{표본 공분산: }s_{XY} = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{n-1}, \qquad \text{표본 상관계수: }r = \frac{s_{XY}}{s_X s_Y} = \frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum(x_i-\bar{x})^2 \sum(y_i-\bar{y})^2}} \in [-1, 1]\]
+            </div>
+            <ul class="note-list">
+              <li><strong>상관계수의 성질 (p.3–6)</strong>:
+                <ul class="note-list">
+                  <li>공분산과 상관계수의 부호는 일치한다: \(\mathrm{Cov}(X,Y) &gt; 0 \Leftrightarrow r &gt; 0\) (같은 방향 증가, 양의 선형관계), \(\mathrm{Cov}(X,Y) &lt; 0 \Leftrightarrow r &lt; 0\) (반대 방향 변화, 음의 선형관계), \(\mathrm{Cov}(X,Y) = 0 \Leftrightarrow r = 0\) (두 변수 간 <strong>선형 관계 없음</strong>).</li>
+                  <li>표본상관계수 \(r\)은 모상관계수 \(\rho\)와 동일한 성질을 가지며, 단위가 없는 무차원 수(\(-1 \le r \le 1\))이다.</li>
+                </ul>
+              </li>
+              <li><strong>회귀분석의 정의·종류·활용 (p.7–11)</strong>:
+                <ul class="note-list">
+                  <li>영향을 주는 변수를 <strong>독립변수(설명변수, <span class="eng-badge">Independent variable</span> \(X\))</strong>, 영향을 받는 변수를 <strong>종속변수(반응변수, <span class="eng-badge">Dependent / Response variable</span> \(Y\))</strong>라 한다.</li>
+                  <li><strong>단순회귀분석(<span class="eng-badge">Simple regression analysis</span>)</strong>은 독립변수 1개와 종속변수 1개의 관계를 다루며, 선형/비선형 여부를 확인하기 위해 먼저 <strong>산포도/산점도(<span class="eng-badge">Scatter plot</span>)</strong>를 그려본다. <strong>다중회귀분석(<span class="eng-badge">Multiple regression analysis</span>)</strong>은 2개 이상의 독립변수(\(y \sim x_1 + x_2\))를 다룬다.</li>
+                </ul>
+              </li>
+              <li><strong>최소제곱추정법 (<span class="eng-badge">OLS: Ordinary Least Squares</span>, p.12–16)</strong>:
+                <ul class="note-list">
+                  <li>회귀모형 \(Y_i = \beta_0 + \beta_1 x_i + \varepsilon_i\)에서 <strong>오차(잔차) 제곱의 합 \(\mathrm{SSE} = \sum_{i=1}^n (y_i - \hat{y}_i)^2\)이 최소가 되는 직선식 \(\hat{y} = b_0 + b_1 x\)</strong>를 추정한다:</li>
+                </ul>
+              </li>
+            </ul>
+            <div class="formula">
+              \[b_1 = \frac{S_{xy}}{S_{xx}} = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x})^2}, \qquad b_0 = \bar{y} - b_1 \bar{x}\]
+            </div>
+            <ul class="note-list">
+              <li><strong>단순선형회귀모형의 분산분석 (<span class="eng-badge">ANOVA: Analysis of Variance</span>) 및 결정계수 (\(R^2\)) (p.17–20)</strong>:
+                <ul class="note-list">
+                  <li><strong>편차의 분해 (p.17)</strong>: ① 총편차 \((y_i - \bar{y})\) = ② 회귀식에 의해 설명되지 않는 편차(잔차, \(y_i - \hat{y}_i\)) + ③ 회귀식에 의해 설명되는 편차 \((\hat{y}_i - \bar{y})\).</li>
+                  <li><strong>제곱합 항등식 (p.18)</strong>:
+                    \[\mathrm{SST}\;(\text{총제곱합 }\sum(y_i-\bar{y})^2) = \mathrm{SSR}\;(\text{회귀제곱합 }\sum(\hat{y}_i-\bar{y})^2) + \mathrm{SSE}\;(\text{잔차제곱합 }\sum(y_i-\hat{y}_i)^2)\]
+                    → <strong>\(\mathrm{SSE}\)가 작을수록, \(\mathrm{SSR}\)이 클수록 회귀식의 정도(적합도)가 좋다!</strong></li>
+                  <li><strong>결정계수 (<span class="eng-badge">Coefficient of Determination</span>, \(R^2\) 또는 \(r^2\), p.20)</strong>:
+                    \[R^2 = \frac{\mathrm{SSR}}{\mathrm{SST}} = 1 - \frac{\mathrm{SSE}}{\mathrm{SST}} \quad (0 \le R^2 \le 1)\]
+                    → 독립변수가 종속변수의 변동을 얼마나 잘 설명하는지 측정하며, \(1\)에 가까울수록 설명력이 높다.</li>
+                </ul>
+              </li>
+            </ul>
+            <table class="study-table">
+              <thead><tr><th>분산분석표 (p.19) 요인</th><th>제곱합 (SS)</th><th>자유도 (df)</th><th>평균제곱 (MS)</th><th>\(F\) 통계량</th><th>\(P\)-value</th></tr></thead>
+              <tbody>
+                <tr><td><strong>회귀 (Regression)</strong></td><td>\(\mathrm{SSR}\)</td><td>\(1\)</td><td>\(\mathrm{MSR} = \mathrm{SSR} / 1\)</td><td>\(F = \dfrac{\mathrm{MSR}}{\mathrm{MSE}}\)</td><td>회귀모형 유의확률</td></tr>
+                <tr><td><strong>잔차 (Error)</strong></td><td>\(\mathrm{SSE}\)</td><td>\(n - 2\)</td><td>\(\mathrm{MSE} = \mathrm{SSE} / (n-2)\)</td><td></td><td></td></tr>
+                <tr><td><strong>합계 (Total)</strong></td><td>\(\mathrm{SST}\)</td><td>\(n - 1\)</td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>7.2 R 단순선형회귀 코드 및 <code>summary(model)</code> 결과표 완벽 서술 가이드 (회귀 교안 p.21–25 — 서술형 1순위!)</summary>
+          <div class="toggle-content">
+            <div class="code-box"><span class="comment"># [단순선형회귀 R 실습 코드 (교안 p.22~24: 적성검사점수 x → 업무만족도 y)]</span>
+<span class="kw">plot</span>(regression1$적성검사점수, regression1$업무만족도)   <span class="comment"># 1. 산점도 그래프가 선형 형식임을 먼저 확인!</span>
+x &lt;- regression1$적성검사점수                            <span class="comment"># 2. 독립변수(설명변수) x 할당</span>
+y &lt;- regression1$업무만족도                              <span class="comment"># 3. 종속변수(반응변수) y 할당</span>
+model &lt;- <span class="kw">lm</span>(<span class="hl">y ~ x</span>)                                      <span class="comment"># 4. 단순선형회귀모형 적합 (주의: 종속변수 y ~ 독립변수 x 순서!)</span>
+<span class="kw">summary</span>(model)                                          <span class="comment"># 5. 회귀계수, R², F검정 p-value 요약 확인</span>
+<span class="kw">abline</span>(<span class="kw">lm</span>(y ~ x), <span class="hl">lty=1</span>, <span class="hl">col="blue"</span>)                    <span class="comment"># 6. 산점도 위에 파란색 실선(lty=1: 직선모양 결정) 회귀선 추가</span></div>
+
+            <div class="r-output-box"><strong>[교안 p.25 R summary(model) 출력 화면 및 서술형 3대 채점 포인트]</strong>
+Call:
+lm(formula = y ~ x)
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)  <strong>30.9333</strong>     9.1066   3.397 <strong>0.006808 **</strong>   👈 <strong>[① 회귀계수의 유의성 검정]</strong> 절편 b₀=30.93 (p&lt;0.05 유의)
+x             <strong>0.8705</strong>     0.1876   4.640 <strong>0.000922 ***</strong>  👈 <strong>[① 회귀계수의 유의성 검정]</strong> 기울기 b₁=0.87 (p&lt;0.05 유의)
+---                                                      <strong>⇒ 추정된 회귀식: y(업무만족) = 30.93 + 0.87 x(적성검사)</strong>
+Residual standard error: 4.806 on 10 degrees of freedom
+Multiple R-squared:  <strong>0.6828</strong>,    Adjusted R-squared:  <strong>0.6511</strong>  👈 <strong>[② 추정된 회귀식의 타당성]</strong> 업무만족도 변화의 <strong>68.3%</strong> 설명!
+F-statistic: <strong>21.53</strong> on 1 and 10 DF,  p-value: <strong>0.0009218</strong>       👈 <strong>[③ 회귀모형의 유의성 검정]</strong> 회귀식 자체가 통계적으로 유의함(p&lt;0.05)!</div>
+
+            <ul class="note-list">
+              <li><strong>기출 서술형 문제 대비 — <code>summary(model)</code>의 각 값이 의미하는 바 서술 템플릿</strong>:
+                <ol class="note-list">
+                  <li><strong><code>Coefficients</code>의 <code>Estimate</code> (<code>30.9333</code>, <code>0.8705</code>)와 <code>Pr(&gt;|t|)</code></strong>:
+                    절편(\(b_0 = 30.93\))과 기울기(\(b_1 = 0.87\)) 추정치로, <strong>추정된 회귀식은 \(\hat{y}(\text{업무만족}) = 30.93 + 0.87x(\text{적성검사})\)</strong>이다(적성검사 점수가 1점 증가할 때 업무만족도는 평균 0.87점 증가). 두 계수의 <code>Pr(&gt;|t|)</code>(유의확률)가 각각 \(0.0068, 0.000922\)로 모두 \(0.05\)보다 작으므로 <strong>절편과 기울기 회귀계수가 모두 통계적으로 유의미하다(신뢰하여 사용할 수 있다)</strong>.</li>
+                  <li><strong><code>Multiple R-squared</code> (<code>0.6828</code>) 및 <code>Adjusted R-squared</code> (<code>0.6511</code>)</strong>:
+                    <strong>추정된 회귀식의 타당성(설명력, 현실적 중요성)</strong>을 나타내는 결정계수(\(R^2\))로, 적성검사 점수를 이용한 이 회귀식이 <strong>종속변수(업무만족도) 전체 변화의 약 68.3%(보정 시 65.1%)를 설명</strong>하고 있음을 뜻한다.</li>
+                  <li><strong>맨 아랫줄 <code>F-statistic: 21.53</code> 및 <code>p-value: 0.0009218</code></strong>:
+                    <strong>회귀모형 자체의 통계적 유의성 검정</strong> 결과로, \(p\text{-value} = 0.0009218 &lt; 0.05\)이므로 독립변수와 종속변수를 이 1차 선형 회귀식으로 설명하는 <strong>회귀모형 자체가 통계적으로 유의하다</strong>.</li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="toggle block" open>
+          <summary>7.3 SRT · CRT · Sternberg 실험 프로그램 구조 및 회귀 실습 해석 (data_분석_SRTCRTSterberg.pdf &amp; 실습 전사)</summary>
+          <div class="toggle-content">
+            <ul class="note-list">
+              <li><strong>SRT &amp; CRT 실험 프로그램 (<code>SimpleAndChoiceResponse.exe</code>) 및 Hick 회귀 변환</strong>:
+                <ul class="note-list">
+                  <li><strong>SRT (1-1)</strong>: 자극 1개(화면에 <code>X</code> 출현) \(\to\) 반응 1개(<code>Space bar</code> 누르기), 20회 반복. 대안 수 \(N = 1 \Rightarrow\) 정보량 <strong>\(H = \log_2 1 = \mathbf{0\text{ bit}}\)</strong>.</li>
+                  <li><strong>2-Choice CRT (2-2)</strong>: 좌/우 2개 위치 중 <code>X</code> 출현 \(\to\) 왼쪽(0)이면 <code>C</code>키, 오른쪽(1)이면 <code>B</code>키, 20회 반복. 대안 수 \(N = 2 \Rightarrow\) 정보량 <strong>\(H = \log_2 2 = \mathbf{1\text{ bit}}\)</strong>.</li>
+                  <li><strong>4-Choice CRT (4-4)</strong>: 4개 위치(0~3) 중 <code>X</code> 출현 \(\to\) 대응하는 <code>X / C / B / N</code> 키, 20회 반복. 대안 수 \(N = 4 \Rightarrow\) 정보량 <strong>\(H = \log_2 4 = \mathbf{2\text{ bits}}\)</strong>.</li>
+                  <li><strong>R 회귀 적합</strong>: 총 60개 시행 데이터를 모아 독립변수 <strong>\(X = \text{bit } (0, 1, 2)\)</strong>, 종속변수 <strong>\(Y = \text{Time (ms)}\)</strong>로 두고 <code>model_regression &lt;- lm(y ~ x)</code> 실행.</li>
+                  <li><strong>교수님 실습 샘플 R 출력 판독 (전사 중요 포인트!)</strong>:
+                    교수님이 대충 누른 샘플 데이터에서는 회귀식이 \(\hat{y} = 424 + 78x\)로 나왔으나, <strong>모형 <code>p-value = 0.16</code> (\(&gt; 0.05\)), <code>Multiple R-squared ≈ 0.03</code> (3%), <code>Adjusted R-squared ≈ 0.01</code> (1%)</strong>, 절편만 유의하고 기울기 \(x\)의 \(p &gt; 0.05\)로 나타남 \(\Rightarrow\) <strong>“\(p &gt; 0.05\)이고 설명력이 3%에 불과하므로 선형 회귀식으로 설명하기 부적합하며 기울기 계수도 유의하지 않은 나쁜 데이터”</strong>라고 해석함!</li>
+                </ul>
+              </li>
+              <li><strong>Sternberg 기억탐색 실험 프로그램 (<code>SternbergTest.exe</code>) 및 회귀 분리 원칙</strong>:
+                <ul class="note-list">
+                  <li>기억집합 크기(<span class="eng-badge">PSS</span>)를 <strong>3개, 4개, 5개, 6개</strong>로 바꾸며 각 20회씩 수행. 제시된 검사 숫자(<code>Number</code>)가 집합 안에 있었으면 <strong><code>V</code>키(True/YES)</strong>, 없었으면 <strong><code>N</code>키(False/NO)</strong> 입력. 제한시간 초과(<code>TimeOut</code>, 입력값 <code>-1</code>) 시 걸린 시간은 항상 <strong><code>5000 ms</code> (5초)</strong>로 기록됨.</li>
+                  <li><strong>엑셀 전처리 및 회귀 핵심 원칙</strong>: 기억집합 크기에 따라 \(X = \log_2(3), \log_2(4), \log_2(5), \log_2(6)\) (또는 PSS)로 변환하되, 반드시 <strong>집합에 숫자가 실제로 있었던 경우(Target-present / YES)와 없었던 경우(Target-absent / NO)를 두 개의 별도 데이터셋으로 분리하여 각각 회귀분석(<code>lm</code>)을 돌려야</strong> Sternberg의 두 직선(<code>NO &gt; YES</code>)을 확인할 수 있다.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- ==================== ENGLISH GLOSSARY SECTION ==================== -->
+        <h3 id="englishTerms">주관식(단답형) 대비 필수 영문 용어 사전 (English Terminology Glossary)</h3>
+        <p class="muted">공지사항: <strong>“* 주관식의 경우는, 영어로 용어 작성해야 합니다.”</strong> 시험에 바로 출제될 수 있는 1~6주차 핵심 영문 용어와 정확한 스펠링입니다.</p>
+        <table class="study-table block">
+          <thead><tr><th>단원</th><th>필수 영문 용어 (Spelling)</th><th>핵심 정의 및 출제 단서</th></tr></thead>
+          <tbody>
+            <tr><td>1주</td><td><strong><code>Ergonomics</code></strong> / <strong><code>Human Factors</code></strong></td><td>그리스어 <code>Ergon</code>(work) + <code>Nomos</code>(laws); 인간의 특성을 설계에 적용해 인간 안녕과 시스템 성능을 최적화하는 학문 (유럽: <code>Ergonomics</code>, 미국: <code>Human Factors</code>, 미군: <code>Human Engineering</code>, 미국 심리학계: <code>Engineering Psychology</code>)</td></tr>
+            <tr><td>1주</td><td><strong><code>Fitting the System to the Human</code></strong></td><td>인간공학적 설계 철학(<code>ergonomic design</code>) vs 전통적 설계 철학(<code>Fitting the Human to the System</code>: 선발 <code>selection</code> &amp; 훈련 <code>training</code>)</td></tr>
+            <tr><td>1주</td><td><strong><code>therbligs</code> (또는 <code>therblig</code>)</strong></td><td>Frank &amp; Lillian Gilbreth 부부가 시간·동작 연구(<code>Time &amp; Motion study</code>)에서 고안한 <strong>미세동작분석(<code>Micro-motion analysis</code>)의 18가지 기본 손동작 단위</strong></td></tr>
+            <tr><td>1주</td><td><strong><code>Physical Ergonomics</code> / <code>Cognitive Ergonomics</code></strong></td><td>신체 인간공학(인체측정·생리·생체역학) / 인지 인간공학(지각·기억·추론·운동반응 등 정신 과정 <code>mental process</code>)</td></tr>
+            <tr><td>2주</td><td><strong><code>Descriptive</code> / <code>Experimental</code> / <code>Evaluation Research</code></strong></td><td>기술 연구(인체치수·BMI 등 속성 기술) / 실험 연구(독립변수 조작 효과 검정) / 평가 연구(제품의 효과성·사용성 <code>usability</code> 평가)</td></tr>
+            <tr><td>2주</td><td><strong><code>Laboratory Study</code> / <code>Field Study</code></strong></td><td>실험실 연구(통제·반복·정확성 유리, 일반화 불리) / 현장 연구(충실도 <code>fidelity</code>·일반화 유리, 고비용·통제 난이·안전 문제)</td></tr>
+            <tr><td>2주</td><td><strong><code>Independent Variable</code> / <code>Dependent Variable</code></strong></td><td>독립변수(연구자가 조작하는 변수) / 종속변수(측정되는 결과 변수; 외생변수는 통제 <code>Control</code> 또는 층화 <code>Stratification</code>)</td></tr>
+            <tr><td>2주</td><td><strong><code>Representativity</code> / <code>Random Sampling</code></strong></td><td>표본이 목표 모집단을 편향(<code>Bias</code>) 없이 대표하는 성질(대표성) / 무작위 표집</td></tr>
+            <tr><td>2주</td><td><strong><code>Significant Level</code> (\(\alpha\)) / <code>Precision</code> (\(k\))</strong></td><td>유의수준(오류 감수 위험: \(\alpha=0.05 \to z=1.96\)) / 정밀도(평균 대비 허용 오차 비율; 절대오차 \(= k\bar{x}\))</td></tr>
+            <tr><td>2주</td><td><strong><code>Unobtrusive</code></strong></td><td>측정 기준의 실무 요건 중 피험자의 자연스러운 과업 수행을 방해하지 않아야 한다는 성질</td></tr>
+            <tr><td>2주</td><td><strong><code>Reliability</code> / <code>Validity</code></strong></td><td>신뢰도(반복 측정 시 일관성·안정성 <code>consistency or stability</code>) / 타당도(의도한 대상을 실제로 측정하는 정도)</td></tr>
+            <tr><td>2주</td><td><strong><code>Internal Validity</code> / <code>External Validity</code></strong></td><td>내적 타당도(혼동변수 <code>confounding</code> 배제) / 외적 타당도(다른 대상·환경으로의 일반화 가능성 <code>generalizability</code>)</td></tr>
+            <tr><td>2주</td><td><strong><code>Construct Validity</code>: <code>Deficiency</code> &amp; <code>Contamination</code></strong></td><td>구성타당도: <strong><code>Deficiency</code>(결핍: 구성개념 중 측정에서 누락된 부분)</strong> vs <strong><code>Contamination</code>(오염: 구성개념과 무관한데 측정에 섞여든 부분)</strong></td></tr>
+            <tr><td>4주</td><td><strong><code>Short-term Sensory Store (STSS)</code></strong></td><td>인간 정보처리 모형에서 자극(<code>Stimuli</code>)이 가장 먼저 짧게 머무는 단기감각기억 저장소</td></tr>
+            <tr><td>4주</td><td><strong><code>Perception</code> / <code>Working Memory</code> / <code>Long-term Memory</code></strong></td><td>지각 / 작업기억(단기기억, 지속시간 <code>20~30 sec</code>) / 장기기억</td></tr>
+            <tr><td>4주</td><td><strong><code>Decision and Response Selection</code> / <code>Response Execution</code></strong></td><td>의사결정 및 반응 선택 / 반응 실행 (상단에는 <code>Attention resources</code>, 하단에는 <code>Feedback</code> 루프)</td></tr>
+            <tr><td>4주</td><td><strong><code>Bit (Binary Digit)</code> / <code>Redundancy</code></strong></td><td>정보량 기본 단위(등확률 2대안 결정량) / 중복도(\((1 - H_{\text{target}}/H_{\max})\times 100\))</td></tr>
+            <tr><td>5주</td><td><strong><code>Transmitted Information</code> / <code>Equivocation</code> / <code>Noise</code></strong></td><td>전달정보량 \(H(X\cap Y)\) / <strong>모호도·손실정보(<code>Equivocation</code>, miss) \(H(X|Y)\)</strong> / <strong>잡음(<code>Noise</code>, false) \(H(Y|X)\)</strong></td></tr>
+            <tr><td>5주</td><td><strong><code>Channel Capacity</code></strong></td><td>채널 용량: 인간이 단위 시간당 처리할 수 있는 최대 정보 전달량 (단위: <code>bits/sec</code>, 점근값 <code>asymptotic value</code>)</td></tr>
+            <tr><td>5주</td><td><strong><code>Rehearsal</code> / <code>Chunking</code></strong></td><td>시연(작업기억 유지를 위한 되뇌기) / 청킹(정보를 의미 단위로 묶고 <code>grouping</code> 장기기억 지식과 연결)</td></tr>
+            <tr><td>5주</td><td><strong><code>Absolute Judgment</code> / <code>Relative Judgment</code></strong></td><td>절대 판단(기억 속 기준과 단일 자극 비교) / 상대 판단(두 자극을 나란히 두고 비교 <code>side by side</code> — 채널 용량 향상)</td></tr>
+            <tr><td>5주</td><td><strong><code>Positive Set</code> / <code>Probe</code> / <code>Serial Processor</code></strong></td><td>Sternberg 과제의 기억집합 / 검사 자극 / 직렬 처리자(집합 크기 증가 시 RT 선형 증가)</td></tr>
+            <tr><td>5주</td><td><strong><code>Self-terminating Search</code> / <code>Exhaustive Search</code></strong></td><td>자기종료 탐색(찾으면 즉시 탐색 종료, 교안 <code>YES</code>) / 전수 탐색(끝까지 모두 비교 후 응답, 교안 <code>NO</code>)</td></tr>
+            <tr><td>5주</td><td><strong><code>Simple / Choice / Discrimination Reaction Time</code></strong></td><td>Donders A(<code>SRT</code>, 1S-1R) / Donders B(<code>CRT</code>, MS-MR, <strong><code>Hick's Law</code></strong>) / Donders C(변별 반응시간, MS-1R)</td></tr>
+            <tr><td>5주</td><td><strong><code>Fitts' Law</code> / <code>Index of Difficulty (ID)</code></strong></td><td>피츠의 법칙 (\(\mathrm{MT} = a + b\cdot\mathrm{ID}\)) / 난이도 지수 (\(\log_2(2A/W)\) 또는 \(\log_2(D/W+1)\))</td></tr>
+            <tr><td>6주</td><td><strong><code>Positioning Movement (Closed Loop)</code></strong></td><td>피드백(<code>feedback</code>)을 받아 오차를 실시간 수정하며 목표에 정밀 도달하는 폐회로 위치 조정 움직임</td></tr>
+            <tr><td>6주</td><td><strong><code>Ballistic Movement (Open Loop)</code></strong></td><td>피드백 없이 사전 계획된 대로 한 번에 빠르게 실행되는 개회로 탄도 움직임</td></tr>
+            <tr><td>6주</td><td><strong><code>Range Effect</code>: <code>Overshoot</code> &amp; <code>Undershoot</code></strong></td><td>범위 효과: 짧은 거리는 목표를 지나침(<strong><code>Overshoot</code></strong>), 긴 거리는 목표에 못 미침(<strong><code>Undershoot</code></strong>)</td></tr>
+            <tr><td>6주</td><td><strong><code>Compatibility</code> / <code>Population Stereotype</code> / <code>Affordance</code></strong></td><td>양립성 / 집단 고정관념(제어-표시 관계에 대한 대중의 공통 기대) / 행동유도성(직관적 행동을 유도하는 속성)</td></tr>
+            <tr><td>6주</td><td><strong><code>Spatial / Movement / Conceptual / Modality Compatibility</code></strong></td><td>공간 양립성(배치 일치) / 운동 양립성(이동 방향 일치) / 개념 양립성(색·기호 연상 일치) / 양식 양립성(감각·반응 양식 일치)</td></tr>
+          </tbody>
+        </table>
+
+        <!-- ==================== BLANKS & CALCULATIONS & R CODE ==================== -->
+        <h3 id="blanks">교안 계산 예제 · 빈칸(`?`) · R 코드 전수 정리</h3>
+        <p class="muted">교안 슬라이드에`?`로 제시된 모든 계산 문제와 R 실습 스크립트의 정확한 정답입니다.</p>
+        <table class="study-table block">
+          <thead><tr><th>원본 위치</th><th>교안 질문 / 빈칸 (`?`)</th><th>정확한 계산식 및 정답</th></tr></thead>
+          <tbody>
+            <tr><td class="blank-page">HFE p.19</td><td>파일럿 \(n_0=5, \bar{x}=100, s=10, \alpha=0.05, k=0.05\)일 때 적정 표본 수 \(n\)과 추가 필요 인원?</td><td>\(n = \left(\dfrac{1.96 \times 10}{0.05 \times 100}\right)^2 = 3.92^2 = 15.366 \approx \mathbf{16\text{명}}\) \(\Rightarrow\) 파일럿 5명 제외 <strong>추가 <code>11명</code> (11 more samples)</strong> 필요.</td></tr>
+            <tr><td class="blank-page">Info p.8</td><td><code>1 bit = 2 alternatives</code>, <code>2 bits = 4 alternatives</code>, <strong><code>4 bits = ?</code></strong></td><td>\(2^4 = \mathbf{16\text{ alternatives}}\) (등확률 16개 대안).</td></tr>
+            <tr><td class="blank-page">Info p.9</td><td>\(P_1 = 0.2, P_2 = 0.8\)일 때 가중평균 정보량 \(H_{\text{avg}}\)?</td><td>\(H_1 = \log_2(1/0.2) = 2.322\), \(H_2 = \log_2(1/0.8) = 0.322\) \(\Rightarrow H_{\text{avg}} = 0.2(2.322) + 0.8(0.322) = \mathbf{0.722\text{ bits}}\).</td></tr>
+            <tr><td class="blank-page">Info p.10–11</td><td>공정 동전(\(0.5, 0.5\)) vs 휜 동전(\(0.9, 0.1\))의 \(H\)와 \(\%\text{Redundancy}\)?</td><td>\(H_{\text{fair}} = \mathbf{1\text{ bit}}\), \(H_{\text{bent}} = 0.9\log_2(1/0.9) + 0.1\log_2(1/0.1) = \mathbf{0.468\text{ bit}}\), \(\%\text{Redundancy} = (1 - 0.468/1)\times 100 = \mathbf{53.2\%}\).</td></tr>
+            <tr><td class="blank-page">Info p.12–13</td><td>8개 경고등: 등확률일 때 \(H=\)? / \(P_1=P_2=0.35, P_3\sim P_8=0.05\)일 때 \(H=\)?, \(\%\text{Redundancy}=\)?</td><td>등확률 \(H_{\max} = \log_2 8 = \mathbf{3\text{ bits}}\). 비등확률 \(H = 2(0.35\log_2(1/0.35)) + 6(0.05\log_2(1/0.05)) = \mathbf{2.3568\text{ bits}}\). \(\%\text{Redundancy} = (1 - 2.3568/3)\times 100 = \mathbf{21.44\%}\).</td></tr>
+            <tr><td class="blank-page">Info p.14</td><td>신호등: 기존 신호등 \(H_{\text{current}}=\)? / 4초 카운트다운 새 신호등 \(H_{\text{new}}=\)?, \(\%\text{Redundancy}=\)?</td><td>\(H_{\text{current}} = \log_2 2 = \mathbf{1\text{ bit}}\) (바뀜/안 바뀜 등확률 가정), \(H_{\text{new}} = \mathbf{0\text{ bit}}\) (확정 정보) \(\Rightarrow \%\text{Redundancy} = \mathbf{100\%}\).</td></tr>
+            <tr><td class="blank-page">Info p.17–18</td><td>4지선다 16문항 시험 응답 표의 \(H(X), H(Y), H(X\cup Y), H(X\cap Y), H(X|Y), H(Y|X)\)?</td><td>\(H(X) = \mathbf{2.0\text{ bits}}\), \(H(Y) = \mathbf{1.5\text{ bits}}\), \(H(X\cup Y) = \mathbf{2.0\text{ bits}}\), 전달정보량 \(H(X\cap Y) = \mathbf{1.5\text{ bits}}\), 모호도 \(H(X|Y) = \mathbf{0.5\text{ bits}}\), 잡음 \(H(Y|X) = \mathbf{0\text{ bits}}\).</td></tr>
+            <tr><td class="blank-page">Info p.36</td><td>Hick 법칙에서 \(b = 150\text{ ms/bit}\)일 때 눈-손 과업의 채널 용량(\(1/b\))은?</td><td>\(1 / 0.15\text{ sec} = \mathbf{6.67\text{ bits/sec}}\) (말하기 \(10\text{ bits/sec}\), 읽기 \(50\text{ bits/sec}\)).</td></tr>
+            <tr><td class="blank-page">Info p.47</td><td>Fitts 법칙 \(a=50, b=150\), ISO 식 기준 ① \(D=80, W=20\) ② \(D=100, W=10\)의 \(\mathrm{ID}\)와 \(\mathrm{MT}\)?</td><td>① \(\mathrm{ID} = \log_2 5 \approx \mathbf{2.3219\text{ bits}}, \mathrm{MT} \approx \mathbf{398.29\text{ ms}}\)<br>② \(\mathrm{ID} = \log_2 11 \approx \mathbf{3.4594\text{ bits}}, \mathrm{MT} \approx \mathbf{568.91\text{ ms}}\).</td></tr>
+            <tr><td class="blank-page">Reg p.21–25</td><td>12명 사원 적성검사(\(x\))·업무만족(\(y\)) 회귀식, \(R^2\), \(F\), \(p\)-value?</td><td>\(\hat{y} = \mathbf{30.93 + 0.87x}\) (\(b_0=30.9333, b_1=0.8705\)), \(R^2 = \mathbf{0.6828}\) (68.3% 설명), \(\text{Adj } R^2 = \mathbf{0.6511}\), \(F(1,10) = \mathbf{21.53}\), \(p = \mathbf{0.0009218}\).</td></tr>
+          </tbody>
+        </table>
+
+        <!-- ==================== SCOPE & VERIFICATION ==================== -->
+        <h3 id="scope">교안·전사 원문 검증 및 시험장 주의점 (원문과 검증)</h3>
+        <div class="callout black block">
+          <div class="callout-icon">!</div>
+          <div><strong>교안 원문 표현과 엄밀한 통계·수식 기준 동시 대비 (어떤 채점 기준에도 만점 방어!)</strong><br />
+          1. <strong>t-검정 교안의 <code>P-value &gt; 0.05 → H0 채택</code> 표현 (t-test 교안 p.13, 18, 19, 23)</strong>: 교안 슬라이드에는 <code>p &gt; 0.05 → H0 채택(정규성/등분산성 만족)</code>으로 적혀 있습니다. 서술형에서는 <strong>“\(p &gt; 0.05\)이므로 귀무가설(\(H_0\))을 채택하여(기각하지 못하여) 정규성/등분산성 가정을 만족하는 것으로 판단한다”</strong>라고 교안 표현과 통계적 표현을 함께 적어주면 완벽합니다.<br />
+          2. <strong>기초통계 정렬 함수 대소문자 (t-test 교안 p.3–4)</strong>: p.3 슬라이드 텍스트에는 <code>Sort(baseball$득점, decreasing=TRUE)</code>로 첫 글자가 대문자로 인쇄되어 있으나, p.4 실제 RStudio 캡처 화면과 R 문법에서는 반드시 소문자 <strong><code>sort(...)</code></strong>를 사용해야 작동합니다.<br />
+          3. <strong>회귀 교안 p.21 표(\(X_9 = 55\)) vs. 실습 엑셀 <code>regression1.xlsx</code>(\(X_9 = 65\))</strong>: 교안 p.25의 R <code>summary(model)</code> 출력(\(b_0=30.9333, b_1=0.8705, R^2=0.6828, F=21.53\))은 엑셀 파일(\(X_9 = 65\))로 돌린 결과입니다.<br />
+          4. <strong>정보전달이론 기호 표기 (Info 교안 p.16–18)</strong>: 교안에서는 결합 엔트로피를 합집합 기호 <strong>\(H(X \cup Y)\)</strong>(표준 표기 \(H(X,Y)\)), 전달정보량(상호정보량)을 교집합 기호 <strong>\(H(X \cap Y)\)</strong> 또는 <strong>\(T(X,Y)\)</strong>, 조건부 엔트로피를 <strong>\(H(X/Y), H(Y/X)\)</strong>(표준 표기 \(H(X|Y), H(Y|X)\))로 표기합니다. 시험에서는 두 기호를 모두 알아두고 문제의 표기에 맞춰 적으세요.</div>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="problems" data-search-title="예상문제">
+        <h2>예상문제</h2>
+        <p class="muted">개념 정리 확인 후 다음 단계에서 O/X → 다지선다 → 단답형(영문 용어)·서술형·코드작성 → 기출 5세트 문항이 이곳에 순차 탑재됩니다.</p>
+        <details class="problem-tools">
+          <summary>검색·시험 모드·진도 도구</summary>
+          <div class="tool-body">
+            <div class="quiz-controls">
+              <button class="strong" id="randomBtn">무작위 문제</button>
+              <button id="unsolvedBtn">다음 미완료</button>
+              <button id="examModeBtn">120분 · 실전 모의고사</button>
+              <button id="resetBtn">모든 문제 다시 풀기</button>
+            </div>
+            <input class="db-search" id="questionSearch" type="search" placeholder="문제 검색…" aria-label="문제 검색" />
+          </div>
+        </details>
+        <div class="database">
+          <div class="db-toolbar">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn" data-filter="single">단일선택</button>
+            <button class="filter-btn" data-filter="multi">복수선택</button>
+            <button class="filter-btn" data-filter="ox">O/X</button>
+            <button class="filter-btn" data-filter="calc">계산</button>
+            <button class="filter-btn" data-filter="case">사례·서술·코드</button>
+            <button class="filter-btn" data-filter="blank">교안 빈칸·R</button>
+            <button class="filter-btn" data-filter="priority">핵심</button>
+            <button class="filter-btn" data-filter="past">기출 세트</button>
+            <button class="filter-btn" data-filter="visual">📊 그림 문제</button>
+            <button class="filter-btn" data-filter="unanswered">미응답</button>
+            <button class="filter-btn" data-filter="again" id="againFilterBtn">오답 <span id="againArrow" style="display:inline-block;font-size:10px;margin-left:3px;">▾</span></button>
+            <button class="filter-btn" id="toolbarExamBtn" type="button" style="font-weight:750;">⏱ 실전·기출 시험 <span id="examArrow" style="display:inline-block;font-size:10px;margin-left:3px;">▾</span></button>
+            <button class="filter-btn" id="toolbarResetBtn" type="button" style="margin-left:auto;color:var(--muted);" title="답안 초기화">문제 초기화</button>
+          </div>
+          <div class="again-bar" id="againBar" style="display:none;align-items:center;justify-content:space-between;gap:8px;padding:9px 12px;background:#fff1ef;border:1px solid #fecdd3;border-radius:6px;margin:6px 6px 8px;color:#991b1b;">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <span style="font-weight:750;font-size:12.5px;">↺ 오답 복습 모드</span>
+              <span id="againCountBadge" style="background:#fee2e2;padding:2px 7px;border-radius:4px;font-size:11.5px;font-weight:700;">0문제</span>
+              <span id="againProgressBadge" style="font-size:11.5px;color:#7f1d1d;">0 / 0 해결</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+              <button class="small-btn" id="retryAllAgainBtn" type="button" style="background:#b91c1c;color:#fff;font-weight:750;border-color:#b91c1c;">↺ 오답 전체 다시 풀기 (선지 잠금 해제)</button>
+              <button class="small-btn" id="refreshAgainListBtn" type="button" style="background:#fff;color:#991b1b;border-color:#fca5a5;">최신 오답만 새로고침</button>
+              <button class="small-btn" id="exitAgainBtn" type="button" style="background:transparent;color:#7f1d1d;border-color:#fca5a5;">✕ 전체 문제로</button>
+            </div>
+          </div>
+          <div class="exam-bar" id="examBar" style="display:none;flex-direction:column;gap:8px;padding:10px 12px;background:#1e1e1e;color:#fff;border-radius:6px;margin:6px 6px 8px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;width:100%;">
+              <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                <span id="examTitleLabel" style="font-weight:750;font-size:12.5px;">📝 기출 모의고사 — 1세트</span>
+                <span id="examTimerBadge" style="background:#383838;padding:2px 7px;border-radius:4px;font-size:11.5px;font-variant-numeric:tabular-nums;color:#6ee7b7;font-weight:700;">120:00</span>
+                <span id="examProgressBadge" style="font-size:11.5px;color:#cbd5e1;">0 / 0 완료</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+                <button class="small-btn" id="examResetAnswersBtn" type="button" style="background:transparent;color:#fff;border-color:#666;">↺ 현재 답안 초기화</button>
+                <button class="small-btn" id="examExitBtn" type="button" style="background:transparent;color:#bbb;border-color:#555;">✕ 시험 종료 (전체 문제)</button>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;width:100%;padding-top:6px;border-top:1px solid #333;">
+              <span style="font-size:11.5px;color:#94a3b8;font-weight:650;margin-right:2px;">세트 선택:</span>
+              <button class="small-btn exam-set-btn" data-exam-set="1" type="button" style="background:#fff;color:#1e1e1e;font-weight:750;border-color:#fff;">기출 1세트</button>
+              <button class="small-btn exam-set-btn" data-exam-set="2" type="button" style="background:#2d2d2d;color:#e2e8f0;border-color:#555;">기출 2세트</button>
+              <button class="small-btn exam-set-btn" data-exam-set="3" type="button" style="background:#2d2d2d;color:#e2e8f0;border-color:#555;">기출 3세트</button>
+              <button class="small-btn exam-set-btn" data-exam-set="4" type="button" style="background:#2d2d2d;color:#e2e8f0;border-color:#555;">기출 4세트</button>
+              <button class="small-btn exam-set-btn" data-exam-set="5" type="button" style="background:#2d2d2d;color:#e2e8f0;border-color:#555;">기출 5세트</button>
+              <button class="small-btn" id="examRerollBtn" type="button" style="background:#334155;color:#f8fafc;border-color:#64748b;margin-left:auto;">🎲 무작위 추출</button>
+            </div>
+          </div>
+          <div id="questionList"></div>
+          <div class="empty-state" id="emptyState" style="display:block;">개념 정리가 완료되었습니다. 다음 단계(O/X → 다지선다 → 단답/서술/코드 → 기출 5세트)에서 문제가 탑재됩니다.</div>
+          <div class="practice-pager" id="practicePager">
+            <button id="practicePrev" type="button">← 이전</button>
+            <span class="practice-position" id="practicePosition">0 / 0</span>
+            <button id="practiceNext" type="button">다음 →</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="mistakes" data-search-title="오답 노트">
+        <h2>오답 노트</h2>
+        <p class="muted">틀린 문제와 오답 복습 항목이 이곳에 모입니다. 아래 버튼을 눌러 오답만 바로 다시 풀 수 있습니다.</p>
+        <div style="display:flex;gap:10px;margin:14px 0 16px;flex-wrap:wrap;">
+          <button id="goSolveMistakesBtn" type="button" style="padding:10px 18px;font-size:13.5px;font-weight:750;background:#1e1e1e;color:#fff;border-radius:6px;border:0;cursor:pointer;">✏️ 오답 문제 바로 풀기 (<span id="mistakeActionCount">0</span>문제)</button>
+          <button id="resetAndSolveMistakesBtn" type="button" style="padding:10px 18px;font-size:13.5px;font-weight:750;background:#fff;color:#b91c1c;border-radius:6px;border:1px solid #f87171;cursor:pointer;">↺ 오답 답안 초기화 후 다시 풀기</button>
+        </div>
+        <div class="database error-log" id="errorLog"><div class="empty-state" style="display:block">아직 등록된 오답이 없습니다.</div></div>
+      </section>
+
+      <section id="checklist" data-search-title="시험 직전 체크리스트">
+        <h2>시험 직전 체크리스트</h2>
+        <p class="muted">자료를 보지 않고 영어로 용어를 쓰거나 손으로 계산·코드를 적을 수 있을 때 체크하세요. 상태는 브라우저에 자동 저장됩니다.</p>
+        <div class="card block" id="checklistBox">
+          <div class="checkline"><input type="checkbox" id="ck1" /><label for="ck1">공지 일시(10/19 월 18:00–20:00), 장소(새빛관 102호), 준비물(연필·지우개), 주관식 영문 작성 규칙을 확인했다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck2" /><label for="ck2">UX 3시점·요소, Ergonomics 어원(Ergon+Nomos)·동의어, 설계 패러다임 전환(Fitting the System to the Human)을 영어로 설명한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck3" /><label for="ck3">Gilbreth 부부의 Time &amp; Motion study와 미세동작분석 단위 <code>therbligs</code>의 철자와 의미를 정확히 쓴다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck4" /><label for="ck4">Descriptive·Experimental·Evaluation 연구와 Laboratory vs Field 연구의 장단점을 구별한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck5" /><label for="ck5">적정 표본 수 공식 \(n = (z_{\alpha/2} s / (k \\bar{x}))^2\)으로 총 16명(파일럿 5명 제외 추가 11명)을 손으로 계산한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck6" /><label for="ck6">Reliability vs Accuracy 다트판 비교와 Internal / External / Construct Validity(Deficiency vs Contamination)를 영어로 쓴다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck7" /><label for="ck7">인간 정보처리 모형의 단계(STSS, Perception, Working/Long-term memory, Decision, Execution, Attention, Feedback)를 영어로 채운다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck8" /><label for="ck8">등확률 Hartley 식과 비등확률 Shannon 식, % Redundancy(휜 동전 53.2%, 8경고등 21.44%, 카운트다운 100%)를 계산한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck9" /><label for="ck9">자극–반응 혼동행렬 표에서 \(H(X), H(Y), H(X\\cup Y), H(X\\cap Y), \\text{Equivocation } H(X|Y), \\text{Noise } H(Y|X)\)를 소수점까지 계산한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck10" /><label for="ck10">정보전달이론의 함정(Trap: 100% 오답 매핑도 전달정보량이 100%가 되는 한계)을 서술할 수 있다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck11" /><label for="ck11">마법의 숫자 \(7\\pm 2\), 작업기억 시연(Rehearsal, 20~30초), 채널 용량 향상 3전략(Relative judgment, 다차원 자극, Chunking)을 설명한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck12" /><label for="ck12">Sternberg 기억탐색(Positive set, Probe, Serial processor, YES Self-terminating vs NO Exhaustive)과 Donders A/B/C 과업을 구분한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck13" /><label for="ck13">Hick 법칙 \(\\mathrm{RT}=a+bH\) 계산, 채널용량 \(1/b=6.67\\text{ bits/s}\), 절편 \(a\)(촉각&gt;청각&gt;시각, 눈&gt;손&gt;발)와 기울기 \(b\) 요인을 외웠다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck14" /><label for="ck14">Fitts 법칙 원형 \(\\log_2(2A/W)\)과 ISO \(\\log_2(D/W+1)\) 계산(398.29ms, 568.91ms), 부위별 기울기(팔뚝 105 &gt; 손목 43 &gt; 손가락 26)를 안다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck15" /><label for="ck15">Positioning(Closed loop) vs Ballistic(Open loop) 운동과 Range effect(짧은 거리 Overshoot, 긴 거리 Undershoot)를 구별한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck16" /><label for="ck16">Compatibility, Population stereotype, Affordance 및 4대 양립성(Spatial, Movement, Conceptual, Modality)을 영어로 쓴다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck17" /><label for="ck17">기초통계(sort, mean, median, var, sd, quantile, boxplot)와 단일·독립·대응표본 t-test R 코드(shapiro.test, levene.test, t.test)를 작성한다.</label></div>
+          <div class="checkline"><input type="checkbox" id="ck18" /><label for="ck18">단순선형회귀 R 코드(plot, lm, summary, abline)를 작성하고 <code>summary(model)</code>의 계수·R²(68.3%)·F p-value 의미를 한글로 서술한다.</label></div>
+        </div>
+      </section>
+
+      <section id="sources" data-search-title="근거 자료">
+        <h2>근거 자료 (로컬 마크다운 &amp; 원문 대조)</h2>
+        <p class="muted">이 Study OS는 아래 로컬 정리 문서 및 원본 교안·전사 대조본을 기반으로 제작되었습니다.</p>
+        <div class="source-grid">
+          <a class="source-link" href="00_범위와_출제정보.md"><strong>00. 범위와 출제정보</strong><span>10/19 공지 · 기출 6대 유형 · 단원 매핑</span></a>
+          <a class="source-link" href="01_핵심개념과_공식.md"><strong>01. 핵심개념·영문용어·공식·R코드</strong><span>주관식 영문 사전 · 수식 · R summary 총정리</span></a>
+          <a class="source-link" href="02_유형별_풀이전략.md"><strong>02. 유형별 풀이전략</strong><span>정보전달 표 6단계 계산 · R 서술 템플릿</span></a>
+          <a class="source-link" href="05_공지반영_범위누락검증.md"><strong>05. 범위 누락 전수검증</strong><span>PDF 7종 · 전사 10편 1:1 무누락 검증</span></a>
+          <a class="source-link" href="06_시험직전_체크리스트.md"><strong>06. 시험직전 체크리스트</strong><span>백지 복기용 18대 핵심 점검표</span></a>
+          <a class="source-link" href="../../99_자료관리/원문과_검증.md"><strong>원문과 검증 대장</strong><span>교안 오탈자 · 엑셀/표 수치 차이 기록</span></a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <button class="back-top" id="backTop" aria-label="맨 위로">↑</button>
+
+  <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="페이지 검색">
+    <div class="search-panel">
+      <div class="search-input-wrap"><span>⌕</span><input id="globalSearch" type="search" placeholder="개념, 영문 용어, 공식, R 코드 검색…" /><span class="kbd">ESC</span></div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <script>
+    const problems = [];
+    let supplementaryProblems = [];
+    const UNIVERSITY_OBJECTIVE_MAP = {};
+    const SUPPLEMENT_OBJECTIVE_MAP = {};
+    const PAST_EXAM_OBJECTIVE_MAP = {};
+    const PRIORITY_IDS = new Set();
+
+    function seededShuffle(values, seed){
+      const out=[...values]; let x=(Number(String(seed).replace(/\D/g,''))||17)+31;
+      for(let i=out.length-1;i>0;i--){x=(x*1664525+1013904223)>>>0;const j=x%(i+1);[out[i],out[j]]=[out[j],out[i]]}
+      return out;
+    }
+    function toObjective(q){
+      const key = String(q.id);
+      const spec = UNIVERSITY_OBJECTIVE_MAP[key] || SUPPLEMENT_OBJECTIVE_MAP[key] || PAST_EXAM_OBJECTIVE_MAP[key];
+      if(spec){
+        const opts = spec.type === 'ox' ? spec.options : seededShuffle(spec.options, key);
+        return {...q, objectiveType: spec.type, stem: spec.stem, options: opts};
+      }
+      return {...q, objectiveType:'single', stem:q.prompt, options:[{text:q.answer, correct:true, explanation:q.answer}]};
+    }
+    const getPracticeProblems=()=>[...problems,...supplementaryProblems];
+    const getObjectiveProblems=()=>getPracticeProblems().map(toObjective);
+
+    const KEY = 'psych-midterm-notion-v1';
+    let state = JSON.parse(localStorage.getItem(KEY) || '{"answers":{},"objectiveAnswers":{},"grades":{},"checks":{}}');
+    state.objectiveAnswers = state.objectiveAnswers || {};
+    state.grades = state.grades || {};
+    state.checks = state.checks || {};
+
+    let currentFilter = 'all';
+    let examTimer = null;
+    let examSeconds = 7200;
+    let examSet = [];
+    let currentExamSetMode = 1;
+    let againReviewSet = null;
+    let againBarOpen = false;
+    let examBarOpen = false;
+    let problemCursor = 0;
+    let visibleProblemCards = [];
+    let targetProblemId = null;
+    const draftSelections = {};
+    let pageView = 'notes';
+
+    function saveState(){ localStorage.setItem(KEY, JSON.stringify(state)); updateProgress(); renderErrorLog(); }
+    function esc(s){ return String(s||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+    function typesetMath(root){ if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise(root ? [root] : undefined).catch(()=>{}); }
+
+    function updateSectionVisibility(view){
+      const secMap = {
+        dashboard: document.getElementById('dashboard'),
+        now: document.getElementById('now'),
+        concepts: document.getElementById('concepts'),
+        problems: document.getElementById('problems'),
+        mistakes: document.getElementById('mistakes'),
+        checklist: document.getElementById('checklist'),
+        sources: document.getElementById('sources')
+      };
+      Object.entries(secMap).forEach(([id, el]) => {
+        if(!el) return;
+        if(view === 'problems') el.style.display = (id === 'problems') ? 'flex' : 'none';
+        else if(view === 'mistakes') el.style.display = (id === 'mistakes') ? 'block' : 'none';
+        else el.style.display = (id === 'problems' || id === 'mistakes') ? 'none' : '';
+      });
+      document.querySelectorAll('hr.divider').forEach(hr => {
+        hr.style.display = (view === 'notes') ? '' : 'none';
+      });
+      const side = document.getElementById('sidebar');
+      if(side) side.style.display = (view === 'notes') ? '' : 'none';
+    }
+
+    function setPageView(newView, push=true){
+      pageView = ['notes','problems','mistakes'].includes(newView) ? newView : 'notes';
+      document.body.classList.remove('view-notes','view-problems','view-mistakes');
+      document.body.classList.add('view-' + pageView);
+      updateSectionVisibility(pageView);
+      document.querySelectorAll('.app-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.view === pageView);
+      });
+      if(push){
+        try {
+          const url = new URL(location.href);
+          if(pageView === 'notes') url.searchParams.delete('view');
+          else url.searchParams.set('view', pageView);
+          history.pushState({view: pageView}, '', url);
+        } catch(e) {}
+      }
+      if(pageView === 'problems') applyProblemFilter();
+      if(pageView === 'mistakes') renderErrorLog();
+    }
+
+    function renderProblems(){
+      const list = document.getElementById('questionList');
+      const objectiveProblems = getObjectiveProblems();
+      const sideCount = document.getElementById('expectedCountSide');
+      if(sideCount) sideCount.textContent = objectiveProblems.length ? String(objectiveProblems.length) : '준비중';
+      if(!objectiveProblems.length){
+        list.innerHTML = '';
+        document.getElementById('emptyState').style.display = 'block';
+        document.getElementById('practicePosition').textContent = '0 / 0';
+        return;
+      }
+      // Full rendering logic ready for Phase 2~5 problem banks
+    }
+
+    function applyProblemFilter(){
+      renderProblems();
+    }
+
+    function renderErrorLog(){
+      const el = document.getElementById('errorLog');
+      const items = getPracticeProblems().filter(q => ['again','unsure'].includes(state.grades[q.id]));
+      const sideEl = document.getElementById('mistakeCountSide');
+      const actEl = document.getElementById('mistakeActionCount');
+      if(sideEl) sideEl.textContent = String(items.length);
+      if(actEl) actEl.textContent = String(items.length);
+      if(!el) return;
+      if(!items.length){
+        el.innerHTML = '<div class="empty-state" style="display:block">아직 등록된 오답이 없습니다.</div>';
+        return;
+      }
+    }
+
+    function updateProgress(){
+      const checkboxes = [...document.querySelectorAll('#checklistBox input[type="checkbox"]')];
+      const checks = checkboxes.filter(c => c.checked).length;
+      const practiceProblems = getPracticeProblems();
+      const doneProblems = practiceProblems.filter(q => state.grades[q.id] === 'done').length;
+      const total = checkboxes.length + practiceProblems.length;
+      const pct = total ? Math.round(((checks + doneProblems) / total) * 100) : 0;
+      document.getElementById('readinessNumber').textContent = pct + '%';
+      document.getElementById('readinessFill').style.width = pct + '%';
+      document.getElementById('sideProgressFill').style.width = pct + '%';
+      document.getElementById('sideProgressText').textContent = pct + '%';
+      document.getElementById('readinessCopy').textContent = `체크리스트 ${checks}/${checkboxes.length} 완료 · 문제 ${doneProblems}/${practiceProblems.length} 완료`;
+    }
+
+    function initChecklist(){
+      document.querySelectorAll('#checklistBox input[type="checkbox"]').forEach(cb => {
+        cb.checked = !!state.checks[cb.id];
+        cb.addEventListener('change', () => {
+          state.checks[cb.id] = cb.checked;
+          saveState();
+        });
+      });
+    }
+
+    function updateCountdown(){
+      const target = new Date('2026-10-19T18:00:00+09:00').getTime();
+      const diff = target - Date.now();
+      const daysEl = document.getElementById('daysLeft');
+      const labelEl = document.getElementById('daysLabel');
+      const detailEl = document.getElementById('countdownDetail');
+      if(diff <= 0){
+        daysEl.textContent = 'D-Day';
+        labelEl.textContent = '시험 진행/종료';
+        detailEl.textContent = '2026-10-19(월) 18:00–20:00 · 새빛관 102호';
+        return;
+      }
+      const totalHours = Math.floor(diff / 3600000);
+      const days = Math.floor(totalHours / 24);
+      const hours = totalHours % 24;
+      const mins = Math.floor((diff % 3600000) / 60000);
+      daysEl.textContent = days > 0 ? `D-${days}` : `${hours}시간`;
+      labelEl.textContent = days > 0 ? '남음' : `${mins}분 남음`;
+      detailEl.textContent = `실제 시험까지 ${days}일 ${hours}시간 ${mins}분 · 새빛관 102호`;
+    }
+
+    // Search Modal (⌘K)
+    (function initSearch(){
+      const overlay = document.getElementById('searchOverlay');
+      const input = document.getElementById('globalSearch');
+      const results = document.getElementById('searchResults');
+      function openSearch(){
+        overlay.classList.add('open');
+        input.value = '';
+        renderSearch('');
+        setTimeout(() => input.focus(), 30);
+      }
+      function renderSearch(q){
+        const query = q.trim().toLowerCase();
+        const nodes = [
+          ...[...document.querySelectorAll('main section[id], main h3[id]')].map(el => ({
+            title: el.dataset.searchTitle || el.textContent.trim(),
+            text: el.textContent.replace(/\s+/g,' ').trim(),
+            target: el
+          })),
+          ...[...document.querySelectorAll('details.toggle')].map(el => ({
+            title: el.querySelector('summary')?.textContent.trim() || '개념 토글',
+            text: el.textContent.replace(/\s+/g,' ').trim(),
+            target: el
+          }))
+        ];
+        const matched = query ? nodes.filter(n => (n.title + ' ' + n.text).toLowerCase().includes(query)).slice(0, 18) : nodes.slice(0, 12);
+        results.innerHTML = matched.map((m, idx) => `<button class="search-result" data-idx="${idx}" type="button"><strong>${esc(m.title)}</strong><span>${esc(m.text.slice(0, 110))}…</span></button>`).join('') || '<div class="empty-state" style="display:block">검색 결과가 없습니다.</div>';
+        results.querySelectorAll('.search-result').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const item = matched[Number(btn.dataset.idx)];
+            overlay.classList.remove('open');
+            setPageView('notes');
+            if(item.target.tagName === 'DETAILS') item.target.open = true;
+            item.target.scrollIntoView({behavior:'smooth', block:'start'});
+          });
+        });
+      }
+      document.getElementById('searchBtn').addEventListener('click', openSearch);
+      overlay.addEventListener('click', e => { if(e.target === overlay) overlay.classList.remove('open'); });
+      input.addEventListener('input', () => renderSearch(input.value));
+      document.addEventListener('keydown', e => {
+        if((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k'){ e.preventDefault(); openSearch(); }
+        if(e.key === 'Escape') overlay.classList.remove('open');
+      });
+    })();
+
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+    document.getElementById('menuBtn').addEventListener('click', () => document.body.classList.toggle('side-open'));
+    document.querySelectorAll('.side-link').forEach(a => a.addEventListener('click', () => document.body.classList.remove('side-open')));
+    document.getElementById('moreBtn').addEventListener('click', () => {
+      const details = [...document.querySelectorAll('details.toggle')];
+      const shouldOpen = details.some(d => !d.open);
+      details.forEach(d => d.open = shouldOpen);
+      document.getElementById('moreBtn').title = shouldOpen ? '모든 토글 닫기' : '모든 토글 열기';
+    });
+    document.getElementById('backTop').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    window.addEventListener('scroll', () => {
+      document.getElementById('topbar').classList.toggle('scrolled', scrollY > 4);
+      document.getElementById('backTop').classList.toggle('show', scrollY > 700);
+    });
+
+    const sections = [...document.querySelectorAll('main section[id], main h3[id]')];
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if(!visible) return;
+      document.querySelectorAll('.side-link').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + visible.target.id));
+    }, {rootMargin:'-15% 0px -72% 0px', threshold:[0, .1, .5]});
+    sections.forEach(s => observer.observe(s));
+
+    document.querySelectorAll('.app-tab, .side-link').forEach(link => {
+      link.addEventListener('click', e => {
+        let view = link.dataset.view;
+        const href = link.getAttribute('href') || '';
+        if(!view){
+          if(href.includes('view=problems') || href === '#problems') view = 'problems';
+          else if(href.includes('view=mistakes') || href === '#mistakes') view = 'mistakes';
+          else if(href === './' || href === '.' || href === 'index.html' || href.startsWith('#')) view = 'notes';
+        }
+        if(view && ['notes','problems','mistakes'].includes(view)){
+          if(href.startsWith('#') && view === 'notes'){
+            setPageView('notes');
+            return;
+          }
+          e.preventDefault();
+          setPageView(view);
+          window.scrollTo({top:0, behavior:'smooth'});
+        }
+      });
+    });
+
+    const initialView = new URLSearchParams(location.search).get('view') || 'notes';
+    setPageView(initialView, false);
+    renderProblems();
+    initChecklist();
+    renderErrorLog();
+    updateProgress();
+    updateCountdown();
+    setInterval(updateCountdown, 30000);
+  </script>
+</body>
+</html>
