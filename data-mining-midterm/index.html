@@ -981,6 +981,7 @@
             <button class="filter-btn" data-filter="case">사례형</button>
             <button class="filter-btn" data-filter="blank">교안 빈칸</button>
             <button class="filter-btn" data-filter="priority">핵심</button>
+            <button class="filter-btn" data-filter="unanswered">미응답</button>
             <button class="filter-btn" data-filter="again">오답</button>
             <button class="filter-btn" id="toolbarExamBtn" type="button" style="font-weight:750;">⏱ 실전 18문항 시험 시작</button>
             <button class="filter-btn" id="toolbarResetBtn" type="button" style="margin-left:auto;color:var(--muted);" title="답안 초기화">문제 초기화</button>
@@ -1384,7 +1385,9 @@
       const passing=[];
       document.querySelectorAll('.question-card').forEach(card => {
         const id=card.id.replace('q','');
-        const passType=currentFilter==='all' || (currentFilter==='again' ? ['again','unsure'].includes(state.grades[id]) : currentFilter==='priority' ? card.dataset.priority==='1' : ['single','multi','ox'].includes(currentFilter) ? card.dataset.objtype===currentFilter : card.dataset.type===currentFilter);
+        const isAnswered=Boolean(state.objectiveAnswers[id] || (state.grades[id] && state.grades[id] !== 'unsure'));
+        const isUnanswered=!isAnswered;
+        const passType=currentFilter==='all' || (currentFilter==='unanswered' ? (isUnanswered || currentId==='q'+id) : currentFilter==='again' ? (['again','unsure'].includes(state.grades[id]) || currentId==='q'+id) : currentFilter==='priority' ? card.dataset.priority==='1' : ['single','multi','ox'].includes(currentFilter) ? card.dataset.objtype===currentFilter : card.dataset.type===currentFilter);
         const passText=!query || card.dataset.text.includes(query);
         const passExam=!document.body.classList.contains('exam-mode') || examSet.includes(String(id));
         const pass=passType&&passText&&passExam;
@@ -1398,7 +1401,13 @@
         targetProblemId=null;
         renderProblemPage(wantedIndex>=0?wantedIndex:problemCursor);
       }
-      document.getElementById('emptyState').style.display=shown?'none':'block';
+      const emptyEl=document.getElementById('emptyState');
+      if(emptyEl){
+        if(currentFilter==='unanswered'){ emptyEl.textContent='모든 문제를 다 풀었습니다! 🎉'; }
+        else if(currentFilter==='again'){ emptyEl.textContent='오답 문제가 없습니다. 완벽합니다! 🎉'; }
+        else { emptyEl.textContent='조건에 맞는 문제가 없습니다.'; }
+        emptyEl.style.display=shown?'none':'block';
+      }
     }
 
     function renderErrorLog(){
