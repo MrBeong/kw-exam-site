@@ -1,0 +1,1145 @@
+{
+  "date": "2026-10-17",
+  "Rscript": "/opt/homebrew/bin/Rscript",
+  "questions": 40,
+  "blanks": 122,
+  "passed": 40,
+  "checks": 208,
+  "workbookSha256": "6d438151c5dac12b25626c9659b508f2d261034a96506ab5a8b285b7b479ba4d",
+  "results": [
+    {
+      "id": "RC001",
+      "originId": "RC001",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "ascending vector",
+        "descending vector",
+        "printed maximum matches answer/rubric",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "ascending": [
+          20,
+          40,
+          80
+        ],
+        "ordered": [
+          80,
+          40,
+          20
+        ],
+        "output": 80
+      },
+      "warnings": [],
+      "inputProvenance": "question_literal_vectors",
+      "bank": "written",
+      "blanks": 3,
+      "codeSha256": "7d410d407647a1bb9da414f7443429ec7d5f9bd46d7b4ad776d127026a8cbbed",
+      "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnCode": 0
+    },
+    {
+      "id": "RC002",
+      "originId": "RC002",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "four visible summary values match answer/rubric",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "output": [
+          1,
+          100,
+          22,
+          3
+        ]
+      },
+      "warnings": [],
+      "inputProvenance": "question_literal_vectors",
+      "bank": "written",
+      "blanks": 4,
+      "codeSha256": "dff92c2d256f31f52c23d56621e47c548fb5a86032f42bcde1e9d9edf9275772",
+      "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnCode": 0
+    },
+    {
+      "id": "RC003",
+      "originId": "RC003",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "variance and SD match answer/rubric",
+        "sample variance denominator n-1",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "variance": 4,
+        "SD": 2,
+        "denominator": 2
+      },
+      "warnings": [],
+      "inputProvenance": "question_literal_vectors",
+      "bank": "written",
+      "blanks": 2,
+      "codeSha256": "d7b459d702685efc900b947f6e2d424b6c20ad2c1cc851b3480ca460bc25e761",
+      "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnCode": 0
+    },
+    {
+      "id": "RC004",
+      "originId": "RC004",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "default quantiles at five percentages",
+        "quantile labels",
+        "boxplot observes five values; data-frame summary returned",
+        "actual boxplot PDF rendered",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "quantiles": [
+          1,
+          2,
+          3,
+          4,
+          100
+        ],
+        "boxplotN": 5
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "written",
+      "blanks": 3,
+      "codeSha256": "db918159a1260ed5326e5bd295dfc7e5206f9673f883ba0efd92655ced8d252e",
+      "setupSha256": "68a5ce62e0fae7ef2cedad514e97670f597b016fc1a992c3b9e881a555d93948",
+      "returnCode": 0
+    },
+    {
+      "id": "RC005",
+      "originId": "RC005",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "case-sensitive sort/TRUE and one-based index",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "fixtureMaximum": 80
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "written",
+      "blanks": 3,
+      "codeSha256": "c41963ca24445a4716b10824021ca720b28929d36369438601c35410031485de",
+      "setupSha256": "cc750551ef84b1ca85b97a27ff66506ebacb8d321c1efdf20c80778bbf49cbbc",
+      "returnCode": 0
+    },
+    {
+      "id": "RC006",
+      "originId": "RC006",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "Shapiro-Wilk test executed",
+        "actual Shapiro p rounds to given .08",
+        "given p=.08 does not reject at alpha=.05",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "fixtureP": 0.07999981514263772,
+        "givenInterpretationP": 0.08
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "written",
+      "blanks": 1,
+      "codeSha256": "23dd93447475085361954f6754afc1d2f09f02abb0d3bcceb3194f1feaa7c6d4",
+      "setupSha256": "b57fe181653acaaf1ccca59497f7db3e6fbc56cd0616225538c42392495ecf0a",
+      "returnCode": 0
+    },
+    {
+      "id": "RC007",
+      "originId": "RC007",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "one-sample null mean matches question/rubric",
+        "only twenty Deagu observations selected",
+        "correct group/height selected",
+        "two-sided one-sample t-test",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "nullMean": 150,
+        "mean": 156.1165,
+        "df": 19,
+        "fixtureP": 0.001169586084592955
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "written",
+      "blanks": 4,
+      "codeSha256": "a0be02de23253afe19850d27ce690215ebfee6bc6d18028d62570a6a4b430a01",
+      "setupSha256": "001148e8622937972fff940fc3b124c25dc0a621c2afa26955b0afdddfb6bf7a",
+      "returnCode": 0
+    },
+    {
+      "id": "RC008",
+      "originId": "RC008",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "both groups tested with Shapiro-Wilk",
+        "group conditions select intended rows",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "groupP": [
+          0.9999999999869972,
+          0.9999999999869973
+        ]
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "written",
+      "blanks": 4,
+      "codeSha256": "35cd36b75a5eabe75f375ec60d953990c2ef325a4c073e5c7e741148001c234c",
+      "setupSha256": "001148e8622937972fff940fc3b124c25dc0a621c2afa26955b0afdddfb6bf7a",
+      "returnCode": 0
+    },
+    {
+      "id": "RC009",
+      "originId": "RC009",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "actual lawstat mean-centered Levene test",
+        "Levene statistic equals independent absolute-deviation ANOVA",
+        "Levene p-value matches independent ANOVA",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "F": 1.917588469095713,
+        "fixtureP": 0.1741999928939146
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "written",
+      "blanks": 4,
+      "codeSha256": "da89a01de5e67276646aea3554e72f1702aedbdba1a18d824e66f9a72adc1cd0",
+      "setupSha256": "001148e8622937972fff940fc3b124c25dc0a621c2afa26955b0afdddfb6bf7a",
+      "returnCode": 0
+    },
+    {
+      "id": "RC010",
+      "originId": "RC010",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "var.equal=TRUE selects pooled not default Welch",
+        "pooled df n1+n2-2",
+        "formula response/group order",
+        "actual Levene p rounds to given .1742",
+        "given Levene p does not reject equality of variances",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "df": 38,
+        "fixtureP": 0.006695679633099059,
+        "givenLeveneP": 0.1742
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "written",
+      "blanks": 3,
+      "codeSha256": "68762ca86509d16e8d3dd2bf081cfe685564cd7140f793e0c1616237b3e9a682",
+      "setupSha256": "001148e8622937972fff940fc3b124c25dc0a621c2afa26955b0afdddfb6bf7a",
+      "returnCode": 0
+    },
+    {
+      "id": "RC011",
+      "originId": "RC011",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "after-before pair order preserved",
+        "negative difference denotes lower after",
+        "one-sample difference test equals direct paired t-test",
+        "normality checked on differences",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "meanDifference": -33.64999999999999,
+        "t": -7.695099997028913,
+        "df": 19,
+        "fixtureP": 2.970202277501728e-07
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "written",
+      "blanks": 3,
+      "codeSha256": "c687f6aa542cce5fe71ed61b128a8c3994c892c642af73cfffbf9bf87912384a",
+      "setupSha256": "e9d9cd47dafe21cd33c559dee08d2fd5ad33dc2efb8a7b564931027eec5fba64",
+      "returnCode": 0
+    },
+    {
+      "id": "RC012",
+      "originId": "RC012",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "mean-centered Levene",
+        "pooled independent t-test",
+        "difference vector not unpaired samples",
+        "difference normality test executed",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "LeveneP": 0.1741999928939146,
+        "pooledT": -2.86857980933096,
+        "differenceShapiroP": 0.9999999999869973
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "written",
+      "blanks": 4,
+      "codeSha256": "3d7dde921359735583198d537e2feb6f4a07fa3d6f134ba68ac6616981502789",
+      "setupSha256": "5a57e7661de2e7c6fc0abd0250f38c0b23d94f9464b59131ac6e1b5c114701fe",
+      "returnCode": 0
+    },
+    {
+      "id": "RC013",
+      "originId": "RC013",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "regression direction y~x",
+        "actual workbook regression coefficients",
+        "actual workbook R-squared",
+        "scatterplot PDF rendered",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "coefficients": [
+          30.933333333333344,
+          0.8704761904761902
+        ],
+        "R2": 0.6828143135043233
+      },
+      "warnings": [],
+      "inputProvenance": "provided_regression1.xlsx_actual_12_rows",
+      "bank": "written",
+      "blanks": 4,
+      "codeSha256": "5650121e4d8467e4ac76f9fb2a7f99e91dc4d26c1c12d637b8f0a5194e02d421",
+      "setupSha256": "2ee863727cc916773fa4694ce9c01f681c29921a9794bf82087e0f186cd9f4de",
+      "returnCode": 0
+    },
+    {
+      "id": "RC014",
+      "originId": "RC014",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "PDF contains blue regression stroke",
+        "PDF contains solid line dash pattern",
+        "abline draws on existing scatterplot",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "lineType": "solid",
+        "color": "blue",
+        "plotBytes": 14733
+      },
+      "warnings": [],
+      "inputProvenance": "provided_regression1.xlsx_actual_12_rows",
+      "bank": "written",
+      "blanks": 3,
+      "codeSha256": "3fb47399f0384ddd2c32dd68ab33921cbeb69c08f59afd39bfe3d32d3b1e8ea7",
+      "setupSha256": "f4fc33aee3e1424dfcdafe7e5cee31e4031809f858be71d0ef060e502eb82241",
+      "returnCode": 0
+    },
+    {
+      "id": "RC015",
+      "originId": "RC015",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "summary object stored and printed",
+        "coefficient estimates and individual t-test p-values present",
+        "R-squared matches supplied workbook",
+        "overall model F-statistic",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "coefficients": [
+          [
+            30.933333333333344,
+            11.574734389629695,
+            2.672487531208306,
+            0.02339244800303711
+          ],
+          [
+            0.8704761904761902,
+            0.1876127627663813,
+            4.639749330700504,
+            0.0009223477663221725
+          ]
+        ],
+        "R2": 0.6828143135043233,
+        "adjustedR2": 0.6510957448547556,
+        "F": [
+          21.527273851735753,
+          1,
+          10
+        ],
+        "modelP": 0.0009223477663221742
+      },
+      "warnings": [],
+      "inputProvenance": "provided_regression1.xlsx_actual_12_rows",
+      "bank": "written",
+      "blanks": 1,
+      "codeSha256": "192a1de1c20366d1c02aa13e72404b63b0058ff64109ceebf5dec4a70f63e149",
+      "setupSha256": "5edcfcab7b6c5d7c4bec02247dfb67b0c8edbdbf61a45a17a1321164389ef06e",
+      "returnCode": 0
+    },
+    {
+      "id": "RC016",
+      "originId": "RC016",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "two main effects, correct response",
+        "intercept plus two nonaliased slopes, no interaction",
+        "multiple regression equals independent matrix least squares",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "coefficients": [
+          57.52556237218817,
+          0.5528289025221537,
+          -2.253578732106341
+        ],
+        "residualDf": 9
+      },
+      "warnings": [],
+      "inputProvenance": "provided_regression1.xlsx_actual_12_rows",
+      "bank": "written",
+      "blanks": 2,
+      "codeSha256": "2898f1c4bebf40f7df49e98e669ebc466273ec21649085da84566b37f4808919",
+      "setupSha256": "ef6de60c3b5bd87c4ab281f76fb2325bfd97a048003e8f52669d3cae9f7d5c70",
+      "returnCode": 0
+    },
+    {
+      "id": "RC017",
+      "originId": "RC017",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "Hick information bits",
+        "Hick intercept/slope match answer/rubric",
+        "only anticipated perfect-fit warning"
+      ],
+      "metrics": {
+        "bit": [
+          0,
+          1,
+          2
+        ],
+        "coefficients": [
+          300,
+          129.99999999999997
+        ]
+      },
+      "warnings": "essentially perfect fit: summary may be unreliable",
+      "inputProvenance": "question_literal_vectors",
+      "bank": "written",
+      "blanks": 3,
+      "codeSha256": "d00ece65a3d540f3ff6e2be98aea5aec66143cd97dc396c213cd4bd8cc2247f5",
+      "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnCode": 0
+    },
+    {
+      "id": "RC018",
+      "originId": "RC018",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "both Fitts MT values rounded to requested hundredths",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "ID": [
+          2.321928094887362,
+          3.459431618637297
+        ],
+        "MT": [
+          398.2892142331043,
+          568.9147427955946
+        ],
+        "roundedMT": [
+          398.29,
+          568.91
+        ]
+      },
+      "warnings": [],
+      "inputProvenance": "question_literal_vectors",
+      "bank": "written",
+      "blanks": 2,
+      "codeSha256": "2da04e624d9f2c8e0cb51b9ee56b710349378c2964988acd0ef96e6f1b54adef",
+      "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnCode": 0
+    },
+    {
+      "id": "RC019",
+      "originId": "RC019",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "original eight rows preserved, six valid trials retained",
+        "both filters applied",
+        "YES rows based on actual Present",
+        "NO rows based on actual Present",
+        "YES model fits Time~PSS",
+        "NO model fits Time~PSS",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "cleanRows": 6,
+        "yesCoefficients": [
+          366.66666666666765,
+          44.99999999999982
+        ],
+        "noCoefficients": [
+          513.3333333333342,
+          44.99999999999984
+        ]
+      },
+      "warnings": [],
+      "inputProvenance": "question_complete_eight_row_table",
+      "bank": "written",
+      "blanks": 5,
+      "codeSha256": "350fbbe0b8be068f7a13b8d8a62a86f2c217d2095472e62b4a56e199a24d39b0",
+      "setupSha256": "52038bafd67be7ae416baf4c75c095fb3c168d4b7fd7155dd6599d8b8331254a",
+      "returnCode": 0
+    },
+    {
+      "id": "RC020",
+      "originId": "RC020",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "Hick regression direction Time~bit",
+        "summary printed",
+        "actual model p matches supplied rounded output",
+        "actual R-squared matches supplied rounded output",
+        "output nonsignificant at alpha=.05",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "fixtureR2": 0.029689737595709,
+        "actualP": 0.1600000003828788,
+        "givenInterpretationP": 0.16,
+        "givenInterpretationR2": 0.03
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "written",
+      "blanks": 3,
+      "codeSha256": "d27c0c5592773e436d7c8535b9d55e65d42e34fb914eddfbde58d1af5e047391",
+      "setupSha256": "d03da3374de33452edf674ecd931c369be2e943b50837df5168f3a38454cd5d2",
+      "returnCode": 0
+    },
+    {
+      "id": "ME1-Q29",
+      "originId": "RC001",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "ascending vector",
+        "descending vector",
+        "printed maximum matches answer/rubric",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "ascending": [
+          35,
+          60,
+          90
+        ],
+        "ordered": [
+          90,
+          60,
+          35
+        ],
+        "output": 90
+      },
+      "warnings": [],
+      "inputProvenance": "question_literal_vectors",
+      "bank": "mock-exam",
+      "blanks": 3,
+      "codeSha256": "a6c312803c5da94c03244332268dd71ff8e2b5267e6998fcf4ee834aa3b0aa5f",
+      "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnCode": 0
+    },
+    {
+      "id": "ME1-Q30",
+      "originId": "RC007",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "one-sample null mean matches question/rubric",
+        "only twenty Deagu observations selected",
+        "correct group/height selected",
+        "two-sided one-sample t-test",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "nullMean": 160,
+        "mean": 156.1165,
+        "df": 19,
+        "fixtureP": 0.02559899975718553
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "mock-exam",
+      "blanks": 4,
+      "codeSha256": "ef0ed4d240c1e0a6e338d119ace82fd4a5d4155f5eff49811ddf2ca11765a137",
+      "setupSha256": "001148e8622937972fff940fc3b124c25dc0a621c2afa26955b0afdddfb6bf7a",
+      "returnCode": 0
+    },
+    {
+      "id": "ME1-Q31",
+      "originId": "RC013",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "regression direction y~x",
+        "actual workbook regression coefficients",
+        "actual workbook R-squared",
+        "scatterplot PDF rendered",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "coefficients": [
+          30.933333333333344,
+          0.8704761904761902
+        ],
+        "R2": 0.6828143135043233
+      },
+      "warnings": [],
+      "inputProvenance": "provided_regression1.xlsx_actual_12_rows",
+      "bank": "mock-exam",
+      "blanks": 4,
+      "codeSha256": "5650121e4d8467e4ac76f9fb2a7f99e91dc4d26c1c12d637b8f0a5194e02d421",
+      "setupSha256": "2ee863727cc916773fa4694ce9c01f681c29921a9794bf82087e0f186cd9f4de",
+      "returnCode": 0
+    },
+    {
+      "id": "ME1-Q32",
+      "originId": "RC017",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "Hick information bits",
+        "Hick intercept/slope match answer/rubric",
+        "only anticipated perfect-fit warning"
+      ],
+      "metrics": {
+        "bit": [
+          0,
+          1,
+          2
+        ],
+        "coefficients": [
+          280.0000000000001,
+          119.99999999999993
+        ]
+      },
+      "warnings": "essentially perfect fit: summary may be unreliable",
+      "inputProvenance": "question_literal_vectors",
+      "bank": "mock-exam",
+      "blanks": 3,
+      "codeSha256": "05d616fab8579b23be1f8f5e85e8e5176a408a7395179e4f952c2ac5bcd4c3cf",
+      "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnCode": 0
+    },
+    {
+      "id": "ME2-Q29",
+      "originId": "RC003",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "variance and SD match answer/rubric",
+        "sample variance denominator n-1",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "variance": 4,
+        "SD": 2,
+        "denominator": 2
+      },
+      "warnings": [],
+      "inputProvenance": "question_literal_vectors",
+      "bank": "mock-exam",
+      "blanks": 2,
+      "codeSha256": "d7b459d702685efc900b947f6e2d424b6c20ad2c1cc851b3480ca460bc25e761",
+      "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnCode": 0
+    },
+    {
+      "id": "ME2-Q30",
+      "originId": "RC008",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "both groups tested with Shapiro-Wilk",
+        "group conditions select intended rows",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "groupP": [
+          0.9999999999869972,
+          0.9999999999869973
+        ]
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "mock-exam",
+      "blanks": 4,
+      "codeSha256": "35cd36b75a5eabe75f375ec60d953990c2ef325a4c073e5c7e741148001c234c",
+      "setupSha256": "001148e8622937972fff940fc3b124c25dc0a621c2afa26955b0afdddfb6bf7a",
+      "returnCode": 0
+    },
+    {
+      "id": "ME2-Q31",
+      "originId": "RC014",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "PDF contains blue regression stroke",
+        "PDF contains solid line dash pattern",
+        "abline draws on existing scatterplot",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "lineType": "solid",
+        "color": "blue",
+        "plotBytes": 14733
+      },
+      "warnings": [],
+      "inputProvenance": "provided_regression1.xlsx_actual_12_rows",
+      "bank": "mock-exam",
+      "blanks": 3,
+      "codeSha256": "3fb47399f0384ddd2c32dd68ab33921cbeb69c08f59afd39bfe3d32d3b1e8ea7",
+      "setupSha256": "f4fc33aee3e1424dfcdafe7e5cee31e4031809f858be71d0ef060e502eb82241",
+      "returnCode": 0
+    },
+    {
+      "id": "ME2-Q32",
+      "originId": "RC018",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "both Fitts MT values rounded to requested hundredths",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "providedLogApproximation": [
+          350.2,
+          455.13
+        ],
+        "ID": [
+          2.584962500721156,
+          3.459431618637297
+        ],
+        "MT": [
+          350.19550008653874,
+          455.1317942364757
+        ],
+        "roundedMT": [
+          350.2,
+          455.13
+        ]
+      },
+      "warnings": [],
+      "inputProvenance": "question_literal_vectors",
+      "bank": "mock-exam",
+      "blanks": 2,
+      "codeSha256": "5ac190c54c08dd2de7dd3237990d0b58b564fb166158dbf5ad73d8387ddb7ee5",
+      "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnCode": 0
+    },
+    {
+      "id": "ME3-Q29",
+      "originId": "RC004",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "default quantiles at five percentages",
+        "quantile labels",
+        "boxplot observes five values; data-frame summary returned",
+        "actual boxplot PDF rendered",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "quantiles": [
+          1,
+          2,
+          3,
+          4,
+          100
+        ],
+        "boxplotN": 5
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "mock-exam",
+      "blanks": 3,
+      "codeSha256": "db918159a1260ed5326e5bd295dfc7e5206f9673f883ba0efd92655ced8d252e",
+      "setupSha256": "68a5ce62e0fae7ef2cedad514e97670f597b016fc1a992c3b9e881a555d93948",
+      "returnCode": 0
+    },
+    {
+      "id": "ME3-Q30",
+      "originId": "RC009",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "actual lawstat mean-centered Levene test",
+        "Levene statistic equals independent absolute-deviation ANOVA",
+        "Levene p-value matches independent ANOVA",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "F": 1.917588469095713,
+        "fixtureP": 0.1741999928939146
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "mock-exam",
+      "blanks": 4,
+      "codeSha256": "da89a01de5e67276646aea3554e72f1702aedbdba1a18d824e66f9a72adc1cd0",
+      "setupSha256": "001148e8622937972fff940fc3b124c25dc0a621c2afa26955b0afdddfb6bf7a",
+      "returnCode": 0
+    },
+    {
+      "id": "ME3-Q31",
+      "originId": "RC011",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "after-before pair order preserved",
+        "negative difference denotes lower after",
+        "one-sample difference test equals direct paired t-test",
+        "normality checked on differences",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "meanDifference": -33.64999999999999,
+        "t": -7.695099997028913,
+        "df": 19,
+        "fixtureP": 2.970202277501728e-07
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "mock-exam",
+      "blanks": 3,
+      "codeSha256": "c687f6aa542cce5fe71ed61b128a8c3994c892c642af73cfffbf9bf87912384a",
+      "setupSha256": "e9d9cd47dafe21cd33c559dee08d2fd5ad33dc2efb8a7b564931027eec5fba64",
+      "returnCode": 0
+    },
+    {
+      "id": "ME3-Q32",
+      "originId": "RC015",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "summary object stored and printed",
+        "coefficient estimates and individual t-test p-values present",
+        "R-squared matches supplied workbook",
+        "overall model F-statistic",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "coefficients": [
+          [
+            30.933333333333344,
+            11.574734389629695,
+            2.672487531208306,
+            0.02339244800303711
+          ],
+          [
+            0.8704761904761902,
+            0.1876127627663813,
+            4.639749330700504,
+            0.0009223477663221725
+          ]
+        ],
+        "R2": 0.6828143135043233,
+        "adjustedR2": 0.6510957448547556,
+        "F": [
+          21.527273851735753,
+          1,
+          10
+        ],
+        "modelP": 0.0009223477663221742
+      },
+      "warnings": [],
+      "inputProvenance": "provided_regression1.xlsx_actual_12_rows",
+      "bank": "mock-exam",
+      "blanks": 1,
+      "codeSha256": "192a1de1c20366d1c02aa13e72404b63b0058ff64109ceebf5dec4a70f63e149",
+      "setupSha256": "5edcfcab7b6c5d7c4bec02247dfb67b0c8edbdbf61a45a17a1321164389ef06e",
+      "returnCode": 0
+    },
+    {
+      "id": "ME4-Q29",
+      "originId": "RC002",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "four visible summary values match answer/rubric",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "output": [
+          1,
+          100,
+          22,
+          3
+        ]
+      },
+      "warnings": [],
+      "inputProvenance": "question_literal_vectors",
+      "bank": "mock-exam",
+      "blanks": 4,
+      "codeSha256": "dff92c2d256f31f52c23d56621e47c548fb5a86032f42bcde1e9d9edf9275772",
+      "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnCode": 0
+    },
+    {
+      "id": "ME4-Q30",
+      "originId": "RC010",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "var.equal=TRUE selects pooled not default Welch",
+        "pooled df n1+n2-2",
+        "formula response/group order",
+        "actual Levene p rounds to given .1742",
+        "given Levene p does not reject equality of variances",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "df": 38,
+        "fixtureP": 0.006695679633099059,
+        "givenLeveneP": 0.1742
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "mock-exam",
+      "blanks": 3,
+      "codeSha256": "68762ca86509d16e8d3dd2bf081cfe685564cd7140f793e0c1616237b3e9a682",
+      "setupSha256": "001148e8622937972fff940fc3b124c25dc0a621c2afa26955b0afdddfb6bf7a",
+      "returnCode": 0
+    },
+    {
+      "id": "ME4-Q31",
+      "originId": "RC016",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "two main effects, correct response",
+        "intercept plus two nonaliased slopes, no interaction",
+        "multiple regression equals independent matrix least squares",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "coefficients": [
+          57.52556237218817,
+          0.5528289025221537,
+          -2.253578732106341
+        ],
+        "residualDf": 9
+      },
+      "warnings": [],
+      "inputProvenance": "provided_regression1.xlsx_actual_12_rows",
+      "bank": "mock-exam",
+      "blanks": 2,
+      "codeSha256": "2898f1c4bebf40f7df49e98e669ebc466273ec21649085da84566b37f4808919",
+      "setupSha256": "ef6de60c3b5bd87c4ab281f76fb2325bfd97a048003e8f52669d3cae9f7d5c70",
+      "returnCode": 0
+    },
+    {
+      "id": "ME4-Q32",
+      "originId": "RC020",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "Hick regression direction Time~bit",
+        "summary printed",
+        "actual model p matches supplied rounded output",
+        "actual R-squared matches supplied rounded output",
+        "output nonsignificant at alpha=.05",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "fixtureR2": 0.03931740912474422,
+        "actualP": 0.2200000004989542,
+        "givenInterpretationP": 0.22,
+        "givenInterpretationR2": 0.04
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "mock-exam",
+      "blanks": 3,
+      "codeSha256": "d27c0c5592773e436d7c8535b9d55e65d42e34fb914eddfbde58d1af5e047391",
+      "setupSha256": "87c85d751adaa15d6d83c7277d74ecc75eef8d230c3a65cbaa2b819b4d3fa29d",
+      "returnCode": 0
+    },
+    {
+      "id": "ME5-Q29",
+      "originId": "RC005",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "case-sensitive sort/TRUE and one-based index",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "fixtureMaximum": 80
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "mock-exam",
+      "blanks": 3,
+      "codeSha256": "c41963ca24445a4716b10824021ca720b28929d36369438601c35410031485de",
+      "setupSha256": "cc750551ef84b1ca85b97a27ff66506ebacb8d321c1efdf20c80778bbf49cbbc",
+      "returnCode": 0
+    },
+    {
+      "id": "ME5-Q30",
+      "originId": "RC006",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "Shapiro-Wilk test executed",
+        "actual Shapiro p rounds to given .08",
+        "given p=.08 does not reject at alpha=.05",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "fixtureP": 0.07999981514263772,
+        "givenInterpretationP": 0.08
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "mock-exam",
+      "blanks": 1,
+      "codeSha256": "23dd93447475085361954f6754afc1d2f09f02abb0d3bcceb3194f1feaa7c6d4",
+      "setupSha256": "b57fe181653acaaf1ccca59497f7db3e6fbc56cd0616225538c42392495ecf0a",
+      "returnCode": 0
+    },
+    {
+      "id": "ME5-Q31",
+      "originId": "RC012",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "mean-centered Levene",
+        "pooled independent t-test",
+        "difference vector not unpaired samples",
+        "difference normality test executed",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "LeveneP": 0.1741999928939146,
+        "pooledT": -2.86857980933096,
+        "differenceShapiroP": 0.9999999999869973
+      },
+      "warnings": [],
+      "inputProvenance": "question_visible_constructed_practice_data",
+      "bank": "mock-exam",
+      "blanks": 4,
+      "codeSha256": "3d7dde921359735583198d537e2feb6f4a07fa3d6f134ba68ac6616981502789",
+      "setupSha256": "5a57e7661de2e7c6fc0abd0250f38c0b23d94f9464b59131ac6e1b5c114701fe",
+      "returnCode": 0
+    },
+    {
+      "id": "ME5-Q32",
+      "originId": "RC019",
+      "runtime": "R version 4.6.0 (2026-04-24)",
+      "status": "pass",
+      "checks": [
+        "completed answer parses and evaluates in real R",
+        "original eight rows preserved, six valid trials retained",
+        "both filters applied",
+        "YES rows based on actual Present",
+        "NO rows based on actual Present",
+        "YES model fits Time~PSS",
+        "NO model fits Time~PSS",
+        "no unexpected warnings"
+      ],
+      "metrics": {
+        "cleanRows": 6,
+        "yesCoefficients": [
+          366.66666666666765,
+          44.99999999999982
+        ],
+        "noCoefficients": [
+          513.3333333333342,
+          44.99999999999984
+        ]
+      },
+      "warnings": [],
+      "inputProvenance": "question_complete_eight_row_table",
+      "bank": "mock-exam",
+      "blanks": 5,
+      "codeSha256": "350fbbe0b8be068f7a13b8d8a62a86f2c217d2095472e62b4a56e199a24d39b0",
+      "setupSha256": "52038bafd67be7ae416baf4c75c095fb3c168d4b7fd7155dd6599d8b8331254a",
+      "returnCode": 0
+    }
+  ]
+}

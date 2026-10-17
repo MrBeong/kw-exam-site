@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-17",
+  "changedQuestions": 52,
+  "concepts": 188,
+  "questions": 589,
+  "hintChecks": 1466,
+  "renderChecks": 2123,
+  "deltaChecks": 159,
+  "RChecks": 208,
+  "formulas": 1034,
+  "files": {
+    "written/questions.json": "27231a909b0a169e6ece02f0909287ba45bbb2c6626f88eeb3e4b0b50c326fcb",
+    "multiple-choice/questions.json": "7673a4e3e0c3e4a222b6522dac0c396cf2bf4754c737767e6f4ba884164c6950",
+    "mock-exam/questions.json": "161385d56d46546b7a13a7bd7be223778a0089eacf03454f2977afd68fa1510b",
+    "ox/index.html": "cab9e4d90b2ea8e9ba282a8b58adb1d6a882f76fb7c69b32cfc4f79aa63d4525",
+    "index.html": "d8cc04b2cb94f94e74f26897fc5e0e59d1eb7b4a57900c23dd45534e3fe53aec",
+    "인터랙티브심리학_중간고사_Notion.html": "d8cc04b2cb94f94e74f26897fc5e0e59d1eb7b4a57900c23dd45534e3fe53aec",
+    "multiple-choice/index.html": "7f9b87a6493f948cfb1d1fe9b5eb09c24dfa676f9d463abc74480b4418dfe670",
+    "mock-exam/index.html": "f29faa2ed64c96bf2aa5ba9c235d8f1699e43aeead7bba73ec5b6aed29fb9a20",
+    "final-audit/formulas.json": "85763aa4ae3bc4022477fb23c5a9475ac72abe47680f6f0e01da2e21083ca923",
+    "final-audit/verify_answer_hints.py": "947de5f55fcf4a651da292a8dd043eb3bbe28c21ff4a6d7a6767ae80c7e26822",
+    "final-audit/answer-hint-ui.js": "4eb2daa66ddf23d660e5eef70fc523b1308edbbc15f7d90ae190c5fed5155b89",
+    "final-audit/answer-hint-delta-ui.js": "8bd4714855f8894893302d6b2b8cdf400e330476a79232278b4548e69ff51d41",
+    "written/build.py": "24e633073c5edfb34e6aa2f8ba16ea87caebda5a38e96ba696845e95f09b21ce",
+    "10_서술단답_R_개념대응표.md": "3da152212d579449395abde5269516e65ee1c7de5bf37c265c712f2a8a09b59d"
+  }
+}
