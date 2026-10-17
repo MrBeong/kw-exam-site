@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "R answer reload persistence",
+    "R reset clears only answers",
+    "R reset preserves full given dataset",
+    "exam real start sets 120-minute deadline",
+    "analysis dataset available during live exam",
+    "solutions withheld during live exam",
+    "exam R answer reload persistence",
+    "exam deadline survives reload",
+    "real countdown advances",
+    "expired deadline submits automatically",
+    "submitted exam locks R answers",
+    "submitted exam retains analysis dataset",
+    "code answer explanations available after submission",
+    "no browser exceptions in save/reset/timer flow"
+  ],
+  "errors": []
+}

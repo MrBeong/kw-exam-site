@@ -1,0 +1,5 @@
+/* Long formulas scroll within their line on narrow screens; R source stays literal. */
+mjx-container{max-width:100%;vertical-align:middle;line-height:1.2;}
+mjx-container[jax="SVG"]:not([display="true"]){display:inline-block;overflow-x:auto;overflow-y:hidden;padding:3px 1px;}
+mjx-container[display="true"]{display:block;overflow-x:auto;overflow-y:hidden;padding:5px 1px;}
+mjx-container svg{max-width:none;}

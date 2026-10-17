@@ -1,0 +1,13 @@
+<section id="problems" data-search-title="단답형·서술형·R 코드 작성">
+  <h2 class="wr-title">단답형·서술형·R 코드 작성</h2>
+  <p class="wr-stage">강의에서 영어로 제시한 용어만 영문으로 답합니다. 설명·계산은 한글·수식으로 작성하세요. R 문항은 코드의 번호별 빈칸에 입력합니다. <span class="wr-future">120분 기출형 예상시험 5세트가 준비되어 있습니다.</span></p>
+  <div class="database">
+    <div class="wr-types"><button type="button" data-written-type="all" class="active">전체</button><button type="button" data-written-type="short">단답형</button><button type="button" data-written-type="essay">서술형</button><button type="button" data-written-type="code">R 코드 작성</button><a class="mock-entry" href="./mock-exam/index.html?mode=exam">⏱ 120분 기출형</a></div>
+    <div class="db-toolbar"><button type="button" class="filter-btn active" data-filter="all">모든 상태</button><button type="button" class="filter-btn" data-filter="unanswered">미채점</button><button type="button" class="filter-btn" data-filter="bookmarked">북마크</button><button type="button" class="filter-btn" data-filter="calc">계산</button><button type="button" class="filter-btn" data-filter="visual">그림·표</button><button type="button" class="filter-btn" data-filter="again" id="againFilterBtn">오답·애매 <span id="againArrow">▾</span></button><button type="button" class="filter-btn" id="toolbarRetryCurrentBtn" style="margin-left:auto" title="현재 보고 있는 문제의 답안·채점만 초기화하고 다시 풉니다">↺ 현재 문제 다시 풀기</button><button type="button" class="filter-btn" id="toolbarResetBtn" title="단답·서술·R 코드 전체 문항의 답안과 채점을 초기화합니다">↺ 전체 초기화</button></div>
+    <div class="wr-search-row"><select id="writtenChapter" aria-label="단원"></select><input id="questionSearch" type="search" placeholder="문제·ID 검색" aria-label="문제 검색"><select id="writtenJump" aria-label="문항 바로가기"></select></div>
+    <div class="wr-meta"><span id="writtenStats"></span><span>← → 문제 이동</span></div>
+    <div class="wr-review" id="againBar" style="display:none"><div><strong>오답 복습</strong> · <span id="againCountBadge"></span> · <span id="againProgressBadge"></span></div><div class="wr-review-actions"><button type="button" id="refreshAgainListBtn">최신 오답 새로고침</button><button type="button" id="exitAgainBtn">전체 문제로</button></div></div>
+    <div id="questionList"></div><div id="emptyState" class="empty-state"><span>조건에 맞는 문제가 없습니다.</span><button type="button" id="writtenShowAll">전체 문항으로</button></div>
+    <div class="practice-pager" id="practicePager"><button type="button" id="practicePrev">← 이전</button><span class="practice-position" id="practicePosition"></span><button type="button" id="practiceNext">다음 →</button></div>
+  </div>
+</section>

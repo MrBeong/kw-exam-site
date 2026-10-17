@@ -1,0 +1,15 @@
+{
+  "id": "ME3-Q31",
+  "originId": "RC011",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "after-before pair order preserved", "negative difference denotes lower after", "one-sample difference test equals direct paired t-test", "normality checked on differences", "no unexpected warnings"],
+  "metrics": {
+    "meanDifference": -33.649999999999991,
+    "t": -7.695099997028913,
+    "df": 19,
+    "fixtureP": 2.970202277501728e-07
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}

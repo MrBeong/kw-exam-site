@@ -1,0 +1,12 @@
+{
+  "id": "RC005",
+  "originId": "RC005",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "case-sensitive sort/TRUE and one-based index", "no unexpected warnings"],
+  "metrics": {
+    "fixtureMaximum": 80
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}

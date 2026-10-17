@@ -1,0 +1,14 @@
+{
+  "id": "ME5-Q31",
+  "originId": "RC012",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "mean-centered Levene", "pooled independent t-test", "difference vector not unpaired samples", "difference normality test executed", "no unexpected warnings"],
+  "metrics": {
+    "LeveneP": 0.1741999928939146,
+    "pooledT": -2.86857980933096,
+    "differenceShapiroP": 0.9999999999869973
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}

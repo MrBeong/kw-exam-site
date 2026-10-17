@@ -1,0 +1,90 @@
+async (page) => {
+ const results=[],errors=[];page.on('pageerror',e=>errors.push(e.message));
+ const check=(v,n)=>{if(!v)throw new Error(n);results.push(n)};
+ const read=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('psych-midterm-notion-v1')||'{}'));
+ const qs=await page.locator('#writtenData').textContent().then(t=>JSON.parse(t).filter(q=>q.type==='code'));
+ await page.evaluate(()=>{
+  localStorage.setItem('psych-midterm-notion-v1',JSON.stringify({answers:{SA001:'Previous Experience',ES001:'서술 초안',RC001:'sort(score, decreasing=TRUE)[1]'},grades:{SA001:'done',RC001:'done'},rubrics:{RC001:[true,true]},revealed:{RC001:true},checks:{keep:true},bookmarks:{RC001:true},objectiveAnswers:{keep:'objective'}}));
+  localStorage.setItem('psych-midterm-ox-v1',JSON.stringify({answers:{OX001:{value:false,correct:true}},bookmarks:{OX001:true}}));
+  localStorage.setItem('psych-midterm-multiple-v1',JSON.stringify({answers:{MC001:{selected:['o1'],correct:true}},bookmarks:{MC001:true}}));
+ });
+ await page.reload();let s=await read();
+ check(s.codeSchemaVersion===1,'code schema migration saved');
+ check(s.legacyCodeDrafts.RC001.answer==='sort(score, decreasing=TRUE)[1]'&&s.legacyCodeDrafts.RC001.grade==='done','previous full-code draft and grade archived');
+ check(s.answers.SA001==='Previous Experience'&&s.grades.SA001==='done'&&s.answers.ES001==='서술 초안','migration preserves short and essay answers and grades');
+ check(!s.grades.RC001&&!s.revealed.RC001,'old code grade does not apply to new blanks');
+ check(await page.locator('.wr-legacy').count()===1,'previous draft accessible in a details panel');
+ check(await page.getByRole('textbox',{name:'RC001 빈칸 1',exact:true}).inputValue()==='','new code blanks start empty');
+ check(!await page.locator('#writtenSolution').isVisible(),'new blank answers initially hidden');
+ check(await page.getByRole('button',{name:'완벽 이해',exact:true}).isDisabled(),'empty draft cannot be self graded');
+ await page.getByRole('textbox',{name:'RC001 빈칸 1',exact:true}).fill('sort');
+ await page.getByRole('textbox',{name:'RC001 빈칸 2',exact:true}).fill('TRUE');
+ await page.getByRole('textbox',{name:'RC001 빈칸 3',exact:true}).fill('1');
+ await page.locator('#writtenAnswer').fill('80');
+ s=await read();check(s.codeAnswers.RC001['2']==='TRUE'&&s.codeNotes.RC001==='80','blank inputs and interpretation saved separately');
+ await page.reload();
+ check(await page.getByRole('textbox',{name:'RC001 빈칸 2',exact:true}).inputValue()==='TRUE'&&await page.locator('#writtenAnswer').inputValue()==='80','blank and follow-up restored after reload');
+ check((await read()).legacyCodeDrafts.RC001.answer.includes('sort'),'reload retains archived draft');
+ await page.getByRole('button',{name:'정답·해설·채점 기준 보기',exact:true}).click();
+ check(await page.locator('.wr-blank-answers li').count()===3,'blank-specific answers and explanations reveal');
+ check(await page.locator('.wr-model-code').innerText().then(t=>t.includes('ordered[1]')&&t.includes('score <- c(20, 80, 40)')),'complete model includes valid setup and filled code');
+ for(const input of await page.locator('[data-rubric]').all())await input.check();
+ check(await page.locator('#writtenScore').innerText().then(t=>t.includes('5 / 5')),'blank and output rubric points sum');
+ await page.getByRole('button',{name:'애매함',exact:true}).click();
+ check((await read()).grades.RC001==='unsure','blank question self grade saved');
+ await page.getByRole('textbox',{name:'RC001 빈칸 2',exact:true}).fill('FALSE');s=await read();
+ check(!s.grades.RC001&&s.rubrics.RC001.length===0,'editing a code blank invalidates old grade and rubric');
+ await page.getByRole('textbox',{name:'RC001 빈칸 2',exact:true}).fill('TRUE');
+ await page.getByRole('button',{name:'R 코드 작성',exact:true}).click();
+ check(await page.locator('#writtenJump option').count()===20,'R filter shows all 20 blank questions');
+ let blanks=0;
+ for(const q of qs){
+  await page.locator('#writtenJump').selectOption(q.id);
+  check(await page.locator('[data-code-blank]').count()===q.codeBlanks.length,`${q.id}: numbered inputs match all blanks`);
+  check(await page.locator('.wr-code-question .wr-line-number').count()===q.codeTemplate.split('\n').length,`${q.id}: editor line numbers match R source`);
+  const shownTemplate=await page.locator('.wr-code-question .wr-code-source').evaluateAll(lines=>lines.map(line=>[...line.childNodes].map(n=>n.nodeName==='INPUT'?'{{'+n.dataset.codeBlank+'}}':n.textContent).join('')).join('\n'));
+  check(shownTemplate===q.codeTemplate,`${q.id}: all R whitespace indentation and symbols preserved`);
+  check(await page.locator('.wr-code-question .wr-code-source').first().evaluate(el=>getComputedStyle(el).whiteSpace==='pre'&&getComputedStyle(el).fontFamily.includes('monospace')),`${q.id}: monospaced editor preserves indentation`);
+
+  for(const b of q.codeBlanks){await page.getByRole('textbox',{name:`${q.id} 빈칸 ${b.id}`,exact:true}).fill(b.answer);blanks++}
+  if(q.followUp)await page.locator('#writtenAnswer').fill('추가 답안 확인: '+q.answer);
+  else check(await page.locator('#writtenAnswer').count()===0,`${q.id}: no redundant full-code textarea`);
+  const reveal=page.locator('#writtenReveal');if(await reveal.getAttribute('aria-expanded')==='false')await reveal.click();
+  check(await page.locator('.wr-blank-answers li').count()===q.codeBlanks.length,`${q.id}: each blank has solution and explanation`);
+  check((await page.locator('.wr-model-code .wr-code-source').allTextContents()).join('\n')===q.modelCode,`${q.id}: completed model code displayed exactly`);
+ }
+ check(blanks===61,'all 61 inputs accept actual R syntax');
+ await page.reload();s=await read();
+ check(qs.every(q=>q.codeBlanks.every(b=>s.codeAnswers[q.id][b.id]===b.answer)),'all 20 questions restore every code fragment after reload');
+ await page.getByRole('button',{name:'R 코드 작성',exact:true}).click();
+ await page.locator('#writtenJump').selectOption('RC002');
+ for(const input of await page.locator('[data-rubric]').all())await input.check();
+ check(await page.locator('#writtenScore').innerText().then(t=>t.includes('4 / 4')),'half-point function/output rubric sums correctly');
+ await page.locator('#writtenJump').selectOption('RC001');await page.getByRole('textbox',{name:'RC001 빈칸 2',exact:true}).focus();await page.keyboard.press('ArrowRight');
+ check(await page.locator('[data-question]').getAttribute('data-question')==='RC001','arrow key inside code input does not change question');
+ await page.keyboard.press('Tab');check(await page.getByRole('textbox',{name:'RC001 빈칸 3',exact:true}).evaluate(el=>el===document.activeElement),'Tab moves to next blank in code order');
+ await page.setViewportSize({width:1280,height:900});if(await page.locator('#writtenReveal').getAttribute('aria-expanded')==='true')await page.locator('#writtenReveal').click();
+ await page.screenshot({path:'/tmp/psy-code-blanks-desktop.png'});
+ await page.setViewportSize({width:390,height:844});
+ for(const q of qs){await page.locator('#writtenJump').selectOption(q.id);check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${q.id}: mobile page does not overflow`)}
+ await page.locator('#writtenJump').selectOption('RC019');if(await page.locator('#writtenReveal').getAttribute('aria-expanded')==='true')await page.locator('#writtenReveal').click();
+ await page.screenshot({path:'/tmp/psy-code-blanks-mobile.png'});
+ await page.setViewportSize({width:320,height:760});
+ check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'320px page width remains contained');
+ await page.locator('#writtenJump').selectOption('RC001');
+ page.once('dialog',d=>d.dismiss());await page.getByRole('button',{name:'이 문제 초기화',exact:true}).click();
+ check((await read()).codeAnswers.RC001['1']==='sort','cancel individual reset preserves blanks');
+ page.once('dialog',d=>d.accept());await page.getByRole('button',{name:'이 문제 초기화',exact:true}).click();s=await read();
+ check(!s.codeAnswers.RC001&&!s.codeNotes.RC001&&!s.legacyCodeDrafts.RC001,'individual reset clears current and archived answer for only that item');
+ check(s.codeAnswers.RC019['1'].includes('Correct')&&s.answers.SA001==='Previous Experience'&&s.bookmarks.RC001,'individual reset preserves other drafts and bookmark');
+ page.once('dialog',d=>d.dismiss());await page.getByRole('button',{name:'문제 초기화',exact:true}).click();check((await read()).codeAnswers.RC019['1'].includes('Correct'),'cancel all reset preserves blanks');
+ page.once('dialog',d=>d.accept());await page.getByRole('button',{name:'문제 초기화',exact:true}).click();s=await read();
+ check(!Object.keys(s.codeAnswers).length&&!Object.keys(s.codeNotes).length&&!Object.keys(s.legacyCodeDrafts).length&&!Object.keys(s.answers).length&&!Object.keys(s.grades).length,'all reset clears all written-answer fields');
+ check(s.checks.keep&&s.bookmarks.RC001&&s.objectiveAnswers.keep==='objective','all reset preserves checklist bookmarks and objective state');
+ check(await page.evaluate(()=>JSON.parse(localStorage.getItem('psych-midterm-ox-v1')).answers.OX001.correct&&JSON.parse(localStorage.getItem('psych-midterm-multiple-v1')).answers.MC001.correct),'R reset preserves OX and multiple-choice records');
+ await page.getByRole('button',{name:'단답형',exact:true}).click();check(await page.locator('#writtenJump option').count()===42&&await page.locator('#writtenAnswer').isVisible(),'42 short questions retain free-text input');
+ await page.getByRole('button',{name:'서술형',exact:true}).click();check(await page.locator('#writtenJump option').count()===41&&await page.locator('#writtenAnswer').isVisible(),'41 essay questions retain free-text input');
+ check(errors.length===0,'no unhandled JavaScript errors');
+ await page.evaluate(r=>{window.CODE_BLANK_QA=r},{passed:results.length,results,errors,questionCount:20,blankCount:61});
+ return {passed:results.length,errors,questionCount:20,blankCount:61};
+}

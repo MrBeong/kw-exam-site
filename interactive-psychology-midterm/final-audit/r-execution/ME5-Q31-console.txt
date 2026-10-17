@@ -1,0 +1,25 @@
+
+	Classical Levene's test based on the absolute deviations from the mean
+	( none not applied because the location is not set to median )
+
+data:  datat$height
+Test Statistic = 1.9176, p-value = 0.1742
+
+
+	Two Sample t-test
+
+data:  height by group
+t = -2.8686, df = 38, p-value = 0.006696
+alternative hypothesis: true difference in means between group Deagu and group Seoul is not equal to 0
+95 percent confidence interval:
+ -13.446989  -2.320011
+sample estimates:
+mean in group Deagu mean in group Seoul 
+           156.1165            164.0000 
+
+
+	Shapiro-Wilk normality test
+
+data:  d
+W = 0.99845, p-value = 1
+

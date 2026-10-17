@@ -1,0 +1,13 @@
+{
+  "id": "RC004",
+  "originId": "RC004",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "default quantiles at five percentages", "quantile labels", "boxplot observes five values; data-frame summary returned", "actual boxplot PDF rendered", "no unexpected warnings"],
+  "metrics": {
+    "quantiles": [1, 2, 3, 4, 100],
+    "boxplotN": 5
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}

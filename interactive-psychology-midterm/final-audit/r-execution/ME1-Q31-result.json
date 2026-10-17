@@ -1,0 +1,13 @@
+{
+  "id": "ME1-Q31",
+  "originId": "RC013",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "regression direction y~x", "actual workbook regression coefficients", "actual workbook R-squared", "scatterplot PDF rendered", "no unexpected warnings"],
+  "metrics": {
+    "coefficients": [30.933333333333344, 0.8704761904761902],
+    "R2": 0.6828143135043233
+  },
+  "warnings": [],
+  "inputProvenance": "provided_regression1.xlsx_actual_12_rows"
+}

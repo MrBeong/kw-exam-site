@@ -1,0 +1,75 @@
+{
+  "id": "RC013",
+  "type": "code",
+  "chapter": "회귀·실험실습",
+  "conceptIds": [
+    "OX164",
+    "OX165",
+    "OX168",
+    "OX174"
+  ],
+  "prompt": "같은 사람에게서 얻은 수치 벡터 x는 적성점수, y는 업무만족도다. 산점도를 그리고 y를 x로 예측하는 model을 적합한 뒤 요약을 확인하려 한다. 빈칸 (1)에는 두 인자를 쉼표로 구분하여 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "answer": "산점도로 관계 형태를 점검하고 y~x 방향으로 적합한다.",
+  "explanation": [
+    "lm(x~y)는 반대 방향의 다른 회귀다.",
+    "summary(model)은 계수·설명력·모형 유의성 정보를 제공한다."
+  ],
+  "rubric": [
+    {
+      "points": 1,
+      "criterion": "빈칸 (1): x, y 순서"
+    },
+    {
+      "points": 1,
+      "criterion": "빈칸 (2): lm"
+    },
+    {
+      "points": 1,
+      "criterion": "빈칸 (3): y ~ x"
+    },
+    {
+      "points": 1,
+      "criterion": "빈칸 (4): summary"
+    }
+  ],
+  "commonMistakes": [
+    "반응변수와 설명변수를 바꾸지 않는다."
+  ],
+  "englishTerms": [],
+  "language": "각 빈칸에 실제 R 문법으로 작성. 문자열은 필요한 따옴표까지 포함한다.",
+  "accepted": "제시된 코드 틀에 넣었을 때 요구한 동작을 하는 R 코드를 인정한다. 공백·일반 작은따옴표/큰따옴표 차이와 동등한 식은 허용한다. 함수·객체의 철자·대소문자 및 문자열 값은 정확해야 한다.",
+  "source": "회귀 교안 p.2, 7–8 · 회귀 교안 p.7 · 회귀 교안 p.9, 22 · 회귀 교안 p.23",
+  "calc": false,
+  "points": 4,
+  "modelCode": "plot(x, y)\n\nmodel <- lm(\n  y ~ x\n)\n\nsummary(model)",
+  "codeTemplate": "plot({{1}})\n\nmodel <- {{2}}(\n  {{3}}\n)\n\n{{4}}(model)",
+  "codeBlanks": [
+    {
+      "id": "1",
+      "answer": "x, y",
+      "explanation": "plot(x, y)에서 가로축은 x, 세로축은 y다."
+    },
+    {
+      "id": "2",
+      "answer": "lm",
+      "explanation": "선형회귀모형을 적합하는 함수다."
+    },
+    {
+      "id": "3",
+      "answer": "y ~ x",
+      "explanation": "y를 반응변수, x를 설명변수로 둔다."
+    },
+    {
+      "id": "4",
+      "answer": "summary",
+      "explanation": "적합된 model의 계수·설명력·모형 검정 요약을 출력한다."
+    }
+  ],
+  "followUp": "",
+  "codeSetup": "x <- c(\n  65, 50, 55, 65, 55, 70, 65, 70,\n  65, 70, 50, 55\n)\ny <- c(\n  85, 74, 76, 90, 85, 87, 94, 98,\n  81, 91, 76, 74\n)",
+  "inputDescription": "regression1.xlsx의 실제 12행을 순서대로 옮겼다. x는 적성검사 점수, y는 업무만족도다.",
+  "promptPlain": "같은 사람에게서 얻은 수치 벡터 x는 적성점수, y는 업무만족도다. 산점도를 그리고 y를 x로 예측하는 model을 적합한 뒤 요약을 확인하려 한다. 빈칸 (1)에는 두 인자를 쉼표로 구분하여 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "originId": "RC013",
+  "bank": "written",
+  "inputProvenance": "provided_regression1.xlsx_actual_12_rows"
+}

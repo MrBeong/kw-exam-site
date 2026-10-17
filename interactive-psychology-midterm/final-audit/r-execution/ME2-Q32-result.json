@@ -1,0 +1,15 @@
+{
+  "id": "ME2-Q32",
+  "originId": "RC018",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "both Fitts MT values rounded to requested hundredths", "no unexpected warnings"],
+  "metrics": {
+    "providedLogApproximation": [350.19999999999999, 455.13],
+    "ID": [2.584962500721156, 3.459431618637297],
+    "MT": [350.19550008653874, 455.13179423647568],
+    "roundedMT": [350.19999999999999, 455.13]
+  },
+  "warnings": [],
+  "inputProvenance": "question_literal_vectors"
+}

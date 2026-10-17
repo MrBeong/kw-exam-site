@@ -1,0 +1,16 @@
+{
+  "checks": 10,
+  "results": [
+    "HTTP shortcut opens 103-item bank",
+    "ascending and descending model present",
+    "RC001 updated rubric present",
+    "history institution examples present",
+    "R and RStudio role explanation present",
+    "existing MC bank still loads",
+    "HTTP shared mistakes preserve written record",
+    "existing OX bank still loads",
+    "OX053 paper phase matches primary source",
+    "HTTP no uncaught errors"
+  ],
+  "errors": []
+}

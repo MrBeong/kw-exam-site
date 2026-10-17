@@ -1,0 +1,1130 @@
+[
+  {
+    "id": "OX001",
+    "chapter": "개론·역사",
+    "kind": "UX 범위",
+    "source": "1-1 교안 p.2–3"
+  },
+  {
+    "id": "OX002",
+    "chapter": "개론·역사",
+    "kind": "UX 요소",
+    "source": "1-1 교안 p.2"
+  },
+  {
+    "id": "OX003",
+    "chapter": "개론·역사",
+    "kind": "UX 요소",
+    "source": "1-1 교안 p.2"
+  },
+  {
+    "id": "OX004",
+    "chapter": "개론·역사",
+    "kind": "UX 요소",
+    "source": "1-1 교안 p.2"
+  },
+  {
+    "id": "OX005",
+    "chapter": "개론·역사",
+    "kind": "정의",
+    "source": "1-1 교안 p.4–5"
+  },
+  {
+    "id": "OX006",
+    "chapter": "개론·역사",
+    "kind": "학문 영역",
+    "source": "1-1 교안 p.8"
+  },
+  {
+    "id": "OX007",
+    "chapter": "개론·역사",
+    "kind": "선택적 주의",
+    "source": "1-1 교안 p.9–10"
+  },
+  {
+    "id": "OX008",
+    "chapter": "개론·역사",
+    "kind": "UX 역사",
+    "source": "1-2 교안 p.2–4"
+  },
+  {
+    "id": "OX009",
+    "chapter": "개론·역사",
+    "kind": "UX 역사",
+    "source": "1-2 교안 p.3"
+  },
+  {
+    "id": "OX010",
+    "chapter": "개론·역사",
+    "kind": "어원·정의",
+    "source": "1-2 교안 p.7"
+  },
+  {
+    "id": "OX011",
+    "chapter": "개론·역사",
+    "kind": "동의어",
+    "source": "1-2 교안 p.7"
+  },
+  {
+    "id": "OX012",
+    "chapter": "개론·역사",
+    "kind": "정의",
+    "source": "1-2 교안 p.7"
+  },
+  {
+    "id": "OX013",
+    "chapter": "개론·역사",
+    "kind": "설계 패러다임",
+    "source": "1-2 교안 p.8–9"
+  },
+  {
+    "id": "OX014",
+    "chapter": "개론·역사",
+    "kind": "설계 패러다임",
+    "source": "1-2 교안 p.8–11"
+  },
+  {
+    "id": "OX015",
+    "chapter": "개론·역사",
+    "kind": "therbligs · 기출",
+    "source": "1-2 교안 p.12"
+  },
+  {
+    "id": "OX016",
+    "chapter": "개론·역사",
+    "kind": "therbligs · 기출",
+    "source": "1-2 교안 p.12"
+  },
+  {
+    "id": "OX017",
+    "chapter": "개론·역사",
+    "kind": "역사",
+    "source": "1-2 교안 p.12"
+  },
+  {
+    "id": "OX018",
+    "chapter": "개론·역사",
+    "kind": "역사",
+    "source": "1-2 교안 p.13"
+  },
+  {
+    "id": "OX019",
+    "chapter": "개론·역사",
+    "kind": "역사",
+    "source": "1-2 교안 p.13"
+  },
+  {
+    "id": "OX020",
+    "chapter": "개론·역사",
+    "kind": "역사",
+    "source": "1-2 교안 p.14"
+  },
+  {
+    "id": "OX021",
+    "chapter": "개론·역사",
+    "kind": "HFE 영역 구분",
+    "source": "1-2 교안 p.15"
+  },
+  {
+    "id": "OX022",
+    "chapter": "개론·역사",
+    "kind": "HFE 영역 구분",
+    "source": "1-2 교안 p.15"
+  },
+  {
+    "id": "OX023",
+    "chapter": "개론·역사",
+    "kind": "설계 사례",
+    "source": "1-2 교안 p.10"
+  },
+  {
+    "id": "OX024",
+    "chapter": "개론·역사",
+    "kind": "최신 동향",
+    "source": "1-2 교안 p.14–17"
+  },
+  {
+    "id": "OX025",
+    "chapter": "개론·역사",
+    "kind": "정의",
+    "source": "1-2 교안 p.7"
+  },
+  {
+    "id": "OX026",
+    "chapter": "HFE 연구방법론",
+    "kind": "설계 프로세스",
+    "source": "2장 교안 p.3–4 · 연구방법론 전사1"
+  },
+  {
+    "id": "OX027",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 유형",
+    "source": "2장 교안 p.4–7"
+  },
+  {
+    "id": "OX028",
+    "chapter": "HFE 연구방법론",
+    "kind": "BMI 공식",
+    "source": "2장 교안 p.5"
+  },
+  {
+    "id": "OX029",
+    "chapter": "HFE 연구방법론",
+    "kind": "백분위수",
+    "source": "2장 교안 p.6 · 연구방법론 전사1"
+  },
+  {
+    "id": "OX030",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 유형",
+    "source": "2장 교안 p.4, 8–9"
+  },
+  {
+    "id": "OX031",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 유형",
+    "source": "2장 교안 p.10"
+  },
+  {
+    "id": "OX032",
+    "chapter": "HFE 연구방법론",
+    "kind": "실험 결과",
+    "source": "2장 교안 p.10"
+  },
+  {
+    "id": "OX033",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 유형",
+    "source": "2장 교안 p.4, 11–13"
+  },
+  {
+    "id": "OX034",
+    "chapter": "HFE 연구방법론",
+    "kind": "평가 사례",
+    "source": "2장 교안 p.11"
+  },
+  {
+    "id": "OX035",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 환경 비교",
+    "source": "2장 교안 p.14"
+  },
+  {
+    "id": "OX036",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 환경 비교",
+    "source": "2장 교안 p.14"
+  },
+  {
+    "id": "OX037",
+    "chapter": "HFE 연구방법론",
+    "kind": "실험 변수",
+    "source": "2장 교안 p.15"
+  },
+  {
+    "id": "OX038",
+    "chapter": "HFE 연구방법론",
+    "kind": "실험 변수",
+    "source": "2장 교안 p.15 · 연구방법론 전사1"
+  },
+  {
+    "id": "OX039",
+    "chapter": "HFE 연구방법론",
+    "kind": "종속변수 선정",
+    "source": "2장 교안 p.16"
+  },
+  {
+    "id": "OX040",
+    "chapter": "HFE 연구방법론",
+    "kind": "종속변수 분류",
+    "source": "연구방법론 전사2"
+  },
+  {
+    "id": "OX041",
+    "chapter": "HFE 연구방법론",
+    "kind": "피험자 대표성",
+    "source": "2장 교안 p.17"
+  },
+  {
+    "id": "OX042",
+    "chapter": "HFE 연구방법론",
+    "kind": "표본 수 공식 · 함정",
+    "source": "2장 교안 p.18"
+  },
+  {
+    "id": "OX043",
+    "chapter": "HFE 연구방법론",
+    "kind": "표본 수 공식",
+    "source": "2장 교안 p.18"
+  },
+  {
+    "id": "OX044",
+    "chapter": "HFE 연구방법론",
+    "kind": "표본 수 계산",
+    "source": "2장 교안 p.19"
+  },
+  {
+    "id": "OX045",
+    "chapter": "HFE 연구방법론",
+    "kind": "실무 요건",
+    "source": "2장 교안 p.20"
+  },
+  {
+    "id": "OX046",
+    "chapter": "HFE 연구방법론",
+    "kind": "신뢰도",
+    "source": "2장 교안 p.20"
+  },
+  {
+    "id": "OX047",
+    "chapter": "HFE 연구방법론",
+    "kind": "신뢰도 vs 정확도",
+    "source": "2장 교안 p.21"
+  },
+  {
+    "id": "OX048",
+    "chapter": "HFE 연구방법론",
+    "kind": "내적 vs 외적 타당도",
+    "source": "2장 교안 p.20"
+  },
+  {
+    "id": "OX049",
+    "chapter": "HFE 연구방법론",
+    "kind": "내적 타당도",
+    "source": "2장 교안 p.20"
+  },
+  {
+    "id": "OX050",
+    "chapter": "HFE 연구방법론",
+    "kind": "Deficiency vs Contamination",
+    "source": "2장 교안 p.22"
+  },
+  {
+    "id": "OX051",
+    "chapter": "HFE 연구방법론",
+    "kind": "Deficiency vs Contamination",
+    "source": "2장 교안 p.22"
+  },
+  {
+    "id": "OX052",
+    "chapter": "HFE 연구방법론",
+    "kind": "SE vs SD",
+    "source": "2장 교안 p.10 · 원문과 검증"
+  },
+  {
+    "id": "OX053",
+    "chapter": "HFE 연구방법론",
+    "kind": "설계 절차",
+    "source": "2장 교안 p.13 · 2주차 논문"
+  },
+  {
+    "id": "OX054",
+    "chapter": "정보량·중복도",
+    "kind": "정보처리 모형",
+    "source": "3장 교안 p.6"
+  },
+  {
+    "id": "OX055",
+    "chapter": "정보량·중복도",
+    "kind": "작업기억 지속시간",
+    "source": "3장 교안 p.6"
+  },
+  {
+    "id": "OX056",
+    "chapter": "정보량·중복도",
+    "kind": "주의 자원",
+    "source": "3장 교안 p.6"
+  },
+  {
+    "id": "OX057",
+    "chapter": "정보량·중복도",
+    "kind": "피드백 루프",
+    "source": "3장 교안 p.6"
+  },
+  {
+    "id": "OX058",
+    "chapter": "정보량·중복도",
+    "kind": "불확실성과 정보량",
+    "source": "3장 교안 p.7"
+  },
+  {
+    "id": "OX059",
+    "chapter": "정보량·중복도",
+    "kind": "bit 정의",
+    "source": "3장 교안 p.8"
+  },
+  {
+    "id": "OX060",
+    "chapter": "정보량·중복도",
+    "kind": "등확률 정보량",
+    "source": "3장 교안 p.8"
+  },
+  {
+    "id": "OX061",
+    "chapter": "정보량·중복도",
+    "kind": "Hartley 공식",
+    "source": "3장 교안 p.9"
+  },
+  {
+    "id": "OX062",
+    "chapter": "정보량·중복도",
+    "kind": "Shannon 공식",
+    "source": "3장 교안 p.9"
+  },
+  {
+    "id": "OX063",
+    "chapter": "정보량·중복도",
+    "kind": "정보량 계산",
+    "source": "3장 교안 p.9"
+  },
+  {
+    "id": "OX064",
+    "chapter": "정보량·중복도",
+    "kind": "확률과 정보량",
+    "source": "3장 교안 p.10"
+  },
+  {
+    "id": "OX065",
+    "chapter": "정보량·중복도",
+    "kind": "정보량 곡선",
+    "source": "3장 교안 p.10 · 정보처리 전사1"
+  },
+  {
+    "id": "OX066",
+    "chapter": "정보량·중복도",
+    "kind": "중복도 공식",
+    "source": "3장 교안 p.11"
+  },
+  {
+    "id": "OX067",
+    "chapter": "정보량·중복도",
+    "kind": "중복도 계산 · 함정",
+    "source": "3장 교안 p.11"
+  },
+  {
+    "id": "OX068",
+    "chapter": "정보량·중복도",
+    "kind": "경고등 예제",
+    "source": "3장 교안 p.12"
+  },
+  {
+    "id": "OX069",
+    "chapter": "정보량·중복도",
+    "kind": "경고등 예제",
+    "source": "3장 교안 p.13"
+  },
+  {
+    "id": "OX070",
+    "chapter": "정보량·중복도",
+    "kind": "경고등 설계 원리",
+    "source": "3장 교안 p.13"
+  },
+  {
+    "id": "OX071",
+    "chapter": "정보량·중복도",
+    "kind": "신호등 예제",
+    "source": "3장 교안 p.14"
+  },
+  {
+    "id": "OX072",
+    "chapter": "정보량·중복도",
+    "kind": "정보량 성질",
+    "source": "3장 교안 p.10, 14"
+  },
+  {
+    "id": "OX073",
+    "chapter": "정보량·중복도",
+    "kind": "정보량과 중복도 관계",
+    "source": "3장 교안 p.10–11"
+  },
+  {
+    "id": "OX074",
+    "chapter": "정보량·중복도",
+    "kind": "로그 스케일 성질",
+    "source": "3장 교안 p.8–9"
+  },
+  {
+    "id": "OX075",
+    "chapter": "정보량·중복도",
+    "kind": "계산 규칙",
+    "source": "3장 교안 p.18"
+  },
+  {
+    "id": "OX076",
+    "chapter": "정보량·중복도",
+    "kind": "핵심 취지",
+    "source": "3장 교안 p.7"
+  },
+  {
+    "id": "OX077",
+    "chapter": "정보량·중복도",
+    "kind": "장기기억 역할",
+    "source": "3장 교안 p.6"
+  },
+  {
+    "id": "OX078",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "정보전달이론",
+    "source": "3장 교안 p.15"
+  },
+  {
+    "id": "OX079",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Equivocation vs Noise · 기출",
+    "source": "3장 교안 p.15–16"
+  },
+  {
+    "id": "OX080",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "전달정보량 공식",
+    "source": "3장 교안 p.16"
+  },
+  {
+    "id": "OX081",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Equivocation & Noise",
+    "source": "3장 교안 p.16"
+  },
+  {
+    "id": "OX082",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "혼동행렬 계산 · 기출",
+    "source": "3장 교안 p.17–18"
+  },
+  {
+    "id": "OX083",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "혼동행렬 계산 · 기출",
+    "source": "3장 교안 p.18"
+  },
+  {
+    "id": "OX084",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "정보전달이론 함정",
+    "source": "3장 교안 p.19"
+  },
+  {
+    "id": "OX085",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "채널 용량",
+    "source": "3장 교안 p.20"
+  },
+  {
+    "id": "OX086",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "마법의 숫자 7±2",
+    "source": "3장 교안 p.21"
+  },
+  {
+    "id": "OX087",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "자극 차원 식별",
+    "source": "3장 교안 p.21"
+  },
+  {
+    "id": "OX088",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "시연(Rehearsal)",
+    "source": "3장 교안 p.25"
+  },
+  {
+    "id": "OX089",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "절대 vs 상대 판단 · 함정",
+    "source": "3장 교안 p.26–28"
+  },
+  {
+    "id": "OX090",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "다차원 자극",
+    "source": "3장 교안 p.26"
+  },
+  {
+    "id": "OX091",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Chunking",
+    "source": "3장 교안 p.29"
+  },
+  {
+    "id": "OX092",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Sternberg · 기출",
+    "source": "3장 교안 p.30–31"
+  },
+  {
+    "id": "OX093",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Sternberg 탐색 방식",
+    "source": "3장 교안 p.31"
+  },
+  {
+    "id": "OX094",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Sternberg 그래프",
+    "source": "3장 교안 p.31"
+  },
+  {
+    "id": "OX095",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Donders A/B/C",
+    "source": "3장 교안 p.32"
+  },
+  {
+    "id": "OX096",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Donders A/B/C",
+    "source": "3장 교안 p.32"
+  },
+  {
+    "id": "OX097",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Donders 차감법 · 함정",
+    "source": "3장 교안 p.32"
+  },
+  {
+    "id": "OX098",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick's Law · 기출",
+    "source": "3장 교안 p.34–35"
+  },
+  {
+    "id": "OX099",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 기울기와 채널용량",
+    "source": "3장 교안 p.36"
+  },
+  {
+    "id": "OX100",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 수치 예시",
+    "source": "3장 교안 p.36"
+  },
+  {
+    "id": "OX101",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "생리적 반응시간",
+    "source": "3장 교안 p.36"
+  },
+  {
+    "id": "OX102",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "RT 증감 요인",
+    "source": "3장 교안 p.36"
+  },
+  {
+    "id": "OX103",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 절편 요인 · 기출",
+    "source": "3장 교안 p.37"
+  },
+  {
+    "id": "OX104",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 절편 요인",
+    "source": "3장 교안 p.37"
+  },
+  {
+    "id": "OX105",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 절편 요인",
+    "source": "3장 교안 p.37"
+  },
+  {
+    "id": "OX106",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 기울기 요인 · 기출",
+    "source": "3장 교안 p.37"
+  },
+  {
+    "id": "OX107",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 기울기 해석",
+    "source": "3장 교안 p.37 · 정보처리 전사3"
+  },
+  {
+    "id": "OX108",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 계산",
+    "source": "3장 교안 p.34–36"
+  },
+  {
+    "id": "OX109",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick UI 사례",
+    "source": "3장 교안 p.39–41 · 정보처리 전사3"
+  },
+  {
+    "id": "OX110",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "전달정보량 성질",
+    "source": "3장 교안 p.16–18"
+  },
+  {
+    "id": "OX111",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "엔트로피 부등식",
+    "source": "3장 교안 p.16"
+  },
+  {
+    "id": "OX112",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts' Law · 기출",
+    "source": "3장 교안 p.42–44"
+  },
+  {
+    "id": "OX113",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts' Law · 기출",
+    "source": "3장 교안 p.42, 44"
+  },
+  {
+    "id": "OX114",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts 원형 공식",
+    "source": "3장 교안 p.43"
+  },
+  {
+    "id": "OX115",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts ISO 공식 · 함정",
+    "source": "3장 교안 p.46–47"
+  },
+  {
+    "id": "OX116",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts 계산",
+    "source": "3장 교안 p.47"
+  },
+  {
+    "id": "OX117",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts 계산",
+    "source": "3장 교안 p.47"
+  },
+  {
+    "id": "OX118",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts 비율 불변성",
+    "source": "3장 교안 p.46–47"
+  },
+  {
+    "id": "OX119",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "신체 부위별 기울기 · 기출",
+    "source": "3장 교안 p.48"
+  },
+  {
+    "id": "OX120",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "관절 수와 MT",
+    "source": "3장 교안 p.48"
+  },
+  {
+    "id": "OX121",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Positioning vs Ballistic",
+    "source": "3장 교안 p.50"
+  },
+  {
+    "id": "OX122",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Positioning vs Ballistic",
+    "source": "3장 교안 p.50"
+  },
+  {
+    "id": "OX123",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "2단계 운동 제어",
+    "source": "3장 교안 p.50 · 정보처리 전사4"
+  },
+  {
+    "id": "OX124",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "연습 효과 · 함정",
+    "source": "3장 교안 p.51"
+  },
+  {
+    "id": "OX125",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Range Effect · 기출",
+    "source": "3장 교안 p.51"
+  },
+  {
+    "id": "OX126",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Range Effect · 기출",
+    "source": "3장 교안 p.51"
+  },
+  {
+    "id": "OX127",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "VR 운동제어 사례",
+    "source": "3장 교안 p.53–56"
+  },
+  {
+    "id": "OX128",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양립성 정의",
+    "source": "3장 교안 p.57"
+  },
+  {
+    "id": "OX129",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Population stereotype & Affordance",
+    "source": "3장 교안 p.57"
+  },
+  {
+    "id": "OX130",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양립성 이점",
+    "source": "3장 교안 p.57"
+  },
+  {
+    "id": "OX131",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양립성 4분류 · 함정",
+    "source": "3장 교안 p.58"
+  },
+  {
+    "id": "OX132",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "운동 양립성",
+    "source": "3장 교안 p.59"
+  },
+  {
+    "id": "OX133",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "개념 양립성",
+    "source": "3장 교안 p.60"
+  },
+  {
+    "id": "OX134",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양식 양립성 · 기출",
+    "source": "3장 교안 p.61"
+  },
+  {
+    "id": "OX135",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양립성 문화 차이",
+    "source": "3장 교안 p.62"
+  },
+  {
+    "id": "OX136",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양립성 경험 차이",
+    "source": "3장 교안 p.62"
+  },
+  {
+    "id": "OX137",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "공간 양립성 실험",
+    "source": "3장 교안 p.63–66 · 정보처리 전사4"
+  },
+  {
+    "id": "OX138",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "3D VR Fitts 논문",
+    "source": "4주차 논문 · 피츠 전사"
+  },
+  {
+    "id": "OX139",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "단위 일치",
+    "source": "3장 교안 p.46–47"
+  },
+  {
+    "id": "OX140",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts UI 설계",
+    "source": "3장 교안 p.49"
+  },
+  {
+    "id": "OX141",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Hick vs Fitts 비교",
+    "source": "3장 교안 p.34, 42"
+  },
+  {
+    "id": "OX142",
+    "chapter": "기초통계·T검정",
+    "kind": "RStudio 구조",
+    "source": "R설치 교안 p.2, 12–14"
+  },
+  {
+    "id": "OX143",
+    "chapter": "기초통계·T검정",
+    "kind": "R 실행·저장",
+    "source": "R설치 교안 p.16, 20"
+  },
+  {
+    "id": "OX144",
+    "chapter": "기초통계·T검정",
+    "kind": "R 정렬 코드 · 기출",
+    "source": "t-test 교안 p.3–4"
+  },
+  {
+    "id": "OX145",
+    "chapter": "기초통계·T검정",
+    "kind": "R 인덱싱 · 함정",
+    "source": "t-test 교안 p.3–4"
+  },
+  {
+    "id": "OX146",
+    "chapter": "기초통계·T검정",
+    "kind": "R 기초통계 함수",
+    "source": "t-test 교안 p.3–6"
+  },
+  {
+    "id": "OX147",
+    "chapter": "기초통계·T검정",
+    "kind": "분산 vs 표준편차",
+    "source": "t-test 교안 p.7"
+  },
+  {
+    "id": "OX148",
+    "chapter": "기초통계·T검정",
+    "kind": "표본분산·표준편차",
+    "source": "t-test 교안 p.7"
+  },
+  {
+    "id": "OX149",
+    "chapter": "기초통계·T검정",
+    "kind": "사분위수와 중앙값",
+    "source": "t-test 교안 p.8"
+  },
+  {
+    "id": "OX150",
+    "chapter": "기초통계·T검정",
+    "kind": "R 요약·시각화",
+    "source": "t-test 교안 p.8–9"
+  },
+  {
+    "id": "OX151",
+    "chapter": "기초통계·T검정",
+    "kind": "t-검정 3유형 구분",
+    "source": "t-test 교안 p.10–11"
+  },
+  {
+    "id": "OX152",
+    "chapter": "기초통계·T검정",
+    "kind": "t-검정 3유형 구분",
+    "source": "t-test 교안 p.10, 15"
+  },
+  {
+    "id": "OX153",
+    "chapter": "기초통계·T검정",
+    "kind": "t-검정 3유형 구분",
+    "source": "t-test 교안 p.10, 21"
+  },
+  {
+    "id": "OX154",
+    "chapter": "기초통계·T검정",
+    "kind": "shapiro.test 판정 · 기출",
+    "source": "t-test 교안 p.13, 18, 23"
+  },
+  {
+    "id": "OX155",
+    "chapter": "기초통계·T검정",
+    "kind": "정규성 경험칙",
+    "source": "t-test 교안 p.13, 17"
+  },
+  {
+    "id": "OX156",
+    "chapter": "기초통계·T검정",
+    "kind": "단일표본 t-test 코드",
+    "source": "t-test 교안 p.14"
+  },
+  {
+    "id": "OX157",
+    "chapter": "기초통계·T검정",
+    "kind": "독립표본 가정",
+    "source": "t-test 교안 p.15, 17–19"
+  },
+  {
+    "id": "OX158",
+    "chapter": "기초통계·T검정",
+    "kind": "levene.test 코드 · 기출",
+    "source": "t-test 교안 p.19"
+  },
+  {
+    "id": "OX159",
+    "chapter": "기초통계·T검정",
+    "kind": "등분산과 var.equal",
+    "source": "t-test 교안 p.19–20"
+  },
+  {
+    "id": "OX160",
+    "chapter": "기초통계·T검정",
+    "kind": "R 포뮬러 순서 · 함정",
+    "source": "t-test 교안 p.20"
+  },
+  {
+    "id": "OX161",
+    "chapter": "기초통계·T검정",
+    "kind": "대응표본 정규성",
+    "source": "t-test 교안 p.21, 23"
+  },
+  {
+    "id": "OX162",
+    "chapter": "기초통계·T검정",
+    "kind": "대응표본 결과 해석",
+    "source": "t-test 교안 p.24"
+  },
+  {
+    "id": "OX163",
+    "chapter": "기초통계·T검정",
+    "kind": "평균과 산포",
+    "source": "T검정 전사 · 원문과 검증"
+  },
+  {
+    "id": "OX164",
+    "chapter": "회귀·실험실습",
+    "kind": "상관 vs 회귀",
+    "source": "회귀 교안 p.2, 7–8"
+  },
+  {
+    "id": "OX165",
+    "chapter": "회귀·실험실습",
+    "kind": "독립 vs 종속변수",
+    "source": "회귀 교안 p.7"
+  },
+  {
+    "id": "OX166",
+    "chapter": "회귀·실험실습",
+    "kind": "공분산과 상관계수",
+    "source": "회귀 교안 p.3–6"
+  },
+  {
+    "id": "OX167",
+    "chapter": "회귀·실험실습",
+    "kind": "상관계수 한계",
+    "source": "회귀 교안 p.5–6, 9, 11"
+  },
+  {
+    "id": "OX168",
+    "chapter": "회귀·실험실습",
+    "kind": "단순회귀와 산점도",
+    "source": "회귀 교안 p.9, 22"
+  },
+  {
+    "id": "OX169",
+    "chapter": "회귀·실험실습",
+    "kind": "최소제곱법(OLS)",
+    "source": "회귀 교안 p.15"
+  },
+  {
+    "id": "OX170",
+    "chapter": "회귀·실험실습",
+    "kind": "OLS 공식",
+    "source": "회귀 교안 p.14–16"
+  },
+  {
+    "id": "OX171",
+    "chapter": "회귀·실험실습",
+    "kind": "SST=SSR+SSE · 기출",
+    "source": "회귀 교안 p.17–18"
+  },
+  {
+    "id": "OX172",
+    "chapter": "회귀·실험실습",
+    "kind": "회귀 분산분석표",
+    "source": "회귀 교안 p.19"
+  },
+  {
+    "id": "OX173",
+    "chapter": "회귀·실험실습",
+    "kind": "결정계수 R²",
+    "source": "회귀 교안 p.20"
+  },
+  {
+    "id": "OX174",
+    "chapter": "회귀·실험실습",
+    "kind": "R lm(y~x) 코드 · 기출",
+    "source": "회귀 교안 p.23"
+  },
+  {
+    "id": "OX175",
+    "chapter": "회귀·실험실습",
+    "kind": "R abline 코드 · 기출",
+    "source": "회귀 교안 p.23–24"
+  },
+  {
+    "id": "OX176",
+    "chapter": "회귀·실험실습",
+    "kind": "summary 해석 · 기출",
+    "source": "회귀 교안 p.25"
+  },
+  {
+    "id": "OX177",
+    "chapter": "회귀·실험실습",
+    "kind": "summary 해석 · 기출",
+    "source": "회귀 교안 p.25 · 회귀 전사"
+  },
+  {
+    "id": "OX178",
+    "chapter": "회귀·실험실습",
+    "kind": "summary 해석 · 기출",
+    "source": "회귀 교안 p.25 · 회귀 전사"
+  },
+  {
+    "id": "OX179",
+    "chapter": "회귀·실험실습",
+    "kind": "summary 해석 · 기출",
+    "source": "회귀 교안 p.25 · 회귀 전사"
+  },
+  {
+    "id": "OX180",
+    "chapter": "회귀·실험실습",
+    "kind": "다중회귀 R 포뮬러",
+    "source": "회귀 전사 말미"
+  },
+  {
+    "id": "OX181",
+    "chapter": "회귀·실험실습",
+    "kind": "SRT/CRT bit 변환 · 기출",
+    "source": "SRT/CRT 교안 p.1–3 · 실습 전사"
+  },
+  {
+    "id": "OX182",
+    "chapter": "회귀·실험실습",
+    "kind": "비유의 회귀 출력 해석",
+    "source": "SRT/CRT 실습 전사"
+  },
+  {
+    "id": "OX183",
+    "chapter": "회귀·실험실습",
+    "kind": "실습 로그 규칙",
+    "source": "Sternberg README · 로그"
+  },
+  {
+    "id": "OX184",
+    "chapter": "회귀·실험실습",
+    "kind": "Sternberg 로그 해석",
+    "source": "Sternberg 로그 · 원문과 검증"
+  },
+  {
+    "id": "OX185",
+    "chapter": "회귀·실험실습",
+    "kind": "Sternberg 회귀 분리",
+    "source": "SRT/CRT/Sternberg 실습 전사"
+  },
+  {
+    "id": "OX186",
+    "chapter": "개론·역사",
+    "kind": "Old computer · CLI vs GUI",
+    "source": "1-2 교안 p.5 · 보충영상 PSY-L001"
+  },
+  {
+    "id": "OX187",
+    "chapter": "개론·역사",
+    "kind": "Gen Z Vs Old Tech · 세대 고정관념",
+    "source": "1-2 교안 p.6 · 보충영상 PSY-L002"
+  },
+  {
+    "id": "OX188",
+    "chapter": "개론·역사",
+    "kind": "2000년대 기기 · 물리·인지 마찰",
+    "source": "1-2 교안 p.5–6 · 보충영상 PSY-L003"
+  }
+]

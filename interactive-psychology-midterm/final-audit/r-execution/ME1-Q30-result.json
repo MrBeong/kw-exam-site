@@ -1,0 +1,15 @@
+{
+  "id": "ME1-Q30",
+  "originId": "RC007",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "one-sample null mean matches question/rubric", "only twenty Deagu observations selected", "correct group/height selected", "two-sided one-sample t-test", "no unexpected warnings"],
+  "metrics": {
+    "nullMean": 160,
+    "mean": 156.1165,
+    "df": 19,
+    "fixtureP": 0.02559899975718553
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}

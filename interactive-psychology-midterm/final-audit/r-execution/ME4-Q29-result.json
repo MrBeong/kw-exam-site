@@ -1,0 +1,12 @@
+{
+  "id": "ME4-Q29",
+  "originId": "RC002",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "four visible summary values match answer/rubric", "no unexpected warnings"],
+  "metrics": {
+    "output": [1, 100, 22, 3]
+  },
+  "warnings": [],
+  "inputProvenance": "question_literal_vectors"
+}

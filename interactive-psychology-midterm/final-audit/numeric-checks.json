@@ -1,0 +1,921 @@
+{
+  "passed": 146,
+  "checks": [
+    {
+      "check": "BMI 81/180",
+      "computed": 25.0,
+      "expected": 25,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "BMI 64/160",
+      "computed": 24.999999999999996,
+      "expected": 25,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample raw 5",
+      "computed": 15.366400000000002,
+      "expected": 15.3664,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample total 5",
+      "computed": 16,
+      "expected": 16,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample additional 5",
+      "computed": 11,
+      "expected": 11,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample raw 4",
+      "computed": 24.009999999999994,
+      "expected": 24.01,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample total 4",
+      "computed": 25,
+      "expected": 25,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample additional 4",
+      "computed": 21,
+      "expected": 21,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample s doubling and k halving",
+      "computed": 16.0,
+      "expected": 16,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "SE 12/sqrt36",
+      "computed": 2.0,
+      "expected": 2,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "SE fourfold n ratio",
+      "computed": 0.5,
+      "expected": 0.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hartley 1",
+      "computed": 0.0,
+      "expected": 0,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hartley 2",
+      "computed": 1.0,
+      "expected": 1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hartley 4",
+      "computed": 2.0,
+      "expected": 2,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hartley 8",
+      "computed": 3.0,
+      "expected": 3,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hartley 16",
+      "computed": 4.0,
+      "expected": 4,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hartley 32",
+      "computed": 5.0,
+      "expected": 5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "probability sum [0.5, 0.5]",
+      "computed": 1.0,
+      "expected": 1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "entropy [0.5, 0.5]",
+      "computed": 1.0,
+      "expected": 1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "redundancy [0.5, 0.5]",
+      "computed": 0.0,
+      "expected": 0,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "probability sum [0.2, 0.8]",
+      "computed": 1.0,
+      "expected": 1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "entropy [0.2, 0.8]",
+      "computed": 0.7219280948873623,
+      "expected": 0.7219280948873623,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "redundancy [0.2, 0.8]",
+      "computed": 27.80719051126377,
+      "expected": 27.807190511263773,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "probability sum [0.9, 0.1]",
+      "computed": 1.0,
+      "expected": 1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "entropy [0.9, 0.1]",
+      "computed": 0.4689955935892812,
+      "expected": 0.4689955935892812,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "redundancy [0.9, 0.1]",
+      "computed": 53.10044064107188,
+      "expected": 53.100440641071884,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "probability sum [0.35, 0.35, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05]",
+      "computed": 1.0,
+      "expected": 1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "entropy [0.35, 0.35, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05]",
+      "computed": 2.3567796494470397,
+      "expected": 2.356779649447039,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "redundancy [0.35, 0.35, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05]",
+      "computed": 21.440678351765342,
+      "expected": 21.44067835176536,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "probability sum [0.5, 0.25, 0.125, 0.125]",
+      "computed": 1.0,
+      "expected": 1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "entropy [0.5, 0.25, 0.125, 0.125]",
+      "computed": 1.75,
+      "expected": 1.75,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "redundancy [0.5, 0.25, 0.125, 0.125]",
+      "computed": 12.5,
+      "expected": 12.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "probability sum [0.25, 0.75]",
+      "computed": 1.0,
+      "expected": 1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "entropy [0.25, 0.75]",
+      "computed": 0.8112781244591328,
+      "expected": 0.8112781244591328,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "redundancy [0.25, 0.75]",
+      "computed": 18.872187554086718,
+      "expected": 18.872187554086715,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "probability sum [0.5, 0.25, 0.25]",
+      "computed": 1.0,
+      "expected": 1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "entropy [0.5, 0.25, 0.25]",
+      "computed": 1.5,
+      "expected": 1.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "redundancy [0.5, 0.25, 0.25]",
+      "computed": 5.360536964281382,
+      "expected": 5.360536964281395,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "given rounded H=0.468 redundancy",
+      "computed": 53.2,
+      "expected": 53.2,
+      "tolerance": 1e-07
+    },
+    {
+      "check": "given rounded H=0.722 redundancy",
+      "computed": 27.800000000000004,
+      "expected": 27.8,
+      "tolerance": 1e-07
+    },
+    {
+      "check": "given rounded H=0.81125 redundancy",
+      "computed": 18.874999999999996,
+      "expected": 18.875,
+      "tolerance": 1e-07
+    },
+    {
+      "check": "given rounded H=0.7219 redundancy",
+      "computed": 27.810000000000002,
+      "expected": 27.81,
+      "tolerance": 1e-07
+    },
+    {
+      "check": "given rounded H=2.3568 redundancy",
+      "computed": 21.440000000000005,
+      "expected": 21.44,
+      "tolerance": 1e-07
+    },
+    {
+      "check": "given rounded H=2.25 redundancy",
+      "computed": 25.0,
+      "expected": 25,
+      "tolerance": 1e-07
+    },
+    {
+      "check": "given rounded H=0 redundancy",
+      "computed": 100.0,
+      "expected": 100,
+      "tolerance": 1e-07
+    },
+    {
+      "check": "rounded .25/.75 information",
+      "computed": 0.81125,
+      "expected": 0.81125,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "rounded .2/.8 information",
+      "computed": 0.722,
+      "expected": 0.722,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "lecture matrix HX",
+      "computed": 2.0,
+      "expected": 2,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "lecture matrix HY",
+      "computed": 1.5,
+      "expected": 1.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "lecture matrix HXY",
+      "computed": 2.0,
+      "expected": 2,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "lecture matrix I",
+      "computed": 1.5,
+      "expected": 1.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "lecture matrix equivocation",
+      "computed": 0.5,
+      "expected": 0.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "lecture matrix noise",
+      "computed": 0.0,
+      "expected": 0,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "variant matrix HX",
+      "computed": 2.0,
+      "expected": 2,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "variant matrix HY",
+      "computed": 1.5,
+      "expected": 1.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "variant matrix HXY",
+      "computed": 2.0,
+      "expected": 2,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "variant matrix I",
+      "computed": 1.5,
+      "expected": 1.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "variant matrix equivocation",
+      "computed": 0.5,
+      "expected": 0.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "variant matrix noise",
+      "computed": 0.0,
+      "expected": 0,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Donders identification 200",
+      "computed": 60,
+      "expected": 60,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Donders selection 200",
+      "computed": 90,
+      "expected": 90,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Donders identification 180",
+      "computed": 70,
+      "expected": 70,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Donders selection 180",
+      "computed": 90,
+      "expected": 90,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick 200+150log2(4)",
+      "computed": 500.0,
+      "expected": 500,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick 200+150log2(8)",
+      "computed": 650.0,
+      "expected": 650,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick 300+130log2(8)",
+      "computed": 690.0,
+      "expected": 690,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick 180+120log2(4)",
+      "computed": 420.0,
+      "expected": 420,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick 180+120log2(8)",
+      "computed": 540.0,
+      "expected": 540,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick 200+100log2(16)",
+      "computed": 600.0,
+      "expected": 600,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick throughput 150",
+      "computed": 6.666666666666667,
+      "expected": 6.6666666667,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick throughput 130",
+      "computed": 7.6923076923076925,
+      "expected": 7.6923076923,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick throughput 120",
+      "computed": 8.333333333333334,
+      "expected": 8.3333333333,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick throughput 100",
+      "computed": 10.0,
+      "expected": 10,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick warning 20 percent reduction",
+      "computed": 200.0,
+      "expected": 200,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Hick 8 to2 time difference",
+      "computed": -300.0,
+      "expected": -300,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Fitts 50,150,80,20",
+      "computed": 398.2892142331043,
+      "expected": 398.28921423310436,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Fitts 50,150,100,10",
+      "computed": 568.9147427955946,
+      "expected": 568.9147427955946,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Fitts 40,120,100,20",
+      "computed": 350.19550008653874,
+      "expected": 350.1955000865387,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Fitts 40,120,200,20",
+      "computed": 455.1317942364757,
+      "expected": 455.1317942364757,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Fitts original 2A/W",
+      "computed": 3.0,
+      "expected": 3,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Fitts unit conversion",
+      "computed": 2.584962500721156,
+      "expected": 2.584962500721156,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "Fitts scale invariance",
+      "computed": 2.807354922057604,
+      "expected": 2.807354922057604,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "mean [2, 4, 6]",
+      "computed": 4,
+      "expected": 4,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample variance [2, 4, 6]",
+      "computed": 4,
+      "expected": 4,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample sd [2, 4, 6]",
+      "computed": 2.0,
+      "expected": 2,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "mean [10, 20, 30]",
+      "computed": 20,
+      "expected": 20,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample variance [10, 20, 30]",
+      "computed": 100,
+      "expected": 100,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample sd [10, 20, 30]",
+      "computed": 10.0,
+      "expected": 10,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "mean [50, 50, 50, 50]",
+      "computed": 50,
+      "expected": 50,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample variance [50, 50, 50, 50]",
+      "computed": 0,
+      "expected": 0,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample sd [50, 50, 50, 50]",
+      "computed": 0.0,
+      "expected": 0,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "mean [0, 100, 25, 75]",
+      "computed": 50,
+      "expected": 50,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample variance [0, 100, 25, 75]",
+      "computed": 2083.3333333333335,
+      "expected": 2083.3333333333335,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "sample sd [0, 100, 25, 75]",
+      "computed": 45.64354645876384,
+      "expected": 45.64354645876384,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "outlier mean",
+      "computed": 22,
+      "expected": 22,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "outlier median",
+      "computed": 3,
+      "expected": 3,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [2, 3, 7] b1",
+      "computed": 2.5,
+      "expected": 2.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [2, 3, 7] b0",
+      "computed": -1.0,
+      "expected": -1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [2, 3, 7] SST",
+      "computed": 14,
+      "expected": 14,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [2, 3, 7] SSR",
+      "computed": 12.5,
+      "expected": 12.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [2, 3, 7] SSE",
+      "computed": 1.5,
+      "expected": 1.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [2, 3, 7] R2",
+      "computed": 0.8928571428571429,
+      "expected": 0.8928571428571429,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [2, 3, 7] F",
+      "computed": 8.333333333333334,
+      "expected": 8.333333333333334,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS residual x=2 [2, 3, 7]",
+      "computed": -1.0,
+      "expected": -1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS partition [2, 3, 7]",
+      "computed": 14.0,
+      "expected": 14,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [1, 3, 8] b1",
+      "computed": 3.5,
+      "expected": 3.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [1, 3, 8] b0",
+      "computed": -3.0,
+      "expected": -3,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [1, 3, 8] SST",
+      "computed": 26,
+      "expected": 26,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [1, 3, 8] SSR",
+      "computed": 24.5,
+      "expected": 24.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [1, 3, 8] SSE",
+      "computed": 1.5,
+      "expected": 1.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [1, 3, 8] R2",
+      "computed": 0.9423076923076923,
+      "expected": 0.9423076923076923,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS [1, 3, 8] F",
+      "computed": 16.333333333333332,
+      "expected": 16.333333333333332,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS residual x=2 [1, 3, 8]",
+      "computed": -1.0,
+      "expected": -1,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "OLS partition [1, 3, 8]",
+      "computed": 26.0,
+      "expected": 26,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "ANOVA n12 SSR",
+      "computed": 70,
+      "expected": 70,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "ANOVA n12 df",
+      "computed": 10,
+      "expected": 10,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "ANOVA n12 MSE",
+      "computed": 3.0,
+      "expected": 3,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "ANOVA n12 F",
+      "computed": 23.333333333333332,
+      "expected": 23.333333333333332,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "ANOVA n12 R2",
+      "computed": 0.7,
+      "expected": 0.7,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "ANOVA n10 SSR",
+      "computed": 60,
+      "expected": 60,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "ANOVA n10 df",
+      "computed": 8,
+      "expected": 8,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "ANOVA n10 MSE",
+      "computed": 2.5,
+      "expected": 2.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "ANOVA n10 F",
+      "computed": 24.0,
+      "expected": 24,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "ANOVA n10 R2",
+      "computed": 0.75,
+      "expected": 0.75,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "actual regression1.xlsx b0",
+      "computed": 30.93333333333333,
+      "expected": 30.9333,
+      "tolerance": 0.0002
+    },
+    {
+      "check": "actual regression1.xlsx b1",
+      "computed": 0.8704761904761905,
+      "expected": 0.8705,
+      "tolerance": 0.0002
+    },
+    {
+      "check": "actual regression1.xlsx R2",
+      "computed": 0.6828143135043239,
+      "expected": 0.6828,
+      "tolerance": 0.0002
+    },
+    {
+      "check": "actual regression1.xlsx adjusted",
+      "computed": 0.6510957448547562,
+      "expected": 0.6511,
+      "tolerance": 0.0002
+    },
+    {
+      "check": "actual regression1.xlsx F",
+      "computed": 21.527273851735803,
+      "expected": 21.53,
+      "tolerance": 0.0002
+    },
+    {
+      "check": "single sample implied SE",
+      "computed": 1.6033605955751289,
+      "expected": 1.6034,
+      "tolerance": 0.0001
+    },
+    {
+      "check": "CI center",
+      "computed": 156.1165,
+      "expected": 156.1165,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "paired sign reversal",
+      "computed": 33.65,
+      "expected": 33.65,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "timeout milliseconds to seconds",
+      "computed": 5.0,
+      "expected": 5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "nonlinear example covariance numerator",
+      "computed": 0.0,
+      "expected": 0,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "physiology minimum",
+      "computed": 150,
+      "expected": 150,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "physiology maximum",
+      "computed": 170,
+      "expected": 170,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "t df1 independent Cauchy 0.5",
+      "computed": 0.7048327646991337,
+      "expected": 0.7048327646991335,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "t df1 independent Cauchy 1",
+      "computed": 0.5000000000000008,
+      "expected": 0.5,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "t df1 independent Cauchy 2",
+      "computed": 0.29516723530086636,
+      "expected": 0.2951672353008664,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "t df1 independent Cauchy 8",
+      "computed": 0.07916684832113102,
+      "expected": 0.07916684832113108,
+      "tolerance": 1e-08
+    },
+    {
+      "check": "t independent trig integral 19 3.8148",
+      "computed": 0.001169586163947955,
+      "expected": 0.001169586163948006,
+      "tolerance": 1e-10
+    },
+    {
+      "check": "t independent trig integral 19 7.6951",
+      "computed": 2.970202260759877e-07,
+      "expected": 2.970202260432556e-07,
+      "tolerance": 1e-10
+    },
+    {
+      "check": "t independent trig integral 10 4.639749330700507",
+      "computed": 0.0009223477663221685,
+      "expected": 0.0009223477663221715,
+      "tolerance": 1e-10
+    },
+    {
+      "check": "single t p df19",
+      "computed": 0.001169586163947955,
+      "expected": 0.001169,
+      "tolerance": 1e-06
+    },
+    {
+      "check": "paired t p df19",
+      "computed": 2.970202260759877e-07,
+      "expected": 2.97e-07,
+      "tolerance": 1e-09
+    },
+    {
+      "check": "workbook model F p",
+      "computed": 0.0009223477663221685,
+      "expected": 0.0009218,
+      "tolerance": 1e-06
+    }
+  ],
+  "workbook": "/Users/a0/Desktop/kw/3학년 2학기/단위조작이론및실험2/kw-exam-site/interactive-psychology-midterm/final-audit/fixtures/regression1.xlsx",
+  "regressionResult": {
+    "n": 12,
+    "b1": 0.8704761904761905,
+    "b0": 30.93333333333333,
+    "yhat": [
+      87.5142857142857,
+      74.45714285714286,
+      78.80952380952381,
+      87.5142857142857,
+      78.80952380952381,
+      91.86666666666667,
+      87.5142857142857,
+      91.86666666666667,
+      87.5142857142857,
+      91.86666666666667,
+      74.45714285714286,
+      78.80952380952381
+    ],
+    "residuals": [
+      -2.5142857142857054,
+      -0.4571428571428555,
+      -2.80952380952381,
+      2.4857142857142946,
+      6.19047619047619,
+      -4.866666666666674,
+      6.485714285714295,
+      6.133333333333326,
+      -6.514285714285705,
+      -0.8666666666666742,
+      1.5428571428571445,
+      -4.80952380952381
+    ],
+    "SST": 728.25,
+    "SSR": 497.25952380952396,
+    "SSE": 230.9904761904762,
+    "R2": 0.6828143135043239,
+    "F": 21.527273851735803,
+    "adjusted": 0.6510957448547562
+  }
+}

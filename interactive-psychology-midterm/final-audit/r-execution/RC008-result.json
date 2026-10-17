@@ -1,0 +1,12 @@
+{
+  "id": "RC008",
+  "originId": "RC008",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "both groups tested with Shapiro-Wilk", "group conditions select intended rows", "no unexpected warnings"],
+  "metrics": {
+    "groupP": [0.9999999999869972, 0.9999999999869973]
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}
