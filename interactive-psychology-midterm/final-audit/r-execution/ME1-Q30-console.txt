@@ -1,0 +1,12 @@
+
+	One Sample t-test
+
+data:  datat[datat$group == "Deagu", ]$height
+t = -2.4221, df = 19, p-value = 0.0256
+alternative hypothesis: true mean is not equal to 160
+95 percent confidence interval:
+ 152.7606 159.4724
+sample estimates:
+mean of x 
+ 156.1165 
+

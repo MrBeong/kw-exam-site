@@ -1,0 +1,64 @@
+{
+  "id": "ME2-Q32",
+  "type": "code",
+  "chapter": "Fitts·운동·양립성",
+  "conceptIds": [
+    "OX115",
+    "OX116",
+    "OX117",
+    "OX118",
+    "OX139"
+  ],
+  "prompt": "같은 길이 단위의 거리 D <- c(100, 200)과 목표 너비 W <- c(20, 20)가 주어져 있다(단, \\(\\log_2 6 \\approx 2.5850\\), \\(\\log_2 11 \\approx 3.4594\\)). log2()로 ISO형 \\(\\mathrm{ID} = \\log_2(D/W + 1)\\)을 계산하고 \\(a = 40\\), \\(b = 120\\)인 \\(\\mathrm{MT} = a + b\\cdot\\mathrm{ID}\\)(ms) 벡터를 구하려 한다. 각 빈칸에는 대입문의 오른쪽 식 전체를 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "answer": "\\(\\mathrm{MT} \\approx 350.20\\)·455.13 ms다.",
+  "explanation": [
+    "벡터의 대응 원소끼리 거리/너비를 계산한다.",
+    "log2(D/W)+1과 log2(D/W+1)은 다르다."
+  ],
+  "rubric": [
+    {
+      "points": 2.0,
+      "criterion": "빈칸 (1): log2(D / W + 1). +1은 로그 안"
+    },
+    {
+      "points": 1.0,
+      "criterion": "빈칸 (2): 40 + 120 * ID"
+    },
+    {
+      "points": 1.0,
+      "criterion": "추가 답안: 약 350.20 ms, 455.13 ms. 반올림 오차 인정"
+    }
+  ],
+  "commonMistakes": [
+    "\\(\\frac{W}{D}\\)를 쓰거나 +1을 로그 밖에 두지 않는다."
+  ],
+  "englishTerms": [],
+  "language": "각 빈칸에 실제 R 문법으로 작성. 문자열은 필요한 따옴표까지 포함한다. 추가 답안은 한글·수식·단위를 사용한다.",
+  "accepted": "제시된 코드 틀에 넣었을 때 요구한 동작을 하는 R 코드를 인정한다. 공백·일반 작은따옴표/큰따옴표 차이와 동등한 식은 허용한다. 함수·객체의 철자·대소문자 및 문자열 값은 정확해야 한다. 빈칸 (1)은 문제에서 지정한 log2 함수를 사용한다.",
+  "source": "3장 교안 p.46–47 · 3장 교안 p.47",
+  "calc": false,
+  "points": 4,
+  "modelCode": "D <- c(100, 200)\nW <- c(20, 20)\n\nID <- log2(D / W + 1)\nMT <- 40 + 120 * ID\n\nMT",
+  "codeTemplate": "D <- c(100, 200)\nW <- c(20, 20)\n\nID <- {{1}}\nMT <- {{2}}\n\nMT",
+  "codeBlanks": [
+    {
+      "id": "1",
+      "answer": "log2(D / W + 1)",
+      "explanation": "ISO형은 거리/너비에 1을 더한 뒤 밑 2 로그를 취한다."
+    },
+    {
+      "id": "2",
+      "answer": "40 + 120 * ID",
+      "explanation": "MT=a+b·ID를 R의 곱셈 기호 *로 작성한다."
+    }
+  ],
+  "followUp": "두 MT 값을 소수 둘째 자리까지 구하고 단위를 적으시오. \\(\\log_2 6 = 2.5850\\), \\(\\log_2 11 = 3.4594\\)를 사용해도 된다.",
+  "originId": "RC018",
+  "set": 2,
+  "number": 32,
+  "minutes": 6.25,
+  "variant": true,
+  "promptPlain": "D와 W는 같은 길이 단위의 거리·목표 너비다. log2()로 ISO형 ID를 계산하고 a=40, b=120인 MT(ms) 벡터를 구하려 한다. 각 빈칸에는 대입문의 오른쪽 식 전체를 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "bank": "mock-exam",
+  "inputProvenance": "question_literal_vectors"
+}

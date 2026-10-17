@@ -1,0 +1,3916 @@
+[
+  {
+    "id": "OX001",
+    "chapter": "개론·역사",
+    "kind": "UX 범위",
+    "source": "1-1 교안 p.2–3",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-1 p.2에서 UX의 범위(UX Scope)는 사용 전(Previous Experience), 사용 중(Present Experience), 사용 후(Future Experience)의 세 시점을 모두 포괄하며 고객 생애주기(Customer Life Cycle) 전반에 걸쳐 형성된다.",
+    "multiple-choice": [
+      "MC001",
+      "MC098",
+      "MC119",
+      "MC134"
+    ],
+    "written": [
+      "SA001",
+      "SA044",
+      "ES001"
+    ],
+    "mock-exam": [
+      "ME1-Q14",
+      "ME1-Q19",
+      "ME2-Q09"
+    ]
+  },
+  {
+    "id": "OX002",
+    "chapter": "개론·역사",
+    "kind": "UX 요소",
+    "source": "1-1 교안 p.2",
+    "notesAnchor": "c1",
+    "canonical": "브랜드 경험(Brand Experience)은 주로 이전 경험(Previous Experience)과 연결되며 인지도·태도·윤리·충성도의 4가지 하위 요소를 포함한다.",
+    "multiple-choice": [
+      "MC002",
+      "MC098",
+      "MC119"
+    ],
+    "written": [
+      "SA002",
+      "ES001"
+    ],
+    "mock-exam": [
+      "ME1-Q14",
+      "ME2-Q09",
+      "ME2-Q19",
+      "ME4-Q07"
+    ]
+  },
+  {
+    "id": "OX003",
+    "chapter": "개론·역사",
+    "kind": "UX 요소",
+    "source": "1-1 교안 p.2",
+    "notesAnchor": "c1",
+    "canonical": "현재 제품을 사용할 때의 경험(Present Experience)은 제품/서비스 경험과 직결되며 Affect, Usability, User Value로 구성된다.",
+    "multiple-choice": [
+      "MC002",
+      "MC098",
+      "MC119"
+    ],
+    "written": [
+      "SA003",
+      "ES001"
+    ],
+    "mock-exam": [
+      "ME1-Q14",
+      "ME2-Q09",
+      "ME3-Q19",
+      "ME4-Q07"
+    ]
+  },
+  {
+    "id": "OX004",
+    "chapter": "개론·역사",
+    "kind": "UX 요소",
+    "source": "1-1 교안 p.2",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-1 p.2 다이어그램 우측 하단에는 Religion, Interpersonal relations, Exercise 등이 UX에 영향을 미치는 요소로 명시되어 있다.",
+    "multiple-choice": [
+      "MC001",
+      "MC119"
+    ],
+    "written": [
+      "ES001"
+    ],
+    "mock-exam": [
+      "ME2-Q09"
+    ]
+  },
+  {
+    "id": "OX005",
+    "chapter": "개론·역사",
+    "kind": "정의",
+    "source": "1-1 교안 p.4–5",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-1 p.4–5에서 UX 심리학은 예술적 감각만이 아니라 과학적 심리학 방법론과 디자인을 결합(Design & Science)하는 학문임을 강조한다.",
+    "multiple-choice": [
+      "MC003",
+      "MC098"
+    ],
+    "written": [
+      "ES001"
+    ],
+    "mock-exam": [
+      "ME1-Q14",
+      "ME2-Q18",
+      "ME5-Q08"
+    ]
+  },
+  {
+    "id": "OX006",
+    "chapter": "개론·역사",
+    "kind": "학문 영역",
+    "source": "1-1 교안 p.8",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-1 p.8 벤 다이어그램은 Ergonomics, Engineering, Psychology, Sociology 4개 학문이 만나는 중심에 UX Design을 배치한다.",
+    "multiple-choice": [
+      "MC003",
+      "MC098"
+    ],
+    "written": [
+      "ES001"
+    ],
+    "mock-exam": [
+      "ME1-Q14",
+      "ME4-Q17",
+      "ME5-Q08"
+    ]
+  },
+  {
+    "id": "OX007",
+    "chapter": "개론·역사",
+    "kind": "선택적 주의",
+    "source": "1-1 교안 p.9–10",
+    "notesAnchor": "c1",
+    "canonical": "특정 과업에 주의를 집중하면 눈앞을 지나가는 고릴라, 커튼 색상 변화, 선수 퇴장을 보지 못하는 무주의 맹시(Inattentional Blindness)가 발생하며, 이는 인간의 주의 자원이 제한되어 있음을 보여준다.",
+    "multiple-choice": [
+      "MC004",
+      "MC120"
+    ],
+    "written": [
+      "ES002"
+    ],
+    "mock-exam": [
+      "ME1-Q07",
+      "ME4-Q17",
+      "ME5-Q10"
+    ]
+  },
+  {
+    "id": "OX008",
+    "chapter": "개론·역사",
+    "kind": "UX 역사",
+    "source": "1-2 교안 p.2–4",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.2–6 및 1주차 보충영상(Windows 95·구형 기기 체험)의 흐름: DOS 명령어·플로피 디스크·물리 매체 중심의 개발자/기계 중심 시대(The Dark Ages, 1960–1980s)에서 GUI·인지인간공학·인터페이스 디자인의 Proto UX(1990s)를 거쳐 스마트폰·사용자 조사 중심의 The UX Gold Rush(2010s)로 발전했다.",
+    "multiple-choice": [
+      "MC005",
+      "MC099",
+      "MC133"
+    ],
+    "written": [
+      "SA043",
+      "ES003",
+      "ES042"
+    ],
+    "mock-exam": [
+      "ME4-Q04",
+      "ME4-Q18",
+      "ME5-Q14",
+      "ME5-Q25"
+    ]
+  },
+  {
+    "id": "OX009",
+    "chapter": "개론·역사",
+    "kind": "UX 역사",
+    "source": "1-2 교안 p.3",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.3에서 Proto UX(1990s)의 3대 축으로 Cognitive Ergonomics, Information Architects, Interface Design을 제시한다.",
+    "multiple-choice": [
+      "MC005",
+      "MC099"
+    ],
+    "written": [
+      "ES003"
+    ],
+    "mock-exam": [
+      "ME4-Q18",
+      "ME5-Q14",
+      "ME5-Q25"
+    ]
+  },
+  {
+    "id": "OX010",
+    "chapter": "개론·역사",
+    "kind": "어원·정의",
+    "source": "1-2 교안 p.7",
+    "notesAnchor": "c1",
+    "canonical": "Ergonomics는 그리스어로 ‘일·노동(work)’을 뜻하는 Ergon과 ‘법칙(laws)’을 뜻하는 Nomos의 합성어(= 작업의 법칙)이다.",
+    "multiple-choice": [
+      "MC006"
+    ],
+    "written": [
+      "SA004",
+      "ES004"
+    ],
+    "mock-exam": [
+      "ME4-Q19",
+      "ME5-Q18"
+    ]
+  },
+  {
+    "id": "OX011",
+    "chapter": "개론·역사",
+    "kind": "동의어",
+    "source": "1-2 교안 p.7",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.7 Synonyms에 명시된 지역·집단별 정확히 일치하는 동의어들이다.",
+    "multiple-choice": [
+      "MC007"
+    ],
+    "written": [
+      "ES004"
+    ],
+    "mock-exam": [
+      "ME3-Q06",
+      "ME5-Q18"
+    ]
+  },
+  {
+    "id": "OX012",
+    "chapter": "개론·역사",
+    "kind": "정의",
+    "source": "1-2 교안 p.7",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.7에서 인간공학의 목표는 ‘인간의 안녕(human well-being)’과 ‘시스템 성능(system performance)’ 두 가지를 함께 최적화(optimize/improve)하는 것이다.",
+    "multiple-choice": [
+      "MC008",
+      "MC100",
+      "MC120"
+    ],
+    "written": [
+      "ES004"
+    ],
+    "mock-exam": [
+      "ME1-Q07",
+      "ME2-Q16",
+      "ME3-Q07"
+    ]
+  },
+  {
+    "id": "OX013",
+    "chapter": "개론·역사",
+    "kind": "설계 패러다임",
+    "source": "1-2 교안 p.8–9",
+    "notesAnchor": "c1",
+    "canonical": "전통적 설계는 기계·시스템을 먼저 만들고 그에 맞는 사람을 선발·훈련해 시스템에 적응시키는 방식이었다.",
+    "multiple-choice": [
+      "MC009",
+      "MC100",
+      "MC135"
+    ],
+    "written": [
+      "ES005",
+      "ES042"
+    ],
+    "mock-exam": [
+      "ME1-Q01",
+      "ME2-Q16"
+    ]
+  },
+  {
+    "id": "OX014",
+    "chapter": "개론·역사",
+    "kind": "설계 패러다임",
+    "source": "1-2 교안 p.8–11",
+    "notesAnchor": "c1",
+    "canonical": "사람을 기계에 맞추던 전통적 관점에서 벗어나 인간의 신체·인지 특성에 맞게 제품과 시스템을 설계하는 패러다임 전환이다.",
+    "multiple-choice": [
+      "MC009",
+      "MC100",
+      "MC120",
+      "MC135"
+    ],
+    "written": [
+      "ES005",
+      "ES042"
+    ],
+    "mock-exam": [
+      "ME1-Q01",
+      "ME1-Q07",
+      "ME2-Q16"
+    ]
+  },
+  {
+    "id": "OX015",
+    "chapter": "개론·역사",
+    "kind": "therbligs · 기출",
+    "source": "1-2 교안 p.12",
+    "notesAnchor": "c1",
+    "canonical": "Gilbreth 부부는 작업자의 수작업을 미세동작 단위인 therbligs(Gilbreth 철자를 역순으로 변형)로 분류하여 시간·동작 연구를 수행했다(교안 1-2 p.12, 기출 핵심!).",
+    "multiple-choice": [
+      "MC010",
+      "MC099"
+    ],
+    "written": [
+      "SA005",
+      "ES005"
+    ],
+    "mock-exam": [
+      "ME2-Q05",
+      "ME5-Q14"
+    ]
+  },
+  {
+    "id": "OX016",
+    "chapter": "개론·역사",
+    "kind": "therbligs · 기출",
+    "source": "1-2 교안 p.12",
+    "notesAnchor": "c1",
+    "canonical": "therbligs는 1900~1945년 Old Age 시기에 Frank & Lillian Gilbreth 부부가 고안한 미세동작분석(Micro-motion analysis)의 18가지 기본 손동작 단위이다.",
+    "multiple-choice": [
+      "MC010"
+    ],
+    "written": [
+      "SA005",
+      "ES005"
+    ],
+    "mock-exam": [
+      "ME2-Q05"
+    ]
+  },
+  {
+    "id": "OX017",
+    "chapter": "개론·역사",
+    "kind": "역사",
+    "source": "1-2 교안 p.12",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.12에 명시된 대로 1900~1945년(World War II 포함) Old Age 시기는 여전히 ‘사람을 직무와 장비에 맞추는(Fitting the human to the job/equipment)’ 관점이 중심이었다.",
+    "multiple-choice": [
+      "MC011",
+      "MC099"
+    ],
+    "written": [
+      "ES003",
+      "ES005"
+    ],
+    "mock-exam": [
+      "ME5-Q14",
+      "ME5-Q25"
+    ]
+  },
+  {
+    "id": "OX018",
+    "chapter": "개론·역사",
+    "kind": "역사",
+    "source": "1-2 교안 p.13",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.13의 Middle/Modern Age(1945~1980) 중 Birth of Profession(1945~1960) 연표와 정확히 일치한다.",
+    "multiple-choice": [
+      "MC012"
+    ],
+    "written": [
+      "ES003"
+    ],
+    "mock-exam": [
+      "ME5-Q25"
+    ]
+  },
+  {
+    "id": "OX019",
+    "chapter": "개론·역사",
+    "kind": "역사",
+    "source": "1-2 교안 p.13",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.13 Rapid Growth(1960~1980)의 핵심 발전 흐름이다.",
+    "multiple-choice": [
+      "MC013"
+    ],
+    "written": [
+      "ES003"
+    ],
+    "mock-exam": [
+      "ME5-Q25"
+    ]
+  },
+  {
+    "id": "OX020",
+    "chapter": "개론·역사",
+    "kind": "역사",
+    "source": "1-2 교안 p.14",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.14에서 1990~2010년은 HCI(User Interface/Usability), 2010~2020년은 스마트폰 시대의 UX(User Experience)로 구분한다.",
+    "multiple-choice": [
+      "MC014",
+      "MC099",
+      "MC135"
+    ],
+    "written": [
+      "ES003"
+    ],
+    "mock-exam": [
+      "ME5-Q14",
+      "ME5-Q25"
+    ]
+  },
+  {
+    "id": "OX021",
+    "chapter": "개론·역사",
+    "kind": "HFE 영역 구분",
+    "source": "1-2 교안 p.15",
+    "notesAnchor": "c1",
+    "canonical": "지각·기억·추론·운동 반응 등 정신 과정(Mental process)을 다루는 분야는 인지 인간공학(Cognitive Ergonomics)이며, 신체 인간공학(Physical Ergonomics)은 인체측정학(Anthropometric)·생리학(Physiological)·생체역학(Biomechanical) 특성을 다룬다.",
+    "multiple-choice": [
+      "MC015",
+      "MC100",
+      "MC120"
+    ],
+    "written": [
+      "SA006",
+      "ES005"
+    ],
+    "mock-exam": [
+      "ME1-Q07",
+      "ME2-Q16",
+      "ME5-Q19"
+    ]
+  },
+  {
+    "id": "OX022",
+    "chapter": "개론·역사",
+    "kind": "HFE 영역 구분",
+    "source": "1-2 교안 p.15",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.15의 Physical Ergonomics, Cognitive Ergonomics, UX 3대 영역 정의와 일치한다.",
+    "multiple-choice": [
+      "MC015",
+      "MC100",
+      "MC120"
+    ],
+    "written": [
+      "SA006",
+      "ES005"
+    ],
+    "mock-exam": [
+      "ME1-Q07",
+      "ME2-Q16",
+      "ME5-Q19"
+    ]
+  },
+  {
+    "id": "OX023",
+    "chapter": "개론·역사",
+    "kind": "설계 사례",
+    "source": "1-2 교안 p.10",
+    "notesAnchor": "c1",
+    "canonical": "사용자의 신체적·인지적 특성에 맞춰 플러그 형태를 개선한 것은 ‘시스템을 사람에게 맞추는 인간공학적 설계(HFE design)’의 대표 사례이다.",
+    "multiple-choice": [
+      "MC009"
+    ],
+    "written": [
+      "ES005"
+    ],
+    "mock-exam": [
+      "ME1-Q01"
+    ]
+  },
+  {
+    "id": "OX024",
+    "chapter": "개론·역사",
+    "kind": "최신 동향",
+    "source": "1-2 교안 p.14–17",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.14, 16–17에서 다가오는 핵심 연구 주제로 AI system / AI technology를 제시한다.",
+    "multiple-choice": [
+      "MC014"
+    ],
+    "written": [
+      "ES003"
+    ],
+    "mock-exam": [
+      "ME5-Q25"
+    ]
+  },
+  {
+    "id": "OX025",
+    "chapter": "개론·역사",
+    "kind": "정의",
+    "source": "1-2 교안 p.7",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.7 정의에서 anatomy, anthropometry, biomechanics, physiology뿐 아니라 psychophysics(정신물리학), psychology(심리학), sociology(사회학)를 모두 명시하고 있다.",
+    "multiple-choice": [
+      "MC008"
+    ],
+    "written": [
+      "ES004"
+    ],
+    "mock-exam": [
+      "ME3-Q07"
+    ]
+  },
+  {
+    "id": "OX026",
+    "chapter": "HFE 연구방법론",
+    "kind": "설계 프로세스",
+    "source": "2장 교안 p.3–4 · 연구방법론 전사1",
+    "notesAnchor": "c2",
+    "canonical": "인간 특성 파악(Descriptive) → 방법론·실험 검증(Experimental) → 제품 설계 적용 및 사용성 평가(Evaluation)가 전 과정에 걸쳐 순환적으로 연결된다.",
+    "multiple-choice": [
+      "MC016"
+    ],
+    "written": [
+      "ES006"
+    ],
+    "mock-exam": [
+      "ME1-Q25",
+      "ME3-Q01"
+    ]
+  },
+  {
+    "id": "OX027",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 유형",
+    "source": "2장 교안 p.4–7",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.4: Descriptive Research = characterize human attributes (e.g., measuring body size and force).",
+    "multiple-choice": [
+      "MC017",
+      "MC101"
+    ],
+    "written": [
+      "SA007",
+      "ES006"
+    ],
+    "mock-exam": [
+      "ME1-Q25",
+      "ME2-Q07",
+      "ME3-Q16"
+    ]
+  },
+  {
+    "id": "OX028",
+    "chapter": "HFE 연구방법론",
+    "kind": "BMI 공식",
+    "source": "2장 교안 p.5",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.5에서 \\(\\mathrm{BMI} = \\text{weight (kg)} / \\text{stature}^2\\text{ (m}^2\\text{)}\\)로, 체중(kg)을 키(m 단위)의 제곱으로 나누어야 한다.",
+    "multiple-choice": [
+      "MC018"
+    ],
+    "written": [
+      "SA014"
+    ],
+    "mock-exam": [
+      "ME4-Q20"
+    ]
+  },
+  {
+    "id": "OX029",
+    "chapter": "HFE 연구방법론",
+    "kind": "백분위수",
+    "source": "2장 교안 p.6 · 연구방법론 전사1",
+    "notesAnchor": "c2",
+    "canonical": "백분위수는 가장 작은 값(0%)부터 누적한 위치이므로 상위 25% 경계는 하위 75% 지점인 75th percentile이다.",
+    "multiple-choice": [
+      "MC019"
+    ],
+    "written": [
+      "SA014"
+    ],
+    "mock-exam": [
+      "ME4-Q20"
+    ]
+  },
+  {
+    "id": "OX030",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 유형",
+    "source": "2장 교안 p.4, 8–9",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.4, 8–9에 제시된 Experimental Research의 정의 및 대표 사례이다.",
+    "multiple-choice": [
+      "MC017",
+      "MC101"
+    ],
+    "written": [
+      "SA007",
+      "ES006"
+    ],
+    "mock-exam": [
+      "ME1-Q25",
+      "ME2-Q07",
+      "ME3-Q16"
+    ]
+  },
+  {
+    "id": "OX031",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 유형",
+    "source": "2장 교안 p.10",
+    "notesAnchor": "c2",
+    "canonical": "무게 위치가 IV, 코 하중이 DV인 실험 연구다. 교안 명칭은 pressure지만 N은 힘의 단위이므로 코 하중/힘으로 구별해 해석한다.",
+    "multiple-choice": [
+      "MC020",
+      "MC101"
+    ],
+    "written": [
+      "ES007"
+    ],
+    "mock-exam": [
+      "ME3-Q08",
+      "ME3-Q16",
+      "ME4-Q25"
+    ]
+  },
+  {
+    "id": "OX032",
+    "chapter": "HFE 연구방법론",
+    "kind": "실험 결과",
+    "source": "2장 교안 p.10",
+    "notesAnchor": "c2",
+    "canonical": "Front 0.34 > Middle 0.22 > Ear 0.20 > Rear 0.16 N이다. 교안 명칭은 pressure이나 N은 힘 단위다. 오차막대는 평균의 표준오차(SE)다.",
+    "multiple-choice": [
+      "MC020"
+    ],
+    "written": [
+      "ES007"
+    ],
+    "mock-exam": [
+      "ME3-Q08",
+      "ME4-Q25"
+    ]
+  },
+  {
+    "id": "OX033",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 유형",
+    "source": "2장 교안 p.4, 11–13",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.4, 11: Evaluation Research = assess the effectiveness (called usability) of product or system.",
+    "multiple-choice": [
+      "MC017",
+      "MC101"
+    ],
+    "written": [
+      "SA007",
+      "ES006"
+    ],
+    "mock-exam": [
+      "ME1-Q25",
+      "ME2-Q07",
+      "ME3-Q16"
+    ]
+  },
+  {
+    "id": "OX034",
+    "chapter": "HFE 연구방법론",
+    "kind": "평가 사례",
+    "source": "2장 교안 p.11",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.11 표에 정리된 모델 A(삼성 국내용)의 3가지 우수 특성(가벼운 무게 290g, 시각 화살표, 체결 완료 sound feedback)이다.",
+    "multiple-choice": [
+      "MC021"
+    ],
+    "written": [
+      "ES007"
+    ],
+    "mock-exam": [
+      "ME4-Q25"
+    ]
+  },
+  {
+    "id": "OX035",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 환경 비교",
+    "source": "2장 교안 p.14",
+    "notesAnchor": "c2",
+    "canonical": "높은 충실도(High fidelity)와 일반화 용이성(Easy to generalize)은 현장 연구(Field study)의 장점이다. 실험실 연구(Laboratory study)는 불필요한 외생변수 통제, 반복 용이성, 정확한 데이터 획득이 장점인 반면 낮은 충실도(Low fidelity)와 일반화의 어려움이 단점이다.",
+    "multiple-choice": [
+      "MC022",
+      "MC121"
+    ],
+    "written": [
+      "SA008",
+      "ES008"
+    ],
+    "mock-exam": [
+      "ME1-Q02",
+      "ME4-Q05"
+    ]
+  },
+  {
+    "id": "OX036",
+    "chapter": "HFE 연구방법론",
+    "kind": "연구 환경 비교",
+    "source": "2장 교안 p.14",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.14 Field study의 장단점 표와 정확히 일치한다.",
+    "multiple-choice": [
+      "MC022",
+      "MC121"
+    ],
+    "written": [
+      "SA008",
+      "ES008"
+    ],
+    "mock-exam": [
+      "ME1-Q02",
+      "ME4-Q05"
+    ]
+  },
+  {
+    "id": "OX037",
+    "chapter": "HFE 연구방법론",
+    "kind": "실험 변수",
+    "source": "2장 교안 p.15",
+    "notesAnchor": "c2",
+    "canonical": "조작하는 요인(manipulated factor)이 독립변수(Independent variable, IV)이고, 측정되는 결과값(measured value)이 종속변수(Dependent variable, DV)이다.",
+    "multiple-choice": [
+      "MC023",
+      "MC101",
+      "MC121"
+    ],
+    "written": [
+      "SA009",
+      "ES009"
+    ],
+    "mock-exam": [
+      "ME1-Q02",
+      "ME2-Q20",
+      "ME3-Q16",
+      "ME3-Q25"
+    ]
+  },
+  {
+    "id": "OX038",
+    "chapter": "HFE 연구방법론",
+    "kind": "실험 변수",
+    "source": "2장 교안 p.15 · 연구방법론 전사1",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.15 및 전사에서 설명한 Control vs. Stratification의 핵심 차이이다.",
+    "multiple-choice": [
+      "MC024",
+      "MC121"
+    ],
+    "written": [
+      "SA009",
+      "ES009"
+    ],
+    "mock-exam": [
+      "ME1-Q02",
+      "ME2-Q20",
+      "ME3-Q25",
+      "ME4-Q10"
+    ]
+  },
+  {
+    "id": "OX039",
+    "chapter": "HFE 연구방법론",
+    "kind": "종속변수 선정",
+    "source": "2장 교안 p.16",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.16: Dependent variables must be selected by considering 1) level of target and 2) metric comprehensiveness to fairly evaluate.",
+    "multiple-choice": [
+      "MC025",
+      "MC122"
+    ],
+    "written": [
+      "ES009"
+    ],
+    "mock-exam": [
+      "ME2-Q06",
+      "ME3-Q25",
+      "ME5-Q01"
+    ]
+  },
+  {
+    "id": "OX040",
+    "chapter": "HFE 연구방법론",
+    "kind": "종속변수 분류",
+    "source": "연구방법론 전사2",
+    "notesAnchor": "c2",
+    "canonical": "연구방법론 전사 2 말미에서 교수님이 정리한 인간 측정치의 3대 영역이다.",
+    "multiple-choice": [
+      "MC025",
+      "MC122"
+    ],
+    "written": [
+      "ES009"
+    ],
+    "mock-exam": [
+      "ME2-Q06",
+      "ME3-Q25",
+      "ME5-Q01"
+    ]
+  },
+  {
+    "id": "OX041",
+    "chapter": "HFE 연구방법론",
+    "kind": "피험자 대표성",
+    "source": "2장 교안 p.17",
+    "notesAnchor": "c2",
+    "canonical": "예컨대 왼손잡이가 10%, 오른손잡이가 90%인 모집단에서 오른손잡이만 뽑으면 편향(Bias)이 발생하므로 대표성을 확보해야 한다.",
+    "multiple-choice": [
+      "MC024",
+      "MC121"
+    ],
+    "written": [
+      "ES009"
+    ],
+    "mock-exam": [
+      "ME1-Q02",
+      "ME3-Q25",
+      "ME4-Q10"
+    ]
+  },
+  {
+    "id": "OX042",
+    "chapter": "HFE 연구방법론",
+    "kind": "표본 수 공식 · 함정",
+    "source": "2장 교안 p.18",
+    "notesAnchor": "c2",
+    "canonical": "\\(\\alpha = 0.05\\)일 때 \\(z_{\\alpha/2} = 1.96\\)이고 \\(\\alpha = 0.01\\)일 때 \\(z_{\\alpha/2} = 2.576\\)이다. 즉 \\(\\alpha\\)가 낮아질수록 \\(z\\) 값이 커지므로 필요한 표본 수 \\(n\\)은 증가한다(Lower \\(\\alpha \\to\\) higher \\(z \\to\\) larger \\(n\\)).",
+    "multiple-choice": [
+      "MC026",
+      "MC102"
+    ],
+    "written": [
+      "SA015",
+      "ES010"
+    ],
+    "mock-exam": [
+      "ME1-Q13",
+      "ME2-Q17",
+      "ME5-Q20"
+    ]
+  },
+  {
+    "id": "OX043",
+    "chapter": "HFE 연구방법론",
+    "kind": "표본 수 공식",
+    "source": "2장 교안 p.18",
+    "notesAnchor": "c2",
+    "canonical": "\\(s\\)는 분자에 있으므로 클수록 \\(n\\)이 커지고, \\(k\\)는 분모에 있으므로 작을수록(더 촘촘한 정밀도를 요구할수록) \\(n\\)이 커진다.",
+    "multiple-choice": [
+      "MC027",
+      "MC102"
+    ],
+    "written": [
+      "SA015",
+      "ES010"
+    ],
+    "mock-exam": [
+      "ME1-Q13",
+      "ME5-Q20"
+    ]
+  },
+  {
+    "id": "OX044",
+    "chapter": "HFE 연구방법론",
+    "kind": "표본 수 계산",
+    "source": "2장 교안 p.19",
+    "notesAnchor": "c2",
+    "canonical": "\\(n = (1.96 \\times 10 / (0.05 \\times 100))^2 = (3.92)^2 = 15.366 \\approx 16\\)명이며, 파일럿 5명을 빼면 11명을 더 모집하면 된다(교안 2 p.19).",
+    "multiple-choice": [
+      "MC028",
+      "MC102"
+    ],
+    "written": [
+      "SA015",
+      "ES010"
+    ],
+    "mock-exam": [
+      "ME1-Q13",
+      "ME5-Q20"
+    ]
+  },
+  {
+    "id": "OX045",
+    "chapter": "HFE 연구방법론",
+    "kind": "실무 요건",
+    "source": "2장 교안 p.20",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.20의 6대 실무 요건: Objective, Quantitative, Unobtrusive(방해하지 않음), Easy to collect, No special instrumentation, Cost as little as possible.",
+    "multiple-choice": [
+      "MC029"
+    ],
+    "written": [
+      "SA010",
+      "ES011"
+    ],
+    "mock-exam": [
+      "ME1-Q09"
+    ]
+  },
+  {
+    "id": "OX046",
+    "chapter": "HFE 연구방법론",
+    "kind": "신뢰도",
+    "source": "2장 교안 p.20",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.20: Reliability = consistency or stability of the measures over time or across representative samples.",
+    "multiple-choice": [
+      "MC030",
+      "MC103",
+      "MC122"
+    ],
+    "written": [
+      "SA011",
+      "ES011"
+    ],
+    "mock-exam": [
+      "ME2-Q06",
+      "ME3-Q20",
+      "ME4-Q15",
+      "ME5-Q11"
+    ]
+  },
+  {
+    "id": "OX047",
+    "chapter": "HFE 연구방법론",
+    "kind": "신뢰도 vs 정확도",
+    "source": "2장 교안 p.21",
+    "notesAnchor": "c2",
+    "canonical": "한곳에 촘촘히 모여 있으므로 일관성인 신뢰도(Reliability)는 높지만, 과녁 중심(참값)에서 벗어나 있으므로 정확도(Accuracy/타당도)가 낮은 상태이다.",
+    "multiple-choice": [
+      "MC030",
+      "MC103",
+      "MC122"
+    ],
+    "written": [
+      "SA011",
+      "ES011"
+    ],
+    "mock-exam": [
+      "ME2-Q06",
+      "ME3-Q20",
+      "ME4-Q15",
+      "ME5-Q11"
+    ]
+  },
+  {
+    "id": "OX048",
+    "chapter": "HFE 연구방법론",
+    "kind": "내적 vs 외적 타당도",
+    "source": "2장 교안 p.20",
+    "notesAnchor": "c2",
+    "canonical": "두 개념이 반대로 설명되었다. 혼동변수가 없는 정도(No confounding)가 내적 타당도(Internal validity)이고, 결과를 외부로 일반화할 수 있는 정도(Generalizability)가 외적 타당도(External validity)이다.",
+    "multiple-choice": [
+      "MC031",
+      "MC103",
+      "MC121"
+    ],
+    "written": [
+      "SA012",
+      "ES012"
+    ],
+    "mock-exam": [
+      "ME1-Q02",
+      "ME2-Q25",
+      "ME4-Q15"
+    ]
+  },
+  {
+    "id": "OX049",
+    "chapter": "HFE 연구방법론",
+    "kind": "내적 타당도",
+    "source": "2장 교안 p.20",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.20 Internal validity 예시에 명시된 혼동변수(confounding) 미통제 사례이다.",
+    "multiple-choice": [
+      "MC031",
+      "MC121"
+    ],
+    "written": [
+      "ES012"
+    ],
+    "mock-exam": [
+      "ME1-Q02",
+      "ME2-Q25"
+    ]
+  },
+  {
+    "id": "OX050",
+    "chapter": "HFE 연구방법론",
+    "kind": "Deficiency vs Contamination",
+    "source": "2장 교안 p.22",
+    "notesAnchor": "c2",
+    "canonical": "구성개념에 속하는데 측정에서 빠뜨린 부분은 ‘결핍(Deficiency)’이다. 반대로 구성개념과 무관한 요소가 측정치에 섞여 들어간 것이 ‘오염(Contamination)’이다.",
+    "multiple-choice": [
+      "MC032",
+      "MC103",
+      "MC122"
+    ],
+    "written": [
+      "SA012",
+      "SA013",
+      "ES012"
+    ],
+    "mock-exam": [
+      "ME1-Q20",
+      "ME2-Q06",
+      "ME2-Q25",
+      "ME4-Q15"
+    ]
+  },
+  {
+    "id": "OX051",
+    "chapter": "HFE 연구방법론",
+    "kind": "Deficiency vs Contamination",
+    "source": "2장 교안 p.22",
+    "notesAnchor": "c2",
+    "canonical": "교안 2 p.22: Contamination = things assessed by the measure that are not part of the construct.",
+    "multiple-choice": [
+      "MC032",
+      "MC103",
+      "MC122"
+    ],
+    "written": [
+      "SA013",
+      "ES012"
+    ],
+    "mock-exam": [
+      "ME1-Q20",
+      "ME2-Q06",
+      "ME2-Q25",
+      "ME4-Q15"
+    ]
+  },
+  {
+    "id": "OX052",
+    "chapter": "HFE 연구방법론",
+    "kind": "SE vs SD",
+    "source": "2장 교안 p.10 · 원문과 검증",
+    "notesAnchor": "c2",
+    "canonical": "SE(평균의 표준오차, \\(s/\\sqrt{n}\\))는 표본평균 추정의 불확실성을 나타내며, 개별 데이터의 산포인 표준편차(SD)와는 다른 개념이다.",
+    "multiple-choice": [
+      "MC020",
+      "MC102",
+      "MC122"
+    ],
+    "written": [
+      "SA016",
+      "ES007"
+    ],
+    "mock-exam": [
+      "ME1-Q13",
+      "ME2-Q06",
+      "ME3-Q08",
+      "ME4-Q25"
+    ]
+  },
+  {
+    "id": "OX053",
+    "chapter": "HFE 연구방법론",
+    "kind": "설계 절차",
+    "source": "2장 교안 p.13 · 2주차 논문",
+    "notesAnchor": "c2",
+    "canonical": "보충 논문 원문의 네 번째 단계명은 제품 설계 적용이다. 기존 요약의 시제품 평가는 적용 결과의 사용성을 검증하는 활동으로 구분한다. 원문 네 단계의 순서를 기준으로 학습한다.",
+    "multiple-choice": [
+      "MC016"
+    ],
+    "written": [
+      "ES006"
+    ],
+    "mock-exam": [
+      "ME1-Q25",
+      "ME3-Q01"
+    ]
+  },
+  {
+    "id": "OX054",
+    "chapter": "정보량·중복도",
+    "kind": "정보처리 모형",
+    "source": "3장 교안 p.6",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.6 다이어그램의 중심 수평 정보처리 단계 순서와 정확히 일치한다.",
+    "multiple-choice": [
+      "MC033",
+      "MC106"
+    ],
+    "written": [
+      "SA017",
+      "ES013"
+    ],
+    "mock-exam": [
+      "ME2-Q03",
+      "ME4-Q14",
+      "ME4-Q21",
+      "ME5-Q26"
+    ]
+  },
+  {
+    "id": "OX055",
+    "chapter": "정보량·중복도",
+    "kind": "작업기억 지속시간",
+    "source": "3장 교안 p.6",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.6 다이어그램 우측 하단에 Working memory (Short-term memory)의 Memory duration: 20~30 sec가 명시되어 있다.",
+    "multiple-choice": [
+      "MC034",
+      "MC106"
+    ],
+    "written": [
+      "SA018",
+      "ES013",
+      "ES021"
+    ],
+    "mock-exam": [
+      "ME4-Q14",
+      "ME5-Q21",
+      "ME5-Q26"
+    ]
+  },
+  {
+    "id": "OX056",
+    "chapter": "정보량·중복도",
+    "kind": "주의 자원",
+    "source": "3장 교안 p.6",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.6 다이어그램에서 Attention resources는 Perception, Working memory, Decision & response selection, Response execution 단계들에 자원을 공급한다.",
+    "multiple-choice": [
+      "MC033",
+      "MC106"
+    ],
+    "written": [
+      "SA018",
+      "ES002",
+      "ES013"
+    ],
+    "mock-exam": [
+      "ME2-Q03",
+      "ME4-Q14",
+      "ME5-Q21",
+      "ME5-Q26"
+    ]
+  },
+  {
+    "id": "OX057",
+    "chapter": "정보량·중복도",
+    "kind": "피드백 루프",
+    "source": "3장 교안 p.6",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.6 하단의 Feedback 화살표는 출력된 반응이 다시 환경 자극으로 피드백됨을 보여준다.",
+    "multiple-choice": [
+      "MC033",
+      "MC106"
+    ],
+    "written": [
+      "SA018",
+      "ES013"
+    ],
+    "mock-exam": [
+      "ME2-Q03",
+      "ME4-Q14",
+      "ME5-Q21",
+      "ME5-Q26"
+    ]
+  },
+  {
+    "id": "OX058",
+    "chapter": "정보량·중복도",
+    "kind": "불확실성과 정보량",
+    "source": "3장 교안 p.7",
+    "notesAnchor": "c3",
+    "canonical": "불확실성과 필요 정보량은 비례한다(Uncertainty ↓ ⇒ Requiring information ↓, Uncertainty ↑ ⇒ Requiring information ↑).",
+    "multiple-choice": [
+      "MC035",
+      "MC124"
+    ],
+    "written": [
+      "ES014"
+    ],
+    "mock-exam": [
+      "ME1-Q03",
+      "ME2-Q26",
+      "ME3-Q11"
+    ]
+  },
+  {
+    "id": "OX059",
+    "chapter": "정보량·중복도",
+    "kind": "bit 정의",
+    "source": "3장 교안 p.8",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.8: 1 bit = amount of information required for processing a task with two equally likely alternatives.",
+    "multiple-choice": [
+      "MC036",
+      "MC104"
+    ],
+    "written": [
+      "SA019",
+      "ES014"
+    ],
+    "mock-exam": [
+      "ME1-Q21",
+      "ME2-Q13",
+      "ME2-Q26",
+      "ME3-Q09"
+    ]
+  },
+  {
+    "id": "OX060",
+    "chapter": "정보량·중복도",
+    "kind": "등확률 정보량",
+    "source": "3장 교안 p.8",
+    "notesAnchor": "c3",
+    "canonical": "\\(k\\text{ bits}\\)는 \\(2^k\\)개의 등확률 대안에 대응하므로, \\(4\\text{ bits}\\)일 때 대안의 개수는 \\(2^4 = 16\\)개이다(교안 3 p.8 빈칸).",
+    "multiple-choice": [
+      "MC036",
+      "MC104"
+    ],
+    "written": [
+      "SA019",
+      "ES014"
+    ],
+    "mock-exam": [
+      "ME1-Q21",
+      "ME2-Q13",
+      "ME2-Q26",
+      "ME3-Q09"
+    ]
+  },
+  {
+    "id": "OX061",
+    "chapter": "정보량·중복도",
+    "kind": "Hartley 공식",
+    "source": "3장 교안 p.9",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.9 Equation 1(Hartley 식)과 일치한다.",
+    "multiple-choice": [
+      "MC036",
+      "MC104",
+      "MC123"
+    ],
+    "written": [
+      "SA019",
+      "ES014"
+    ],
+    "mock-exam": [
+      "ME1-Q10",
+      "ME1-Q21",
+      "ME2-Q13",
+      "ME2-Q26",
+      "ME3-Q09"
+    ]
+  },
+  {
+    "id": "OX062",
+    "chapter": "정보량·중복도",
+    "kind": "Shannon 공식",
+    "source": "3장 교안 p.9",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.9 Equation 2(Shannon 엔트로피 식)와 일치한다.",
+    "multiple-choice": [
+      "MC037",
+      "MC104",
+      "MC123"
+    ],
+    "written": [
+      "SA020",
+      "ES014"
+    ],
+    "mock-exam": [
+      "ME1-Q10",
+      "ME2-Q13",
+      "ME2-Q21",
+      "ME2-Q26",
+      "ME4-Q12"
+    ]
+  },
+  {
+    "id": "OX063",
+    "chapter": "정보량·중복도",
+    "kind": "정보량 계산",
+    "source": "3장 교안 p.9",
+    "notesAnchor": "c3",
+    "canonical": "\\(H_1 = \\log_2(1/0.2) \\approx 2.322\\), \\(H_2 = \\log_2(1/0.8) \\approx 0.322\\)이므로 \\(H_{\\text{avg}} = 0.2(2.322) + 0.8(0.322) = 0.722\\text{ bits}\\)이다(등확률 0.5, 0.5일 때만 1.0 bit).",
+    "multiple-choice": [
+      "MC037"
+    ],
+    "written": [
+      "SA020",
+      "ES014"
+    ],
+    "mock-exam": [
+      "ME2-Q21",
+      "ME2-Q26",
+      "ME4-Q12"
+    ]
+  },
+  {
+    "id": "OX064",
+    "chapter": "정보량·중복도",
+    "kind": "확률과 정보량",
+    "source": "3장 교안 p.10",
+    "notesAnchor": "c3",
+    "canonical": "교안의 0.468 bit는 제시값이다. 확률 0.9·0.1을 로그로 직접 계산하면 약 0.4690 bit다. 두 경우 모두 등확률의 1 bit보다 작다. 계산 문항은 주어진 근삿값을 사용한다.",
+    "multiple-choice": [
+      "MC038",
+      "MC105"
+    ],
+    "written": [
+      "ES015"
+    ],
+    "mock-exam": [
+      "ME2-Q02",
+      "ME3-Q13",
+      "ME4-Q26"
+    ]
+  },
+  {
+    "id": "OX065",
+    "chapter": "정보량·중복도",
+    "kind": "정보량 곡선",
+    "source": "3장 교안 p.10 · 정보처리 전사1",
+    "notesAnchor": "c3",
+    "canonical": "\\(P=0\\)이나 \\(P=1\\)이면 결과가 100% 확실하므로 정보량 \\(H=0\\text{ bit}\\)이고, \\(P=0.5\\)에서 \\(H=1\\text{ bit}\\)로 최대가 되는 위로 볼록한 ‘역 U자 곡선’ 형태다.",
+    "multiple-choice": [
+      "MC038"
+    ],
+    "written": [
+      "ES015"
+    ],
+    "mock-exam": [
+      "ME2-Q02",
+      "ME4-Q26"
+    ]
+  },
+  {
+    "id": "OX066",
+    "chapter": "정보량·중복도",
+    "kind": "중복도 공식",
+    "source": "3장 교안 p.11",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.11의 % Redundancy 공식 및 정의와 정확히 일치한다.",
+    "multiple-choice": [
+      "MC039",
+      "MC105",
+      "MC123"
+    ],
+    "written": [
+      "SA020",
+      "ES015"
+    ],
+    "mock-exam": [
+      "ME1-Q10",
+      "ME2-Q21",
+      "ME3-Q13",
+      "ME4-Q26",
+      "ME5-Q09"
+    ]
+  },
+  {
+    "id": "OX067",
+    "chapter": "정보량·중복도",
+    "kind": "중복도 계산 · 함정",
+    "source": "3장 교안 p.11",
+    "notesAnchor": "c3",
+    "canonical": "\\(\\%\\text{Redundancy} = (1 - 0.468 / 1) \\times 100 = 53.2\\%\\)이다(\\(46.8\\%\\)는 \\(1\\)에서 빼지 않은 \\(H_{\\text{target}}/H_{\\max}\\) 비율이므로 오답 함정!).",
+    "multiple-choice": [
+      "MC039"
+    ],
+    "written": [
+      "SA021",
+      "ES015"
+    ],
+    "mock-exam": [
+      "ME1-Q17",
+      "ME3-Q21",
+      "ME4-Q26",
+      "ME5-Q09"
+    ]
+  },
+  {
+    "id": "OX068",
+    "chapter": "정보량·중복도",
+    "kind": "경고등 예제",
+    "source": "3장 교안 p.12",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.12 Example 1(1 of 2): \\(N=8\\) 등확률이므로 \\(H = \\log_2 8 = 3\\text{ bits}\\)이다.",
+    "multiple-choice": [
+      "MC040",
+      "MC105",
+      "MC123"
+    ],
+    "written": [
+      "SA021",
+      "ES016"
+    ],
+    "mock-exam": [
+      "ME1-Q10",
+      "ME3-Q13",
+      "ME3-Q21",
+      "ME4-Q08"
+    ]
+  },
+  {
+    "id": "OX069",
+    "chapter": "정보량·중복도",
+    "kind": "경고등 예제",
+    "source": "3장 교안 p.13",
+    "notesAnchor": "c3",
+    "canonical": "\\(H = 2(0.35\\log_2(1/0.35)) + 6(0.05\\log_2(1/0.05)) \\approx 2.3568\\text{ bits}\\), \\(\\%\\text{Redundancy} = (1 - 2.3568/3)\\times 100 \\approx 21.44\\%\\)이다(교안 3 p.13).",
+    "multiple-choice": [
+      "MC040",
+      "MC105",
+      "MC123"
+    ],
+    "written": [
+      "SA021",
+      "ES016"
+    ],
+    "mock-exam": [
+      "ME1-Q10",
+      "ME3-Q13",
+      "ME3-Q21",
+      "ME4-Q08"
+    ]
+  },
+  {
+    "id": "OX070",
+    "chapter": "정보량·중복도",
+    "kind": "경고등 설계 원리",
+    "source": "3장 교안 p.13",
+    "notesAnchor": "c3",
+    "canonical": "시각적 현저성은 탐지와 감시 수행을 지원할 수 있다. 그러나 엔트로피는 발생확률 분포로 계산하므로 분포가 바뀌지 않으면 H는 같다. 사건의 예측 정보를 추가하는 것과 표시 모양만 바꾸는 것을 구별한다.",
+    "multiple-choice": [
+      "MC041",
+      "MC124"
+    ],
+    "written": [
+      "ES016"
+    ],
+    "mock-exam": [
+      "ME1-Q03"
+    ]
+  },
+  {
+    "id": "OX071",
+    "chapter": "정보량·중복도",
+    "kind": "신호등 예제",
+    "source": "3장 교안 p.14",
+    "notesAnchor": "c3",
+    "canonical": "카운트다운을 통해 바뀔 시점이 확정(\\(P=1\\))되면 불확실성이 완전히 제거되어 \\(H_{\\text{new}} = 0\\text{ bit}\\), \\(\\%\\text{Redundancy} = (1 - 0/1)\\times 100 = 100\\%\\)가 된다.",
+    "multiple-choice": [
+      "MC042",
+      "MC105",
+      "MC124"
+    ],
+    "written": [
+      "ES017"
+    ],
+    "mock-exam": [
+      "ME1-Q03",
+      "ME3-Q13",
+      "ME5-Q04"
+    ]
+  },
+  {
+    "id": "OX072",
+    "chapter": "정보량·중복도",
+    "kind": "정보량 성질",
+    "source": "3장 교안 p.10, 14",
+    "notesAnchor": "c3",
+    "canonical": "이미 100% 일어날 줄 아는 사건에는 불확실성이 전혀 없으므로 정보량은 0 bit이다.",
+    "multiple-choice": [
+      "MC042",
+      "MC124"
+    ],
+    "written": [
+      "ES017"
+    ],
+    "mock-exam": [
+      "ME1-Q03",
+      "ME5-Q04"
+    ]
+  },
+  {
+    "id": "OX073",
+    "chapter": "정보량·중복도",
+    "kind": "정보량과 중복도 관계",
+    "source": "3장 교안 p.10–11",
+    "notesAnchor": "c3",
+    "canonical": "확률 불균형이 심해질수록 예측이 쉬워져 엔트로피 \\(H_{\\text{target}}\\)는 작아지고, 그 결과 중복도 \\((1 - H_{\\text{target}}/H_{\\max})\\times 100\\)는 커진다.",
+    "multiple-choice": [
+      "MC038"
+    ],
+    "written": [
+      "ES015"
+    ],
+    "mock-exam": [
+      "ME2-Q02",
+      "ME4-Q26"
+    ]
+  },
+  {
+    "id": "OX074",
+    "chapter": "정보량·중복도",
+    "kind": "로그 스케일 성질",
+    "source": "3장 교안 p.8–9",
+    "notesAnchor": "c3",
+    "canonical": "\\(N=4\\)일 때 \\(\\log_2 4 = 2\\text{ bits}\\)이고, \\(N=8\\)일 때 \\(\\log_2 8 = 3\\text{ bits}\\)이다. 대안 수가 2배가 되면 정보량은 2배가 되는 것이 아니라 \\(1\\text{ bit}\\)만큼 더해진다.",
+    "multiple-choice": [
+      "MC036"
+    ],
+    "written": [
+      "SA019",
+      "ES014"
+    ],
+    "mock-exam": [
+      "ME1-Q21",
+      "ME2-Q26",
+      "ME3-Q09"
+    ]
+  },
+  {
+    "id": "OX075",
+    "chapter": "정보량·중복도",
+    "kind": "계산 규칙",
+    "source": "3장 교안 p.18",
+    "notesAnchor": "c3",
+    "canonical": "\\(0 \\log_2 0 = 0\\)으로 정의하므로 빈도가 0인 칸이나 사건은 정보량 합산에 기여하지 않는다.",
+    "multiple-choice": [
+      "MC043",
+      "MC104"
+    ],
+    "written": [
+      "ES014"
+    ],
+    "mock-exam": [
+      "ME2-Q13",
+      "ME2-Q26"
+    ]
+  },
+  {
+    "id": "OX076",
+    "chapter": "정보량·중복도",
+    "kind": "핵심 취지",
+    "source": "3장 교안 p.7",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.7: Information theory quantifies the amount of information required to complete a task.",
+    "multiple-choice": [
+      "MC035",
+      "MC124"
+    ],
+    "written": [
+      "ES014"
+    ],
+    "mock-exam": [
+      "ME1-Q03",
+      "ME2-Q26",
+      "ME3-Q11"
+    ]
+  },
+  {
+    "id": "OX077",
+    "chapter": "정보량·중복도",
+    "kind": "장기기억 역할",
+    "source": "3장 교안 p.6",
+    "notesAnchor": "c3",
+    "canonical": "교안 3 p.6 다이어그램에서 Long-Term memory는 Working memory와 상호작용하며 Perception 및 Decision & response selection 단계에 직접 연결된다.",
+    "multiple-choice": [
+      "MC033",
+      "MC106"
+    ],
+    "written": [
+      "SA018",
+      "ES013"
+    ],
+    "mock-exam": [
+      "ME2-Q03",
+      "ME4-Q14",
+      "ME5-Q21",
+      "ME5-Q26"
+    ]
+  },
+  {
+    "id": "OX078",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "정보전달이론",
+    "source": "3장 교안 p.15",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.15: Information transmission theory quantifies the performance of information processing for a person (Input → Human channel → Output).",
+    "multiple-choice": [
+      "MC044"
+    ],
+    "written": [
+      "ES018"
+    ],
+    "mock-exam": [
+      "ME1-Q26"
+    ]
+  },
+  {
+    "id": "OX079",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Equivocation vs Noise · 기출",
+    "source": "3장 교안 p.15–16",
+    "notesAnchor": "c4",
+    "canonical": "두 용어가 반대로 바뀌었다! 입력 기준 손실정보 \\(H(X|Y) = H(X) - H(X\\cap Y)\\)가 ‘모호도(Equivocation, miss)’이고, 출력 기준 거짓정보 \\(H(Y|X) = H(Y) - H(X\\cap Y)\\)가 ‘잡음(Noise, false)’이다.",
+    "multiple-choice": [
+      "MC045",
+      "MC107",
+      "MC125"
+    ],
+    "written": [
+      "SA022",
+      "ES018"
+    ],
+    "mock-exam": [
+      "ME1-Q16",
+      "ME1-Q26",
+      "ME3-Q03",
+      "ME4-Q01"
+    ]
+  },
+  {
+    "id": "OX080",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "전달정보량 공식",
+    "source": "3장 교안 p.16",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.16: Transmitted information \\(H(X\\cap Y) = H(X) + H(Y) - H(X\\cup Y) \\Rightarrow\\) larger the better.",
+    "multiple-choice": [
+      "MC045",
+      "MC107",
+      "MC125"
+    ],
+    "written": [
+      "SA022",
+      "ES018"
+    ],
+    "mock-exam": [
+      "ME1-Q16",
+      "ME1-Q26",
+      "ME3-Q03",
+      "ME4-Q01"
+    ]
+  },
+  {
+    "id": "OX081",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Equivocation & Noise",
+    "source": "3장 교안 p.16",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.16에서 Equivocation과 Noise는 정보 손실과 오류 성분이므로 smaller the better로 명시되어 있다.",
+    "multiple-choice": [
+      "MC045",
+      "MC107",
+      "MC125"
+    ],
+    "written": [
+      "SA022",
+      "ES018"
+    ],
+    "mock-exam": [
+      "ME1-Q16",
+      "ME1-Q26",
+      "ME3-Q03",
+      "ME4-Q01"
+    ]
+  },
+  {
+    "id": "OX082",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "혼동행렬 계산 · 기출",
+    "source": "3장 교안 p.17–18",
+    "notesAnchor": "c4",
+    "canonical": "\\(P(X)=(1/4,1/4,1/4,1/4) \\Rightarrow H(X)=\\log_2 4=2\\text{ bits}\\); \\(P(Y)=(1/2,0,1/4,1/4) \\Rightarrow H(Y)=0.5\\log_2 2 + 2(0.25\\log_2 4)=1.5\\text{ bits}\\)이다.",
+    "multiple-choice": [
+      "MC046",
+      "MC125"
+    ],
+    "written": [
+      "ES018"
+    ],
+    "mock-exam": [
+      "ME1-Q26",
+      "ME3-Q03",
+      "ME5-Q05"
+    ]
+  },
+  {
+    "id": "OX083",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "혼동행렬 계산 · 기출",
+    "source": "3장 교안 p.18",
+    "notesAnchor": "c4",
+    "canonical": "\\(H(X\\cap Y) = 2.0 + 1.5 - 2.0 = 1.5\\text{ bits}\\), \\(H(X|Y) = 2.0 - 1.5 = 0.5\\text{ bits}\\), \\(H(Y|X) = 1.5 - 1.5 = 0\\text{ bits}\\)로 교안 p.18 계산과 정확히 일치한다.",
+    "multiple-choice": [
+      "MC046",
+      "MC125"
+    ],
+    "written": [
+      "ES018"
+    ],
+    "mock-exam": [
+      "ME1-Q26",
+      "ME3-Q03",
+      "ME5-Q05"
+    ]
+  },
+  {
+    "id": "OX084",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "정보전달이론 함정",
+    "source": "3장 교안 p.19",
+    "notesAnchor": "c4",
+    "canonical": "반대 라벨도 일대일 대응이면 \\(H(X\\mid Y)=H(Y\\mid X)=0\\), \\(I(X;Y)=H(X)\\)로 최대다. 등확률 두 자극이면 1 bit이며, 최대 대비 비율로는 100%다. 의미상 정답률 0%와 전달정보량의 bits 단위를 구별한다.",
+    "multiple-choice": [
+      "MC047",
+      "MC107"
+    ],
+    "written": [
+      "SA023",
+      "ES019"
+    ],
+    "mock-exam": [
+      "ME1-Q16",
+      "ME2-Q17",
+      "ME3-Q26",
+      "ME5-Q22"
+    ]
+  },
+  {
+    "id": "OX085",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "채널 용량",
+    "source": "3장 교안 p.20",
+    "notesAnchor": "c4",
+    "canonical": "입력 정보율(bits/s)을 높여도 전달 정보율은 해당 과업의 채널 용량에서 포화된다(교안 예: 2.8 bits/s). 사건당 정보량(bits)과 단위 시간당 정보율(bits/s)은 서로 다르다.",
+    "multiple-choice": [
+      "MC048"
+    ],
+    "written": [
+      "ES020"
+    ],
+    "mock-exam": [
+      "ME2-Q04"
+    ]
+  },
+  {
+    "id": "OX086",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "마법의 숫자 7±2",
+    "source": "3장 교안 p.21",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.21: The magical number \\(7 \\pm 2\\) (G. A. Miller) — 인간은 한 번에 약 7개의 서로 다른 자극을 처리할 수 있다.",
+    "multiple-choice": [
+      "MC049"
+    ],
+    "written": [
+      "ES020"
+    ],
+    "mock-exam": [
+      "ME1-Q04"
+    ]
+  },
+  {
+    "id": "OX087",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "자극 차원 식별",
+    "source": "3장 교안 p.21",
+    "notesAnchor": "c4",
+    "canonical": "교안 p.21 표에서 단일 차원 식별 개수는 순음 5개(2.3 bits), 음량 4~5개(2~2.3 bits), 크기 5~7개(2.3~2.8 bits), 밝기 3~5개(1.7~2.3 bits)로 모두 \\(7\\pm 2\\) 이하이다.",
+    "multiple-choice": [
+      "MC049"
+    ],
+    "written": [
+      "ES020"
+    ],
+    "mock-exam": [
+      "ME1-Q04"
+    ]
+  },
+  {
+    "id": "OX088",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "시연(Rehearsal)",
+    "source": "3장 교안 p.25",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.25 하단 그래프에서 rehearsal을 하면 기억이 유지되지만 w/o rehearsal 조건에서는 5~15초 사이에 회상률이 급감한다.",
+    "multiple-choice": [
+      "MC050"
+    ],
+    "written": [
+      "SA024",
+      "ES021"
+    ],
+    "mock-exam": [
+      "ME2-Q22"
+    ]
+  },
+  {
+    "id": "OX089",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "절대 vs 상대 판단 · 함정",
+    "source": "3장 교안 p.26–28",
+    "notesAnchor": "c4",
+    "canonical": "반대이다! 기억 속 기준과 단독 비교하는 절대 판단(Absolute judgment) 대신 두 자극을 나란히 두고 비교하는 상대 판단(Relative judgment)을 사용해야 채널 용량이 향상된다(교안 3 p.26).",
+    "multiple-choice": [
+      "MC051",
+      "MC108"
+    ],
+    "written": [
+      "SA024",
+      "ES021"
+    ],
+    "mock-exam": [
+      "ME1-Q17",
+      "ME2-Q22",
+      "ME5-Q13"
+    ]
+  },
+  {
+    "id": "OX090",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "다차원 자극",
+    "source": "3장 교안 p.26",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.26의 두 번째 채널 용량 향상 전략: Increase the number of stimulus dimensions (One dimension vs. Two dimensions).",
+    "multiple-choice": [
+      "MC052",
+      "MC108"
+    ],
+    "written": [
+      "ES021"
+    ],
+    "mock-exam": [
+      "ME5-Q13"
+    ]
+  },
+  {
+    "id": "OX091",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Chunking",
+    "source": "3장 교안 p.29",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.29: Chunking = grouping(or parsing) information and linking with the knowledge that we knew (예: +82-10-3032-9381).",
+    "multiple-choice": [
+      "MC053",
+      "MC108"
+    ],
+    "written": [
+      "SA024",
+      "ES021"
+    ],
+    "mock-exam": [
+      "ME2-Q22",
+      "ME5-Q13"
+    ]
+  },
+  {
+    "id": "OX092",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Sternberg · 기출",
+    "source": "3장 교안 p.30–31",
+    "notesAnchor": "c4",
+    "canonical": "교안 p.31은 PSS가 커질수록 RT가 선형 증가하는 패턴을 직렬 비교 모형으로 설명한다. 이는 교안의 모형 해석이며 모든 기억탐색 실험에서 종료 방식까지 보편적으로 확정한 결론은 아니다.",
+    "multiple-choice": [
+      "MC054",
+      "MC108"
+    ],
+    "written": [
+      "SA025",
+      "ES022"
+    ],
+    "mock-exam": [
+      "ME4-Q27",
+      "ME5-Q13"
+    ]
+  },
+  {
+    "id": "OX093",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Sternberg 탐색 방식",
+    "source": "3장 교안 p.31",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.31에서 Search 방식으로 self-terminating과 exhaustive 두 가지를 구분한다.",
+    "multiple-choice": [
+      "MC054",
+      "MC108"
+    ],
+    "written": [
+      "SA026",
+      "ES022"
+    ],
+    "mock-exam": [
+      "ME3-Q22",
+      "ME4-Q27",
+      "ME5-Q13"
+    ]
+  },
+  {
+    "id": "OX094",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Sternberg 그래프",
+    "source": "3장 교안 p.31",
+    "notesAnchor": "c4",
+    "canonical": "교안 p.31의 특정 도식은 NO>YES를 망설임과 exhaustive search로 설명하며, Probe 부호화와 결정 실행에는 상수 시간이 든다고 본다. 이 도식의 YES/NO 설명을 모든 Sternberg 결과의 보편 법칙으로 확대하지 않는다.",
+    "multiple-choice": [
+      "MC054"
+    ],
+    "written": [
+      "SA026",
+      "ES022"
+    ],
+    "mock-exam": [
+      "ME3-Q22",
+      "ME4-Q27"
+    ]
+  },
+  {
+    "id": "OX095",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Donders A/B/C",
+    "source": "3장 교안 p.32",
+    "notesAnchor": "c4",
+    "canonical": "A는 1S–1R의 기준 과업이다. 교안 표의 N·N은 C/B에서 추가되는 자극 식별·반응 선택 단계가 없다는 구분이다. A에 감각 처리·중앙 처리·운동 실행이 전혀 없다는 뜻은 아니다.",
+    "multiple-choice": [
+      "MC055",
+      "MC109"
+    ],
+    "written": [
+      "SA027",
+      "ES023"
+    ],
+    "mock-exam": [
+      "ME1-Q22",
+      "ME3-Q14",
+      "ME4-Q03"
+    ]
+  },
+  {
+    "id": "OX096",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Donders A/B/C",
+    "source": "3장 교안 p.32",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.32 표와 다이어그램(A=SRT, C=A+식별, B=C+선택)의 핵심 구분이다.",
+    "multiple-choice": [
+      "MC055",
+      "MC109"
+    ],
+    "written": [
+      "SA027",
+      "ES023"
+    ],
+    "mock-exam": [
+      "ME1-Q22",
+      "ME3-Q14",
+      "ME4-Q03"
+    ]
+  },
+  {
+    "id": "OX097",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Donders 차감법 · 함정",
+    "source": "3장 교안 p.32",
+    "notesAnchor": "c4",
+    "canonical": "자극 식별 시간은 \\(C - A\\)이고, \\(B - C\\)는 ‘반응 선택(Mental Selection / Response Selection)’에 걸리는 시간이다.",
+    "multiple-choice": [
+      "MC055",
+      "MC109"
+    ],
+    "written": [
+      "SA027",
+      "ES023"
+    ],
+    "mock-exam": [
+      "ME1-Q22",
+      "ME2-Q18",
+      "ME3-Q14",
+      "ME4-Q03"
+    ]
+  },
+  {
+    "id": "OX098",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick's Law · 기출",
+    "source": "3장 교안 p.34–35",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.34–35: Amount of information \\(\\propto\\) RT, \\(\\mathrm{RT} = a + bH_T\\).",
+    "multiple-choice": [
+      "MC056",
+      "MC109",
+      "MC126"
+    ],
+    "written": [
+      "SA028",
+      "ES024",
+      "RC017"
+    ],
+    "mock-exam": [
+      "ME1-Q32",
+      "ME3-Q14",
+      "ME4-Q22",
+      "ME5-Q03"
+    ]
+  },
+  {
+    "id": "OX099",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 기울기와 채널용량",
+    "source": "3장 교안 p.36",
+    "notesAnchor": "c4",
+    "canonical": "\\(b = 150\\text{ ms/bit} = 0.15\\text{ sec/bit}\\)이므로 역수 \\(1/b = 1 / 0.15 \\approx 6.67\\text{ bits/sec}\\)이다(교안 3 p.36).",
+    "multiple-choice": [
+      "MC056",
+      "MC126"
+    ],
+    "written": [
+      "SA028",
+      "ES024",
+      "RC017"
+    ],
+    "mock-exam": [
+      "ME1-Q32",
+      "ME4-Q22",
+      "ME5-Q03"
+    ]
+  },
+  {
+    "id": "OX100",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 수치 예시",
+    "source": "3장 교안 p.36",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.36에서 spoken language는 약 10 bits/sec, written language는 약 50 bits/sec로 글 읽기가 더 높은 수치를 보인다.",
+    "multiple-choice": [
+      "MC057"
+    ],
+    "written": [
+      "ES020"
+    ],
+    "mock-exam": [
+      "ME1-Q12"
+    ]
+  },
+  {
+    "id": "OX101",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "생리적 반응시간",
+    "source": "3장 교안 p.36",
+    "notesAnchor": "c4",
+    "canonical": "눈→뇌 10~30 ms + 중앙처리 90 ms + 뇌→근육 20 ms + 근수축 30 ms를 합하면 150~170 ms다. 교안이 별도로 제시한 대표 범위는 150~180 ms이며, 단계들 중 중앙처리 90 ms가 가장 길다.",
+    "multiple-choice": [
+      "MC057"
+    ],
+    "written": [
+      "ES025"
+    ],
+    "mock-exam": [
+      "ME1-Q12",
+      "ME2-Q27"
+    ]
+  },
+  {
+    "id": "OX102",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "RT 증감 요인",
+    "source": "3장 교안 p.36",
+    "notesAnchor": "c4",
+    "canonical": "교안 p.36의 변화 방향이다. 약 20% 단축을 모든 과업·모든 사람에게 반드시 성립하는 고정 비율로 적용하지 않는다.",
+    "multiple-choice": [
+      "MC058"
+    ],
+    "written": [
+      "ES025"
+    ],
+    "mock-exam": [
+      "ME2-Q27"
+    ]
+  },
+  {
+    "id": "OX103",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 절편 요인 · 기출",
+    "source": "3장 교안 p.37",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.37에서 자극 양식(S)의 빠른 순서는 ‘촉각/진동(Touch/vib) > 청각(Hearing) > 시각(Vision) > 온각(Thermal) > 화학감각(Chemical)’으로 촉각과 청각이 시각보다 빠르다!",
+    "multiple-choice": [
+      "MC059"
+    ],
+    "written": [
+      "SA029",
+      "ES025"
+    ],
+    "mock-exam": [
+      "ME2-Q27",
+      "ME3-Q02"
+    ]
+  },
+  {
+    "id": "OX104",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 절편 요인",
+    "source": "3장 교안 p.37",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.37 R Modality: Eye(가장 빠름) > Hand > Foot(가장 느림).",
+    "multiple-choice": [
+      "MC059"
+    ],
+    "written": [
+      "SA029",
+      "ES025"
+    ],
+    "mock-exam": [
+      "ME2-Q27",
+      "ME3-Q02"
+    ]
+  },
+  {
+    "id": "OX105",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 절편 요인",
+    "source": "3장 교안 p.37",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.37 Expectancy 항목에 Completely unexpected event: \\(a = 750\\text{ ms}\\)로 명시되어 있다.",
+    "multiple-choice": [
+      "MC059"
+    ],
+    "written": [
+      "SA029",
+      "ES025"
+    ],
+    "mock-exam": [
+      "ME2-Q27",
+      "ME3-Q02"
+    ]
+  },
+  {
+    "id": "OX106",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 기울기 요인 · 기출",
+    "source": "3장 교안 p.37",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.37 하단에 기울기 \\(b\\) 결정 요인으로 1) S-R Compatibility, 2) Learning, 3) Age가 명시되어 있다.",
+    "multiple-choice": [
+      "MC060",
+      "MC109",
+      "MC126"
+    ],
+    "written": [
+      "ES025"
+    ],
+    "mock-exam": [
+      "ME2-Q27",
+      "ME3-Q14",
+      "ME5-Q03"
+    ]
+  },
+  {
+    "id": "OX107",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 기울기 해석",
+    "source": "3장 교안 p.37 · 정보처리 전사3",
+    "notesAnchor": "c4",
+    "canonical": "양립성이 높고 숙련될수록 정보 1 bit당 추가 처리 시간인 기울기 \\(b\\)가 작아져(완만해져), 선택지가 늘어나도 반응시간 증가 폭이 작다.",
+    "multiple-choice": [
+      "MC060",
+      "MC109",
+      "MC126"
+    ],
+    "written": [
+      "ES025"
+    ],
+    "mock-exam": [
+      "ME2-Q27",
+      "ME3-Q14",
+      "ME5-Q03"
+    ]
+  },
+  {
+    "id": "OX108",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick 계산",
+    "source": "3장 교안 p.34–36",
+    "notesAnchor": "c4",
+    "canonical": "\\(\\Delta H = \\log_2 8 - \\log_2 2 = 3 - 1 = 2\\text{ bits}\\)이므로 \\(\\Delta\\mathrm{RT} = 150 \\times 2 = 300\\text{ ms}\\)이다.",
+    "multiple-choice": [
+      "MC061",
+      "MC126"
+    ],
+    "written": [
+      "SA028",
+      "ES024"
+    ],
+    "mock-exam": [
+      "ME2-Q11",
+      "ME4-Q22",
+      "ME5-Q03"
+    ]
+  },
+  {
+    "id": "OX109",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "Hick UI 사례",
+    "source": "3장 교안 p.39–41 · 정보처리 전사3",
+    "notesAnchor": "c4",
+    "canonical": "교안 3 p.39–41 및 전사 3에서 설명한 대표적인 Hick’s Law UI 디자인 적용 사례이다.",
+    "multiple-choice": [
+      "MC061"
+    ],
+    "written": [
+      "ES026"
+    ],
+    "mock-exam": [
+      "ME2-Q11"
+    ]
+  },
+  {
+    "id": "OX110",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "전달정보량 성질",
+    "source": "3장 교안 p.16–18",
+    "notesAnchor": "c4",
+    "canonical": "반응이 하나로만 고정되면 \\(P(Y_1)=1 \\Rightarrow H(Y)=0\\text{ bit}\\)이고, \\(H(X\\cup Y)=H(X)\\)가 되어 전달정보량 \\(H(X\\cap Y) = H(X)+0-H(X) = 0\\text{ bit}\\)이다.",
+    "multiple-choice": [
+      "MC062",
+      "MC107",
+      "MC125"
+    ],
+    "written": [
+      "SA023",
+      "ES019"
+    ],
+    "mock-exam": [
+      "ME1-Q16",
+      "ME3-Q03",
+      "ME3-Q26",
+      "ME5-Q22"
+    ]
+  },
+  {
+    "id": "OX111",
+    "chapter": "정보전달·기억·Hick",
+    "kind": "엔트로피 부등식",
+    "source": "3장 교안 p.16",
+    "notesAnchor": "c4",
+    "canonical": "\\(H(X\\cap Y) = H(X) + H(Y) - H(X\\cup Y) \\ge 0\\)이므로, 결합 엔트로피 \\(H(X\\cup Y)\\)는 항상 \\(H(X) + H(Y)\\) 이하(\\(\\le\\))이다(두 변수가 독립일 때만 등호 성립).",
+    "multiple-choice": [
+      "MC062",
+      "MC107"
+    ],
+    "written": [
+      "ES018"
+    ],
+    "mock-exam": [
+      "ME1-Q16",
+      "ME1-Q26"
+    ]
+  },
+  {
+    "id": "OX112",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts' Law · 기출",
+    "source": "3장 교안 p.42–44",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.42–44: Paul Fitts(1954)의 포인팅/탭핑 연구로 거리가 멀수록, 너비가 좁을수록 MT가 증가함을 정보량(ID) 관점에서 정식화했다.",
+    "multiple-choice": [
+      "MC063"
+    ],
+    "written": [
+      "ES026",
+      "ES027"
+    ],
+    "mock-exam": [
+      "ME1-Q27",
+      "ME4-Q02"
+    ]
+  },
+  {
+    "id": "OX113",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts' Law · 기출",
+    "source": "3장 교안 p.42, 44",
+    "notesAnchor": "c5",
+    "canonical": "표적이 크고 가까울수록(larger and closer) 맞히기 쉽고(ID 감소, MT 단축), 작고 멀수록(smaller and further away) ID와 MT가 증가한다(교안 p.44).",
+    "multiple-choice": [
+      "MC063"
+    ],
+    "written": [
+      "ES026",
+      "ES027"
+    ],
+    "mock-exam": [
+      "ME1-Q27",
+      "ME4-Q02"
+    ]
+  },
+  {
+    "id": "OX114",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts 원형 공식",
+    "source": "3장 교안 p.43",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.43: \\(\\mathrm{ID} = \\log_2\\left(\\dfrac{A}{W/2}\\right) = \\log_2\\left(\\dfrac{2A}{W}\\right)\\).",
+    "multiple-choice": [
+      "MC064",
+      "MC110",
+      "MC127"
+    ],
+    "written": [
+      "SA030",
+      "ES027"
+    ],
+    "mock-exam": [
+      "ME1-Q06",
+      "ME1-Q27",
+      "ME2-Q23",
+      "ME4-Q13"
+    ]
+  },
+  {
+    "id": "OX115",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts ISO 공식 · 함정",
+    "source": "3장 교안 p.46–47",
+    "notesAnchor": "c5",
+    "canonical": "분자와 분모가 바뀌었다! 올바른 ISO 9241-9 공식은 거리 \\(D\\)를 너비 \\(W\\)로 나눈 \\(\\mathrm{ID} = \\log_2\\left(\\dfrac{D}{W} + 1\\right)\\)이다.",
+    "multiple-choice": [
+      "MC064",
+      "MC110",
+      "MC127"
+    ],
+    "written": [
+      "SA030",
+      "ES027",
+      "RC018"
+    ],
+    "mock-exam": [
+      "ME1-Q06",
+      "ME1-Q27",
+      "ME2-Q23",
+      "ME2-Q32",
+      "ME3-Q17",
+      "ME4-Q13"
+    ]
+  },
+  {
+    "id": "OX116",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts 계산",
+    "source": "3장 교안 p.47",
+    "notesAnchor": "c5",
+    "canonical": "\\(D/W + 1 = 80/20 + 1 = 5 \\Rightarrow \\mathrm{ID} = \\log_2 5 \\approx 2.3219\\text{ bits} \\Rightarrow \\mathrm{MT} = 50 + 150(2.3219) \\approx 398.29\\text{ ms}\\) (교안 3 p.47 예제 1).",
+    "multiple-choice": [
+      "MC065"
+    ],
+    "written": [
+      "SA031",
+      "ES027",
+      "RC018"
+    ],
+    "mock-exam": [
+      "ME1-Q27",
+      "ME2-Q32",
+      "ME5-Q12"
+    ]
+  },
+  {
+    "id": "OX117",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts 계산",
+    "source": "3장 교안 p.47",
+    "notesAnchor": "c5",
+    "canonical": "\\(D/W + 1 = 100/10 + 1 = 11 \\Rightarrow \\mathrm{ID} = \\log_2 11 \\approx 3.4594\\text{ bits} \\Rightarrow \\mathrm{MT} = 50 + 150(3.4594) \\approx 568.91\\text{ ms}\\) (교안 3 p.47 예제 2).",
+    "multiple-choice": [
+      "MC065"
+    ],
+    "written": [
+      "SA031",
+      "ES027",
+      "RC018"
+    ],
+    "mock-exam": [
+      "ME1-Q27",
+      "ME2-Q32",
+      "ME5-Q12"
+    ]
+  },
+  {
+    "id": "OX118",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts 비율 불변성",
+    "source": "3장 교안 p.46–47",
+    "notesAnchor": "c5",
+    "canonical": "\\(2D/(2W)=D/W\\)이므로 ID는 같다. 같은 ISO형 계수 a,b와 과업 조건을 유지할 때 예측 MT도 같다.",
+    "multiple-choice": [
+      "MC066",
+      "MC110",
+      "MC127"
+    ],
+    "written": [
+      "ES027",
+      "RC018"
+    ],
+    "mock-exam": [
+      "ME1-Q06",
+      "ME1-Q27",
+      "ME2-Q32",
+      "ME4-Q13"
+    ]
+  },
+  {
+    "id": "OX119",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "신체 부위별 기울기 · 기출",
+    "source": "3장 교안 p.48",
+    "notesAnchor": "c5",
+    "canonical": "b(ms/bit)는 정보 1 bit당 추가 시간이다. finger 26 < wrist 43 < forearm 105이므로 같은 절편과 양의 ID에서 손가락의 추가 시간이 가장 작다. 절편이 서로 다르면 b만으로 총 MT의 순서를 항상 확정할 수 없다.",
+    "multiple-choice": [
+      "MC067"
+    ],
+    "written": [
+      "ES028"
+    ],
+    "mock-exam": [
+      "ME1-Q05"
+    ]
+  },
+  {
+    "id": "OX120",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "관절 수와 MT",
+    "source": "3장 교안 p.48",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.48: More joints need more sensory information → More processing ⇒ increase RT(MT).",
+    "multiple-choice": [
+      "MC067"
+    ],
+    "written": [
+      "ES028"
+    ],
+    "mock-exam": [
+      "ME1-Q05"
+    ]
+  },
+  {
+    "id": "OX121",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Positioning vs Ballistic",
+    "source": "3장 교안 p.50",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.50: Positioning movement = Closed loop with feedback (accurate controlled movements as a person reaches for something).",
+    "multiple-choice": [
+      "MC068",
+      "MC111"
+    ],
+    "written": [
+      "SA032",
+      "ES029"
+    ],
+    "mock-exam": [
+      "ME2-Q14",
+      "ME4-Q23",
+      "ME5-Q27"
+    ]
+  },
+  {
+    "id": "OX122",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Positioning vs Ballistic",
+    "source": "3장 교안 p.50",
+    "notesAnchor": "c5",
+    "canonical": "감각 입력이 물리적으로 전혀 존재하지 않는다는 뜻이 아니라, 진행 중인 빠른 운동을 그 피드백으로 교정하지 않는다는 뜻이다. 공 던지기와 포인팅 초기 이동을 교안의 예로 든다.",
+    "multiple-choice": [
+      "MC068",
+      "MC111"
+    ],
+    "written": [
+      "SA032",
+      "ES029"
+    ],
+    "mock-exam": [
+      "ME2-Q14",
+      "ME4-Q23",
+      "ME5-Q27"
+    ]
+  },
+  {
+    "id": "OX123",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "2단계 운동 제어",
+    "source": "3장 교안 p.50 · 정보처리 전사4",
+    "notesAnchor": "c5",
+    "canonical": "정보처리 전사 4 및 교안 p.50 그래프에서 설명한 실제 포인팅 동작의 2단계 제어 구조이다.",
+    "multiple-choice": [
+      "MC068",
+      "MC111"
+    ],
+    "written": [
+      "SA032",
+      "ES029"
+    ],
+    "mock-exam": [
+      "ME2-Q14",
+      "ME4-Q23",
+      "ME5-Q27"
+    ]
+  },
+  {
+    "id": "OX124",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "연습 효과 · 함정",
+    "source": "3장 교안 p.51",
+    "notesAnchor": "c5",
+    "canonical": "반대이다! 처음 서툴 때는 피드백을 확인하는 Closed loop에 의존하다가, 반복 연습으로 숙련되면 피드백 없이도 빠르게 수행하는 Open loop 비중이 커진다(Closed → Open loop, 교안 p.51).",
+    "multiple-choice": [
+      "MC069",
+      "MC111"
+    ],
+    "written": [
+      "ES029"
+    ],
+    "mock-exam": [
+      "ME1-Q18",
+      "ME2-Q14",
+      "ME5-Q27"
+    ]
+  },
+  {
+    "id": "OX125",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Range Effect · 기출",
+    "source": "3장 교안 p.51",
+    "notesAnchor": "c5",
+    "canonical": "정반대로 바뀌었다! 교안 3 p.51에서 Range Effect는 ‘짧은 거리는 지나침(Overshoot short distance)’, ‘긴 거리는 못 미침(Undershoot long distance)’이다(시험 T/F 최빈출 함정!).",
+    "multiple-choice": [
+      "MC070",
+      "MC111"
+    ],
+    "written": [
+      "SA033",
+      "ES030"
+    ],
+    "mock-exam": [
+      "ME1-Q23",
+      "ME2-Q14"
+    ]
+  },
+  {
+    "id": "OX126",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Range Effect · 기출",
+    "source": "3장 교안 p.51",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.51 원문: Range Effect = Overshoot short distance / Undershoot long distance.",
+    "multiple-choice": [
+      "MC070",
+      "MC111"
+    ],
+    "written": [
+      "SA033",
+      "ES030"
+    ],
+    "mock-exam": [
+      "ME1-Q23",
+      "ME2-Q14"
+    ]
+  },
+  {
+    "id": "OX127",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "VR 운동제어 사례",
+    "source": "3장 교안 p.53–56",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.53–56 및 전사 4에서 설명한 Task 1(자극 기반) vs Task 2(목표 기반) 속도 프로파일 비교 결과이다.",
+    "multiple-choice": [
+      "MC071"
+    ],
+    "written": [
+      "ES030"
+    ],
+    "mock-exam": [
+      "ME2-Q10"
+    ]
+  },
+  {
+    "id": "OX128",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양립성 정의",
+    "source": "3장 교안 p.57",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.57: Compatibility is the extent of consistent with user expectations (called population stereotype or affordance).",
+    "multiple-choice": [
+      "MC072",
+      "MC112",
+      "MC128",
+      "MC134"
+    ],
+    "written": [
+      "SA034",
+      "SA044",
+      "ES031"
+    ],
+    "mock-exam": [
+      "ME1-Q15",
+      "ME2-Q12",
+      "ME3-Q23",
+      "ME3-Q27",
+      "ME5-Q06"
+    ]
+  },
+  {
+    "id": "OX129",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Population stereotype & Affordance",
+    "source": "3장 교안 p.57",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.57의 Population stereotype과 Affordance 영문 정의와 정확히 일치한다(주관식 단답형 핵심!).",
+    "multiple-choice": [
+      "MC072",
+      "MC112",
+      "MC128",
+      "MC134"
+    ],
+    "written": [
+      "SA034",
+      "SA044",
+      "ES031"
+    ],
+    "mock-exam": [
+      "ME1-Q15",
+      "ME2-Q12",
+      "ME3-Q23",
+      "ME3-Q27",
+      "ME5-Q06"
+    ]
+  },
+  {
+    "id": "OX130",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양립성 이점",
+    "source": "3장 교안 p.57",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.57 Benefits of compatible design 4가지 항목이다.",
+    "multiple-choice": [
+      "MC072"
+    ],
+    "written": [
+      "ES031"
+    ],
+    "mock-exam": [
+      "ME3-Q27",
+      "ME5-Q06"
+    ]
+  },
+  {
+    "id": "OX131",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양립성 4분류 · 함정",
+    "source": "3장 교안 p.58",
+    "notesAnchor": "c5",
+    "canonical": "물리적 제어장치와 표시장치의 공간적 배열(physical control-display arrangement)을 일치시키는 것은 ‘공간 양립성(Spatial compatibility)’이다(교안 3 p.58).",
+    "multiple-choice": [
+      "MC073",
+      "MC112",
+      "MC128"
+    ],
+    "written": [
+      "SA035",
+      "ES031"
+    ],
+    "mock-exam": [
+      "ME1-Q15",
+      "ME2-Q12",
+      "ME3-Q27",
+      "ME4-Q09",
+      "ME5-Q23"
+    ]
+  },
+  {
+    "id": "OX132",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "운동 양립성",
+    "source": "3장 교안 p.59",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.59: Movement compatibility is degree to which control movement corresponds with display movement.",
+    "multiple-choice": [
+      "MC073",
+      "MC112",
+      "MC128"
+    ],
+    "written": [
+      "SA035",
+      "ES031"
+    ],
+    "mock-exam": [
+      "ME1-Q15",
+      "ME2-Q12",
+      "ME3-Q27",
+      "ME4-Q09",
+      "ME5-Q23"
+    ]
+  },
+  {
+    "id": "OX133",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "개념 양립성",
+    "source": "3장 교안 p.60",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.60: Conceptual compatibility is degree to which codes and symbols correspond with conceptual associations.",
+    "multiple-choice": [
+      "MC073",
+      "MC112",
+      "MC128"
+    ],
+    "written": [
+      "SA035",
+      "ES031"
+    ],
+    "mock-exam": [
+      "ME1-Q15",
+      "ME2-Q12",
+      "ME3-Q27",
+      "ME4-Q09",
+      "ME5-Q23"
+    ]
+  },
+  {
+    "id": "OX134",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양식 양립성 · 기출",
+    "source": "3장 교안 p.61",
+    "notesAnchor": "c5",
+    "canonical": "음성 지시(verbal display)에 대해 실제로 왼손을 드는 것(spatial control)은 감각·반응 양식이 불일치(Modality incompatibility)하여 반응이 느리고(slow response), 똑같이 음성으로 “왼손”이라고 말하는 것(verbal control = verbal display)이 양식이 일치(Modality compatibility)하여 반응이 빠르다(fast response, 교안 p.61).",
+    "multiple-choice": [
+      "MC073",
+      "MC112",
+      "MC128"
+    ],
+    "written": [
+      "SA035",
+      "ES031"
+    ],
+    "mock-exam": [
+      "ME1-Q15",
+      "ME2-Q12",
+      "ME3-Q27",
+      "ME4-Q09",
+      "ME5-Q23"
+    ]
+  },
+  {
+    "id": "OX135",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양립성 문화 차이",
+    "source": "3장 교안 p.62",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.62 문화적 차이(Cultural difference): 한국에서는 죽은 사람 이름에 빨간색을 써서 기피하지만, 중국에서는 빨간색이 행운(good fortune)을 가져온다고 믿어 이름과 간판에 선호한다.",
+    "multiple-choice": [
+      "MC074",
+      "MC112",
+      "MC128"
+    ],
+    "written": [
+      "ES032"
+    ],
+    "mock-exam": [
+      "ME1-Q15",
+      "ME2-Q12"
+    ]
+  },
+  {
+    "id": "OX136",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "양립성 경험 차이",
+    "source": "3장 교안 p.62",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.62 Empirical difference에 제시된 일반인 vs. 주식 투자자(stockholder) 비교 사례이다.",
+    "multiple-choice": [
+      "MC074",
+      "MC128"
+    ],
+    "written": [
+      "ES032"
+    ],
+    "mock-exam": [
+      "ME2-Q12"
+    ]
+  },
+  {
+    "id": "OX137",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "공간 양립성 실험",
+    "source": "3장 교안 p.63–66 · 정보처리 전사4",
+    "notesAnchor": "c5",
+    "canonical": "원그림은 perception task의 결과이며 Accuracy는 절대오차 AE다. 큰 AE는 더 부정확함을 뜻한다. 별표는 자신감 비교에만 있어 모든 평균차가 유의하다고 단정하지 않는다. 일반적인 양립성 설계 이점과 개별 과업 결과를 구별한다.",
+    "multiple-choice": [
+      "MC075"
+    ],
+    "written": [
+      "ES033"
+    ],
+    "mock-exam": [
+      "ME3-Q04"
+    ]
+  },
+  {
+    "id": "OX138",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "3D VR Fitts 논문",
+    "source": "4주차 논문 · 피츠 전사",
+    "notesAnchor": "c5",
+    "canonical": "4주차 3D VR Fitts 논문(참가자 23명, \\(R^2 = 0.645\\)) 및 피츠 전사 말미에서 소개된 핵심 수치이다.",
+    "multiple-choice": [
+      "MC076"
+    ],
+    "written": [
+      "ES033"
+    ],
+    "mock-exam": [
+      "ME3-Q10"
+    ]
+  },
+  {
+    "id": "OX139",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "단위 일치",
+    "source": "3장 교안 p.46–47",
+    "notesAnchor": "c5",
+    "canonical": "거리 \\(D\\)와 너비 \\(W\\)는 반드시 동일한 길이 단위(예: 둘 다 mm 또는 둘 다 cm)로 맞춘 뒤 나누어야 무차원 비율이 올바르게 계산된다.",
+    "multiple-choice": [
+      "MC066",
+      "MC110",
+      "MC127"
+    ],
+    "written": [
+      "SA030",
+      "ES027",
+      "RC018"
+    ],
+    "mock-exam": [
+      "ME1-Q06",
+      "ME1-Q27",
+      "ME2-Q23",
+      "ME2-Q32",
+      "ME4-Q13"
+    ]
+  },
+  {
+    "id": "OX140",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Fitts UI 설계",
+    "source": "3장 교안 p.49",
+    "notesAnchor": "c5",
+    "canonical": "교안 3 p.49 UI Examples of Fitts’ Law의 핵심 인터페이스 설계 응용 원리이다.",
+    "multiple-choice": [
+      "MC077",
+      "MC127"
+    ],
+    "written": [
+      "ES026"
+    ],
+    "mock-exam": [
+      "ME1-Q06"
+    ]
+  },
+  {
+    "id": "OX141",
+    "chapter": "Fitts·운동·양립성",
+    "kind": "Hick vs Fitts 비교",
+    "source": "3장 교안 p.34, 42",
+    "notesAnchor": "c5",
+    "canonical": "두 법칙 모두 정보량(\\(\\text{bits}\\))에 선형 비례하는 형태(\\(a + b\\cdot\\text{bits}\\))를 갖지만, Hick은 의사결정·반응선택 단계(CRT), Fitts는 운동 실행·포인팅 단계(MT)를 다룬다.",
+    "multiple-choice": [
+      "MC063",
+      "MC127"
+    ],
+    "written": [
+      "ES026"
+    ],
+    "mock-exam": [
+      "ME1-Q06",
+      "ME4-Q02"
+    ]
+  },
+  {
+    "id": "OX142",
+    "chapter": "기초통계·T검정",
+    "kind": "RStudio 구조",
+    "source": "R설치 교안 p.2, 12–14",
+    "notesAnchor": "c6",
+    "canonical": "R통계_설치 교안 p.2, 12–14에 제시된 R의 특징 및 RStudio 4대 창 구성이다.",
+    "multiple-choice": [
+      "MC078",
+      "MC130"
+    ],
+    "written": [
+      "SA040",
+      "ES034",
+      "RC005"
+    ],
+    "mock-exam": [
+      "ME2-Q08",
+      "ME4-Q06",
+      "ME5-Q29"
+    ]
+  },
+  {
+    "id": "OX143",
+    "chapter": "기초통계·T검정",
+    "kind": "R 실행·저장",
+    "source": "R설치 교안 p.16, 20",
+    "notesAnchor": "c6",
+    "canonical": "R설치 교안 p.16, 20에 명시된 실행 단축키(Ctrl + Enter)와 파일 확장자(.R)이다.",
+    "multiple-choice": [
+      "MC078"
+    ],
+    "written": [
+      "SA040",
+      "ES034",
+      "RC005"
+    ],
+    "mock-exam": [
+      "ME4-Q06",
+      "ME5-Q29"
+    ]
+  },
+  {
+    "id": "OX144",
+    "chapter": "기초통계·T검정",
+    "kind": "R 정렬 코드 · 기출",
+    "source": "t-test 교안 p.3–4",
+    "notesAnchor": "c6",
+    "canonical": "t-test 교안 p.3–4의 정렬 함수 코드이다(R은 대소문자를 구분하므로 소문자 sort를 사용해야 함).",
+    "multiple-choice": [
+      "MC079",
+      "MC113",
+      "MC130"
+    ],
+    "written": [
+      "RC001",
+      "RC005"
+    ],
+    "mock-exam": [
+      "ME1-Q29",
+      "ME2-Q08",
+      "ME5-Q15",
+      "ME5-Q29"
+    ]
+  },
+  {
+    "id": "OX145",
+    "chapter": "기초통계·T검정",
+    "kind": "R 인덱싱 · 함정",
+    "source": "t-test 교안 p.3–4",
+    "notesAnchor": "c6",
+    "canonical": "‘decreasing=TRUE’로 내림차순(큰 값 → 작은 값) 정렬한 벡터의 첫 번째 원소 ‘[1]’이므로 가장 큰 값인 최댓값(128)이 출력된다!",
+    "multiple-choice": [
+      "MC079",
+      "MC130"
+    ],
+    "written": [
+      "RC001",
+      "RC005"
+    ],
+    "mock-exam": [
+      "ME1-Q29",
+      "ME2-Q08",
+      "ME3-Q17",
+      "ME5-Q29"
+    ]
+  },
+  {
+    "id": "OX146",
+    "chapter": "기초통계·T검정",
+    "kind": "R 기초통계 함수",
+    "source": "t-test 교안 p.3–6",
+    "notesAnchor": "c6",
+    "canonical": "t-test 교안 p.3–6에 제시된 기초통계 필수 함수들이다.",
+    "multiple-choice": [
+      "MC080",
+      "MC113",
+      "MC130"
+    ],
+    "written": [
+      "RC002"
+    ],
+    "mock-exam": [
+      "ME2-Q08",
+      "ME4-Q29",
+      "ME5-Q15"
+    ]
+  },
+  {
+    "id": "OX147",
+    "chapter": "기초통계·T검정",
+    "kind": "분산 vs 표준편차",
+    "source": "t-test 교안 p.7",
+    "notesAnchor": "c6",
+    "canonical": "평균과 분산을 함께 보고하는 것 자체가 금지되는 것은 아니다. 단위의 차이를 구별해야 하며 R의 var(a)는 분모 n-1의 표본분산, sd(a)는 그 제곱근이다.",
+    "multiple-choice": [
+      "MC081",
+      "MC130"
+    ],
+    "written": [
+      "SA037",
+      "ES034",
+      "RC003"
+    ],
+    "mock-exam": [
+      "ME1-Q11",
+      "ME2-Q08",
+      "ME2-Q29"
+    ]
+  },
+  {
+    "id": "OX148",
+    "chapter": "기초통계·T검정",
+    "kind": "표본분산·표준편차",
+    "source": "t-test 교안 p.7",
+    "notesAnchor": "c6",
+    "canonical": "t-test 교안 p.7 하단 강조 문구: “해당 코드로 구한 분산/표준편차는 표본의 분산/표준편차임!”",
+    "multiple-choice": [
+      "MC081",
+      "MC113",
+      "MC130"
+    ],
+    "written": [
+      "SA037",
+      "ES034",
+      "RC003"
+    ],
+    "mock-exam": [
+      "ME1-Q11",
+      "ME2-Q08",
+      "ME2-Q29",
+      "ME5-Q15"
+    ]
+  },
+  {
+    "id": "OX149",
+    "chapter": "기초통계·T검정",
+    "kind": "사분위수와 중앙값",
+    "source": "t-test 교안 p.8",
+    "notesAnchor": "c6",
+    "canonical": "제2사분위수(50%)는 중앙값이며 평균과 항상 같지 않다. R quantile(a)의 기본 출력은 최소값(0%)·Q1(25%)·Q2(50%)·Q3(75%)·최대값(100%)이며, 100% 값을 Q3와 혼동하지 않는다.",
+    "multiple-choice": [
+      "MC080",
+      "MC113"
+    ],
+    "written": [
+      "SA037",
+      "ES034",
+      "RC002",
+      "RC004"
+    ],
+    "mock-exam": [
+      "ME3-Q29",
+      "ME4-Q29",
+      "ME5-Q15"
+    ]
+  },
+  {
+    "id": "OX150",
+    "chapter": "기초통계·T검정",
+    "kind": "R 요약·시각화",
+    "source": "t-test 교안 p.8–9",
+    "notesAnchor": "c6",
+    "canonical": "t-test 교안 p.8–9의 R 명령어와 정확히 일치한다.",
+    "multiple-choice": [
+      "MC080",
+      "MC113"
+    ],
+    "written": [
+      "ES034",
+      "RC004"
+    ],
+    "mock-exam": [
+      "ME3-Q29",
+      "ME5-Q15"
+    ]
+  },
+  {
+    "id": "OX151",
+    "chapter": "기초통계·T검정",
+    "kind": "t-검정 3유형 구분",
+    "source": "t-test 교안 p.10–11",
+    "notesAnchor": "c6",
+    "canonical": "한 집단의 평균을 특정 기준값(\\(\\mu_0\\))과 비교하는 검정은 ‘단일표본(One-sample) t-test’이다.",
+    "multiple-choice": [
+      "MC082",
+      "MC115",
+      "MC129"
+    ],
+    "written": [
+      "SA036",
+      "ES035",
+      "RC007"
+    ],
+    "mock-exam": [
+      "ME1-Q24",
+      "ME1-Q30",
+      "ME2-Q15",
+      "ME3-Q12",
+      "ME5-Q02"
+    ]
+  },
+  {
+    "id": "OX152",
+    "chapter": "기초통계·T검정",
+    "kind": "t-검정 3유형 구분",
+    "source": "t-test 교안 p.10, 15",
+    "notesAnchor": "c6",
+    "canonical": "t-test 교안 p.10, 15–16의 독립표본 t-검정 정의 및 사례이다.",
+    "multiple-choice": [
+      "MC082",
+      "MC115",
+      "MC129"
+    ],
+    "written": [
+      "SA036",
+      "ES035",
+      "RC008",
+      "RC010"
+    ],
+    "mock-exam": [
+      "ME1-Q24",
+      "ME2-Q15",
+      "ME2-Q30",
+      "ME3-Q12",
+      "ME4-Q30",
+      "ME5-Q02"
+    ]
+  },
+  {
+    "id": "OX153",
+    "chapter": "기초통계·T검정",
+    "kind": "t-검정 3유형 구분",
+    "source": "t-test 교안 p.10, 21",
+    "notesAnchor": "c6",
+    "canonical": "t-test 교안 p.10, 21–22의 대응표본 t-검정 정의 및 사례이다.",
+    "multiple-choice": [
+      "MC082",
+      "MC115",
+      "MC129"
+    ],
+    "written": [
+      "SA036",
+      "ES035",
+      "RC011"
+    ],
+    "mock-exam": [
+      "ME1-Q24",
+      "ME2-Q15",
+      "ME3-Q12",
+      "ME3-Q31",
+      "ME5-Q02"
+    ]
+  },
+  {
+    "id": "OX154",
+    "chapter": "기초통계·T검정",
+    "kind": "shapiro.test 판정 · 기출",
+    "source": "t-test 교안 p.13, 18, 23",
+    "notesAnchor": "c6",
+    "canonical": "\\(p>0.05\\)이면 정규성 귀무가설을 기각하지 못한다. 교안의 “채택”은 가정의 참을 증명한 것이 아니다. \\(p<0.05\\)이면 해당 유의수준에서 정규성 H0를 기각한다.",
+    "multiple-choice": [
+      "MC083",
+      "MC114"
+    ],
+    "written": [
+      "ES036",
+      "RC006",
+      "RC008"
+    ],
+    "mock-exam": [
+      "ME2-Q30",
+      "ME5-Q30"
+    ]
+  },
+  {
+    "id": "OX155",
+    "chapter": "기초통계·T검정",
+    "kind": "정규성 경험칙",
+    "source": "t-test 교안 p.13, 17",
+    "notesAnchor": "c6",
+    "canonical": "n≥20은 교안에 제시된 수업 경험칙이다. 그 수만으로 모집단의 정규성이나 이상치 영향의 소멸이 증명되지는 않는다. 분포·표본 구조를 함께 점검한다.",
+    "multiple-choice": [
+      "MC083",
+      "MC114"
+    ],
+    "written": [
+      "ES036",
+      "RC006"
+    ],
+    "mock-exam": [
+      "ME5-Q30"
+    ]
+  },
+  {
+    "id": "OX156",
+    "chapter": "기초통계·T검정",
+    "kind": "단일표본 t-test 코드",
+    "source": "t-test 교안 p.14",
+    "notesAnchor": "c6",
+    "canonical": "t-test 교안 p.14의 코드 및 결과 해석(\\(p < 0.05 \\to H_0\\) 기각 → 대구 초1 평균 키는 150cm가 아니다)과 일치한다.",
+    "multiple-choice": [
+      "MC084",
+      "MC115"
+    ],
+    "written": [
+      "ES037",
+      "RC007",
+      "RC012"
+    ],
+    "mock-exam": [
+      "ME1-Q30",
+      "ME2-Q15",
+      "ME3-Q28",
+      "ME5-Q31"
+    ]
+  },
+  {
+    "id": "OX157",
+    "chapter": "기초통계·T검정",
+    "kind": "독립표본 가정",
+    "source": "t-test 교안 p.15, 17–19",
+    "notesAnchor": "c6",
+    "canonical": "수업에서 사용하는 var.equal=TRUE 절차와 기본 Welch(var.equal=FALSE)를 구별한다. 모든 독립표본 검정에 등분산이 필수라는 일반화는 피한다.",
+    "multiple-choice": [
+      "MC085",
+      "MC114"
+    ],
+    "written": [
+      "ES036",
+      "RC008",
+      "RC010"
+    ],
+    "mock-exam": [
+      "ME2-Q30",
+      "ME4-Q30"
+    ]
+  },
+  {
+    "id": "OX158",
+    "chapter": "기초통계·T검정",
+    "kind": "levene.test 코드 · 기출",
+    "source": "t-test 교안 p.19",
+    "notesAnchor": "c6",
+    "canonical": "t-test 교안 p.19의 등분산 검정 R 코드와 정확히 일치한다.",
+    "multiple-choice": [
+      "MC085"
+    ],
+    "written": [
+      "ES036",
+      "RC009",
+      "RC012"
+    ],
+    "mock-exam": [
+      "ME3-Q30",
+      "ME5-Q31"
+    ]
+  },
+  {
+    "id": "OX159",
+    "chapter": "기초통계·T검정",
+    "kind": "등분산과 var.equal",
+    "source": "t-test 교안 p.19–20",
+    "notesAnchor": "c6",
+    "canonical": "비기각은 두 모분산이 정확히 같다는 증명이 아니다. 교안 pooled 절차에서 등분산을 가정하고 진행하는 판단이며 기본 Welch는 등분산을 요구하지 않는다.",
+    "multiple-choice": [
+      "MC085",
+      "MC114"
+    ],
+    "written": [
+      "ES036",
+      "RC009",
+      "RC010"
+    ],
+    "mock-exam": [
+      "ME3-Q30",
+      "ME4-Q30"
+    ]
+  },
+  {
+    "id": "OX160",
+    "chapter": "기초통계·T검정",
+    "kind": "R 포뮬러 순서 · 함정",
+    "source": "t-test 교안 p.20",
+    "notesAnchor": "c6",
+    "canonical": "R 포뮬러에서는 항상 왼쪽에 측정 결과인 종속변수(height), 오른쪽에 집단/독립변수(group)를 써서 ‘height ~ group’으로 작성해야 한다.",
+    "multiple-choice": [
+      "MC085",
+      "MC115"
+    ],
+    "written": [
+      "ES037",
+      "RC010",
+      "RC012"
+    ],
+    "mock-exam": [
+      "ME1-Q18",
+      "ME2-Q15",
+      "ME3-Q28",
+      "ME4-Q30",
+      "ME5-Q31"
+    ]
+  },
+  {
+    "id": "OX161",
+    "chapter": "기초통계·T검정",
+    "kind": "대응표본 정규성",
+    "source": "t-test 교안 p.21, 23",
+    "notesAnchor": "c6",
+    "canonical": "t-test 교안 p.21, 23: 대응표본 t-검정의 조건은 ‘비교할 값의 차이(datadiff)가 정규성을 따르는 것’이다.",
+    "multiple-choice": [
+      "MC086",
+      "MC115",
+      "MC129"
+    ],
+    "written": [
+      "ES035",
+      "ES037",
+      "RC011",
+      "RC012"
+    ],
+    "mock-exam": [
+      "ME2-Q15",
+      "ME3-Q12",
+      "ME3-Q28",
+      "ME3-Q31",
+      "ME5-Q31"
+    ]
+  },
+  {
+    "id": "OX162",
+    "chapter": "기초통계·T검정",
+    "kind": "대응표본 결과 해석",
+    "source": "t-test 교안 p.24",
+    "notesAnchor": "c6",
+    "canonical": "t-test 교안 p.24 결과 화면 및 결론과 정확히 일치한다.",
+    "multiple-choice": [
+      "MC086",
+      "MC115",
+      "MC129"
+    ],
+    "written": [
+      "ES037",
+      "RC011"
+    ],
+    "mock-exam": [
+      "ME2-Q15",
+      "ME3-Q12",
+      "ME3-Q28",
+      "ME3-Q31"
+    ]
+  },
+  {
+    "id": "OX163",
+    "chapter": "기초통계·T검정",
+    "kind": "평균과 산포",
+    "source": "T검정 전사 · 원문과 검증",
+    "notesAnchor": "c6",
+    "canonical": "두 집단의 평균은 50으로 같지만, A 집단은 편차가 전혀 없어 표준편차가 0인 반면 B 집단은 값들이 넓게 퍼져 있어 표준편차(약 45.64)가 매우 크다.",
+    "multiple-choice": [
+      "MC081"
+    ],
+    "written": [
+      "SA037",
+      "ES034"
+    ],
+    "mock-exam": [
+      "ME1-Q11"
+    ]
+  },
+  {
+    "id": "OX164",
+    "chapter": "회귀·실험실습",
+    "kind": "상관 vs 회귀",
+    "source": "회귀 교안 p.2, 7–8",
+    "notesAnchor": "c7",
+    "canonical": "회귀 교안 p.2, 7–8의 상관분석 vs. 회귀분석 정의와 일치한다.",
+    "multiple-choice": [
+      "MC087"
+    ],
+    "written": [
+      "ES038",
+      "RC013"
+    ],
+    "mock-exam": [
+      "ME1-Q31",
+      "ME2-Q28",
+      "ME3-Q05"
+    ]
+  },
+  {
+    "id": "OX165",
+    "chapter": "회귀·실험실습",
+    "kind": "독립 vs 종속변수",
+    "source": "회귀 교안 p.7",
+    "notesAnchor": "c7",
+    "canonical": "영향을 주는 설명변수가 독립변수(independent variable, \\(X\\))이고, 영향을 받는 반응변수가 종속변수(dependent/response variable, \\(Y\\))이다(회귀 교안 p.7).",
+    "multiple-choice": [
+      "MC087"
+    ],
+    "written": [
+      "ES038",
+      "RC013"
+    ],
+    "mock-exam": [
+      "ME1-Q31",
+      "ME2-Q28",
+      "ME3-Q05"
+    ]
+  },
+  {
+    "id": "OX166",
+    "chapter": "회귀·실험실습",
+    "kind": "공분산과 상관계수",
+    "source": "회귀 교안 p.3–6",
+    "notesAnchor": "c7",
+    "canonical": "분산이 양수인 두 변수에서 공분산과 피어슨 상관계수의 부호는 같다. r=0은 선형 연관이 없음을 뜻하며 비선형 관계의 부재나 독립성을 보장하지 않는다. 분산이 0이면 상관계수가 정의되지 않는다.",
+    "multiple-choice": [
+      "MC088",
+      "MC116"
+    ],
+    "written": [
+      "ES038"
+    ],
+    "mock-exam": [
+      "ME2-Q28",
+      "ME3-Q15",
+      "ME5-Q07"
+    ]
+  },
+  {
+    "id": "OX167",
+    "chapter": "회귀·실험실습",
+    "kind": "상관계수 한계",
+    "source": "회귀 교안 p.5–6, 9, 11",
+    "notesAnchor": "c7",
+    "canonical": "피어슨 상관계수 \\(r\\)은 ‘선형(직선) 관계’의 강도만 측정하므로, \\(r=0\\)이더라도 대칭적인 곡선(비선형) 관계는 존재할 수 있다.",
+    "multiple-choice": [
+      "MC088",
+      "MC116"
+    ],
+    "written": [
+      "ES038"
+    ],
+    "mock-exam": [
+      "ME2-Q28",
+      "ME3-Q15",
+      "ME5-Q07"
+    ]
+  },
+  {
+    "id": "OX168",
+    "chapter": "회귀·실험실습",
+    "kind": "단순회귀와 산점도",
+    "source": "회귀 교안 p.9, 22",
+    "notesAnchor": "c7",
+    "canonical": "회귀 교안 p.9, 11, 22에서 강조한 단순회귀분석 절차이다.",
+    "multiple-choice": [
+      "MC087"
+    ],
+    "written": [
+      "ES038",
+      "RC013"
+    ],
+    "mock-exam": [
+      "ME1-Q31",
+      "ME2-Q28",
+      "ME3-Q05"
+    ]
+  },
+  {
+    "id": "OX169",
+    "chapter": "회귀·실험실습",
+    "kind": "최소제곱법(OLS)",
+    "source": "회귀 교안 p.15",
+    "notesAnchor": "c7",
+    "canonical": "회귀 교안 p.15: 오차의 제곱의 합이 최소가 되는 직선식을 추정 = 최소제곱추정법.",
+    "multiple-choice": [
+      "MC089",
+      "MC116",
+      "MC131"
+    ],
+    "written": [
+      "SA038",
+      "ES039"
+    ],
+    "mock-exam": [
+      "ME1-Q08",
+      "ME2-Q24",
+      "ME3-Q15",
+      "ME4-Q28"
+    ]
+  },
+  {
+    "id": "OX170",
+    "chapter": "회귀·실험실습",
+    "kind": "OLS 공식",
+    "source": "회귀 교안 p.14–16",
+    "notesAnchor": "c7",
+    "canonical": "회귀 교안 p.14–16의 OLS 추정 공식과 정확히 일치한다.",
+    "multiple-choice": [
+      "MC089",
+      "MC116",
+      "MC131"
+    ],
+    "written": [
+      "SA038",
+      "ES039"
+    ],
+    "mock-exam": [
+      "ME1-Q08",
+      "ME2-Q24",
+      "ME3-Q15",
+      "ME4-Q28"
+    ]
+  },
+  {
+    "id": "OX171",
+    "chapter": "회귀·실험실습",
+    "kind": "SST=SSR+SSE · 기출",
+    "source": "회귀 교안 p.17–18",
+    "notesAnchor": "c7",
+    "canonical": "절편을 포함한 OLS를 같은 학습 자료에 적용하면 \\(\\mathrm{SST}=\\mathrm{SSR}+\\mathrm{SSE}\\)다. 같은 반응 자료의 SST를 고정하면 SSE가 작고 SSR이 클수록 표본 내 적합도가 좋다. 다른 자료의 원시 제곱합 크기를 그대로 비교하지 않는다.",
+    "multiple-choice": [
+      "MC090",
+      "MC116",
+      "MC131"
+    ],
+    "written": [
+      "SA039",
+      "ES039"
+    ],
+    "mock-exam": [
+      "ME1-Q08",
+      "ME3-Q15",
+      "ME3-Q24",
+      "ME4-Q28"
+    ]
+  },
+  {
+    "id": "OX172",
+    "chapter": "회귀·실험실습",
+    "kind": "회귀 분산분석표",
+    "source": "회귀 교안 p.19",
+    "notesAnchor": "c7",
+    "canonical": "회귀 교안 p.19 분산분석표의 자유도 및 \\(F = \\mathrm{MSR}/\\mathrm{MSE}\\) 구조와 정확히 일치한다.",
+    "multiple-choice": [
+      "MC090",
+      "MC117",
+      "MC131"
+    ],
+    "written": [
+      "SA039",
+      "ES039"
+    ],
+    "mock-exam": [
+      "ME1-Q08",
+      "ME3-Q24",
+      "ME4-Q28",
+      "ME5-Q16"
+    ]
+  },
+  {
+    "id": "OX173",
+    "chapter": "회귀·실험실습",
+    "kind": "결정계수 R²",
+    "source": "회귀 교안 p.20",
+    "notesAnchor": "c7",
+    "canonical": "회귀 교안 p.20: 결정계수 \\(r^2\\)(\\(R^2\\))의 값이 1에 가까울수록 회귀식은 설명력이 높다.",
+    "multiple-choice": [
+      "MC090",
+      "MC117",
+      "MC131"
+    ],
+    "written": [
+      "SA039",
+      "ES039"
+    ],
+    "mock-exam": [
+      "ME1-Q08",
+      "ME3-Q24",
+      "ME4-Q28",
+      "ME5-Q16"
+    ]
+  },
+  {
+    "id": "OX174",
+    "chapter": "회귀·실험실습",
+    "kind": "R lm(y~x) 코드 · 기출",
+    "source": "회귀 교안 p.23",
+    "notesAnchor": "c7",
+    "canonical": "‘lm()’ 함수에서는 물결표(~) 왼쪽에 예측 대상인 종속변수(\\(y\\)), 오른쪽에 독립변수(\\(x\\))를 적어야 하므로 ‘model <- lm(y ~ x)’가 올바른 코드이다!",
+    "multiple-choice": [
+      "MC091"
+    ],
+    "written": [
+      "ES040",
+      "RC013",
+      "RC020"
+    ],
+    "mock-exam": [
+      "ME1-Q31",
+      "ME4-Q32"
+    ]
+  },
+  {
+    "id": "OX175",
+    "chapter": "회귀·실험실습",
+    "kind": "R abline 코드 · 기출",
+    "source": "회귀 교안 p.23–24",
+    "notesAnchor": "c7",
+    "canonical": "회귀 교안 p.23–24의 회귀선 추가 코드 및 ‘lty: 직선모양 결정’ 설명과 정확히 일치한다.",
+    "multiple-choice": [
+      "MC091"
+    ],
+    "written": [
+      "ES040",
+      "RC014"
+    ],
+    "mock-exam": [
+      "ME2-Q31"
+    ]
+  },
+  {
+    "id": "OX176",
+    "chapter": "회귀·실험실습",
+    "kind": "summary 해석 · 기출",
+    "source": "회귀 교안 p.25",
+    "notesAnchor": "c7",
+    "canonical": "‘(Intercept)’가 절편 \\(b_0 = 30.93\\), ‘x’가 기울기 \\(b_1 = 0.87\\)이므로 추정 회귀식은 \\(\\hat{y} = 30.93 + 0.87x\\)이다.",
+    "multiple-choice": [
+      "MC092",
+      "MC117"
+    ],
+    "written": [
+      "ES040",
+      "RC015"
+    ],
+    "mock-exam": [
+      "ME1-Q28",
+      "ME3-Q32",
+      "ME5-Q16"
+    ]
+  },
+  {
+    "id": "OX177",
+    "chapter": "회귀·실험실습",
+    "kind": "summary 해석 · 기출",
+    "source": "회귀 교안 p.25 · 회귀 전사",
+    "notesAnchor": "c7",
+    "canonical": "회귀 교안 p.25 및 회귀 전사 말미에서 교수님이 강조한 첫 번째 해석 포인트(회귀계수의 유의성 검정)이다.",
+    "multiple-choice": [
+      "MC092",
+      "MC117"
+    ],
+    "written": [
+      "ES040",
+      "RC015"
+    ],
+    "mock-exam": [
+      "ME1-Q28",
+      "ME3-Q32",
+      "ME5-Q16"
+    ]
+  },
+  {
+    "id": "OX178",
+    "chapter": "회귀·실험실습",
+    "kind": "summary 해석 · 기출",
+    "source": "회귀 교안 p.25 · 회귀 전사",
+    "notesAnchor": "c7",
+    "canonical": "교안 p.25 좌측 하단 상자: “추정된 회귀식의 타당성 — 업무만족도 변화에 대한 68.3%를 설명, 현실적 중요성.”",
+    "multiple-choice": [
+      "MC093",
+      "MC117"
+    ],
+    "written": [
+      "ES040",
+      "RC015"
+    ],
+    "mock-exam": [
+      "ME1-Q28",
+      "ME3-Q32",
+      "ME4-Q11",
+      "ME5-Q16"
+    ]
+  },
+  {
+    "id": "OX179",
+    "chapter": "회귀·실험실습",
+    "kind": "summary 해석 · 기출",
+    "source": "회귀 교안 p.25 · 회귀 전사",
+    "notesAnchor": "c7",
+    "canonical": "교안 p.25 우측 하단 상자: “회귀모형의 유의성 검정 — 회귀식 자체가 유의한지 여부 판단, 통계적 유의성.”",
+    "multiple-choice": [
+      "MC093",
+      "MC117"
+    ],
+    "written": [
+      "ES040",
+      "RC015"
+    ],
+    "mock-exam": [
+      "ME1-Q28",
+      "ME3-Q32",
+      "ME4-Q11",
+      "ME5-Q16"
+    ]
+  },
+  {
+    "id": "OX180",
+    "chapter": "회귀·실험실습",
+    "kind": "다중회귀 R 포뮬러",
+    "source": "회귀 전사 말미",
+    "notesAnchor": "c7",
+    "canonical": "회귀 전사 말미에서 교수님이 언급한 다중선형회귀 R 포뮬러 작성법이다.",
+    "multiple-choice": [
+      "MC094"
+    ],
+    "written": [
+      "ES040",
+      "RC016"
+    ],
+    "mock-exam": [
+      "ME4-Q31"
+    ]
+  },
+  {
+    "id": "OX181",
+    "chapter": "회귀·실험실습",
+    "kind": "SRT/CRT bit 변환 · 기출",
+    "source": "SRT/CRT 교안 p.1–3 · 실습 전사",
+    "notesAnchor": "c7",
+    "canonical": "등확률 대안 수 \\(N = 1, 2, 4\\)에 대해 \\(H = \\log_2 N\\)을 취해야 하므로 각각 \\(\\log_2 1 = 0\\text{ bit}\\), \\(\\log_2 2 = 1\\text{ bit}\\), \\(\\log_2 4 = 2\\text{ bits}\\)가 된다!",
+    "multiple-choice": [
+      "MC095",
+      "MC118",
+      "MC132"
+    ],
+    "written": [
+      "SA041",
+      "ES041",
+      "RC017",
+      "RC020"
+    ],
+    "mock-exam": [
+      "ME1-Q32",
+      "ME2-Q01",
+      "ME4-Q16",
+      "ME4-Q24",
+      "ME4-Q32",
+      "ME5-Q28"
+    ]
+  },
+  {
+    "id": "OX182",
+    "chapter": "회귀·실험실습",
+    "kind": "비유의 회귀 출력 해석",
+    "source": "SRT/CRT 실습 전사",
+    "notesAnchor": "c7",
+    "canonical": "p=0.16>0.05이므로 모형 유의성의 귀무가설을 기각하지 못하고, 이 표본의 설명력은 약 3%로 낮다. 이것만으로 자료가 잘못되었다거나 Hick 법칙 전체가 거짓이라고 결론 내릴 수는 없다.",
+    "multiple-choice": [
+      "MC095",
+      "MC118",
+      "MC132"
+    ],
+    "written": [
+      "SA041",
+      "ES041",
+      "RC020"
+    ],
+    "mock-exam": [
+      "ME2-Q01",
+      "ME4-Q16",
+      "ME4-Q24",
+      "ME4-Q32",
+      "ME5-Q28"
+    ]
+  },
+  {
+    "id": "OX183",
+    "chapter": "회귀·실험실습",
+    "kind": "실습 로그 규칙",
+    "source": "Sternberg README · 로그",
+    "notesAnchor": "c7",
+    "canonical": "Sternberg README.docx 및 실제 로그 파일(Index 0: TimeOut, False, 5000)에 명시된 규칙이다.",
+    "multiple-choice": [
+      "MC096",
+      "MC118",
+      "MC132"
+    ],
+    "written": [
+      "SA042",
+      "ES041",
+      "RC019"
+    ],
+    "mock-exam": [
+      "ME2-Q01",
+      "ME4-Q16",
+      "ME5-Q24",
+      "ME5-Q28",
+      "ME5-Q32"
+    ]
+  },
+  {
+    "id": "OX184",
+    "chapter": "회귀·실험실습",
+    "kind": "Sternberg 로그 해석",
+    "source": "Sternberg 로그 · 원문과 검증",
+    "notesAnchor": "c7",
+    "canonical": "로그의 ‘User Input’ 열이 사용자가 누른 값(집합 포함 여부 응답)이고, ‘T/F’ 열은 사용자의 응답이 정답이었는지(정오 여부)를 뜻한다. 따라서 집합에 없는 숫자를 없다고(False) 정확히 맞힌 시행도 ‘T/F’ 열은 ‘True’가 된다.",
+    "multiple-choice": [
+      "MC097",
+      "MC118",
+      "MC132"
+    ],
+    "written": [
+      "SA042",
+      "ES041",
+      "RC019"
+    ],
+    "mock-exam": [
+      "ME2-Q01",
+      "ME4-Q16",
+      "ME5-Q24",
+      "ME5-Q28",
+      "ME5-Q32"
+    ]
+  },
+  {
+    "id": "OX185",
+    "chapter": "회귀·실험실습",
+    "kind": "Sternberg 회귀 분리",
+    "source": "SRT/CRT/Sternberg 실습 전사",
+    "notesAnchor": "c7",
+    "canonical": "실습에서는 실제 Probe 포함 여부로 YES·NO를 분리해 PSS–RT 기울기와 절편을 비교한다. T/F(정오)를 조건으로 쓰지 않는다. 교안의 탐색 방식 설명과 모든 실험의 보편 결론도 구별한다.",
+    "multiple-choice": [
+      "MC097",
+      "MC118",
+      "MC132"
+    ],
+    "written": [
+      "SA042",
+      "ES022",
+      "ES041",
+      "RC019"
+    ],
+    "mock-exam": [
+      "ME2-Q01",
+      "ME4-Q16",
+      "ME4-Q27",
+      "ME5-Q24",
+      "ME5-Q28",
+      "ME5-Q32"
+    ]
+  },
+  {
+    "id": "OX186",
+    "chapter": "개론·역사",
+    "kind": "Old computer · CLI vs GUI",
+    "source": "1-2 교안 p.5 · 보충영상 PSY-L001",
+    "notesAnchor": "c1",
+    "canonical": "반대이다! MS-DOS와 같은 명령줄 인터페이스(CLI)는 사용자가 정확한 명령어(command)를 직접 암기해 장기기억에서 회상(Recall)해야 하므로 초보자의 인지 부하가 매우 높았다. 반면 Windows 95는 Start(시작) 버튼, 바탕화면 아이콘, 창(Window) 등 시각적 단서를 보고 선택하는 재인(Recognition) 기반 GUI를 도입하여 기억 부하를 낮추고 사용성(Usability)을 높였다(다만 모니터·본체 전원 분리, 전화선 모뎀 Dial-up, 플로피 디스크 13장 설치 등 초기 하드웨어·통신 제약은 여전히 존재했다).",
+    "multiple-choice": [
+      "MC133"
+    ],
+    "written": [
+      "SA043",
+      "ES042"
+    ],
+    "mock-exam": [
+      "ME3-Q18",
+      "ME4-Q04",
+      "ME5-Q25"
+    ]
+  },
+  {
+    "id": "OX187",
+    "chapter": "개론·역사",
+    "kind": "Gen Z Vs Old Tech · 세대 고정관념",
+    "source": "1-2 교안 p.6 · 보충영상 PSY-L002",
+    "notesAnchor": "c1",
+    "canonical": "교안 1-2 p.6 ‘Gen Z Vs Old Technology’ 및 보충영상(PSY-L002)의 핵심 시사점이다. 물리적 단서(슬롯 형태, 12키 숫자패드, 3.5인치 디스크 셔터)가 존재하더라도 과거 사용 경험(Previous Experience)과 내재화된 심성모형(Mental Model)이 다르면 직관적 조작 기대(Population Stereotype)가 형성되지 않아 오조작과 시행착오가 발생한다.",
+    "multiple-choice": [
+      "MC134"
+    ],
+    "written": [
+      "SA044",
+      "ES042"
+    ],
+    "mock-exam": [
+      "ME3-Q18",
+      "ME3-Q23",
+      "ME5-Q17"
+    ]
+  },
+  {
+    "id": "OX188",
+    "chapter": "개론·역사",
+    "kind": "2000년대 기기 · 물리·인지 마찰",
+    "source": "1-2 교안 p.5–6 · 보충영상 PSY-L003",
+    "notesAnchor": "c1",
+    "canonical": "웹페이지를 실제로 열고 과업을 완료하는 과정, 별도 PS2 메모리카드 준비, 문자 입력·영상 가져오기·편집의 부담도 평가해야 한다. 게임·문서 작성의 성공도 함께 고려하며 특정 기기의 고장을 모든 당시 제품의 설계 결함으로 일반화하지 않는다.",
+    "multiple-choice": [
+      "MC135"
+    ],
+    "written": [
+      "ES042"
+    ],
+    "mock-exam": [
+      "ME5-Q17",
+      "ME5-Q25"
+    ]
+  }
+]

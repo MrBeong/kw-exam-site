@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-17",
+  "questions": 589,
+  "concepts": 188,
+  "RQuestions": 40,
+  "RBlanks": 122,
+  "RChecks": 208,
+  "formulaCount": 1026,
+  "browserChecks": 1722,
+  "retryChecks": 69,
+  "staticLinksChecked": 59,
+  "missingStaticLinks": [],
+  "independentReview": "all blocking findings corrected and reverified",
+  "files": {
+    "index.html": "fb94f671ab4dded6d0d9ffdda4088e4279b676bc03370500b0a6aae9a532fe02",
+    "인터랙티브심리학_중간고사_Notion.html": "fb94f671ab4dded6d0d9ffdda4088e4279b676bc03370500b0a6aae9a532fe02",
+    "ox/index.html": "04a6365b0b4d8cdc84da0f602e52d3b3fb85758a7614e170351ec491a6d7e52b",
+    "multiple-choice/index.html": "734482cb0c1294672378c074b9ecc1e952afcefe2ed5abde085779e53f0adb17",
+    "multiple-choice/questions.json": "bddcbf8bf4f6e15a438838e0a805a53913d6aed7a4a34aad519ac0a079dbd8b3",
+    "multiple-choice/concepts.json": "e412171a9af2b3375e76df6ade4651810ac67abdd50be8b59d04194dfaaf51fb",
+    "written/questions.json": "190cd643c9e1e604088a56e394024e530c917082fe2b0e71429f72c845b181ce",
+    "written/app.js": "d34ff97e812d28481533c46bc7ab14e848939c8fb56b13a53614e758616bff14",
+    "written/section.html": "a680c9e13d1c3aa2ef7e2697e40e5f91e4b12ff44f4e076e0de816b507e563c7",
+    "written/main-template.html": "251b6793db01389b8b44dae1346cfe6e6b9d6019668b08125f0efd66fe71a65d",
+    "mock-exam/index.html": "5e6a6837e3d3cf12befd5a2cf9b3c17b1b4df70ab0bc6b30c63f3cf7b8b631ca",
+    "mock-exam/questions.json": "6906c3be8e829bfaebf26060a8c729ad35ab4a1b6f8e7d3f7027b61321e89824",
+    "mock-exam/app.js": "411d6ffc23a2d6a69dc48fcd911a9ca4fa02e5ebde3dec5debdf714ecbbaacff",
+    "assets/study-retry.js": "e2b7c90b54088715bd730315f489d91e7d0e7833fea13e89dff2cbb206b766ea",
+    "assets/study-retry.css": "92b455f1c38b27e2cf41d7938d07e6693150d75ea886f7153af41764a0e97403",
+    "assets/study-math.js": "04fd7ba1cc11bcc440a789beb7396ef6c4be5eac8ad7107c821971bbdcb9d859",
+    "assets/mathjax/tex-svg-3.2.2.js": "d4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882"
+  }
+}

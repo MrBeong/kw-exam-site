@@ -1,0 +1,30 @@
+{
+  "questionCount": 103,
+  "conceptCount": 185,
+  "rubricCount": 344,
+  "totalBankPoints": 476,
+  "rExecution": "not run: Rscript not installed",
+  "sha256": {
+    "index.html": "b6ce6b01dfca4b65e98145d804a01225262a6e4923d8e2233004df276dd16fe5",
+    "ox/index.html": "5c5f682c5c53f25c2ca901bef135d87760707ba3d037928419653d15baf3eb94",
+    "written/questions.json": "d1dbdd9340664ddf666f34570cbee96311016af8730bf785b0fe171097550ecb",
+    "written/app.js": "a80cc573c78be770e9bde256375567fb947d34d88694cc88178b6669a575b9d3",
+    "written/style.css": "922ec43fce9ff593eecb09ff17c8c88c48c2c4253fd95b436c98f4f1e8951161",
+    "written/english-terms.json": "e1b54e6851107de521be589c1e2a49e6bb9bdf7a3486bb2af1a49d7f50367045"
+  },
+  "codeQuestionCount": 20,
+  "codeBlankCount": 61,
+  "codeBlankBrowserChecks": 182,
+  "writtenRegressionChecks": 40,
+  "nonCodeQuestionsUnchanged": true,
+  "conceptMappingUnchanged": true,
+  "rScriptEditor": {
+    "lineNumbers": true,
+    "rSyntaxHighlighting": true,
+    "indentSpaces": 2,
+    "executableTokensUnchanged": 20,
+    "exactSourceRenderingChecks": 20,
+    "rStringAndConstantColorsChecked": true
+  },
+  "mockExamIntegrated": true
+}

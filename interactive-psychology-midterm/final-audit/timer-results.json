@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "returning resumes the running fourth set",
+    "second tab resumes same active exam and deadline",
+    "other-tab answers synchronize through storage event",
+    "timer visibly counts down in an open page",
+    "time expiry auto submits without reload",
+    "automatic submission shown on active page",
+    "automatic submission synchronizes to second tab",
+    "expiry submission remains idempotent after interval and reload",
+    "timer and cross-tab flow has no exceptions"
+  ],
+  "errors": []
+}

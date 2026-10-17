@@ -1,0 +1,14 @@
+{
+  "id": "RC003",
+  "originId": "RC003",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "variance and SD match answer/rubric", "sample variance denominator n-1", "no unexpected warnings"],
+  "metrics": {
+    "variance": 4,
+    "SD": 2,
+    "denominator": 2
+  },
+  "warnings": [],
+  "inputProvenance": "question_literal_vectors"
+}

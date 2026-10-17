@@ -1,0 +1,15 @@
+{
+  "id": "RC020",
+  "originId": "RC020",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "Hick regression direction Time~bit", "summary printed", "actual model p matches supplied rounded output", "actual R-squared matches supplied rounded output", "output nonsignificant at alpha=.05", "no unexpected warnings"],
+  "metrics": {
+    "fixtureR2": 0.029689737595709,
+    "actualP": 0.1600000003828788,
+    "givenInterpretationP": 0.16,
+    "givenInterpretationR2": 0.03
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}

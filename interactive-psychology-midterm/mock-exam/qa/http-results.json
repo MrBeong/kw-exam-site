@@ -1,0 +1,25 @@
+{
+  "integration": {
+    "passed": 13,
+    "results": [
+      "main written view exposes 120-minute exam entry",
+      "exam entry opens instructions in exam mode",
+      "mock wrong answer appears in central mistakes",
+      "central review link reopens saved practice question",
+      "answer edit retains current wrong-review question",
+      "correct practice reassessment clears central mistake",
+      "wrong filter refresh removes resolved item",
+      "central retry clears only target practice wrong answer",
+      "retry preserves other practice answers",
+      "central retry preserves earlier study banks",
+      "explicit exam URL replaces saved practice mode",
+      "leaving and returning preserves running exam and blocks practice bypass",
+      "HTTP integration has no uncaught JavaScript errors"
+    ],
+    "errors": []
+  },
+  "foreground": {
+    "passed": true,
+    "check": "foreground deadline auto-submits without reload and syncs other tabs"
+  }
+}

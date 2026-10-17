@@ -1,0 +1,67 @@
+{
+  "id": "ME2-Q31",
+  "type": "code",
+  "chapter": "회귀·실험실습",
+  "conceptIds": [
+    "OX175"
+  ],
+  "prompt": "plot(x,y) 산점도가 열려 있고 model <- lm(y~x)가 적합되어 있다. lty·col 인자로 파란 실선 회귀선을 추가하려 한다. 색은 이름 문자열로 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "answer": "lty=1은 실선, col=\"blue\"는 파란색을 지정한다.",
+  "explanation": [
+    "abline(lm(y~x),lty=1,col=\"blue\")도 같은 요구를 만족한다.",
+    "plot이 먼저 있어야 기존 산점도 위에 선을 추가한다."
+  ],
+  "rubric": [
+    {
+      "points": 1.5,
+      "criterion": "빈칸 (1): abline"
+    },
+    {
+      "points": 1.25,
+      "criterion": "빈칸 (2): 실선 1"
+    },
+    {
+      "points": 1.25,
+      "criterion": "빈칸 (3): 따옴표를 포함한 \"blue\""
+    }
+  ],
+  "commonMistakes": [
+    "lty=2 점선 계열을 실선으로 설명하지 않는다."
+  ],
+  "englishTerms": [],
+  "language": "각 빈칸에 실제 R 문법으로 작성. 문자열은 필요한 따옴표까지 포함한다.",
+  "accepted": "제시된 코드 틀에 넣었을 때 요구한 동작을 하는 R 코드를 인정한다. 공백·일반 작은따옴표/큰따옴표 차이와 동등한 식은 허용한다. 함수·객체의 철자·대소문자 및 문자열 값은 정확해야 한다. 빈칸 (3)은 색 이름 문자열을 요구하므로 숫자 색상 코드는 이 문항의 답으로 쓰지 않는다.",
+  "source": "회귀 교안 p.23–24",
+  "calc": false,
+  "points": 4,
+  "modelCode": "abline(\n  model,\n  lty = 1,\n  col = \"blue\"\n)",
+  "codeTemplate": "{{1}}(\n  model,\n  lty = {{2}},\n  col = {{3}}\n)",
+  "codeBlanks": [
+    {
+      "id": "1",
+      "answer": "abline",
+      "explanation": "이미 열린 산점도 위에 적합된 선형모형의 직선을 추가한다."
+    },
+    {
+      "id": "2",
+      "answer": "1",
+      "explanation": "선 종류 1은 실선이다."
+    },
+    {
+      "id": "3",
+      "answer": "\"blue\"",
+      "explanation": "문자열 \"blue\"는 파란색을 지정한다."
+    }
+  ],
+  "followUp": "",
+  "originId": "RC014",
+  "set": 2,
+  "number": 31,
+  "minutes": 6.25,
+  "variant": false,
+  "codeSetup": "x <- c(\n  65, 50, 55, 65, 55, 70, 65, 70,\n  65, 70, 50, 55\n)\ny <- c(\n  85, 74, 76, 90, 85, 87, 94, 98,\n  81, 91, 76, 74\n)\n\nmodel <- lm(y ~ x)\nplot(x, y)",
+  "inputDescription": "regression1.xlsx의 실제 12행이다. 이 준비 코드를 실행해 model을 적합하고 산점도를 연 상태에서 빈칸 코드를 이어서 실행한다.",
+  "promptPlain": "plot(x,y) 산점도가 열려 있고 model <- lm(y~x)가 적합되어 있다. lty·col 인자로 파란 실선 회귀선을 추가하려 한다. 색은 이름 문자열로 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "bank": "mock-exam",
+  "inputProvenance": "provided_regression1.xlsx_actual_12_rows"
+}

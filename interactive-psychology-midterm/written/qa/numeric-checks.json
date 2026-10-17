@@ -1,0 +1,11 @@
+{
+  "BMI": true,
+  "sample size": true,
+  "SE": true,
+  "unequal entropy": true,
+  "warning entropy": true,
+  "Fitts values": true,
+  "sample dispersion": true,
+  "OLS full chain": true,
+  "Hick slope": true
+}

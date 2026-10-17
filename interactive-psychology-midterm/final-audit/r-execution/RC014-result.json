@@ -1,0 +1,14 @@
+{
+  "id": "RC014",
+  "originId": "RC014",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "PDF contains blue regression stroke", "PDF contains solid line dash pattern", "abline draws on existing scatterplot", "no unexpected warnings"],
+  "metrics": {
+    "lineType": "solid",
+    "color": "blue",
+    "plotBytes": 14733
+  },
+  "warnings": [],
+  "inputProvenance": "provided_regression1.xlsx_actual_12_rows"
+}

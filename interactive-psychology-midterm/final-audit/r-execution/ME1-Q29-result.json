@@ -1,0 +1,14 @@
+{
+  "id": "ME1-Q29",
+  "originId": "RC001",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "ascending vector", "descending vector", "printed maximum matches answer/rubric", "no unexpected warnings"],
+  "metrics": {
+    "ascending": [35, 60, 90],
+    "ordered": [90, 60, 35],
+    "output": 90
+  },
+  "warnings": [],
+  "inputProvenance": "question_literal_vectors"
+}

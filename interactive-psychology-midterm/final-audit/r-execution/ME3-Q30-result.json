@@ -1,0 +1,13 @@
+{
+  "id": "ME3-Q30",
+  "originId": "RC009",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "actual lawstat mean-centered Levene test", "Levene statistic equals independent absolute-deviation ANOVA", "Levene p-value matches independent ANOVA", "no unexpected warnings"],
+  "metrics": {
+    "F": 1.917588469095713,
+    "fixtureP": 0.1741999928939146
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}

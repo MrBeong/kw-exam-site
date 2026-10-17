@@ -1,0 +1,13 @@
+{
+  "id": "ME4-Q31",
+  "originId": "RC016",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "two main effects, correct response", "intercept plus two nonaliased slopes, no interaction", "multiple regression equals independent matrix least squares", "no unexpected warnings"],
+  "metrics": {
+    "coefficients": [57.525562372188169, 0.5528289025221537, -2.253578732106341],
+    "residualDf": 9
+  },
+  "warnings": [],
+  "inputProvenance": "provided_regression1.xlsx_actual_12_rows"
+}

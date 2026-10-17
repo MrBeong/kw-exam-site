@@ -1,0 +1,74 @@
+{
+  "title": "인터랙티브심리학 중간고사 · 기출형 예상시험",
+  "date": "2026-10-17",
+  "examDate": "2026-10-19",
+  "start": "18:00",
+  "end": "20:00",
+  "location": "새빛관 102호",
+  "durationSeconds": 7200,
+  "setCount": 5,
+  "questionsPerSet": 32,
+  "pointsPerSet": 100,
+  "reviewMinutes": 10,
+  "chapterNames": [
+    "개론·역사",
+    "HFE 연구방법론",
+    "정보량·중복도",
+    "정보전달·기억·Hick",
+    "Fitts·운동·양립성",
+    "기초통계·T검정",
+    "회귀·실험실습"
+  ],
+  "actualQuestionCountKnown": false,
+  "questionTypes": [
+    "객관식",
+    "주관식",
+    "서술식",
+    "간단한 코드 작성"
+  ],
+  "language": "지문·객관식·서술은 한글. 교안 영문 명칭을 요구한 단답 부분만 영어. R은 실제 문법.",
+  "blueprint": [
+    {
+      "type": "single",
+      "count": 12,
+      "points": 24,
+      "minutes": 15,
+      "label": "단일선택"
+    },
+    {
+      "type": "multi",
+      "count": 4,
+      "points": 8,
+      "minutes": 8,
+      "label": "복수선택"
+    },
+    {
+      "type": "tf",
+      "count": 2,
+      "points": 4,
+      "minutes": 2,
+      "label": "O/X 진술 묶음(각 2진술)"
+    },
+    {
+      "type": "short",
+      "count": 6,
+      "points": 12,
+      "minutes": 12,
+      "label": "단답형"
+    },
+    {
+      "type": "essay",
+      "count": 4,
+      "points": 36,
+      "minutes": 48,
+      "label": "서술·계산형"
+    },
+    {
+      "type": "code",
+      "count": 4,
+      "points": 16,
+      "minutes": 25,
+      "label": "R 코드 빈칸"
+    }
+  ]
+}

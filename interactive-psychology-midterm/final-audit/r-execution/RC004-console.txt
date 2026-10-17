@@ -1,0 +1,9 @@
+  0%  25%  50%  75% 100% 
+   1    2    3    4  100 
+     value     condition
+ Min.   :  1   A:2      
+ 1st Qu.:  2   B:3      
+ Median :  3            
+ Mean   : 22            
+ 3rd Qu.:  4            
+ Max.   :100            

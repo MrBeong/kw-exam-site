@@ -1,0 +1,10 @@
+{
+  "formulaCount": 1026,
+  "errors": [],
+  "checks": [
+    "MC071",
+    "ES022",
+    "ES030",
+    "RC002"
+  ]
+}

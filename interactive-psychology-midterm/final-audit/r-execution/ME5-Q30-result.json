@@ -1,0 +1,13 @@
+{
+  "id": "ME5-Q30",
+  "originId": "RC006",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "Shapiro-Wilk test executed", "actual Shapiro p rounds to given .08", "given p=.08 does not reject at alpha=.05", "no unexpected warnings"],
+  "metrics": {
+    "fixtureP": 0.07999981514263772,
+    "givenInterpretationP": 0.08
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}

@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-17",
+  "scope": "R execution, supplemental-video sources, question input completeness",
+  "counts": {
+    "concepts": 188,
+    "questions": 589,
+    "ox": 188,
+    "multipleChoice": 135,
+    "written": 106,
+    "mock": 160
+  },
+  "nativeR": {
+    "version": "4.6.0",
+    "lawstat": "3.6",
+    "jsonlite": "2.0.0",
+    "questions": 40,
+    "blanks": 122,
+    "passed": 40,
+    "checks": 208,
+    "errors": 0,
+    "anticipatedPerfectFitWarnings": 2,
+    "currentCodeAndSetupHashesMatch": true
+  },
+  "browser": {
+    "questionsVisited": 589,
+    "materialsChecks": 1095,
+    "oxAndMathChecks": 381,
+    "saveResetTimerChecks": 14,
+    "errors": []
+  },
+  "math": {
+    "expressions": 1026,
+    "passed": 1026,
+    "errors": []
+  },
+  "githubPush": false,
+  "sourceHashes": {
+    "multiple-choice/questions.json": "bddcbf8bf4f6e15a438838e0a805a53913d6aed7a4a34aad519ac0a079dbd8b3",
+    "multiple-choice/concepts.json": "e412171a9af2b3375e76df6ade4651810ac67abdd50be8b59d04194dfaaf51fb",
+    "written/questions.json": "190cd643c9e1e604088a56e394024e530c917082fe2b0e71429f72c845b181ce",
+    "written/app.js": "45433ddc2fb2c89ae15c3d778d04547f1d8a10fbd4bd49bdb1776f33a772b292",
+    "written/style.css": "e85ab3100b6593c3cc2aa426b48dd198fc5e0183179f54b4169c14ef65c6f5a4",
+    "written/build.py": "f6cd496ca7d3f80ca2a25795b947dbe1c2c43cc23fd18d501fd9a3e2cf951648",
+    "written/main-template.html": "c59f63e09c90145d6bcdcf2abcc1ab8565cc6a968c9d3d7acbae0a2edfea7bef",
+    "mock-exam/questions.json": "6906c3be8e829bfaebf26060a8c729ad35ab4a1b6f8e7d3f7027b61321e89824",
+    "mock-exam/app.js": "ddb5a36c63b8948d7e24b5150f5b045a720edf9ed3fc69949bcb8610e11e1f20",
+    "mock-exam/build.py": "f787245c77025838e9147ce84e22aa53472cb1ea6f71aa7db9347cb57a6c041a",
+    "ox/index.html": "05ec81d97a46a2fa89db4dcd949e53f126166f5e8859ddd87a69ec475c67ffcc",
+    "index.html": "83d2a3ab4816d662e8416a3dcbc3e130381f39bf66ddcf608539341e6a29f720",
+    "17_최종검수.md": "d9134a57cce6d819b2c599a8c0e92b595d35a2fdcf607137cb55d4026b17810a",
+    "18_R실행_검증.md": "a2a93f2a38179ca79221fb0d618d9ec945ad472ab9c55dc1f922284b21f29712",
+    "19_분석자료_누락검수.md": "40781b039fd6ced79cdc7af7a1ea7d3b4107deb99109a58827c2fe2118f27ebd"
+  }
+}

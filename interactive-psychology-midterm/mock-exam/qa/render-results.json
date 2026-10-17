@@ -1,0 +1,14 @@
+{
+  "passed": 5,
+  "results": [
+    "all 160 questions render with full solutions and scoring criteria",
+    "all 20 R editors preserve indentation and 61 blank mappings",
+    "all 19 visual/table questions fit mobile width",
+    "320px no page-wide horizontal overflow",
+    "reset remains visible at narrow width"
+  ],
+  "errors": [],
+  "allQuestionsRendered": 160,
+  "rBlanks": 61,
+  "visuals": 19
+}

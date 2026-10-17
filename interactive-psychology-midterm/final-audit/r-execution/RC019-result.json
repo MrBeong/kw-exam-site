@@ -1,0 +1,14 @@
+{
+  "id": "RC019",
+  "originId": "RC019",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "original eight rows preserved, six valid trials retained", "both filters applied", "YES rows based on actual Present", "NO rows based on actual Present", "YES model fits Time~PSS", "NO model fits Time~PSS", "no unexpected warnings"],
+  "metrics": {
+    "cleanRows": 6,
+    "yesCoefficients": [366.66666666666765, 44.999999999999822],
+    "noCoefficients": [513.33333333333417, 44.999999999999837]
+  },
+  "warnings": [],
+  "inputProvenance": "question_complete_eight_row_table"
+}

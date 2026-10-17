@@ -1,0 +1,43 @@
+{
+  "checks": [
+    "file grading",
+    "file reload restoration",
+    "file notes link",
+    "file OX link",
+    "file MC link",
+    "file visible OX reset",
+    "320px MC viewport"
+  ],
+  "errors": [],
+  "oxOverflow": {
+    "width": 320,
+    "scroll": 320,
+    "reset": {
+      "x": 232.34375,
+      "y": 54,
+      "width": 80.65625,
+      "height": 31.8125,
+      "top": 54,
+      "right": 313,
+      "bottom": 85.8125,
+      "left": 232.34375
+    }
+  },
+  "audit": {
+    "questionCount": 132,
+    "conceptCount": 185,
+    "coveredConcepts": 185,
+    "coverageMissingAfterSupplement": 0,
+    "missingIds": [],
+    "source": "embedded",
+    "chapterCounts": {
+      "개론·역사": 20,
+      "HFE 연구방법론": 22,
+      "정보량·중복도": 16,
+      "정보전달·기억·Hick": 24,
+      "Fitts·운동·양립성": 20,
+      "기초통계·T검정": 14,
+      "회귀·실험실습": 16
+    }
+  }
+}

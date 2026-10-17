@@ -1,0 +1,19 @@
+{
+  "id": "ME3-Q32",
+  "originId": "RC015",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "summary object stored and printed", "coefficient estimates and individual t-test p-values present", "R-squared matches supplied workbook", "overall model F-statistic", "no unexpected warnings"],
+  "metrics": {
+    "coefficients": [
+      [30.933333333333344, 11.574734389629695, 2.672487531208306, 0.02339244800303711],
+      [0.8704761904761902, 0.1876127627663813, 4.639749330700504, 0.0009223477663221725]
+    ],
+    "R2": 0.6828143135043233,
+    "adjustedR2": 0.6510957448547556,
+    "F": [21.527273851735753, 1, 10],
+    "modelP": 0.0009223477663221742
+  },
+  "warnings": [],
+  "inputProvenance": "provided_regression1.xlsx_actual_12_rows"
+}

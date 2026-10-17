@@ -1,0 +1,4742 @@
+{
+  "questions": 589,
+  "rows": [
+    {
+      "id": "MC001",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2–3 · 1-1 교안 p.2"
+    },
+    {
+      "id": "MC002",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2"
+    },
+    {
+      "id": "MC003",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.4–5 · 1-1 교안 p.8"
+    },
+    {
+      "id": "MC004",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.9–10"
+    },
+    {
+      "id": "MC005",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.2–4 · 1-2 교안 p.3"
+    },
+    {
+      "id": "MC006",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "MC007",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "MC008",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "MC009",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.8–9 · 1-2 교안 p.8–11 · 1-2 교안 p.10"
+    },
+    {
+      "id": "MC010",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.12"
+    },
+    {
+      "id": "MC011",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.12"
+    },
+    {
+      "id": "MC012",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.13"
+    },
+    {
+      "id": "MC013",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.13"
+    },
+    {
+      "id": "MC014",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.14 · 1-2 교안 p.14–17"
+    },
+    {
+      "id": "MC015",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.15"
+    },
+    {
+      "id": "MC016",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.3–4 · 연구방법론 전사1 · 2장 교안 p.13 · 2주차 논문"
+    },
+    {
+      "id": "MC017",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.4–7 · 2장 교안 p.4, 8–9 · 2장 교안 p.4, 11–13"
+    },
+    {
+      "id": "MC018",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.5"
+    },
+    {
+      "id": "MC019",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.6 · 연구방법론 전사1"
+    },
+    {
+      "id": "MC020",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.10 · 2장 교안 p.10 · 원문과 검증"
+    },
+    {
+      "id": "MC021",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.11"
+    },
+    {
+      "id": "MC022",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.14"
+    },
+    {
+      "id": "MC023",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.15"
+    },
+    {
+      "id": "MC024",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.15 · 연구방법론 전사1 · 2장 교안 p.17"
+    },
+    {
+      "id": "MC025",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.16 · 연구방법론 전사2"
+    },
+    {
+      "id": "MC026",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.18"
+    },
+    {
+      "id": "MC027",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.18"
+    },
+    {
+      "id": "MC028",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.19"
+    },
+    {
+      "id": "MC029",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20"
+    },
+    {
+      "id": "MC030",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20 · 2장 교안 p.21"
+    },
+    {
+      "id": "MC031",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20"
+    },
+    {
+      "id": "MC032",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.22"
+    },
+    {
+      "id": "MC033",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "MC034",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "MC035",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.7"
+    },
+    {
+      "id": "MC036",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.8 · 3장 교안 p.9 · 3장 교안 p.8–9"
+    },
+    {
+      "id": "MC037",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.9"
+    },
+    {
+      "id": "MC038",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.10 · 3장 교안 p.10 · 정보처리 전사1 · 3장 교안 p.10–11"
+    },
+    {
+      "id": "MC039",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.11"
+    },
+    {
+      "id": "MC040",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.12 · 3장 교안 p.13"
+    },
+    {
+      "id": "MC041",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.13"
+    },
+    {
+      "id": "MC042",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.14 · 3장 교안 p.10, 14"
+    },
+    {
+      "id": "MC043",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.18"
+    },
+    {
+      "id": "MC044",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.15"
+    },
+    {
+      "id": "MC045",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.15–16 · 3장 교안 p.16"
+    },
+    {
+      "id": "MC046",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.17–18 · 3장 교안 p.18"
+    },
+    {
+      "id": "MC047",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.19"
+    },
+    {
+      "id": "MC048",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.20"
+    },
+    {
+      "id": "MC049",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.21"
+    },
+    {
+      "id": "MC050",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.25"
+    },
+    {
+      "id": "MC051",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.26–28"
+    },
+    {
+      "id": "MC052",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.26"
+    },
+    {
+      "id": "MC053",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.29"
+    },
+    {
+      "id": "MC054",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.30–31 · 3장 교안 p.31"
+    },
+    {
+      "id": "MC055",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.32"
+    },
+    {
+      "id": "MC056",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.34–35 · 3장 교안 p.36"
+    },
+    {
+      "id": "MC057",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.36"
+    },
+    {
+      "id": "MC058",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.36"
+    },
+    {
+      "id": "MC059",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.37"
+    },
+    {
+      "id": "MC060",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.37 · 3장 교안 p.37 · 정보처리 전사3"
+    },
+    {
+      "id": "MC061",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.34–36 · 3장 교안 p.39–41 · 정보처리 전사3"
+    },
+    {
+      "id": "MC062",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.16–18 · 3장 교안 p.16"
+    },
+    {
+      "id": "MC063",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.42–44 · 3장 교안 p.42, 44 · 3장 교안 p.34, 42"
+    },
+    {
+      "id": "MC064",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.43 · 3장 교안 p.46–47"
+    },
+    {
+      "id": "MC065",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.47"
+    },
+    {
+      "id": "MC066",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.46–47"
+    },
+    {
+      "id": "MC067",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.48"
+    },
+    {
+      "id": "MC068",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.50 · 3장 교안 p.50 · 정보처리 전사4"
+    },
+    {
+      "id": "MC069",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.51"
+    },
+    {
+      "id": "MC070",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.51"
+    },
+    {
+      "id": "MC071",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.53–56"
+    },
+    {
+      "id": "MC072",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.57"
+    },
+    {
+      "id": "MC073",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.58 · 3장 교안 p.59 · 3장 교안 p.60 · 3장 교안 p.61"
+    },
+    {
+      "id": "MC074",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.62"
+    },
+    {
+      "id": "MC075",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.65–66 · p.66 Fig.7 원그림과 지표 정의 대조"
+    },
+    {
+      "id": "MC076",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "4주차 논문 · 피츠 전사"
+    },
+    {
+      "id": "MC077",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.49"
+    },
+    {
+      "id": "MC078",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "R설치 교안 p.2, 12–14 · R설치 교안 p.16, 20"
+    },
+    {
+      "id": "MC079",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.3–4"
+    },
+    {
+      "id": "MC080",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.3–6 · t-test 교안 p.8 · t-test 교안 p.8–9"
+    },
+    {
+      "id": "MC081",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.7 · T검정 전사 · 원문과 검증"
+    },
+    {
+      "id": "MC082",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21"
+    },
+    {
+      "id": "MC083",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.13, 18, 23 · t-test 교안 p.13, 17"
+    },
+    {
+      "id": "MC084",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.14"
+    },
+    {
+      "id": "MC085",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.15, 17–19 · t-test 교안 p.19 · t-test 교안 p.19–20 · t-test 교안 p.20"
+    },
+    {
+      "id": "MC086",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.21, 23 · t-test 교안 p.24"
+    },
+    {
+      "id": "MC087",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.2, 7–8 · 회귀 교안 p.7 · 회귀 교안 p.9, 22"
+    },
+    {
+      "id": "MC088",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.3–6 · 회귀 교안 p.5–6, 9, 11"
+    },
+    {
+      "id": "MC089",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.15 · 회귀 교안 p.14–16"
+    },
+    {
+      "id": "MC090",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.17–18 · 회귀 교안 p.19 · 회귀 교안 p.20"
+    },
+    {
+      "id": "MC091",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.23 · 회귀 교안 p.23–24"
+    },
+    {
+      "id": "MC092",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.25 · 회귀 교안 p.25 · 회귀 전사"
+    },
+    {
+      "id": "MC093",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.25 · 회귀 전사"
+    },
+    {
+      "id": "MC094",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 전사 말미"
+    },
+    {
+      "id": "MC095",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사"
+    },
+    {
+      "id": "MC096",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "Sternberg README · 로그"
+    },
+    {
+      "id": "MC097",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "MC098",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2–3 · 1-1 교안 p.2 · 1-1 교안 p.4–5 · 1-1 교안 p.8"
+    },
+    {
+      "id": "MC099",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.2–4 · 1-2 교안 p.3 · 1-2 교안 p.12 · 1-2 교안 p.14"
+    },
+    {
+      "id": "MC100",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7 · 1-2 교안 p.8–9 · 1-2 교안 p.8–11 · 1-2 교안 p.15"
+    },
+    {
+      "id": "MC101",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.4–7 · 2장 교안 p.4, 8–9 · 2장 교안 p.10 · 2장 교안 p.4, 11–13 · 2장 교안 p.15"
+    },
+    {
+      "id": "MC102",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.18 · 2장 교안 p.19 · 2장 교안 p.10 · 원문과 검증"
+    },
+    {
+      "id": "MC103",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20 · 2장 교안 p.21 · 2장 교안 p.22"
+    },
+    {
+      "id": "MC104",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.8 · 3장 교안 p.9 · 3장 교안 p.18"
+    },
+    {
+      "id": "MC105",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.10 · 3장 교안 p.11 · 3장 교안 p.12 · 3장 교안 p.13 · 3장 교안 p.14"
+    },
+    {
+      "id": "MC106",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "MC107",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.15–16 · 3장 교안 p.16 · 3장 교안 p.19 · 3장 교안 p.16–18"
+    },
+    {
+      "id": "MC108",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.26–28 · 3장 교안 p.26 · 3장 교안 p.29 · 3장 교안 p.30–31 · 3장 교안 p.31"
+    },
+    {
+      "id": "MC109",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.32 · 3장 교안 p.34–35 · 3장 교안 p.37 · 3장 교안 p.37 · 정보처리 전사3"
+    },
+    {
+      "id": "MC110",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.43 · 3장 교안 p.46–47"
+    },
+    {
+      "id": "MC111",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.50 · 3장 교안 p.50 · 정보처리 전사4 · 3장 교안 p.51"
+    },
+    {
+      "id": "MC112",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.57 · 3장 교안 p.58 · 3장 교안 p.59 · 3장 교안 p.60 · 3장 교안 p.61 · 3장 교안 p.62"
+    },
+    {
+      "id": "MC113",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.3–4 · t-test 교안 p.3–6 · t-test 교안 p.7 · t-test 교안 p.8 · t-test 교안 p.8–9"
+    },
+    {
+      "id": "MC114",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.13, 18, 23 · t-test 교안 p.13, 17 · t-test 교안 p.15, 17–19 · t-test 교안 p.19–20"
+    },
+    {
+      "id": "MC115",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21 · t-test 교안 p.14 · t-test 교안 p.20 · t-test 교안 p.21, 23 · t-test 교안 p.24"
+    },
+    {
+      "id": "MC116",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.3–6 · 회귀 교안 p.5–6, 9, 11 · 회귀 교안 p.15 · 회귀 교안 p.14–16 · 회귀 교안 p.17–18"
+    },
+    {
+      "id": "MC117",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.19 · 회귀 교안 p.20 · 회귀 교안 p.25 · 회귀 교안 p.25 · 회귀 전사"
+    },
+    {
+      "id": "MC118",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사 · Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사 · 실제 로그 10-17-12-44-53_num3.txt (Index 0,1,2,13)"
+    },
+    {
+      "id": "MC119",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2–3 · 1-1 교안 p.2"
+    },
+    {
+      "id": "MC120",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.9–10 · 1-2 교안 p.7 · 1-2 교안 p.8–11 · 1-2 교안 p.15"
+    },
+    {
+      "id": "MC121",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.14 · 2장 교안 p.15 · 2장 교안 p.15 · 연구방법론 전사1 · 2장 교안 p.17 · 2장 교안 p.20"
+    },
+    {
+      "id": "MC122",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.16 · 연구방법론 전사2 · 2장 교안 p.20 · 2장 교안 p.21 · 2장 교안 p.22 · 2장 교안 p.10 · 원문과 검증"
+    },
+    {
+      "id": "MC123",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.9 · 3장 교안 p.11 · 3장 교안 p.12 · 3장 교안 p.13"
+    },
+    {
+      "id": "MC124",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.7 · 3장 교안 p.13 · 3장 교안 p.14 · 3장 교안 p.10, 14"
+    },
+    {
+      "id": "MC125",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.15–16 · 3장 교안 p.16 · 3장 교안 p.17–18 · 3장 교안 p.18 · 3장 교안 p.16–18"
+    },
+    {
+      "id": "MC126",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.34–35 · 3장 교안 p.36 · 3장 교안 p.37 · 3장 교안 p.37 · 정보처리 전사3 · 3장 교안 p.34–36"
+    },
+    {
+      "id": "MC127",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.43 · 3장 교안 p.46–47 · 3장 교안 p.49 · 3장 교안 p.34, 42"
+    },
+    {
+      "id": "MC128",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.57 · 3장 교안 p.58 · 3장 교안 p.59 · 3장 교안 p.60 · 3장 교안 p.61 · 3장 교안 p.62"
+    },
+    {
+      "id": "MC129",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21 · t-test 교안 p.21, 23 · t-test 교안 p.24"
+    },
+    {
+      "id": "MC130",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "R설치 교안 p.2, 12–14 · t-test 교안 p.3–4 · t-test 교안 p.3–6 · t-test 교안 p.7"
+    },
+    {
+      "id": "MC131",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.15 · 회귀 교안 p.14–16 · 회귀 교안 p.17–18 · 회귀 교안 p.19 · 회귀 교안 p.20"
+    },
+    {
+      "id": "MC132",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사 · Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "MC133",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.2–5 · 보충영상 PSY-L001"
+    },
+    {
+      "id": "MC134",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2 · 1-2 교안 p.6 · 3장 교안 p.58–60 · 보충영상 PSY-L002"
+    },
+    {
+      "id": "MC135",
+      "bank": "multiple-choice",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.5–6, 8–11, 14 · 보충영상 PSY-L003"
+    },
+    {
+      "id": "SA001",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2–3"
+    },
+    {
+      "id": "SA002",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2"
+    },
+    {
+      "id": "SA003",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2"
+    },
+    {
+      "id": "SA004",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "SA005",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.12"
+    },
+    {
+      "id": "SA006",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.15"
+    },
+    {
+      "id": "SA007",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.4–7 · 2장 교안 p.4, 8–9 · 2장 교안 p.4, 11–13"
+    },
+    {
+      "id": "SA008",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.14"
+    },
+    {
+      "id": "SA009",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.15 · 2장 교안 p.15 · 연구방법론 전사1"
+    },
+    {
+      "id": "SA010",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20"
+    },
+    {
+      "id": "SA011",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20 · 2장 교안 p.21"
+    },
+    {
+      "id": "SA012",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20 · 2장 교안 p.22"
+    },
+    {
+      "id": "SA013",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.22"
+    },
+    {
+      "id": "SA014",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.5 · 2장 교안 p.6 · 연구방법론 전사1"
+    },
+    {
+      "id": "SA015",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.18 · 2장 교안 p.19"
+    },
+    {
+      "id": "SA016",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.10 · 원문과 검증"
+    },
+    {
+      "id": "SA017",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "SA018",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "SA019",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.8 · 3장 교안 p.9 · 3장 교안 p.8–9"
+    },
+    {
+      "id": "SA020",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.9 · 3장 교안 p.11"
+    },
+    {
+      "id": "SA021",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.11 · 3장 교안 p.12 · 3장 교안 p.13"
+    },
+    {
+      "id": "SA022",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.15–16 · 3장 교안 p.16"
+    },
+    {
+      "id": "SA023",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.19 · 3장 교안 p.16–18"
+    },
+    {
+      "id": "SA024",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.25 · 3장 교안 p.26–28 · 3장 교안 p.29"
+    },
+    {
+      "id": "SA025",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.30–31"
+    },
+    {
+      "id": "SA026",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.31"
+    },
+    {
+      "id": "SA027",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.32"
+    },
+    {
+      "id": "SA028",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.34–35 · 3장 교안 p.36 · 3장 교안 p.34–36"
+    },
+    {
+      "id": "SA029",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.37"
+    },
+    {
+      "id": "SA030",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.43 · 3장 교안 p.46–47"
+    },
+    {
+      "id": "SA031",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.47"
+    },
+    {
+      "id": "SA032",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.50 · 3장 교안 p.50 · 정보처리 전사4"
+    },
+    {
+      "id": "SA033",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.51"
+    },
+    {
+      "id": "SA034",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.57"
+    },
+    {
+      "id": "SA035",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.58 · 3장 교안 p.59 · 3장 교안 p.60 · 3장 교안 p.61"
+    },
+    {
+      "id": "SA036",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21"
+    },
+    {
+      "id": "SA037",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.7 · t-test 교안 p.8 · T검정 전사 · 원문과 검증"
+    },
+    {
+      "id": "SA038",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.15 · 회귀 교안 p.14–16"
+    },
+    {
+      "id": "SA039",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.17–18 · 회귀 교안 p.19 · 회귀 교안 p.20"
+    },
+    {
+      "id": "SA040",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "R설치 교안 p.2, 12–14 · R설치 교안 p.16, 20"
+    },
+    {
+      "id": "SA041",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사"
+    },
+    {
+      "id": "SA042",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "SA043",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.2–5 · 보충영상 PSY-L001"
+    },
+    {
+      "id": "SA044",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2 · 1-2 교안 p.6 · 3장 교안 p.58–60 · 보충영상 PSY-L002"
+    },
+    {
+      "id": "ES001",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2–3 · 1-1 교안 p.2 · 1-1 교안 p.4–5 · 1-1 교안 p.8"
+    },
+    {
+      "id": "ES002",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.9–10 · 3장 교안 p.6"
+    },
+    {
+      "id": "ES003",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.2–4 · 1-2 교안 p.3 · 1-2 교안 p.12 · 1-2 교안 p.13 · 1-2 교안 p.14 · 1-2 교안 p.14–17"
+    },
+    {
+      "id": "ES004",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "ES005",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.8–9 · 1-2 교안 p.8–11 · 1-2 교안 p.12 · 1-2 교안 p.15 · 1-2 교안 p.10"
+    },
+    {
+      "id": "ES006",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.3–4 · 연구방법론 전사1 · 2장 교안 p.4–7 · 2장 교안 p.4, 8–9 · 2장 교안 p.4, 11–13 · 2장 교안 p.13 · 2주차 논문"
+    },
+    {
+      "id": "ES007",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.10 · 2장 교안 p.11 · 2장 교안 p.10 · 원문과 검증"
+    },
+    {
+      "id": "ES008",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.14"
+    },
+    {
+      "id": "ES009",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.15 · 2장 교안 p.15 · 연구방법론 전사1 · 2장 교안 p.16 · 연구방법론 전사2 · 2장 교안 p.17"
+    },
+    {
+      "id": "ES010",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.18 · 2장 교안 p.19"
+    },
+    {
+      "id": "ES011",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20 · 2장 교안 p.21"
+    },
+    {
+      "id": "ES012",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20 · 2장 교안 p.22"
+    },
+    {
+      "id": "ES013",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "ES014",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.7 · 3장 교안 p.8 · 3장 교안 p.9 · 3장 교안 p.8–9 · 3장 교안 p.18"
+    },
+    {
+      "id": "ES015",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.10 · 3장 교안 p.10 · 정보처리 전사1 · 3장 교안 p.11 · 3장 교안 p.10–11"
+    },
+    {
+      "id": "ES016",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.12 · 3장 교안 p.13"
+    },
+    {
+      "id": "ES017",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.14 · 3장 교안 p.10, 14"
+    },
+    {
+      "id": "ES018",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.15 · 3장 교안 p.15–16 · 3장 교안 p.16 · 3장 교안 p.17–18 · 3장 교안 p.18"
+    },
+    {
+      "id": "ES019",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.19 · 3장 교안 p.16–18"
+    },
+    {
+      "id": "ES020",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.20 · 3장 교안 p.21 · 3장 교안 p.36"
+    },
+    {
+      "id": "ES021",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6 · 3장 교안 p.25 · 3장 교안 p.26–28 · 3장 교안 p.26 · 3장 교안 p.29"
+    },
+    {
+      "id": "ES022",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.30–31 · 3장 교안 p.31 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "ES023",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.32"
+    },
+    {
+      "id": "ES024",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.34–35 · 3장 교안 p.36 · 3장 교안 p.34–36"
+    },
+    {
+      "id": "ES025",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.36 · 3장 교안 p.37 · 3장 교안 p.37 · 정보처리 전사3"
+    },
+    {
+      "id": "ES026",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.39–41 · 정보처리 전사3 · 3장 교안 p.42–44 · 3장 교안 p.42, 44 · 3장 교안 p.49 · 3장 교안 p.34, 42"
+    },
+    {
+      "id": "ES027",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.42–44 · 3장 교안 p.42, 44 · 3장 교안 p.43 · 3장 교안 p.46–47 · 3장 교안 p.47"
+    },
+    {
+      "id": "ES028",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.48"
+    },
+    {
+      "id": "ES029",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.50 · 3장 교안 p.50 · 정보처리 전사4 · 3장 교안 p.51"
+    },
+    {
+      "id": "ES030",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.51 · 3장 교안 p.53–56"
+    },
+    {
+      "id": "ES031",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.57 · 3장 교안 p.58 · 3장 교안 p.59 · 3장 교안 p.60 · 3장 교안 p.61"
+    },
+    {
+      "id": "ES032",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.62"
+    },
+    {
+      "id": "ES033",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.66 Fig.7 원그림 · 3D Fitts 보충논문"
+    },
+    {
+      "id": "ES034",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "R설치 교안 p.2, 12–14 · R설치 교안 p.16, 20 · t-test 교안 p.7 · t-test 교안 p.8 · t-test 교안 p.8–9 · T검정 전사 · 원문과 검증"
+    },
+    {
+      "id": "ES035",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21 · t-test 교안 p.21, 23"
+    },
+    {
+      "id": "ES036",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.13, 18, 23 · t-test 교안 p.13, 17 · t-test 교안 p.15, 17–19 · t-test 교안 p.19 · t-test 교안 p.19–20"
+    },
+    {
+      "id": "ES037",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.14 · t-test 교안 p.20 · t-test 교안 p.21, 23 · t-test 교안 p.24"
+    },
+    {
+      "id": "ES038",
+      "bank": "written",
+      "originId": null,
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.2, 7–8 · 회귀 교안 p.7 · 회귀 교안 p.3–6 · 회귀 교안 p.5–6, 9, 11 · 회귀 교안 p.9, 22"
+    },
+    {
+      "id": "ES039",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.15 · 회귀 교안 p.14–16 · 회귀 교안 p.17–18 · 회귀 교안 p.19 · 회귀 교안 p.20"
+    },
+    {
+      "id": "ES040",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.23 · 회귀 교안 p.23–24 · 회귀 교안 p.25 · 회귀 교안 p.25 · 회귀 전사 · 회귀 전사 말미"
+    },
+    {
+      "id": "ES041",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사 · Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "ES042",
+      "bank": "written",
+      "originId": null,
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.2–6, 8–11 · 보충영상 PSY-L001 · PSY-L002 · PSY-L003"
+    },
+    {
+      "id": "RC001",
+      "bank": "written",
+      "originId": null,
+      "review": "코드 자체에 전체 입력 벡터 포함",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.3–4"
+    },
+    {
+      "id": "RC002",
+      "bank": "written",
+      "originId": null,
+      "review": "코드 자체에 전체 입력 벡터 포함",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.3–6 · t-test 교안 p.8"
+    },
+    {
+      "id": "RC003",
+      "bank": "written",
+      "originId": null,
+      "review": "코드 자체에 전체 입력 벡터 포함",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.7"
+    },
+    {
+      "id": "RC004",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.8 · t-test 교안 p.8–9"
+    },
+    {
+      "id": "RC005",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "R설치 교안 p.2, 12–14 · R설치 교안 p.16, 20 · t-test 교안 p.3–4"
+    },
+    {
+      "id": "RC006",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.13, 18, 23 · t-test 교안 p.13, 17"
+    },
+    {
+      "id": "RC007",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.14"
+    },
+    {
+      "id": "RC008",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.10, 15 · t-test 교안 p.13, 18, 23 · t-test 교안 p.15, 17–19"
+    },
+    {
+      "id": "RC009",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.19 · t-test 교안 p.19–20"
+    },
+    {
+      "id": "RC010",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.10, 15 · t-test 교안 p.15, 17–19 · t-test 교안 p.19–20 · t-test 교안 p.20"
+    },
+    {
+      "id": "RC011",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.10, 21 · t-test 교안 p.21, 23 · t-test 교안 p.24"
+    },
+    {
+      "id": "RC012",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.14 · t-test 교안 p.19 · t-test 교안 p.20 · t-test 교안 p.21, 23"
+    },
+    {
+      "id": "RC013",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "회귀 교안 p.2, 7–8 · 회귀 교안 p.7 · 회귀 교안 p.9, 22 · 회귀 교안 p.23"
+    },
+    {
+      "id": "RC014",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "회귀 교안 p.23–24"
+    },
+    {
+      "id": "RC015",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "회귀 교안 p.25 · 회귀 교안 p.25 · 회귀 전사"
+    },
+    {
+      "id": "RC016",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "회귀 전사 말미"
+    },
+    {
+      "id": "RC017",
+      "bank": "written",
+      "originId": null,
+      "review": "코드 자체에 전체 입력 벡터 포함",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.34–35 · 3장 교안 p.36 · SRT/CRT 교안 p.1–3 · 실습 전사"
+    },
+    {
+      "id": "RC018",
+      "bank": "written",
+      "originId": null,
+      "review": "코드 자체에 전체 입력 벡터 포함",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.46–47 · 3장 교안 p.47"
+    },
+    {
+      "id": "RC019",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": true,
+      "hasCodeSetup": true,
+      "source": "Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "RC020",
+      "bank": "written",
+      "originId": null,
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "회귀 교안 p.23 · SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사"
+    },
+    {
+      "id": "ME1-Q01",
+      "bank": "mock-exam",
+      "originId": "MC009",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.8–9 · 1-2 교안 p.8–11 · 1-2 교안 p.10"
+    },
+    {
+      "id": "ME1-Q02",
+      "bank": "mock-exam",
+      "originId": "MC121",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.14 · 2장 교안 p.15 · 2장 교안 p.15 · 연구방법론 전사1 · 2장 교안 p.17 · 2장 교안 p.20"
+    },
+    {
+      "id": "ME1-Q03",
+      "bank": "mock-exam",
+      "originId": "MC124",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.7 · 3장 교안 p.13 · 3장 교안 p.14 · 3장 교안 p.10, 14"
+    },
+    {
+      "id": "ME1-Q04",
+      "bank": "mock-exam",
+      "originId": "MC049",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.21"
+    },
+    {
+      "id": "ME1-Q05",
+      "bank": "mock-exam",
+      "originId": "MC067",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.48"
+    },
+    {
+      "id": "ME1-Q06",
+      "bank": "mock-exam",
+      "originId": "MC127",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.43 · 3장 교안 p.46–47 · 3장 교안 p.49 · 3장 교안 p.34, 42"
+    },
+    {
+      "id": "ME1-Q07",
+      "bank": "mock-exam",
+      "originId": "MC120",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.9–10 · 1-2 교안 p.7 · 1-2 교안 p.8–11 · 1-2 교안 p.15"
+    },
+    {
+      "id": "ME1-Q08",
+      "bank": "mock-exam",
+      "originId": "MC131",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.15 · 회귀 교안 p.14–16 · 회귀 교안 p.17–18 · 회귀 교안 p.19 · 회귀 교안 p.20"
+    },
+    {
+      "id": "ME1-Q09",
+      "bank": "mock-exam",
+      "originId": "MC029",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20"
+    },
+    {
+      "id": "ME1-Q10",
+      "bank": "mock-exam",
+      "originId": "MC123",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.9 · 3장 교안 p.11 · 3장 교안 p.12 · 3장 교안 p.13"
+    },
+    {
+      "id": "ME1-Q11",
+      "bank": "mock-exam",
+      "originId": "MC081",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.7 · T검정 전사 · 원문과 검증"
+    },
+    {
+      "id": "ME1-Q12",
+      "bank": "mock-exam",
+      "originId": "MC057",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.36"
+    },
+    {
+      "id": "ME1-Q13",
+      "bank": "mock-exam",
+      "originId": "MC102",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.18 · 2장 교안 p.19 · 2장 교안 p.10 · 원문과 검증"
+    },
+    {
+      "id": "ME1-Q14",
+      "bank": "mock-exam",
+      "originId": "MC098",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2–3 · 1-1 교안 p.2 · 1-1 교안 p.4–5 · 1-1 교안 p.8"
+    },
+    {
+      "id": "ME1-Q15",
+      "bank": "mock-exam",
+      "originId": "MC112",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.57 · 3장 교안 p.58 · 3장 교안 p.59 · 3장 교안 p.60 · 3장 교안 p.61 · 3장 교안 p.62"
+    },
+    {
+      "id": "ME1-Q16",
+      "bank": "mock-exam",
+      "originId": "MC107",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.15–16 · 3장 교안 p.16 · 3장 교안 p.19 · 3장 교안 p.16–18"
+    },
+    {
+      "id": "ME1-Q17",
+      "bank": "mock-exam",
+      "originId": "TF11",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.11 · 3장 교안 p.26–28"
+    },
+    {
+      "id": "ME1-Q18",
+      "bank": "mock-exam",
+      "originId": "TF12",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.51 · t-test 교안 p.20"
+    },
+    {
+      "id": "ME1-Q19",
+      "bank": "mock-exam",
+      "originId": "SA001",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2–3"
+    },
+    {
+      "id": "ME1-Q20",
+      "bank": "mock-exam",
+      "originId": "SA013",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.22"
+    },
+    {
+      "id": "ME1-Q21",
+      "bank": "mock-exam",
+      "originId": "SA019",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.8 · 3장 교안 p.9 · 3장 교안 p.8–9"
+    },
+    {
+      "id": "ME1-Q22",
+      "bank": "mock-exam",
+      "originId": "SA027",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.32"
+    },
+    {
+      "id": "ME1-Q23",
+      "bank": "mock-exam",
+      "originId": "SA033",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.51"
+    },
+    {
+      "id": "ME1-Q24",
+      "bank": "mock-exam",
+      "originId": "SA036",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21"
+    },
+    {
+      "id": "ME1-Q25",
+      "bank": "mock-exam",
+      "originId": "ES006",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.3–4 · 연구방법론 전사1 · 2장 교안 p.4–7 · 2장 교안 p.4, 8–9 · 2장 교안 p.4, 11–13 · 2장 교안 p.13 · 2주차 논문"
+    },
+    {
+      "id": "ME1-Q26",
+      "bank": "mock-exam",
+      "originId": "ES018",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.15 · 3장 교안 p.15–16 · 3장 교안 p.16 · 3장 교안 p.17–18 · 3장 교안 p.18"
+    },
+    {
+      "id": "ME1-Q27",
+      "bank": "mock-exam",
+      "originId": "ES027",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.42–44 · 3장 교안 p.42, 44 · 3장 교안 p.43 · 3장 교안 p.46–47 · 3장 교안 p.47"
+    },
+    {
+      "id": "ME1-Q28",
+      "bank": "mock-exam",
+      "originId": "ES040",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.23 · 회귀 교안 p.23–24 · 회귀 교안 p.25 · 회귀 교안 p.25 · 회귀 전사 · 회귀 전사 말미"
+    },
+    {
+      "id": "ME1-Q29",
+      "bank": "mock-exam",
+      "originId": "RC001",
+      "review": "코드 자체에 전체 입력 벡터 포함",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.3–4"
+    },
+    {
+      "id": "ME1-Q30",
+      "bank": "mock-exam",
+      "originId": "RC007",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.14"
+    },
+    {
+      "id": "ME1-Q31",
+      "bank": "mock-exam",
+      "originId": "RC013",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "회귀 교안 p.2, 7–8 · 회귀 교안 p.7 · 회귀 교안 p.9, 22 · 회귀 교안 p.23"
+    },
+    {
+      "id": "ME1-Q32",
+      "bank": "mock-exam",
+      "originId": "RC017",
+      "review": "코드 자체에 전체 입력 벡터 포함",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.34–35 · 3장 교안 p.36 · SRT/CRT 교안 p.1–3 · 실습 전사"
+    },
+    {
+      "id": "ME2-Q01",
+      "bank": "mock-exam",
+      "originId": "MC132",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사 · Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "ME2-Q02",
+      "bank": "mock-exam",
+      "originId": "MC038",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.10 · 3장 교안 p.10 · 정보처리 전사1 · 3장 교안 p.10–11"
+    },
+    {
+      "id": "ME2-Q03",
+      "bank": "mock-exam",
+      "originId": "MC033",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "ME2-Q04",
+      "bank": "mock-exam",
+      "originId": "MC048",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.20"
+    },
+    {
+      "id": "ME2-Q05",
+      "bank": "mock-exam",
+      "originId": "MC010",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.12"
+    },
+    {
+      "id": "ME2-Q06",
+      "bank": "mock-exam",
+      "originId": "MC122",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.16 · 연구방법론 전사2 · 2장 교안 p.20 · 2장 교안 p.21 · 2장 교안 p.22 · 2장 교안 p.10 · 원문과 검증"
+    },
+    {
+      "id": "ME2-Q07",
+      "bank": "mock-exam",
+      "originId": "MC017",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.4–7 · 2장 교안 p.4, 8–9 · 2장 교안 p.4, 11–13"
+    },
+    {
+      "id": "ME2-Q08",
+      "bank": "mock-exam",
+      "originId": "MC130",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "R설치 교안 p.2, 12–14 · t-test 교안 p.3–4 · t-test 교안 p.3–6 · t-test 교안 p.7"
+    },
+    {
+      "id": "ME2-Q09",
+      "bank": "mock-exam",
+      "originId": "MC119",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2–3 · 1-1 교안 p.2"
+    },
+    {
+      "id": "ME2-Q10",
+      "bank": "mock-exam",
+      "originId": "MC071",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.53–56"
+    },
+    {
+      "id": "ME2-Q11",
+      "bank": "mock-exam",
+      "originId": "MC061",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.34–36 · 3장 교안 p.39–41 · 정보처리 전사3"
+    },
+    {
+      "id": "ME2-Q12",
+      "bank": "mock-exam",
+      "originId": "MC128",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.57 · 3장 교안 p.58 · 3장 교안 p.59 · 3장 교안 p.60 · 3장 교안 p.61 · 3장 교안 p.62"
+    },
+    {
+      "id": "ME2-Q13",
+      "bank": "mock-exam",
+      "originId": "MC104",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.8 · 3장 교안 p.9 · 3장 교안 p.18"
+    },
+    {
+      "id": "ME2-Q14",
+      "bank": "mock-exam",
+      "originId": "MC111",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.50 · 3장 교안 p.50 · 정보처리 전사4 · 3장 교안 p.51"
+    },
+    {
+      "id": "ME2-Q15",
+      "bank": "mock-exam",
+      "originId": "MC115",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21 · t-test 교안 p.14 · t-test 교안 p.20 · t-test 교안 p.21, 23 · t-test 교안 p.24"
+    },
+    {
+      "id": "ME2-Q16",
+      "bank": "mock-exam",
+      "originId": "MC100",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7 · 1-2 교안 p.8–9 · 1-2 교안 p.8–11 · 1-2 교안 p.15"
+    },
+    {
+      "id": "ME2-Q17",
+      "bank": "mock-exam",
+      "originId": "TF21",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.18 · 3장 교안 p.19"
+    },
+    {
+      "id": "ME2-Q18",
+      "bank": "mock-exam",
+      "originId": "TF22",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.32 · 1-1 교안 p.4–5"
+    },
+    {
+      "id": "ME2-Q19",
+      "bank": "mock-exam",
+      "originId": "SA002",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2"
+    },
+    {
+      "id": "ME2-Q20",
+      "bank": "mock-exam",
+      "originId": "SA009",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.15 · 2장 교안 p.15 · 연구방법론 전사1"
+    },
+    {
+      "id": "ME2-Q21",
+      "bank": "mock-exam",
+      "originId": "SA020",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.9 · 3장 교안 p.11"
+    },
+    {
+      "id": "ME2-Q22",
+      "bank": "mock-exam",
+      "originId": "SA024",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.25 · 3장 교안 p.26–28 · 3장 교안 p.29"
+    },
+    {
+      "id": "ME2-Q23",
+      "bank": "mock-exam",
+      "originId": "SA030",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.43 · 3장 교안 p.46–47"
+    },
+    {
+      "id": "ME2-Q24",
+      "bank": "mock-exam",
+      "originId": "SA038",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.15 · 회귀 교안 p.14–16"
+    },
+    {
+      "id": "ME2-Q25",
+      "bank": "mock-exam",
+      "originId": "ES012",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20 · 2장 교안 p.22"
+    },
+    {
+      "id": "ME2-Q26",
+      "bank": "mock-exam",
+      "originId": "ES014",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.7 · 3장 교안 p.8 · 3장 교안 p.9 · 3장 교안 p.8–9 · 3장 교안 p.18"
+    },
+    {
+      "id": "ME2-Q27",
+      "bank": "mock-exam",
+      "originId": "ES025",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.36 · 3장 교안 p.37 · 3장 교안 p.37 · 정보처리 전사3"
+    },
+    {
+      "id": "ME2-Q28",
+      "bank": "mock-exam",
+      "originId": "ES038",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.2, 7–8 · 회귀 교안 p.7 · 회귀 교안 p.3–6 · 회귀 교안 p.5–6, 9, 11 · 회귀 교안 p.9, 22"
+    },
+    {
+      "id": "ME2-Q29",
+      "bank": "mock-exam",
+      "originId": "RC003",
+      "review": "코드 자체에 전체 입력 벡터 포함",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.7"
+    },
+    {
+      "id": "ME2-Q30",
+      "bank": "mock-exam",
+      "originId": "RC008",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.10, 15 · t-test 교안 p.13, 18, 23 · t-test 교안 p.15, 17–19"
+    },
+    {
+      "id": "ME2-Q31",
+      "bank": "mock-exam",
+      "originId": "RC014",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "회귀 교안 p.23–24"
+    },
+    {
+      "id": "ME2-Q32",
+      "bank": "mock-exam",
+      "originId": "RC018",
+      "review": "코드 자체에 전체 입력 벡터 포함",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.46–47 · 3장 교안 p.47"
+    },
+    {
+      "id": "ME3-Q01",
+      "bank": "mock-exam",
+      "originId": "MC016",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.3–4 · 연구방법론 전사1 · 2장 교안 p.13 · 2주차 논문"
+    },
+    {
+      "id": "ME3-Q02",
+      "bank": "mock-exam",
+      "originId": "MC059",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.37"
+    },
+    {
+      "id": "ME3-Q03",
+      "bank": "mock-exam",
+      "originId": "MC125",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.15–16 · 3장 교안 p.16 · 3장 교안 p.17–18 · 3장 교안 p.18 · 3장 교안 p.16–18"
+    },
+    {
+      "id": "ME3-Q04",
+      "bank": "mock-exam",
+      "originId": "MC075",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.65–66 · p.66 Fig.7 원그림과 지표 정의 대조"
+    },
+    {
+      "id": "ME3-Q05",
+      "bank": "mock-exam",
+      "originId": "MC087",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.2, 7–8 · 회귀 교안 p.7 · 회귀 교안 p.9, 22"
+    },
+    {
+      "id": "ME3-Q06",
+      "bank": "mock-exam",
+      "originId": "MC007",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "ME3-Q07",
+      "bank": "mock-exam",
+      "originId": "MC008",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "ME3-Q08",
+      "bank": "mock-exam",
+      "originId": "MC020",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.10 · 2장 교안 p.10 · 원문과 검증"
+    },
+    {
+      "id": "ME3-Q09",
+      "bank": "mock-exam",
+      "originId": "MC036",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.8 · 3장 교안 p.9 · 3장 교안 p.8–9"
+    },
+    {
+      "id": "ME3-Q10",
+      "bank": "mock-exam",
+      "originId": "MC076",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "4주차 논문 · 피츠 전사"
+    },
+    {
+      "id": "ME3-Q11",
+      "bank": "mock-exam",
+      "originId": "MC035",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.7"
+    },
+    {
+      "id": "ME3-Q12",
+      "bank": "mock-exam",
+      "originId": "MC129",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21 · t-test 교안 p.21, 23 · t-test 교안 p.24"
+    },
+    {
+      "id": "ME3-Q13",
+      "bank": "mock-exam",
+      "originId": "MC105",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.10 · 3장 교안 p.11 · 3장 교안 p.12 · 3장 교안 p.13 · 3장 교안 p.14"
+    },
+    {
+      "id": "ME3-Q14",
+      "bank": "mock-exam",
+      "originId": "MC109",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.32 · 3장 교안 p.34–35 · 3장 교안 p.37 · 3장 교안 p.37 · 정보처리 전사3"
+    },
+    {
+      "id": "ME3-Q15",
+      "bank": "mock-exam",
+      "originId": "MC116",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.3–6 · 회귀 교안 p.5–6, 9, 11 · 회귀 교안 p.15 · 회귀 교안 p.14–16 · 회귀 교안 p.17–18"
+    },
+    {
+      "id": "ME3-Q16",
+      "bank": "mock-exam",
+      "originId": "MC101",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.4–7 · 2장 교안 p.4, 8–9 · 2장 교안 p.10 · 2장 교안 p.4, 11–13 · 2장 교안 p.15"
+    },
+    {
+      "id": "ME3-Q17",
+      "bank": "mock-exam",
+      "originId": "TF31",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.46–47 · t-test 교안 p.3–4"
+    },
+    {
+      "id": "ME3-Q18",
+      "bank": "mock-exam",
+      "originId": "TF32-SUPP",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.5–6 · 보충영상 PSY-L001 · PSY-L002"
+    },
+    {
+      "id": "ME3-Q19",
+      "bank": "mock-exam",
+      "originId": "SA003",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2"
+    },
+    {
+      "id": "ME3-Q20",
+      "bank": "mock-exam",
+      "originId": "SA011",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20 · 2장 교안 p.21"
+    },
+    {
+      "id": "ME3-Q21",
+      "bank": "mock-exam",
+      "originId": "SA021",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.11 · 3장 교안 p.12 · 3장 교안 p.13"
+    },
+    {
+      "id": "ME3-Q22",
+      "bank": "mock-exam",
+      "originId": "SA026",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.31"
+    },
+    {
+      "id": "ME3-Q23",
+      "bank": "mock-exam",
+      "originId": "SA034",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.58–60 · 1-2 교안 p.6 · 보충영상 PSY-L002"
+    },
+    {
+      "id": "ME3-Q24",
+      "bank": "mock-exam",
+      "originId": "SA039",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.17–18 · 회귀 교안 p.19 · 회귀 교안 p.20"
+    },
+    {
+      "id": "ME3-Q25",
+      "bank": "mock-exam",
+      "originId": "ES009",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.15 · 2장 교안 p.15 · 연구방법론 전사1 · 2장 교안 p.16 · 연구방법론 전사2 · 2장 교안 p.17"
+    },
+    {
+      "id": "ME3-Q26",
+      "bank": "mock-exam",
+      "originId": "ES019",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.19 · 3장 교안 p.16–18"
+    },
+    {
+      "id": "ME3-Q27",
+      "bank": "mock-exam",
+      "originId": "ES031",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.57 · 3장 교안 p.58 · 3장 교안 p.59 · 3장 교안 p.60 · 3장 교안 p.61"
+    },
+    {
+      "id": "ME3-Q28",
+      "bank": "mock-exam",
+      "originId": "ES037",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.14 · t-test 교안 p.20 · t-test 교안 p.21, 23 · t-test 교안 p.24"
+    },
+    {
+      "id": "ME3-Q29",
+      "bank": "mock-exam",
+      "originId": "RC004",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.8 · t-test 교안 p.8–9"
+    },
+    {
+      "id": "ME3-Q30",
+      "bank": "mock-exam",
+      "originId": "RC009",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.19 · t-test 교안 p.19–20"
+    },
+    {
+      "id": "ME3-Q31",
+      "bank": "mock-exam",
+      "originId": "RC011",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.10, 21 · t-test 교안 p.21, 23 · t-test 교안 p.24"
+    },
+    {
+      "id": "ME3-Q32",
+      "bank": "mock-exam",
+      "originId": "RC015",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "회귀 교안 p.25 · 회귀 교안 p.25 · 회귀 전사"
+    },
+    {
+      "id": "ME4-Q01",
+      "bank": "mock-exam",
+      "originId": "MC045",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.15–16 · 3장 교안 p.16"
+    },
+    {
+      "id": "ME4-Q02",
+      "bank": "mock-exam",
+      "originId": "MC063",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.42–44 · 3장 교안 p.42, 44 · 3장 교안 p.34, 42"
+    },
+    {
+      "id": "ME4-Q03",
+      "bank": "mock-exam",
+      "originId": "MC055",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.32"
+    },
+    {
+      "id": "ME4-Q04",
+      "bank": "mock-exam",
+      "originId": "MC133",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.2–6 · 보충영상 PSY-L001 · PSY-L003"
+    },
+    {
+      "id": "ME4-Q05",
+      "bank": "mock-exam",
+      "originId": "MC022",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.14"
+    },
+    {
+      "id": "ME4-Q06",
+      "bank": "mock-exam",
+      "originId": "MC078",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "R설치 교안 p.2, 12–14 · R설치 교안 p.16, 20"
+    },
+    {
+      "id": "ME4-Q07",
+      "bank": "mock-exam",
+      "originId": "MC002",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.2"
+    },
+    {
+      "id": "ME4-Q08",
+      "bank": "mock-exam",
+      "originId": "MC040",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.12 · 3장 교안 p.13"
+    },
+    {
+      "id": "ME4-Q09",
+      "bank": "mock-exam",
+      "originId": "MC073",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.58 · 3장 교안 p.59 · 3장 교안 p.60 · 3장 교안 p.61"
+    },
+    {
+      "id": "ME4-Q10",
+      "bank": "mock-exam",
+      "originId": "MC024",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.15 · 연구방법론 전사1 · 2장 교안 p.17"
+    },
+    {
+      "id": "ME4-Q11",
+      "bank": "mock-exam",
+      "originId": "MC093",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.25 · 회귀 전사"
+    },
+    {
+      "id": "ME4-Q12",
+      "bank": "mock-exam",
+      "originId": "MC037",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.9"
+    },
+    {
+      "id": "ME4-Q13",
+      "bank": "mock-exam",
+      "originId": "MC110",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.43 · 3장 교안 p.46–47"
+    },
+    {
+      "id": "ME4-Q14",
+      "bank": "mock-exam",
+      "originId": "MC106",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "ME4-Q15",
+      "bank": "mock-exam",
+      "originId": "MC103",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20 · 2장 교안 p.21 · 2장 교안 p.22"
+    },
+    {
+      "id": "ME4-Q16",
+      "bank": "mock-exam",
+      "originId": "MC118",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사 · Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사 · 실제 로그 10-17-12-44-53_num3.txt (Index 0,1,2,13)"
+    },
+    {
+      "id": "ME4-Q17",
+      "bank": "mock-exam",
+      "originId": "TF41",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.8 · 1-1 교안 p.9–10"
+    },
+    {
+      "id": "ME4-Q18",
+      "bank": "mock-exam",
+      "originId": "TF42",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.2–4 · 1-2 교안 p.3"
+    },
+    {
+      "id": "ME4-Q19",
+      "bank": "mock-exam",
+      "originId": "SA004",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "ME4-Q20",
+      "bank": "mock-exam",
+      "originId": "SA014",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.5 · 2장 교안 p.6 · 연구방법론 전사1"
+    },
+    {
+      "id": "ME4-Q21",
+      "bank": "mock-exam",
+      "originId": "SA017",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "ME4-Q22",
+      "bank": "mock-exam",
+      "originId": "SA028",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.34–35 · 3장 교안 p.36 · 3장 교안 p.34–36"
+    },
+    {
+      "id": "ME4-Q23",
+      "bank": "mock-exam",
+      "originId": "SA032",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.50 · 3장 교안 p.50 · 정보처리 전사4"
+    },
+    {
+      "id": "ME4-Q24",
+      "bank": "mock-exam",
+      "originId": "SA041",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사"
+    },
+    {
+      "id": "ME4-Q25",
+      "bank": "mock-exam",
+      "originId": "ES007",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.10 · 2장 교안 p.11 · 2장 교안 p.10 · 원문과 검증"
+    },
+    {
+      "id": "ME4-Q26",
+      "bank": "mock-exam",
+      "originId": "ES015",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.10 · 3장 교안 p.10 · 정보처리 전사1 · 3장 교안 p.11 · 3장 교안 p.10–11"
+    },
+    {
+      "id": "ME4-Q27",
+      "bank": "mock-exam",
+      "originId": "ES022",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.30–31 · 3장 교안 p.31 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "ME4-Q28",
+      "bank": "mock-exam",
+      "originId": "ES039",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.15 · 회귀 교안 p.14–16 · 회귀 교안 p.17–18 · 회귀 교안 p.19 · 회귀 교안 p.20"
+    },
+    {
+      "id": "ME4-Q29",
+      "bank": "mock-exam",
+      "originId": "RC002",
+      "review": "코드 자체에 전체 입력 벡터 포함",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.3–6 · t-test 교안 p.8"
+    },
+    {
+      "id": "ME4-Q30",
+      "bank": "mock-exam",
+      "originId": "RC010",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.10, 15 · t-test 교안 p.15, 17–19 · t-test 교안 p.19–20 · t-test 교안 p.20"
+    },
+    {
+      "id": "ME4-Q31",
+      "bank": "mock-exam",
+      "originId": "RC016",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "회귀 전사 말미"
+    },
+    {
+      "id": "ME4-Q32",
+      "bank": "mock-exam",
+      "originId": "RC020",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "회귀 교안 p.23 · SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사"
+    },
+    {
+      "id": "ME5-Q01",
+      "bank": "mock-exam",
+      "originId": "MC025",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.16 · 연구방법론 전사2"
+    },
+    {
+      "id": "ME5-Q02",
+      "bank": "mock-exam",
+      "originId": "MC082",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21"
+    },
+    {
+      "id": "ME5-Q03",
+      "bank": "mock-exam",
+      "originId": "MC126",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.34–35 · 3장 교안 p.36 · 3장 교안 p.37 · 3장 교안 p.37 · 정보처리 전사3 · 3장 교안 p.34–36"
+    },
+    {
+      "id": "ME5-Q04",
+      "bank": "mock-exam",
+      "originId": "MC042",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.14 · 3장 교안 p.10, 14"
+    },
+    {
+      "id": "ME5-Q05",
+      "bank": "mock-exam",
+      "originId": "MC046",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.17–18 · 3장 교안 p.18"
+    },
+    {
+      "id": "ME5-Q06",
+      "bank": "mock-exam",
+      "originId": "MC072",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.57"
+    },
+    {
+      "id": "ME5-Q07",
+      "bank": "mock-exam",
+      "originId": "MC088",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.3–6 · 회귀 교안 p.5–6, 9, 11"
+    },
+    {
+      "id": "ME5-Q08",
+      "bank": "mock-exam",
+      "originId": "MC003",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.4–5 · 1-1 교안 p.8"
+    },
+    {
+      "id": "ME5-Q09",
+      "bank": "mock-exam",
+      "originId": "MC039",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.11"
+    },
+    {
+      "id": "ME5-Q10",
+      "bank": "mock-exam",
+      "originId": "MC004",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-1 교안 p.9–10"
+    },
+    {
+      "id": "ME5-Q11",
+      "bank": "mock-exam",
+      "originId": "MC030",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.20 · 2장 교안 p.21"
+    },
+    {
+      "id": "ME5-Q12",
+      "bank": "mock-exam",
+      "originId": "MC065",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.47"
+    },
+    {
+      "id": "ME5-Q13",
+      "bank": "mock-exam",
+      "originId": "MC108",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.26–28 · 3장 교안 p.26 · 3장 교안 p.29 · 3장 교안 p.30–31 · 3장 교안 p.31"
+    },
+    {
+      "id": "ME5-Q14",
+      "bank": "mock-exam",
+      "originId": "MC099",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.2–4 · 1-2 교안 p.3 · 1-2 교안 p.12 · 1-2 교안 p.14"
+    },
+    {
+      "id": "ME5-Q15",
+      "bank": "mock-exam",
+      "originId": "MC113",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "t-test 교안 p.3–4 · t-test 교안 p.3–6 · t-test 교안 p.7 · t-test 교안 p.8 · t-test 교안 p.8–9"
+    },
+    {
+      "id": "ME5-Q16",
+      "bank": "mock-exam",
+      "originId": "MC117",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "회귀 교안 p.19 · 회귀 교안 p.20 · 회귀 교안 p.25 · 회귀 교안 p.25 · 회귀 전사"
+    },
+    {
+      "id": "ME5-Q17",
+      "bank": "mock-exam",
+      "originId": "TF51-SUPP",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.5–6 · 보충영상 PSY-L002 · PSY-L003"
+    },
+    {
+      "id": "ME5-Q18",
+      "bank": "mock-exam",
+      "originId": "TF52",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.7 · 1-2 교안 p.7"
+    },
+    {
+      "id": "ME5-Q19",
+      "bank": "mock-exam",
+      "originId": "SA006",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.15"
+    },
+    {
+      "id": "ME5-Q20",
+      "bank": "mock-exam",
+      "originId": "SA015",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "2장 교안 p.18 · 2장 교안 p.19"
+    },
+    {
+      "id": "ME5-Q21",
+      "bank": "mock-exam",
+      "originId": "SA018",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "ME5-Q22",
+      "bank": "mock-exam",
+      "originId": "SA023",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.19 · 3장 교안 p.16–18"
+    },
+    {
+      "id": "ME5-Q23",
+      "bank": "mock-exam",
+      "originId": "SA035",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.58 · 3장 교안 p.59 · 3장 교안 p.60 · 3장 교안 p.61"
+    },
+    {
+      "id": "ME5-Q24",
+      "bank": "mock-exam",
+      "originId": "SA042",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "ME5-Q25",
+      "bank": "mock-exam",
+      "originId": "ES003",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "1-2 교안 p.2–6, 12–17 · 보충영상 PSY-L001 · PSY-L003"
+    },
+    {
+      "id": "ME5-Q26",
+      "bank": "mock-exam",
+      "originId": "ES013",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "ME5-Q27",
+      "bank": "mock-exam",
+      "originId": "ES029",
+      "review": "지문에 필요한 조건이 있는 개념·사례·계산 문제",
+      "hasVisual": false,
+      "hasCodeSetup": false,
+      "source": "3장 교안 p.50 · 3장 교안 p.50 · 정보처리 전사4 · 3장 교안 p.51"
+    },
+    {
+      "id": "ME5-Q28",
+      "bank": "mock-exam",
+      "originId": "ES041",
+      "review": "지문과 함께 표·원본 그림 제공",
+      "hasVisual": true,
+      "hasCodeSetup": false,
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사 · Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "ME5-Q29",
+      "bank": "mock-exam",
+      "originId": "RC005",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "R설치 교안 p.2, 12–14 · R설치 교안 p.16, 20 · t-test 교안 p.3–4"
+    },
+    {
+      "id": "ME5-Q30",
+      "bank": "mock-exam",
+      "originId": "RC006",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.13, 18, 23 · t-test 교안 p.13, 17"
+    },
+    {
+      "id": "ME5-Q31",
+      "bank": "mock-exam",
+      "originId": "RC012",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": false,
+      "hasCodeSetup": true,
+      "source": "t-test 교안 p.14 · t-test 교안 p.19 · t-test 교안 p.20 · t-test 교안 p.21, 23"
+    },
+    {
+      "id": "ME5-Q32",
+      "bank": "mock-exam",
+      "originId": "RC019",
+      "review": "전체 R 준비 코드와 입력 자료",
+      "hasVisual": true,
+      "hasCodeSetup": true,
+      "source": "Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "OX001",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-1 교안 p.2–3"
+    },
+    {
+      "id": "OX002",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-1 교안 p.2"
+    },
+    {
+      "id": "OX003",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-1 교안 p.2"
+    },
+    {
+      "id": "OX004",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-1 교안 p.2"
+    },
+    {
+      "id": "OX005",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-1 교안 p.4–5"
+    },
+    {
+      "id": "OX006",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-1 교안 p.8"
+    },
+    {
+      "id": "OX007",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-1 교안 p.9–10"
+    },
+    {
+      "id": "OX008",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.2–4"
+    },
+    {
+      "id": "OX009",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.3"
+    },
+    {
+      "id": "OX010",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "OX011",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "OX012",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "OX013",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.8–9"
+    },
+    {
+      "id": "OX014",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.8–11"
+    },
+    {
+      "id": "OX015",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.12"
+    },
+    {
+      "id": "OX016",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.12"
+    },
+    {
+      "id": "OX017",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.12"
+    },
+    {
+      "id": "OX018",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.13"
+    },
+    {
+      "id": "OX019",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.13"
+    },
+    {
+      "id": "OX020",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.14"
+    },
+    {
+      "id": "OX021",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.15"
+    },
+    {
+      "id": "OX022",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.15"
+    },
+    {
+      "id": "OX023",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.10"
+    },
+    {
+      "id": "OX024",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.14–17"
+    },
+    {
+      "id": "OX025",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.7"
+    },
+    {
+      "id": "OX026",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.3–4 · 연구방법론 전사1"
+    },
+    {
+      "id": "OX027",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.4–7"
+    },
+    {
+      "id": "OX028",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.5"
+    },
+    {
+      "id": "OX029",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.6 · 연구방법론 전사1"
+    },
+    {
+      "id": "OX030",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.4, 8–9"
+    },
+    {
+      "id": "OX031",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.10"
+    },
+    {
+      "id": "OX032",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.10"
+    },
+    {
+      "id": "OX033",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.4, 11–13"
+    },
+    {
+      "id": "OX034",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.11"
+    },
+    {
+      "id": "OX035",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.14"
+    },
+    {
+      "id": "OX036",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.14"
+    },
+    {
+      "id": "OX037",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.15"
+    },
+    {
+      "id": "OX038",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.15 · 연구방법론 전사1"
+    },
+    {
+      "id": "OX039",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.16"
+    },
+    {
+      "id": "OX040",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "연구방법론 전사2"
+    },
+    {
+      "id": "OX041",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.17"
+    },
+    {
+      "id": "OX042",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.18"
+    },
+    {
+      "id": "OX043",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.18"
+    },
+    {
+      "id": "OX044",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.19"
+    },
+    {
+      "id": "OX045",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.20"
+    },
+    {
+      "id": "OX046",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.20"
+    },
+    {
+      "id": "OX047",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.21"
+    },
+    {
+      "id": "OX048",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.20"
+    },
+    {
+      "id": "OX049",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.20"
+    },
+    {
+      "id": "OX050",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.22"
+    },
+    {
+      "id": "OX051",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.22"
+    },
+    {
+      "id": "OX052",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.10 · 원문과 검증"
+    },
+    {
+      "id": "OX053",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "2장 교안 p.13 · 2주차 논문"
+    },
+    {
+      "id": "OX054",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "OX055",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "OX056",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "OX057",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "OX058",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.7"
+    },
+    {
+      "id": "OX059",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.8"
+    },
+    {
+      "id": "OX060",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.8"
+    },
+    {
+      "id": "OX061",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.9"
+    },
+    {
+      "id": "OX062",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.9"
+    },
+    {
+      "id": "OX063",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.9"
+    },
+    {
+      "id": "OX064",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.10"
+    },
+    {
+      "id": "OX065",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.10 · 정보처리 전사1"
+    },
+    {
+      "id": "OX066",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.11"
+    },
+    {
+      "id": "OX067",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.11"
+    },
+    {
+      "id": "OX068",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.12"
+    },
+    {
+      "id": "OX069",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.13"
+    },
+    {
+      "id": "OX070",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.13"
+    },
+    {
+      "id": "OX071",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.14"
+    },
+    {
+      "id": "OX072",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.10, 14"
+    },
+    {
+      "id": "OX073",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.10–11"
+    },
+    {
+      "id": "OX074",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.8–9"
+    },
+    {
+      "id": "OX075",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.18"
+    },
+    {
+      "id": "OX076",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.7"
+    },
+    {
+      "id": "OX077",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.6"
+    },
+    {
+      "id": "OX078",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.15"
+    },
+    {
+      "id": "OX079",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.15–16"
+    },
+    {
+      "id": "OX080",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.16"
+    },
+    {
+      "id": "OX081",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.16"
+    },
+    {
+      "id": "OX082",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.17–18"
+    },
+    {
+      "id": "OX083",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.18"
+    },
+    {
+      "id": "OX084",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.19"
+    },
+    {
+      "id": "OX085",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.20"
+    },
+    {
+      "id": "OX086",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.21"
+    },
+    {
+      "id": "OX087",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.21"
+    },
+    {
+      "id": "OX088",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.25"
+    },
+    {
+      "id": "OX089",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.26–28"
+    },
+    {
+      "id": "OX090",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.26"
+    },
+    {
+      "id": "OX091",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.29"
+    },
+    {
+      "id": "OX092",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.30–31"
+    },
+    {
+      "id": "OX093",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.31"
+    },
+    {
+      "id": "OX094",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.31"
+    },
+    {
+      "id": "OX095",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.32"
+    },
+    {
+      "id": "OX096",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.32"
+    },
+    {
+      "id": "OX097",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.32"
+    },
+    {
+      "id": "OX098",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.34–35"
+    },
+    {
+      "id": "OX099",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.36"
+    },
+    {
+      "id": "OX100",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.36"
+    },
+    {
+      "id": "OX101",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.36"
+    },
+    {
+      "id": "OX102",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.36"
+    },
+    {
+      "id": "OX103",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.37"
+    },
+    {
+      "id": "OX104",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.37"
+    },
+    {
+      "id": "OX105",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.37"
+    },
+    {
+      "id": "OX106",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.37"
+    },
+    {
+      "id": "OX107",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.37 · 정보처리 전사3"
+    },
+    {
+      "id": "OX108",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.34–36"
+    },
+    {
+      "id": "OX109",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.39–41 · 정보처리 전사3"
+    },
+    {
+      "id": "OX110",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.16–18"
+    },
+    {
+      "id": "OX111",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.16"
+    },
+    {
+      "id": "OX112",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.42–44"
+    },
+    {
+      "id": "OX113",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.42, 44"
+    },
+    {
+      "id": "OX114",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.43"
+    },
+    {
+      "id": "OX115",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.46–47"
+    },
+    {
+      "id": "OX116",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.47"
+    },
+    {
+      "id": "OX117",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.47"
+    },
+    {
+      "id": "OX118",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.46–47"
+    },
+    {
+      "id": "OX119",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.48"
+    },
+    {
+      "id": "OX120",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.48"
+    },
+    {
+      "id": "OX121",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.50"
+    },
+    {
+      "id": "OX122",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.50"
+    },
+    {
+      "id": "OX123",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.50 · 정보처리 전사4"
+    },
+    {
+      "id": "OX124",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.51"
+    },
+    {
+      "id": "OX125",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.51"
+    },
+    {
+      "id": "OX126",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.51"
+    },
+    {
+      "id": "OX127",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.53–56"
+    },
+    {
+      "id": "OX128",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.57"
+    },
+    {
+      "id": "OX129",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.57"
+    },
+    {
+      "id": "OX130",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.57"
+    },
+    {
+      "id": "OX131",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.58"
+    },
+    {
+      "id": "OX132",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.59"
+    },
+    {
+      "id": "OX133",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.60"
+    },
+    {
+      "id": "OX134",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.61"
+    },
+    {
+      "id": "OX135",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.62"
+    },
+    {
+      "id": "OX136",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.62"
+    },
+    {
+      "id": "OX137",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.65–66 Fig.7"
+    },
+    {
+      "id": "OX138",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "4주차 논문 · 피츠 전사"
+    },
+    {
+      "id": "OX139",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.46–47"
+    },
+    {
+      "id": "OX140",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.49"
+    },
+    {
+      "id": "OX141",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "3장 교안 p.34, 42"
+    },
+    {
+      "id": "OX142",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "R설치 교안 p.2, 12–14"
+    },
+    {
+      "id": "OX143",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "R설치 교안 p.16, 20"
+    },
+    {
+      "id": "OX144",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.3–4"
+    },
+    {
+      "id": "OX145",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.3–4"
+    },
+    {
+      "id": "OX146",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.3–6"
+    },
+    {
+      "id": "OX147",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.7"
+    },
+    {
+      "id": "OX148",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.7"
+    },
+    {
+      "id": "OX149",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.8"
+    },
+    {
+      "id": "OX150",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.8–9"
+    },
+    {
+      "id": "OX151",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.10–11"
+    },
+    {
+      "id": "OX152",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.10, 15"
+    },
+    {
+      "id": "OX153",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.10, 21"
+    },
+    {
+      "id": "OX154",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.13, 18, 23"
+    },
+    {
+      "id": "OX155",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.13, 17"
+    },
+    {
+      "id": "OX156",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.14"
+    },
+    {
+      "id": "OX157",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.15, 17–19"
+    },
+    {
+      "id": "OX158",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.19"
+    },
+    {
+      "id": "OX159",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.19–20"
+    },
+    {
+      "id": "OX160",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.20"
+    },
+    {
+      "id": "OX161",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.21, 23"
+    },
+    {
+      "id": "OX162",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "t-test 교안 p.24"
+    },
+    {
+      "id": "OX163",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "T검정 전사 · 원문과 검증"
+    },
+    {
+      "id": "OX164",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.2, 7–8"
+    },
+    {
+      "id": "OX165",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.7"
+    },
+    {
+      "id": "OX166",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.3–6"
+    },
+    {
+      "id": "OX167",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.5–6, 9, 11"
+    },
+    {
+      "id": "OX168",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.9, 22"
+    },
+    {
+      "id": "OX169",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.15"
+    },
+    {
+      "id": "OX170",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.14–16"
+    },
+    {
+      "id": "OX171",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.17–18"
+    },
+    {
+      "id": "OX172",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.19"
+    },
+    {
+      "id": "OX173",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.20"
+    },
+    {
+      "id": "OX174",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.23"
+    },
+    {
+      "id": "OX175",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.23–24"
+    },
+    {
+      "id": "OX176",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.25"
+    },
+    {
+      "id": "OX177",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.25 · 회귀 전사"
+    },
+    {
+      "id": "OX178",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.25 · 회귀 전사"
+    },
+    {
+      "id": "OX179",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 교안 p.25 · 회귀 전사"
+    },
+    {
+      "id": "OX180",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "회귀 전사 말미"
+    },
+    {
+      "id": "OX181",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사"
+    },
+    {
+      "id": "OX182",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "SRT/CRT 실습 전사"
+    },
+    {
+      "id": "OX183",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "Sternberg README · 로그"
+    },
+    {
+      "id": "OX184",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "Sternberg 로그 · 원문과 검증"
+    },
+    {
+      "id": "OX185",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "SRT/CRT/Sternberg 실습 전사"
+    },
+    {
+      "id": "OX186",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.5 · 보충영상 PSY-L001"
+    },
+    {
+      "id": "OX187",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "1-2 교안 p.6 · 보충영상 PSY-L002"
+    },
+    {
+      "id": "OX188",
+      "bank": "ox",
+      "review": "진위 문장에 필요한 전제와 조건 제시",
+      "source": "보충영상 PSY-L003 · 02:57–05:20, 05:23–07:27, 09:11–10:03"
+    }
+  ]
+}

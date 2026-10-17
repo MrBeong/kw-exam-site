@@ -1,0 +1,7 @@
+{
+  "passed": 2,
+  "results": [
+    "foreground deadline auto-submits without reload and syncs other tabs",
+    "finishing grade in ungraded filter starts next question at top"
+  ]
+}

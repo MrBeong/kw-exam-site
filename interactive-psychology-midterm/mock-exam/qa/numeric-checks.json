@@ -1,0 +1,177 @@
+{
+  "passed": 34,
+  "checks": [
+    {
+      "name": "BMI",
+      "value": 24.999999999999996,
+      "expected": 25
+    },
+    {
+      "name": "sample raw n",
+      "value": 24.009999999999994,
+      "expected": 24.01
+    },
+    {
+      "name": "sample rounded n",
+      "value": 25,
+      "expected": 25
+    },
+    {
+      "name": "sample additional",
+      "value": 21,
+      "expected": 21
+    },
+    {
+      "name": "Hartley H",
+      "value": 3.0,
+      "expected": 3
+    },
+    {
+      "name": "Hartley increase",
+      "value": 2.0,
+      "expected": 2
+    },
+    {
+      "name": "binary H using supplied log",
+      "value": 0.81125,
+      "expected": 0.81125
+    },
+    {
+      "name": "binary redundancy",
+      "value": 18.874999999999996,
+      "expected": 18.875
+    },
+    {
+      "name": "coin redundancy",
+      "value": 27.810000000000002,
+      "expected": 27.81
+    },
+    {
+      "name": "warning redundancy",
+      "value": 25.0,
+      "expected": 25
+    },
+    {
+      "name": "Donders identification",
+      "value": 70,
+      "expected": 70
+    },
+    {
+      "name": "Donders selection",
+      "value": 90,
+      "expected": 90
+    },
+    {
+      "name": "Hick RT4",
+      "value": 420.0,
+      "expected": 420
+    },
+    {
+      "name": "Hick RT8",
+      "value": 540.0,
+      "expected": 540
+    },
+    {
+      "name": "Hick throughput",
+      "value": 8.333333333333334,
+      "expected": 8.3333333333
+    },
+    {
+      "name": "OLS SSR",
+      "value": 60,
+      "expected": 60
+    },
+    {
+      "name": "OLS R2",
+      "value": 0.75,
+      "expected": 0.75
+    },
+    {
+      "name": "three warning entropy",
+      "value": 1.5,
+      "expected": 1.5
+    },
+    {
+      "name": "matrix HX",
+      "value": 2.0,
+      "expected": 2
+    },
+    {
+      "name": "matrix HY",
+      "value": 1.5,
+      "expected": 1.5
+    },
+    {
+      "name": "matrix HXY",
+      "value": 2.0,
+      "expected": 2
+    },
+    {
+      "name": "matrix I",
+      "value": 1.5,
+      "expected": 1.5
+    },
+    {
+      "name": "new OLS slope",
+      "value": 3.5,
+      "expected": 3.5
+    },
+    {
+      "name": "new OLS intercept",
+      "value": -3.0,
+      "expected": -3
+    },
+    {
+      "name": "new OLS SST",
+      "value": 26,
+      "expected": 26
+    },
+    {
+      "name": "new OLS SSR",
+      "value": 24.5,
+      "expected": 24.5
+    },
+    {
+      "name": "new OLS SSE",
+      "value": 1.5,
+      "expected": 1.5
+    },
+    {
+      "name": "new OLS R2",
+      "value": 0.9423076923076923,
+      "expected": 0.9423076923076923
+    },
+    {
+      "name": "new OLS F",
+      "value": 16.333333333333332,
+      "expected": 16.3333333333333
+    },
+    {
+      "name": "R sort maximum",
+      "value": 90,
+      "expected": 90
+    },
+    {
+      "name": "new Hick slope",
+      "value": 120.0,
+      "expected": 120
+    },
+    {
+      "name": "new Hick intercept",
+      "value": 280,
+      "expected": 280
+    },
+    {
+      "name": "new Fitts MT1",
+      "value": 350.19550008653874,
+      "expected": 350.1955000865387
+    },
+    {
+      "name": "new Fitts MT2",
+      "value": 455.1317942364757,
+      "expected": 455.1317942364757
+    }
+  ],
+  "rInterpreterExecuted": false,
+  "RC020FollowupConsistent": true
+}

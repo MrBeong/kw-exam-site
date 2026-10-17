@@ -1,0 +1,14 @@
+{
+  "id": "RC010",
+  "originId": "RC010",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "var.equal=TRUE selects pooled not default Welch", "pooled df n1+n2-2", "formula response/group order", "actual Levene p rounds to given .1742", "given Levene p does not reject equality of variances", "no unexpected warnings"],
+  "metrics": {
+    "df": 38,
+    "fixtureP": 0.006695679633099059,
+    "givenLeveneP": 0.1742
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}
