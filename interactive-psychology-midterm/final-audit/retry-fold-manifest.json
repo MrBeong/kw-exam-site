@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-17",
+  "change": "wrong tab second click toggles retry controls",
+  "foldChecks": 87,
+  "regressionChecks": 51,
+  "edgeChecks": 18,
+  "questions": 589,
+  "concepts": 188,
+  "files": {
+    "assets/study-retry.js": "6141740006bedb6c661903048bdc71ca100cd6b9746bd17ca8d1079f0fae6491",
+    "written/app.js": "c3f63a856fc66a3852be9feecb22577145a6e242d745a4faabb0a658cb9aa113",
+    "multiple-choice/template.html": "901ed34c87ddabe836e811362c9de0c01fc7e0db8fe90196ffa5d39831a97e1c",
+    "mock-exam/app.js": "0a41b36dba714099b4ccd613a3840d171128fc4fe11d62b70cf6f9fae5fa9eda",
+    "ox/index.html": "1e4210fd727fcf2597c307a9e48869c56e658255e897fefc537e62a4fb303511",
+    "index.html": "1e9f4d41b64cdbc0396528e54a9f63bea86e8c3d7eb445d5dd6532b4cdc068dc",
+    "인터랙티브심리학_중간고사_Notion.html": "1e9f4d41b64cdbc0396528e54a9f63bea86e8c3d7eb445d5dd6532b4cdc068dc",
+    "multiple-choice/index.html": "bd984208c8c40bea0808081c15526a14cbe128935eb4e6b1f918e006aab11534",
+    "mock-exam/index.html": "0f1321d635769d46991e9dd938e256c3c95e249364b776145d03e396200806fe",
+    "written/main-template.html": "b14e3b535ed1d22a38bc3d1b5ac813a698ff76ad3c90e4b07d555ec66c9754ad",
+    "written/section.html": "a680c9e13d1c3aa2ef7e2697e40e5f91e4b12ff44f4e076e0de816b507e563c7"
+  }
+}

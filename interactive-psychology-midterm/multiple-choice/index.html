@@ -68,7 +68,7 @@ function startWrongRetry(ids){
  retry.finish();const wrongIds=questions.filter(q=>saved.answers[q.id]&&!saved.answers[q.id].correct).map(q=>q.id);
  retry.start(ids?wrongIds.filter(id=>ids.includes(id)):wrongIds);retryIds=retry.ids;mode='mixed';stateFilter='wrong';chapterFilter='all';selected.clear();currentQuestionId=null;clearReviewUrl();applyFilters();
 }
-retry.mount({before:$('#quizCard'),onStart:()=>startWrongRetry(),onExit:()=>{retryIds=[];mode='mixed';stateFilter='all';chapterFilter='all';clearReviewUrl();save();applyFilters()},isCorrect:id=>saved.answers[id]?.correct,visible:()=>stateFilter==='wrong'});
+retry.mount({before:$('#quizCard'),onStart:()=>startWrongRetry(),onExit:()=>{retryIds=[];mode='mixed';stateFilter='all';chapterFilter='all';clearReviewUrl();save();applyFilters()},isCorrect:id=>saved.answers[id]?.correct,visible:()=>stateFilter==='wrong',tab:$('#stateTabs [data-state=wrong]')});
 const params=new URLSearchParams(location.search);
 if(params.get('review')==='wrong')stateFilter='wrong';
 const requested=(params.get('retry')||'').split(',').filter(id=>validIds.has(id));

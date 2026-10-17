@@ -1787,12 +1787,11 @@ F-statistic: <strong>21.53</strong> on 1 and 10 DF,  p-value: <strong>0.0009223<
 
       <section id="mistakes" data-search-title="오답 노트">
         <h2>오답 노트</h2>
-        <p class="muted">틀린 문제와 오답 복습 항목이 이곳에 모입니다. 아래 버튼을 눌러 오답만 바로 다시 풀 수 있습니다.</p>
+        <p class="muted">틀린 문제와 오답 복습 항목이 이곳에 모입니다. 목록에서 문제·해설을 확인하고, 새 답안으로 재풀이하려면 해당 문제은행의 오답 탭을 다시 눌러 제어 바를 펼치세요.</p>
         <div style="display:flex;gap:10px;margin:14px 0 16px;flex-wrap:wrap;">
           <button id="goSolveMistakesBtn" type="button" style="padding:10px 18px;font-size:13.5px;font-weight:750;background:#1e1e1e;color:#fff;border-radius:6px;border:0;cursor:pointer;">✏️ 오답 문제 바로 풀기 (<span id="mistakeActionCount">0</span>문제)</button>
-          <button id="resetAndSolveMistakesBtn" type="button" style="padding:10px 18px;font-size:13.5px;font-weight:750;background:#fff;color:#b91c1c;border-radius:6px;border:1px solid #f87171;cursor:pointer;">오답만 다시 풀기</button>
         </div>
-        <p class="wr-small">오답만 다시 풀기: <a href="./ox/index.html?retryWrong=1">O/X</a> · <a href="./multiple-choice/index.html?retryWrong=1">다지선다</a> · <a href="./index.html?view=problems&amp;retryWrong=1">단답·서술·R</a> · <a href="./mock-exam/index.html?retryWrong=1">기출형 전체 세트</a></p><div class="database error-log" id="errorLog"><div class="empty-state" style="display:block">아직 등록된 오답이 없습니다.</div></div>
+        <div class="database error-log" id="errorLog"><div class="empty-state" style="display:block">아직 등록된 오답이 없습니다.</div></div>
       </section>
 
       <section id="checklist" data-search-title="시험 직전 체크리스트">
@@ -2020,6 +2019,7 @@ F-statistic: <strong>21.53</strong> on 1 and 10 DF,  p-value: <strong>0.0009223<
       const at=writtenFiltered.findIndex(q=>q.id===previous);problemCursor=at>=0?at:0;writtenInitialTarget=null;renderProblems();
     }
     function renderProblems(){
+      againBarOpen=writtenRetry.controlsOpen&&currentFilter==='again';
       writtenRetry.refresh?.();writtenRetry.visit(writtenFiltered[problemCursor]?.id);
       document.getElementById('expectedCountSide').textContent=String(problems.length);
       document.querySelectorAll('[data-written-type]').forEach(b=>b.classList.toggle('active',b.dataset.writtenType===writtenType));
@@ -2093,7 +2093,7 @@ F-statistic: <strong>21.53</strong> on 1 and 10 DF,  p-value: <strong>0.0009223<
       currentFilter='again';writtenReviewIds=writtenRetry.ids;writtenType='all';writtenChapter='all';writtenQuery='';againBarOpen=false;problemCursor=0;
       document.getElementById('writtenChapter').value='all';document.getElementById('questionSearch').value='';setPageView('problems');applyProblemFilter();
     }
-    writtenRetry.mount({before:document.querySelector('#problems .wr-search-row'),onStart:startWrittenWrongRetry,onExit:()=>{currentFilter='all';writtenType='all';writtenChapter='all';writtenQuery='';document.getElementById('writtenChapter').value='all';document.getElementById('questionSearch').value='';applyProblemFilter()},isCorrect:id=>state.grades[id]==='done',visible:()=>currentFilter==='again'});
+    writtenRetry.mount({before:document.querySelector('#problems .wr-search-row'),onStart:startWrittenWrongRetry,onExit:()=>{currentFilter='all';writtenType='all';writtenChapter='all';writtenQuery='';document.getElementById('writtenChapter').value='all';document.getElementById('questionSearch').value='';applyProblemFilter()},isCorrect:id=>state.grades[id]==='done',visible:()=>currentFilter==='again',tab:document.getElementById('againFilterBtn'),onToggle:open=>{againBarOpen=open;renderProblems()}});
     if(writtenRetry.active){currentFilter='again';writtenReviewIds=writtenRetry.ids;writtenInitialTarget=writtenRetry.cursor;}
     else if(new URLSearchParams(location.search).get('retryWrong')==='1')queueMicrotask(startWrittenWrongRetry);
     if(writtenRetry.active){const u=new URL(location.href);u.searchParams.delete('retryWrong');history.replaceState(null,'',u)}
@@ -2118,15 +2118,10 @@ F-statistic: <strong>21.53</strong> on 1 and 10 DF,  p-value: <strong>0.0009223<
       if(!el)return;
       el.innerHTML=items.length?items.map(q=>`<a class="error-item" style="display:block;color:inherit;text-decoration:none;padding:12px;border-bottom:1px solid var(--line)" href="${q.url}?${q.native?'view=problems&':''}question=${encodeURIComponent(q.id)}"><strong>${esc(q.name)} · ${esc(q.id)}</strong>${q.title?'<span style="display:block;font-size:12px;margin-top:5px">'+esc(q.title.slice(0,110))+'</span>':''}<span style="color:var(--muted);margin-left:12px">문제·상세 해설 다시 보기 →</span></a>`).join(''):'<div class="empty-state" style="display:block">아직 등록된 오답이 없습니다. 단답·서술·R 코드의 애매함/다시 풀기도 이곳에 모입니다. <a href="./ox/index.html?review=wrong">O/X 오답 보기</a> · <a href="./multiple-choice/index.html?review=wrong">다지선다 오답 보기</a></div>';
       document.getElementById('goSolveMistakesBtn').disabled=!items.length;
-      document.getElementById('resetAndSolveMistakesBtn').disabled=!problems.some(q=>StudyRetry.effective(state,'grades')[q.id]==='again')&&!externalMistakes().length;
     }
     document.getElementById('goSolveMistakesBtn').addEventListener('click',()=>{
       if(problems.some(q=>['again','unsure'].includes(state.grades[q.id]))){openWrittenReview(false);return}
       const q=externalMistakes()[0];if(q)location.href=q.url+'?review=wrong&question='+encodeURIComponent(q.id);
-    });
-    document.getElementById('resetAndSolveMistakesBtn').addEventListener('click',()=>{
-      if(problems.some(q=>StudyRetry.effective(state,'grades')[q.id]==='again')){startWrittenWrongRetry();return}
-      const first=externalMistakes()[0];if(first)location.href=first.url+'?retryWrong=1';
     });
     window.addEventListener('storage',renderErrorLog);
 

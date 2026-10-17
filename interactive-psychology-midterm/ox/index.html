@@ -465,7 +465,7 @@
     order=[...items];cursor=0;$("#stateSelect").value='wrong';$("#chapterSelect").value='all';$("#search").value='';applyFilters();
     const url=new URL(location.href);url.searchParams.delete('retry');url.searchParams.delete('review');url.searchParams.delete('retryWrong');history.replaceState(null,'',url);
   }
-  retry.mount({before:$("#quizCard"),onStart:()=>startWrongRetry(),onExit:()=>{order=[...items];$("#stateSelect").value='all';applyFilters()},isCorrect:id=>saved.answers[id]?.correct,visible:()=>$("#stateSelect").value==='wrong'});
+  retry.mount({before:$("#quizCard"),onStart:()=>startWrongRetry(),onExit:()=>{order=[...items];$("#stateSelect").value='all';applyFilters()},isCorrect:id=>saved.answers[id]?.correct,visible:()=>$("#stateSelect").value==='wrong',tab:$("#stateTabs [data-state=wrong]")});
   const params=new URLSearchParams(location.search);
   if(retry.active){$("#stateSelect").value='wrong';const u=new URL(location.href);for(const k of ['retry','retryWrong','review'])u.searchParams.delete(k);history.replaceState(null,'',u)}
   if(params.get('review')==='wrong')$("#stateSelect").value='wrong';

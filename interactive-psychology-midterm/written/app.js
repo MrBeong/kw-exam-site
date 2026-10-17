@@ -74,6 +74,7 @@
       const at=writtenFiltered.findIndex(q=>q.id===previous);problemCursor=at>=0?at:0;writtenInitialTarget=null;renderProblems();
     }
     function renderProblems(){
+      againBarOpen=writtenRetry.controlsOpen&&currentFilter==='again';
       writtenRetry.refresh?.();writtenRetry.visit(writtenFiltered[problemCursor]?.id);
       document.getElementById('expectedCountSide').textContent=String(problems.length);
       document.querySelectorAll('[data-written-type]').forEach(b=>b.classList.toggle('active',b.dataset.writtenType===writtenType));
@@ -147,7 +148,7 @@
       currentFilter='again';writtenReviewIds=writtenRetry.ids;writtenType='all';writtenChapter='all';writtenQuery='';againBarOpen=false;problemCursor=0;
       document.getElementById('writtenChapter').value='all';document.getElementById('questionSearch').value='';setPageView('problems');applyProblemFilter();
     }
-    writtenRetry.mount({before:document.querySelector('#problems .wr-search-row'),onStart:startWrittenWrongRetry,onExit:()=>{currentFilter='all';writtenType='all';writtenChapter='all';writtenQuery='';document.getElementById('writtenChapter').value='all';document.getElementById('questionSearch').value='';applyProblemFilter()},isCorrect:id=>state.grades[id]==='done',visible:()=>currentFilter==='again'});
+    writtenRetry.mount({before:document.querySelector('#problems .wr-search-row'),onStart:startWrittenWrongRetry,onExit:()=>{currentFilter='all';writtenType='all';writtenChapter='all';writtenQuery='';document.getElementById('writtenChapter').value='all';document.getElementById('questionSearch').value='';applyProblemFilter()},isCorrect:id=>state.grades[id]==='done',visible:()=>currentFilter==='again',tab:document.getElementById('againFilterBtn'),onToggle:open=>{againBarOpen=open;renderProblems()}});
     if(writtenRetry.active){currentFilter='again';writtenReviewIds=writtenRetry.ids;writtenInitialTarget=writtenRetry.cursor;}
     else if(new URLSearchParams(location.search).get('retryWrong')==='1')queueMicrotask(startWrittenWrongRetry);
     if(writtenRetry.active){const u=new URL(location.href);u.searchParams.delete('retryWrong');history.replaceState(null,'',u)}

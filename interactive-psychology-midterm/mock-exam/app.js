@@ -81,7 +81,7 @@ function startWrongRetry(ids,allowCurrent=false){
  const u=new URL(location.href);for(const k of ['retry','retryWrong','review','question'])u.searchParams.delete(k);u.searchParams.set('mode','practice');history.replaceState(null,'',u);
  save();render();
 }
-retry.mount({before:document.getElementById('resultPanel'),onStart:()=>startWrongRetry(),onExit:()=>{filter='all';reviewIds=null;cursor=0;save();render()},isCorrect:id=>{const q=DATA.find(q=>q.id===id),a=store.practice[q.set];return isObjective(q)?objectiveScore(q,a)===q.points:a.graded[id]&&writtenScore(q,a)===q.points},visible:()=>filter==='wrong'});
+retry.mount({before:document.getElementById('resultPanel'),onStart:()=>startWrongRetry(),onExit:()=>{filter='all';reviewIds=null;cursor=0;save();render()},isCorrect:id=>{const q=DATA.find(q=>q.id===id),a=store.practice[q.set];return isObjective(q)?objectiveScore(q,a)===q.points:a.graded[id]&&writtenScore(q,a)===q.points},visible:()=>filter==='wrong',tab:document.querySelector('[data-filter=wrong]')});
 if(running&&retry.active)retry.finish();
 if(retry.active){const u=new URL(location.href);for(const k of ['retry','retryWrong','review'])u.searchParams.delete(k);history.replaceState(null,'',u);store.mode='practice';cursor=Math.max(0,bank().findIndex(q=>q.id===retry.cursor));filter='wrong'}
 current();
