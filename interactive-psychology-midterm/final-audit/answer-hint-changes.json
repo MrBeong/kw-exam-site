@@ -1,0 +1,455 @@
+{
+  "scopeQuestions": 589,
+  "changes": [
+    {
+      "bank": "written",
+      "id": "SA001",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "세 시점의 번역 대상을 미리 나열하지 않음"
+    },
+    {
+      "bank": "written",
+      "id": "SA002",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "정답 네 요소의 한글 목록 삭제"
+    },
+    {
+      "bank": "written",
+      "id": "SA003",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "정답 세 요소의 한글 목록 삭제"
+    },
+    {
+      "bank": "written",
+      "id": "SA017",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "정답 처리 단계와 순서의 선제시 삭제"
+    },
+    {
+      "bank": "written",
+      "id": "SA029",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "문제에 제시된 비교 대상의 순서와 정답 순서를 분리"
+    },
+    {
+      "bank": "written",
+      "id": "SA038",
+      "fields": [
+        "prompt",
+        "promptPlain"
+      ],
+      "reason": "구하려는 계수의 정답 공식을 미리 쓰지 않음"
+    },
+    {
+      "bank": "written",
+      "id": "SA041",
+      "fields": [
+        "visual"
+      ],
+      "reason": "풀이 결론·정보량 변환 공식을 자료 설명에서 제거"
+    },
+    {
+      "bank": "written",
+      "id": "ES003",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "역사 단계명·연대 대응을 지문에서 제거"
+    },
+    {
+      "bank": "written",
+      "id": "ES006",
+      "fields": [
+        "prompt",
+        "answer"
+      ],
+      "reason": "묻는 세 연구 유형의 명칭을 선제시하지 않음"
+    },
+    {
+      "bank": "written",
+      "id": "ES013",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "모형 구성요소·정답 순서를 나열하는 대신 상황과 설명 범위를 제시"
+    },
+    {
+      "bank": "written",
+      "id": "ES014",
+      "fields": [
+        "answer",
+        "rubric"
+      ],
+      "reason": "이미 지문이 요구한 중복도의 누락된 모범답안·채점 기준 보완"
+    },
+    {
+      "bank": "written",
+      "id": "ES020",
+      "fields": [
+        "prompt",
+        "answer",
+        "rubric",
+        "promptPlain"
+      ],
+      "reason": "회상해야 하는 한계 수치·단위를 지문에서 제거"
+    },
+    {
+      "bank": "written",
+      "id": "ES021",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "전략 이름 네 가지를 주지 않고 사례에서 선택하도록 변경"
+    },
+    {
+      "bank": "written",
+      "id": "ES022",
+      "fields": [
+        "prompt",
+        "visual"
+      ],
+      "reason": "Probe/PSS 정의와 탐색 종료 방식 이름을 답으로 직접 제시하지 않음"
+    },
+    {
+      "bank": "written",
+      "id": "ES025",
+      "fields": [
+        "prompt",
+        "answer",
+        "rubric"
+      ],
+      "reason": "생리 단계·세 영향 요인·사전 경고 효과의 정답 목록 삭제"
+    },
+    {
+      "bank": "written",
+      "id": "ES030",
+      "fields": [
+        "prompt",
+        "answer",
+        "rubric",
+        "visual"
+      ],
+      "reason": "묻는 Overshoot/Undershoot·Range effect 및 VR 과업 분류명을 지문에서 제거"
+    },
+    {
+      "bank": "written",
+      "id": "ES032",
+      "fields": [
+        "prompt",
+        "answer",
+        "rubric"
+      ],
+      "reason": "분류해야 하는 양립성 유형·문화/경험 정답을 지문에서 제거"
+    },
+    {
+      "bank": "written",
+      "id": "ES033",
+      "fields": [
+        "prompt",
+        "promptPlain",
+        "visual"
+      ],
+      "reason": "범례를 복사하는 대신 결과에 적용해 판정하도록 조정"
+    },
+    {
+      "bank": "written",
+      "id": "ES039",
+      "fields": [
+        "visual"
+      ],
+      "reason": "계산 대상과 다른 12행 회귀 출력 제거; 실제 세 관측값만 제공"
+    },
+    {
+      "bank": "written",
+      "id": "ES041",
+      "fields": [
+        "visual"
+      ],
+      "reason": "풀이 결론·정보량 변환 공식을 자료 설명에서 제거"
+    },
+    {
+      "bank": "written",
+      "id": "RC017",
+      "fields": [
+        "prompt",
+        "accepted"
+      ],
+      "reason": "코드 빈칸의 정답 함수명을 지문에서 제거"
+    },
+    {
+      "bank": "written",
+      "id": "RC018",
+      "fields": [
+        "prompt",
+        "accepted",
+        "promptPlain"
+      ],
+      "reason": "빈칸으로 묻는 ID·MT 식과 함수명을 지문에서 제거"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME1-Q19",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "원본 SA001의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME1-Q25",
+      "fields": [
+        "prompt",
+        "answer"
+      ],
+      "reason": "원본 ES006의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME1-Q32",
+      "fields": [
+        "prompt",
+        "accepted"
+      ],
+      "reason": "원본 RC017의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME2-Q19",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "원본 SA002의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME2-Q24",
+      "fields": [
+        "prompt",
+        "promptPlain"
+      ],
+      "reason": "원본 SA038의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME2-Q27",
+      "fields": [
+        "prompt",
+        "answer"
+      ],
+      "reason": "원본 ES025의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME2-Q32",
+      "fields": [
+        "prompt",
+        "accepted",
+        "promptPlain"
+      ],
+      "reason": "원본 RC018의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME3-Q02",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "원본 MC059의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME3-Q19",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "원본 SA003의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME4-Q08",
+      "fields": [
+        "prompt",
+        "promptPlain"
+      ],
+      "reason": "원본과 모의시험 지문 일치; 묻고 있는 Hmax의 미리 계산한 답을 삭제"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME4-Q16",
+      "fields": [
+        "options",
+        "visual"
+      ],
+      "reason": "원본 MC118의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME4-Q21",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "원본 SA017의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME4-Q24",
+      "fields": [
+        "visual"
+      ],
+      "reason": "원본 SA041의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME4-Q27",
+      "fields": [
+        "prompt",
+        "visual"
+      ],
+      "reason": "원본 ES022의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME4-Q28",
+      "fields": [
+        "visual"
+      ],
+      "reason": "원본 ES039의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME5-Q09",
+      "fields": [
+        "prompt",
+        "promptPlain"
+      ],
+      "reason": "원본과 모의시험 지문 일치; 묻고 있는 Hmax의 미리 계산한 답을 삭제"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME5-Q25",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "원본 ES003의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME5-Q26",
+      "fields": [
+        "prompt"
+      ],
+      "reason": "원본 ES013의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "mock-exam",
+      "id": "ME5-Q28",
+      "fields": [
+        "visual"
+      ],
+      "reason": "원본 ES041의 힌트 제거·자료 교정을 반영; 변형 수치 유지"
+    },
+    {
+      "bank": "multiple-choice",
+      "id": "MC001",
+      "fields": [
+        "stem"
+      ],
+      "reason": "사례 옆에 적힌 정답 시간 범위의 영문 라벨 삭제"
+    },
+    {
+      "bank": "multiple-choice",
+      "id": "MC005",
+      "fields": [
+        "stem"
+      ],
+      "reason": "보기에서 평가하는 단계 순서를 지문에서 제거"
+    },
+    {
+      "bank": "multiple-choice",
+      "id": "MC021",
+      "fields": [
+        "stem",
+        "options",
+        "explanation",
+        "visual"
+      ],
+      "reason": "정답 보기의 기능 목록을 지문에서 그대로 베끼는 대신 설계 원리 해석을 평가"
+    },
+    {
+      "bank": "multiple-choice",
+      "id": "MC054",
+      "fields": [
+        "visual"
+      ],
+      "reason": "강의 슬라이드의 정답 문장·탐색 방식 라벨을 제거한 관계도 사용"
+    },
+    {
+      "bank": "multiple-choice",
+      "id": "MC059",
+      "fields": [
+        "stem"
+      ],
+      "reason": "나열된 비교 대상의 순서가 정답 순서와 일치하지 않도록 조정"
+    },
+    {
+      "bank": "multiple-choice",
+      "id": "MC095",
+      "fields": [
+        "visual"
+      ],
+      "reason": "풀이 결론·정보량 변환 공식을 자료 설명에서 제거"
+    },
+    {
+      "bank": "multiple-choice",
+      "id": "MC097",
+      "fields": [
+        "stem",
+        "visual"
+      ],
+      "reason": "Probe의 포함 여부를 미리 판정하지 않고 원자료에서 판단"
+    },
+    {
+      "bank": "multiple-choice",
+      "id": "MC118",
+      "fields": [
+        "options",
+        "visual"
+      ],
+      "reason": "풀이 결론·정보량 변환 공식을 자료 설명에서 제거"
+    },
+    {
+      "bank": "ox",
+      "id": "OX087",
+      "fields": [
+        "statement"
+      ],
+      "reason": "판정을 대신해 주는 정답 수치·단계 대응표 제거"
+    },
+    {
+      "bank": "ox",
+      "id": "OX097",
+      "fields": [
+        "statement"
+      ],
+      "reason": "판정을 대신해 주는 정답 수치·단계 대응표 제거"
+    },
+    {
+      "bank": "ox",
+      "id": "OX100",
+      "fields": [
+        "statement"
+      ],
+      "reason": "판정을 대신해 주는 정답 수치·단계 대응표 제거"
+    }
+  ]
+}

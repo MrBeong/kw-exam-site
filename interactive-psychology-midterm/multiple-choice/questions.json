@@ -7,7 +7,7 @@
       "OX004"
     ],
     "type": "single",
-    "stem": "제품 구매 전 광고(Previous Experience), 사용 중 조작(Present Experience), 사용 후 주변 사람과의 경험 공유(Future Experience)를 조사한다. UX의 시간적 범위와 맥락 요소를 가장 잘 반영한 조사 설계는?",
+    "stem": "쇼핑 앱의 UX 조사 범위를 정한다. 구매를 결정하기까지의 광고 경험, 실제 결제 과정, 사용 후 다른 사람과 경험을 나누는 상황을 고려할 때 가장 적절한 조사 설계는?",
     "options": [
       {
         "id": "o2",
@@ -162,7 +162,7 @@
       "OX009"
     ],
     "type": "single",
-    "stem": "UX의 역사적 발전 3단계(1960~1980년대 The Dark Ages → 1990년대 Proto UX → 2010년대 The UX Gold Rush)와 각 시기의 핵심 특징을 올바르게 연결한 것은?",
+    "stem": "교안의 UX 발전 단계를 오래된 시기부터 배열하고, 각 시기의 주된 관심사를 올바르게 연결한 것은?",
     "options": [
       {
         "id": "o1",
@@ -782,36 +782,37 @@
       "OX034"
     ],
     "type": "single",
-    "stem": "진공청소기 3종(모델 A: 연장관 무게 290 g·화살표 방향 표시·체결 완료 딸깍 소리 제공, 모델 B: 513 g, 모델 C: 545 g)의 브러시 장착 사용성을 비교한 평가 연구에서 A 모델이 가장 높은 평가를 받은 인간공학적 요인은?",
+    "stem": "세 청소기의 브러시 장착을 평가한 결과 A의 사용성 점수가 가장 높았다. 아래 설계 차이로 A의 평가 우위를 설명할 때 가장 타당한 해석은?",
     "options": [
       {
         "id": "o4",
-        "text": "513 g의 연장관, 화살표 제거, 사용 후 브랜드 충성도만 평가",
+        "text": "높은 평가 점수만으로 세 개선 요소 각각의 인과 효과가 분리되어 입증되므로 다른 조건을 고정한 추가 비교는 필요 없다.",
         "correct": false,
-        "explanation": "513 g은 A의 무게가 아니고 평가 목적도 브러시 장착 사용성이다."
+        "explanation": "여러 설계 요소가 함께 달라졌다. 개별 인과 효과를 분리하려면 다른 조건을 통제한 비교가 필요하다."
       },
       {
         "id": "o3",
-        "text": "290 g의 가벼운 연장관, 방향 표식 제거, 소리 피드백 제거",
+        "text": "연장관 질량 감소의 이점은 표시 의미를 문화마다 동일하게 만드는 데 있고, 화살표의 이점은 파지에 필요한 근력을 키우는 데 있다.",
         "correct": false,
-        "explanation": "무게는 맞지만 A의 시각 화살표와 청각 피드백을 빠뜨렸다."
+        "explanation": "질량 감소의 신체 부담 효과와 표식의 방향 판단 기능을 뒤바꾸었다. 문화 간 의미 일치가 자동으로 보장되지 않는다."
       },
       {
         "id": "o1",
-        "text": "290 g의 가벼운 연장관, 체결 방향 화살표, 체결 완료 소리 피드백",
+        "text": "가벼운 연장관은 조작 부담을, 방향 표식은 체결 방향의 불확실성을 줄일 수 있다. 완료 소리는 체결 상태 확인을 돕는다.",
         "correct": true,
-        "explanation": "A 모델의 가벼운 무게와 시각·청각 정보가 브러시 장착 사용성을 지원했다."
+        "explanation": "설계 특징을 신체 부담·방향 판단·완료 피드백의 기능으로 연결했다. 효과 크기를 각 요소별로 분리 추정한 결과는 아니다."
       },
       {
         "id": "o2",
-        "text": "545 g의 무거운 연장관, 방향 표식 제거, 체결 소리 제거",
+        "text": "완료 소리는 다음 동작을 기억하도록 하는 시연이며, 방향 표식은 제품 사용 후 브랜드 충성도를 측정하는 지표다.",
         "correct": false,
-        "explanation": "A의 특성과 반대이며 545 g은 다른 모델의 수치다."
+        "explanation": "소리는 체결 결과 피드백이고 방향 표식은 조작 방향을 안내한다. 시연이나 브랜드 충성도 측정과 혼동했다."
       }
     ],
     "source": "2장 교안 p.11",
-    "explanation": [],
-    "commonMistakes": []
+    "explanation": "관측된 설계 차이를 인간의 조작 부담·방향 판단·결과 피드백과 연결한다. 표에 있는 숫자를 그대로 고르는 문제가 아니며 묶음 비교로 개별 인과 효과를 확정하지 않는다.",
+    "commonMistakes": [],
+    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>브러시 장착 조건 · 모델별 설계 비교</figcaption><div class=\"table-scroll\"><table><thead><tr><th>모델</th><th>연장관 질량</th><th>체결 방향 표시</th><th>체결 완료 소리</th></tr></thead><tbody><tr><td>A</td><td>290 g</td><td>제공</td><td>제공</td></tr><tr><td>B</td><td>513 g</td><td>미제시</td><td>미제시</td></tr><tr><td>C</td><td>545 g</td><td>미제시</td><td>미제시</td></tr></tbody></table></div><p class=\"analysis-note\">미제시는 원자료에서 해당 기능이 별도로 설명되지 않았다는 뜻이다.</p></figure>"
   },
   {
     "id": "MC022",
@@ -2103,7 +2104,7 @@
     "source": "3장 교안 p.30–31 · 3장 교안 p.31",
     "explanation": [],
     "commonMistakes": [],
-    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>Sternberg 교안의 YES·NO 설명 도식 · p.31</figcaption><a href=\"../assets/question-data/information-processing-p31.png\" target=\"_blank\" rel=\"noopener\"><img src=\"../assets/question-data/information-processing-p31.png\" alt=\"Sternberg 교안의 YES·NO 설명 도식 · p.31\" loading=\"lazy\"></a><p class=\"analysis-note\">가로축 PSS는 기억집합 크기, 세로축 RT는 반응시간이다. 이 문항은 교안 도식의 설명을 해석한다. 모든 기억탐색 실험에서 같은 종료 방식이 입증된다는 뜻은 아니다.</p></figure>"
+    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>Sternberg 과제의 두 조건 · 교안 p.31 관계도 재구성</figcaption><svg viewBox=\"0 0 720 290\" role=\"img\" aria-label=\"PSS에 따른 YES와 NO 조건의 RT 관계도\"><line x1=\"85\" y1=\"235\" x2=\"610\" y2=\"235\" stroke=\"currentColor\"/><line x1=\"85\" y1=\"235\" x2=\"85\" y2=\"35\" stroke=\"currentColor\"/><text x=\"620\" y=\"241\">PSS</text><text x=\"30\" y=\"35\">RT</text><path d=\"M85 180 L505 75\" fill=\"none\" stroke=\"#37352f\" stroke-width=\"3\"/><path d=\"M85 225 L505 120\" fill=\"none\" stroke=\"#6b6b67\" stroke-width=\"3\"/><text x=\"520\" y=\"80\">NO</text><text x=\"520\" y=\"125\">YES</text></svg><p class=\"analysis-note\">교안의 두 조건 관계를 다시 그린 개념 도식이다. 실제 관측값이나 계수 추정용 수치 자료가 아니다.</p></figure>"
   },
   {
     "id": "MC055",
@@ -2273,7 +2274,7 @@
       "OX105"
     ],
     "type": "single",
-    "stem": "Hick의 법칙 \\(\\mathrm{RT} = a + bH\\)에서 절편 \\(a\\)에 영향을 주는 ① 감각 자극 양식(촉각·진동, 청각, 시각)의 빠른 순서, ② 반응 기관 양식(눈, 손, 발)의 빠른 순서, ③ 완전히 예상하지 못한 불시 사건의 반응시간 절편 \\(a\\) 예시 수치를 바르게 묶은 것은?",
+    "stem": "Hick 모형의 절편 \\(a\\)와 관련하여 ① 자극 양식 세 가지(시각·촉각/진동·청각)의 빠른 순서, ② 반응 기관 세 가지(발·눈·손)의 빠른 순서, ③ 완전히 예상하지 못한 사건의 교안상 절편 예시를 바르게 묶은 것은?",
     "options": [
       {
         "id": "o1",
@@ -3738,7 +3739,7 @@
     "stemPlain": "SRT·CRT의 대안 수 \\(N = 1\\),2,4를 bit로 변환해 회귀했다. \\(\\hat{y} = 424 + 78\\,H\\), \\(p = 0.16\\), \\(R^{2} \\approx 0.03\\)이면?",
     "explanation": [],
     "commonMistakes": [],
-    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>SRT·CRT 수업 실습 예시 · 등확률 대안과 회귀 요약</figcaption><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">항목</th><th scope=\"col\">제시자료</th></tr></thead><tbody><tr><td>등확률 대안 수 N</td><td>1, 2, 4</td></tr><tr><td>반응변수</td><td>Time (ms)</td></tr><tr><td>설명변수</td><td>\\(H=\\log_2 N\\) (bit)</td></tr><tr><td>추정식</td><td>\\(\\widehat{\\mathrm{Time}}=424+78H\\)</td></tr><tr><td>모형 p-value</td><td>0.16</td></tr><tr><td>Multiple R-squared</td><td>0.03</td></tr><tr><td>판정 유의수준 α</td><td>0.05</td></tr></tbody></table></div><p class=\"analysis-note\">실습 전사에 주어진 요약값이다. 아래 Sternberg 로그와는 별개의 분석이며, 원자료가 없는 이 회귀를 로그 4행에서 산출한 것으로 간주하지 않는다.</p></figure>"
+    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>SRT·CRT 수업 실습 예시 · 등확률 대안과 회귀 요약</figcaption><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">항목</th><th scope=\"col\">제시자료</th></tr></thead><tbody><tr><td>등확률 대안 수 N</td><td>1, 2, 4</td></tr><tr><td>반응변수</td><td>Time (ms)</td></tr><tr><td>설명변수</td><td>H (bit)</td></tr><tr><td>추정식</td><td>\\(\\widehat{\\mathrm{Time}}=424+78H\\)</td></tr><tr><td>모형 p-value</td><td>0.16</td></tr><tr><td>Multiple R-squared</td><td>0.03</td></tr><tr><td>판정 유의수준 α</td><td>0.05</td></tr></tbody></table></div><p class=\"analysis-note\">실습 전사에 주어진 요약값이다. 아래 Sternberg 로그와는 별개의 분석이며, 원자료가 없는 이 회귀를 로그 4행에서 산출한 것으로 간주하지 않는다.</p></figure>"
   },
   {
     "id": "MC096",
@@ -3787,7 +3788,7 @@
       "OX185"
     ],
     "type": "single",
-    "stem": "Probe가 기억집합에 없고 User Input=False, T/F=True인 시행이다. 분석 시 올바른 분류는?",
+    "stem": "제시된 Sternberg 로그 한 시행을 분석한다. 실제 자극 조건과 반응 정오를 함께 분류한 것으로 옳은 것은?",
     "options": [
       {
         "id": "o2",
@@ -3817,7 +3818,7 @@
     "source": "Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사",
     "explanation": [],
     "commonMistakes": [],
-    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>해석 대상 NO 응답 행 · 실제 로그</figcaption><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">Number Set</th><th scope=\"col\">Probe</th><th scope=\"col\">User Input</th><th scope=\"col\">T/F</th><th scope=\"col\">Time (ms)</th></tr></thead><tbody><tr><td>{1, 3, 4}</td><td>2</td><td>False</td><td>True</td><td>1201</td></tr></tbody></table></div></figure>"
+    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>해석 대상 시행 · 실제 로그</figcaption><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">Number Set</th><th scope=\"col\">Probe</th><th scope=\"col\">User Input</th><th scope=\"col\">T/F</th><th scope=\"col\">Time (ms)</th></tr></thead><tbody><tr><td>{1, 3, 4}</td><td>2</td><td>False</td><td>True</td><td>1201</td></tr></tbody></table></div></figure>"
   },
   {
     "id": "MC098",
@@ -4694,9 +4695,9 @@
       },
       {
         "id": "o2",
-        "text": "T/F=True는 Probe가 기억집합에 있다는 뜻이다.",
+        "text": "T/F=True인 행만 모아 한 회귀선을 적합하면 YES·NO 조건의 PSS–RT 기울기를 비교할 수 있다.",
         "correct": false,
-        "explanation": "T/F는 정오다. 집합에 없음을 정확히 응답한 NO도 True가 된다."
+        "explanation": "T/F는 정오이므로 YES·NO 조건을 구분하는 변수가 아니다. 실제 포함 여부로 조건을 나누고 집합크기에 변동이 있는 자료를 확보해야 두 기울기를 비교할 수 있다."
       },
       {
         "id": "o3",
@@ -4708,7 +4709,7 @@
     "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사 · Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사 · 실제 로그 10-17-12-44-53_num3.txt (Index 0,1,2,13)",
     "explanation": [],
     "commonMistakes": [],
-    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>SRT·CRT 수업 실습 예시 · 등확률 대안과 회귀 요약</figcaption><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">항목</th><th scope=\"col\">제시자료</th></tr></thead><tbody><tr><td>등확률 대안 수 N</td><td>1, 2, 4</td></tr><tr><td>반응변수</td><td>Time (ms)</td></tr><tr><td>설명변수</td><td>\\(H=\\log_2 N\\) (bit)</td></tr><tr><td>추정식</td><td>\\(\\widehat{\\mathrm{Time}}=424+78H\\)</td></tr><tr><td>모형 p-value</td><td>0.16</td></tr><tr><td>Multiple R-squared</td><td>0.03</td></tr><tr><td>판정 유의수준 α</td><td>0.05</td></tr></tbody></table></div><p class=\"analysis-note\">실습 전사에 주어진 요약값이다. 아래 Sternberg 로그와는 별개의 분석이며, 원자료가 없는 이 회귀를 로그 4행에서 산출한 것으로 간주하지 않는다.</p></figure><figure class=\"visual-box analysis-material\"><figcaption>Sternberg 실제 로그 발췌 · 열 판독에 필요한 4행</figcaption><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">Index</th><th scope=\"col\">Number Set</th><th scope=\"col\">Number (Probe)</th><th scope=\"col\">User Input</th><th scope=\"col\">T/F</th><th scope=\"col\">Time (ms)</th></tr></thead><tbody><tr><td>0</td><td>{2, 7, 5}</td><td>2</td><td>TimeOut</td><td>False</td><td>5000</td></tr><tr><td>1</td><td>{2, 6, 1}</td><td>2</td><td>True</td><td>True</td><td>1498</td></tr><tr><td>2</td><td>{1, 3, 4}</td><td>2</td><td>False</td><td>True</td><td>1201</td></tr><tr><td>13</td><td>{5, 3, 9}</td><td>3</td><td>False</td><td>False</td><td>812</td></tr></tbody></table></div><p class=\"analysis-note\">출처: 10-17-12-44-53_num3.txt. Number Set은 기억집합, Number는 검사 숫자, User Input은 포함 여부에 대한 응답, T/F는 응답의 정오다. TimeOut은 제한 내 응답 실패다. 원본 20행의 PSS는 모두 3이므로 PSS 기울기 추정에는 다른 집합크기의 자료가 추가로 필요하다.</p></figure>"
+    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>SRT·CRT 수업 실습 예시 · 등확률 대안과 회귀 요약</figcaption><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">항목</th><th scope=\"col\">제시자료</th></tr></thead><tbody><tr><td>등확률 대안 수 N</td><td>1, 2, 4</td></tr><tr><td>반응변수</td><td>Time (ms)</td></tr><tr><td>설명변수</td><td>H (bit)</td></tr><tr><td>추정식</td><td>\\(\\widehat{\\mathrm{Time}}=424+78H\\)</td></tr><tr><td>모형 p-value</td><td>0.16</td></tr><tr><td>Multiple R-squared</td><td>0.03</td></tr><tr><td>판정 유의수준 α</td><td>0.05</td></tr></tbody></table></div><p class=\"analysis-note\">실습 전사에 주어진 요약값이다. 아래 Sternberg 로그와는 별개의 분석이며, 원자료가 없는 이 회귀를 로그 4행에서 산출한 것으로 간주하지 않는다.</p></figure><figure class=\"visual-box analysis-material\"><figcaption>Sternberg 실제 로그 발췌 · 열 판독에 필요한 4행</figcaption><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">Index</th><th scope=\"col\">Number Set</th><th scope=\"col\">Number (Probe)</th><th scope=\"col\">User Input</th><th scope=\"col\">T/F</th><th scope=\"col\">Time (ms)</th></tr></thead><tbody><tr><td>0</td><td>{2, 7, 5}</td><td>2</td><td>TimeOut</td><td>False</td><td>5000</td></tr><tr><td>1</td><td>{2, 6, 1}</td><td>2</td><td>True</td><td>True</td><td>1498</td></tr><tr><td>2</td><td>{1, 3, 4}</td><td>2</td><td>False</td><td>True</td><td>1201</td></tr><tr><td>13</td><td>{5, 3, 9}</td><td>3</td><td>False</td><td>False</td><td>812</td></tr></tbody></table></div><p class=\"analysis-note\">출처: 10-17-12-44-53_num3.txt. Number Set은 기억집합, Number는 검사 숫자, User Input은 포함 여부에 대한 응답, T/F는 응답의 정오다. TimeOut은 제한 내 응답 실패다. 원본 로그는 20행이며 모두 같은 기억집합 길이로 수집했다.</p></figure>"
   },
   {
     "id": "MC119",

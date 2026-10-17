@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "checksPassed": 1466,
+  "failures": [],
+  "inventory": {
+    "written": 106,
+    "multiple-choice": 135,
+    "mock-exam": 160,
+    "ox": 188
+  }
+}
