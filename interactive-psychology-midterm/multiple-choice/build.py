@@ -57,13 +57,14 @@ def build():
     for chapter in dict.fromkeys(c["chapter"] for c in concepts):
         ch = Counter(q["type"] for q in questions if q["chapter"] == chapter)
         lines.append(f"| {chapter} | {ch['single']} | {ch['multi']} | {ch['case']} | {sum(ch.values())} |")
-    lines += ["", f"그림·표 문제 {sum('visual' in q for q in questions)}개. 135문항은 전수 훈련용 문제은행의 크기이며 실제 시험 문항 수의 추정치가 아니다.", "",
+    position_counts = Counter(i for q in questions if q["type"] in ["single", "case"] for i, option in enumerate(q["options"]) if option["correct"])
+    lines += ["", f"그림·표 문제 {sum('visual' in q for q in questions)}개. {len(questions)}문항은 전수 훈련용 문제은행의 크기이며 실제 시험 문항 수의 추정치가 아니다.", "",
               "## 변별력·보기 설계", "",
               "- 정의를 그대로 보여 준 뒤 확인하게 하지 않고 사례 분류, 개념 쌍 비교, 계산 연쇄, 출력 판독으로 묻는다.",
               "- 오답은 Equivocation/Noise·Deficiency/Contamination 치환, 로그 변환 누락, 분모·단위·부호 역전, 자유도 오류, p값·R² 과잉 해석에서 만든다.",
               "- 복수정답은 4개 보기 각각을 판단해야 한다. 일부 정답만 고르거나 오답 하나를 더 고르면 오답 처리한다.",
-              "- 528개 보기 모두에 정답 근거 또는 오답 원인과 바로잡은 설명을 수록했다.",
-              "- 단일·사례형의 정답 위치는 1~4번에 27·28·28·28개로 분산한다. 보기 ID를 유지해 재접속 후 저장 답안이 엇갈리지 않게 한다.",
+              f"- {sum(len(q['options']) for q in questions)}개 보기 모두에 정답 근거 또는 오답 원인과 바로잡은 설명을 수록했다.",
+              f"- 단일·사례형의 정답 위치는 1~4번에 {'·'.join(str(position_counts[i]) for i in range(4))}개로 분산한다. 보기 ID를 유지해 재접속 후 저장 답안이 엇갈리지 않게 한다.",
               "- 시각 자료는 스마트글래스 4조건, 혼동행렬 전체, 반대 라벨 매핑, Donders 세 과업, Fitts 두 표적, ANOVA·R 출력 등 문항의 모든 비교 조건을 묶어 제시한다.", "",
               "## 교안 표현의 적용 조건", "",
               "- Sternberg의 YES/self-terminating·NO/exhaustive는 교안 p.31의 설명 모형을 묻는 조건으로 한정했다.",
