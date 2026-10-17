@@ -1,11 +1,11 @@
 {
   "checks": [
-    "Written direct retry action initializes after application declarations",
+    "Written direct retry initializes with folded controls",
     "Direct retry starts fresh",
     "Leaving written wrong tab hides panel",
     "Leaving written wrong tab restores unfinished original",
     "Consumed retry action does not restart on reload",
-    "Wrong-only hub button excludes unsure-only records",
+    "Wrong-only retry excludes unsure-only records",
     "Mock subjective retry explicitly graded",
     "Changing mock rubric invalidates completed retry and assessment time",
     "Unconfirmed subjective retry restores original wrong status",
