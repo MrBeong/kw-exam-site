@@ -42,13 +42,13 @@ for b,qs in banks.items():
    import hashlib
    expected=json.loads((E/'final-audit/r-source-hashes.json').read_text())[q['id']]
    actual=hashlib.sha256(json.dumps({k:q[k] for k in ['codeTemplate','codeBlanks','modelCode']},ensure_ascii=False,sort_keys=True).encode()).hexdigest()
-   check(actual==expected,q['id']+' literal R source unchanged by math migration')
+   check(actual==expected,q['id']+' R source matches current version fixture')
 for n in range(1,6):
  qs=[q for q in banks['mock-exam'] if q['set']==n]
  check(len(qs)==32 and sum(q['points'] for q in qs)==100 and sum(q['minutes'] for q in qs)+10==120,'set '+str(n)+' blueprint 32/100/120')
  check({c['chapter'] for c in cs}<={q['chapter'] for q in qs},'set '+str(n)+' all seven chapters')
 terms=json.loads((E/'written/english-terms.json').read_text());termset={t['term'] for t in terms}
-check(len(termset)==60 and all(t['sources'] for t in terms),'60 lecture-sourced English terms')
+check(len(termset)==88 and all(t['sources'] for t in terms),'88 lecture-sourced English terms including detail recall')
 for b in ['written','mock-exam']:
  for q in banks[b]:check(set(q.get('englishTerms',[]))<=termset,q['id']+' English terms from lecture glossary')
 # Variant fixtures explicitly check grading metadata and all values changed from the source bank.
@@ -56,7 +56,7 @@ mock_by_id={q['id']:q for q in banks['mock-exam']}
 check('1.6 m' in mock_by_id['ME4-Q20']['rubric'][0]['criterion'] and '1.8' not in mock_by_id['ME4-Q20']['rubric'][0]['criterion'],'ME4-Q20 rubric agrees with 160 cm prompt')
 check('160' in mock_by_id['ME1-Q30']['explanation'][1] and '150' not in mock_by_id['ME1-Q30']['explanation'][1],'ME1-Q30 explanation agrees with mu160')
 q=mock_by_id['ME1-Q32'];rt=[float(v) for v in re.search(r'RT <- c\(([^)]+)\)',q['modelCode'])[1].split(',')];check(rt==[280,400,520] and '280' in q['answer'] and '120' in q['answer'] and rt[1]-rt[0]==120,'ME1-Q32 actual RT data produce a280 b120')
-q=mock_by_id['ME2-Q32'];check('40 + 120 * ID' in q['modelCode'] and '40' in q['prompt'] and '120' in q['prompt'] and '350.20' in q['answer'] and '455.13' in q['answer'],'ME2-Q32 coefficients agree with predicted MT and prompt')
+q=mock_by_id['ME2-Q32'];check('40 + 120 * ID' in q['modelCode'] and '40' in q['prompt'] and '120' in q['prompt'] and '280' in q['answer'] and '400' in q['answer'] and 'c(30, 70)' in q['modelCode'] and 'c(10, 10)' in q['modelCode'],'ME2-Q32 coefficients agree with predicted MT and prompt')
 check('4%' in mock_by_id['ME4-Q32']['answer'] and '4%' in mock_by_id['ME4-Q32']['rubric'][-1]['criterion'],'ME4-Q32 R squared and scoring agree at four percent')
 # Independent arithmetic; expected values are answer/lecture fixtures, not rendered strings.
 num=[]

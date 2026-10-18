@@ -1,0 +1,495 @@
+[
+  {
+    "id": "SA045",
+    "parentConcepts": [
+      "OX175"
+    ],
+    "source": "Regression_analysis.pdf p.24",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "2",
+      "dashed",
+      "3",
+      "dotted",
+      "1",
+      "solid"
+    ],
+    "previousGap": "실선 이외 선 종류 미출제"
+  },
+  {
+    "id": "SA046",
+    "parentConcepts": [
+      "OX175"
+    ],
+    "source": "Regression_analysis.pdf p.24",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "6",
+      "twodash",
+      "4",
+      "dotdash",
+      "5",
+      "longdash"
+    ],
+    "previousGap": "실선 이외 선 종류 미출제"
+  },
+  {
+    "id": "SA047",
+    "parentConcepts": [
+      "OX175"
+    ],
+    "source": "Regression_analysis.pdf p.24",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "0",
+      "blank"
+    ],
+    "previousGap": "실선 이외 선 종류 미출제"
+  },
+  {
+    "id": "SA048",
+    "parentConcepts": [
+      "OX174",
+      "OX175"
+    ],
+    "source": "Regression_analysis.pdf p.23–24",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "lty",
+      "col"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA049",
+    "parentConcepts": [
+      "OX142",
+      "OX143"
+    ],
+    "source": "R통계_설치.pdf p.12–16",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Script",
+      "Console",
+      "Environment"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA050",
+    "parentConcepts": [
+      "OX142"
+    ],
+    "source": "R통계_설치.pdf p.14",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Files",
+      "Plots",
+      "Packages",
+      "Help",
+      "Viewer"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA051",
+    "parentConcepts": [
+      "OX143",
+      "OX145"
+    ],
+    "source": "R통계_설치.pdf p.17–18",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "==",
+      "!=",
+      "<=",
+      ">="
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA052",
+    "parentConcepts": [
+      "OX143",
+      "OX145"
+    ],
+    "source": "R통계_설치.pdf p.17–18",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "!",
+      "|",
+      "&",
+      "TRUE",
+      "FALSE"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA053",
+    "parentConcepts": [
+      "OX143"
+    ],
+    "source": "R통계_설치.pdf p.19",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "<-",
+      "5",
+      "NULL"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA054",
+    "parentConcepts": [
+      "OX146",
+      "OX147",
+      "OX148"
+    ],
+    "source": "data_분석_t_test.pdf p.6–7",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "mean",
+      "median",
+      "var",
+      "sd"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA055",
+    "parentConcepts": [
+      "OX149",
+      "OX150"
+    ],
+    "source": "data_분석_t_test.pdf p.8–9",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "quantile",
+      "boxplot",
+      "summary",
+      "50%"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA056",
+    "parentConcepts": [
+      "OX176",
+      "OX177"
+    ],
+    "source": "Regression_analysis.pdf p.25",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Estimate",
+      "Std. Error",
+      "t value",
+      "Pr(>|t|)"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA057",
+    "parentConcepts": [
+      "OX176"
+    ],
+    "source": "Regression_analysis.pdf p.25",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Min",
+      "1Q",
+      "Median",
+      "3Q",
+      "Max"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA058",
+    "parentConcepts": [
+      "OX171",
+      "OX172"
+    ],
+    "source": "Regression_analysis.pdf p.18–19",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "1",
+      "n−2",
+      "n−1",
+      "SSR / 1",
+      "SSE / (n−2)",
+      "MSR / MSE"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA059",
+    "parentConcepts": [
+      "OX169",
+      "OX171"
+    ],
+    "source": "Regression_analysis.pdf p.17–18",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "\\(y_i-\\bar y\\)",
+      "\\(y_i-\\hat y_i\\)",
+      "\\(\\hat y_i-\\bar y\\)"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA060",
+    "parentConcepts": [
+      "OX166",
+      "OX167"
+    ],
+    "source": "Regression_analysis.pdf p.3–6",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "\\(r=\\mathrm{cov}(x,y)/(s_xs_y)\\)",
+      "\\(-1\\le r\\le1\\)",
+      "서로 반대 방향"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA061",
+    "parentConcepts": [
+      "OX026"
+    ],
+    "source": "2._HFE_Research_Methodology.pdf p.3",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Measurement",
+      "Analysis",
+      "Experiment",
+      "Design",
+      "Evaluation"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA062",
+    "parentConcepts": [
+      "OX039"
+    ],
+    "source": "2._HFE_Research_Methodology.pdf p.16",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "level of target",
+      "metric comprehensiveness"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA063",
+    "parentConcepts": [
+      "OX039",
+      "OX040"
+    ],
+    "source": "2._HFE_Research_Methodology.pdf p.16 · 연구방법론 전사2",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "System",
+      "Task",
+      "Human",
+      "Performance",
+      "Physical",
+      "Subjective"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA064",
+    "parentConcepts": [
+      "OX045"
+    ],
+    "source": "2._HFE_Research_Methodology.pdf p.20",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Objective / 객관적",
+      "Quantitative / 정량적",
+      "Unobtrusive / 비침해적",
+      "Easy to collect / 수집 용이",
+      "No special data collection techniques or instrumentation / 특별한 기법·장비 불필요",
+      "Cost as little as possible / 최소 비용"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA065",
+    "parentConcepts": [
+      "OX041",
+      "OX042"
+    ],
+    "source": "2._HFE_Research_Methodology.pdf p.17",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Representativity",
+      "Random sampling"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA066",
+    "parentConcepts": [
+      "OX059",
+      "OX061",
+      "OX062"
+    ],
+    "source": "3._Information_Processing_updated.pdf p.8–9",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "binary digit",
+      "Ralph Hartley",
+      "Claude Shannon"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA067",
+    "parentConcepts": [
+      "OX055",
+      "OX086",
+      "OX088"
+    ],
+    "source": "3._Information_Processing_updated.pdf p.6,21,25",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "20~30",
+      "7 ± 2",
+      "아니다. 과제·묶음·개인 등에 따라 달라지는 교안의 대표값이다."
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA068",
+    "parentConcepts": [
+      "OX130"
+    ],
+    "source": "3._Information_Processing_updated.pdf p.57",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Faster learning / 빠른 학습",
+      "Faster reaction time / 빠른 반응",
+      "Fewer errors / 오류 감소",
+      "Higher user satisfaction / 사용자 만족도 향상"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA069",
+    "parentConcepts": [
+      "OX101"
+    ],
+    "source": "3._Information_Processing_updated.pdf p.36 · data_분석_SRTCRTSterberg.pdf p.3",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "10~30 ms",
+      "90 ms",
+      "20 ms",
+      "30 ms"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA070",
+    "parentConcepts": [
+      "OX085",
+      "OX100"
+    ],
+    "source": "3._Information_Processing_updated.pdf p.20,36",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "2.8 bits/s",
+      "10 bits/s",
+      "50 bits/s"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA071",
+    "parentConcepts": [
+      "OX011"
+    ],
+    "source": "1_Introduction_2.pdf p.7",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Ergonomics",
+      "Human Factors 또는 HF Engineering",
+      "Human Engineering",
+      "Engineering Psychology 또는 Applied Psychology"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA072",
+    "parentConcepts": [
+      "OX006"
+    ],
+    "source": "1._Introduction_(1).pdf p.8",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Ergonomics",
+      "Engineering",
+      "Psychology",
+      "Sociology"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA073",
+    "parentConcepts": [
+      "OX169",
+      "OX170"
+    ],
+    "source": "Regression_analysis.pdf p.12–16",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "절편",
+      "기울기",
+      "0",
+      "\\(\\sigma^2\\)",
+      "\\(\\sum_i(y_i-b_0-b_1x_i)^2\\) 또는 SSE"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA074",
+    "parentConcepts": [
+      "OX041",
+      "OX042"
+    ],
+    "source": "2._HFE_Research_Methodology.pdf p.17",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "30",
+      "50%",
+      "25%",
+      "5%"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  },
+  {
+    "id": "SA075",
+    "parentConcepts": [
+      "OX054",
+      "OX055",
+      "OX056",
+      "OX057",
+      "OX077"
+    ],
+    "source": "3._Information_Processing_updated.pdf p.6",
+    "mode": "직접 빈칸 인출",
+    "items": [
+      "Short-term sensory store",
+      "Perception",
+      "Decision & response selection",
+      "Response execution",
+      "Working memory",
+      "Long-Term memory",
+      "Attention resources",
+      "Feedback"
+    ],
+    "previousGap": "세부 표·코드 옵션의 직접 인출 보완"
+  }
+]

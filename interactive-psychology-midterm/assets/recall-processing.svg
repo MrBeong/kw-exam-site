@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 350" role="img" aria-label="정보처리 모형의 여덟 빈칸">
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#555"/></marker></defs>
+<style>text{font-family:sans-serif;font-size:16px;fill:#292822;text-anchor:middle}.node{fill:#fafaf8;stroke:#777;stroke-width:1.5}.arr{fill:none;stroke:#666;stroke-width:1.5;marker-end:url(#arrow)}.memory{fill:none;stroke:#aaa;stroke-dasharray:5 5}</style>
+<path class="arr" d="M15 132H58M168 132H190M300 132H322M432 132H454M564 132H608"/>
+<text x="37" y="110">Stimuli</text><text x="585" y="110" font-size="12">Responses</text>
+<rect class="node" x="58" y="106" width="110" height="52" rx="5"/><text x="113" y="138">(1)</text>
+<rect class="node" x="190" y="106" width="110" height="52" rx="5"/><text x="245" y="138">(2)</text>
+<rect class="node" x="322" y="106" width="110" height="52" rx="5"/><text x="377" y="138">(3)</text>
+<rect class="node" x="454" y="106" width="110" height="52" rx="5"/><text x="509" y="138">(4)</text>
+<rect class="node" x="315" y="16" width="124" height="44" rx="22"/><text x="377" y="44">(7)</text>
+<path class="arr" d="M346 60L245 105M377 60V103M409 60L509 104"/>
+<rect class="memory" x="163" y="200" width="315" height="95" rx="8"/>
+<rect class="node" x="339" y="220" width="120" height="48" rx="5"/><text x="399" y="251">(5)</text>
+<rect class="node" x="179" y="220" width="120" height="48" rx="5"/><text x="239" y="251">(6)</text>
+<path class="arr" d="M299 237H337M339 256H302M377 159V217M399 220V184H245V160"/>
+<path class="arr" d="M565 146H600V327H20V154H55"/>
+<rect class="node" x="269" y="307" width="100" height="36" rx="4"/><text x="319" y="332">(8)</text>
+</svg>

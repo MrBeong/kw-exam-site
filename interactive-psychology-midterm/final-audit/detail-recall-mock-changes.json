@@ -1,0 +1,565 @@
+[
+  {
+    "id": "ME1-Q24",
+    "before": {
+      "id": "ME1-Q24",
+      "type": "short",
+      "chapter": "기초통계·T검정",
+      "conceptIds": [
+        "OX151",
+        "OX152",
+        "OX153"
+      ],
+      "prompt": "한 집단과 기준값 비교, 서로 다른 독립 집단 비교, 같은 대상 전후 비교에 맞는 t-검정 명칭을 쓰시오. 이 문항은 한글 명칭을 인정한다.",
+      "answer": "단일표본 t-검정 / 독립표본 t-검정 / 대응표본 t-검정",
+      "explanation": [
+        "검정 선택의 기준은 영어 암기가 아니라 표본의 개수·독립성·짝 구조다."
+      ],
+      "rubric": [
+        {
+          "points": 0.75,
+          "criterion": "단일표본"
+        },
+        {
+          "points": 0.75,
+          "criterion": "독립표본"
+        },
+        {
+          "points": 0.5,
+          "criterion": "대응표본"
+        }
+      ],
+      "commonMistakes": [
+        "같은 대상 전후 자료를 독립 집단으로 처리하지 않는다."
+      ],
+      "englishTerms": [],
+      "language": "한글·수식·수치·단위로 작성.",
+      "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+      "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21",
+      "calc": false,
+      "points": 2,
+      "originId": "SA036",
+      "set": 1,
+      "number": 24,
+      "minutes": 2,
+      "variant": false
+    },
+    "after": {
+      "id": "ME1-Q24",
+      "type": "short",
+      "chapter": "회귀·실험실습",
+      "conceptIds": [
+        "OX175"
+      ],
+      "prompt": "그림의 (가)·(나)·(다)에 대응하는 R lty 숫자 코드를 차례대로 빈칸 (1)~(3)에 쓰시오. 문자열 이름은 요구하지 않는다.",
+      "answer": "(1) 2 / (2) 3 / (3) 1",
+      "explanation": [
+        "lty는 선의 종류를 지정한다. (가)는 일정 길이의 파선, (나)는 점선, (다)는 실선이다.",
+        "숫자 2·3·1은 각각 문자열 \"dashed\"·\"dotted\"·\"solid\"와 대응한다. col은 색이며 이 분류를 바꾸지 않는다."
+      ],
+      "rubric": [
+        {
+          "points": 0.5,
+          "criterion": "(1) 2"
+        },
+        {
+          "points": 0.5,
+          "criterion": "(2) 3"
+        },
+        {
+          "points": 1,
+          "criterion": "(3) 1"
+        }
+      ],
+      "commonMistakes": [
+        "점선 dotted와 파선 dashed를 뒤바꾸거나 굵기를 정하는 인자로 설명하지 않는다."
+      ],
+      "englishTerms": [],
+      "language": "교안의 R 이름·코드·출력 항목은 원래 표기로, 설명은 한글로 쓴다.",
+      "accepted": "의미가 같은 한글 설명을 인정한다. R 문자열의 따옴표는 이름 자체를 묻는 답안에서는 생략해도 되며, 코드 조각에서는 필요한 따옴표·대소문자를 지킨다.",
+      "source": "Regression_analysis.pdf p.24",
+      "calc": false,
+      "points": 2,
+      "promptPlain": "그림의 (가)·(나)·(다)에 대응하는 R lty 숫자 코드를 차례대로 빈칸 (1)~(3)에 쓰시오. 문자열 이름은 요구하지 않는다.",
+      "recallBlanks": [
+        {
+          "id": "1",
+          "label": "(가) 숫자 코드"
+        },
+        {
+          "id": "2",
+          "label": "(나) 숫자 코드"
+        },
+        {
+          "id": "3",
+          "label": "(다) 숫자 코드"
+        }
+      ],
+      "recallAnswers": [
+        "2",
+        "3",
+        "1"
+      ],
+      "detailRevision": "recall-details-2026-10-18",
+      "visual": "<figure class=\"analysis-material\"><figcaption>(가)·(나)·(다)의 선 종류 — 동일한 색과 굵기</figcaption><img src=\"../assets/recall-lines-a.svg\" alt=\"(가)·(나)·(다)의 선 종류 — 동일한 색과 굵기\" style=\"width:100%;max-width:660px;height:auto\"></figure>",
+      "originId": "SA045",
+      "set": 1,
+      "number": 24,
+      "minutes": 2,
+      "variant": true
+    }
+  },
+  {
+    "id": "ME2-Q24",
+    "before": {
+      "id": "ME2-Q24",
+      "type": "short",
+      "chapter": "회귀·실험실습",
+      "conceptIds": [
+        "OX169",
+        "OX170"
+      ],
+      "prompt": "절편을 포함한 단순선형회귀에서 \\(\\bar{x}=2\\), \\(\\bar{y}=5\\), \\(S_{xx}=2\\), \\(S_{xy}=4\\)다. 최소제곱법으로 기울기와 절편을 구하고, \\(x=4\\)일 때의 예측값을 계산하시오.",
+      "answer": "\\(b_1 = 2\\), \\(b_0 = 1\\), \\(\\hat{y}\\left(4\\right) = 9\\)",
+      "explanation": [
+        "\\(b_1 = \\frac{S_{xy}}{S_{xx}} = 2\\), \\(b_0 = 5 - 2 \\times 2 = 1\\)이다. 예측값은 \\(1 + 2 \\times 4\\)다."
+      ],
+      "rubric": [
+        {
+          "points": 0.75,
+          "criterion": "기울기 2"
+        },
+        {
+          "points": 0.75,
+          "criterion": "절편 1"
+        },
+        {
+          "points": 0.5,
+          "criterion": "예측값 9"
+        }
+      ],
+      "commonMistakes": [
+        "\\(\\frac{S_{xx}}{S_{xy}}\\)로 뒤집거나 평균 y를 절편으로 그대로 쓰지 않는다."
+      ],
+      "englishTerms": [],
+      "language": "한글·수식·수치·단위로 작성.",
+      "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+      "source": "회귀 교안 p.15 · 회귀 교안 p.14–16",
+      "calc": true,
+      "points": 2,
+      "originId": "SA038",
+      "set": 2,
+      "number": 24,
+      "minutes": 2,
+      "variant": false,
+      "promptPlain": "절편을 포함한 단순선형회귀에서 \\bar{x}=2, \\bar{y}=5, S_{xx}=2, S_{xy}=4다. 최소제곱법으로 기울기와 절편을 구하고, x=4일 때의 예측값을 계산하시오."
+    },
+    "after": {
+      "id": "ME2-Q24",
+      "type": "short",
+      "chapter": "HFE 연구방법론",
+      "conceptIds": [
+        "OX045"
+      ],
+      "prompt": "두 측정 설계가 겨냥한 실무 요건을 쓰시오. (1) 누가 평가하든 동일한 판정 규칙을 적용한다. (2) 수행 결과를 오류 횟수로 기록한다. 교안 표현 또는 같은 뜻의 한글을 인정한다.",
+      "answer": "(1) Objective / 객관적 / (2) Quantitative / 정량적",
+      "explanation": [
+        "여섯 실무 요건은 자료 수집의 실행 가능성과 과업 방해를 점검하는 기준이다. 신뢰도·타당도는 별도로 확인한다.",
+        "수치 척도를 쓴다는 사실만으로 측정의 정확성·신뢰성이 보장되지는 않는다."
+      ],
+      "rubric": [
+        {
+          "points": 1,
+          "criterion": "(1) Objective / 객관적"
+        },
+        {
+          "points": 1,
+          "criterion": "(2) Quantitative / 정량적"
+        }
+      ],
+      "commonMistakes": [
+        "비용이나 편의 요건을 만족했다는 이유로 신뢰도·타당도를 생략하지 않는다."
+      ],
+      "englishTerms": [],
+      "language": "한글 의미를 인정한다. 교안 표현을 쓰는 경우 원래 영어로 쓴다.",
+      "accepted": "의미가 같은 한글 설명을 인정한다. R 문자열의 따옴표는 이름 자체를 묻는 답안에서는 생략해도 되며, 코드 조각에서는 필요한 따옴표·대소문자를 지킨다.",
+      "source": "2._HFE_Research_Methodology.pdf p.20",
+      "calc": false,
+      "points": 2,
+      "promptPlain": "두 측정 설계가 겨냥한 실무 요건을 쓰시오. (1) 누가 평가하든 동일한 판정 규칙을 적용한다. (2) 수행 결과를 오류 횟수로 기록한다. 교안 표현 또는 같은 뜻의 한글을 인정한다.",
+      "recallBlanks": [
+        {
+          "id": "1",
+          "label": "빈칸 (1)"
+        },
+        {
+          "id": "2",
+          "label": "빈칸 (2)"
+        }
+      ],
+      "recallAnswers": [
+        "Objective / 객관적",
+        "Quantitative / 정량적"
+      ],
+      "detailRevision": "recall-details-2026-10-18",
+      "originId": "SA064",
+      "set": 2,
+      "number": 24,
+      "minutes": 2,
+      "variant": true
+    }
+  },
+  {
+    "id": "ME3-Q24",
+    "before": {
+      "id": "ME3-Q24",
+      "type": "short",
+      "chapter": "회귀·실험실습",
+      "conceptIds": [
+        "OX171",
+        "OX172",
+        "OX173"
+      ],
+      "prompt": "절편 포함 단순 OLS에서 \\(n = 10\\), \\(\\mathrm{SST} = 80\\), \\(\\mathrm{SSE} = 20\\)이다. SSR·잔차 자유도·\\(R^2\\)를 구하시오.",
+      "answer": "\\(\\mathrm{SSR} = 60\\) / 잔차 자유도=8 / \\(R^{2} = 0.75\\)",
+      "explanation": [
+        "\\(\\mathrm{SSR} = \\mathrm{SST} - \\mathrm{SSE} = 60\\), 잔차 자유도=\\(n - 2 = 8\\), \\(R^{2} = \\frac{\\mathrm{SSR}}{\\mathrm{SST}} = \\frac{60}{80} = 0.75\\)다. \\(\\frac{\\mathrm{SSE}}{\\mathrm{SST}} = 0.25\\)는 미설명 비율이다."
+      ],
+      "rubric": [
+        {
+          "points": 0.5,
+          "criterion": "\\(\\mathrm{SSR} = 60\\)"
+        },
+        {
+          "points": 0.5,
+          "criterion": "잔차 자유도 8"
+        },
+        {
+          "points": 1.0,
+          "criterion": "\\(R^{2} = 0.75\\)"
+        }
+      ],
+      "commonMistakes": [
+        "F를 \\(\\frac{\\mathrm{SSR}}{\\mathrm{SSE}} = \\frac{70}{30}\\)으로 계산하지 않는다."
+      ],
+      "englishTerms": [],
+      "language": "한글·수식·수치·단위로 작성.",
+      "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+      "source": "회귀 교안 p.17–18 · 회귀 교안 p.19 · 회귀 교안 p.20",
+      "calc": true,
+      "points": 2,
+      "originId": "SA039",
+      "set": 3,
+      "number": 24,
+      "minutes": 2,
+      "variant": true,
+      "promptPlain": "절편 포함 단순 OLS에서 n=10, SST=80, SSE=20이다. SSR·잔차 자유도·R²를 구하시오."
+    },
+    "after": {
+      "id": "ME3-Q24",
+      "type": "short",
+      "chapter": "기초통계·T검정",
+      "conceptIds": [
+        "OX143",
+        "OX145"
+      ],
+      "prompt": "R에서 (1) 논리값의 부정, (2) 원소별 OR, (3) 원소별 AND를 나타내는 연산자를 쓰시오.",
+      "answer": "(1) ! / (2) | / (3) &",
+      "explanation": [
+        "!는 부정, |는 원소별 논리합, &는 원소별 논리곱이다. TRUE | FALSE는 TRUE, TRUE & FALSE는 FALSE다.",
+        "이 문항은 벡터의 원소별 연산을 물으므로 단락 평가용 ||·&&와 구별한다."
+      ],
+      "rubric": [
+        {
+          "points": 0.5,
+          "criterion": "(1) !"
+        },
+        {
+          "points": 0.5,
+          "criterion": "(2) |"
+        },
+        {
+          "points": 1,
+          "criterion": "(3) &"
+        }
+      ],
+      "commonMistakes": [
+        "R 논리 상수를 True·False처럼 쓰지 않는다."
+      ],
+      "englishTerms": [],
+      "language": "교안의 R 이름·코드·출력 항목은 원래 표기로, 설명은 한글로 쓴다.",
+      "accepted": "의미가 같은 한글 설명을 인정한다. R 문자열의 따옴표는 이름 자체를 묻는 답안에서는 생략해도 되며, 코드 조각에서는 필요한 따옴표·대소문자를 지킨다.",
+      "source": "R통계_설치.pdf p.17–18",
+      "calc": false,
+      "points": 2,
+      "promptPlain": "R에서 (1) 논리값의 부정, (2) 원소별 OR, (3) 원소별 AND를 나타내는 연산자를 쓰시오.",
+      "recallBlanks": [
+        {
+          "id": "1",
+          "label": "빈칸 (1)"
+        },
+        {
+          "id": "2",
+          "label": "빈칸 (2)"
+        },
+        {
+          "id": "3",
+          "label": "빈칸 (3)"
+        }
+      ],
+      "recallAnswers": [
+        "!",
+        "|",
+        "&"
+      ],
+      "detailRevision": "recall-details-2026-10-18",
+      "originId": "SA052",
+      "set": 3,
+      "number": 24,
+      "minutes": 2,
+      "variant": true
+    }
+  },
+  {
+    "id": "ME4-Q24",
+    "before": {
+      "id": "ME4-Q24",
+      "type": "short",
+      "chapter": "회귀·실험실습",
+      "conceptIds": [
+        "OX181",
+        "OX182"
+      ],
+      "prompt": "등확률 대안 \\(N = 1\\)·2·4의 H(bit)를 쓰고, 회귀 \\(p = 0.16\\)·\\(R^{2} = 0.03\\)을 \\(\\alpha = 0.05\\)에서 한 문장으로 판독하시오.",
+      "answer": "\\(H = 0\\)·1·2; 모형은 유의하지 않으며 표본 내 설명력은 약 3%다.",
+      "explanation": [
+        "\\(\\log_2 N\\)으로 변환한다. 양의 기울기 추정치만으로 유의성을 선언할 수 없다."
+      ],
+      "rubric": [
+        {
+          "points": 0.75,
+          "criterion": "0·1·2 bits"
+        },
+        {
+          "points": 0.75,
+          "criterion": "비유의 결론"
+        },
+        {
+          "points": 0.5,
+          "criterion": "설명력 약 3%"
+        }
+      ],
+      "commonMistakes": [
+        "p값을 설명력 16%나 모형이 참일 확률로 읽지 않는다."
+      ],
+      "englishTerms": [],
+      "language": "한글·수식·수치·단위로 작성.",
+      "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+      "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사",
+      "calc": true,
+      "points": 2,
+      "originId": "SA041",
+      "set": 4,
+      "number": 24,
+      "minutes": 2,
+      "variant": false,
+      "promptPlain": "등확률 대안 N=1·2·4의 H(bit)를 쓰고, 회귀 p=0.16·R²=0.03을 α=0.05에서 한 문장으로 판독하시오.",
+      "visual": "<figure class=\"visual-box analysis-material\"><figcaption>SRT·CRT 수업 실습 예시 · 등확률 대안과 회귀 요약</figcaption><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">항목</th><th scope=\"col\">제시자료</th></tr></thead><tbody><tr><td>등확률 대안 수 N</td><td>1, 2, 4</td></tr><tr><td>반응변수</td><td>Time (ms)</td></tr><tr><td>설명변수</td><td>H (bit)</td></tr><tr><td>추정식</td><td>\\(\\widehat{\\mathrm{Time}}=424+78H\\)</td></tr><tr><td>모형 p-value</td><td>0.16</td></tr><tr><td>Multiple R-squared</td><td>0.03</td></tr><tr><td>판정 유의수준 α</td><td>0.05</td></tr></tbody></table></div><p class=\"analysis-note\">실습 전사에 주어진 요약값이다. 아래 Sternberg 로그와는 별개의 분석이며, 원자료가 없는 이 회귀를 로그 4행에서 산출한 것으로 간주하지 않는다.</p></figure>"
+    },
+    "after": {
+      "id": "ME4-Q24",
+      "type": "short",
+      "chapter": "회귀·실험실습",
+      "conceptIds": [
+        "OX176",
+        "OX177"
+      ],
+      "prompt": "summary(lm(...)) 계수 표에서 설명에 해당하는 출력 항목명을 쓰시오. (1) 회귀계수 추정값, (2) 그 추정값의 표준오차, (3) 계수가 0이라는 귀무가설에 대한 t 통계량, (4) 그 양측 검정 p값.",
+      "answer": "(1) Estimate / (2) Std. Error / (3) t value / (4) Pr(>|t|)",
+      "explanation": [
+        "Estimate는 계수 추정치이고 Std. Error는 그 추정치의 불확실성이다. t value는 계수 추정치/표준오차이며, Pr(>|t|)는 계수별 양측 검정 p값이다.",
+        "잔차 산포인 Residual standard error와 개별 계수의 Std. Error는 다르다. 모형 전체 p값은 F-statistic 행에서 확인한다."
+      ],
+      "rubric": [
+        {
+          "points": 0.5,
+          "criterion": "(1) Estimate"
+        },
+        {
+          "points": 0.5,
+          "criterion": "(2) Std. Error"
+        },
+        {
+          "points": 0.5,
+          "criterion": "(3) t value"
+        },
+        {
+          "points": 0.5,
+          "criterion": "(4) Pr(>|t|)"
+        }
+      ],
+      "commonMistakes": [
+        "Std. Error를 원자료의 표준편차나 잔차 표준오차와 동일시하지 않는다."
+      ],
+      "englishTerms": [],
+      "language": "교안의 R 이름·코드·출력 항목은 원래 표기로, 설명은 한글로 쓴다.",
+      "accepted": "의미가 같은 한글 설명을 인정한다. R 문자열의 따옴표는 이름 자체를 묻는 답안에서는 생략해도 되며, 코드 조각에서는 필요한 따옴표·대소문자를 지킨다.",
+      "source": "Regression_analysis.pdf p.25",
+      "calc": false,
+      "points": 2,
+      "promptPlain": "summary(lm(...)) 계수 표에서 설명에 해당하는 출력 항목명을 쓰시오. (1) 회귀계수 추정값, (2) 그 추정값의 표준오차, (3) 계수가 0이라는 귀무가설에 대한 t 통계량, (4) 그 양측 검정 p값.",
+      "recallBlanks": [
+        {
+          "id": "1",
+          "label": "빈칸 (1)"
+        },
+        {
+          "id": "2",
+          "label": "빈칸 (2)"
+        },
+        {
+          "id": "3",
+          "label": "빈칸 (3)"
+        },
+        {
+          "id": "4",
+          "label": "빈칸 (4)"
+        }
+      ],
+      "recallAnswers": [
+        "Estimate",
+        "Std. Error",
+        "t value",
+        "Pr(>|t|)"
+      ],
+      "detailRevision": "recall-details-2026-10-18",
+      "originId": "SA056",
+      "set": 4,
+      "number": 24,
+      "minutes": 2,
+      "variant": true
+    }
+  },
+  {
+    "id": "ME5-Q24",
+    "before": {
+      "id": "ME5-Q24",
+      "type": "short",
+      "chapter": "회귀·실험실습",
+      "conceptIds": [
+        "OX183",
+        "OX184",
+        "OX185"
+      ],
+      "prompt": "집합 {2,5,8}, Probe=4, User Input=False, T/F=True, Time=620 ms다. YES/NO 조건·정오·PSS를 적으시오. TimeOut의 Time=5000도 초로 바꾸시오.",
+      "answer": "NO / 정답 / \\(\\mathrm{PSS} = 3\\) / TimeOut 제한시간 기록 5초",
+      "explanation": [
+        "Probe는 집합에 없고 없다고 정확히 답했다. T/F는 정오이지 집합 포함 여부가 아니다. 타임아웃은 정상 RT와 구별한다."
+      ],
+      "rubric": [
+        {
+          "points": 0.5,
+          "criterion": "NO"
+        },
+        {
+          "points": 0.5,
+          "criterion": "정답"
+        },
+        {
+          "points": 0.5,
+          "criterion": "\\(\\mathrm{PSS} = 3\\)"
+        },
+        {
+          "points": 0.5,
+          "criterion": "5초이며 타임아웃 구분"
+        }
+      ],
+      "commonMistakes": [
+        "True를 모두 YES로 분류하지 않는다."
+      ],
+      "englishTerms": [],
+      "language": "한글·수식·수치·단위로 작성.",
+      "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+      "source": "Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사",
+      "calc": false,
+      "points": 2,
+      "visual": "<figure class=\"visual-box\"><figcaption>Sternberg 로그 두 시행 — Time 단위 ms</figcaption><div class=\"table-scroll\"><table><thead><tr><th>집합</th><th>Probe</th><th>User Input</th><th>T/F</th><th>Time</th></tr></thead><tbody><tr><td>2,5,8</td><td>4</td><td>False</td><td>True</td><td>620</td></tr><tr><td>2,5,8</td><td>7</td><td>TimeOut</td><td>False</td><td>5000</td></tr></tbody></table></div></figure>",
+      "originId": "SA042",
+      "set": 5,
+      "number": 24,
+      "minutes": 2,
+      "variant": false
+    },
+    "after": {
+      "id": "ME5-Q24",
+      "type": "short",
+      "chapter": "기초통계·T검정",
+      "conceptIds": [
+        "OX142"
+      ],
+      "prompt": "RStudio 보조 영역의 탭 이름을 쓰시오. (1) 작업 폴더 파일 탐색, (2) 그래프 표시, (3) 패키지 목록·설치, (4) 도움말.",
+      "answer": "(1) Files / (2) Plots / (3) Packages / (4) Help",
+      "explanation": [
+        "교안 p.14의 탭은 Files·Plots·Packages·Help·Viewer다. 전체 보조 영역을 Files 창이라고 부르는 설명과 그 안의 개별 탭을 구분한다."
+      ],
+      "rubric": [
+        {
+          "points": 0.5,
+          "criterion": "(1) Files"
+        },
+        {
+          "points": 0.5,
+          "criterion": "(2) Plots"
+        },
+        {
+          "points": 0.5,
+          "criterion": "(3) Packages"
+        },
+        {
+          "points": 0.5,
+          "criterion": "(4) Help"
+        }
+      ],
+      "commonMistakes": [
+        "그래프가 표시되는 Plots와 명령의 텍스트 결과를 표시하는 Console을 바꾸지 않는다."
+      ],
+      "englishTerms": [],
+      "language": "교안의 R 이름·코드·출력 항목은 원래 표기로, 설명은 한글로 쓴다.",
+      "accepted": "의미가 같은 한글 설명을 인정한다. R 문자열의 따옴표는 이름 자체를 묻는 답안에서는 생략해도 되며, 코드 조각에서는 필요한 따옴표·대소문자를 지킨다.",
+      "source": "R통계_설치.pdf p.14",
+      "calc": false,
+      "points": 2,
+      "promptPlain": "RStudio 보조 영역의 탭 이름을 쓰시오. (1) 작업 폴더 파일 탐색, (2) 그래프 표시, (3) 패키지 목록·설치, (4) 도움말.",
+      "recallBlanks": [
+        {
+          "id": "1",
+          "label": "빈칸 (1)"
+        },
+        {
+          "id": "2",
+          "label": "빈칸 (2)"
+        },
+        {
+          "id": "3",
+          "label": "빈칸 (3)"
+        },
+        {
+          "id": "4",
+          "label": "빈칸 (4)"
+        }
+      ],
+      "recallAnswers": [
+        "Files",
+        "Plots",
+        "Packages",
+        "Help"
+      ],
+      "detailRevision": "recall-details-2026-10-18",
+      "originId": "SA050",
+      "set": 5,
+      "number": 24,
+      "minutes": 2,
+      "variant": true
+    }
+  }
+]

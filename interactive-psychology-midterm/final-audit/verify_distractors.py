@@ -11,6 +11,8 @@ A = E / 'final-audit'
 B = {b: json.loads((E / b / 'questions.json').read_text()) for b in ['multiple-choice', 'mock-exam']}
 baseline = json.loads((A / 'distractor-baseline.json').read_text())
 delta = json.loads((A / 'distractor-changes.json').read_text())
+revisions = json.loads((A / 'handcalc-compatibility.json').read_text()) if (A / 'handcalc-compatibility.json').exists() else {}
+detail_revisions = {t['id']: t for t in json.loads((A/'detail-recall-mock-changes.json').read_text())}
 checks, failures, length_flags = [], [], []
 
 def check(ok, label):
@@ -26,6 +28,12 @@ for bank, qs in B.items():
     check([q['id'] for q in qs] == [q['id'] for q in baseline[bank]], bank + ' stable question inventory/order')
     for q, before in zip(qs, baseline[bank]):
         for key, value in before.items():
+            if q.get('questionRevision') == 'hand-calc-2026-10-18' and q['id'] in revisions:
+                value = revisions[q['id']]['after'].get(key)
+                if key in ['options', 'statements']:
+                    value = [{'id': o['id'], 'correct': o['correct']} for o in value]
+            if q.get('detailRevision') and q['id'] in detail_revisions:
+                value = detail_revisions[q['id']]['after'].get(key)
             actual = q.get(key)
             if key in ['options', 'statements']:
                 actual = [{'id': o['id'], 'correct': o['correct']} for o in actual]

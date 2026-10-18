@@ -164,12 +164,9 @@ status <- tryCatch({
       metrics <- list(bit = e$bit, coefficients = coef(e$model))
     },
     RC018 = {
-      expected <- if (q$id == "ME2-Q32") c(350.20, 455.13) else c(398.29, 568.91)
-      near(round(e$MT, 2), expected, "both Fitts MT values rounded to requested hundredths")
-      if (q$id == "ME2-Q32") {
-        approx <- 40 + 120 * c(2.5850, 3.4594)
-        metrics$providedLogApproximation <- round(approx, 2)
-      }
+      expected <- if (q$id == "ME2-Q32") c(280, 400) else c(350, 500)
+      near(e$MT, expected, "both exact Fitts MT values match hand-solvable data")
+      near(e$ID, c(2, 3), "Fitts log arguments are powers of two")
       metrics <- c(metrics, list(ID = e$ID, MT = e$MT, roundedMT = round(e$MT, 2)))
     },
     RC019 = {

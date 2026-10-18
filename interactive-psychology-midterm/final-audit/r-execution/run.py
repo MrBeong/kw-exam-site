@@ -48,7 +48,9 @@ for bank in ['written','mock-exam']:
   actual.update(bank=bank,blanks=len(q['codeBlanks']),codeSha256=hashlib.sha256(filled.encode()).hexdigest(),setupSha256=hashlib.sha256(q.get('codeSetup','').encode()).hexdigest(),returnCode=run.returncode)
   result.append(actual);blanks+=len(q['codeBlanks'])
   print(q['id'],actual['status'],actual.get('metrics',{}).get('error',''))
-summary={'date':'2026-10-17','Rscript':runtime,'questions':len(result),'blanks':blanks,'passed':sum(r['status']=='pass' for r in result),'checks':sum(len(r.get('checks',[])) for r in result),'workbookSha256':hashlib.sha256(book.read_bytes()).hexdigest(),'results':result}
+from datetime import datetime
+from zoneinfo import ZoneInfo
+summary={'date':datetime.now(ZoneInfo('Asia/Seoul')).date().isoformat(),'Rscript':runtime,'questions':len(result),'blanks':blanks,'passed':sum(r['status']=='pass' for r in result),'checks':sum(len(r.get('checks',[])) for r in result),'workbookSha256':hashlib.sha256(book.read_bytes()).hexdigest(),'results':result}
 (B/'results.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({k:v for k,v in summary.items() if k!='results'},ensure_ascii=False))
 if summary['passed']!=summary['questions']:sys.exit(1)

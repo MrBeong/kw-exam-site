@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "R": "R version 4.6.0 (2026-04-24)",
+  "checksPassed": 25,
+  "checks": ["equality", "inequality", "less/equal boundary", "greater/equal boundary", "negation", "elementwise OR", "elementwise AND", "vector OR", "vector AND", "assignment overwrite", "NULL is not zero or removal", "location functions", "sample variance/SD", "default quantiles", "summary median", "coefficient table labels", "t statistic ratio", "residual five quantiles", "lty 0 = blank: identical rendered pixels", "lty 1 = solid: identical rendered pixels", "lty 2 = dashed: identical rendered pixels", "lty 3 = dotted: identical rendered pixels", "lty 4 = dotdash: identical rendered pixels", "lty 5 = longdash: identical rendered pixels", "lty 6 = twodash: identical rendered pixels"]
+}

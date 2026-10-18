@@ -580,7 +580,7 @@ body.view-problems #questionList{min-height:0;flex:1;overflow:hidden}body.view-p
 @media print{#problems .wr-types,#problems .db-toolbar,.wr-search-row,.wr-grade-row,.practice-pager{display:none!important}.wr-scroll{overflow:visible}.wr-card{height:auto}.wr-model-code{white-space:pre-wrap}}
 
 </style>
-<link rel="stylesheet" href="./assets/study-math.css"><link rel="stylesheet" href="./assets/study-retry.css"><script src="./assets/study-retry.js"></script></head>
+<link rel="stylesheet" href="./assets/study-math.css"><link rel="stylesheet" href="./assets/study-retry.css"><script src="./assets/study-retry.js"></script><script src="assets/study-revisions.js"></script><script src="assets/study-recall.js"></script><link rel="stylesheet" href="assets/study-recall.css"></head>
 <body class="view-notes">
   <header class="topbar" id="topbar">
     <button class="icon-btn mobile-menu" id="menuBtn" aria-label="목차 열기">☰</button>
@@ -653,7 +653,7 @@ body.view-problems #questionList{min-height:0;flex:1;overflow:hidden}body.view-p
 
         <div class="callout black block">
           <div class="callout-icon">!</div>
-          <div><strong>김현경 교수님 중간고사 공지 및 기출 출제 방향 완벽 반영</strong><br />
+          <div><strong>중간고사 공지와 제공된 출제 경향 반영</strong><br />
           1) <strong>주관식(단답형)</strong>은 반드시 <strong>영어 용어(English term)</strong>로 작성해야 합니다 (예: <code>therbligs</code>, <code>Deficiency</code>, <code>Contamination</code>, <code>Equivocation</code>, <code>Chunking</code>, <code>Ballistic movement</code>, <code>Population stereotype</code>, <code>Affordance</code> 등).<br />
           2) <strong>계산 문제</strong>는 교안의 표와 공식을 그대로 적용해 소수점까지 계산하는 연습(정보량 \(H\), 중복도, 전달정보량 \(H(X\cap Y)\)·모호도 \(H(X|Y)\)·잡음 \(H(Y|X)\), 표본 수 \(n\), Hick의 \(\mathrm{RT}\), Fitts의 \(\mathrm{ID}\cdot\mathrm{MT}\), 회귀 \(b_0,b_1,R^2,F\))이 필수입니다.<br />
           3) <strong>R 통계 파트</strong>는 R 코드 빈칸 채우기와 <code>summary(model)</code> 결과표의 각 수치(<code>Estimate</code>, <code>Pr(&gt;|t|)</code>, <code>Multiple/Adjusted R-squared</code>, <code>F-statistic p-value</code>)가 의미하는 바를 한글로 정확히 서술해야 합니다.</div>
@@ -681,7 +681,7 @@ body.view-problems #questionList{min-height:0;flex:1;overflow:hidden}body.view-p
         <table class="study-table block">
           <thead><tr><th>순서</th><th>할 일</th><th>완료 기준</th><th>상태</th></tr></thead>
           <tbody>
-            <tr><td>01</td><td><strong>1~6주차 전수 개념 + 영문 용어 암기</strong></td><td>교안 모든 슬라이드 개념과 주관식 필수 영문 철자 65개를 백지에 재현</td><td><span class="status-dot open"></span>진행</td></tr>
+            <tr><td>01</td><td><strong>1~6주차 전수 개념 + 영문 용어 암기</strong></td><td>교안의 개념·세부 표·그림·영문 용어를 빈칸 없이 백지에 재현</td><td><span class="status-dot open"></span>진행</td></tr>
             <tr><td>02</td><td><strong>정보량·혼동행렬·Hick·Fitts·표본수 계산</strong></td><td>\(H(X), H(Y), H(X|Y), H(Y|X), T(X;Y)\) 소수점 계산 및 \(n=16\)(추가 11명) 완벽 검산</td><td><span class="status-dot wait"></span>대기</td></tr>
             <tr><td>03</td><td><strong>R 코드 빈칸 &amp; <code>summary</code> 서술 공식 숙지</strong></td><td>기초통계·t-test 3종·회귀 R 코드 22줄과 <code>summary(model)</code> 3대 영역 서술</td><td><span class="status-dot wait"></span>대기</td></tr>
             <tr><td>04</td><td><strong>O/X → 다지선다 → 단답·서술·코드 → 기출 5세트</strong></td><td>단계별 문제은행으로 T/F 함정, 복수선택, 주관식 영문 용어, R 코드 완전 정복</td><td><span class="status-dot wait"></span>대기</td></tr>
@@ -1742,7 +1742,8 @@ F-statistic: <strong>21.53</strong> on 1 and 10 DF,  p-value: <strong>0.0009223<
           3. <strong>회귀 교안 p.21 표(\(X_9 = 55\)) vs. 실습 엑셀 <code>regression1.xlsx</code>(\(X_9 = 65\))</strong>: 교안 p.25의 R <code>summary(model)</code> 출력(\(b_0=30.9333, b_1=0.8705, R^2=0.6828, F=21.53\))은 엑셀 파일(\(X_9 = 65\))로 돌린 결과입니다.<br />
           4. <strong>정보전달이론 기호 표기 (Info 교안 p.16–18)</strong>: 교안에서는 결합 엔트로피를 합집합 기호 <strong>\(H(X \cup Y)\)</strong>(표준 표기 \(H(X,Y)\)), 전달정보량(상호정보량)을 교집합 기호 <strong>\(H(X \cap Y)\)</strong> 또는 <strong>\(T(X,Y)\)</strong>, 조건부 엔트로피를 <strong>\(H(X/Y), H(Y/X)\)</strong>(표준 표기 \(H(X|Y), H(Y|X)\))로 표기합니다. 시험에서는 두 기호를 모두 알아두고 문제의 표기에 맞춰 적으세요.</div>
         </div>
-      </section>
+      <h3>표·도식·R 옵션의 직접 인출</h3><p>회귀 교안 p.24의 선 종류 전체와 R 설치 교안의 연산자·화면 탭을 확인한다. <a href="index.html?view=problems&amp;question=SA045">추가 빈칸 단답 풀기</a></p><table class="study-table block"><thead><tr><th>lty 숫자</th><th>문자열</th><th>선 모양</th></tr></thead><tbody><tr><td>0</td><td><code>blank</code></td><td>선 없음</td></tr><tr><td>1</td><td><code>solid</code></td><td>실선</td></tr><tr><td>2</td><td><code>dashed</code></td><td>파선</td></tr><tr><td>3</td><td><code>dotted</code></td><td>점선</td></tr><tr><td>4</td><td><code>dotdash</code></td><td>점·파선 교대</td></tr><tr><td>5</td><td><code>longdash</code></td><td>긴 파선</td></tr><tr><td>6</td><td><code>twodash</code></td><td>길이가 다른 두 파선</td></tr></tbody></table><p><code>lty</code>는 선 종류, <code>col</code>은 색이다. <code>abline(model, lty = 2, col = &quot;blue&quot;)</code>와 <code>lty = &quot;dashed&quot;</code>는 같은 파란 파선이다.</p><p>R 연산자: <code>==</code> 동등 비교 · <code>!=</code> 다름 · <code>&lt;=</code>/<code>&gt;=</code> 경계 포함 비교 · <code>!</code> 부정 · <code>|</code> 원소별 OR · <code>&amp;</code> 원소별 AND · <code>&lt;-</code> 대입 · <code>NULL</code> 초기화 예시.</p><p>보조 영역 탭: <code>Files</code> 파일 · <code>Plots</code> 그래프 · <code>Packages</code> 패키지 · <code>Help</code> 도움말 · <code>Viewer</code> 웹 형식 결과. <code>Script</code> 편집·<code>Console</code> 실행 결과·<code>Environment</code> 객체 목록을 구별한다.</p><p>연구방법론 표의 대상 수준 <code>System / Task / Human</code>과 Human의 <code>Performance / Physical / Subjective</code>를 구별한다. 일반 Methods 도식은 <code>Measurement → Analysis → Experiment → Design → Evaluation</code>이다.</p><p>회귀 출력의 <code>Estimate / Std. Error / t value / Pr(&gt;|t|)</code>, 잔차 요약의 <code>Min / 1Q / Median / 3Q / Max</code>를 각 의미와 연결한다. <code>Std. Error</code>와 <code>Residual standard error</code>는 다른 대상의 산포·불확실성을 나타낸다.</p>
+</section>
 
       <hr class="divider" />
 
@@ -1856,6 +1857,7 @@ F-statistic: <strong>21.53</strong> on 1 and 10 DF,  p-value: <strong>0.0009223<
     state.objectiveAnswers = state.objectiveAnswers || {};
     state.grades = state.grades || {};
     state.checks = state.checks || {};
+    StudyRevisions.apply(KEY,state,'written');
 
     let currentFilter = 'all';
     let examTimer = null;
@@ -1871,7 +1873,7 @@ F-statistic: <strong>21.53</strong> on 1 and 10 DF,  p-value: <strong>0.0009223<
     const draftSelections = {};
     let pageView = 'notes';
 
-    function saveState(){ try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){writtenSaveIssue=true;const hint=document.getElementById("writtenGradeHint");if(hint)hint.textContent="저장 공간에 접근할 수 없어 이번 탭에서만 유지됩니다."} updateProgress(); renderErrorLog(); }
+    function saveState(){ try{StudyRevisions.write(KEY,state)}catch(e){writtenSaveIssue=true;const hint=document.getElementById("writtenGradeHint");if(hint)hint.textContent="저장 공간에 접근할 수 없어 이번 탭에서만 유지됩니다."} updateProgress(); renderErrorLog(); }
     function esc(s){ return String(s||'').replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
     function typesetMath(root){window.StudyMath?.typeset(root||document.body)}
 

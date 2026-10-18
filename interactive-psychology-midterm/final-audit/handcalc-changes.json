@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-18",
+  "revision": "hand-calc-2026-10-18",
+  "policy": "Use provided rounded logs exactly; do not round intermediates; final decimals to one place unless integer count requires ceiling or exact fraction is accepted. Real lecture outputs are retained as interpretation data.",
+  "changed": {
+    "multiple-choice": [
+      "MC028",
+      "MC037",
+      "MC039",
+      "MC040",
+      "MC056",
+      "MC064",
+      "MC065",
+      "MC066"
+    ],
+    "written": [
+      "SA015",
+      "SA020",
+      "SA021",
+      "SA028",
+      "SA031",
+      "SA039",
+      "ES014",
+      "ES015",
+      "ES016",
+      "ES024",
+      "ES034",
+      "ES039",
+      "RC018"
+    ],
+    "mock-exam": [
+      "ME1-Q17",
+      "ME2-Q21",
+      "ME2-Q32",
+      "ME3-Q21",
+      "ME4-Q08",
+      "ME4-Q12",
+      "ME4-Q22",
+      "ME4-Q26",
+      "ME4-Q28",
+      "ME5-Q09",
+      "ME5-Q12",
+      "ME5-Q20"
+    ]
+  },
+  "ox": {
+    "OX044": {
+      "statement": "손계산용 표본 수 예제에서 파일럿 5명, 평균 80, s=10, z=2, k=0.1일 때 최소 총 인원은 7명이며 추가 모집은 2명이다.",
+      "explanation": "\\(n=(20/8)^2=25/4=6.25\\)를 정수 올림하면 총 7명이다. 포함된 파일럿 5명을 빼서 2명을 추가한다. 교안의 공식을 손계산용 수치로 변형했다.",
+      "correct": true
+    },
+    "OX063": {
+      "statement": "확률 0.2·0.8이고 손계산용 로그값 \\(\\log_2 5\\approx2.3\\), \\(\\log_2 1.25\\approx0.3\\)을 사용할 때 평균 정보량은 1.0 bit다.",
+      "explanation": "주어진 값으로 \\(H=0.2\\times2.3+0.8\\times0.3=0.7\\) bit다. 비등확률에서 최대 정보량 1 bit를 그대로 쓰지 않는다.",
+      "correct": false
+    },
+    "OX067": {
+      "statement": "두 대안의 손계산용 제시값 H=0.4 bit, 최대 정보량 Hmax=1 bit일 때 중복도는 40.0%다.",
+      "explanation": "\\(R=(1-0.4/1)\\times100=60.0\\%\\)다. 40.0%는 정보량 비율이며 중복도가 아니다.",
+      "correct": false
+    },
+    "OX069": {
+      "statement": "경고등 8종의 확률이 \\((7/20,7/20,1/20,1/20,1/20,1/20,1/20,1/20)\\)이다. 손계산용 제시값 H=2.4 bits를 사용하면 최대 정보량은 3 bits이고 중복도는 20.0%다.",
+      "explanation": "\\(H_{\\max}=\\log_2 8=3\\), \\((1-2.4/3)\\times100=20.0\\%\\)다. 원래 분포에서 로그를 재계산하지 않고 이 문항이 제시한 근삿값을 사용한다.",
+      "correct": true
+    },
+    "OX099": {
+      "statement": "Hick 모형의 기울기 b=150 ms/bit일 때 기울기 역수의 처리율을 소수점 첫째 자리까지 쓰면 6.7 bits/s다.",
+      "explanation": "\\(150\\text{ ms/bit}=0.15\\text{ s/bit}\\), 처리율은 \\(1000/150=20/3\\approx6.7\\text{ bits/s}\\)다.",
+      "correct": true
+    },
+    "OX116": {
+      "statement": "ISO형 \\(MT=50+150\\log_2(D/W+1)\\)에서 D=80, W=20이다. 손계산용 \\(\\log_2 5\\approx2.3\\)을 그대로 쓰면 MT는 395.0 ms다.",
+      "explanation": "\\(D/W+1=5\\), \\(MT=50+150\\times2.3=395.0\\) ms다. R로 실제 로그를 계산한 정밀값과 문제의 근삿값을 구분한다.",
+      "correct": true
+    },
+    "OX117": {
+      "statement": "ISO형 \\(MT=50+150\\log_2(D/W+1)\\)에서 D=100, W=10이다. 손계산용 \\(\\log_2 11\\approx3.5\\)를 그대로 쓰면 MT는 575.0 ms다.",
+      "explanation": "\\(D/W+1=11\\), \\(MT=50+150\\times3.5=575.0\\) ms다. 문제의 로그 근삿값을 사용한 손계산 연습이다.",
+      "correct": true
+    }
+  }
+}

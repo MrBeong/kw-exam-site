@@ -48,11 +48,11 @@ for id in ['ES039']:
 q=next(q for q in B['mock-exam'] if q['id']=='ME4-Q28');check('regression1.xlsx' not in shown(q) and '<td>8</td>' in q['visual'],'ME4-Q28 retains its own variant values')
 for q in [W['SA002'],next(q for q in B['mock-exam'] if q['id']=='ME2-Q19')]:
  check(len(q['rubric'])==4 and [r['criterion'] for r in q['rubric']]==['Brand Awareness','Attitude to brand','Brand Ethics','Brand Loyalty'],q['id']+' all four terms remain in solution/rubric')
-check('27.8' in W['ES014']['answer'] and '27.8' in W['ES014']['rubric'][-1]['criterion'],'ES014 requested redundancy has answer and scoring')
+check('30.0' in W['ES014']['answer'] and '30.0' in W['ES014']['rubric'][-1]['criterion'],'ES014 requested redundancy has answer and scoring')
 ox=re.findall(r'  q\("([^"\n]+)",R`([\s\S]*?)`,(true|false),R`([\s\S]*?)`,"([^"\n]+)","([^"\n]+)"\);',(E/'ox/index.html').read_text())
 for id,terms in [('OX087',['약 5개','7 \\pm 2']),('OX097',['자극식별 N','반응선택 Y']),('OX100',['10\\text','50\\text'])]:
  s=ox[int(id[2:])-1][1]
  for term in terms:check(term not in s,id+' no supplied lookup answer: '+term)
-check(len(ox)+sum(map(len,B.values()))==589,'full 589-question inventory scanned')
+check(len(ox)+sum(map(len,B.values()))==620,'full 620-question inventory scanned')
 out={'status':'fail' if failures else 'pass','checksPassed':len(checks),'failures':failures,'inventory':{**{k:len(v) for k,v in B.items()},'ox':len(ox)}}
 print(json.dumps(out,ensure_ascii=False));sys.exit(bool(failures))
