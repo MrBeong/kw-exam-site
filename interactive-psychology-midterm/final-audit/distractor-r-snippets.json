@@ -1,0 +1,74 @@
+[
+  {
+    "id": "MC084/o4",
+    "code": "t.test(datat$height, mu=150)"
+  },
+  {
+    "id": "MC084/o1",
+    "code": "t.test(datat$height[datat$group==\"Deagu\"], mu=150)"
+  },
+  {
+    "id": "MC084/o3",
+    "code": "t.test(datat$height[datat$group==\"Deagu\"], mu=150)"
+  },
+  {
+    "id": "MC084/o2",
+    "code": "t.test(datat$height[datat$group==\"Deagu\"], mu=0)"
+  },
+  {
+    "id": "MC085/o2",
+    "code": "t.test(height ~ group, data=datat, var.equal=TRUE)"
+  },
+  {
+    "id": "MC085/o3",
+    "code": "t.test(height ~ group, data=datat, var.equal=FALSE)"
+  },
+  {
+    "id": "MC085/o1",
+    "code": "t.test(height ~ group, data=datat, var.equal=TRUE)"
+  },
+  {
+    "id": "MC085/o4",
+    "code": "t.test(height ~ group, data=datat, var.equal=TRUE, mu=150)"
+  },
+  {
+    "id": "MC091/o3",
+    "code": "plot(x,y); model <- lm(y ~ x); abline(model,lty=2,col=\"blue\")"
+  },
+  {
+    "id": "MC091/o1",
+    "code": "plot(x,y); model <- lm(y ~ x); abline(model,lty=1,col=\"blue\")"
+  },
+  {
+    "id": "MC091/o2",
+    "code": "plot(x,y); model <- lm(x ~ y); abline(model,lty=1,col=\"blue\")"
+  },
+  {
+    "id": "MC091/o4",
+    "code": "plot(x,y); model <- lm(y ~ x); abline(a=coef(model)[2],b=coef(model)[1],col=\"blue\")"
+  },
+  {
+    "id": "MC094/o4",
+    "code": "lm(y + x1 ~ x2)"
+  },
+  {
+    "id": "MC094/o1",
+    "code": "lm(y ~ x1 + x2)"
+  },
+  {
+    "id": "MC094/o2",
+    "code": "lm(x1 + x2 ~ y)"
+  },
+  {
+    "id": "MC094/o3",
+    "code": "lm(y ~ x1 / x2)"
+  },
+  {
+    "id": "MC129/o1",
+    "code": "t.test(d, mu=0)"
+  },
+  {
+    "id": "MC129/o4",
+    "code": "t.test(d, mu=0)"
+  }
+]
