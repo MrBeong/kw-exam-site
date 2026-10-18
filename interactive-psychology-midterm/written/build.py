@@ -59,7 +59,7 @@ def build():
    lines += ['','### 완성 코드','']
   if q.get('modelCode'):lines += ['```r',q['modelCode'],'```','']
   lines += [q['answer'],'','### 상세 해설','']+[f'{i}. {t}' for i,t in enumerate(q['explanation'],1)]+['','### 채점 기준','', '| 배점 | 충족할 내용 |','|---:|---|']
-  lines += [f"| {r['points']} | {r['criterion']} |" for r in q['rubric']]
+  lines += [f"| {r['points']} | {r['criterion'].replace('|','&#124;')} |" for r in q['rubric']]
   lines += ['',f"합계 **{q['points']}점**. {q['accepted']}",'']
   if q['englishTerms']:lines += ['요구된 교안 영문 용어: '+', '.join(q['englishTerms'])+'. 일반 대소문자·하이픈/공백 차이는 의미가 같으면 인정한다. 코드의 대소문자 오류는 실행 결과에 따라 감점한다.','']
   lines += ['### 오답·감점 주의','']+['- '+t for t in q['commonMistakes']]+['',f"근거: {q['source']}  ",'개념 대응: '+', '.join(q['conceptIds']),'']
