@@ -1,0 +1,1 @@
+{"status": "pass", "checksPassed": 3377, "failures": [], "reviewed": {"multipleChoice": 135, "mockObjective": 80, "mockStatements": 20}, "sourceRevised": 80, "mockRevised": 48, "lengthFlags": [], "limitations": "Length is a review heuristic. Plausibility, unique answers, and curriculum fit require content review; no student-response difficulty estimates are claimed."}

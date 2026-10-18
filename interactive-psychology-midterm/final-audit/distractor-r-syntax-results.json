@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "RVersion": "Rscript (R) version 4.6.0 (2026-04-24)",
+  "snippets": 18,
+  "check": "R parse of all shown code alternatives, including semantically incorrect alternatives. Model-code execution fixtures unchanged."
+}
