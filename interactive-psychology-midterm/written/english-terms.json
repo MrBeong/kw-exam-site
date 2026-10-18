@@ -899,5 +899,285 @@
         "page": "17"
       }
     ]
+  },
+  {
+    "term": "Measurement",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "3",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Analysis",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "3",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Experiment",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "3",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Design",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "3",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Evaluation",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "3",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "level of target",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "16",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "metric comprehensiveness",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "16",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "System",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "16",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Task",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "16",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Human",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "16",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Performance",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "16",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Physical",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "16",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Subjective",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "16",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Representativity",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "17",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Random sampling",
+    "sources": [
+      {
+        "file": "2._HFE_Research_Methodology.pdf",
+        "page": "17",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "binary digit",
+    "sources": [
+      {
+        "file": "3._Information_Processing_updated.pdf",
+        "page": "8–9",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Ralph Hartley",
+    "sources": [
+      {
+        "file": "3._Information_Processing_updated.pdf",
+        "page": "8–9",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Claude Shannon",
+    "sources": [
+      {
+        "file": "3._Information_Processing_updated.pdf",
+        "page": "8–9",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Ergonomics",
+    "sources": [
+      {
+        "file": "1_Introduction_2.pdf",
+        "page": "7",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Human Factors",
+    "sources": [
+      {
+        "file": "1_Introduction_2.pdf",
+        "page": "7",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "HF Engineering",
+    "sources": [
+      {
+        "file": "1_Introduction_2.pdf",
+        "page": "7",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Human Engineering",
+    "sources": [
+      {
+        "file": "1_Introduction_2.pdf",
+        "page": "7",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Engineering Psychology",
+    "sources": [
+      {
+        "file": "1_Introduction_2.pdf",
+        "page": "7",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Applied Psychology",
+    "sources": [
+      {
+        "file": "1_Introduction_2.pdf",
+        "page": "7",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Engineering",
+    "sources": [
+      {
+        "file": "1._Introduction_(1).pdf",
+        "page": "8",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Psychology",
+    "sources": [
+      {
+        "file": "1._Introduction_(1).pdf",
+        "page": "8",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Sociology",
+    "sources": [
+      {
+        "file": "1._Introduction_(1).pdf",
+        "page": "8",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
+  },
+  {
+    "term": "Short-term sensory store",
+    "sources": [
+      {
+        "file": "3._Information_Processing_updated.pdf",
+        "page": "6",
+        "note": "세부 빈칸 직접 인출 대조"
+      }
+    ]
   }
 ]

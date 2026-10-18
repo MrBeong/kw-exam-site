@@ -1,0 +1,63 @@
+{
+  "revision": "midterm-review-2026-10-18",
+  "changedExisting": {
+    "multiple-choice": [
+      "MC028",
+      "MC037",
+      "MC039",
+      "MC040",
+      "MC056",
+      "MC064",
+      "MC065",
+      "MC066"
+    ],
+    "written": [
+      "SA015",
+      "SA020",
+      "SA021",
+      "SA028",
+      "SA031",
+      "SA039",
+      "ES014",
+      "ES015",
+      "ES016",
+      "ES024",
+      "ES034",
+      "ES039",
+      "RC018"
+    ],
+    "mock-exam": [
+      "ME1-Q17",
+      "ME1-Q24",
+      "ME2-Q21",
+      "ME2-Q24",
+      "ME2-Q32",
+      "ME3-Q21",
+      "ME3-Q24",
+      "ME4-Q08",
+      "ME4-Q12",
+      "ME4-Q22",
+      "ME4-Q24",
+      "ME4-Q26",
+      "ME4-Q28",
+      "ME5-Q09",
+      "ME5-Q12",
+      "ME5-Q20",
+      "ME5-Q24"
+    ],
+    "ox": [
+      "OX044",
+      "OX063",
+      "OX067",
+      "OX069",
+      "OX099",
+      "OX116",
+      "OX117"
+    ]
+  },
+  "previousExamVersions": [
+    "unversioned",
+    "hand-calc-2026-10-18"
+  ],
+  "policy": "Preserve original running/submitted records; metadata outside exam; changed practice only refreshed after backup."
+}

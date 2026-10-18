@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "Rscript": "/opt/homebrew/bin/Rscript",
   "questions": 40,
   "blanks": 122,
   "passed": 40,
-  "checks": 208,
+  "checks": 210,
   "workbookSha256": "6d438151c5dac12b25626c9659b508f2d261034a96506ab5a8b285b7b479ba4d",
   "results": [
     {
@@ -485,28 +485,29 @@
       "status": "pass",
       "checks": [
         "completed answer parses and evaluates in real R",
-        "both Fitts MT values rounded to requested hundredths",
+        "both exact Fitts MT values match hand-solvable data",
+        "Fitts log arguments are powers of two",
         "no unexpected warnings"
       ],
       "metrics": {
         "ID": [
-          2.321928094887362,
-          3.459431618637297
+          2,
+          3
         ],
         "MT": [
-          398.2892142331043,
-          568.9147427955946
+          350,
+          500
         ],
         "roundedMT": [
-          398.29,
-          568.91
+          350,
+          500
         ]
       },
       "warnings": [],
       "inputProvenance": "question_literal_vectors",
       "bank": "written",
       "blanks": 2,
-      "codeSha256": "2da04e624d9f2c8e0cb51b9ee56b710349378c2964988acd0ef96e6f1b54adef",
+      "codeSha256": "8c34f10dff04bd01497edbd66bb1f921ec22484e7835aa31152e2a5d8a5d41ad",
       "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "returnCode": 0
     },
@@ -771,32 +772,29 @@
       "status": "pass",
       "checks": [
         "completed answer parses and evaluates in real R",
-        "both Fitts MT values rounded to requested hundredths",
+        "both exact Fitts MT values match hand-solvable data",
+        "Fitts log arguments are powers of two",
         "no unexpected warnings"
       ],
       "metrics": {
-        "providedLogApproximation": [
-          350.2,
-          455.13
-        ],
         "ID": [
-          2.584962500721156,
-          3.459431618637297
+          2,
+          3
         ],
         "MT": [
-          350.19550008653874,
-          455.1317942364757
+          280,
+          400
         ],
         "roundedMT": [
-          350.2,
-          455.13
+          280,
+          400
         ]
       },
       "warnings": [],
       "inputProvenance": "question_literal_vectors",
       "bank": "mock-exam",
       "blanks": 2,
-      "codeSha256": "5ac190c54c08dd2de7dd3237990d0b58b564fb166158dbf5ad73d8387ddb7ee5",
+      "codeSha256": "4a0829e627d48bbf93fc9c04660eef0bc956ae2d308b031154d7b2ba879fe76c",
       "setupSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "returnCode": 0
     },

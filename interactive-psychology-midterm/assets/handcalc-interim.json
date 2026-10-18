@@ -1,0 +1,804 @@
+{
+  "ME1-Q17": {
+    "id": "ME1-Q17",
+    "type": "tf",
+    "chapter": "복합 개념",
+    "conceptIds": [
+      "OX067",
+      "OX089"
+    ],
+    "prompt": "다음 각 진술의 옳고 그름을 O/X로 판별하시오. 각 진술 1점이다.",
+    "statements": [
+      {
+        "id": "s1",
+        "text": "두 대안의 최대 정보량 Hmax=1 bit, 손계산용 제시값 H=0.4 bit이면 중복도는 60.0%다.",
+        "correct": true,
+        "explanation": "\\((1-0.4/1)\\times100=60.0\\%\\)다. 정보량 비율 40.0%와 중복도를 구별한다."
+      },
+      {
+        "id": "s2",
+        "text": "두 화면을 직접 비교하기보다 기준 밝기를 기억한 뒤 한 화면을 평가하면, 판단에 필요한 기억 부담이 더 작다.",
+        "correct": false,
+        "explanation": "기억 속 기준을 유지하는 절대 판단보다 두 자극을 직접 비교하는 상대 판단이 기억 부담을 줄이는 전략이다."
+      }
+    ],
+    "source": "3장 교안 p.11 · 3장 교안 p.26–28 · 손계산용 수치/표기 변형",
+    "points": 2,
+    "originId": "TF11",
+    "set": 1,
+    "number": 17,
+    "minutes": 1,
+    "variant": false,
+    "explanation": [],
+    "commonMistakes": [],
+    "optionRevision": "2026-10-18-v1",
+    "questionRevision": "hand-calc-2026-10-18",
+    "promptPlain": "다음 각 진술의 옳고 그름을 O/X로 판별하시오. 각 진술 1점이다."
+  },
+  "ME1-Q24": {
+    "id": "ME1-Q24",
+    "type": "short",
+    "chapter": "기초통계·T검정",
+    "conceptIds": [
+      "OX151",
+      "OX152",
+      "OX153"
+    ],
+    "prompt": "한 집단과 기준값 비교, 서로 다른 독립 집단 비교, 같은 대상 전후 비교에 맞는 t-검정 명칭을 쓰시오. 이 문항은 한글 명칭을 인정한다.",
+    "answer": "단일표본 t-검정 / 독립표본 t-검정 / 대응표본 t-검정",
+    "explanation": [
+      "검정 선택의 기준은 영어 암기가 아니라 표본의 개수·독립성·짝 구조다."
+    ],
+    "rubric": [
+      {
+        "points": 0.75,
+        "criterion": "단일표본"
+      },
+      {
+        "points": 0.75,
+        "criterion": "독립표본"
+      },
+      {
+        "points": 0.5,
+        "criterion": "대응표본"
+      }
+    ],
+    "commonMistakes": [
+      "같은 대상 전후 자료를 독립 집단으로 처리하지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+    "source": "t-test 교안 p.10–11 · t-test 교안 p.10, 15 · t-test 교안 p.10, 21",
+    "calc": false,
+    "points": 2,
+    "originId": "SA036",
+    "set": 1,
+    "number": 24,
+    "minutes": 2,
+    "variant": false
+  },
+  "ME2-Q21": {
+    "id": "ME2-Q21",
+    "type": "short",
+    "chapter": "정보량·중복도",
+    "conceptIds": [
+      "OX062",
+      "OX063",
+      "OX066"
+    ],
+    "prompt": "두 사건의 확률은 0.25·0.75다. 손계산용 \\(\\log_2 4=2\\), \\(\\log_2(4/3)\\approx0.4\\)를 그대로 사용해 H, 최대 정보량과 중복도를 구하시오. 소수 답은 첫째 자리까지 쓴다.",
+    "answer": "\\(H=0.8\\) bit / \\(H_{\\max}=1\\) bit / 20.0%",
+    "explanation": [
+      "\\(H=0.25\\times2+0.75\\times0.4=0.5+0.3=0.8\\) bit다. \\(R=(1-0.8)\\times100=20.0\\%\\)다. 제시된 근삿값으로 계산한다."
+    ],
+    "rubric": [
+      {
+        "points": 1,
+        "criterion": "확률 가중평균으로 H=0.8 bit 및 Hmax=1 bit"
+      },
+      {
+        "points": 1,
+        "criterion": "제시 근삿값으로 중복도 20.0%"
+      }
+    ],
+    "commonMistakes": [
+      "더 정밀한 로그와 주어진 근삿값을 섞거나 단순 평균하지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+    "source": "3장 교안 p.9 · 3장 교안 p.11 · 손계산용 수치/표기 변형",
+    "calc": true,
+    "points": 2,
+    "originId": "SA020",
+    "set": 2,
+    "number": 21,
+    "minutes": 2,
+    "variant": true,
+    "promptPlain": "두 사건의 확률은 0.25·0.75다. 손계산용 \\(\\log_2 4=2\\), \\(\\log_2(4/3)\\approx0.4\\)를 그대로 사용해 H, 최대 정보량과 중복도를 구하시오. 소수 답은 첫째 자리까지 쓴다.",
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME2-Q24": {
+    "id": "ME2-Q24",
+    "type": "short",
+    "chapter": "회귀·실험실습",
+    "conceptIds": [
+      "OX169",
+      "OX170"
+    ],
+    "prompt": "절편을 포함한 단순선형회귀에서 \\(\\bar{x}=2\\), \\(\\bar{y}=5\\), \\(S_{xx}=2\\), \\(S_{xy}=4\\)다. 최소제곱법으로 기울기와 절편을 구하고, \\(x=4\\)일 때의 예측값을 계산하시오.",
+    "answer": "\\(b_1 = 2\\), \\(b_0 = 1\\), \\(\\hat{y}\\left(4\\right) = 9\\)",
+    "explanation": [
+      "\\(b_1 = \\frac{S_{xy}}{S_{xx}} = 2\\), \\(b_0 = 5 - 2 \\times 2 = 1\\)이다. 예측값은 \\(1 + 2 \\times 4\\)다."
+    ],
+    "rubric": [
+      {
+        "points": 0.75,
+        "criterion": "기울기 2"
+      },
+      {
+        "points": 0.75,
+        "criterion": "절편 1"
+      },
+      {
+        "points": 0.5,
+        "criterion": "예측값 9"
+      }
+    ],
+    "commonMistakes": [
+      "\\(\\frac{S_{xx}}{S_{xy}}\\)로 뒤집거나 평균 y를 절편으로 그대로 쓰지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+    "source": "회귀 교안 p.15 · 회귀 교안 p.14–16",
+    "calc": true,
+    "points": 2,
+    "originId": "SA038",
+    "set": 2,
+    "number": 24,
+    "minutes": 2,
+    "variant": false,
+    "promptPlain": "절편을 포함한 단순선형회귀에서 \\bar{x}=2, \\bar{y}=5, S_{xx}=2, S_{xy}=4다. 최소제곱법으로 기울기와 절편을 구하고, x=4일 때의 예측값을 계산하시오."
+  },
+  "ME2-Q32": {
+    "id": "ME2-Q32",
+    "type": "code",
+    "chapter": "Fitts·운동·양립성",
+    "conceptIds": [
+      "OX115",
+      "OX116",
+      "OX117",
+      "OX118",
+      "OX139"
+    ],
+    "prompt": "같은 길이 단위의 거리 D <- c(30, 70), 너비 W <- c(10, 10)가 주어져 있다. ISO형 난이도 ID와 절편 a=40 ms·기울기 b=120 ms/bit인 모형의 MT 벡터를 구하려 한다. 각 빈칸에는 오른쪽 식 전체를 쓰시오. 다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+    "answer": "MT는 280 ms, 400 ms다.",
+    "explanation": [
+      "로그 인수는 4, 8이며 ID는 2, 3이다. MT는 40+120×2=280 ms, 40+120×3=400 ms다."
+    ],
+    "rubric": [
+      {
+        "points": 2.0,
+        "criterion": "빈칸 (1): log2(D / W + 1). +1은 로그 안"
+      },
+      {
+        "points": 1.0,
+        "criterion": "빈칸 (2): 40 + 120 * ID"
+      },
+      {
+        "points": 1.0,
+        "criterion": "추가 답안: 280 ms, 400 ms"
+      }
+    ],
+    "commonMistakes": [
+      "\\(\\frac{W}{D}\\)를 쓰거나 +1을 로그 밖에 두지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "각 빈칸에 실제 R 문법으로 작성. 문자열은 필요한 따옴표까지 포함한다. 추가 답안은 한글·수식·단위를 사용한다.",
+    "accepted": "제시된 코드 틀에 넣었을 때 요구한 동작을 하는 R 코드를 인정한다. 공백·일반 작은따옴표/큰따옴표 차이와 동등한 식은 허용한다. 함수·객체의 철자·대소문자 및 문자열 값은 정확해야 한다. 밑 2 로그의 동등한 표현인 log(D / W + 1, base = 2)도 인정한다.",
+    "source": "3장 교안 p.46–47 · 3장 교안 p.47 · 손계산용 수치/표기 변형",
+    "calc": false,
+    "points": 4,
+    "modelCode": "D <- c(30, 70)\nW <- c(10, 10)\n\nID <- log2(D / W + 1)\nMT <- 40 + 120 * ID\n\nMT",
+    "codeTemplate": "D <- c(30, 70)\nW <- c(10, 10)\n\nID <- {{1}}\nMT <- {{2}}\n\nMT",
+    "codeBlanks": [
+      {
+        "id": "1",
+        "answer": "log2(D / W + 1)",
+        "explanation": "ISO형은 거리/너비에 1을 더한 뒤 밑 2 로그를 취한다."
+      },
+      {
+        "id": "2",
+        "answer": "40 + 120 * ID",
+        "explanation": "MT=a+b·ID를 R의 곱셈 기호 *로 작성한다."
+      }
+    ],
+    "followUp": "두 MT 값과 단위를 적으시오. 정수로 답해도 된다.",
+    "originId": "RC018",
+    "set": 2,
+    "number": 32,
+    "minutes": 6.25,
+    "variant": true,
+    "promptPlain": "같은 길이 단위의 거리 D <- c(30, 70), 너비 W <- c(10, 10)가 주어져 있다. ISO형 난이도 ID와 절편 a=40 ms·기울기 b=120 ms/bit인 모형의 MT 벡터를 구하려 한다. 각 빈칸에는 오른쪽 식 전체를 쓰시오. 다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME3-Q21": {
+    "id": "ME3-Q21",
+    "type": "short",
+    "chapter": "정보량·중복도",
+    "conceptIds": [
+      "OX067",
+      "OX068",
+      "OX069"
+    ],
+    "prompt": "중복도 \\(R=(1-H/H_{\\max})\\times100\\)을 구하시오. 손계산용 제시값은 (가) 두 대안의 H=0.6 bit, Hmax=1 bit (나) 8개 대안의 H=2.1 bits다. 소수 답은 첫째 자리까지 쓴다.",
+    "answer": "(가) 40.0% / (나) 30.0%",
+    "explanation": [
+      "(가) \\((1-0.6)\\times100=40.0\\%\\), (나) \\(H_{\\max}=3\\), \\((1-2.1/3)\\times100=30.0\\%\\)다."
+    ],
+    "rubric": [
+      {
+        "points": 1.0,
+        "criterion": "동전 40.0%"
+      },
+      {
+        "points": 1.0,
+        "criterion": "경고등 \\(H_{\\max} = 3\\) 및 중복도 30.0%"
+      }
+    ],
+    "commonMistakes": [
+      "0.9·0.1의 엔트로피를 다시 계산한 반올림 차이와 공식 오류를 구별한다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+    "source": "3장 교안 p.11 · 3장 교안 p.12 · 3장 교안 p.13 · 손계산용 수치/표기 변형",
+    "calc": true,
+    "points": 2,
+    "originId": "SA021",
+    "set": 3,
+    "number": 21,
+    "minutes": 2,
+    "variant": true,
+    "promptPlain": "중복도 \\(R=(1-H/H_{\\max})\\times100\\)을 구하시오. 손계산용 제시값은 (가) 두 대안의 H=0.6 bit, Hmax=1 bit (나) 8개 대안의 H=2.1 bits다. 소수 답은 첫째 자리까지 쓴다.",
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME3-Q24": {
+    "id": "ME3-Q24",
+    "type": "short",
+    "chapter": "회귀·실험실습",
+    "conceptIds": [
+      "OX171",
+      "OX172",
+      "OX173"
+    ],
+    "prompt": "절편 포함 단순 OLS에서 \\(n = 10\\), \\(\\mathrm{SST} = 80\\), \\(\\mathrm{SSE} = 20\\)이다. SSR·잔차 자유도·\\(R^2\\)를 구하시오.",
+    "answer": "\\(\\mathrm{SSR} = 60\\) / 잔차 자유도=8 / \\(R^{2} = 0.75\\)",
+    "explanation": [
+      "\\(\\mathrm{SSR} = \\mathrm{SST} - \\mathrm{SSE} = 60\\), 잔차 자유도=\\(n - 2 = 8\\), \\(R^{2} = \\frac{\\mathrm{SSR}}{\\mathrm{SST}} = \\frac{60}{80} = 0.75\\)다. \\(\\frac{\\mathrm{SSE}}{\\mathrm{SST}} = 0.25\\)는 미설명 비율이다."
+    ],
+    "rubric": [
+      {
+        "points": 0.5,
+        "criterion": "\\(\\mathrm{SSR} = 60\\)"
+      },
+      {
+        "points": 0.5,
+        "criterion": "잔차 자유도 8"
+      },
+      {
+        "points": 1.0,
+        "criterion": "\\(R^{2} = 0.75\\)"
+      }
+    ],
+    "commonMistakes": [
+      "F를 \\(\\frac{\\mathrm{SSR}}{\\mathrm{SSE}} = \\frac{70}{30}\\)으로 계산하지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+    "source": "회귀 교안 p.17–18 · 회귀 교안 p.19 · 회귀 교안 p.20",
+    "calc": true,
+    "points": 2,
+    "originId": "SA039",
+    "set": 3,
+    "number": 24,
+    "minutes": 2,
+    "variant": true,
+    "promptPlain": "절편 포함 단순 OLS에서 n=10, SST=80, SSE=20이다. SSR·잔차 자유도·R²를 구하시오."
+  },
+  "ME4-Q08": {
+    "id": "ME4-Q08",
+    "chapter": "정보량·중복도",
+    "conceptIds": [
+      "OX068",
+      "OX069"
+    ],
+    "type": "single",
+    "options": [
+      {
+        "id": "o2",
+        "text": "8 bits / 70.0%",
+        "correct": false,
+        "explanation": "최대 정보량을 대안 개수 8로 두었다. 8개 등확률 대안의 최대 정보량은 log₂8=3 bits다."
+      },
+      {
+        "id": "o4",
+        "text": "2.4 bits / 0.0%",
+        "correct": false,
+        "explanation": "대상 분포의 정보량을 최대 정보량으로 썼다. 최대 정보량은 같은 8개 대안이 등확률인 경우를 기준으로 한다."
+      },
+      {
+        "id": "o3",
+        "text": "3 bits / 80.0%",
+        "correct": false,
+        "explanation": "최대 정보량은 맞지만 H/Hmax=0.8을 그대로 백분율로 썼다. 1에서 빼는 단계가 필요하다."
+      },
+      {
+        "id": "o1",
+        "text": "3 bits / 20.0%",
+        "correct": true,
+        "explanation": "\\(H_{\\max}=\\log_2 8=3\\), \\(R=(1-2.4/3)\\times100=(1-0.8)\\times100=20.0\\%\\)다. 주어진 H를 사용한다."
+      }
+    ],
+    "source": "3장 교안 p.12 · 3장 교안 p.13 · 손계산용 수치/표기 변형",
+    "originId": "MC040",
+    "set": 4,
+    "number": 8,
+    "prompt": "경고등 8종의 확률은 \\((7/20,7/20,1/20,1/20,1/20,1/20,1/20,1/20)\\)이다. 손계산용 제시값 \\(H=2.4\\) bits를 사용한다. 최대 정보량과 중복도의 조합은?",
+    "points": 2,
+    "minutes": 1.25,
+    "answer": "4번",
+    "explanation": [
+      "\\(H_{\\max}=\\log_2 8=3\\), \\(R=(1-2.4/3)\\times100=(1-0.8)\\times100=20.0\\%\\)다. 주어진 H를 사용한다."
+    ],
+    "variant": false,
+    "promptPlain": "경고등 8종의 확률은 \\((7/20,7/20,1/20,1/20,1/20,1/20,1/20,1/20)\\)이다. 손계산용 제시값 \\(H=2.4\\) bits를 사용한다. 최대 정보량과 중복도의 조합은?",
+    "commonMistakes": [
+      "최대 정보량은 맞지만 H/Hmax=0.8을 그대로 백분율로 썼다. 1에서 빼는 단계가 필요하다.",
+      "최대 정보량을 대안 개수 8로 두었다. 8개 등확률 대안의 최대 정보량은 log₂8=3 bits다.",
+      "대상 분포의 정보량을 최대 정보량으로 썼다. 최대 정보량은 같은 8개 대안이 등확률인 경우를 기준으로 한다."
+    ],
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME4-Q12": {
+    "id": "ME4-Q12",
+    "chapter": "정보량·중복도",
+    "conceptIds": [
+      "OX062",
+      "OX063"
+    ],
+    "type": "single",
+    "options": [
+      {
+        "id": "o2",
+        "text": "1.0 bit",
+        "correct": false,
+        "explanation": "비등확률인데 등확률의 최대 정보량 1 bit를 그대로 썼다. 각 사건의 자기정보량을 발생확률로 가중해야 한다."
+      },
+      {
+        "id": "o1",
+        "text": "0.7 bit",
+        "correct": true,
+        "explanation": "\\(H=0.2\\times2.3+0.8\\times0.3=0.46+0.24=0.7\\) bit다. 이 문항이 제공한 로그 근삿값을 기준으로 한다."
+      },
+      {
+        "id": "o4",
+        "text": "1.3 bits",
+        "correct": false,
+        "explanation": "두 로그의 산술평균 2.6/2를 구했다. 확률이 0.2와 0.8이므로 같은 가중치를 사용하면 안 된다."
+      },
+      {
+        "id": "o3",
+        "text": "2.6 bits",
+        "correct": false,
+        "explanation": "주어진 두 로그 2.3과 0.3을 확률 가중 없이 단순 합산했다. 평균 정보량은 확률 가중평균이다."
+      }
+    ],
+    "source": "3장 교안 p.9 · 손계산용 수치/표기 변형",
+    "originId": "MC037",
+    "set": 4,
+    "number": 12,
+    "prompt": "두 사건의 확률은 \\(0.2,0.8\\)이다. 손계산용으로 \\(\\log_2 5\\approx2.3\\), \\(\\log_2 1.25\\approx0.3\\)을 사용한다. 주어진 근삿값으로 구한 평균 정보량은?",
+    "points": 2,
+    "minutes": 1.25,
+    "answer": "2번",
+    "explanation": [
+      "\\(H=0.2\\times2.3+0.8\\times0.3=0.46+0.24=0.7\\) bit다. 이 문항이 제공한 로그 근삿값을 기준으로 한다."
+    ],
+    "variant": false,
+    "promptPlain": "두 사건의 확률은 \\(0.2,0.8\\)이다. 손계산용으로 \\(\\log_2 5\\approx2.3\\), \\(\\log_2 1.25\\approx0.3\\)을 사용한다. 주어진 근삿값으로 구한 평균 정보량은?",
+    "commonMistakes": [
+      "비등확률인데 등확률의 최대 정보량 1 bit를 그대로 썼다. 각 사건의 자기정보량을 발생확률로 가중해야 한다.",
+      "주어진 두 로그 2.3과 0.3을 확률 가중 없이 단순 합산했다. 평균 정보량은 확률 가중평균이다.",
+      "두 로그의 산술평균 2.6/2를 구했다. 확률이 0.2와 0.8이므로 같은 가중치를 사용하면 안 된다."
+    ],
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME4-Q22": {
+    "id": "ME4-Q22",
+    "type": "short",
+    "chapter": "정보전달·기억·Hick",
+    "conceptIds": [
+      "OX098",
+      "OX099",
+      "OX108"
+    ],
+    "prompt": "Hick 모형 \\(\\mathrm{RT} = 180 + 120\\,H\\)(ms, 단 \\(H = \\log_2 N\\))일 때 등확률 4개·8개 대안의 예측 RT(ms)와 기울기 역수(\\(1/b\\))의 초당 처리율(bits/s)을 구하시오. 처리율은 정확한 분수 또는 소수점 첫째 자리까지 쓴다.",
+    "answer": "420 ms / 540 ms / \\(25/3\\approx8.3\\) bits/s",
+    "explanation": [
+      "\\(H = 2\\),3이므로 \\(\\mathrm{RT} = 180 + 120 \\times 2 = 420\\) ms, \\(180 + 120 \\times 3 = 540\\) ms다. \\(120\\,\\mathrm{ms/bit}=0.12\\,\\mathrm{s/bit}\\)이므로 처리율은 \\(\\frac{1}{0.12} \\approx 8.3\\) bits/s다."
+    ],
+    "rubric": [
+      {
+        "points": 1.0,
+        "criterion": "\\(\\mathrm{RT} = 420\\), 540 ms"
+      },
+      {
+        "points": 1.0,
+        "criterion": "초 단위 환산 후 \\(\\frac{25}{3}\\) bits/s 또는 약 8.3 bits/s"
+      }
+    ],
+    "commonMistakes": [
+      "N을 H 대신 넣거나 \\(\\frac{1}{120}\\)을 bits/s로 쓰지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다. 처리율 25/3 또는 8.3 bits/s 인정.",
+    "source": "3장 교안 p.34–35 · 3장 교안 p.36 · 3장 교안 p.34–36 · 손계산용 수치/표기 변형",
+    "calc": true,
+    "points": 2,
+    "originId": "SA028",
+    "set": 4,
+    "number": 22,
+    "minutes": 2,
+    "variant": true,
+    "promptPlain": "Hick 모형 \\(\\mathrm{RT} = 180 + 120\\,H\\)(ms, 단 \\(H = \\log_2 N\\))일 때 등확률 4개·8개 대안의 예측 RT(ms)와 기울기 역수(\\(1/b\\))의 초당 처리율(bits/s)을 구하시오. 처리율은 정확한 분수 또는 소수점 첫째 자리까지 쓴다.",
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME4-Q24": {
+    "id": "ME4-Q24",
+    "type": "short",
+    "chapter": "회귀·실험실습",
+    "conceptIds": [
+      "OX181",
+      "OX182"
+    ],
+    "prompt": "등확률 대안 \\(N = 1\\)·2·4의 H(bit)를 쓰고, 회귀 \\(p = 0.16\\)·\\(R^{2} = 0.03\\)을 \\(\\alpha = 0.05\\)에서 한 문장으로 판독하시오.",
+    "answer": "\\(H = 0\\)·1·2; 모형은 유의하지 않으며 표본 내 설명력은 약 3%다.",
+    "explanation": [
+      "\\(\\log_2 N\\)으로 변환한다. 양의 기울기 추정치만으로 유의성을 선언할 수 없다."
+    ],
+    "rubric": [
+      {
+        "points": 0.75,
+        "criterion": "0·1·2 bits"
+      },
+      {
+        "points": 0.75,
+        "criterion": "비유의 결론"
+      },
+      {
+        "points": 0.5,
+        "criterion": "설명력 약 3%"
+      }
+    ],
+    "commonMistakes": [
+      "p값을 설명력 16%나 모형이 참일 확률로 읽지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+    "source": "SRT/CRT 교안 p.1–3 · 실습 전사 · SRT/CRT 실습 전사",
+    "calc": true,
+    "points": 2,
+    "originId": "SA041",
+    "set": 4,
+    "number": 24,
+    "minutes": 2,
+    "variant": false,
+    "promptPlain": "등확률 대안 N=1·2·4의 H(bit)를 쓰고, 회귀 p=0.16·R²=0.03을 α=0.05에서 한 문장으로 판독하시오.",
+    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>SRT·CRT 수업 실습 예시 · 등확률 대안과 회귀 요약</figcaption><div class=\"table-scroll\"><table><thead><tr><th scope=\"col\">항목</th><th scope=\"col\">제시자료</th></tr></thead><tbody><tr><td>등확률 대안 수 N</td><td>1, 2, 4</td></tr><tr><td>반응변수</td><td>Time (ms)</td></tr><tr><td>설명변수</td><td>H (bit)</td></tr><tr><td>추정식</td><td>\\(\\widehat{\\mathrm{Time}}=424+78H\\)</td></tr><tr><td>모형 p-value</td><td>0.16</td></tr><tr><td>Multiple R-squared</td><td>0.03</td></tr><tr><td>판정 유의수준 α</td><td>0.05</td></tr></tbody></table></div><p class=\"analysis-note\">실습 전사에 주어진 요약값이다. 아래 Sternberg 로그와는 별개의 분석이며, 원자료가 없는 이 회귀를 로그 4행에서 산출한 것으로 간주하지 않는다.</p></figure>"
+  },
+  "ME4-Q26": {
+    "id": "ME4-Q26",
+    "type": "essay",
+    "chapter": "정보량·중복도",
+    "conceptIds": [
+      "OX064",
+      "OX065",
+      "OX066",
+      "OX067",
+      "OX073"
+    ],
+    "prompt": "이항 사건의 앞면 확률 p에 따른 엔트로피 곡선을 스케치하고 \\(p = 0\\),0.5,1의 값을 표시하시오. 공정한 동전과 휜 동전의 중복도를 비교하시오. 휜 동전 H는 0.4로 주어진다. 이 H는 손계산용 제시값이다. 소수 답은 첫째 자리까지 쓴다.",
+    "answer": "\\(p = 0\\)과 1에서 \\(H = 0\\), \\(p = 0.5\\)에서 \\(H = 1\\)인 역 U자형이다. 같은 두 대안의 \\(H_{\\max} = 1\\)에서 공정한 동전 중복도는 0%, 휜 동전은 60.0%다. 확률이 치우칠수록 예측이 쉬워져 평균 엔트로피는 낮아지고 중복도는 높아진다.",
+    "explanation": [
+      "곡선의 양 끝은 확정 사건, 중앙은 불확실성이 최대인 분포다.",
+      "문제의 근삿값을 사용하여 반올림 기준을 통일한다."
+    ],
+    "rubric": [
+      {
+        "points": 3.75,
+        "criterion": "곡선과 세 지점"
+      },
+      {
+        "points": 3.5,
+        "criterion": "중복도 0%·60.0%"
+      },
+      {
+        "points": 1.75,
+        "criterion": "불균형의 방향 설명"
+      }
+    ],
+    "commonMistakes": [
+      "엔트로피를 p 자체의 직선 그래프로 그리지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+    "source": "3장 교안 p.10 · 3장 교안 p.10 · 정보처리 전사1 · 3장 교안 p.11 · 3장 교안 p.10–11 · 손계산용 수치/표기 변형",
+    "calc": true,
+    "points": 9,
+    "originId": "ES015",
+    "set": 4,
+    "number": 26,
+    "minutes": 12,
+    "variant": false,
+    "promptPlain": "이항 사건의 앞면 확률 p에 따른 엔트로피 곡선을 스케치하고 \\(p = 0\\),0.5,1의 값을 표시하시오. 공정한 동전과 휜 동전의 중복도를 비교하시오. 휜 동전 H는 0.4로 주어진다. 이 H는 손계산용 제시값이다. 소수 답은 첫째 자리까지 쓴다.",
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME4-Q28": {
+    "id": "ME4-Q28",
+    "type": "essay",
+    "chapter": "회귀·실험실습",
+    "conceptIds": [
+      "OX169",
+      "OX170",
+      "OX171",
+      "OX172",
+      "OX173"
+    ],
+    "prompt": "전체 관측값 \\(x = \\left(1, 2, 3\\right)\\), \\(y = \\left(1, 3, 8\\right)\\)이다. 절편 포함 OLS 회귀식, \\(x = 2\\)의 잔차, SST·SSR·SSE·\\(R^2\\)·F를 구하시오. 최소제곱의 목적과 중간값·자유도를 제시하시오. 비율·F는 정확한 분수로 답해도 되며 F를 소수로 쓰면 첫째 자리까지 나타낸다.",
+    "answer": "\\(\\bar{x} = 2\\), \\(\\bar{y} = 4\\), \\(S_{xx} = 2\\), \\(S_{xy} = 7\\)이므로 \\(b_1 = 3.5\\), \\(b_0 = -3\\)이다. 예측값은 0.5·4·7.5, 잔차는 0.5·-1·0.5다. \\(\\mathrm{SST} = 26\\), \\(\\mathrm{SSR} = 24.5\\), \\(\\mathrm{SSE} = 1.5\\), \\(R^{2} = \\frac{49}{52}\\)이다. 잔차 df=1, \\(\\mathrm{MSE} = 1.5\\), \\(\\mathrm{MSR} = 24.5\\), \\(F = \\frac{49}{3} \\approx 16.3\\)이다. OLS는 잔차 제곱합을 최소화한다.",
+    "explanation": [
+      "편차 분해와 자유도를 통해 서로 다른 계산을 검산한다.",
+      "3점 예시는 계산 연습용이며 높은 \\(R^2\\)만으로 신뢰할 일반화·인과결론을 내리지 않는다."
+    ],
+    "rubric": [
+      {
+        "points": 2.75,
+        "criterion": "Sxx·Sxy·계수"
+      },
+      {
+        "points": 1.25,
+        "criterion": "예측·잔차 부호"
+      },
+      {
+        "points": 2.5,
+        "criterion": "세 제곱합"
+      },
+      {
+        "points": 2.5,
+        "criterion": "\\(R^2\\)·평균제곱·F"
+      }
+    ],
+    "commonMistakes": [
+      "잔차를 예측-관측으로 뒤집거나 F에 제곱합 비만 넣지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다. R²=49/52, F=49/3 또는 약 16.3 인정. 분수의 소수 전개 불필요.",
+    "source": "회귀 교안 p.15 · 회귀 교안 p.14–16 · 회귀 교안 p.17–18 · 회귀 교안 p.19 · 회귀 교안 p.20 · 손계산용 수치/표기 변형",
+    "calc": true,
+    "points": 9,
+    "visual": "<figure class=\"visual-box analysis-material\"><figcaption>OLS 계산용 전체 관측값 · 3쌍</figcaption><div class=\"table-scroll\"><table><thead><tr><th>관측</th><th>x</th><th>y</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>1</td></tr><tr><td>2</td><td>2</td><td>3</td></tr><tr><td>3</td><td>3</td><td>8</td></tr></tbody></table></div></figure>",
+    "originId": "ES039",
+    "set": 4,
+    "number": 28,
+    "minutes": 12,
+    "variant": true,
+    "promptPlain": "전체 관측값 \\(x = \\left(1, 2, 3\\right)\\), \\(y = \\left(1, 3, 8\\right)\\)이다. 절편 포함 OLS 회귀식, \\(x = 2\\)의 잔차, SST·SSR·SSE·\\(R^2\\)·F를 구하시오. 최소제곱의 목적과 중간값·자유도를 제시하시오. 비율·F는 정확한 분수로 답해도 되며 F를 소수로 쓰면 첫째 자리까지 나타낸다.",
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME5-Q09": {
+    "id": "ME5-Q09",
+    "chapter": "정보량·중복도",
+    "conceptIds": [
+      "OX066",
+      "OX067"
+    ],
+    "type": "single",
+    "options": [
+      {
+        "id": "o4",
+        "text": "150.0%",
+        "correct": false,
+        "explanation": "\\((H_{\\max}-H)/H\\)로 분모를 대상 정보량에 두었다. 중복도는 최대 정보량을 기준으로 나눈다."
+      },
+      {
+        "id": "o3",
+        "text": "0.6%",
+        "correct": false,
+        "explanation": "중복도의 비율 0.6에 100을 곱하지 않았다. 백분율로 표현하면 60.0%다."
+      },
+      {
+        "id": "o1",
+        "text": "60.0%",
+        "correct": true,
+        "explanation": "\\(R=(1-0.4/1)\\times100=0.6\\times100=60.0\\%\\)다. 제시된 정보량을 사용하며 확률에서 다시 로그를 계산하지 않는다."
+      },
+      {
+        "id": "o2",
+        "text": "40.0%",
+        "correct": false,
+        "explanation": "\\(H/H_{\\max}\\) 자체를 백분율로 썼다. 중복도는 최대 정보량에서 차지하지 않는 부분이므로 1에서 빼야 한다."
+      }
+    ],
+    "source": "3장 교안 p.11 · 손계산용 수치/표기 변형",
+    "originId": "MC039",
+    "set": 5,
+    "number": 9,
+    "prompt": "손계산 연습 자료에서 두 대안의 최대 정보량은 \\(H_{\\max}=1\\) bit이고, 대상 분포의 정보량은 \\(H=0.4\\) bit로 주어졌다. \\(R=(1-H/H_{\\max})\\times100\\)에 따른 중복도는?",
+    "points": 2,
+    "minutes": 1.25,
+    "answer": "3번",
+    "explanation": [
+      "\\(R=(1-0.4/1)\\times100=0.6\\times100=60.0\\%\\)다. 제시된 정보량을 사용하며 확률에서 다시 로그를 계산하지 않는다."
+    ],
+    "variant": false,
+    "promptPlain": "손계산 연습 자료에서 두 대안의 최대 정보량은 \\(H_{\\max}=1\\) bit이고, 대상 분포의 정보량은 \\(H=0.4\\) bit로 주어졌다. \\(R=(1-H/H_{\\max})\\times100\\)에 따른 중복도는?",
+    "commonMistakes": [
+      "\\(H/H_{\\max}\\) 자체를 백분율로 썼다. 중복도는 최대 정보량에서 차지하지 않는 부분이므로 1에서 빼야 한다.",
+      "\\((H_{\\max}-H)/H\\)로 분모를 대상 정보량에 두었다. 중복도는 최대 정보량을 기준으로 나눈다.",
+      "중복도의 비율 0.6에 100을 곱하지 않았다. 백분율로 표현하면 60.0%다."
+    ],
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME5-Q12": {
+    "id": "ME5-Q12",
+    "chapter": "Fitts·운동·양립성",
+    "conceptIds": [
+      "OX116",
+      "OX117"
+    ],
+    "type": "single",
+    "options": [
+      {
+        "id": "o4",
+        "text": "650.0 ms / 1550.0 ms",
+        "correct": false,
+        "explanation": "거리/너비 비 4와 10을 로그 변환 없이 대입했다. ISO형은 비에 1을 더한 뒤 밑 2 로그를 취한다."
+      },
+      {
+        "id": "o2",
+        "text": "345.0 ms / 525.0 ms",
+        "correct": false,
+        "explanation": "두 조건에서 모두 절편 50 ms를 빠뜨렸다. MT는 기울기와 ID의 곱에 절편을 더해 계산한다."
+      },
+      {
+        "id": "o1",
+        "text": "395.0 ms / 575.0 ms",
+        "correct": true,
+        "explanation": "\\((가):50+150\\times2.3=395.0\\), \\((나):50+150\\times3.5=575.0\\) ms다. 실제 로그의 더 정밀한 값이 아니라 문제의 근삿값을 적용한다."
+      },
+      {
+        "id": "o3",
+        "text": "575.0 ms / 395.0 ms",
+        "correct": false,
+        "explanation": "두 조건의 계산값을 반대로 연결했다. (나)의 거리/너비 비가 더 커서 예측 시간이 더 길다."
+      }
+    ],
+    "source": "3장 교안 p.47 · 손계산용 수치/표기 변형",
+    "visual": "<figure class=\"visual-box\"><figcaption>같은 시작점에서 두 표적으로 이동 — 거리와 너비의 전체 비교</figcaption><svg role=\"img\" aria-label=\"같은 시작점에서 두 표적으로 이동 — 거리와 너비의 전체 비교\" viewBox=\"0 0 600 220\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"45\" cy=\"65\" r=\"6\" fill=\"#333\"/><circle cx=\"45\" cy=\"145\" r=\"6\" fill=\"#333\"/><path d=\"M55 65H365M55 145H445\" stroke=\"#7c8fa6\" stroke-width=\"2\"/><rect x=\"325\" y=\"40\" width=\"80\" height=\"50\" fill=\"#c4cfdb\"/><rect x=\"425\" y=\"120\" width=\"40\" height=\"50\" fill=\"#c4cfdb\"/><text x=\"65\" y=\"32\">(가) D=80, W=20</text><text x=\"65\" y=\"112\">(나) D=100, W=10</text><text x=\"65\" y=\"195\">공통: a=50 ms, b=150 ms/bit, ISO형</text></svg></figure>",
+    "originId": "MC065",
+    "set": 5,
+    "number": 12,
+    "prompt": "ISO형 \\(MT=50+150\\log_2(D/W+1)\\) ms에서 (가) \\(D=80,W=20\\), (나) \\(D=100,W=10\\)이다. 두 길이는 같은 단위다. 손계산용 \\(\\log_2 5\\approx2.3\\), \\(\\log_2 11\\approx3.5\\)를 그대로 사용한 두 MT는?",
+    "points": 2,
+    "minutes": 1.25,
+    "answer": "3번",
+    "explanation": [
+      "\\((가):50+150\\times2.3=395.0\\), \\((나):50+150\\times3.5=575.0\\) ms다. 실제 로그의 더 정밀한 값이 아니라 문제의 근삿값을 적용한다."
+    ],
+    "variant": false,
+    "promptPlain": "ISO형 \\(MT=50+150\\log_2(D/W+1)\\) ms에서 (가) \\(D=80,W=20\\), (나) \\(D=100,W=10\\)이다. 두 길이는 같은 단위다. 손계산용 \\(\\log_2 5\\approx2.3\\), \\(\\log_2 11\\approx3.5\\)를 그대로 사용한 두 MT는?",
+    "commonMistakes": [
+      "두 조건에서 모두 절편 50 ms를 빠뜨렸다. MT는 기울기와 ID의 곱에 절편을 더해 계산한다.",
+      "두 조건의 계산값을 반대로 연결했다. (나)의 거리/너비 비가 더 커서 예측 시간이 더 길다.",
+      "거리/너비 비 4와 10을 로그 변환 없이 대입했다. ISO형은 비에 1을 더한 뒤 밑 2 로그를 취한다."
+    ],
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME5-Q20": {
+    "id": "ME5-Q20",
+    "type": "short",
+    "chapter": "HFE 연구방법론",
+    "conceptIds": [
+      "OX042",
+      "OX043",
+      "OX044"
+    ],
+    "prompt": "파일럿 4명의 평균은 80, s=8, z=2, k=0.05다. \\(n=(zs/(k\\bar{x}))^2\\)로 최소 총 인원과 추가 모집 인원을 구하시오. 파일럿도 최종 표본에 포함한다.",
+    "answer": "총 16명 / 추가 12명",
+    "explanation": [
+      "\\(n=(16/4)^2=16\\)명이다. 이미 포함된 파일럿 4명을 빼면 12명을 더 모집한다."
+    ],
+    "rubric": [
+      {
+        "points": 1.0,
+        "criterion": "필요 표본 수 16 및 최소 총 인원 16명"
+      },
+      {
+        "points": 1.0,
+        "criterion": "추가 12명"
+      }
+    ],
+    "commonMistakes": [
+      "총 인원과 추가 인원을 혼동하거나 15명으로 내리지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+    "source": "2장 교안 p.18 · 2장 교안 p.19 · 손계산용 수치/표기 변형",
+    "calc": true,
+    "points": 2,
+    "originId": "SA015",
+    "set": 5,
+    "number": 20,
+    "minutes": 2,
+    "variant": true,
+    "promptPlain": "파일럿 4명의 평균은 80, s=8, z=2, k=0.05다. \\(n=(zs/(k\\bar{x}))^2\\)로 최소 총 인원과 추가 모집 인원을 구하시오. 파일럿도 최종 표본에 포함한다.",
+    "questionRevision": "hand-calc-2026-10-18"
+  },
+  "ME5-Q24": {
+    "id": "ME5-Q24",
+    "type": "short",
+    "chapter": "회귀·실험실습",
+    "conceptIds": [
+      "OX183",
+      "OX184",
+      "OX185"
+    ],
+    "prompt": "집합 {2,5,8}, Probe=4, User Input=False, T/F=True, Time=620 ms다. YES/NO 조건·정오·PSS를 적으시오. TimeOut의 Time=5000도 초로 바꾸시오.",
+    "answer": "NO / 정답 / \\(\\mathrm{PSS} = 3\\) / TimeOut 제한시간 기록 5초",
+    "explanation": [
+      "Probe는 집합에 없고 없다고 정확히 답했다. T/F는 정오이지 집합 포함 여부가 아니다. 타임아웃은 정상 RT와 구별한다."
+    ],
+    "rubric": [
+      {
+        "points": 0.5,
+        "criterion": "NO"
+      },
+      {
+        "points": 0.5,
+        "criterion": "정답"
+      },
+      {
+        "points": 0.5,
+        "criterion": "\\(\\mathrm{PSS} = 3\\)"
+      },
+      {
+        "points": 0.5,
+        "criterion": "5초이며 타임아웃 구분"
+      }
+    ],
+    "commonMistakes": [
+      "True를 모두 YES로 분류하지 않는다."
+    ],
+    "englishTerms": [],
+    "language": "한글·수식·수치·단위로 작성.",
+    "accepted": "핵심 의미와 조건이 같은 표현은 인정한다.",
+    "source": "Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사",
+    "calc": false,
+    "points": 2,
+    "visual": "<figure class=\"visual-box\"><figcaption>Sternberg 로그 두 시행 — Time 단위 ms</figcaption><div class=\"table-scroll\"><table><thead><tr><th>집합</th><th>Probe</th><th>User Input</th><th>T/F</th><th>Time</th></tr></thead><tbody><tr><td>2,5,8</td><td>4</td><td>False</td><td>True</td><td>620</td></tr><tr><td>2,5,8</td><td>7</td><td>TimeOut</td><td>False</td><td>5000</td></tr></tbody></table></div></figure>",
+    "originId": "SA042",
+    "set": 5,
+    "number": 24,
+    "minutes": 2,
+    "variant": false
+  }
+}

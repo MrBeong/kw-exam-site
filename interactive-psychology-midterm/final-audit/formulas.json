@@ -26,19 +26,40 @@
     ]
   },
   {
-    "tex": "s = 10",
+    "tex": "s=10",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "07_다지선다_문제와해설.md",
+      "ES034:explanation",
+      "MC028:stem",
+      "SA015:prompt"
+    ]
+  },
+  {
+    "tex": "z=2",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
       "MC028:stem",
-      "SA015:prompt",
-      "written/main-template.html"
+      "SA015:prompt"
     ]
   },
   {
-    "tex": "z = 1.96",
+    "tex": "k=0.1",
     "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "07_다지선다_문제와해설.md",
+      "MC028:stem",
+      "SA015:prompt"
+    ]
+  },
+  {
+    "tex": "n=(zs/(k\\bar{x}))^2",
+    "origins": [
+      "01_핵심개념과_공식.md",
       "03_예상문제.md",
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
@@ -50,39 +71,12 @@
     ]
   },
   {
-    "tex": "k = 0.05",
+    "tex": "n=(20/8)^2=(5/2)^2=25/4=6.25",
     "origins": [
-      "03_예상문제.md",
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
-      "MC028:stem",
-      "SA015:prompt",
-      "written/main-template.html"
-    ]
-  },
-  {
-    "tex": "n=\\left(\\frac{zs}{k\\bar{x}}\\right)^2",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ES010:prompt",
-      "MC026:stem",
-      "MC027:stem",
-      "MC028:stem",
-      "MC102:stem",
-      "ME1-Q13:prompt",
-      "ME2-Q17:statements:text",
-      "ME5-Q20:prompt",
-      "SA015:prompt"
-    ]
-  },
-  {
-    "tex": "\\left(\\frac{1.96 \\times 10}{5}\\right)^{2} = 15.3664",
-    "origins": [
-      "04_정답과_해설.md",
+      "MC028:explanation",
+      "MC028:options:explanation",
       "SA015:explanation"
     ]
   },
@@ -126,7 +120,6 @@
       "07_다지선다_문제와해설.md",
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
-      "ES014:answer",
       "MC036:options:explanation",
       "MC061:stem",
       "MC104:options:explanation",
@@ -153,154 +146,103 @@
       "06_시험직전_체크리스트.md",
       "07_다지선다_문제와해설.md",
       "14_기출형예상_정답과해설.md",
-      "ES014:explanation",
       "MC036:options:explanation",
       "MC118:explanation",
       "MC118:options:explanation",
       "ME3-Q09:options:explanation",
       "ME4-Q16:explanation",
       "ME4-Q16:options:explanation",
-      "ME4-Q24:explanation",
       "SA019:rubric:criterion",
       "SA041:explanation",
       "written/main-template.html"
     ]
   },
   {
-    "tex": "\\log_2 5 = 2.322",
+    "tex": "\\log_2 5\\approx2.3",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
+      "ES014:prompt",
       "MC037:stem",
+      "MC065:stem",
       "ME4-Q12:prompt",
-      "SA020:prompt"
-    ]
-  },
-  {
-    "tex": "\\log_2 1.25 = 0.322",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "MC037:stem",
-      "ME4-Q12:prompt",
-      "SA020:prompt"
-    ]
-  },
-  {
-    "tex": "H",
-    "origins": [
-      "00_범위와_출제정보.md",
-      "02_유형별_풀이전략.md",
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ES016:prompt",
-      "ES017:prompt",
-      "MC123:stem",
-      "ME1-Q10:prompt",
-      "ME2-Q21:prompt",
-      "OX064:statement",
-      "OX069:statement",
-      "OX073:statement",
-      "OX108:statement",
+      "ME5-Q12:prompt",
+      "OX063:statement",
+      "OX116:statement",
       "SA020:prompt",
-      "written/main-template.html"
+      "SA031:prompt"
+    ]
+  },
+  {
+    "tex": "\\log_2 1.25\\approx0.3",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "07_다지선다_문제와해설.md",
+      "13_기출형예상_문제.md",
+      "14_기출형예상_정답과해설.md",
+      "ES014:prompt",
+      "MC037:stem",
+      "ME4-Q12:prompt",
+      "OX063:statement",
+      "SA020:prompt"
+    ]
+  },
+  {
+    "tex": "H=0.7",
+    "origins": [
+      "04_정답과_해설.md",
+      "SA020:answer"
+    ]
+  },
+  {
+    "tex": "H_{\\max}=1",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "07_다지선다_문제와해설.md",
+      "13_기출형예상_문제.md",
+      "14_기출형예상_정답과해설.md",
+      "ES014:answer",
+      "MC039:stem",
+      "ME2-Q21:answer",
+      "ME5-Q09:prompt",
+      "SA020:answer",
+      "SA021:prompt"
+    ]
+  },
+  {
+    "tex": "H=0.2\\times2.3+0.8\\times0.3=0.46+0.24=0.7",
+    "origins": [
+      "04_정답과_해설.md",
+      "07_다지선다_문제와해설.md",
+      "14_기출형예상_정답과해설.md",
+      "MC037:explanation",
+      "MC037:options:explanation",
+      "ME4-Q12:explanation",
+      "ME4-Q12:options:explanation",
+      "SA020:explanation"
     ]
   },
   {
     "tex": "H_{\\max}=\\log_2 2=1",
     "origins": [
-      "03_예상문제.md",
       "04_정답과_해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q21:prompt",
-      "SA020:prompt"
+      "SA020:explanation"
     ]
   },
   {
-    "tex": "H = 0.722",
-    "origins": [
-      "04_정답과_해설.md",
-      "SA020:answer",
-      "SA020:rubric:criterion"
-    ]
-  },
-  {
-    "tex": "H_{\\max} = 1",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ES015:answer",
-      "MC038:options:explanation",
-      "MC039:stem",
-      "ME1-Q17:statements:text",
-      "ME2-Q02:options:explanation",
-      "ME2-Q21:answer",
-      "ME2-Q21:rubric:criterion",
-      "ME3-Q21:prompt",
-      "ME4-Q26:answer",
-      "ME5-Q09:prompt",
-      "SA020:answer",
-      "SA020:rubric:criterion",
-      "SA021:prompt"
-    ]
-  },
-  {
-    "tex": "0.2 \\times 2.322 + 0.8 \\times 0.322 = 0.722",
+    "tex": "R=(1-0.7)\\times100=30.0\\%",
     "origins": [
       "04_정답과_해설.md",
       "SA020:explanation"
     ]
   },
   {
-    "tex": "\\left(1 - \\frac{0.722}{1}\\right) \\times 100 = 27.8",
-    "origins": [
-      "04_정답과_해설.md",
-      "SA020:explanation"
-    ]
-  },
-  {
-    "tex": "\\frac{H}{H_{\\max}}",
-    "origins": [
-      "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "14_기출형예상_정답과해설.md",
-      "MC039:options:explanation",
-      "MC040:options:explanation",
-      "MC123:options:explanation",
-      "ME1-Q10:options:explanation",
-      "ME1-Q17:statements:explanation",
-      "ME2-Q21:commonMistakes",
-      "ME4-Q08:options:explanation",
-      "ME5-Q09:options:explanation",
-      "SA020:commonMistakes"
-    ]
-  },
-  {
-    "tex": "\\%\\text{Redundancy} = (1 - H/H_{\\max})\\times 100",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q21:prompt",
-      "SA021:prompt"
-    ]
-  },
-  {
-    "tex": "H = 0.468",
+    "tex": "R=(1-H/H_{\\max})\\times100",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
@@ -308,13 +250,26 @@
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
       "MC039:stem",
-      "ME1-Q17:statements:text",
+      "ME3-Q21:prompt",
       "ME5-Q09:prompt",
       "SA021:prompt"
     ]
   },
   {
-    "tex": "H_{\\max} = \\log_2 8 = 3",
+    "tex": "H=0.4",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "07_다지선다_문제와해설.md",
+      "13_기출형예상_문제.md",
+      "14_기출형예상_정답과해설.md",
+      "MC039:stem",
+      "ME5-Q09:prompt",
+      "SA021:prompt"
+    ]
+  },
+  {
+    "tex": "H=2.4",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
@@ -322,44 +277,38 @@
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
       "ES016:prompt",
-      "MC040:options:explanation",
-      "ME3-Q21:explanation",
-      "ME3-Q21:prompt",
-      "ME4-Q08:options:explanation",
+      "MC040:stem",
+      "ME4-Q08:prompt",
       "SA021:prompt"
     ]
   },
   {
-    "tex": "H = 2.3568",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "ES016:prompt",
-      "SA021:prompt"
-    ]
-  },
-  {
-    "tex": "\\left(1 - 0.468\\right) \\times 100",
+    "tex": "(1-0.4)\\times100=60.0\\%",
     "origins": [
       "04_정답과_해설.md",
       "SA021:explanation"
     ]
   },
   {
-    "tex": "\\left(1 - \\frac{2.3568}{3}\\right) \\times 100",
+    "tex": "H_{\\max}=\\log_2 8=3",
     "origins": [
       "04_정답과_해설.md",
-      "SA021:explanation"
-    ]
-  },
-  {
-    "tex": "H_{\\max} = 3",
-    "origins": [
-      "04_정답과_해설.md",
+      "07_다지선다_문제와해설.md",
       "14_기출형예상_정답과해설.md",
-      "ES016:answer",
-      "ME3-Q21:rubric:criterion",
-      "SA021:rubric:criterion"
+      "MC040:explanation",
+      "MC040:options:explanation",
+      "ME4-Q08:explanation",
+      "ME4-Q08:options:explanation",
+      "OX069:explanation",
+      "SA021:explanation"
+    ]
+  },
+  {
+    "tex": "(1-2.4/3)\\times100=20.0\\%",
+    "origins": [
+      "04_정답과_해설.md",
+      "OX069:explanation",
+      "SA021:explanation"
     ]
   },
   {
@@ -564,9 +513,15 @@
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
       "ME4-Q22:prompt",
-      "OX099:statement",
       "SA028:prompt",
       "written/main-template.html"
+    ]
+  },
+  {
+    "tex": "20/3\\approx6.7",
+    "origins": [
+      "04_정답과_해설.md",
+      "SA028:answer"
     ]
   },
   {
@@ -597,8 +552,13 @@
     "tex": "\\mathrm{RT} = 500",
     "origins": [
       "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "MC056:options:explanation",
+      "SA028:rubric:criterion"
+    ]
+  },
+  {
+    "tex": "\\frac{20}{3}",
+    "origins": [
+      "04_정답과_해설.md",
       "SA028:rubric:criterion"
     ]
   },
@@ -606,10 +566,6 @@
     "tex": "\\frac{1}{150}",
     "origins": [
       "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "14_기출형예상_정답과해설.md",
-      "MC056:options:explanation",
-      "ME4-Q22:commonMistakes",
       "SA028:commonMistakes"
     ]
   },
@@ -736,7 +692,22 @@
     ]
   },
   {
-    "tex": "\\mathrm{MT} = 50 + 150\\,\\log_2 \\left(\\frac{D}{W} + 1\\right)",
+    "tex": "MT=50+150\\log_2(D/W+1)",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "07_다지선다_문제와해설.md",
+      "13_기출형예상_문제.md",
+      "14_기출형예상_정답과해설.md",
+      "MC065:stem",
+      "ME5-Q12:prompt",
+      "OX116:statement",
+      "OX117:statement",
+      "SA031:prompt"
+    ]
+  },
+  {
+    "tex": "D=80,W=20",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
@@ -749,7 +720,7 @@
     ]
   },
   {
-    "tex": "D = 80",
+    "tex": "D=100,W=10",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
@@ -762,22 +733,7 @@
     ]
   },
   {
-    "tex": "W = 20",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "MC064:stem",
-      "MC065:stem",
-      "MC066:stem",
-      "ME5-Q12:prompt",
-      "SA031:prompt"
-    ]
-  },
-  {
-    "tex": "D = 100",
+    "tex": "\\log_2 11\\approx3.5",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
@@ -786,68 +742,22 @@
       "14_기출형예상_정답과해설.md",
       "MC065:stem",
       "ME5-Q12:prompt",
+      "OX117:statement",
       "SA031:prompt"
     ]
   },
   {
-    "tex": "W = 10",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "MC065:stem",
-      "ME5-Q12:prompt",
-      "SA031:prompt"
-    ]
-  },
-  {
-    "tex": "\\log_2 5 = 2.3219",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "MC065:stem",
-      "ME5-Q12:prompt",
-      "SA031:prompt"
-    ]
-  },
-  {
-    "tex": "\\log_2 11 = 3.4594",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "MC065:stem",
-      "ME2-Q32:followUp",
-      "ME5-Q12:prompt",
-      "SA031:prompt"
-    ]
-  },
-  {
-    "tex": "50 + 150 \\times 2.3219",
+    "tex": "50+150\\times2.3=395.0",
     "origins": [
       "04_정답과_해설.md",
       "SA031:explanation"
     ]
   },
   {
-    "tex": "50 + 150 \\times 3.4594",
+    "tex": "50+150\\times3.5=575.0",
     "origins": [
       "04_정답과_해설.md",
       "SA031:explanation"
-    ]
-  },
-  {
-    "tex": "b\\,\\mathrm{ID}",
-    "origins": [
-      "04_정답과_해설.md",
-      "SA031:commonMistakes"
     ]
   },
   {
@@ -893,7 +803,6 @@
       "07_다지선다_문제와해설.md",
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
-      "ES034:answer",
       "ES034:rubric:criterion",
       "MC081:options:explanation",
       "MC090:options:explanation",
@@ -915,9 +824,6 @@
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q24:prompt",
       "SA038:prompt"
     ]
   },
@@ -926,9 +832,6 @@
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q24:prompt",
       "SA038:prompt"
     ]
   },
@@ -937,9 +840,6 @@
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q24:prompt",
       "SA038:prompt"
     ]
   },
@@ -948,9 +848,6 @@
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q24:prompt",
       "SA038:prompt"
     ]
   },
@@ -959,9 +856,6 @@
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q24:prompt",
       "SA038:prompt"
     ]
   },
@@ -969,8 +863,6 @@
     "tex": "b_1 = 2",
     "origins": [
       "04_정답과_해설.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q24:answer",
       "SA038:answer"
     ]
   },
@@ -979,9 +871,7 @@
     "origins": [
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
-      "14_기출형예상_정답과해설.md",
       "MC089:options:explanation",
-      "ME2-Q24:answer",
       "SA038:answer"
     ]
   },
@@ -990,9 +880,7 @@
     "origins": [
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
-      "14_기출형예상_정답과해설.md",
       "MC089:options:explanation",
-      "ME2-Q24:answer",
       "SA038:answer"
     ]
   },
@@ -1001,9 +889,7 @@
     "origins": [
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
-      "14_기출형예상_정답과해설.md",
       "MC089:options:explanation",
-      "ME2-Q24:explanation",
       "SA038:explanation"
     ]
   },
@@ -1012,9 +898,7 @@
     "origins": [
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
-      "14_기출형예상_정답과해설.md",
       "MC089:options:explanation",
-      "ME2-Q24:explanation",
       "SA038:explanation"
     ]
   },
@@ -1022,8 +906,6 @@
     "tex": "1 + 2 \\times 4",
     "origins": [
       "04_정답과_해설.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q24:explanation",
       "SA038:explanation"
     ]
   },
@@ -1035,7 +917,6 @@
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
       "MC116:options:text",
-      "ME2-Q24:commonMistakes",
       "ME3-Q15:options:text",
       "SA038:commonMistakes"
     ]
@@ -1093,7 +974,6 @@
       "ME1-Q28:explanation",
       "ME1-Q28:prompt",
       "ME1-Q28:rubric:criterion",
-      "ME3-Q24:prompt",
       "ME3-Q32:answer",
       "ME3-Q32:followUp",
       "ME3-Q32:rubric:criterion",
@@ -1111,7 +991,7 @@
     ]
   },
   {
-    "tex": "\\frac{70}{3} \\approx 23.33",
+    "tex": "\\frac{70}{3} \\approx 23.3",
     "origins": [
       "04_정답과_해설.md",
       "SA039:answer"
@@ -1146,7 +1026,7 @@
     ]
   },
   {
-    "tex": "F \\approx 23.33",
+    "tex": "F=\\frac{70}{3}",
     "origins": [
       "04_정답과_해설.md",
       "SA039:rubric:criterion"
@@ -1163,8 +1043,6 @@
     "tex": "\\frac{\\mathrm{SSR}}{\\mathrm{SSE}} = \\frac{70}{30}",
     "origins": [
       "04_정답과_해설.md",
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q24:commonMistakes",
       "SA039:commonMistakes"
     ]
   },
@@ -1174,12 +1052,10 @@
       "03_예상문제.md",
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
       "ES024:prompt",
       "ES041:answer",
       "MC095:stem",
-      "ME4-Q24:prompt",
       "ME5-Q28:answer",
       "SA041:prompt"
     ]
@@ -1195,7 +1071,6 @@
       "MC095:stem",
       "MC118:options:text",
       "ME4-Q16:options:text",
-      "ME4-Q24:prompt",
       "SA041:prompt"
     ]
   },
@@ -1209,7 +1084,6 @@
       "14_기출형예상_정답과해설.md",
       "MC118:options:text",
       "ME4-Q16:options:text",
-      "ME4-Q24:prompt",
       "SA041:prompt"
     ]
   },
@@ -1219,13 +1093,10 @@
       "03_예상문제.md",
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
       "ES036:prompt",
       "MC083:stem",
       "MC085:stem",
       "MC092:options:text",
-      "ME4-Q24:prompt",
       "OX042:explanation",
       "SA041:prompt",
       "written/main-template.html"
@@ -1242,7 +1113,6 @@
       "ES024:answer",
       "ES041:answer",
       "MC126:options:explanation",
-      "ME4-Q24:answer",
       "ME4-Q26:answer",
       "ME5-Q03:options:explanation",
       "ME5-Q28:answer",
@@ -1258,7 +1128,6 @@
       "MC095:visual",
       "MC118:visual",
       "ME4-Q16:visual",
-      "ME4-Q24:visual",
       "ME5-Q28:visual",
       "SA041:visual"
     ]
@@ -1267,20 +1136,31 @@
     "tex": "\\mathrm{PSS} = 3",
     "origins": [
       "04_정답과_해설.md",
-      "14_기출형예상_정답과해설.md",
-      "ME5-Q24:answer",
-      "ME5-Q24:rubric:criterion",
       "SA042:answer",
       "SA042:rubric:criterion"
     ]
   },
   {
-    "tex": "\\log_2 5 \\approx 2.322, \\log_2 1.25 \\approx 0.322",
+    "tex": "n=\\left(\\frac{zs}{k\\bar{x}}\\right)^2",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
-      "ES014:prompt",
-      "OX063:statement"
+      "07_다지선다_문제와해설.md",
+      "13_기출형예상_문제.md",
+      "14_기출형예상_정답과해설.md",
+      "ES010:prompt",
+      "MC026:stem",
+      "MC027:stem",
+      "MC102:stem",
+      "ME1-Q13:prompt",
+      "ME2-Q17:statements:text"
+    ]
+  },
+  {
+    "tex": "H=\\log_2 N",
+    "origins": [
+      "04_정답과_해설.md",
+      "ES014:answer"
     ]
   },
   {
@@ -1293,44 +1173,40 @@
     ]
   },
   {
+    "tex": "H=0.2\\times2.3+0.8\\times0.3=0.7",
+    "origins": [
+      "04_정답과_해설.md",
+      "ES014:answer",
+      "OX063:explanation"
+    ]
+  },
+  {
+    "tex": "0.46+0.24=0.7",
+    "origins": [
+      "04_정답과_해설.md",
+      "ES014:explanation"
+    ]
+  },
+  {
+    "tex": "(1-0.7/1)\\times100=30.0\\%",
+    "origins": [
+      "04_정답과_해설.md",
+      "ES014:explanation"
+    ]
+  },
+  {
     "tex": "p = 0",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
-      "ES014:answer",
       "ES015:answer",
       "ES015:prompt",
       "ME2-Q26:answer",
       "ME2-Q26:rubric:criterion",
       "ME4-Q26:answer",
       "ME4-Q26:prompt"
-    ]
-  },
-  {
-    "tex": "0.2 \\times 2.322 + 0.8 \\times 0.322 \\approx 0.722",
-    "origins": [
-      "04_정답과_해설.md",
-      "ES014:answer"
-    ]
-  },
-  {
-    "tex": "1",
-    "origins": [
-      "04_정답과_해설.md",
-      "ES014:answer",
-      "OX067:explanation",
-      "OX172:statement",
-      "OX173:statement",
-      "written/main-template.html"
-    ]
-  },
-  {
-    "tex": "(1-0.722/1)\\times100=27.8\\%",
-    "origins": [
-      "04_정답과_해설.md",
-      "ES014:answer"
     ]
   },
   {
@@ -1359,7 +1235,19 @@
     ]
   },
   {
-    "tex": "(1 - H/H_{\\max})\\times 100",
+    "tex": "H_{\\max} = 1",
+    "origins": [
+      "04_정답과_해설.md",
+      "07_다지선다_문제와해설.md",
+      "14_기출형예상_정답과해설.md",
+      "ES015:answer",
+      "MC038:options:explanation",
+      "ME2-Q02:options:explanation",
+      "ME4-Q26:answer"
+    ]
+  },
+  {
+    "tex": "(7/20,7/20,1/20,1/20,1/20,1/20,1/20,1/20)",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
@@ -1367,17 +1255,58 @@
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
       "ES016:prompt",
-      "MC123:stem",
-      "ME1-Q10:prompt",
-      "ME2-Q21:prompt",
+      "MC040:stem",
+      "ME4-Q08:prompt",
       "OX069:statement"
     ]
   },
   {
-    "tex": "\\left(1 - \\frac{2.3568}{3}\\right) \\times 100 \\approx 21.44",
+    "tex": "H_{\\max}=3",
+    "origins": [
+      "04_정답과_해설.md",
+      "14_기출형예상_정답과해설.md",
+      "ES016:answer",
+      "ME3-Q21:explanation"
+    ]
+  },
+  {
+    "tex": "R=(1-2.4/3)\\times100=20.0\\%",
     "origins": [
       "04_정답과_해설.md",
       "ES016:answer"
+    ]
+  },
+  {
+    "tex": "2.4/3=0.8",
+    "origins": [
+      "04_정답과_해설.md",
+      "ES016:explanation"
+    ]
+  },
+  {
+    "tex": "1-0.8=0.2",
+    "origins": [
+      "04_정답과_해설.md",
+      "ES016:explanation"
+    ]
+  },
+  {
+    "tex": "H",
+    "origins": [
+      "00_범위와_출제정보.md",
+      "02_유형별_풀이전략.md",
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "07_다지선다_문제와해설.md",
+      "13_기출형예상_문제.md",
+      "14_기출형예상_정답과해설.md",
+      "ES017:prompt",
+      "MC123:stem",
+      "ME1-Q10:prompt",
+      "OX064:statement",
+      "OX073:statement",
+      "OX108:statement",
+      "written/main-template.html"
     ]
   },
   {
@@ -1649,16 +1578,14 @@
     ]
   },
   {
-    "tex": "b = 130",
+    "tex": "b = 125",
     "origins": [
       "04_정답과_해설.md",
-      "ES024:answer",
-      "RC017:answer",
-      "RC017:rubric:criterion"
+      "ES024:answer"
     ]
   },
   {
-    "tex": "\\frac{1}{0.130} \\approx 7.69",
+    "tex": "\\frac{1}{0.125} \\approx 8.0",
     "origins": [
       "04_정답과_해설.md",
       "ES024:answer"
@@ -1674,7 +1601,7 @@
     ]
   },
   {
-    "tex": "\\mathrm{RT} = 690",
+    "tex": "\\mathrm{RT} = 675",
     "origins": [
       "04_정답과_해설.md",
       "ES024:answer"
@@ -1698,7 +1625,6 @@
       "MC067:stem",
       "ME1-Q05:prompt",
       "ME2-Q27:prompt",
-      "OX099:statement",
       "OX106:explanation",
       "OX106:statement",
       "OX107:explanation",
@@ -1712,12 +1638,11 @@
     "origins": [
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
-      "14_기출형예상_정답과해설.md",
       "ES026:answer",
+      "MC064:commonMistakes",
       "MC064:options:explanation",
-      "MC065:options:explanation",
-      "MC066:options:explanation",
-      "ME5-Q12:options:explanation"
+      "MC066:explanation",
+      "MC066:options:explanation"
     ]
   },
   {
@@ -1740,8 +1665,6 @@
       "ES028:prompt",
       "MC067:stem",
       "ME1-Q05:prompt",
-      "OX116:statement",
-      "OX117:statement",
       "OX119:statement",
       "written/main-template.html"
     ]
@@ -1770,7 +1693,7 @@
     ]
   },
   {
-    "tex": "A = \\left(50, 50, 50, 50\\right)",
+    "tex": "A=(50,50,50)",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
@@ -1778,7 +1701,7 @@
     ]
   },
   {
-    "tex": "B = \\left(0, 100, 25, 75\\right)",
+    "tex": "B=(40,50,60)",
     "origins": [
       "03_예상문제.md",
       "04_정답과_해설.md",
@@ -1786,14 +1709,7 @@
     ]
   },
   {
-    "tex": "\\frac{6250}{\\left(4 - 1\\right)}",
-    "origins": [
-      "04_정답과_해설.md",
-      "ES034:answer"
-    ]
-  },
-  {
-    "tex": "\\frac{200}{4} = 50",
+    "tex": "s^2=(100+0+100)/(3-1)=100",
     "origins": [
       "04_정답과_해설.md",
       "ES034:explanation"
@@ -2136,7 +2052,7 @@
     ]
   },
   {
-    "tex": "R^{2} = \\frac{12.5}{14} \\approx 0.8929",
+    "tex": "R^{2} = \\frac{25}{28}",
     "origins": [
       "04_정답과_해설.md",
       "ES039:answer"
@@ -2159,7 +2075,7 @@
     ]
   },
   {
-    "tex": "F = 8.3333",
+    "tex": "F = \\frac{25}{3} \\approx 8.3",
     "origins": [
       "04_정답과_해설.md",
       "ES039:answer"
@@ -2368,6 +2284,14 @@
     ]
   },
   {
+    "tex": "b = 130",
+    "origins": [
+      "04_정답과_해설.md",
+      "RC017:answer",
+      "RC017:rubric:criterion"
+    ]
+  },
+  {
     "tex": "\\mathrm{RT}=a+b\\,\\mathrm{bit}",
     "origins": [
       "03_예상문제.md",
@@ -2379,56 +2303,150 @@
     ]
   },
   {
-    "tex": "a=50",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "RC018:prompt"
-    ]
-  },
-  {
-    "tex": "b=150",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "RC018:prompt"
-    ]
-  },
-  {
-    "tex": "\\log_2 5\\approx2.3219",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "RC018:prompt"
-    ]
-  },
-  {
-    "tex": "\\log_2 11\\approx3.4594",
-    "origins": [
-      "03_예상문제.md",
-      "04_정답과_해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q32:prompt",
-      "RC018:prompt"
-    ]
-  },
-  {
-    "tex": "\\mathrm{MT} \\approx 398.29",
-    "origins": [
-      "04_정답과_해설.md",
-      "RC018:answer"
-    ]
-  },
-  {
     "tex": "\\frac{W}{D}",
     "origins": [
       "04_정답과_해설.md",
       "07_다지선다_문제와해설.md",
       "14_기출형예상_정답과해설.md",
+      "MC064:commonMistakes",
       "MC064:options:explanation",
       "ME2-Q32:commonMistakes",
       "RC018:commonMistakes"
+    ]
+  },
+  {
+    "tex": "y_i",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "OX169:statement",
+      "SA059:prompt"
+    ]
+  },
+  {
+    "tex": "\\hat y_i",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "SA059:prompt"
+    ]
+  },
+  {
+    "tex": "\\bar y",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "SA059:prompt"
+    ]
+  },
+  {
+    "tex": "y_i-\\bar y",
+    "origins": [
+      "04_정답과_해설.md",
+      "SA059:answer",
+      "SA059:recallAnswers",
+      "SA059:rubric:criterion"
+    ]
+  },
+  {
+    "tex": "y_i-\\hat y_i",
+    "origins": [
+      "04_정답과_해설.md",
+      "SA059:answer",
+      "SA059:recallAnswers",
+      "SA059:rubric:criterion"
+    ]
+  },
+  {
+    "tex": "\\hat y_i-\\bar y",
+    "origins": [
+      "04_정답과_해설.md",
+      "SA059:answer",
+      "SA059:recallAnswers",
+      "SA059:rubric:criterion"
+    ]
+  },
+  {
+    "tex": "y_i-\\bar y=(y_i-\\hat y_i)+(\\hat y_i-\\bar y)",
+    "origins": [
+      "04_정답과_해설.md",
+      "SA059:explanation"
+    ]
+  },
+  {
+    "tex": "r=\\mathrm{cov}(x,y)/(s_xs_y)",
+    "origins": [
+      "04_정답과_해설.md",
+      "SA060:answer",
+      "SA060:recallAnswers",
+      "SA060:rubric:criterion"
+    ]
+  },
+  {
+    "tex": "-1\\le r\\le1",
+    "origins": [
+      "04_정답과_해설.md",
+      "SA060:answer",
+      "SA060:recallAnswers",
+      "SA060:rubric:criterion"
+    ]
+  },
+  {
+    "tex": "y_i=\\beta_0+\\beta_1x_i+\\varepsilon_i",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "SA073:prompt"
+    ]
+  },
+  {
+    "tex": "\\beta_0",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "SA073:prompt"
+    ]
+  },
+  {
+    "tex": "\\beta_1",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "SA073:prompt"
+    ]
+  },
+  {
+    "tex": "E(\\varepsilon_i)",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "SA073:prompt"
+    ]
+  },
+  {
+    "tex": "\\operatorname{Var}(\\varepsilon_i)",
+    "origins": [
+      "03_예상문제.md",
+      "04_정답과_해설.md",
+      "SA073:prompt"
+    ]
+  },
+  {
+    "tex": "\\sigma^2",
+    "origins": [
+      "04_정답과_해설.md",
+      "SA073:answer",
+      "SA073:recallAnswers",
+      "SA073:rubric:criterion"
+    ]
+  },
+  {
+    "tex": "\\sum_i(y_i-b_0-b_1x_i)^2",
+    "origins": [
+      "04_정답과_해설.md",
+      "SA073:answer",
+      "SA073:recallAnswers",
+      "SA073:rubric:criterion"
     ]
   },
   {
@@ -2535,7 +2553,6 @@
       "02_유형별_풀이전략.md",
       "07_다지선다_문제와해설.md",
       "MC027:stem",
-      "MC028:stem",
       "OX042:explanation",
       "OX042:statement",
       "OX043:explanation",
@@ -2560,17 +2577,17 @@
     ]
   },
   {
-    "tex": "\\bar{x}=100",
+    "tex": "\\bar{x}=80",
     "origins": [
       "07_다지선다_문제와해설.md",
-      "MC028:stem",
-      "OX044:statement"
+      "MC028:stem"
     ]
   },
   {
-    "tex": "n = \\left(\\frac{1.96 \\times 10}{\\left(0.05 \\times 100\\right)}\\right)^{2} = 15.3664",
+    "tex": "7-5=2",
     "origins": [
       "07_다지선다_문제와해설.md",
+      "MC028:explanation",
       "MC028:options:explanation"
     ]
   },
@@ -2609,22 +2626,13 @@
     ]
   },
   {
-    "tex": "\\log_2 2 = 1",
-    "origins": [
-      "02_유형별_풀이전략.md",
-      "07_다지선다_문제와해설.md",
-      "14_기출형예상_정답과해설.md",
-      "MC037:options:explanation",
-      "ME4-Q12:options:explanation"
-    ]
-  },
-  {
-    "tex": "H = 0.2 \\times 2.322 + 0.8 \\times 0.322 = 0.722",
+    "tex": "0.2,0.8",
     "origins": [
       "07_다지선다_문제와해설.md",
+      "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
-      "MC037:options:explanation",
-      "ME4-Q12:options:explanation"
+      "MC037:stem",
+      "ME4-Q12:prompt"
     ]
   },
   {
@@ -2646,58 +2654,46 @@
     ]
   },
   {
-    "tex": "\\%\\text{Redundancy} = \\left(1 - \\frac{H}{H_{\\max}}\\right)\\times 100",
-    "origins": [
-      "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "MC039:stem",
-      "ME5-Q09:prompt"
-    ]
-  },
-  {
-    "tex": "\\frac{\\left(H_{\\max} - H\\right)}{H}",
+    "tex": "H/H_{\\max}",
     "origins": [
       "07_다지선다_문제와해설.md",
       "14_기출형예상_정답과해설.md",
+      "MC039:commonMistakes",
       "MC039:options:explanation",
+      "ME5-Q09:commonMistakes",
       "ME5-Q09:options:explanation"
     ]
   },
   {
-    "tex": "\\left(1 - \\frac{0.468}{1}\\right) \\times 100 = 53.2",
+    "tex": "(H_{\\max}-H)/H",
     "origins": [
       "07_다지선다_문제와해설.md",
       "14_기출형예상_정답과해설.md",
+      "MC039:commonMistakes",
       "MC039:options:explanation",
+      "ME5-Q09:commonMistakes",
       "ME5-Q09:options:explanation"
     ]
   },
   {
-    "tex": "H \\approx 2.3568",
+    "tex": "R=(1-0.4/1)\\times100=0.6\\times100=60.0\\%",
     "origins": [
       "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
-      "MC040:stem",
-      "ME4-Q08:prompt"
+      "MC039:explanation",
+      "MC039:options:explanation",
+      "ME5-Q09:explanation",
+      "ME5-Q09:options:explanation"
     ]
   },
   {
-    "tex": "R = \\left(1 - \\frac{2.3568}{3}\\right) \\times 100 \\approx 21.44",
+    "tex": "R=(1-2.4/3)\\times100=(1-0.8)\\times100=20.0\\%",
     "origins": [
       "07_다지선다_문제와해설.md",
       "14_기출형예상_정답과해설.md",
+      "MC040:explanation",
       "MC040:options:explanation",
-      "ME4-Q08:options:explanation"
-    ]
-  },
-  {
-    "tex": "2 \\times 0.35 + 6 \\times 0.05 = 1",
-    "origins": [
-      "07_다지선다_문제와해설.md",
-      "14_기출형예상_정답과해설.md",
-      "MC040:options:explanation",
+      "ME4-Q08:explanation",
       "ME4-Q08:options:explanation"
     ]
   },
@@ -2801,29 +2797,26 @@
     ]
   },
   {
-    "tex": "H = \\log_2 4 = 2",
+    "tex": "H=2",
     "origins": [
       "07_다지선다_문제와해설.md",
+      "MC056:explanation",
       "MC056:options:explanation"
     ]
   },
   {
-    "tex": "b = 150",
+    "tex": "RT=200+150\\times2=500",
     "origins": [
       "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "MC056:options:explanation",
-      "MC061:stem",
-      "MC126:options:text",
-      "ME2-Q11:prompt",
-      "ME5-Q03:options:text"
+      "MC056:explanation",
+      "MC056:options:explanation"
     ]
   },
   {
-    "tex": "\\frac{1}{b} \\approx 6.67",
+    "tex": "1000/150=20/3\\approx6.7",
     "origins": [
       "07_다지선다_문제와해설.md",
+      "MC056:explanation",
       "MC056:options:explanation"
     ]
   },
@@ -2854,6 +2847,18 @@
       "MC126:stem",
       "ME2-Q11:prompt",
       "ME5-Q03:prompt"
+    ]
+  },
+  {
+    "tex": "b = 150",
+    "origins": [
+      "07_다지선다_문제와해설.md",
+      "13_기출형예상_문제.md",
+      "14_기출형예상_정답과해설.md",
+      "MC061:stem",
+      "MC126:options:text",
+      "ME2-Q11:prompt",
+      "ME5-Q03:options:text"
     ]
   },
   {
@@ -2952,6 +2957,14 @@
     ]
   },
   {
+    "tex": "W = 20",
+    "origins": [
+      "07_다지선다_문제와해설.md",
+      "MC064:stem",
+      "MC066:stem"
+    ]
+  },
+  {
     "tex": "\\mathrm{ID} = \\log_2(2A/W)",
     "origins": [
       "01_핵심개념과_공식.md",
@@ -2965,8 +2978,6 @@
       "01_핵심개념과_공식.md",
       "07_다지선다_문제와해설.md",
       "MC064:stem",
-      "OX116:statement",
-      "OX117:statement",
       "OX118:statement",
       "written/main-template.html"
     ]
@@ -3003,6 +3014,7 @@
     "tex": "\\log_2 \\left(\\frac{2\\,A}{W}\\right) = \\log_2 8",
     "origins": [
       "07_다지선다_문제와해설.md",
+      "MC064:explanation",
       "MC064:options:explanation"
     ]
   },
@@ -3010,33 +3022,29 @@
     "tex": "\\log_2 \\left(\\frac{D}{W} + 1\\right) = \\log_2 5",
     "origins": [
       "07_다지선다_문제와해설.md",
+      "MC064:explanation",
       "MC064:options:explanation"
     ]
   },
   {
-    "tex": "50 + 150 \\times 2.3219 = 398.285",
+    "tex": "(가):50+150\\times2.3=395.0",
     "origins": [
       "07_다지선다_문제와해설.md",
       "14_기출형예상_정답과해설.md",
+      "MC065:explanation",
       "MC065:options:explanation",
+      "ME5-Q12:explanation",
       "ME5-Q12:options:explanation"
     ]
   },
   {
-    "tex": "50 + 150 \\times 3.4594 = 568.91",
+    "tex": "(나):50+150\\times3.5=575.0",
     "origins": [
       "07_다지선다_문제와해설.md",
       "14_기출형예상_정답과해설.md",
+      "MC065:explanation",
       "MC065:options:explanation",
-      "ME5-Q12:options:explanation"
-    ]
-  },
-  {
-    "tex": "50 + 150\\,\\left(\\frac{D}{W}\\right)",
-    "origins": [
-      "07_다지선다_문제와해설.md",
-      "14_기출형예상_정답과해설.md",
-      "MC065:options:explanation",
+      "ME5-Q12:explanation",
       "ME5-Q12:options:explanation"
     ]
   },
@@ -3074,8 +3082,6 @@
     "origins": [
       "07_다지선다_문제와해설.md",
       "MC066:stem",
-      "OX116:statement",
-      "OX117:statement",
       "OX118:statement",
       "OX139:statement",
       "written/main-template.html"
@@ -3092,6 +3098,7 @@
     "tex": "\\frac{D}{W} = 5",
     "origins": [
       "07_다지선다_문제와해설.md",
+      "MC066:explanation",
       "MC066:options:explanation"
     ]
   },
@@ -3099,6 +3106,7 @@
     "tex": "\\mathrm{ID} = \\log_2 6",
     "origins": [
       "07_다지선다_문제와해설.md",
+      "MC066:explanation",
       "MC066:options:explanation"
     ]
   },
@@ -3549,6 +3557,25 @@
     ]
   },
   {
+    "tex": "(1 - H/H_{\\max})\\times 100",
+    "origins": [
+      "07_다지선다_문제와해설.md",
+      "13_기출형예상_문제.md",
+      "14_기출형예상_정답과해설.md",
+      "MC123:stem",
+      "ME1-Q10:prompt"
+    ]
+  },
+  {
+    "tex": "\\frac{H}{H_{\\max}}",
+    "origins": [
+      "07_다지선다_문제와해설.md",
+      "14_기출형예상_정답과해설.md",
+      "MC123:options:explanation",
+      "ME1-Q10:options:explanation"
+    ]
+  },
+  {
     "tex": "H = 0.5 \\times 1 + 0.25 \\times 2 + 2 \\times 0.125 \\times 3 = 1.75",
     "origins": [
       "07_다지선다_문제와해설.md",
@@ -3571,11 +3598,9 @@
     "origins": [
       "02_유형별_풀이전략.md",
       "07_다지선다_문제와해설.md",
-      "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
       "MC123:options:explanation",
-      "ME1-Q10:options:explanation",
-      "ME2-Q21:prompt"
+      "ME1-Q10:options:explanation"
     ]
   },
   {
@@ -3810,7 +3835,7 @@
     ]
   },
   {
-    "tex": "\\left(1 - \\frac{H}{H_{\\max}}\\right) \\times 100 = \\left(1 - 0.468\\right) \\times 100 = 53.2",
+    "tex": "(1-0.4/1)\\times100=60.0\\%",
     "origins": [
       "14_기출형예상_정답과해설.md",
       "ME1-Q17:statements:explanation"
@@ -3927,7 +3952,7 @@
     ]
   },
   {
-    "tex": "\\log_2 \\left(\\frac{4}{3}\\right) = 0.4150",
+    "tex": "\\log_2 4=2",
     "origins": [
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
@@ -3935,22 +3960,29 @@
     ]
   },
   {
-    "tex": "H \\approx 0.81125",
+    "tex": "\\log_2(4/3)\\approx0.4",
     "origins": [
+      "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
-      "ME2-Q21:answer",
-      "ME2-Q21:rubric:criterion"
+      "ME2-Q21:prompt"
     ]
   },
   {
-    "tex": "0.25 \\times 2 + 0.75 \\times 0.4150 = 0.81125",
+    "tex": "H=0.8",
+    "origins": [
+      "14_기출형예상_정답과해설.md",
+      "ME2-Q21:answer"
+    ]
+  },
+  {
+    "tex": "H=0.25\\times2+0.75\\times0.4=0.5+0.3=0.8",
     "origins": [
       "14_기출형예상_정답과해설.md",
       "ME2-Q21:explanation"
     ]
   },
   {
-    "tex": "\\left(1 - 0.81125\\right) \\times 100 = 18.875",
+    "tex": "R=(1-0.8)\\times100=20.0\\%",
     "origins": [
       "14_기출형예상_정답과해설.md",
       "ME2-Q21:explanation"
@@ -3985,45 +4017,6 @@
     ]
   },
   {
-    "tex": "a=40",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q32:prompt"
-    ]
-  },
-  {
-    "tex": "b=120",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q32:prompt"
-    ]
-  },
-  {
-    "tex": "\\log_2 6\\approx2.5850",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q32:prompt"
-    ]
-  },
-  {
-    "tex": "\\mathrm{MT} \\approx 350.20",
-    "origins": [
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q32:answer"
-    ]
-  },
-  {
-    "tex": "\\log_2 6 = 2.5850",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME2-Q32:followUp"
-    ]
-  },
-  {
     "tex": "\\mathrm{ID} = \\log_2 \\left(\\frac{W}{D} + 1\\right)",
     "origins": [
       "13_기출형예상_문제.md",
@@ -4031,108 +4024,24 @@
     ]
   },
   {
-    "tex": "H = 0.7219",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q21:prompt"
-    ]
-  },
-  {
-    "tex": "H = 2.25",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q21:prompt"
-    ]
-  },
-  {
-    "tex": "\\left(1 - \\frac{H}{H_{\\max}}\\right) \\times 100",
+    "tex": "(1-0.6)\\times100=40.0\\%",
     "origins": [
       "14_기출형예상_정답과해설.md",
       "ME3-Q21:explanation"
     ]
   },
   {
-    "tex": "\\left(1 - 0.7219\\right) \\times 100 = 27.81",
+    "tex": "(1-2.1/3)\\times100=30.0\\%",
     "origins": [
       "14_기출형예상_정답과해설.md",
       "ME3-Q21:explanation"
     ]
   },
   {
-    "tex": "\\left(1 - \\frac{2.25}{3}\\right) \\times 100 = 25",
+    "tex": "H_{\\max} = 3",
     "origins": [
       "14_기출형예상_정답과해설.md",
-      "ME3-Q21:explanation"
-    ]
-  },
-  {
-    "tex": "n = 10",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q24:prompt"
-    ]
-  },
-  {
-    "tex": "\\mathrm{SST} = 80",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q24:prompt"
-    ]
-  },
-  {
-    "tex": "\\mathrm{SSE} = 20",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q24:prompt"
-    ]
-  },
-  {
-    "tex": "\\mathrm{SSR} = 60",
-    "origins": [
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q24:answer",
-      "ME3-Q24:rubric:criterion"
-    ]
-  },
-  {
-    "tex": "R^{2} = 0.75",
-    "origins": [
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q24:answer",
-      "ME3-Q24:rubric:criterion"
-    ]
-  },
-  {
-    "tex": "\\mathrm{SSR} = \\mathrm{SST} - \\mathrm{SSE} = 60",
-    "origins": [
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q24:explanation"
-    ]
-  },
-  {
-    "tex": "n - 2 = 8",
-    "origins": [
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q24:explanation"
-    ]
-  },
-  {
-    "tex": "R^{2} = \\frac{\\mathrm{SSR}}{\\mathrm{SST}} = \\frac{60}{80} = 0.75",
-    "origins": [
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q24:explanation"
-    ]
-  },
-  {
-    "tex": "\\frac{\\mathrm{SSE}}{\\mathrm{SST}} = 0.25",
-    "origins": [
-      "14_기출형예상_정답과해설.md",
-      "ME3-Q24:explanation"
+      "ME3-Q21:rubric:criterion"
     ]
   },
   {
@@ -4148,6 +4057,13 @@
       "13_기출형예상_문제.md",
       "14_기출형예상_정답과해설.md",
       "ME4-Q22:prompt"
+    ]
+  },
+  {
+    "tex": "25/3\\approx8.3",
+    "origins": [
+      "14_기출형예상_정답과해설.md",
+      "ME4-Q22:answer"
     ]
   },
   {
@@ -4172,7 +4088,7 @@
     ]
   },
   {
-    "tex": "\\frac{1}{0.12} \\approx 8.33",
+    "tex": "\\frac{1}{0.12} \\approx 8.3",
     "origins": [
       "14_기출형예상_정답과해설.md",
       "ME4-Q22:explanation"
@@ -4183,6 +4099,20 @@
     "origins": [
       "14_기출형예상_정답과해설.md",
       "ME4-Q22:rubric:criterion"
+    ]
+  },
+  {
+    "tex": "\\frac{25}{3}",
+    "origins": [
+      "14_기출형예상_정답과해설.md",
+      "ME4-Q22:rubric:criterion"
+    ]
+  },
+  {
+    "tex": "\\frac{1}{120}",
+    "origins": [
+      "14_기출형예상_정답과해설.md",
+      "ME4-Q22:commonMistakes"
     ]
   },
   {
@@ -4229,7 +4159,7 @@
     ]
   },
   {
-    "tex": "R^{2} = \\frac{24.5}{26} \\approx 0.9423",
+    "tex": "R^{2} = \\frac{49}{52}",
     "origins": [
       "14_기출형예상_정답과해설.md",
       "ME4-Q28:answer"
@@ -4243,7 +4173,7 @@
     ]
   },
   {
-    "tex": "F = \\frac{24.5}{1.5} \\approx 16.3333",
+    "tex": "F = \\frac{49}{3} \\approx 16.3",
     "origins": [
       "14_기출형예상_정답과해설.md",
       "ME4-Q28:answer"
@@ -4266,23 +4196,7 @@
     ]
   },
   {
-    "tex": "s = 8",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME5-Q20:prompt"
-    ]
-  },
-  {
-    "tex": "k = 0.04",
-    "origins": [
-      "13_기출형예상_문제.md",
-      "14_기출형예상_정답과해설.md",
-      "ME5-Q20:prompt"
-    ]
-  },
-  {
-    "tex": "\\left(\\frac{1.96 \\times 8}{\\left(0.04 \\times 80\\right)}\\right)^{2} = \\left(\\frac{15.68}{3.2}\\right)^{2} = 4.9^{2} = 24.01",
+    "tex": "n=(16/4)^2=16",
     "origins": [
       "14_기출형예상_정답과해설.md",
       "ME5-Q20:explanation"
@@ -4649,9 +4563,21 @@
     ]
   },
   {
+    "tex": "s = 10",
+    "origins": [
+      "written/main-template.html"
+    ]
+  },
+  {
     "tex": "z_{\\alpha/2} = 1.96",
     "origins": [
       "OX042:explanation",
+      "written/main-template.html"
+    ]
+  },
+  {
+    "tex": "k = 0.05",
+    "origins": [
       "written/main-template.html"
     ]
   },
@@ -4826,7 +4752,6 @@
   {
     "tex": "H_{\\max} = 1\\text{ bit}",
     "origins": [
-      "OX067:statement",
       "written/main-template.html"
     ]
   },
@@ -4839,7 +4764,6 @@
   {
     "tex": "H_{\\text{target}} = 0.468\\text{ bit}",
     "origins": [
-      "OX067:statement",
       "written/main-template.html"
     ]
   },
@@ -5309,8 +5233,6 @@
     "tex": "\\mathrm{MT}",
     "origins": [
       "02_유형별_풀이전략.md",
-      "OX116:statement",
-      "OX117:statement",
       "OX118:statement",
       "written/main-template.html"
     ]
@@ -5505,6 +5427,14 @@
     ]
   },
   {
+    "tex": "1",
+    "origins": [
+      "OX172:statement",
+      "OX173:statement",
+      "written/main-template.html"
+    ]
+  },
+  {
     "tex": "F",
     "origins": [
       "06_OX_개념전수검증.md",
@@ -5590,7 +5520,6 @@
     "origins": [
       "02_유형별_풀이전략.md",
       "OX042:statement",
-      "OX069:statement",
       "OX154:statement",
       "OX177:statement",
       "written/main-template.html"
@@ -5713,14 +5642,12 @@
   {
     "tex": "P_1 = 0.2, P_2 = 0.8",
     "origins": [
-      "OX063:statement",
       "written/main-template.html"
     ]
   },
   {
     "tex": "H_{\\text{avg}}",
     "origins": [
-      "OX063:statement",
       "written/main-template.html"
     ]
   },
@@ -5860,7 +5787,6 @@
     "tex": "b = 150\\text{ ms/bit}",
     "origins": [
       "01_핵심개념과_공식.md",
-      "OX099:statement",
       "written/main-template.html"
     ]
   },
@@ -6040,8 +5966,7 @@
     "origins": [
       "01_핵심개념과_공식.md",
       "OX042:statement",
-      "OX043:statement",
-      "OX044:statement"
+      "OX043:statement"
     ]
   },
   {
@@ -6057,32 +5982,7 @@
     ]
   },
   {
-    "tex": "s=10",
-    "origins": [
-      "OX044:statement"
-    ]
-  },
-  {
-    "tex": "\\alpha=0.05",
-    "origins": [
-      "OX044:statement",
-      "OX159:statement"
-    ]
-  },
-  {
-    "tex": "z=1.96",
-    "origins": [
-      "OX044:statement"
-    ]
-  },
-  {
-    "tex": "k=0.05",
-    "origins": [
-      "OX044:statement"
-    ]
-  },
-  {
-    "tex": "n = (1.96 \\times 10 / (0.05 \\times 100))^2 = (3.92)^2 = 15.366 \\approx 16",
+    "tex": "n=(20/8)^2=25/4=6.25",
     "origins": [
       "OX044:explanation"
     ]
@@ -6142,37 +6042,6 @@
     ]
   },
   {
-    "tex": "H = \\sum p_i \\log_2(1/p_i)",
-    "origins": [
-      "OX063:statement",
-      "OX070:statement"
-    ]
-  },
-  {
-    "tex": "1.0\\text{ bit}",
-    "origins": [
-      "OX063:statement"
-    ]
-  },
-  {
-    "tex": "H_1 = \\log_2(1/0.2) \\approx 2.322",
-    "origins": [
-      "OX063:explanation"
-    ]
-  },
-  {
-    "tex": "H_2 = \\log_2(1/0.8) \\approx 0.322",
-    "origins": [
-      "OX063:explanation"
-    ]
-  },
-  {
-    "tex": "H_{\\text{avg}} = 0.2(2.322) + 0.8(0.322) = 0.722\\text{ bits}",
-    "origins": [
-      "OX063:explanation"
-    ]
-  },
-  {
     "tex": "P(\\text{head})=0.9, P(\\text{tail})=0.1",
     "origins": [
       "OX064:statement"
@@ -6224,27 +6093,7 @@
     ]
   },
   {
-    "tex": "\\%\\text{Redundancy} = (1 - H_{\\text{target}}/H_{\\max})\\times 100",
-    "origins": [
-      "06_시험직전_체크리스트.md",
-      "OX067:statement"
-    ]
-  },
-  {
-    "tex": "46.8\\%",
-    "origins": [
-      "OX067:explanation",
-      "OX067:statement"
-    ]
-  },
-  {
-    "tex": "\\%\\text{Redundancy} = (1 - 0.468 / 1) \\times 100 = 53.2\\%",
-    "origins": [
-      "OX067:explanation"
-    ]
-  },
-  {
-    "tex": "H_{\\text{target}}/H_{\\max}",
+    "tex": "R=(1-0.4/1)\\times100=60.0\\%",
     "origins": [
       "OX067:explanation"
     ]
@@ -6277,49 +6126,13 @@
     ]
   },
   {
-    "tex": "H_{\\max} = \\log_2 8 = 3\\text{ bits}",
-    "origins": [
-      "OX069:statement"
-    ]
-  },
-  {
-    "tex": "0.35",
-    "origins": [
-      "OX069:statement"
-    ]
-  },
-  {
-    "tex": "\\log_2(1/0.35) \\approx 1.5146, \\log_2(1/0.05) \\approx 4.3219",
-    "origins": [
-      "OX069:statement"
-    ]
-  },
-  {
-    "tex": "2.3568\\text{ bits}",
-    "origins": [
-      "OX069:statement"
-    ]
-  },
-  {
-    "tex": "21.44\\%",
-    "origins": [
-      "OX069:statement"
-    ]
-  },
-  {
-    "tex": "H = 2(0.35\\log_2(1/0.35)) + 6(0.05\\log_2(1/0.05)) \\approx 2.3568\\text{ bits}",
-    "origins": [
-      "OX069:explanation"
-    ]
-  },
-  {
-    "tex": "\\%\\text{Redundancy} = (1 - 2.3568/3)\\times 100 \\approx 21.44\\%",
-    "origins": [
-      "OX069:explanation"
-    ]
-  },
-  {
     "tex": "p_1, \\dots, p_8",
+    "origins": [
+      "OX070:statement"
+    ]
+  },
+  {
+    "tex": "H = \\sum p_i \\log_2(1/p_i)",
     "origins": [
       "OX070:statement"
     ]
@@ -6561,7 +6374,6 @@
     "origins": [
       "01_핵심개념과_공식.md",
       "OX098:statement",
-      "OX099:statement",
       "OX103:statement",
       "OX104:statement",
       "OX105:statement",
@@ -6583,25 +6395,13 @@
     ]
   },
   {
-    "tex": "\\text{ms/bit}",
-    "origins": [
-      "OX099:statement"
-    ]
-  },
-  {
-    "tex": "6.67\\text{ bits/sec}",
-    "origins": [
-      "OX099:statement"
-    ]
-  },
-  {
-    "tex": "b = 150\\text{ ms/bit} = 0.15\\text{ sec/bit}",
+    "tex": "150\\text{ ms/bit}=0.15\\text{ s/bit}",
     "origins": [
       "OX099:explanation"
     ]
   },
   {
-    "tex": "1/b = 1 / 0.15 \\approx 6.67\\text{ bits/sec}",
+    "tex": "1000/150=20/3\\approx6.7\\text{ bits/s}",
     "origins": [
       "OX099:explanation"
     ]
@@ -6766,74 +6566,25 @@
     ]
   },
   {
-    "tex": "a=50\\text{ ms}, b=150\\text{ ms/bit}",
-    "origins": [
-      "OX116:statement",
-      "OX117:statement"
-    ]
-  },
-  {
-    "tex": "D=80",
-    "origins": [
-      "OX116:statement"
-    ]
-  },
-  {
-    "tex": "W=20",
-    "origins": [
-      "OX116:statement"
-    ]
-  },
-  {
-    "tex": "\\log_2 5 \\approx 2.3219\\text{ bits}",
-    "origins": [
-      "OX116:statement"
-    ]
-  },
-  {
-    "tex": "398.29\\text{ ms}",
-    "origins": [
-      "OX116:statement"
-    ]
-  },
-  {
-    "tex": "D/W + 1 = 80/20 + 1 = 5 \\Rightarrow \\mathrm{ID} = \\log_2 5 \\approx 2.3219\\text{ bits} \\Rightarrow \\mathrm{MT} = 50 + 150(2.3219) \\approx 398.29\\text{ ms}",
+    "tex": "D/W+1=5",
     "origins": [
       "OX116:explanation"
     ]
   },
   {
-    "tex": "\\log_2 11 \\approx 3.4594",
+    "tex": "MT=50+150\\times2.3=395.0",
     "origins": [
-      "OX117:statement"
+      "OX116:explanation"
     ]
   },
   {
-    "tex": "D=100",
+    "tex": "D/W+1=11",
     "origins": [
-      "OX117:statement"
+      "OX117:explanation"
     ]
   },
   {
-    "tex": "W=10",
-    "origins": [
-      "OX117:statement"
-    ]
-  },
-  {
-    "tex": "3.4594\\text{ bits}",
-    "origins": [
-      "OX117:statement"
-    ]
-  },
-  {
-    "tex": "568.91\\text{ ms}",
-    "origins": [
-      "OX117:statement"
-    ]
-  },
-  {
-    "tex": "D/W + 1 = 100/10 + 1 = 11 \\Rightarrow \\mathrm{ID} = \\log_2 11 \\approx 3.4594\\text{ bits} \\Rightarrow \\mathrm{MT} = 50 + 150(3.4594) \\approx 568.91\\text{ ms}",
+    "tex": "MT=50+150\\times3.5=575.0",
     "origins": [
       "OX117:explanation"
     ]
@@ -6954,6 +6705,12 @@
     ]
   },
   {
+    "tex": "\\alpha=0.05",
+    "origins": [
+      "OX159:statement"
+    ]
+  },
+  {
     "tex": "t = -7.6951, p\\text{-value} = 2.97 \\times 10^{-7} < 0.05",
     "origins": [
       "OX162:statement"
@@ -7006,12 +6763,6 @@
     "origins": [
       "01_핵심개념과_공식.md",
       "OX167:explanation"
-    ]
-  },
-  {
-    "tex": "y_i",
-    "origins": [
-      "OX169:statement"
     ]
   },
   {
@@ -7713,12 +7464,6 @@
     ]
   },
   {
-    "tex": "n=(zs/(k\\bar{x}))^2",
-    "origins": [
-      "01_핵심개념과_공식.md"
-    ]
-  },
-  {
     "tex": "k\\bar{x}",
     "origins": [
       "01_핵심개념과_공식.md"
@@ -7846,6 +7591,12 @@
   },
   {
     "tex": "\\log_2",
+    "origins": [
+      "02_유형별_풀이전략.md"
+    ]
+  },
+  {
+    "tex": "\\log_2 2 = 1",
     "origins": [
       "02_유형별_풀이전략.md"
     ]
@@ -8070,6 +7821,12 @@
     "tex": "0,1,2\\text{ bit}",
     "origins": [
       "06_OX_개념전수검증.md"
+    ]
+  },
+  {
+    "tex": "\\%\\text{Redundancy} = (1 - H_{\\text{target}}/H_{\\max})\\times 100",
+    "origins": [
+      "06_시험직전_체크리스트.md"
     ]
   },
   {

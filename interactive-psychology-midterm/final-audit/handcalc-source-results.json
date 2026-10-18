@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "checksPassed": 606,
+  "changed": {
+    "multiple-choice": 8,
+    "written": 13,
+    "mock-exam": 12,
+    "ox": 7
+  },
+  "precision": "Use supplied log values; retain intermediates; final one decimal or exact fraction; integer counts round up."
+}

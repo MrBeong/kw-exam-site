@@ -119,7 +119,8 @@
       "MC098"
     ],
     "written": [
-      "ES001"
+      "ES001",
+      "SA072"
     ],
     "mock-exam": [
       "ME1-Q14",
@@ -221,7 +222,8 @@
       "MC007"
     ],
     "written": [
-      "ES004"
+      "ES004",
+      "SA071"
     ],
     "mock-exam": [
       "ME3-Q06",
@@ -511,7 +513,8 @@
       "MC016"
     ],
     "written": [
-      "ES006"
+      "ES006",
+      "SA061"
     ],
     "mock-exam": [
       "ME1-Q25",
@@ -767,7 +770,9 @@
       "MC122"
     ],
     "written": [
-      "ES009"
+      "ES009",
+      "SA062",
+      "SA063"
     ],
     "mock-exam": [
       "ME2-Q06",
@@ -787,7 +792,8 @@
       "MC122"
     ],
     "written": [
-      "ES009"
+      "ES009",
+      "SA063"
     ],
     "mock-exam": [
       "ME2-Q06",
@@ -807,7 +813,9 @@
       "MC121"
     ],
     "written": [
-      "ES009"
+      "ES009",
+      "SA065",
+      "SA074"
     ],
     "mock-exam": [
       "ME1-Q02",
@@ -828,7 +836,9 @@
     ],
     "written": [
       "SA015",
-      "ES010"
+      "ES010",
+      "SA065",
+      "SA074"
     ],
     "mock-exam": [
       "ME1-Q13",
@@ -862,7 +872,7 @@
     "kind": "표본 수 계산",
     "source": "2장 교안 p.19",
     "notesAnchor": "c2",
-    "canonical": "\\(n = (1.96 \\times 10 / (0.05 \\times 100))^2 = (3.92)^2 = 15.366 \\approx 16\\)명이며, 파일럿 5명을 빼면 11명을 더 모집하면 된다(교안 2 p.19).",
+    "canonical": "\\(n=(20/8)^2=25/4=6.25\\)를 정수 올림하면 총 7명이다. 포함된 파일럿 5명을 빼서 2명을 추가한다. 교안의 공식을 손계산용 수치로 변형했다.",
     "multiple-choice": [
       "MC028",
       "MC102"
@@ -888,10 +898,12 @@
     ],
     "written": [
       "SA010",
-      "ES011"
+      "ES011",
+      "SA064"
     ],
     "mock-exam": [
-      "ME1-Q09"
+      "ME1-Q09",
+      "ME2-Q24"
     ]
   },
   {
@@ -1082,7 +1094,8 @@
     ],
     "written": [
       "SA017",
-      "ES013"
+      "ES013",
+      "SA075"
     ],
     "mock-exam": [
       "ME2-Q03",
@@ -1105,7 +1118,9 @@
     "written": [
       "SA018",
       "ES013",
-      "ES021"
+      "ES021",
+      "SA067",
+      "SA075"
     ],
     "mock-exam": [
       "ME4-Q14",
@@ -1127,7 +1142,8 @@
     "written": [
       "SA018",
       "ES002",
-      "ES013"
+      "ES013",
+      "SA075"
     ],
     "mock-exam": [
       "ME2-Q03",
@@ -1149,7 +1165,8 @@
     ],
     "written": [
       "SA018",
-      "ES013"
+      "ES013",
+      "SA075"
     ],
     "mock-exam": [
       "ME2-Q03",
@@ -1191,7 +1208,8 @@
     ],
     "written": [
       "SA019",
-      "ES014"
+      "ES014",
+      "SA066"
     ],
     "mock-exam": [
       "ME1-Q21",
@@ -1236,7 +1254,8 @@
     ],
     "written": [
       "SA019",
-      "ES014"
+      "ES014",
+      "SA066"
     ],
     "mock-exam": [
       "ME1-Q10",
@@ -1260,7 +1279,8 @@
     ],
     "written": [
       "SA020",
-      "ES014"
+      "ES014",
+      "SA066"
     ],
     "mock-exam": [
       "ME1-Q10",
@@ -1276,7 +1296,7 @@
     "kind": "정보량 계산",
     "source": "3장 교안 p.9",
     "notesAnchor": "c3",
-    "canonical": "\\(H_1 = \\log_2(1/0.2) \\approx 2.322\\), \\(H_2 = \\log_2(1/0.8) \\approx 0.322\\)이므로 \\(H_{\\text{avg}} = 0.2(2.322) + 0.8(0.322) = 0.722\\text{ bits}\\)이다(등확률 0.5, 0.5일 때만 1.0 bit).",
+    "canonical": "주어진 값으로 \\(H=0.2\\times2.3+0.8\\times0.3=0.7\\) bit다. 비등확률에서 최대 정보량 1 bit를 그대로 쓰지 않는다.",
     "multiple-choice": [
       "MC037"
     ],
@@ -1358,7 +1378,7 @@
     "kind": "중복도 계산 · 함정",
     "source": "3장 교안 p.11",
     "notesAnchor": "c3",
-    "canonical": "\\(\\%\\text{Redundancy} = (1 - 0.468 / 1) \\times 100 = 53.2\\%\\)이다(\\(46.8\\%\\)는 \\(1\\)에서 빼지 않은 \\(H_{\\text{target}}/H_{\\max}\\) 비율이므로 오답 함정!).",
+    "canonical": "\\(R=(1-0.4/1)\\times100=60.0\\%\\)다. 40.0%는 정보량 비율이며 중복도가 아니다.",
     "multiple-choice": [
       "MC039"
     ],
@@ -1402,7 +1422,7 @@
     "kind": "경고등 예제",
     "source": "3장 교안 p.13",
     "notesAnchor": "c3",
-    "canonical": "\\(H = 2(0.35\\log_2(1/0.35)) + 6(0.05\\log_2(1/0.05)) \\approx 2.3568\\text{ bits}\\), \\(\\%\\text{Redundancy} = (1 - 2.3568/3)\\times 100 \\approx 21.44\\%\\)이다(교안 3 p.13).",
+    "canonical": "\\(H_{\\max}=\\log_2 8=3\\), \\((1-2.4/3)\\times100=20.0\\%\\)다. 원래 분포에서 로그를 재계산하지 않고 이 문항이 제시한 근삿값을 사용한다.",
     "multiple-choice": [
       "MC040",
       "MC105",
@@ -1567,7 +1587,8 @@
     ],
     "written": [
       "SA018",
-      "ES013"
+      "ES013",
+      "SA075"
     ],
     "mock-exam": [
       "ME2-Q03",
@@ -1735,7 +1756,8 @@
       "MC048"
     ],
     "written": [
-      "ES020"
+      "ES020",
+      "SA070"
     ],
     "mock-exam": [
       "ME2-Q04"
@@ -1752,7 +1774,8 @@
       "MC049"
     ],
     "written": [
-      "ES020"
+      "ES020",
+      "SA067"
     ],
     "mock-exam": [
       "ME1-Q04"
@@ -1787,7 +1810,8 @@
     ],
     "written": [
       "SA024",
-      "ES021"
+      "ES021",
+      "SA067"
     ],
     "mock-exam": [
       "ME2-Q22"
@@ -2006,7 +2030,7 @@
     "kind": "Hick 기울기와 채널용량",
     "source": "3장 교안 p.36",
     "notesAnchor": "c4",
-    "canonical": "\\(b = 150\\text{ ms/bit} = 0.15\\text{ sec/bit}\\)이므로 역수 \\(1/b = 1 / 0.15 \\approx 6.67\\text{ bits/sec}\\)이다(교안 3 p.36).",
+    "canonical": "\\(150\\text{ ms/bit}=0.15\\text{ s/bit}\\), 처리율은 \\(1000/150=20/3\\approx6.7\\text{ bits/s}\\)다.",
     "multiple-choice": [
       "MC056",
       "MC126"
@@ -2033,7 +2057,8 @@
       "MC057"
     ],
     "written": [
-      "ES020"
+      "ES020",
+      "SA070"
     ],
     "mock-exam": [
       "ME1-Q12"
@@ -2050,7 +2075,8 @@
       "MC057"
     ],
     "written": [
-      "ES025"
+      "ES025",
+      "SA069"
     ],
     "mock-exam": [
       "ME1-Q12",
@@ -2346,7 +2372,7 @@
     "kind": "Fitts 계산",
     "source": "3장 교안 p.47",
     "notesAnchor": "c5",
-    "canonical": "\\(D/W + 1 = 80/20 + 1 = 5 \\Rightarrow \\mathrm{ID} = \\log_2 5 \\approx 2.3219\\text{ bits} \\Rightarrow \\mathrm{MT} = 50 + 150(2.3219) \\approx 398.29\\text{ ms}\\) (교안 3 p.47 예제 1).",
+    "canonical": "\\(D/W+1=5\\), \\(MT=50+150\\times2.3=395.0\\) ms다. R로 실제 로그를 계산한 정밀값과 문제의 근삿값을 구분한다.",
     "multiple-choice": [
       "MC065"
     ],
@@ -2367,7 +2393,7 @@
     "kind": "Fitts 계산",
     "source": "3장 교안 p.47",
     "notesAnchor": "c5",
-    "canonical": "\\(D/W + 1 = 100/10 + 1 = 11 \\Rightarrow \\mathrm{ID} = \\log_2 11 \\approx 3.4594\\text{ bits} \\Rightarrow \\mathrm{MT} = 50 + 150(3.4594) \\approx 568.91\\text{ ms}\\) (교안 3 p.47 예제 2).",
+    "canonical": "\\(D/W+1=11\\), \\(MT=50+150\\times3.5=575.0\\) ms다. 문제의 로그 근삿값을 사용한 손계산 연습이다.",
     "multiple-choice": [
       "MC065"
     ],
@@ -2642,7 +2668,8 @@
       "MC072"
     ],
     "written": [
-      "ES031"
+      "ES031",
+      "SA068"
     ],
     "mock-exam": [
       "ME3-Q27",
@@ -2893,11 +2920,14 @@
     "written": [
       "SA040",
       "ES034",
-      "RC005"
+      "RC005",
+      "SA049",
+      "SA050"
     ],
     "mock-exam": [
       "ME2-Q08",
       "ME4-Q06",
+      "ME5-Q24",
       "ME5-Q29"
     ]
   },
@@ -2914,9 +2944,14 @@
     "written": [
       "SA040",
       "ES034",
-      "RC005"
+      "RC005",
+      "SA049",
+      "SA051",
+      "SA052",
+      "SA053"
     ],
     "mock-exam": [
+      "ME3-Q24",
       "ME4-Q06",
       "ME5-Q29"
     ]
@@ -2957,12 +2992,15 @@
     ],
     "written": [
       "RC001",
-      "RC005"
+      "RC005",
+      "SA051",
+      "SA052"
     ],
     "mock-exam": [
       "ME1-Q29",
       "ME2-Q08",
       "ME3-Q17",
+      "ME3-Q24",
       "ME5-Q29"
     ]
   },
@@ -2979,7 +3017,8 @@
       "MC130"
     ],
     "written": [
-      "RC002"
+      "RC002",
+      "SA054"
     ],
     "mock-exam": [
       "ME2-Q08",
@@ -3001,7 +3040,8 @@
     "written": [
       "SA037",
       "ES034",
-      "RC003"
+      "RC003",
+      "SA054"
     ],
     "mock-exam": [
       "ME1-Q11",
@@ -3024,7 +3064,8 @@
     "written": [
       "SA037",
       "ES034",
-      "RC003"
+      "RC003",
+      "SA054"
     ],
     "mock-exam": [
       "ME1-Q11",
@@ -3048,7 +3089,8 @@
       "SA037",
       "ES034",
       "RC002",
-      "RC004"
+      "RC004",
+      "SA055"
     ],
     "mock-exam": [
       "ME3-Q29",
@@ -3069,7 +3111,8 @@
     ],
     "written": [
       "ES034",
-      "RC004"
+      "RC004",
+      "SA055"
     ],
     "mock-exam": [
       "ME3-Q29",
@@ -3094,7 +3137,6 @@
       "RC007"
     ],
     "mock-exam": [
-      "ME1-Q24",
       "ME1-Q30",
       "ME2-Q15",
       "ME3-Q12",
@@ -3120,7 +3162,6 @@
       "RC010"
     ],
     "mock-exam": [
-      "ME1-Q24",
       "ME2-Q15",
       "ME2-Q30",
       "ME3-Q12",
@@ -3146,7 +3187,6 @@
       "RC011"
     ],
     "mock-exam": [
-      "ME1-Q24",
       "ME2-Q15",
       "ME3-Q12",
       "ME3-Q31",
@@ -3421,7 +3461,8 @@
       "MC116"
     ],
     "written": [
-      "ES038"
+      "ES038",
+      "SA060"
     ],
     "mock-exam": [
       "ME2-Q28",
@@ -3441,7 +3482,8 @@
       "MC116"
     ],
     "written": [
-      "ES038"
+      "ES038",
+      "SA060"
     ],
     "mock-exam": [
       "ME2-Q28",
@@ -3483,11 +3525,12 @@
     ],
     "written": [
       "SA038",
-      "ES039"
+      "ES039",
+      "SA059",
+      "SA073"
     ],
     "mock-exam": [
       "ME1-Q08",
-      "ME2-Q24",
       "ME3-Q15",
       "ME4-Q28"
     ]
@@ -3506,11 +3549,11 @@
     ],
     "written": [
       "SA038",
-      "ES039"
+      "ES039",
+      "SA073"
     ],
     "mock-exam": [
       "ME1-Q08",
-      "ME2-Q24",
       "ME3-Q15",
       "ME4-Q28"
     ]
@@ -3529,12 +3572,13 @@
     ],
     "written": [
       "SA039",
-      "ES039"
+      "ES039",
+      "SA058",
+      "SA059"
     ],
     "mock-exam": [
       "ME1-Q08",
       "ME3-Q15",
-      "ME3-Q24",
       "ME4-Q28"
     ]
   },
@@ -3552,11 +3596,11 @@
     ],
     "written": [
       "SA039",
-      "ES039"
+      "ES039",
+      "SA058"
     ],
     "mock-exam": [
       "ME1-Q08",
-      "ME3-Q24",
       "ME4-Q28",
       "ME5-Q16"
     ]
@@ -3579,7 +3623,6 @@
     ],
     "mock-exam": [
       "ME1-Q08",
-      "ME3-Q24",
       "ME4-Q28",
       "ME5-Q16"
     ]
@@ -3597,7 +3640,8 @@
     "written": [
       "ES040",
       "RC013",
-      "RC020"
+      "RC020",
+      "SA048"
     ],
     "mock-exam": [
       "ME1-Q31",
@@ -3616,9 +3660,14 @@
     ],
     "written": [
       "ES040",
-      "RC014"
+      "RC014",
+      "SA045",
+      "SA046",
+      "SA047",
+      "SA048"
     ],
     "mock-exam": [
+      "ME1-Q24",
       "ME2-Q31"
     ]
   },
@@ -3635,11 +3684,14 @@
     ],
     "written": [
       "ES040",
-      "RC015"
+      "RC015",
+      "SA056",
+      "SA057"
     ],
     "mock-exam": [
       "ME1-Q28",
       "ME3-Q32",
+      "ME4-Q24",
       "ME5-Q16"
     ]
   },
@@ -3656,11 +3708,13 @@
     ],
     "written": [
       "ES040",
-      "RC015"
+      "RC015",
+      "SA056"
     ],
     "mock-exam": [
       "ME1-Q28",
       "ME3-Q32",
+      "ME4-Q24",
       "ME5-Q16"
     ]
   },
@@ -3748,7 +3802,6 @@
       "ME1-Q32",
       "ME2-Q01",
       "ME4-Q16",
-      "ME4-Q24",
       "ME4-Q32",
       "ME5-Q28"
     ]
@@ -3773,7 +3826,6 @@
     "mock-exam": [
       "ME2-Q01",
       "ME4-Q16",
-      "ME4-Q24",
       "ME4-Q32",
       "ME5-Q28"
     ]
@@ -3798,7 +3850,6 @@
     "mock-exam": [
       "ME2-Q01",
       "ME4-Q16",
-      "ME5-Q24",
       "ME5-Q28",
       "ME5-Q32"
     ]
@@ -3823,7 +3874,6 @@
     "mock-exam": [
       "ME2-Q01",
       "ME4-Q16",
-      "ME5-Q24",
       "ME5-Q28",
       "ME5-Q32"
     ]
@@ -3850,7 +3900,6 @@
       "ME2-Q01",
       "ME4-Q16",
       "ME4-Q27",
-      "ME5-Q24",
       "ME5-Q28",
       "ME5-Q32"
     ]

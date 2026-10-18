@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "checksPassed": 487,
+  "newShortQuestions": 31,
+  "numberedBlanks": 128,
+  "mockRevised": 5,
+  "bankCounts": {
+    "written": 137,
+    "mock-exam": 160
+  },
+  "scope": "Lecture tables, figures, R parameters and direct recall; broad concept coverage and leaf recall are distinct."
+}

@@ -3,11 +3,11 @@
   "originId": "RC018",
   "runtime": "R version 4.6.0 (2026-04-24)",
   "status": "pass",
-  "checks": ["completed answer parses and evaluates in real R", "both Fitts MT values rounded to requested hundredths", "no unexpected warnings"],
+  "checks": ["completed answer parses and evaluates in real R", "both exact Fitts MT values match hand-solvable data", "Fitts log arguments are powers of two", "no unexpected warnings"],
   "metrics": {
-    "ID": [2.321928094887362, 3.459431618637297],
-    "MT": [398.2892142331043, 568.91474279559463],
-    "roundedMT": [398.29000000000002, 568.90999999999997]
+    "ID": [2, 3],
+    "MT": [350, 500],
+    "roundedMT": [350, 500]
   },
   "warnings": [],
   "inputProvenance": "question_literal_vectors"

@@ -15,7 +15,7 @@
         }
       });
       state.codeSchemaVersion=1;
-      try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){writtenSaveIssue=true}
+      try{StudyRevisions.write(KEY,state)}catch(e){writtenSaveIssue=true}
     }
     function hasWrittenAnswer(q){return q.type==='code'?q.codeBlanks.some(b=>(state.codeAnswers[q.id]?.[b.id]||'').trim())||!!(state.codeNotes[q.id]||'').trim():!!(state.answers[q.id]||'').trim()}
     const blankWidth=value=>Math.max(6,Math.min(48,(value||'').length+1));
@@ -94,7 +94,7 @@
       document.getElementById('questionList').innerHTML=`<article class="wr-card" data-question="${q.id}">
         <div class="wr-head"><span class="wr-badge">${q.id} · ${writtenNames[q.type]}</span><span class="wr-chapter">${esc(q.chapter)} · ${q.points}점</span><button id="writtenBookmark" type="button" aria-label="문항 북마크" aria-pressed="${!!state.bookmarks[q.id]}">${state.bookmarks[q.id]?'★':'☆'}</button></div>
         <div class="wr-scroll"><h3 class="wr-prompt">${esc(q.prompt)}</h3><p class="wr-language">${esc(q.language)}</p>${(q.visual||'').replaceAll('../assets/','assets/')}
-        ${q.type==='code'?renderCodeQuestion(q):`<label class="wr-answer-label" for="writtenAnswer">내 답안 <span>자동 저장</span></label><textarea class="answer-box" id="writtenAnswer" placeholder="답을 직접 작성한 뒤 정답과 채점 기준을 확인하세요.">${esc(state.answers[q.id]||'')}</textarea>`}
+        ${q.type==='code'?renderCodeQuestion(q):q.recallBlanks?StudyRecall.render(q,state.answers[q.id]):`<label class="wr-answer-label" for="writtenAnswer">내 답안 <span>자동 저장</span></label><textarea class="answer-box" id="writtenAnswer" placeholder="답을 직접 작성한 뒤 정답과 채점 기준을 확인하세요.">${esc(state.answers[q.id]||'')}</textarea>`}
         <button class="wr-reveal" id="writtenReveal" type="button" aria-expanded="${open}">${open?'정답·해설 접기':'정답·해설·채점 기준 보기'}</button>
         <div class="solution ${open?'open':''}" id="writtenSolution" ${open?'':'hidden'}>
           ${q.type==='code'?`<h4>빈칸별 정답·해설</h4><ol class="wr-blank-answers">${q.codeBlanks.map(b=>`<li><strong>(${b.id})</strong> <code>${esc(b.answer)}</code><p>${esc(b.explanation)}</p></li>`).join('')}</ol>`:''}
@@ -116,6 +116,7 @@
       }
       const textarea=document.getElementById('writtenAnswer');
       textarea?.addEventListener('input',()=>{if(q.type==='code')state.codeNotes[q.id]=textarea.value;else state.answers[q.id]=textarea.value;changedAnswer()});
+      document.querySelectorAll('[data-recall-blank]').forEach(input=>input.addEventListener('input',()=>{state.answers[q.id]=StudyRecall.read(writtenRoot,q);changedAnswer()}));
       document.querySelectorAll('[data-code-blank]').forEach(input=>input.addEventListener('input',()=>{state.codeAnswers[q.id]=state.codeAnswers[q.id]||{};state.codeAnswers[q.id][input.dataset.codeBlank]=input.value;input.style.width=blankWidth(input.value)+'ch';changedAnswer()}));
       document.getElementById('writtenReveal').addEventListener('click',()=>{const top=document.querySelector('.wr-scroll').scrollTop;state.revealed[q.id]=!state.revealed[q.id];saveState();renderProblems();document.querySelector('.wr-scroll').scrollTop=top;});
       document.getElementById('writtenBookmark').addEventListener('click',()=>{const top=document.querySelector('.wr-scroll').scrollTop;state.bookmarks[q.id]=!state.bookmarks[q.id];saveState();renderProblems();document.querySelector('.wr-scroll').scrollTop=top;});

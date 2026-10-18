@@ -32,7 +32,7 @@ async page=>{
  r.formulaCount=Array.isArray(formulas)?formulas.length:formulas.formulas.length;
  const list=Array.isArray(formulas)?formulas:formulas.formulas;
  const errors=await page.evaluate(async formulas=>{const errors=[];await StudyMath.idle();for(const f of formulas){try{const n=await MathJax.tex2svgPromise(f.tex,{display:false});if(n.querySelector('[data-mjx-error]'))errors.push(f.tex)}catch(e){errors.push(String(e))}}return errors},list);
- check(errors.length===0,'all unique formulas compile');check(r.visited.written+r.visited.multiple+r.visited.mock+r.visited.ox===589,'all 589 questions visited');check(r.errors.length===0,'no browser exceptions');r.status='pass';
+ check(errors.length===0,'all unique formulas compile');check(r.visited.written+r.visited.multiple+r.visited.mock+r.visited.ox===620,'all 620 questions visited');check(r.errors.length===0,'no browser exceptions');r.status='pass';
  }catch(e){r.status='fail';r.failure=e.message;r.url=page.url()}
  await page.evaluate(r=>{window.PSY_HINT_UI_AUDIT=r;localStorage.setItem('psy-hint-ui-audit',JSON.stringify(r))},r);return r;
 }
