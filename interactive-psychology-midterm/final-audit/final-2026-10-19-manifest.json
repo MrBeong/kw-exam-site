@@ -18,7 +18,7 @@
     },
     {
       "path": "30_압축본_범위유형_재검수와_게시.md",
-      "sha256": "45f0599772f9473091e9af3d6c701b63329225c868d0b2224175cdfa32b94740"
+      "sha256": "72c75a3e3f7673f5c22555f31f9d08f58150f76bb7ff5f30e5733d452b0dddfa"
     },
     {
       "path": "07_다지선다_문제와해설.md",
@@ -50,7 +50,7 @@
     },
     {
       "path": "15_기출형예상_출제설계와개념대응.md",
-      "sha256": "cd43714906c6b41f4c6c09923f8bc2dd0dc3d3a6898d3ea7a9d84d86d1513283"
+      "sha256": "89b02d8671b19e278221ee6d2480eb3f3825ba7c49b6ae1a26f0cacdcda995bc"
     },
     {
       "path": "05_공지반영_범위누락검증.md",
@@ -86,7 +86,7 @@
     },
     {
       "path": "14_기출형예상_정답과해설.md",
-      "sha256": "812ae0d8621ffdde9146fa127524893e9aa1655dc624e69f8b6f638ec2c50d2a"
+      "sha256": "a4190d04aa952d6f47b62eb639008dee06aaddcc2e1a19cb2a18cf01cd923605"
     },
     {
       "path": "README.md",
@@ -166,7 +166,7 @@
     },
     {
       "path": "mock-exam/build.py",
-      "sha256": "9d27fbc54c6520599fca47265b737c14f50587db87f29a2b50cf9437f93dad0c"
+      "sha256": "027af7bda16e7470892cb0abba705c7d079ece76b34fa5ad17e4a15fcddfbf9c"
     },
     {
       "path": "mock-exam/index.html",
