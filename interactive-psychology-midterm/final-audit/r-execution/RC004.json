@@ -58,6 +58,25 @@
   "codeSetup": "a <- c(1, 2, 3, 4, 100)\n\ndat <- data.frame(\n  value = a,\n  condition = factor(c(\"A\", \"A\", \"B\", \"B\", \"B\"))\n)",
   "inputDescription": "분위수를 구할 수치 벡터 a와 열별 요약 대상 dat 전체다. condition은 범주형이다.",
   "promptPlain": "아래 준비 코드에 결측값이 없는 수치 벡터 a와 데이터프레임 dat를 제시했다. a의 기본 분위수·상자그림, dat의 열별 요약을 차례로 확인하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "quantile(a)",
+      "explanation": "기본 설정에서 0%, 25%, 50%, 75%, 100% 분위수를 반환한다."
+    },
+    {
+      "line": 2,
+      "code": "boxplot(a)",
+      "explanation": "분포의 중앙값·사분위 범위와 극단값을 상자그림으로 표시한다."
+    },
+    {
+      "line": 3,
+      "code": "summary(dat)",
+      "explanation": "객체 종류에 맞는 요약을 출력한다. 데이터프레임은 열별 요약, 회귀모형은 계수·설명력·F 통계량 등의 요약이다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC004",
   "bank": "written",
   "inputProvenance": "question_visible_constructed_practice_data"

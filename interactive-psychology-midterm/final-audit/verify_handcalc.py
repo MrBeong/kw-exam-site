@@ -9,6 +9,13 @@ A=E/'final-audit'
 delta=json.loads((A/'handcalc-changes.json').read_text())
 trace=json.loads((A/'handcalc-compatibility.json').read_text())
 banks={b:json.loads((E/b/'questions.json').read_text()) for b in ['multiple-choice','written','mock-exam']}
+essay_revision=json.loads((A/'essay-revision.json').read_text())
+# Only intentionally superseded essays use their preserved prior version here.
+# verify_essays.py checks every new essay and all unchanged non-essay content.
+essay_before={t['id']:t['before'] for t in essay_revision['writtenChanges']+essay_revision['mockChanges'] if t['before']}
+r_line=json.loads((A/'r-line-revision.json').read_text())
+r_before={t['id']:t['before'] for t in r_line['writtenChanges']+r_line['mockChanges'] if t['before']}
+banks={b:[essay_before.get(q['id'],r_before.get(q['id'],q)) for q in qs] for b,qs in banks.items()}
 allq={q['id']:q for qs in banks.values() for q in qs}
 checks=[]
 def check(v,label):
@@ -75,6 +82,6 @@ for q in banks['mock-exam']:
 for n in range(1,6):
     qs=[q for q in banks['mock-exam'] if q['set']==n]
     check(len(qs)==32 and sum(q['points'] for q in qs)==100,n.__str__()+' 32 questions and 100 points')
-result={'status':'pass','checksPassed':len(checks),'changed':{**{b:len(ids) for b,ids in delta['changed'].items()},'ox':len(delta['ox'])},'precision':'Use supplied log values; retain intermediates; final one decimal or exact fraction; integer counts round up.'}
+result={'status':'pass','checksPassed':len(checks),'changed':{**{b:len(ids) for b,ids in delta['changed'].items()},'ox':len(delta['ox'])},'scope':'Original hand-calculation regression on unchanged items and preserved prior essays; new essays and R inputs are verified by verify_essays.py, verify_r_lines.py and native R.', 'precision':'Use supplied log values; retain intermediates; final one decimal or exact fraction; integer counts round up.'}
 (A/'handcalc-source-results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(result,ensure_ascii=False))

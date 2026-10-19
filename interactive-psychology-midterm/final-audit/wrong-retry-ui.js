@@ -4,7 +4,7 @@ async page=>{
  const ensureControls=async()=>{if(await page.locator('#wrongRetryPanel').isHidden())await wrongTab().click()};
  const check=(v,s)=>{if(!v)throw Error(s);r.checks.push(s)},get=key=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),key);
  const openWrong=async()=>{await wrongTab().click();await ensureControls()};
- const write=(key,data)=>page.evaluate(([k,v])=>localStorage.setItem(k,JSON.stringify(v)),[key,data]);
+ const write=(key,data)=>page.evaluate(([k,v])=>{v.questionRevision=StudyRevisions.revision;localStorage.setItem(k,JSON.stringify(v))},[key,data]);
  try{
  const oxkey='psych-midterm-ox-v1',mckey='psych-midterm-multiple-v1',wrkey='psych-midterm-notion-v1',mekey='psych-midterm-mock-v1';
  await write(oxkey,{answers:{OX001:{value:false,correct:false},OX002:{value:false,correct:false},OX003:{value:true,correct:true}},bookmarks:{OX003:true}});

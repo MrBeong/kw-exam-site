@@ -1,0 +1,7 @@
+
+	Classical Levene's test based on the absolute deviations from the mean
+	( none not applied because the location is not set to median )
+
+data:  datat$height
+Test Statistic = 1.9176, p-value = 0.1742
+

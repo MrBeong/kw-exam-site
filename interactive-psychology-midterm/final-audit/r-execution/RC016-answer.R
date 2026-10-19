@@ -1,3 +1,1 @@
-model2 <- lm(
-  y ~ x1 + x2
-)
+model2 <- lm( y ~ x1 + x2)

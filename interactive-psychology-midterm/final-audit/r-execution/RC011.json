@@ -7,24 +7,24 @@
     "OX161",
     "OX162"
   ],
-  "prompt": "datat2에는 같은 사람의 before와 after 측정값이 같은 행에 저장되어 있다. d=after-before를 만들고 차이의 정규성을 점검한 뒤 평균차가 0인지 양측 검정하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
-  "answer": "d의 음수 평균은 after가 낮다는 뜻이다.",
+  "prompt": "datat2는 같은 사람의 before와 after를 같은 행에 저장했다. 강의처럼 차이를 datadiff에 저장하고 차이의 정규성, 평균차 0 여부를 차례로 확인하려 한다. 다음 R 코드의 번호별 빈칸을 채우시오.",
+  "answer": "강의의 datadiff = after - before → shapiro.test(datadiff) → t.test(datadiff) 절차다.",
   "explanation": [
-    "대응 구조를 유지한 차이 벡터를 만든다.",
-    "t.test(d)는 mu=0이 기본인 동등한 완성 코드다. 이 문항은 mu=가 이미 제시되어 있으므로 빈칸 (3)에는 0을 넣는다."
+    "=는 이 문맥에서 객체에 값을 저장하는 대입이다. <-를 사용해도 같은 값을 저장한다.",
+    "t.test(datadiff)는 기본값 mu=0인 단일표본 양측 검정이며 짝별 차이를 검정하므로 전후 평균차를 평가한다."
   ],
   "rubric": [
     {
-      "points": 2,
-      "criterion": "빈칸 (1): 짝을 유지한 datat2$after - datat2$before"
+      "points": 1,
+      "criterion": "빈칸 (1): datat2$after - datat2$before"
     },
     {
       "points": 1,
       "criterion": "빈칸 (2): shapiro.test"
     },
     {
-      "points": 1,
-      "criterion": "빈칸 (3): 0"
+      "points": 2,
+      "criterion": "빈칸 (3): t.test, 기본 mu=0으로 차이 평균 검정"
     }
   ],
   "commonMistakes": [
@@ -36,29 +36,48 @@
   "source": "t-test 교안 p.10, 21 · t-test 교안 p.21, 23 · t-test 교안 p.24",
   "calc": false,
   "points": 4,
-  "modelCode": "d <- datat2$after - datat2$before\n\nshapiro.test(d)\n\nt.test(\n  d,\n  mu = 0\n)",
-  "codeTemplate": "d <- {{1}}\n\n{{2}}(d)\n\nt.test(\n  d,\n  mu = {{3}}\n)",
+  "modelCode": "datadiff = datat2$after - datat2$before\nshapiro.test(datadiff)\nt.test(datadiff)",
+  "codeTemplate": "datadiff = {{1}}\n{{2}}(datadiff)\n{{3}}(datadiff)",
   "codeBlanks": [
     {
       "id": "1",
       "answer": "datat2$after - datat2$before",
-      "explanation": "동일 행에 있는 같은 사람의 after에서 before를 빼 대응 구조와 부호를 유지한다."
+      "explanation": "같은 행의 after에서 before를 빼고 datadiff에 저장한다."
     },
     {
       "id": "2",
       "answer": "shapiro.test",
-      "explanation": "각 시점이 아닌 차이 벡터 d의 정규성을 점검한다."
+      "explanation": "짝별 차이의 정규성을 점검한다."
     },
     {
       "id": "3",
-      "answer": "0",
-      "explanation": "대응 차이의 모평균이 0인지 단일표본 t-검정으로 확인한다."
+      "answer": "t.test",
+      "explanation": "기본값 mu=0으로 차이 평균을 양측 검정한다."
     }
   ],
   "followUp": "",
   "codeSetup": "datat2 <- data.frame(\n  before = c(\n    181, 182, 183, 184, 185, 186, 187, 188,\n    189, 190, 191, 192, 193, 194, 195, 196,\n    197, 198, 199, 200\n  ),\n  after = c(\n    108.787481, 120.027051, 126.716742, 131.961847, 136.487122, 140.589, 144.422176, 148.080733,\n    151.629073, 155.116237, 158.583763, 162.070927, 165.619267, 169.277824, 173.111, 177.212878,\n    181.738153, 186.983258, 193.672949, 204.912519\n  )\n)",
   "inputDescription": "같은 행의 before·after는 같은 사람의 수행시간(ms)이다. 20쌍의 문항용 구성자료 전체이며 결측값이 없다.",
   "promptPlain": "datat2에는 같은 사람의 before와 after 측정값이 같은 행에 저장되어 있다. d=after-before를 만들고 차이의 정규성을 점검한 뒤 평균차가 0인지 양측 검정하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "datadiff = datat2$after - datat2$before",
+      "explanation": "같은 행의 after에서 before를 빼고 결과를 datadiff에 저장한다. =는 여기서 대입이며 두 값의 비교 연산자 ==와 다르다."
+    },
+    {
+      "line": 2,
+      "code": "shapiro.test(datadiff)",
+      "explanation": "같은 사람의 after−before 차이값 전체가 정규분포와 양립하는지 점검한다. 전후 값 각각의 정규성을 대신 확인하는 코드가 아니다."
+    },
+    {
+      "line": 3,
+      "code": "t.test(datadiff)",
+      "explanation": "차이 벡터의 모평균이 0인지 단일표본 양측 t-검정을 한다. mu=0은 기본값이므로 강의처럼 생략하며, 동일 대상의 전후 평균차 검정에 해당한다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC011",
   "bank": "written",
   "inputProvenance": "question_visible_constructed_practice_data"

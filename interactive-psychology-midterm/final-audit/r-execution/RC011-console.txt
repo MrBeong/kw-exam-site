@@ -1,13 +1,13 @@
 
 	Shapiro-Wilk normality test
 
-data:  d
+data:  datadiff
 W = 0.99845, p-value = 1
 
 
 	One Sample t-test
 
-data:  d
+data:  datadiff
 t = -7.6951, df = 19, p-value = 2.97e-07
 alternative hypothesis: true mean is not equal to 0
 95 percent confidence interval:

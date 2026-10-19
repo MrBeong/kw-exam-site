@@ -1,4 +1,1 @@
-sort(
-  score,
-  decreasing = TRUE
-)[1]
+sort( score, decreasing = TRUE )[1]

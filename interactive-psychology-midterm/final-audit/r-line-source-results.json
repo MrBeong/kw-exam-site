@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "checksPassed": 1353,
+  "newWholeLine": 26,
+  "writtenR": 46,
+  "mockR": 20,
+  "mockWholeLine": 10,
+  "RExecuted": 66,
+  "RExecutionChecks": 338,
+  "codeInputFields": 125,
+  "partialBlankFields": 89,
+  "wholeLineFields": 36,
+  "writtenCount": 191,
+  "totalQuestions": 674,
+  "coverage": 188,
+  "scope": "Lecture blue input syntax/one statement per call, full-line target construction, per-line explanation, native R, scoring, unchanged non-code content and previous exam snapshots. No push."
+}

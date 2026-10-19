@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "snippets": 24,
+  "assertions": 22,
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "packages": {
+    "lawstat": "3.6",
+    "jsonlite": "2.0.0"
+  },
+  "checks": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
+  "constructed_fixture": true
+}

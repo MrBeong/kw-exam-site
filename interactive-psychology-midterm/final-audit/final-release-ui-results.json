@@ -1,0 +1,12 @@
+{
+  "checks": 2867,
+  "visited": {
+    "written": 197,
+    "multiple": 138,
+    "mock": 250,
+    "ox": 188
+  },
+  "formulaCount": 1210,
+  "errors": [],
+  "status": "pass"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "ME4-Q49",
+  "originId": "RC019",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "original eight rows preserved, six valid trials retained", "both filters applied", "three YES and three NO rows separated by Present", "YES and NO linear models fitted", "no unexpected warnings"],
+  "metrics": {
+    "cleanRows": 6,
+    "yesCoefficients": [360.00000000000011, 29.999999999999982],
+    "noCoefficients": [420.00000000000017, 39.999999999999964]
+  },
+  "warnings": [],
+  "inputProvenance": "question_complete_eight_row_table"
+}

@@ -14,9 +14,6 @@ dat <- data.frame(
   )
 )
 
-model <- lm(
-  Time ~ bit,
-  data = dat
-)
+model <- lm( Time ~ bit, data = dat)
 
 summary(model)

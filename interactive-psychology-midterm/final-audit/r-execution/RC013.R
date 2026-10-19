@@ -10,8 +10,6 @@ y <- c(
 
 plot(x, y)
 
-model <- lm(
-  y ~ x
-)
+model <- lm( y ~ x)
 
 summary(model)

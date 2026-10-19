@@ -54,7 +54,35 @@
   ],
   "followUp": "두 MT 값과 단위를 적으시오. 정수로 답해도 된다.",
   "promptPlain": "같은 길이 단위의 거리 D <- c(60, 140), 너비 W <- c(20, 20)가 주어져 있다. ISO형 난이도 ID와 절편 a=50 ms·기울기 b=150 ms/bit인 모형의 MT 벡터를 구하려 한다. 각 빈칸에는 오른쪽 식 전체를 쓰시오. 다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
-  "questionRevision": "hand-calc-2026-10-18",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "D <- c(60, 140)",
+      "explanation": "오른쪽 값을 계산하여 왼쪽 객체에 저장한다. 벡터 연산은 대응하는 원소끼리 수행한다."
+    },
+    {
+      "line": 2,
+      "code": "W <- c(20, 20)",
+      "explanation": "오른쪽 값을 계산하여 왼쪽 객체에 저장한다. 벡터 연산은 대응하는 원소끼리 수행한다."
+    },
+    {
+      "line": 4,
+      "code": "ID <- log2(D / W + 1)",
+      "explanation": "거리/너비에 1을 더한 값의 밑 2 로그를 계산하여 ISO형 Fitts 난이도 ID에 저장한다."
+    },
+    {
+      "line": 5,
+      "code": "MT <- 50 + 150 * ID",
+      "explanation": "MT=a+b×ID를 각 조건에 적용하여 예측 운동시간을 MT 벡터에 저장한다. 계수의 시간 단위는 ms다."
+    },
+    {
+      "line": 7,
+      "code": "MT",
+      "explanation": "앞 문장에서 만든 객체의 값을 콘솔에 출력하여 계산·저장 결과를 확인한다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC018",
   "bank": "written",
   "inputProvenance": "question_literal_vectors"

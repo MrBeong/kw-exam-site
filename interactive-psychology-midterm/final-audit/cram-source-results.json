@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "sections": 6,
+  "recalls": 36,
+  "r_snippets": 24,
+  "linked_assets_and_targets": 21,
+  "duplicate_ids": 0,
+  "artifact_does_not_write_learning_storage": true,
+  "production_standard_connections": [
+    "## 17.",
+    "## 18.",
+    "| 강의 입력 코드 대응 |",
+    "한 줄 전체 모범답안·허용 대안",
+    "문항별 기록 표",
+    "채점 예시",
+    "실행을 막는 오타"
+  ]
+}

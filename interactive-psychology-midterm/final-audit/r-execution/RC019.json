@@ -44,9 +44,9 @@
   "source": "Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사",
   "calc": false,
   "points": 6,
-  "modelCode": "clean <- dat[dat$Correct & !dat$Timeout, ]\nyes <- clean[clean$Present, ]\nno <- clean[!clean$Present, ]\n\nmodel_yes <- lm(\n  Time ~ PSS,\n  data = yes\n)\n\nmodel_no <- lm(\n  Time ~ PSS,\n  data = no\n)",
+  "modelCode": "clean <- dat[dat$Correct & !dat$Timeout, ]\nyes <- clean[clean$Present, ]\nno <- clean[!clean$Present, ]\n\nmodel_yes <- lm( Time ~ PSS, data = yes)\n\nmodel_no <- lm( Time ~ PSS, data = no)",
   "visual": "<figure class=\"visual-box\"><figcaption>문항용 구성자료 dat 전체 8행 — 열 정의와 두 조건의 관측을 함께 제시</figcaption><div class=\"table-scroll\"><table><thead><tr><th>PSS</th><th>Present</th><th>Correct</th><th>Timeout</th><th>Time(ms)</th></tr></thead><tbody><tr><td>3</td><td>TRUE</td><td>TRUE</td><td>FALSE</td><td>500</td></tr><tr><td>4</td><td>TRUE</td><td>TRUE</td><td>FALSE</td><td>550</td></tr><tr><td>5</td><td>TRUE</td><td>TRUE</td><td>FALSE</td><td>590</td></tr><tr><td>3</td><td>FALSE</td><td>TRUE</td><td>FALSE</td><td>650</td></tr><tr><td>4</td><td>FALSE</td><td>TRUE</td><td>FALSE</td><td>690</td></tr><tr><td>5</td><td>FALSE</td><td>TRUE</td><td>FALSE</td><td>740</td></tr><tr><td>3</td><td>TRUE</td><td>FALSE</td><td>FALSE</td><td>850</td></tr><tr><td>3</td><td>FALSE</td><td>FALSE</td><td>TRUE</td><td>5000</td></tr></tbody></table></div></figure>",
-  "codeTemplate": "clean <- dat[{{1}}, ]\nyes <- clean[{{2}}, ]\nno <- clean[{{3}}, ]\n\nmodel_yes <- lm(\n  {{4}},\n  data = yes\n)\n\nmodel_no <- lm(\n  {{5}},\n  data = no\n)",
+  "codeTemplate": "clean <- dat[{{1}}, ]\nyes <- clean[{{2}}, ]\nno <- clean[{{3}}, ]\n\nmodel_yes <- lm( {{4}}, data = yes)\n\nmodel_no <- lm( {{5}}, data = no)",
   "codeBlanks": [
     {
       "id": "1",
@@ -78,6 +78,35 @@
   "codeSetup": "dat <- data.frame(\n  PSS = c(3, 4, 5, 3, 4, 5, 3, 3),\n  Present = c(TRUE, TRUE, TRUE, FALSE, FALSE, FALSE, TRUE, FALSE),\n  Correct = c(TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, FALSE),\n  Timeout = c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE),\n  Time = c(500, 550, 590, 650, 690, 740, 850, 5000)\n)",
   "inputDescription": "위 표의 전체 8행을 그대로 생성하는 R 코드다. Present·Correct·Timeout은 논리형, PSS·Time은 수치형이다.",
   "promptPlain": "표는 분석용 dat의 전체 8행이다. PSS는 집합크기, Present는 실제 포함 여부, Correct는 정오, Timeout은 타임아웃, Time은 반응시간(ms)이다. Present·Correct·Timeout은 논리형이다. 정답이며 타임아웃이 아닌 시행만 clean으로 만든 뒤, YES(실제 포함)·NO(실제 미포함)별 PSS–Time 회귀를 적합하려 한다. 원본 dat를 보존하시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "clean <- dat[dat$Correct & !dat$Timeout, ]",
+      "explanation": "Correct가 TRUE이고 Timeout이 FALSE인 시행만 선택해 clean에 저장한다. &는 두 조건의 동시 만족, !는 논리 부정이다."
+    },
+    {
+      "line": 2,
+      "code": "yes <- clean[clean$Present, ]",
+      "explanation": "실제 Probe 포함 여부인 Present가 TRUE인 시행만 yes에 저장한다. 응답 정오와 다른 조건이다."
+    },
+    {
+      "line": 3,
+      "code": "no <- clean[!clean$Present, ]",
+      "explanation": "실제 Probe 포함 여부인 Present가 FALSE인 시행만 no에 저장한다. !Present는 포함되지 않음을 뜻한다."
+    },
+    {
+      "line": 5,
+      "code": "model_yes <- lm( Time ~ PSS, data = yes)",
+      "explanation": "물결표 ~의 왼쪽 반응변수를 오른쪽 설명변수로 설명하는 선형회귀를 적합하여 지정한 객체에 저장한다. +는 별도 주효과를 추가한다."
+    },
+    {
+      "line": 7,
+      "code": "model_no <- lm( Time ~ PSS, data = no)",
+      "explanation": "물결표 ~의 왼쪽 반응변수를 오른쪽 설명변수로 설명하는 선형회귀를 적합하여 지정한 객체에 저장한다. +는 별도 주효과를 추가한다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC019",
   "bank": "written",
   "inputProvenance": "question_complete_eight_row_table",

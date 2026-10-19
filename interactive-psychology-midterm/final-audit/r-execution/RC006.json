@@ -48,6 +48,15 @@
   "codeSetup": "x <- c(\n  -1.959964, -1.439531, -1.150349, -0.934589, -0.755415, -0.59776, -0.453762, -0.318639,\n  -0.189118, -0.062707, 0.062707, 0.189118, 0.318639, 0.453762, 0.59776, 0.755415,\n  0.934589, 1.150349, 1.439531, 3.962243\n)",
   "inputDescription": "정규성 검정용 수치 벡터 전체 20개다. 이 문항용 구성자료의 Shapiro–Wilk p값은 소수 둘째 자리로 0.08이다.",
   "promptPlain": "아래 준비 코드로 제시한 수치 벡터 x의 정규성을 함수로 점검하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "shapiro.test(x)",
+      "explanation": "제시된 수치 벡터의 Shapiro–Wilk 정규성 검정을 실행한다. p값은 정규성 가설의 판정에 사용한다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC006",
   "bank": "written",
   "inputProvenance": "question_visible_constructed_practice_data"

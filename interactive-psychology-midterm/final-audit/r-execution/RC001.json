@@ -40,8 +40,8 @@
   "source": "t-test 교안 p.3–4",
   "calc": false,
   "points": 5,
-  "modelCode": "score <- c(20, 80, 40)\n\nascending <- sort(score)\nordered <- sort(\n  score,\n  decreasing = TRUE\n)\n\nordered[1]",
-  "codeTemplate": "score <- c(20, 80, 40)\n\nascending <- {{1}}(score)\nordered <- sort(\n  score,\n  decreasing = {{2}}\n)\n\nordered[{{3}}]",
+  "modelCode": "score <- c(20, 80, 40)\n\nascending <- sort(score)\nordered <- sort( score, decreasing = TRUE)\n\nordered[1]",
+  "codeTemplate": "score <- c(20, 80, 40)\n\nascending <- {{1}}(score)\nordered <- sort( score, decreasing = {{2}})\n\nordered[{{3}}]",
   "codeBlanks": [
     {
       "id": "1",
@@ -60,6 +60,30 @@
     }
   ],
   "followUp": "마지막 줄의 출력값을 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "score <- c(20, 80, 40)",
+      "explanation": "오른쪽 값을 계산하여 왼쪽 객체에 저장한다. 벡터 연산은 대응하는 원소끼리 수행한다."
+    },
+    {
+      "line": 3,
+      "code": "ascending <- sort(score)",
+      "explanation": "sort의 기본 설정으로 작은 값부터 큰 값 순서로 정렬한다."
+    },
+    {
+      "line": 4,
+      "code": "ordered <- sort( score, decreasing = TRUE)",
+      "explanation": "decreasing=TRUE이면 큰 값부터 작은 값 순서로 정렬한다."
+    },
+    {
+      "line": 6,
+      "code": "ordered[1]",
+      "explanation": "앞에서 정렬한 벡터의 첫 번째 원소를 출력한다. R 인덱스는 1부터 시작한다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC001",
   "bank": "written",
   "inputProvenance": "question_literal_vectors"

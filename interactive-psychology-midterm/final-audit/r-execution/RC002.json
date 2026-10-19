@@ -80,6 +80,35 @@
     }
   ],
   "followUp": "네 함수의 출력값을 실행 순서대로 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "a <- c(1, 2, 3, 4, 100)",
+      "explanation": "오른쪽 값을 계산하여 왼쪽 객체에 저장한다. 벡터 연산은 대응하는 원소끼리 수행한다."
+    },
+    {
+      "line": 3,
+      "code": "min(a)",
+      "explanation": "주어진 수치 벡터에서 가장 작은 값 하나를 반환한다."
+    },
+    {
+      "line": 4,
+      "code": "max(a)",
+      "explanation": "주어진 수치 벡터에서 가장 큰 값 하나를 반환한다."
+    },
+    {
+      "line": 5,
+      "code": "mean(a)",
+      "explanation": "수치 벡터의 원소를 모두 더한 뒤 원소 수로 나눈 산술평균을 반환한다."
+    },
+    {
+      "line": 6,
+      "code": "median(a)",
+      "explanation": "자료를 정렬했을 때 중앙에 위치하는 값인 중앙값을 반환한다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC002",
   "bank": "written",
   "inputProvenance": "question_literal_vectors"

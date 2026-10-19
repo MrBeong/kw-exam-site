@@ -1,0 +1,6 @@
+
+	Shapiro-Wilk normality test
+
+data:  datadiff
+W = 0.99845, p-value = 1
+

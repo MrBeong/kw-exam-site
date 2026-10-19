@@ -1,0 +1,24 @@
+{
+  "checks": [
+    "Written direct retry initializes with folded controls",
+    "Direct retry starts fresh",
+    "Leaving written wrong tab hides panel",
+    "Leaving written wrong tab restores unfinished original",
+    "Consumed retry action does not restart on reload",
+    "Wrong-only retry excludes unsure-only records",
+    "Mock subjective retry explicitly graded",
+    "Changing mock rubric invalidates completed retry and assessment time",
+    "Unconfirmed subjective retry restores original wrong status",
+    "Subjective retry never changes submitted exam",
+    "Mock action URL consumed after exit",
+    "Cross-tab storage update retains live retry owner and backups",
+    "Leaving mock wrong tab finishes and hides retry",
+    "OX bookmarked tab hides retry",
+    "OX leaving wrong tab finishes session",
+    "MC unanswered tab hides retry",
+    "MC leaving wrong tab finishes session",
+    "No direct-link or tab-switch browser errors"
+  ],
+  "errors": [],
+  "status": "pass"
+}

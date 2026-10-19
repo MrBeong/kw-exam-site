@@ -7,5 +7,6 @@
     "mock-exam": 12,
     "ox": 7
   },
+  "scope": "Original hand-calculation regression on unchanged items and preserved prior essays; new essays and R inputs are verified by verify_essays.py, verify_r_lines.py and native R.",
   "precision": "Use supplied log values; retain intermediates; final one decimal or exact fraction; integer counts round up."
 }

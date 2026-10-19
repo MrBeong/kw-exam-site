@@ -1,0 +1,256 @@
+{
+  "status": "passed",
+  "checks": 50,
+  "results": [
+    {
+      "name": "provided logarithms entropy",
+      "actual": 0.7,
+      "expected": 0.7
+    },
+    {
+      "name": "provided logarithms redundancy",
+      "actual": 30.000000000000004,
+      "expected": 30
+    },
+    {
+      "name": "matrix HX",
+      "actual": 2.0,
+      "expected": 2
+    },
+    {
+      "name": "matrix HY",
+      "actual": 1.5,
+      "expected": 1.5
+    },
+    {
+      "name": "matrix HXY",
+      "actual": 2.0,
+      "expected": 2
+    },
+    {
+      "name": "matrix I",
+      "actual": 1.5,
+      "expected": 1.5
+    },
+    {
+      "name": "matrix equivocation",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "matrix noise",
+      "actual": 0.0,
+      "expected": 0
+    },
+    {
+      "name": "matrix accuracy",
+      "actual": 0.75,
+      "expected": 0.75
+    },
+    {
+      "name": "Hick b",
+      "actual": 125.0,
+      "expected": 125
+    },
+    {
+      "name": "Hick a",
+      "actual": 300.0,
+      "expected": 300
+    },
+    {
+      "name": "Hick capacity",
+      "actual": 8.0,
+      "expected": 8
+    },
+    {
+      "name": "Hick RT",
+      "actual": 675.0,
+      "expected": 675
+    },
+    {
+      "name": "Fitts ID argument",
+      "actual": 5.0,
+      "expected": 5
+    },
+    {
+      "name": "Fitts MT rounded log",
+      "actual": 395.0,
+      "expected": 395
+    },
+    {
+      "name": "Fitts variant argument",
+      "actual": 11.0,
+      "expected": 11
+    },
+    {
+      "name": "Fitts variant MT",
+      "actual": 575.0,
+      "expected": 575
+    },
+    {
+      "name": "sample continuous",
+      "actual": 6.25,
+      "expected": 6.25
+    },
+    {
+      "name": "sample integer",
+      "actual": 7,
+      "expected": 7
+    },
+    {
+      "name": "additional",
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "name": "SD n multiplier",
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "name": "SE n multiplier",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Sxx",
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "name": "Sxy",
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "name": "OLS slope",
+      "actual": 2.5,
+      "expected": 2.5
+    },
+    {
+      "name": "OLS intercept",
+      "actual": -1.0,
+      "expected": -1
+    },
+    {
+      "name": "OLS residual",
+      "actual": -1.0,
+      "expected": -1
+    },
+    {
+      "name": "ANOVA SSR",
+      "actual": 60,
+      "expected": 60
+    },
+    {
+      "name": "ANOVA R2",
+      "actual": 0.75,
+      "expected": 0.75
+    },
+    {
+      "name": "ANOVA F",
+      "actual": 24.0,
+      "expected": 24
+    },
+    {
+      "name": "ANOVA total df",
+      "actual": 9,
+      "expected": 9
+    },
+    {
+      "name": "ANOVA residual df",
+      "actual": 8,
+      "expected": 8
+    },
+    {
+      "name": "Donders discrimination",
+      "actual": 60,
+      "expected": 60
+    },
+    {
+      "name": "Donders selection",
+      "actual": 90,
+      "expected": 90
+    },
+    {
+      "name": "rounded log2(5)",
+      "actual": 2.3,
+      "expected": 2.3
+    },
+    {
+      "name": "rounded log2(11)",
+      "actual": 3.5,
+      "expected": 3.5
+    },
+    {
+      "name": "BMI cm conversion",
+      "actual": 25.0,
+      "expected": 25
+    },
+    {
+      "name": "BMI one decimal",
+      "actual": 25.0,
+      "expected": 25
+    },
+    {
+      "name": "upper 25 percentile",
+      "actual": 75,
+      "expected": 75
+    },
+    {
+      "name": "sample mean",
+      "actual": 4.0,
+      "expected": 4
+    },
+    {
+      "name": "sample variance",
+      "actual": 4.0,
+      "expected": 4
+    },
+    {
+      "name": "sample SD",
+      "actual": 2.0,
+      "expected": 2
+    },
+    {
+      "name": "Sternberg YES slope",
+      "actual": 30.0,
+      "expected": 30
+    },
+    {
+      "name": "Sternberg NO slope",
+      "actual": 40.0,
+      "expected": 40
+    },
+    {
+      "name": "Sternberg YES intercept",
+      "actual": 360,
+      "expected": 360
+    },
+    {
+      "name": "Sternberg NO intercept",
+      "actual": 420,
+      "expected": 420
+    },
+    {
+      "name": "VR goal interval",
+      "actual": 1.1,
+      "expected": 1.1
+    },
+    {
+      "name": "VR stimulus interval",
+      "actual": 0.13,
+      "expected": 0.13
+    },
+    {
+      "name": "3D Fitts explained percentage",
+      "actual": 64.5,
+      "expected": 64.5
+    },
+    {
+      "name": "warning supplied entropy redundancy",
+      "actual": 20.000000000000007,
+      "expected": 20
+    }
+  ]
+}

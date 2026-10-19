@@ -1,0 +1,208 @@
+{
+  "pass": true,
+  "checks": 21,
+  "results": [
+    {
+      "name": "fresh final50 start",
+      "pass": true,
+      "detail": {
+        "count": 50,
+        "version": "paper50-final-2026-10-19",
+        "status": "running"
+      }
+    },
+    {
+      "name": "same revision old32 inferred from code",
+      "pass": true,
+      "detail": {
+        "count": 32,
+        "version": "paper32-2026-10-18",
+        "title": "1세트 · 120분 시험 · 이전 문항 보관본",
+        "progress": "0 / 32 답안 완료",
+        "prompt": "주어진 벡터 score <- c(35, 90, 60)을 오름차순으로 정렬한 ascending과 내림차순으로 정렬한 ordered를 만들고, ordered의 첫 원소를 출력하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+        "deadline": 1792389112475,
+        "selected": {}
+      }
+    },
+    {
+      "name": "old32 Q29 remains code and answer unchanged",
+      "pass": true,
+      "detail": {
+        "type": "code",
+        "answer": "sort"
+      }
+    },
+    {
+      "name": "old revision32 null",
+      "pass": true,
+      "detail": {
+        "count": 32,
+        "version": "paper32-2026-10-18",
+        "title": "1세트 · 제출 완료 · 이전 문항 보관본",
+        "progress": "0 / 32 답안 완료",
+        "prompt": "주어진 벡터 score <- c(35, 90, 60)을 오름차순으로 정렬한 ascending과 내림차순으로 정렬한 ordered를 만들고, ordered의 첫 원소를 출력하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+        "selected": {}
+      }
+    },
+    {
+      "name": "old revision32 hand-calc-2026-10-18",
+      "pass": true,
+      "detail": {
+        "count": 32,
+        "version": "paper32-2026-10-18",
+        "title": "1세트 · 제출 완료 · 이전 문항 보관본",
+        "progress": "0 / 32 답안 완료",
+        "prompt": "주어진 벡터 score <- c(35, 90, 60)을 오름차순으로 정렬한 ascending과 내림차순으로 정렬한 ordered를 만들고, ordered의 첫 원소를 출력하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+        "selected": {}
+      }
+    },
+    {
+      "name": "old revision32 midterm-review-2026-10-18",
+      "pass": true,
+      "detail": {
+        "count": 32,
+        "version": "paper32-2026-10-18",
+        "title": "1세트 · 제출 완료 · 이전 문항 보관본",
+        "progress": "0 / 32 답안 완료",
+        "prompt": "주어진 벡터 score <- c(35, 90, 60)을 오름차순으로 정렬한 ascending과 내림차순으로 정렬한 ordered를 만들고, ordered의 첫 원소를 출력하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+        "selected": {}
+      }
+    },
+    {
+      "name": "old revision32 focused-essay-2026-10-18",
+      "pass": true,
+      "detail": {
+        "count": 32,
+        "version": "paper32-2026-10-18",
+        "title": "1세트 · 제출 완료 · 이전 문항 보관본",
+        "progress": "0 / 32 답안 완료",
+        "prompt": "주어진 벡터 score <- c(35, 90, 60)을 오름차순으로 정렬한 ascending과 내림차순으로 정렬한 ordered를 만들고, ordered의 첫 원소를 출력하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+        "selected": {}
+      }
+    },
+    {
+      "name": "old32 correct denominators and 100 points",
+      "pass": true,
+      "detail": "제출 완료\n객관식 36 / 36점\n주관식 14 / 14문항 채점 완료 · 체크 64 / 64점\n총점 100 / 100점"
+    },
+    {
+      "name": "pre-review50 inferred",
+      "pass": true,
+      "detail": {
+        "count": 50,
+        "version": "paper50-before-final-2026-10-19",
+        "title": "4세트 · 제출 완료 · 이전 문항 보관본",
+        "progress": "0 / 50 답안 완료",
+        "prompt": "[실전 코드 변형] 아래 표는 Sternberg 실험 8행 데이터프레임 `dat`이다. 정답(`Correct == TRUE`)이면서 타임아웃이 아닌(`!Timeout`) 6행만 `clean`으로 정제한 뒤, 실제 포함 여부(`Present`)에 따라 YES(`yes`)와 NO(`no`)로 나누어 각각 `Time ~ PSS` 선형회귀를 적합하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+        "selected": {}
+      }
+    },
+    {
+      "name": "pre-review50 original rubric preserved",
+      "pass": true,
+      "detail": {
+        "rubrics": 5,
+        "followUp": "정제된 6행에서 YES 조건(`model_yes`)과 NO 조건(`model_no`)의 PSS 1단위당 기울기(ms/item)를 각각 구하시오.",
+        "mode": "blank"
+      }
+    },
+    {
+      "name": "ambiguous paper blocks interpretation",
+      "pass": true,
+      "detail": {
+        "count": 0,
+        "version": "unresolved",
+        "title": "1세트 · 120분 시험",
+        "progress": "보관한 시험지 확인 필요",
+        "deadline": 1792389112475,
+        "selected": {
+          "ME1-Q01": [
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "name": "explicit32 selection keeps answer and clock",
+      "pass": true,
+      "detail": {
+        "count": 32,
+        "deadline": 1792389112475,
+        "selected": [
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "explicit32 survives reload",
+      "pass": true,
+      "detail": {
+        "count": 32,
+        "deadline": 1792389112475
+      }
+    },
+    {
+      "name": "explicit earlier50 selection keeps clock",
+      "pass": true,
+      "detail": {
+        "count": 50,
+        "version": "paper50-before-final-2026-10-19",
+        "deadline": 1792389112475
+      }
+    },
+    {
+      "name": "raw archive predates all version tagging",
+      "pass": true,
+      "detail": {
+        "answer": "A",
+        "deadline": 1792389112475,
+        "hadPaperVersion": false
+      }
+    },
+    {
+      "name": "old32 timeout uses 32-paper",
+      "pass": true,
+      "detail": {
+        "count": 32,
+        "status": "submitted",
+        "timeUp": true
+      }
+    },
+    {
+      "name": "old paper restart selects final50",
+      "pass": true,
+      "detail": {
+        "count": 50,
+        "version": "paper50-final-2026-10-19",
+        "status": "draft"
+      }
+    },
+    {
+      "name": "practice resets revised items and keeps unchanged answer",
+      "pass": true,
+      "detail": {
+        "version": "paper50-final-2026-10-19",
+        "selected": [
+          "A"
+        ]
+      }
+    },
+    {
+      "name": "latest practice full line and explanations restored",
+      "pass": true,
+      "detail": {
+        "mode": "line",
+        "lines": 1
+      }
+    },
+    {
+      "name": "original practice download available",
+      "pass": true
+    },
+    {
+      "name": "no browser exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ]
+}

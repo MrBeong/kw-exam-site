@@ -1,0 +1,1080 @@
+{
+  "artifact": "/Users/a0/Desktop/kw/3학년 2학기/인터랙티브심리학/07_시험대비/중간/28_시험1시간전_압축정리.html",
+  "artifactSha256": "5baf73f559c45894f6c7fc02c4490b6661e74d3e14c5993e650c76dbcc9deabb",
+  "authoritativeConceptSource": "ox/index.html; latest inlined q() statements and explanations, not multiple-choice/concepts.json",
+  "scope": "Manual semantic review of the 188 concept groups against the cram HTML. A coverage link supports the actual quoted topic, not complete reproduction of every original fact/number/question variant. Partial records intentionally remain partial until their noted detail is visible.",
+  "groups": [
+    {
+      "conceptIds": [
+        "OX001"
+      ],
+      "target": "judge",
+      "evidence": "Previous Experience → Present Experience → Future Experience Brand Experience Brand Awareness · Attitude to brand · Brand Ethics · Brand Loyalty Produ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX002"
+      ],
+      "target": "judge",
+      "evidence": "Brand Awareness · Attitude to brand · Brand Ethics · Brand Loyalty Product/Service Experience Affect · Usability · User Value Ergonomics = Ergon(work)",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX003"
+      ],
+      "target": "judge",
+      "evidence": "Affect · Usability · User Value Ergonomics = Ergon(work) + Nomos(laws). Physical Ergonomics는 Anthropometric(인체측정)·Physiological(생리)·Biomechanical(생체역학",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX004",
+        "OX005",
+        "OX006"
+      ],
+      "target": "detail-foundations",
+      "evidence": "심리학의 지식과 방법을 UX에 적용하는 DESIGN AND SCIENCE . UX Design은 Ergonomics·Engineering·Psychology·Sociology가 만나는 영역이다. 종교·대인관계·운동 등 개인·사회 맥락도 경험에 영향을 줄 수 있다. UX",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX007"
+      ],
+      "target": "judge",
+      "evidence": "주의 자원에는 한계가 있고, 참가자는 패스 횟수를 세는 과업에 주의를 집중했다. 그래서 시야에 들어온 예상 밖 자극도 의식적으로 인식되지 않을 수 있다. 핵심은 선택적·제한된 주의 → 뜻밖의 자극 누락 의 연결이다. 관제 화면 개선·다른 실험까지 덧붙일 필요는 없다. ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX008",
+        "OX009"
+      ],
+      "target": "judge",
+      "evidence": "Dark Ages(1960~80s, 개발자 중심) → Proto UX(1990s, 인지인간공학·정보설계·인터페이스) → UX Gold Rush(2010s, UX/UI·사용자 연구). HFE: Old Age(1900~1945, 시간·동작 연구·사람을 직무/장비에 맞추는 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX010"
+      ],
+      "target": "judge",
+      "evidence": "Ergon(work) + Nomos(laws). Physical Ergonomics는 Anthropometric(인체측정)·Physiological(생리)·Biomechanical(생체역학) 특성, Cognitive Ergonomics는 지각·기억·추론·반응 등 정신 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX011"
+      ],
+      "target": "detail-foundations",
+      "evidence": "유럽은 Ergonomics , 미국은 Human Factors / HF Engineering , 미군은 Human Engineering , 심리학계는 Engineering Psychology / Applied Psychology 로 연결한다. 신체뿐 아니라 정신물리·심",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX012"
+      ],
+      "target": "detail-foundations",
+      "evidence": "human well-being + system performance 를 함께 최적화한다. 유럽은 Ergonomics , 미국은 Human Factors / HF Engineering , 미군은 Human Engineering , 심리학계는 Engineering Psyc",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX013",
+        "OX014"
+      ],
+      "target": "judge",
+      "evidence": "Fitting the human to the system / Fitting the system to the human. 인간공학은 사람의 특성과 한계를 설계에 반영한다. 영문 명칭은 이 묶음 그대로 회수 UX의 시간 범위 Previous Experience → Pres",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX015",
+        "OX016"
+      ],
+      "target": "judge",
+      "evidence": "Gilbreth 부부의 시간·동작 연구에서 Micro-motion analysis 는 동작을 세분하며, 기본18동작 단위는 therbligs 다. 역사는 두 연대표를 섞지 않는다 UX: Dark Ages(1960~80s, 개발자 중심) → Proto UX(1990s, ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX017"
+      ],
+      "target": "judge",
+      "evidence": "Old Age(1900~1945, 시간·동작 연구·사람을 직무/장비에 맞추는 관점) → Middle/Modern Age(1945~1980, 전문화·응용 확대) → Information Age(HCI·사용성·스마트폰 UX, 최근 인간–AI 상호작용). 1945~1960은",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX018",
+        "OX019",
+        "OX020"
+      ],
+      "target": "judge",
+      "evidence": "1945~1960은 연구실·학회가 생기며 전문 학문이 형성된 시기, 1960~1980은 군사·항공에서 자동차·소비재 등으로 응용이 확대된 시기다. 기관 예: Engineering Psychology Lab(1945), Ergonomics Society(1950), Hu",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX021"
+      ],
+      "target": "judge",
+      "evidence": "Physical Ergonomics는 Anthropometric(인체측정)·Physiological(생리)·Biomechanical(생체역학) 특성, Cognitive Ergonomics는 지각·기억·추론·반응 등 정신 과정에 초점을 둔다. Gilbreth 부부의 시간",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX022"
+      ],
+      "target": "detail-foundations",
+      "evidence": "UX는 과업 수행뿐 아니라 제품 사용의 전반적 경험·만족을 다룬다. 인간공학의 목표와 다른 이름 human well-being + system performance 를 함께 최적화한다. 유럽은 Ergonomics , 미국은 Human Factors / HF Engine",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX023"
+      ],
+      "target": "detail-foundations",
+      "evidence": "플러그를 뽑기 쉽게 홈·손잡이를 만듦 사람의 힘과 조작 특성에 맞게 시스템을 개선 한 예다. 사용자를 더 강한 사람으로 바꾸는 방식과 다르다. 최근 과제는 AI 기술과 사람의 상호작용도 포함한다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX024"
+      ],
+      "target": "detail-foundations",
+      "evidence": "최근 과제는 AI 기술과 사람의 상호작용도 포함한다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX025"
+      ],
+      "target": "detail-foundations",
+      "evidence": "신체뿐 아니라 정신물리·심리·사회 특성도 설계 근거다. 플러그를 뽑기 쉽게 홈·손잡이를 만듦 사람의 힘과 조작 특성에 맞게 시스템을 개선 한 예다. 사용자를 더 강한 사람으로 바꾸는 방식과 다르다. 최근 과제는 AI 기술과 사람의 상호작용도 포함한다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX026"
+      ],
+      "target": "judge",
+      "evidence": "Measurement → Analysis → Experiment → Design → Evaluation. 평가 수준: System / Task / Human, Human의 지표: Performance / Physical / Subjective. 손잡이 연구 네 단계는 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX027",
+        "OX030",
+        "OX033"
+      ],
+      "target": "judge",
+      "evidence": "Descriptive Research / Experimental Research / Evaluation Research. 조작한 조건이 IV, 측정 결과가 DV다. 실험실은 통제·반복·정밀 측정, 현장은 실제 맥락·일반화에 유리하다. 현장은 통제가 어렵고 비용·안전 문",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX028",
+        "OX029"
+      ],
+      "target": "detail-bmi-percentile",
+      "evidence": "몸무게 81kg, 키 180cm이면 먼저 1.8m로 바꾼다. \\[\\mathrm{BMI}=\\frac{81}{1.8^2}=\\frac{81}{3.24}=25.0\\ \\mathrm{kg/m^2}\\] ② 백분위수: 상위25% 경계는 아래에서75% 지점이므로 75백분위수 다. ‘상",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX031",
+        "OX032",
+        "OX034"
+      ],
+      "target": "detail-methods",
+      "evidence": "코 하중은 Front0.34 > Middle0.22 > Ear0.20 > Rear0.16 N(힘 단위) , 오차막대SE. 청소기A는 가벼운 연장관290g·체결 방향 화살표·완료 소리 피드백, 오차막대SD. 별개 실험의 지표를 섞지 않는다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX035",
+        "OX036"
+      ],
+      "target": "judge",
+      "evidence": "실험실은 통제·반복·정밀 측정, 현장은 실제 맥락·일반화에 유리하다. 현장은 통제가 어렵고 비용·안전 문제도 고려한다. 숙련자는 새 UI, 초보자는 기존 UI만 사용했다 사용자 숙련도와 UI가 함께 바뀌어 효과를 분리할 수 없다 → Internal validity 문제",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX037"
+      ],
+      "target": "judge",
+      "evidence": "조작한 조건이 IV, 측정 결과가 DV다. 실험실은 통제·반복·정밀 측정, 현장은 실제 맥락·일반화에 유리하다. 현장은 통제가 어렵고 비용·안전 문제도 고려한다. 숙련자는 새 UI, 초보자는 기존 UI만 사용했다 사용자 숙련도와 UI가 함께 바뀌어 효과를 분리할 수 없",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX038"
+      ],
+      "target": "detail-methods",
+      "evidence": "조명을 모두 같게 고정 → Control . 성별·연령 계층을 나누어 비율을 맞춤 → Stratification . 표본의 모집단 대표성 Representativity 는 모집단을 편향 없이 대표하는 것. Random sampling 등을 활용한다. 왼손잡이10% 모집",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX039",
+        "OX040"
+      ],
+      "target": "judge",
+      "evidence": "평가 수준: System / Task / Human, Human의 지표: Performance / Physical / Subjective. 손잡이 연구 네 단계는 파지특성 파악 → 설계·인체변수 선정 → 설계공식 개발 → 제품 설계 적용 이다. 연구 설계·측정 지표의 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX041"
+      ],
+      "target": "detail-methods",
+      "evidence": "Representativity 는 모집단을 편향 없이 대표하는 것. Random sampling 등을 활용한다. 왼손잡이10% 모집단에서 오른손잡이만 뽑으면 일반화에 문제가 생긴다. 지표 선정의 기준 level of target (목표 수준 적합성), metric co",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX042",
+        "OX043"
+      ],
+      "target": "statistics",
+      "evidence": "α를 낮춰 신뢰수준을 높이면 z와 요구 n이 증가한다. 기초통계량을 함수 없이 직접 계산한다면 풀이 확인 자료 a=(2,4,6)의 평균과 중앙값은4다. 편차는−2,0,2이며 표본분산은 \\[s^2=\\frac{(-2)^2+0^2+2^2}{3-1}=4,\\qquad s=\\sq",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX044"
+      ],
+      "target": "statistics",
+      "evidence": "총 7명, 추가 2명}\\] 먼저 총 인원을 올린다. s 두 배 → n 네 배, k 절반 → n 네 배, 둘 다 → 16배. 다른 조건이 같을 때 n 네 배 → SE 절반. α를 낮춰 신뢰수준을 높이면 z와 요구 n이 증가한다. 기초통계량을 함수 없이 직접 계산한다면 풀",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX045"
+      ],
+      "target": "detail-methods",
+      "evidence": "Objective · Quantitative · Unobtrusive · Easy to collect · No special instrumentation · Cost as little as possible. Unobtrusive는 자연스러운 과업 수행을 방해하지 않는다",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX046",
+        "OX047"
+      ],
+      "target": "judge",
+      "evidence": "Reliability 는 높아도 Accuracy 는 낮을 수 있다. 반복 일관성과 참값 근접성을 분리한다. 안전성 평가에서 중요한 항목을 빼먹음 / 만족도 점수에 무관한 기기 속도가 섞임 빠뜨림 = Deficiency , 무관한 요소 혼입 = Contamination ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX048",
+        "OX049"
+      ],
+      "target": "judge",
+      "evidence": "사용자 숙련도와 UI가 함께 바뀌어 효과를 분리할 수 없다 → Internal validity 문제. 다른 사용자·환경에도 적용되는지는 External validity 다. 매번 같은 값이지만 실제값에서 벗어난다 Reliability 는 높아도 Accuracy 는 낮을",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX050",
+        "OX051"
+      ],
+      "target": "judge",
+      "evidence": "빠뜨림 = Deficiency , 무관한 요소 혼입 = Contamination . 둘 다 구성개념과 측정치의 대응 문제다. 키에 맞춰 사람을 선발 / 다양한 키에 맞게 의자 조절 Fitting the human to the system / Fitting the sys",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX052"
+      ],
+      "target": "statistics",
+      "evidence": "SD는 개인값 산포, SE는 평균 추정 불확실성이다. 파일럿 5명, 평균 80, s=10, z=2, k=0.1. 총 인원과 추가 모집 수는? 풀이 확인 \\[n=\\left(\\frac{2(10)}{0.1(80)}\\right)^2=2.5^2=6.25\\Rightarrow\\te",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX053"
+      ],
+      "target": "judge",
+      "evidence": "파지특성 파악 → 설계·인체변수 선정 → 설계공식 개발 → 제품 설계 적용 이다. 연구 설계·측정 지표의 빠진 조건까지 회수 풀이 확인 어떤 판단? 사례와 답안 기타 변수를 다루기 조명을 모두 같게 고정 → Control . 성별·연령 계층을 나누어 비율을 맞춤 → S",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX054"
+      ],
+      "target": "information",
+      "evidence": "Short-term sensory store → Perception → Decision & response selection → Response execution. Working memory·Long-Term memory·Attention resources가 관여하고 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX055",
+        "OX056",
+        "OX057"
+      ],
+      "target": "information",
+      "evidence": "Working memory·Long-Term memory·Attention resources가 관여하고 결과는 Feedback으로 돌아온다. Miller의 7±2 / 과업의 채널 용량 7±2는 항목·식별 수준 수에 관한 경험칙. bits/s와 다르다. 입력 정보율이 커",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX058"
+      ],
+      "target": "detail-entropy-cases",
+      "evidence": "정보량 정량화의 목적은 불확실성·처리 부담을 비교해 설계를 개선하는 것이다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX059"
+      ],
+      "target": "information",
+      "evidence": "Binary Digit , 등확률 두 대안의 정보량1bit다. 한 사건의 정보량은 \\(-\\log_2p_i\\), 평균은 확률로 가중한다. \\(H_{\\max}=\\log_2N\\). 0인 확률 항은 0으로 취급한다. 확실한 사건은 0 bit, 같은 N이면 등확률일 때 H가 최",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX060"
+      ],
+      "target": "information",
+      "evidence": "대안 수를 두 배로 늘리면 등확률 H는 1 bit 증가한다. 확률이 0.2와 0.8인 두 신호. log₂5≈2.3, log₂1.25≈0.3을 주면 H와 중복도는? 풀이 확인 제시 로그를 그대로 사용한다. \\[H=0.2(2.3)+0.8(0.3)=0.7\\ \\mathrm{b",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX061",
+        "OX062"
+      ],
+      "target": "information",
+      "evidence": "Hartley · 등확률 대안 N개 \\[H=\\log_2N\\] Shannon · 비등확률 평균 정보량 \\[H=-\\sum_i p_i\\log_2p_i\\] 중복도 \\[R=\\left(1-\\frac{H}{H_{\\max}}\\right)100\\%\\] bit = Binary Digit",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX063",
+        "OX064"
+      ],
+      "target": "information",
+      "evidence": "H=0.2(2.3)+0.8(0.3)=0.7\\ \\mathrm{bit}\\]\\[H_{\\max}=1,\\qquad R=(1-0.7)100=30.0\\%\\] 이 문제는 제시한 근삿값 기준의 연습 예제 다. 정밀 로그로 계산한 0.722 bit를 섞지 않는다. 색·크기만 바뀌고 확률",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX065"
+      ],
+      "target": "detail-entropy-cases",
+      "evidence": "이항 엔트로피는 p=0·1에서0, p=0.5에서1bit로 가운데가 가장 높다. 등확률 동전의 중복도는0%, 완전히 예측 가능한 신호 변화는 H=0이라100%다. 8경고등: 등확률이면 Hmax=3bits. 문제에서 H=2.4bits를 제시하면 중복도는 (1−2.4/3)×",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX066",
+        "OX067"
+      ],
+      "target": "information",
+      "evidence": "R=\\left(1-\\frac{H}{H_{\\max}}\\right)100\\%\\] bit = Binary Digit , 등확률 두 대안의 정보량1bit다. 한 사건의 정보량은 \\(-\\log_2p_i\\), 평균은 확률로 가중한다. \\(H_{\\max}=\\log_2N\\). 0인 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX068",
+        "OX069"
+      ],
+      "target": "detail-entropy-cases",
+      "evidence": "8경고등: 등확률이면 Hmax=3bits. 문제에서 H=2.4bits를 제시하면 중복도는 (1−2.4/3)×100= 20.0% . 강의의 다른 제시값 H=2.3568이면 약21.44%이므로 수치 조건을 섞지 않는다. 장기기억 은 지식·경험을 제공해 지각과 판단을 돕는다",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX070"
+      ],
+      "target": "information",
+      "evidence": "색·크기만 바뀌고 확률이 같다면 Shannon 정보량은 그대로다. 곡선·경고등·정보량 성질을 판단하는 보기라면 풀이 확인 이항 엔트로피는 p=0·1에서0, p=0.5에서1bit로 가운데가 가장 높다. 등확률 동전의 중복도는0%, 완전히 예측 가능한 신호 변화는 H=0이",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX071",
+        "OX072",
+        "OX073"
+      ],
+      "target": "detail-entropy-cases",
+      "evidence": "등확률 동전의 중복도는0%, 완전히 예측 가능한 신호 변화는 H=0이라100%다. 8경고등: 등확률이면 Hmax=3bits. 문제에서 H=2.4bits를 제시하면 중복도는 (1−2.4/3)×100= 20.0% . 강의의 다른 제시값 H=2.3568이면 약21.44%이므",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX074"
+      ],
+      "target": "information",
+      "evidence": "대안 수를 두 배로 늘리면 등확률 H는 1 bit 증가한다. 확률이 0.2와 0.8인 두 신호. log₂5≈2.3, log₂1.25≈0.3을 주면 H와 중복도는? 풀이 확인 제시 로그를 그대로 사용한다. \\[H=0.2(2.3)+0.8(0.3)=0.7\\ \\mathrm{b",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX075"
+      ],
+      "target": "information",
+      "evidence": "0인 확률 항은 0으로 취급한다. 확실한 사건은 0 bit, 같은 N이면 등확률일 때 H가 최대다. 대안 수를 두 배로 늘리면 등확률 H는 1 bit 증가한다. 확률이 0.2와 0.8인 두 신호. log₂5≈2.3, log₂1.25≈0.3을 주면 H와 중복도는? 풀이 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX076"
+      ],
+      "target": "detail-entropy-cases",
+      "evidence": "정보량 정량화의 목적은 불확실성·처리 부담을 비교해 설계를 개선하는 것이다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX077"
+      ],
+      "target": "detail-entropy-cases",
+      "evidence": "장기기억 은 지식·경험을 제공해 지각과 판단을 돕는다. 전달량의 검산은 \\(H(X,Y)\\le H(X)+H(Y)\\), 독립일 때 등호다. 용량 향상에서 다차원 자극은 예를 들어 위치+색을 함께 사용하는 방식이다. Absolute judgment는 단독 자극을 기억 속 기",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX078",
+        "OX079",
+        "OX080",
+        "OX081",
+        "OX082",
+        "OX083"
+      ],
+      "target": "information",
+      "evidence": "혼동행렬: 행 X는 입력, 열 Y는 반응 다음은 기존 교안 예제와 연결되는 16회 빈도표다. 먼저 전체 합 16으로 나누고, 행·열·안쪽 칸을 각각 읽는다. 입력 X \\ 반응 Y Y₁ Y₂ Y₃ Y₄ 행 합 X₁ 4 0 0 0 4 X₂ 4 0 0 0 4 X₃ 0 0 4",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX084"
+      ],
+      "target": "information",
+      "evidence": "두 입력을 항상 반대로 답하면 정답률은 0%여도 대응이 일정해 입력을 복원할 수 있다(등확률 두 입력이면 I=1 bit). 항상 같은 답만 하면 입력에 관한 정보는 0이다. 정답률과 전달량을 같은 지표로 취급하지 않는다. 기억·반응시간은 무엇을 센 것인지 먼저 확인 단",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX085"
+      ],
+      "target": "information",
+      "evidence": "입력 정보율이 커져도 전달 정보율은 처리 한계에서 포화될 수 있다. 강의 예의 채널 용량 2.8 bits/s를 모든 과업의 고정 상한으로 일반화하지 않는다. 기억을 더 잘 유지·조직 Rehearsal은 유지, Relative judgment·다차원 자극·Chunking",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX086"
+      ],
+      "target": "information",
+      "evidence": "7±2는 항목·식별 수준 수에 관한 경험칙. bits/s와 다르다. 입력 정보율이 커져도 전달 정보율은 처리 한계에서 포화될 수 있다. 강의 예의 채널 용량 2.8 bits/s를 모든 과업의 고정 상한으로 일반화하지 않는다. 기억을 더 잘 유지·조직 Rehearsal은",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX087"
+      ],
+      "target": "detail-entropy-cases",
+      "evidence": "순음5개, 음량4~5개, 크기5~7개, 밝기3~5개. 이 수를 모든 차원의 고정 기억 항목 수로 일반화하지 않는다. 정보량 정량화의 목적은 불확실성·처리 부담을 비교해 설계를 개선하는 것이다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX088"
+      ],
+      "target": "information",
+      "evidence": "Rehearsal은 유지, Relative judgment·다차원 자극·Chunking은 강의의 용량 향상 전략. Chunking은 장기기억의 의미 있는 단위로 묶기다. 작업기억의 20~30초는 시연 없는 강의상 대표 범위다. Sternberg PSS(Positive ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX089"
+      ],
+      "target": "detail-entropy-cases",
+      "evidence": "Absolute judgment는 단독 자극을 기억 속 기준과 비교하고 Relative judgment는 제시된 자극들을 서로 비교한다. 두 과업의 차이를 구별한다. 강의의 단일 차원 식별 표: 순음5개, 음량4~5개, 크기5~7개, 밝기3~5개. 이 수를 모든 차원의",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX090"
+      ],
+      "target": "detail-entropy-cases",
+      "evidence": "다차원 자극은 예를 들어 위치+색을 함께 사용하는 방식이다. Absolute judgment는 단독 자극을 기억 속 기준과 비교하고 Relative judgment는 제시된 자극들을 서로 비교한다. 두 과업의 차이를 구별한다. 강의의 단일 차원 식별 표: 순음5개, 음",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX091"
+      ],
+      "target": "information",
+      "evidence": "Chunking은 장기기억의 의미 있는 단위로 묶기다. 작업기억의 20~30초는 시연 없는 강의상 대표 범위다. Sternberg PSS(Positive Set Size)는 기억집합의 항목 수 , Probe는 집합에 포함되는지 판단할 검사 자극 이다. 집합 {2,5,8",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX092"
+      ],
+      "target": "information",
+      "evidence": "집합 크기와 RT의 선형 증가는 항목을 순차적으로 비교하는 Serial processor 설명과 연결한다. 이를 모든 실험의 확정 전략으로 쓰지 않는다. Donders A / C / B A: 한 자극–한 반응, C: 여러 자극–한 반응, B: 여러 자극–여러 반응. C",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX093"
+      ],
+      "target": "information",
+      "evidence": "YES: self-terminating(찾으면 비교 종료) / NO: exhaustive(끝까지 비교). 집합 크기와 RT의 선형 증가는 항목을 순차적으로 비교하는 Serial processor 설명과 연결한다. 이를 모든 실험의 확정 전략으로 쓰지 않는다. Donde",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX094"
+      ],
+      "target": "detail-sternberg-slope",
+      "evidence": "절편은 PSS=0에 대한 모형값이며 자극 부호화·결정·실행 등의 기본 시간과 연결한다. 기울기는 기억 항목1개가 추가될 때 늘어나는 시간이다. 이것은 문제에 제시된 조건별 직선 자료다. YES/NO를 정오 Correct로 나누지 않는다. PSS가 모두 같은 원래 실습 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX095",
+        "OX096",
+        "OX097"
+      ],
+      "target": "information",
+      "evidence": "A: 한 자극–한 반응, C: 여러 자극–한 반응, B: 여러 자극–여러 반응. C−A는 자극 변별, B−C는 반응 선택 시간(단계 순서·순수 삽입 가정). Sternberg: 4세트49번의 30·40 ms/item은 어떻게 나오는가? 풀이 확인 기억집합 크기 PSS ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX098",
+        "OX099"
+      ],
+      "target": "laws",
+      "evidence": "b=125 ms/bit . \\[\\text{처리율}=\\frac{1000}{125}=8\\ \\mathrm{bits/s},\\qquad \\mathrm{RT}_{N=8}=300+125(3)=675\\ \\mathrm{ms}\\] 기울기를 역수로 바꿀 때 ms→s를 반영한다. 절편은 자",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX100",
+        "OX101",
+        "OX102"
+      ],
+      "target": "detail-rt-numbers",
+      "evidence": "생리4단계: 눈→뇌10~30 / 중앙90 / 뇌→근육20 / 근수축30ms. 말하기10·글읽기50bits/s는 강의 과업 예시이며 보편 한계가 아니다. 양립성의 일반적 이점 Faster learning · Fewer errors · Faster reaction time",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX103",
+        "OX104"
+      ],
+      "target": "laws",
+      "evidence": "감각 반응은 촉각→청각→시각→온도→화학, 반응기관은 눈→손→발 순으로 빠르다. 생리 단계 합 150~170 ms와 별도 대표 범위 150~180 ms를 구분한다. 양립성: 무엇이 대응하는가? Spatial: 화구와 손잡이의 위치 배열. Movement: 조작 방향과 표",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX105"
+      ],
+      "target": "detail-rt-numbers",
+      "evidence": "완전 예상 밖 사건 a≈750ms는 강의 예시다. 단계·처리율 수치 생리4단계: 눈→뇌10~30 / 중앙90 / 뇌→근육20 / 근수축30ms. 말하기10·글읽기50bits/s는 강의 과업 예시이며 보편 한계가 아니다. 양립성의 일반적 이점 Faster learning",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX106"
+      ],
+      "target": "laws",
+      "evidence": "기울기는 강의에서 양립성·학습·연령의 영향과 연결한다. Fitts ISO: D=80, W=20, a=50 ms, b=150 ms/bit, log₂5≈2.3. MT는? 풀이 확인 \\[\\mathrm{ID}=\\log_2(80/20+1)=2.3\\ \\mathrm{bits}\\] ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX107"
+      ],
+      "target": "detail-rt-numbers",
+      "evidence": "Hick의 b가 작아지면1bit당 추가RT가 작다. 식별성이 낮거나 나이가 많으면RT가 증가할 수 있다. 사전 경고의 약20% 단축·완전 예상 밖 사건 a≈750ms는 강의 예시다. 단계·처리율 수치 생리4단계: 눈→뇌10~30 / 중앙90 / 뇌→근육20 / 근수축3",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX108",
+        "OX109"
+      ],
+      "target": "laws",
+      "evidence": "메뉴 대안 수·확률 구조·자극–반응 대응 표적을 크게, 거리를 짧게. D와 W는 같은 단위. Hick: N=1,2,4에서 RT=300,425,550 ms. a, b와 처리율, N=8의 RT는? 풀이 확인 N=1은 H=0이므로 a=300 ms . H가 1 bit 늘 때 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX110"
+      ],
+      "target": "information",
+      "evidence": "항상 같은 답만 하면 입력에 관한 정보는 0이다. 정답률과 전달량을 같은 지표로 취급하지 않는다. 기억·반응시간은 무엇을 센 것인지 먼저 확인 단서 핵심 연결 인간 정보처리 도식 Short-term sensory store → Perception → Decision &",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX111"
+      ],
+      "target": "detail-entropy-cases",
+      "evidence": "H(X,Y)\\le H(X)+H(Y)\\), 독립일 때 등호다. 용량 향상에서 다차원 자극은 예를 들어 위치+색을 함께 사용하는 방식이다. Absolute judgment는 단독 자극을 기억 속 기준과 비교하고 Relative judgment는 제시된 자극들을 서로 비교한",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX112",
+        "OX113"
+      ],
+      "target": "laws",
+      "evidence": "표적을 크게, 거리를 짧게. D와 W는 같은 단위. Hick: N=1,2,4에서 RT=300,425,550 ms. a, b와 처리율, N=8의 RT는? 풀이 확인 N=1은 H=0이므로 a=300 ms . H가 1 bit 늘 때 RT는 125 ms 늘어 b=125 ms/",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX114",
+        "OX115"
+      ],
+      "target": "laws",
+      "evidence": "원형 \\(\\mathrm{ID}=\\log_2(2A/W)\\) ISO \\(\\mathrm{ID}=\\log_2(D/W+1)\\) 설계 적용 메뉴 대안 수·확률 구조·자극–반응 대응 표적을 크게, 거리를 짧게. D와 W는 같은 단위. Hick: N=1,2,4에서 RT=300,425",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX116",
+        "OX117"
+      ],
+      "target": "laws",
+      "evidence": "Fitts ISO: D=80, W=20, a=50 ms, b=150 ms/bit, log₂5≈2.3. MT는? 풀이 확인 \\[\\mathrm{ID}=\\log_2(80/20+1)=2.3\\ \\mathrm{bits}\\] \\[\\mathrm{MT}=50+150(2.3)=395.0",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX118"
+      ],
+      "target": "laws",
+      "evidence": "D와 W를 함께 두 배로 바꾸면 비율이 같아 ID·MT는 그대로다. ISO식에서 W를 반으로 줄인다고 항상 정확히 1 bit 증가하지는 않는다. 운동 제어·반응 순서 Ballistic movement / Open loop: 초기 탄도 운동, 진행 중 피드백 조절이 제한",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX119"
+      ],
+      "target": "laws",
+      "evidence": "Forearm 105 / Wrist 43 / Finger 26 ms/bit. b만으로 모든 MT의 대소를 단정하려면 절편 조건도 봐야 한다. 감각 반응은 촉각→청각→시각→온도→화학, 반응기관은 눈→손→발 순으로 빠르다. 생리 단계 합 150~170 ms와 별도 대표 범",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX120"
+      ],
+      "target": "detail-rt-numbers",
+      "evidence": "관절 수가 늘면 필요한 감각정보·처리 부담이 증가한다는 강의 설명. 모서리 표적의 이점은 커서가 경계에 막히는 조건에서 적용하며 모든 터치·다중화면에 일반화하지 않는다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX121",
+        "OX122",
+        "OX123"
+      ],
+      "target": "laws",
+      "evidence": "Ballistic movement / Open loop: 초기 탄도 운동, 진행 중 피드백 조절이 제한됨. Positioning movement / Closed loop: 끝부분 위치 조절, 피드백 이용. Range effect: 짧은 목표 거리는 Overshoot, ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX124"
+      ],
+      "target": "laws",
+      "evidence": "연습으로 초기 운동 계획이 정교해져 Open loop의 비중이 커질 수 있지만 모든 피드백이 사라지는 것은 아니다. 강의 기울기: Forearm 105 / Wrist 43 / Finger 26 ms/bit. b만으로 모든 MT의 대소를 단정하려면 절편 조건도 봐야 한다",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX125",
+        "OX126"
+      ],
+      "target": "laws",
+      "evidence": "Range effect: 짧은 목표 거리는 Overshoot, 긴 거리는 Undershoot. 연습으로 초기 운동 계획이 정교해져 Open loop의 비중이 커질 수 있지만 모든 피드백이 사라지는 것은 아니다. 강의 기울기: Forearm 105 / Wrist 43 /",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX127"
+      ],
+      "target": "detail-vr-studies",
+      "evidence": "목표 기반은 첫0.16초→최대1.26초, 자극 기반은 첫0.20초→최대0.33초다. 간격은 각각 1.10초 / 0.13초 . 지시문을 해석해 기능을 찾는 목표 기반 과업의 후반 운동 양상이 다를 수 있다. 처음 나타난 정점과 가장 높은 정점을 구별한다. 별개 3D Fi",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX128",
+        "OX129"
+      ],
+      "target": "laws",
+      "evidence": "Population stereotype 은 집단이 공유한 기대, Affordance 는 행동을 유도하는 단서다. 색의 의미·기대는 문화와 경험에 따라 달라질 수 있다. 실제 VR 틸트 지각 자료: Compatible에서 AE·RT는 증가, 자신감은 감소했다. AE는 절",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX130"
+      ],
+      "target": "detail-rt-numbers",
+      "evidence": "Faster learning · Fewer errors · Faster reaction time · Higher user satisfaction. 특정 VR 틸트 관측 결과와 구분한다. 관절·표적 조건 관절 수가 늘면 필요한 감각정보·처리 부담이 증가한다는 강의 설명.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX131",
+        "OX132",
+        "OX133",
+        "OX134"
+      ],
+      "target": "laws",
+      "evidence": "Spatial: 화구와 손잡이의 위치 배열. Movement: 조작 방향과 표시 이동 방향. Conceptual: 빨강과 위험처럼 학습된 의미. Modality: 음성 지시–음성 반응처럼 제시·반응 양식. Population stereotype 은 집단이 공유한 기대,",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX135",
+        "OX136"
+      ],
+      "target": "laws",
+      "evidence": "색의 의미·기대는 문화와 경험에 따라 달라질 수 있다. 실제 VR 틸트 지각 자료: Compatible에서 AE·RT는 증가, 자신감은 감소했다. AE는 절대오차이므로 클수록 나쁘다. 유의성 별표는 자신감 비교에만 있었다. ‘양립이므로 정확성 향상’이라고 외워 쓰지 않",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX137"
+      ],
+      "target": "laws",
+      "evidence": "Compatible에서 AE·RT는 증가, 자신감은 감소했다. AE는 절대오차이므로 클수록 나쁘다. 유의성 별표는 자신감 비교에만 있었다. ‘양립이므로 정확성 향상’이라고 외워 쓰지 않는다. RT 요인·대표 수치·양립성 이점을 직접 쓰라면 풀이 확인 단서 답안 판단 숙",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX138"
+      ],
+      "target": "detail-vr-studies",
+      "evidence": "참가자23명, 깊이·경사를 반영한 모형 R²=0.645 → 해당 표본의 운동시간 MT 변동64.5% 설명. 성공한 사람 비율이나 미래 정답률이 아니다. 위 틸트 AE 실험과 같은 자료가 아니다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX139"
+      ],
+      "target": "laws",
+      "evidence": "D와 W는 같은 단위. Hick: N=1,2,4에서 RT=300,425,550 ms. a, b와 처리율, N=8의 RT는? 풀이 확인 N=1은 H=0이므로 a=300 ms . H가 1 bit 늘 때 RT는 125 ms 늘어 b=125 ms/bit . \\[\\text{처리",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX140"
+      ],
+      "target": "detail-rt-numbers",
+      "evidence": "모서리 표적의 이점은 커서가 경계에 막히는 조건에서 적용하며 모든 터치·다중화면에 일반화하지 않는다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX141"
+      ],
+      "target": "laws",
+      "evidence": "여러 대안 중 반응을 고르는 RT 표적까지 포인팅하는 운동시간 MT 식 \\(\\mathrm{RT}=a+bH\\), 등확률이면 \\(H=\\log_2N\\) \\(\\mathrm{MT}=a+b\\,\\mathrm{ID}\\) 난이도 대안 수·발생 확률 원형 \\(\\mathrm{ID}=\\lo",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX142"
+      ],
+      "target": "r-code",
+      "evidence": "RStudio: Script는 편집, Console은 실행·결과, Environment는 객체 확인. Files / Plots / Packages / Help / Viewer의 기능을 구별한다. 선택 실행은 강의의 Ctrl+Enter, 스크립트 확장자는 .R. 다중회귀",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX143"
+      ],
+      "target": "r-code",
+      "evidence": "선택 실행은 강의의 Ctrl+Enter, 스크립트 확장자는 .R. 다중회귀·Hick·Fitts의 한 줄 코드도 구별하기 풀이 확인 > model2 <- lm(y ~ x1 + x2) 이미 준비된 x1·x2 두 설명변수로 y를 설명하는 다중회귀다. 설명변수 수가 늘면 Ad",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX144",
+        "OX145"
+      ],
+      "target": "r-code",
+      "evidence": "sort(baseball$득점, decreasing=TRUE)[3] sort는 정렬, decreasing=TRUE는 내림차순, [3]은 정렬 결과의 세 번째 원소다. [1]이면 최댓값이다. sort와 TRUE의 대소문자를 지킨다. ② Deagu의 키 자료만 골라 정규성",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX146"
+      ],
+      "target": "r-code",
+      "evidence": "min(a) / max(a) 데이터프레임 전체인지 한 벡터인지 확인. 대안 수를 bit로 변환 bit <- log2(N) N이 등확률 대안 수일 때다. log()의 기본 밑 e와 구별한다. lty 숫자 0 1 2 3 4 5 6 문자열 blank solid dashed ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX147",
+        "OX148"
+      ],
+      "target": "r-code",
+      "evidence": "var는 n−1 분모, 원자료 단위의 제곱. sd는 원자료와 같은 단위. 사분위수 / 상자그림 quantile(a) / boxplot(a) 수치 요약과 그림 출력의 차이. 전체 데이터 요약 / 최솟값·최댓값 summary(baseball) min(a) / max(a) ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX149"
+      ],
+      "target": "detail-descriptive-calc",
+      "evidence": "사분위수의50%는 평균이 아니라 중앙값이다. 통계적 표본 수 경험칙: 강의 Statistics view의 n≥30, Simon(1976) HFE practice 도식의 n<9:50% / 9~11:25% / >11:5%는 수업의 경험적 예시 다. 모든 연구의 확정 오류율",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX150"
+      ],
+      "target": "r-code",
+      "evidence": "quantile(a) / boxplot(a) 수치 요약과 그림 출력의 차이. 전체 데이터 요약 / 최솟값·최댓값 summary(baseball) min(a) / max(a) 데이터프레임 전체인지 한 벡터인지 확인. 대안 수를 bit로 변환 bit <- log2(N) N",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX151",
+        "OX152",
+        "OX153"
+      ],
+      "target": "statistics",
+      "evidence": "한 집단 평균 vs 기준 μ₀ 한 집단의 측정값. 정규성 검정 H₀는 정규분포. t.test(벡터, mu=기준값) 서로 다른 두 집단 평균 독립 두 집단. 각 집단 정규성, 강의의 pooled 검정은 등분산 가정. t.test(data=datat, height ~ gr",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX154",
+        "OX157",
+        "OX159"
+      ],
+      "target": "statistics",
+      "evidence": "Shapiro의 H₀는 정규성, Levene의 H₀는 등분산, t-검정의 H₀는 평균/평균차 기준이다. p>0.05는 비기각이며 H₀가 참임을 증명하지 않는다. R의 독립 두 표본 기본은 Welch이므로 var.equal=TRUE 를 생략하면 강의의 pooled 검정과",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX155"
+      ],
+      "target": "detail-descriptive-calc",
+      "evidence": "20개면 정규성이100% 증명된다’도 틀리다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX156"
+      ],
+      "target": "r-code",
+      "evidence": "t.test(datat[datat$group == \"Deagu\", ]$height, mu=150) 선택한 Deagu 키를 mu=150과 비교하는 단일표본 t-검정이다. alternative 생략 시 양측이다. 자기채점 2점: 올바른 집단·열 선택 1점 + 양측 단일표본",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX158"
+      ],
+      "target": "r-code",
+      "evidence": "levene.test(datat$height, datat$group, location=\"mean\") height를 group별로 비교해 등분산성을 검정한다. location=\"mean\"은 평균 중심의 강의 Levene 검정이다. > t.test(data=datat, h",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX160"
+      ],
+      "target": "r-code",
+      "evidence": "height ~ group의 결과~집단 방향 은 바꾸지 않는다. Shapiro는 각 집단에서 별도로 확인한다. Levene의 비기각이 등분산을 증명하는 것은 아니다. Welch 검정을 요구했다면 var.equal=TRUE를 쓰지 않는다. ⑤ 같은 사람의 전후 변화: a",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX161"
+      ],
+      "target": "r-code",
+      "evidence": "shapiro.test(datadiff) 차이값의 정규성을 확인한다. 전·후 각각의 정규성만 확인하는 것으로 대체하지 않는다. > t.test(datadiff) 차이 평균을 기본 mu=0과 비교한다. 원자료 전후의 대응표본 평균 차이 검정과 동등하다. paired=TR",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX162"
+      ],
+      "target": "statistics",
+      "evidence": "평균차 −33.65, p=2.97e−7, 95% CI [−42.80264, −24.49736]. 결론은? 풀이 확인 답안: 평균차 0이라는 귀무가설을 기각한다(p<0.05). 차이를 after−before로 정의했으므로 복용 후 평균 혈압이 복용 전보다 33.65만큼 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX163"
+      ],
+      "target": "detail-descriptive-calc",
+      "evidence": "평균이 같아도 산포는 다를 수 있다. (4,4,4)의 평균은4지만 SD=0이다. 사분위수의50%는 평균이 아니라 중앙값이다. 통계적 표본 수 경험칙: 강의 Statistics view의 n≥30, Simon(1976) HFE practice 도식의 n<9:50% / 9",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX164",
+        "OX165"
+      ],
+      "target": "statistics",
+      "evidence": "회귀는 방향, 상관은 선형 관계의 강도 \\[b_1=\\frac{S_{xy}}{S_{xx}},\\quad b_0=\\bar y-b_1\\bar x\\] \\[e_i=y_i-\\hat y_i\\] \\[r=\\frac{S_{xy}}{\\sqrt{S_{xx}S_{yy}}}\\] 모집단 모형 \\(",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX166"
+      ],
+      "target": "statistics",
+      "evidence": "r은 두 변수의 분산이 양수일 때 정의되며 단위가 없고 −1~1이다. r=0은 비선형 관계나 의존까지 없다는 뜻이 아니다. OLS는 잔차제곱합을 최소화한다. 손계산 연습: x=(1,2,3), y=(2,3,7). 회귀식과 두 번째 점의 잔차는? 풀이 확인 평균은 \\(\\b",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX167"
+      ],
+      "target": "statistics",
+      "evidence": "r=0은 비선형 관계나 의존까지 없다는 뜻이 아니다. OLS는 잔차제곱합을 최소화한다. 손계산 연습: x=(1,2,3), y=(2,3,7). 회귀식과 두 번째 점의 잔차는? 풀이 확인 평균은 \\(\\bar x=2,\\ \\bar y=4\\). \\(S_{xx}=1+0+1=2\\)",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX168"
+      ],
+      "target": "r-code",
+      "evidence": "plot(x, y) x를 가로축, y를 세로축에 놓는 산점도를 먼저 만든다. abline을 실행할 그래프가 있어야 한다. > model <- lm(y ~ x) 결과 y ~ 설명 x 방향으로 절편 포함 단순선형회귀를 적합해 model에 저장한다. > summary(mod",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX169"
+      ],
+      "target": "statistics",
+      "evidence": "OLS는 잔차제곱합을 최소화한다. 손계산 연습: x=(1,2,3), y=(2,3,7). 회귀식과 두 번째 점의 잔차는? 풀이 확인 평균은 \\(\\bar x=2,\\ \\bar y=4\\). \\(S_{xx}=1+0+1=2\\), \\(S_{xy}=(-1)(-2)+0(-1)+1(3)",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX170"
+      ],
+      "target": "statistics",
+      "evidence": "b_1=2.5,\\quad b_0=4-2.5(2)=-1,\\qquad\\hat y=-1+2.5x\\] 두 번째 점에서 예측값은 4, 잔차는 실제−예측=3−4=−1 이다. ANOVA는 제곱합과 자유도를 함께 아래는 절편이 포함된 단순선형회귀, 설명변수 1개 기준이다. 변동 제곱",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX171",
+        "OX172"
+      ],
+      "target": "statistics",
+      "evidence": "ANOVA는 제곱합과 자유도를 함께 아래는 절편이 포함된 단순선형회귀, 설명변수 1개 기준이다. 변동 제곱합 자유도 평균제곱 전체 \\(\\mathrm{SST}=\\sum(y_i-\\bar y)^2\\) \\(n-1\\) — 회귀·설명 \\(\\mathrm{SSR}=\\sum(\\hat ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX173"
+      ],
+      "target": "statistics",
+      "evidence": "설명력은 표본 내 Y 변동의 75%이며 미래 예측 정답률 75%라는 뜻이 아니다. 강의 summary(model)를 문장으로 바꾸는 법 Coefficients: Estimate Std. Error t value Pr(>|t|) (Intercept) 30.9333 11.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX174"
+      ],
+      "target": "r-code",
+      "evidence": "model <- lm(y ~ x) 결과 y ~ 설명 x 방향으로 절편 포함 단순선형회귀를 적합해 model에 저장한다. > summary(model) 생성한 모형의 계수·표준오차·t·p·R²·F 등을 출력한다. 모형을 만드는 함수와 결과를 요약하는 함수를 구별한다. >",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX175"
+      ],
+      "target": "r-code",
+      "evidence": "abline(model, lty=1, col=\"blue\") 현재 산점도에 model의 회귀선을 파란 실선으로 추가한다. lty는 선 종류, col은 색이다. plot이 준비되고 model이 존재한다면 이 한 줄만 작성한다. 실습 전처리·조건별 회귀의 코드 빈칸이라면 풀",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX176",
+        "OX177",
+        "OX178",
+        "OX179"
+      ],
+      "target": "statistics",
+      "evidence": "강의 summary(model)를 문장으로 바꾸는 법 Coefficients: Estimate Std. Error t value Pr(>|t|) (Intercept) 30.9333 11.5747 2.672 0.023392 x 0.8705 0.1876 4.640 0.00",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX180"
+      ],
+      "target": "detail-model-codes",
+      "evidence": "model2 <- lm(y ~ x1 + x2) 이미 준비된 x1·x2 두 설명변수로 y를 설명하는 다중회귀다. 설명변수 수가 늘면 Adjusted R-squared도 함께 본다. > model <- lm(Time ~ bit, data=dat) 이 문장의 dat는 대안 ",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX181"
+      ],
+      "target": "r-code",
+      "evidence": "bit <- log2(N) N이 등확률 대안 수일 때다. log()의 기본 밑 e와 구별한다. lty 숫자 0 1 2 3 4 5 6 문자열 blank solid dashed dotted dotdash longdash twodash 모양 선 없음 실선 파선 점선 점·파선",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX182"
+      ],
+      "target": "statistics",
+      "evidence": "p=0.16, R²≈0.03은 ‘이 표본에서 유의한 선형 관계를 검출하지 못했고 설명력도 낮다’고 해석한다. 서로 다른 자료의 계수·p값·R²를 섞지 않는다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX183",
+        "OX184"
+      ],
+      "target": "information",
+      "evidence": "실습 로그의 T/F는 응답의 정오, Probe의 실제 포함 여부와 구별한다. TimeOut 5000은 응답 실패 표식이므로 정상 RT에 섞지 않는다. PSS가 모두 3인 자료만으로 PSS 증가에 따른 기울기를 추정할 수 없다.",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX185"
+      ],
+      "target": "detail-clean-code",
+      "evidence": "clean <- dat[dat$Correct & !dat$Timeout, ] 정답 AND 타임아웃 아님을 만족하는 행만 남긴다. > yes <- clean[clean$Present, ] 실제 포함 시행을 YES로 분리한다. > no <- clean[!clean$Pres",
+      "status": "covered"
+    },
+    {
+      "conceptIds": [
+        "OX186",
+        "OX187",
+        "OX188"
+      ],
+      "target": "judge",
+      "evidence": "보충영상의 사실: Windows95의 본체/모니터 전원 혼동·전화선 모뎀·DOS 명령 회상과 Start 메뉴 재인, Nokia에 터치·음성을 시도하다 멀티탭 문자 입력을 배우는 장면, 2000년대 기기의 PS2 별도 메모리카드. 이를 이전 경험·학습된 조작 기대·절차 ",
+      "status": "covered"
+    }
+  ],
+  "coveredConceptCount": 188,
+  "partialConceptCount": 0,
+  "unmappedConceptIds": [],
+  "criticalFactualIssues": [],
+  "correctedIssues": [
+    "Fitts example now D80,W20,log2(5)≈2.3,MT395; variant D100,W10,log2(11)≈3.5,MT575.",
+    "Sternberg PSS 2/4/6 with RT420/480/540 and500/580/660 now gives slopes30/40ms/item and intercepts360/420ms.",
+    "R t.test data argument positions explicitly distinguished from formula direction."
+  ]
+}

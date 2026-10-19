@@ -1,0 +1,6 @@
+
+	Shapiro-Wilk normality test
+
+data:  datat[datat$group == "Seoul", ]$height
+W = 0.99845, p-value = 1
+

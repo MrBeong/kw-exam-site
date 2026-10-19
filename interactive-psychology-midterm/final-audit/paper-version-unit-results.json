@@ -1,0 +1,26 @@
+{
+  "pass": true,
+  "checks": 20,
+  "results": [
+    "same revision objective-only paper is unresolved",
+    "32 text evidence",
+    "32 code evidence",
+    "32 TF shape evidence",
+    "50 high number evidence",
+    "50 objective evidence",
+    "50 TF shape evidence",
+    "old empty submitted requires selection",
+    "fresh draft enters final50",
+    "final50 explicit stays final50",
+    "preserve32-undefined",
+    "preserve32-hand-calc-2026-10-18",
+    "preserve32-midterm-review-2026-10-18",
+    "preserve32-focused-essay-2026-10-18",
+    "preserve32-lecture-r-line-2026-10-18",
+    "before50 preserved independently",
+    "backup before original write",
+    "old retry archived and original restored",
+    "practice retains unchanged answers and archives revised questions",
+    "storage failure cannot overwrite original without backup"
+  ]
+}

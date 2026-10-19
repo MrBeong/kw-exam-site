@@ -8,8 +8,8 @@
     "OX159",
     "OX160"
   ],
-  "prompt": "datat의 두 집단에서 height의 정규성을 점검했고 Levene 검정 \\(p = .1742\\)였다. \\(\\alpha = .05\\)에서 절차에 따라 등분산형 독립표본 t-검정으로 집단 평균을 비교하려 한다. 빈칸 (2)에는 인자 이름과 값을 함께 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
-  "answer": "\\(\\alpha = .05\\)에서 등분산 H0를 기각하지 못하여 교안의 pooled 절차로 진행한다.",
+  "prompt": "datat의 두 독립 집단에서 height의 정규성을 점검했고 Levene 검정 p=0.1742였다. 강의처럼 등분산을 가정한 양측 평균 비교를 하려 한다. 빈칸 (1)에는 데이터 인자, (2)에는 포뮬러를 쓰시오. 다음 R 코드의 번호별 빈칸을 채우시오.",
+  "answer": "등분산 가정형 독립표본 양측 t-검정을 수행한다. Levene 비기각은 분산이 같다는 증명은 아니다.",
   "explanation": [
     "결과변수는~왼쪽, 그룹은 오른쪽이다.",
     "이 선택은 수업 절차이며 비기각이 등분산의 증명은 아니다. 기본 Welch는 등분산을 요구하지 않는다."
@@ -17,19 +17,15 @@
   "rubric": [
     {
       "points": 1,
-      "criterion": "빈칸 (1): height ~ group"
+      "criterion": "빈칸 (1): data = datat로 분석 데이터 지정"
     },
     {
       "points": 1,
-      "criterion": "빈칸 (2): data=datat"
+      "criterion": "빈칸 (2): height ~ group으로 반응·집단 순서 지정"
     },
     {
-      "points": 1,
-      "criterion": "빈칸 (3): TRUE"
-    },
-    {
-      "points": 1,
-      "criterion": "추가 답안: 등분산 H0를 비기각하여 교안의 pooled 절차 선택. 등분산 증명을 뜻하지 않음"
+      "points": 2,
+      "criterion": "빈칸 (3): TRUE로 등분산 가정형 선택"
     }
   ],
   "commonMistakes": [
@@ -41,18 +37,18 @@
   "source": "t-test 교안 p.10, 15 · t-test 교안 p.15, 17–19 · t-test 교안 p.19–20 · t-test 교안 p.20",
   "calc": false,
   "points": 4,
-  "modelCode": "t.test(\n  height ~ group,\n  data = datat,\n  var.equal = TRUE\n)",
-  "codeTemplate": "t.test(\n  {{1}},\n  {{2}},\n  var.equal = {{3}}\n)",
+  "modelCode": "t.test(data = datat, height ~ group, var.equal = TRUE)",
+  "codeTemplate": "t.test({{1}}, {{2}}, var.equal = {{3}})",
   "codeBlanks": [
     {
       "id": "1",
-      "answer": "height ~ group",
-      "explanation": "결과변수 height를 왼쪽, 집단 구분 group을 오른쪽에 둔다."
+      "answer": "data = datat",
+      "explanation": "강의처럼 분석할 데이터프레임을 data 인자로 먼저 지정한다."
     },
     {
       "id": "2",
-      "answer": "data = datat",
-      "explanation": "포뮬러의 열을 찾을 데이터프레임을 지정한다."
+      "answer": "height ~ group",
+      "explanation": "반응변수 height를 왼쪽, 집단 group을 오른쪽에 두는 포뮬러다."
     },
     {
       "id": "3",
@@ -60,10 +56,19 @@
       "explanation": "교안이 요구한 등분산형 검정은 var.equal=TRUE로 지정한다."
     }
   ],
-  "followUp": "이 검정 방식을 선택한 이유와 Levene 비기각 해석의 한계를 쓰시오.",
+  "followUp": "",
   "promptPlain": "datat의 두 집단에서 height의 정규성을 점검했고 Levene 검정 p = .1742였다. α = .05에서 절차에 따라 등분산형 독립표본 t-검정으로 집단 평균을 비교하려 한다. 빈칸 (2)에는 인자 이름과 값을 함께 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
   "codeSetup": "datat <- data.frame(\n  group = rep(c(\"Deagu\", \"Seoul\"), each = 20),\n  height = c(\n    141.977269, 145.731682, 147.81785, 149.374348, 150.666916, 151.804243, 152.843048, 153.817827,\n    154.752195, 155.664132, 156.568868, 157.480805, 158.415173, 159.389952, 160.428757, 161.566084,\n    162.858652, 164.41515, 166.501318, 170.255731, 144.316825, 149.543331, 152.447477, 154.614274,\n    156.413653, 157.996922, 159.443038, 160.800026, 162.100755, 163.37026, 164.62974, 165.899245,\n    167.199974, 168.556962, 170.003078, 171.586347, 173.385726, 175.552523, 178.456669, 183.683175\n  )\n)",
   "inputDescription": "독립된 두 집단 각 20명의 키(cm) 전체다. 이 문항용 구성자료에서 평균 중심 Levene 검정 \\(p=0.1742\\)(반올림)이며 집단별 정규성 검정은 비기각이다.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "t.test(data = datat, height ~ group, var.equal = TRUE)",
+      "explanation": "data=datat에서 height를 반응값, group을 집단으로 사용한다. var.equal=TRUE는 강의의 등분산 가정형 독립표본 t-검정을 선택하며 양측 검정이 기본이다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC010",
   "bank": "written",
   "inputProvenance": "question_visible_constructed_practice_data"

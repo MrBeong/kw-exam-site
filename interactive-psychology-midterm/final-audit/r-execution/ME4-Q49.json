@@ -1,0 +1,174 @@
+{
+  "id": "ME4-Q49",
+  "type": "code",
+  "chapter": "회귀·실험실습",
+  "conceptIds": [
+    "OX183",
+    "OX184",
+    "OX185"
+  ],
+  "prompt": "[실전 코드 변형] 아래 표는 Sternberg 실험 8행 데이터프레임 `dat`이다. 정답(`Correct == TRUE`)이면서 타임아웃이 아닌(`!Timeout`) 6행만 `clean`으로 정제한 뒤, 실제 포함 여부(`Present`)에 따라 YES(`yes`)와 NO(`no`)로 나누어 각각 `Time ~ PSS` 선형회귀를 적합하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "answer": "YES 조건 기울기는 30 ms/item(420→480→540), NO 조건 기울기는 40 ms/item(500→580→660)이다.",
+  "explanation": [
+    "열의 의미와 조건식은 문제에서 제공했으므로 파일을 읽거나 실제 포함 여부를 새로 추론할 필요는 없다.",
+    "&·! 대신 ==TRUE·==FALSE를 사용한 같은 조건도 인정한다. 각 집단에 회귀에 충분한 관측과PSS변동이 있다고 가정한다.",
+    "PSS가 2→4→6으로2씩 증가한다. YES는 (480−420)/(4−2)=30, NO는 (580−500)/(4−2)=40 ms/item이다. 반응시간 차이만으로60·80이라고 쓰지 않는다."
+  ],
+  "rubric": [
+    {
+      "points": 0.5,
+      "criterion": "빈칸 (1): 정답 조건과 타임아웃 아님 조건을 동시에 만족하는 행을 선택한다. 새 객체 clean에 저장하므로 원본을 보존한다."
+    },
+    {
+      "points": 0.5,
+      "criterion": "빈칸 (2): 필터된 clean에서 실제 포함 시행을 선택한다."
+    },
+    {
+      "points": 0.5,
+      "criterion": "빈칸 (3): 실제 미포함 시행을 선택한다. 정오 Correct와 혼동하지 않는다."
+    },
+    {
+      "points": 0.25,
+      "criterion": "빈칸 (4): YES 조건에서 반응시간을 집합크기로 예측한다."
+    },
+    {
+      "points": 0.25,
+      "criterion": "빈칸 (5): NO 조건에서도 같은 방향의 별도 회귀모형을 적합한다."
+    },
+    {
+      "points": 1,
+      "criterion": "추가 답안: 정제된 6행에서 YES 조건(`model_yes`)과 NO 조건(`model_no`)의 PSS 1단위당 기울기(ms/item)를 각각 구하시오."
+    }
+  ],
+  "commonMistakes": [
+    "Correct를 YES 조건으로 쓰지 않는다."
+  ],
+  "englishTerms": [],
+  "language": "각 빈칸에 실제 R 문법으로 작성. 문자열은 필요한 따옴표까지 포함한다.",
+  "accepted": "제시된 코드 틀에 넣었을 때 요구한 동작을 하는 R 코드를 인정한다. 공백·일반 작은따옴표/큰따옴표 차이와 동등한 식은 허용한다. 함수·객체의 철자·대소문자 및 문자열 값은 정확해야 한다.",
+  "source": "Sternberg README · 로그 · Sternberg 로그 · 원문과 검증 · SRT/CRT/Sternberg 실습 전사",
+  "calc": false,
+  "points": 3.0,
+  "modelCode": "clean <- dat[dat$Correct & !dat$Timeout, ]\nyes <- clean[clean$Present, ]\nno <- clean[!clean$Present, ]\n\nmodel_yes <- lm( Time ~ PSS, data = yes )\n\nmodel_no <- lm( Time ~ PSS, data = no )",
+  "visual": "<figure class=\"visual-box\"><figcaption>Sternberg 기억탐색 실험 8행 데이터 (`dat`)</figcaption><div class=\"table-scroll\"><table><thead><tr><th>PSS</th><th>Present</th><th>Correct</th><th>Timeout</th><th>Time</th></tr></thead><tbody><tr><td>2</td><td>TRUE</td><td>TRUE</td><td>FALSE</td><td>420</td></tr><tr><td>4</td><td>TRUE</td><td>TRUE</td><td>FALSE</td><td>480</td></tr><tr><td>6</td><td>TRUE</td><td>TRUE</td><td>FALSE</td><td>540</td></tr><tr><td>2</td><td>FALSE</td><td>TRUE</td><td>FALSE</td><td>500</td></tr><tr><td>4</td><td>FALSE</td><td>TRUE</td><td>FALSE</td><td>580</td></tr><tr><td>6</td><td>FALSE</td><td>TRUE</td><td>FALSE</td><td>660</td></tr><tr><td>4</td><td>TRUE</td><td>FALSE</td><td>FALSE</td><td>410</td></tr><tr><td>6</td><td>FALSE</td><td>FALSE</td><td>TRUE</td><td>5000</td></tr></tbody></table></div></figure>",
+  "codeTemplate": "clean <- dat[{{1}}, ]\nyes <- clean[{{2}}, ]\nno <- clean[{{3}}, ]\n\nmodel_yes <- lm( {{4}}, data = yes )\n\nmodel_no <- lm( {{5}}, data = no )",
+  "codeBlanks": [
+    {
+      "id": "1",
+      "answer": "dat$Correct & !dat$Timeout",
+      "explanation": "정답 조건과 타임아웃 아님 조건을 동시에 만족하는 행을 선택한다. 새 객체 clean에 저장하므로 원본을 보존한다."
+    },
+    {
+      "id": "2",
+      "answer": "clean$Present",
+      "explanation": "필터된 clean에서 실제 포함 시행을 선택한다."
+    },
+    {
+      "id": "3",
+      "answer": "!clean$Present",
+      "explanation": "실제 미포함 시행을 선택한다. 정오 Correct와 혼동하지 않는다."
+    },
+    {
+      "id": "4",
+      "answer": "Time ~ PSS",
+      "explanation": "YES 조건에서 반응시간을 집합크기로 예측한다."
+    },
+    {
+      "id": "5",
+      "answer": "Time ~ PSS",
+      "explanation": "NO 조건에서도 같은 방향의 별도 회귀모형을 적합한다."
+    }
+  ],
+  "followUp": "정제된 6행에서 YES 조건(`model_yes`)과 NO 조건(`model_no`)의 PSS 1단위당 기울기(ms/item)를 각각 구하시오.",
+  "codeSetup": "dat <- data.frame(\n  PSS = c(2, 4, 6, 2, 4, 6, 4, 6),\n  Present = c(TRUE, TRUE, TRUE, FALSE, FALSE, FALSE, TRUE, FALSE),\n  Correct = c(TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, FALSE),\n  Timeout = c(FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE),\n  Time = c(420, 480, 540, 500, 580, 660, 410, 5000)\n)",
+  "inputDescription": "위 표의 전체 8행을 그대로 생성하는 R 코드다. Present·Correct·Timeout은 논리형, PSS·Time은 수치형이다.",
+  "promptPlain": "표는 분석용 dat의 전체 8행이다. PSS는 집합크기, Present는 실제 포함 여부, Correct는 정오, Timeout은 타임아웃, Time은 반응시간(ms)이다. Present·Correct·Timeout은 논리형이다. 정답이며 타임아웃이 아닌 시행만 clean으로 만든 뒤, YES(실제 포함)·NO(실제 미포함)별 PSS–Time 회귀를 적합하려 한다. 원본 dat를 보존하시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "variant": true,
+  "originId": "RC019",
+  "set": 4,
+  "number": 49,
+  "minutes": 5.0,
+  "codeMode": "blank",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "clean <- dat[dat$Correct & !dat$Timeout, ]",
+      "explanation": "정답 조건과 타임아웃 아님 조건을 동시에 만족하는 행을 선택한다. 새 객체 clean에 저장하므로 원본을 보존한다."
+    },
+    {
+      "line": 2,
+      "code": "yes <- clean[clean$Present, ]",
+      "explanation": "필터된 clean에서 실제 포함 시행을 선택한다."
+    },
+    {
+      "line": 3,
+      "code": "no <- clean[!clean$Present, ]",
+      "explanation": "실제 미포함 시행을 선택한다. 정오 Correct와 혼동하지 않는다."
+    },
+    {
+      "line": 5,
+      "code": "model_yes <- lm( Time ~ PSS, data = yes )",
+      "explanation": "YES 조건에서 반응시간을 집합크기로 예측한다."
+    },
+    {
+      "line": 7,
+      "code": "model_no <- lm( Time ~ PSS, data = no )",
+      "explanation": "NO 조건에서도 같은 방향의 별도 회귀모형을 적합한다."
+    }
+  ],
+  "revision": "final-midterm-2026-10-19",
+  "bank": "mock-exam",
+  "inputProvenance": "question_complete_eight_row_table",
+  "providedRows": {
+    "PSS": [
+      2,
+      4,
+      6,
+      2,
+      4,
+      6,
+      4,
+      6
+    ],
+    "Present": [
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    "Correct": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false
+    ],
+    "Timeout": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    "Time": [
+      420,
+      480,
+      540,
+      500,
+      580,
+      660,
+      410,
+      5000
+    ]
+  }
+}

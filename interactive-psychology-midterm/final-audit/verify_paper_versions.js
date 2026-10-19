@@ -1,0 +1,26 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const E=require('path').resolve(__dirname,'..');
+const values=new Map(),document={getElementById:()=>null,createElement:()=>({style:{},append(){},appendChild(){}}),querySelector:()=>null};
+const ctx={window:{},localStorage:{getItem:k=>values.get(k)||null,setItem:(k,v)=>values.set(k,v)},document,Date,Math,JSON,Object,Map,Set,String,Blob,URL,setTimeout};ctx.window=ctx;vm.createContext(ctx);vm.runInContext(fs.readFileSync(E+'/assets/study-revisions.js','utf8'),ctx);vm.runInContext(fs.readFileSync(E+'/assets/study-mock-versions.js','utf8'),ctx);
+const V=ctx.StudyMockVersions,now=JSON.parse(fs.readFileSync(E+'/mock-exam/questions.json')),checks=[];
+function check(name,fn){fn();checks.push(name)}
+function record(type,extra={}){return {questionRevision:'lecture-r-line-2026-10-18',status:type,selected:{},texts:{},codeAnswers:{},rubrics:{},graded:{},...extra}}
+check('same revision objective-only paper is unresolved',()=>assert.equal(V.detect(record('running',{selected:{'ME1-Q01':['A']}})),'unresolved'));
+check('32 text evidence',()=>assert.equal(V.detect(record('submitted',{texts:{'ME1-Q19':'answer'}})),V.prior));
+check('32 code evidence',()=>assert.equal(V.detect(record('submitted',{codeAnswers:{'ME1-Q30':{'1':'lm(y ~ x)'}}})),V.prior));
+check('32 TF shape evidence',()=>assert.equal(V.detect(record('submitted',{selected:{'ME1-Q17':{a:true,b:false}}})),V.prior));
+check('50 high number evidence',()=>assert.equal(V.detect(record('submitted',{texts:{'ME1-Q42':'answer'}})),V.before));
+check('50 objective evidence',()=>assert.equal(V.detect(record('running',{selected:{'ME1-Q20':['A']}})),V.before));
+check('50 TF shape evidence',()=>assert.equal(V.detect(record('submitted',{selected:{'ME1-Q29':{a:true,b:false}}})),V.before));
+check('old empty submitted requires selection',()=>assert.equal(V.detect(record('submitted')),'unresolved'));
+check('fresh draft enters final50',()=>assert.equal(V.detect(record('draft')),V.current));
+check('final50 explicit stays final50',()=>assert.equal(V.detect(record('running',{paperVersion:V.current})),V.current));
+for(const revision of [undefined,'hand-calc-2026-10-18','midterm-review-2026-10-18','focused-essay-2026-10-18','lecture-r-line-2026-10-18']){
+ check('preserve32-'+revision,()=>{const a=record('submitted',{paperVersion:V.prior,questionRevision:revision,deadline:123456,selected:{'ME1-Q01':['A']}});const before=JSON.stringify(a),qs=V.questions(now.filter(q=>q.set===1),a);assert.equal(qs.length,32);assert.equal(qs[28].type,'code');assert.equal(qs.reduce((n,q)=>n+q.points,0),100);assert.equal(JSON.stringify(a),before);});
+}
+check('before50 preserved independently',()=>{const qs=V.questions(now.filter(q=>q.set===4),record('submitted',{paperVersion:V.before}));assert.equal(qs.length,50);assert.equal(qs[48].followUp.includes('기울기'),true);assert.equal(qs[48].rubric.length,5)});
+check('backup before original write',()=>{const key='test';const a=record('submitted',{texts:{'ME1-Q19':'original'},deadline:123456});const owner={questionRevision:'lecture-r-line-2026-10-18',exams:{1:a},practice:{}};const raw=JSON.stringify(owner);values.set(key,raw);V.prepare(key,owner);ctx.StudyRevisions.write(key,owner);assert.equal(values.get(owner.paperArchiveKey),raw);assert.equal(owner.exams[1].deadline,123456);assert.equal(owner.exams[1].texts['ME1-Q19'],'original');assert.equal(owner.exams[1].paperVersion,V.prior)});
+check('old retry archived and original restored',()=>{const owner={exams:{},practice:{1:record('practice',{codeAnswers:{'ME1-Q29':{'1':'new draft'}}})},retrySession:{active:true,ids:['ME1-Q29'],originals:{'ME1-Q29':{codeAnswers:{'1':'original answer'}}},completed:{}}};V.prepare('retry',owner);assert.equal(owner.retrySession,undefined);assert.equal(owner.practice[1].codeAnswers['ME1-Q29']['1'],'original answer');assert.equal(owner.paperRetryArchives.length,1)});
+check('practice retains unchanged answers and archives revised questions',()=>{const a=record('practice',{paperVersion:V.before,selected:{'ME1-Q01':['A']},texts:{'ME1-Q41':'old essay'},codeAnswers:{'ME1-Q47':{'1':'old code'}},rubrics:{'ME1-Q41':[true]}});const o={exams:{},practice:{1:a}};values.set('practice',JSON.stringify(o));V.prepare('practice',o,now);ctx.StudyRevisions.write('practice',o);assert.equal(a.paperVersion,V.current);assert.equal(a.selected['ME1-Q01'][0],'A');assert.equal(a.texts['ME1-Q41'],undefined);assert.equal(a.codeAnswers['ME1-Q47'],undefined);const backup=JSON.parse(values.get(o.paperArchiveKey));assert.equal(backup.practice[1].texts['ME1-Q41'],'old essay');assert.equal(backup.practice[1].rubrics['ME1-Q41'][0],true)});
+check('storage failure cannot overwrite original without backup',()=>{const o={exams:{1:record('submitted',{texts:{'ME1-Q19':'original'}})},practice:{}};const raw=JSON.stringify(o);values.set('quota',raw);V.prepare('quota',o,now);const setter=ctx.localStorage.setItem;ctx.localStorage.setItem=()=>{throw Error('quota')};assert.throws(()=>ctx.StudyRevisions.write('quota',o));assert.equal(values.get('quota'),raw);ctx.localStorage.setItem=setter});
+fs.writeFileSync(E+'/final-audit/paper-version-unit-results.json',JSON.stringify({pass:true,checks:checks.length,results:checks},null,2)+'\n');console.log(JSON.stringify({pass:true,checks:checks.length}));

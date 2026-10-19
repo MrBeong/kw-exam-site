@@ -10,7 +10,7 @@ def check(v,s):
     checks.append(s)
 new=[q for q in W if q.get('detailRevision')]
 check([q['id'] for q in new]==[f'SA{i:03}' for i in range(45,76)],'31 new stable short IDs')
-check(len(W)==137 and len(M)==160,'137 written / 160 mock')
+check(len(W)==191 and len(M)==160,'191 written / 160 mock after whole-line code supplement')
 check(sum(len(q['recallBlanks']) for q in new)==128,'128 individual recall blanks')
 check([q['id'] for q in objectives]==[q['id'] for q in new],'every new objective documented')
 registry={t['term']:t for t in json.loads((E/'written/english-terms.json').read_text())}
@@ -35,12 +35,17 @@ for t in trace:
 for n in range(1,6):
     packet=[q for q in M if q['set']==n]
     check(len(packet)==32 and sum(q['points'] for q in packet)==100 and sum(q['minutes'] for q in packet)==110,f'set {n} 32 / 100 / 110+10 minutes')
+r_line=json.loads((A/'r-line-revision.json').read_text())
+r_before={t['id']:t['before'] for t in r_line['writtenChanges']+r_line['mockChanges'] if t['before']}
 baseline=json.loads((A/'detail-recall-baseline-sha256.json').read_text())
+essay_revision=json.loads((A/'essay-revision.json').read_text())
+essay_before={t['id']:t['before'] for t in essay_revision['writtenChanges']+essay_revision['mockChanges'] if t['before']}
 check([q['id'] for q in W[:106]]==list(baseline['written']),'all original written IDs/order preserved')
 for bank,questions in [('written',W[:106]),('mock-exam',[q for q in M if q['id'] not in {t['id'] for t in trace}])]:
     for q in questions:
-        sha=hashlib.sha256(json.dumps(q,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
-        check(sha==baseline[bank][q['id']],q['id']+' existing content preserved byte-semantically')
+        preserved=essay_before.get(q['id'],r_before.get(q['id'],q))
+        sha=hashlib.sha256(json.dumps(preserved,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+        check(sha==baseline[bank][q['id']],q['id']+' non-essay unchanged / superseded essay baseline preserved')
 answers={q['id']:q['recallAnswers'] for q in new}
 check(answers['SA045']==['2','dashed','3','dotted','1','solid'],'line panel A authoritative mapping')
 check(answers['SA046']==['6','twodash','4','dotdash','5','longdash'],'line panel B authoritative mapping')
@@ -49,6 +54,6 @@ check(answers['SA051']==['==','!=','<=','>='],'R comparison symbols')
 check(answers['SA052']==['!','|','&','TRUE','FALSE'],'R vector Boolean operators and output')
 check(answers['SA058']==['1','n−2','n−1','SSR / 1','SSE / (n−2)','MSR / MSE'],'intercept-included simple OLS table')
 check(len(answers['SA075'])==8 and 'Short-term sensory store' in answers['SA075'],'processing diagram includes sensory store')
-result={'status':'pass','checksPassed':len(checks),'newShortQuestions':31,'numberedBlanks':128,'mockRevised':5,'bankCounts':{'written':137,'mock-exam':160},'scope':'Lecture tables, figures, R parameters and direct recall; broad concept coverage and leaf recall are distinct.'}
+result={'status':'pass','checksPassed':len(checks),'newShortQuestions':31,'numberedBlanks':128,'mockRevised':5,'bankCounts':{'written':191,'mock-exam':160},'scope':'Lecture tables, figures, R parameters and direct recall; broad concept coverage and leaf recall are distinct.'}
 (A/'detail-recall-source-results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(result,ensure_ascii=False))

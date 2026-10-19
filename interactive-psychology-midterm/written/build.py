@@ -25,7 +25,8 @@ def build():
    assert all(b['answer'].strip() and b['explanation'].strip() for b in blanks)
    completed=re.sub(r'\{\{(\d+)\}\}',lambda m:next(b['answer'] for b in blanks if b['id']==m[1]),q['codeTemplate'])
    assert completed==q['modelCode'] and '{{' not in completed
-   assert '빈칸' in q['prompt']
+   assert ('한 줄' in q['prompt']) if q.get('codeMode')=='line' else ('빈칸' in q['prompt'])
+   assert q.get('lineExplanations') and all(x['code']==q['modelCode'].splitlines()[x['line']-1] for x in q['lineExplanations'])
 
  assert covered==ids,sorted(ids-covered)
  assert all(t['sources'] for t in terms)
@@ -37,13 +38,14 @@ def build():
  assert '__WRITTEN_' not in html
  (EXAM/'index.html').write_text(html);(EXAM/'인터랙티브심리학_중간고사_Notion.html').write_text(html)
  counts=Counter(q['type'] for q in questions);types={'short':'단답형','essay':'서술형','code':'R 코드 작성'}
- lines=['# 인터랙티브심리학 중간고사 · 단답형·서술형·R 코드 작성 문제','', '작성·검증일: 2026-10-18','',f"총 {len(questions)}문항: 단답형 {counts['short']} · 서술형 {counts['essay']} · R 코드 {counts['code']}.",'','1~6주차에 대해 기존 OX001–OX188 개념 목록과 대조한 자체 제작 문제은행이다. 이 전체 분량을 120분 실제 시험 한 회분으로 간주하지 않는다. 기출형 예상시험은 별도 120분·32문항·100점의 5회분으로 제공한다.','', '**답안 언어:** 교안에 영어로 제시한 용어의 명칭을 요구한 부분만 영문으로 쓴다. 정의·이유·계산·해석을 억지로 영어로 번역하지 않는다. 한글 명칭을 인정하는 문항은 문제에 표시했다. R 문법·함수·객체명은 제시 조건대로 작성한다.','', '**R 문항:** 실제 R 코드의 번호별 빈칸에 들어갈 코드를 작성한다. 출력·해석을 추가로 요구하는 경우 별도 답안에 작성한다. 빈칸별 해설과 완성 코드는 정답 문서에서 확인한다.','', '**풀이:** 모범답안은 [04_정답과_해설.md](04_정답과_해설.md)에 분리했다. 웹에서는 답안을 먼저 작성한 뒤 정답·채점 기준을 열고 항목별 부분점수와 이해도를 직접 체크한다.','']
+ lines=['# 인터랙티브심리학 중간고사 · 단답형·서술형·R 코드 작성 문제','', '작성·검증일: 2026-10-18','',f"총 {len(questions)}문항: 단답형 {counts['short']} · 서술형 {counts['essay']} · R 코드 {counts['code']}.",'','1~6주차에 대해 기존 OX001–OX188 개념 목록과 대조한 자체 제작 문제은행이다. 이 전체 분량을 120분 실제 시험 한 회분으로 간주하지 않는다. 기출형 예상시험은 별도 120분·50문항·100점의 5회분으로 제공한다.','', '**답안 언어:** 교안에 영어로 제시한 용어의 명칭을 요구한 부분만 영문으로 쓴다. 정의·이유·계산·해석을 억지로 영어로 번역하지 않는다. 한글 명칭을 인정하는 문항은 문제에 표시했다. R 문법·함수·객체명은 제시 조건대로 작성한다.','', '**R 문항:** 부분 빈칸과 코드 한 줄 전체 작성으로 연습한다. 출력·해석을 추가로 요구하는 경우 별도 답안에 작성한다. 빈칸별 해설과 완성 코드는 정답 문서에서 확인한다.','', '**풀이:** 모범답안은 [04_정답과_해설.md](04_정답과_해설.md)에 분리했다. 웹에서는 답안을 먼저 작성한 뒤 정답·채점 기준을 열고 항목별 부분점수와 이해도를 직접 체크한다.','']
  for q in questions:
   lines += [f"## {q['id']} · {types[q['type']]} · {q['chapter']} · {q['points']}점",'',q['prompt'],'',f"답안 표기: {q['language']}",'']
   if q.get('visual'):lines += [q['visual'].replace('../assets/','assets/'),'']
   if q.get('recallBlanks'):lines += ['| 빈칸 | 답안 |','|---|---|']+[f"| {b['label']} | __________ |" for b in q['recallBlanks']]+['']
   if q.get('codeSetup'):lines += ['### 분석자료 · 준비 코드','',q['inputDescription'],'','```r',q['codeSetup'],'```','']
   if q['type']=='code':
+   if q.get('targetResult'):lines += ['원하는 결과: '+q['targetResult'],'']
    lines += ['```r',re.sub(r'\{\{(\d+)\}\}',lambda m:'____('+m[1]+')____',q['codeTemplate']),'```','']
    if q['followUp']:lines += ['추가 답안: '+q['followUp'],'']
   lines += [f"[웹에서 이 문항 풀기](index.html?view=problems&question={q['id']})",'']
@@ -54,20 +56,23 @@ def build():
   if q['type']=='code':
    if q['followUp']:lines += ['추가 답안: '+q['followUp'],'']
    if q.get('codeSetup'):lines += ['### 분석자료 · 준비 코드','',q['inputDescription'],'','```r',q['codeSetup'],'```','']
-   lines += ['### 빈칸별 정답·해설','','| 빈칸 | 들어갈 코드 | 해설 |','|---|---|---|']
+   lines += ['### '+('한 줄 모범 코드·해설' if q.get('codeMode')=='line' else '빈칸별 정답·해설'),'','| 빈칸 | 들어갈 코드 | 해설 |','|---|---|---|']
    lines += [f"| ({b['id']}) | `{b['answer']}` | {b['explanation']} |" for b in q['codeBlanks']]
    lines += ['','### 완성 코드','']
   if q.get('modelCode'):lines += ['```r',q['modelCode'],'```','']
+  if q.get('lineExplanations'):
+   lines += ['### 코드 한 문장씩 해설','']
+   for x in q['lineExplanations']:lines += ['```r',x['code'],'```',x['explanation'],'']
   lines += [q['answer'],'','### 상세 해설','']+[f'{i}. {t}' for i,t in enumerate(q['explanation'],1)]+['','### 채점 기준','', '| 배점 | 충족할 내용 |','|---:|---|']
   lines += [f"| {r['points']} | {r['criterion'].replace('|','&#124;')} |" for r in q['rubric']]
   lines += ['',f"합계 **{q['points']}점**. {q['accepted']}",'']
   if q['englishTerms']:lines += ['요구된 교안 영문 용어: '+', '.join(q['englishTerms'])+'. 일반 대소문자·하이픈/공백 차이는 의미가 같으면 인정한다. 코드의 대소문자 오류는 실행 결과에 따라 감점한다.','']
   lines += ['### 오답·감점 주의','']+['- '+t for t in q['commonMistakes']]+['',f"근거: {q['source']}  ",'개념 대응: '+', '.join(q['conceptIds']),'']
  (EXAM/'04_정답과_해설.md').write_text('\n'.join(lines)+'\n')
- lines=['# 단답·서술·R 코드 작성 · 개념 대응 및 제작 기준','', '검증일: 2026-10-18','', f"기존 188개 원자 개념 중 {len(covered)}개 대응, 누락 {len(ids-covered)}개. 총 {len(questions)}문항. 원본 전체에 대한 새 전수 감사를 의미하지 않으며 기존 목록을 기준으로 지문·답안·해설을 대조했다.",'','| 단원 | 단답 | 서술 | R 코드 | 합계 |','|---|---:|---:|---:|---:|']
+ lines=['# 단답·서술·R 코드 작성 · 개념 대응 및 제작 기준','', '검증일: 2026-10-18','', f"기존 188개 개념군 중 {len(covered)}개 대응, 누락 {len(ids-covered)}개. 총 {len(questions)}문항. 원본 전체에 대한 새 전수 감사를 의미하지 않으며 기존 목록을 기준으로 지문·답안·해설을 대조했다.",'','| 단원 | 단답 | 서술 | R 코드 | 합계 |','|---|---:|---:|---:|---:|']
  for c in dict.fromkeys(c['chapter'] for c in concepts):
   n=Counter(q['type'] for q in questions if q['chapter']==c);lines.append(f"| {c} | {n['short']} | {n['essay']} | {n['code']} | {sum(n.values())} |")
- lines += ['','## 출제·채점 방향','', '- 단답은 영문 명칭·R 표기·수치·단위·공식의 직접 인출을 평가한다. 기존 188개 개념군의 세부 표·그림·옵션도 별도 빈칸으로 점검한다. 새 빈칸별 근거는 final-audit/detail-recall-objectives.json에 기록하며, 큰 개념 ID 대응만으로 세부 인출 평가까지 완료됐다고 보지 않는다. 한글 설명을 임의로 영어 용어화하지 않는다.','- 서술은 사례→개념 판별→근거→조건·한계의 순서로 평가한다. 단순 정의 나열만으로 적용·한계 항목의 점수를 주지 않는다.','- 계산은 로그 변환, 분모·자유도, 단위 환산, 잔차 부호, 표본 수 올림 등 실제 오개념이 드러나도록 구성했다.','- R 코드 20문항은 실제 R 구문 속 번호별 빈칸 61개에 코드를 입력하는 형식이다. 함수·인자·조건식·포뮬러를 강의 수준에서 묻고 출력·해석은 별도 답안으로 받는다. 정답은 빈칸별 해설·완성 코드·부분점수 기준으로 제공한다. 실제 R 스크립트의 다중 행 함수 호출에 2칸 들여쓰기를 적용하고 웹에서는 줄 번호·문법 색상이 있는 Source 편집창으로 표시한다. 분석에 필요한 열 정의·입력 자료는 제공하되, RC017·RC018에서 채우도록 한 함수명·식은 지문에 미리 쓰지 않는다.','- 모든 문항에 모범답안·상세 해설·오류 분석·합산 가능한 배점 기준이 있다. 자기채점이며 의미 이해나 코드 실행을 자동 판정한다고 표시하지 않는다.',f"- 문제 전체 조건을 묶은 그림·표 {sum('visual' in q for q in questions)}개를 수록했다.",'','## 원문 대조와 조건 보완','', '- 손잡이 보충논문 원문의 네 번째 단계명은 “제품 설계 적용”이다. 기존 요약의 “시제품 평가”와 구분해 ES006에서 적용 후 평가의 관계를 설명했다. 보충논문의 특정 세부 항목이 실제 출제된다고 단정하지 않는다.','- 내부/외부 타당도는 교안 Validity 제목 아래 Internal/External 표기를 연결했다. 정보처리 도식의 단어는 다단·줄바꿈을 복원했으며 임의의 영문 번역을 만들지 않았다.','- Sternberg 도식의 설명과 모든 탐색의 보편 결론, 시각적 현저성과 Shannon 엔트로피, 비기각과 증명, R²와 미래 정확도를 구별했다.','- 원본의 코 pressure(N)는 힘 단위임을 함께 적었다. 생리 단계의 주어진 숫자 합150~170 ms와 교안 대표 범위150~180 ms도 구별했다.','', '## 개념별 대응','', '| 개념 | 주제 | 문항 |','|---|---|---|']
+ lines += ['','## 출제·채점 방향','', '- 단답은 영문 명칭·R 표기·수치·단위·공식의 직접 인출을 평가한다. 기존 188개 개념군의 세부 표·그림·옵션도 별도 빈칸으로 점검한다. 새 빈칸별 근거는 final-audit/detail-recall-objectives.json에 기록하며, 큰 개념 ID 대응만으로 세부 인출 평가까지 완료됐다고 보지 않는다. 한글 설명을 임의로 영어 용어화하지 않는다.','- 서술형은 문항마다 하나의 평가 초점을 정하고 그 초점에 직접 연결되는 질문만 둔다. 여러 시대·실험·논문·전체 목록을 한 문제에 묶지 않는다. 모범답안과 배점은 지문이 명시한 요구에만 대응시키며, 적용·한계·개선안을 모든 문항의 필수 순서로 강제하지 않는다. 중요한 분리 내용은 별도 문항이나 다른 유형에서 평가한다. 상세 변경과 검증은 26_서술형_문항검수.md를 참조한다.','- 계산은 로그 변환, 분모·자유도, 단위 환산, 잔차 부호, 표본 수 올림 등 실제 오개념이 드러나도록 구성했다.','- R 코드는 부분 빈칸 20문항과 한 줄 전체 작성 26문항이다. 강의의 파란 콘솔 입력을 대조하여 함수 호출을 한 문장씩 표시한다. 함수·인자·조건식·포뮬러를 강의 수준에서 묻고 출력·해석은 별도 답안으로 받는다. 정답은 빈칸별 해설·완성 코드·부분점수 기준으로 제공한다. 준비 자료의 다중 행은 들여쓰기를 유지하고, 답안은 강의의 한 줄 함수 호출·파란 입력 글씨·코드 바깥의 > 프롬프트로 표시한다. 각 실행 문장에는 문장별 설명을 제공한다. 분석에 필요한 열 정의·입력 자료는 제공하되, RC017·RC018에서 채우도록 한 함수명·식은 지문에 미리 쓰지 않는다.','- 모든 문항에 모범답안·상세 해설·오류 분석·합산 가능한 배점 기준이 있다. 자기채점이며 의미 이해나 코드 실행을 자동 판정한다고 표시하지 않는다.',f"- 문제 전체 조건을 묶은 그림·표 {sum('visual' in q for q in questions)}개를 수록했다.",'','## 원문 대조와 조건 보완','', '- 손잡이 보충논문 원문의 네 번째 단계명은 “제품 설계 적용”이다. 기존 요약의 “시제품 평가”와 구분해 ES051에서 적용 단계의 역할을 설명했다. 보충논문의 특정 세부 항목이 실제 출제된다고 단정하지 않는다.','- 내부/외부 타당도는 교안 Validity 제목 아래 Internal/External 표기를 연결했다. 정보처리 도식의 단어는 다단·줄바꿈을 복원했으며 임의의 영문 번역을 만들지 않았다.','- Sternberg 도식의 설명과 모든 탐색의 보편 결론, 시각적 현저성과 Shannon 엔트로피, 비기각과 증명, R²와 미래 정확도를 구별했다.','- 원본의 코 pressure(N)는 힘 단위임을 함께 적었다. 생리 단계의 주어진 숫자 합150~170 ms와 교안 대표 범위150~180 ms도 구별했다.','', '## 개념별 대응','', '| 개념 | 주제 | 문항 |','|---|---|---|']
  for c in concepts:lines.append(f"| {c['id']} | {c['chapter']} · {c['kind']} | {', '.join(q['id'] for q in questions if c['id'] in q['conceptIds'])} |")
  lines += ['', '## 재생성','', '`python3 written/build.py`를 중간 시험대비 폴더에서 실행한다. questions.json·english-terms.json·section.html·app.js·style.css가 원본이며 메인 두 HTML과 03·04·10·11 문서를 재생성한다. 이전 30문항의 03·04 문서는 written/archive에 보관했다.','']
  (EXAM/'10_서술단답_R_개념대응표.md').write_text('\n'.join(lines))
