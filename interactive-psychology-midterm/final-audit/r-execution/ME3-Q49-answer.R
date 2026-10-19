@@ -1,0 +1,2 @@
+result <- summary(model)
+result

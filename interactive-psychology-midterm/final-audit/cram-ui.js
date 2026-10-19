@@ -1,0 +1,67 @@
+async (page) => {
+ const checks=[],failures=[],errors=[];
+ page.on('pageerror',e=>errors.push(String(e)));
+ const ok=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});if(!pass)failures.push(name)};
+ const root='http://127.0.0.1:8771/';
+ const file='28_시험1시간전_압축정리.html';
+ await page.goto(root+encodeURI(file));
+ await page.evaluate(async()=>{await MathJax.startup.promise;await StudyMath.idle();});
+ await page.evaluate(()=>localStorage.setItem('psy-cram-isolated-canary','unchanged'));
+ const state=await page.evaluate(()=>({sections:document.querySelectorAll('main section').length,details:document.querySelectorAll('details.recall').length,open:document.querySelectorAll('details[open]').length,math:[...MathJax.startup.document.math].length,mathErrors:STUDY_MATH_ERRORS,invalid:document.querySelectorAll('[data-mjx-error],mjx-merror,[data-mml-node="merror"]').length}));
+ ok('six 60-minute blocks',state.sections===6,state);
+ ok('all 36 recall answers initially hidden',state.details===36&&state.open===0,state);
+ ok('all 62 TeX expressions rendered without errors',state.math===62&&!state.invalid&&!state.mathErrors.length,state);
+ await page.getByRole('button',{name:'풀이 모두 펼치기'}).click();
+ ok('show-all opens all answers',await page.locator('details[open]').count()===36);
+ const codeState=await page.evaluate(()=>[...document.querySelectorAll('.code-line pre')].map(el=>({color:getComputedStyle(el).color,whiteSpace:getComputedStyle(el).whiteSpace,text:el.textContent,promptSeparate:!el.textContent.startsWith('>')})));
+ ok('all 23 console statements use blue input and separate prompt',codeState.length===23&&codeState.every(c=>c.color==='rgb(36, 85, 187)'&&c.whiteSpace==='pre'&&c.promptSeparate),codeState);
+ await page.getByRole('button',{name:'풀이 모두 가리기'}).click();
+ ok('hide-all closes all',await page.locator('details[open]').count()===0);
+ const first=page.locator('details.recall summary').first();await first.focus();await page.keyboard.press('Enter');
+ ok('keyboard Enter opens focused answer',await page.locator('details.recall').first().getAttribute('open')!==null);
+ await page.keyboard.press('Enter');ok('keyboard Enter closes it',await page.locator('details[open]').count()===0);
+ for(const width of [360,390,768,1280]){
+  await page.setViewportSize({width,height:850});
+  await page.getByRole('button',{name:'풀이 모두 펼치기'}).click();
+  await page.getByRole('link',{name:'42 R 한 줄',exact:true}).click();
+  const layout=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,target:document.getElementById('r-code').getBoundingClientRect().top,header:document.querySelector('.top').getBoundingClientRect().bottom,codeScroll:[...document.querySelectorAll('.code-line')].some(e=>e.scrollWidth>e.clientWidth),tables:[...document.querySelectorAll('.table-wrap')].length}));
+  await page.evaluate(()=>document.getElementById('r-code').scrollIntoView({behavior:'instant'}));
+  const anchor=await page.evaluate(()=>({top:document.getElementById('r-code').getBoundingClientRect().top,bar:document.querySelector('.top').getBoundingClientRect().bottom}));
+  ok('R anchor clears sticky header at '+width,anchor.top>=anchor.bar&&anchor.top<anchor.bar+80,anchor);
+  ok('no whole-page horizontal overflow at '+width,layout.scroll<=layout.width,layout);
+  ok('table/console content remains locally scrollable at '+width,width>600||layout.codeScroll,layout);
+  if(width===390)await page.screenshot({path:'output/playwright/cram-mobile-r.png'});
+  await page.getByRole('button',{name:'풀이 모두 가리기'}).click();
+ }
+ await page.setViewportSize({width:1280,height:850});
+ await page.evaluate(()=>{document.querySelector('details.recall').open=true;});
+ const original=await page.locator('details').evaluateAll(es=>es.map(e=>e.open));
+ await page.evaluate(()=>dispatchEvent(new Event('beforeprint')));
+ ok('print opens all 36 answers',await page.locator('details[open]').count()===36);
+ await page.emulateMedia({media:'print'});
+ ok('print reveals code and output without scroll clipping',await page.locator('.code-line').evaluateAll(es=>es.every(e=>getComputedStyle(e).overflowX==='visible')));
+ await page.pdf({path:'output/playwright/cram-print-qa.pdf',format:'A4',printBackground:true});
+ await page.evaluate(()=>dispatchEvent(new Event('afterprint')));
+ await page.emulateMedia({media:'screen'});
+ ok('after printing restores prior individual answer states',JSON.stringify(await page.locator('details').evaluateAll(es=>es.map(e=>e.open)))===JSON.stringify(original));
+ await page.evaluate(()=>{window.__printCalls=0;window.print=()=>{window.__printCalls++;dispatchEvent(new Event('beforeprint'));dispatchEvent(new Event('afterprint'))};});
+ await page.getByRole('button',{name:'인쇄 · PDF'}).click();
+ await page.waitForFunction(()=>window.__printCalls===1);
+ ok('print button invokes browser printing',await page.evaluate(()=>__printCalls===1));
+ ok('review interactions preserve existing storage',await page.evaluate(()=>localStorage.getItem('psy-cram-isolated-canary')==='unchanged'));
+ await page.goto(root+'index.html');
+ ok('main-page sidebar links to compressed review',await page.locator('.side-link[href="./'+file+'"]').count()===1);
+ ok('main-page now section links to compressed review',await page.locator('#now a[href="./'+file+'"]').count()===1);
+ await page.locator('.side-link[href="./'+file+'"]').click();
+ ok('main-page entry opens compressed review',decodeURI(page.url()).endsWith(file));
+ await page.evaluate(async()=>{await MathJax.startup.promise;await StudyMath.idle();});
+ await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:'output/playwright/cram-desktop.png'});
+ // A fresh local-file load checks offline asset paths; no data fetch is used by this artifact.
+ const fileUrl="file:///Users/a0/Desktop/kw/3%E1%84%92%E1%85%A1%E1%86%A8%E1%84%82%E1%85%A7%E1%86%AB%202%E1%84%92%E1%85%A1%E1%86%A8%E1%84%80%E1%85%B5/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%85%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B5%E1%84%87%E1%85%B3%E1%84%89%E1%85%B5%E1%86%B7%E1%84%85%E1%85%B5%E1%84%92%E1%85%A1%E1%86%A8/07_%EC%8B%9C%ED%97%98%EB%8C%80%EB%B9%84/%EC%A4%91%EA%B0%84/28_%EC%8B%9C%ED%97%981%EC%8B%9C%EA%B0%84%EC%A0%84_%EC%95%95%EC%B6%95%EC%A0%95%EB%A6%AC.html";
+ await page.goto(fileUrl);
+ await page.evaluate(async()=>{await MathJax.startup.promise;await StudyMath.idle();});
+ ok('file:// offline math rendering',await page.evaluate(()=>[...MathJax.startup.document.math].length===62&&STUDY_MATH_ERRORS.length===0));
+ ok('file:// show-all',await page.getByRole('button',{name:'풀이 모두 펼치기'}).click().then(()=>page.locator('details[open]').count())===36);
+ ok('no runtime exceptions',errors.length===0,errors);
+ return {status:failures.length?'failed':'passed',checks:checks.length,failures,results:checks,math:62,codeStatements:codeState.length,recalls:36};
+}

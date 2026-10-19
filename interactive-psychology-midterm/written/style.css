@@ -36,3 +36,16 @@ body.view-problems #questionList{min-height:0;flex:1;overflow:hidden}body.view-p
 .wr-analysis-input{margin:1.25rem 0}.wr-analysis-input h4{margin:0 0 .5rem}.wr-editor-setup .wr-editor-scroll{max-height:28rem;overflow:auto}.wr-analysis-input .wr-small{line-height:1.7}
 
 .analysis-material img{display:block;width:100%;height:auto}.analysis-material a{display:block}.analysis-note{font-size:.88rem;line-height:1.7;color:#6b6b6b;margin:.6rem 0 0}.analysis-material th{white-space:nowrap}
+
+/* Lecture-style console input: prompt is outside executable code. */
+.wr-console-prompt{flex:0 0 22px;width:22px;padding-left:10px;box-sizing:border-box;color:#2455bb;user-select:none}
+#problems .wr-editor-console .wr-code-source{padding-left:3px;color:#2455bb}
+.wr-editor-console .wr-code-source span{color:#2455bb}
+.wr-editor-console .wr-code-source .r-comment{color:#788977}
+.wr-editor-console .wr-code-input{color:#2455bb}
+.wr-editor .wr-code-input-full{min-width:52ch;max-width:120ch}
+.wr-target-result{margin:12px 0}.wr-target-result h4{font-size:13px;margin:0 0 6px}
+.wr-target-result pre{margin:0;padding:10px 12px;background:#f7f7f5;border:1px solid #e3e3df;border-radius:4px;font:12px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;color:#37352f}
+.wr-line-explanations{padding-left:22px}.wr-line-explanations li{margin:9px 0}.wr-line-explanations code{white-space:pre-wrap;overflow-wrap:anywhere;color:#2455bb;font-size:12px}.wr-line-explanations p{margin:4px 0;line-height:1.7}
+
+.wr-editor-console .wr-code-source{color:#2455bb}

@@ -1,0 +1,12 @@
+{
+  "id": "RC036",
+  "originId": "RC036",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "one-line R expression evaluated", "no unexpected warnings"],
+  "metrics": {
+    "targetKind": "one_sample"
+  },
+  "warnings": [],
+  "inputProvenance": "question_visible_constructed_practice_data"
+}

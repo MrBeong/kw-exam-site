@@ -18,7 +18,7 @@
       try{StudyRevisions.write(KEY,state)}catch(e){writtenSaveIssue=true}
     }
     function hasWrittenAnswer(q){return q.type==='code'?q.codeBlanks.some(b=>(state.codeAnswers[q.id]?.[b.id]||'').trim())||!!(state.codeNotes[q.id]||'').trim():!!(state.answers[q.id]||'').trim()}
-    const blankWidth=value=>Math.max(6,Math.min(48,(value||'').length+1));
+    const blankWidth=(value,wholeLine=false)=>wholeLine?Math.max(52,Math.min(120,(value||'').length+1)):Math.max(6,Math.min(48,(value||'').length+1));
     function highlightRLine(line,q){
       // 표시만 담당한다. 원문 공백·기호를 보존하며 답안을 실행하지 않는다.
       const tokens=/\{\{\d+\}\}|#[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|[A-Za-z.][A-Za-z0-9._]*|\b\d+(?:\.\d+)?(?:[eE][+-]?\d+)?[Li]?\b|<<-|<-|->>|->|==|!=|<=|>=|&&|\|\||%[^%\n]+%|[~+$*/^=!&|:<>-]/g;
@@ -27,7 +27,7 @@
         html+=esc(line.slice(cursor,match.index));const token=match[0];cursor=match.index+token.length;
         if(token.startsWith('{{')&&q){
           const id=token.slice(2,-2),value=state.codeAnswers[q.id]?.[id]||'';
-          html+=`<input class="wr-code-input" type="text" data-code-blank="${id}" aria-label="${q.id} 빈칸 ${id}" title="빈칸 ${id} · R 코드 입력" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="(${id})" style="width:${blankWidth(value)}ch" value="${esc(value)}">`;
+          html+=`<input class="wr-code-input ${q.codeMode==='line'?'wr-code-input-full':''}" type="text" data-code-blank="${id}" aria-label="${q.id} ${q.codeMode==='line'?'R 코드 한 줄 전체':'빈칸 '+id}" title="${q.codeMode==='line'?'함수·인자를 포함한 코드 한 줄 전체':'빈칸 '+id}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="${q.codeMode==='line'?'R 코드 한 줄을 입력하세요':'('+id+')'}" style="width:${blankWidth(value,q.codeMode==='line')}ch" value="${esc(value)}">`;
           continue;
         }
         const kind=token[0]==='#'?'comment':/^["']/.test(token)?'string':/^(TRUE|FALSE|NULL|NA|NaN|Inf)$/.test(token)?'constant':/^\d/.test(token)?'number':/^[A-Za-z.]/.test(token)?(/^\s*\(/.test(line.slice(cursor))?'function':'name'):'operator';
@@ -42,21 +42,24 @@
     }
     function renderRScript(q,solution=false){
       const lines=(solution?q.modelCode:q.codeTemplate).split('\n');
-      return `<div class="wr-editor ${solution?'wr-editor-solution':''}">
-        <div class="wr-editor-bar"><span class="wr-script-tab"><b aria-hidden="true">R</b>${q.id}${solution?'_solution':''}.R</span><span class="wr-script-kind">${solution?'완성 코드':'빈칸 작성'}</span></div>
-        <div class="wr-editor-scroll ${solution?'wr-model-code':'wr-code-question'}" role="group" aria-label="${solution?'R 완성 코드':'R 코드 빈칸'}"><div class="wr-editor-lines">${lines.map((line,i)=>`<div class="wr-code-line"><span class="wr-line-number" aria-hidden="true">${i+1}</span><code class="wr-code-source">${highlightRLine(line,solution?null:q)}</code></div>`).join('')}</div></div>
-        <div class="wr-editor-status"><span>R</span><span>들여쓰기: 2칸</span><span>UTF-8</span></div>
+      return `<div class="wr-editor wr-editor-console ${solution?'wr-editor-solution':''}">
+        <div class="wr-editor-bar"><span class="wr-script-tab"><b aria-hidden="true">R</b>Console · ${solution?'입력 코드':q.codeMode==='line'?'한 줄 작성':'빈칸 작성'}</span><span class="wr-script-kind">${solution?'모범 코드':'직접 입력 · 자동 저장'}</span></div>
+        <div class="wr-editor-scroll ${solution?'wr-model-code':'wr-code-question'}" role="group" aria-label="${solution?'R 완성 코드':q.codeMode==='line'?'R 코드 한 줄 작성':'R 코드 빈칸'}"><div class="wr-editor-lines">${lines.map((line,i)=>`<div class="wr-code-line"><span class="wr-line-number" aria-hidden="true">${i+1}</span><span class="wr-console-prompt" aria-hidden="true">${line.trim()?'>':''}</span><code class="wr-code-source">${highlightRLine(line,solution?null:q)}</code></div>`).join('')}</div></div>
+        <div class="wr-editor-status"><span>R</span><span>파란 글씨: 입력 코드</span><span>&gt;는 답안에 쓰지 않음</span></div>
       </div>`;
     }
+    function renderRTarget(q){return q.targetResult?`<section class="wr-target-result"><h4>원하는 결과</h4><pre>${esc(q.targetResult)}</pre></section>`:''}
+    function renderRLineExplanations(q){return q.lineExplanations?.length?`<h4>코드 한 문장씩 해설</h4><ol class="wr-line-explanations">${q.lineExplanations.map(x=>`<li><code>${esc(x.code)}</code><p>${esc(x.explanation)}</p></li>`).join('')}</ol>`:''}
     function renderCodeQuestion(q){
       const legacy=state.legacyCodeDrafts[q.id];
-      return `${renderRSetup(q)}<p class="wr-code-instruction">번호별 빈칸에 코드를 직접 입력하세요. <span>자동 저장</span></p>${renderRScript(q)}${q.followUp?`<label class="wr-answer-label" for="writtenAnswer">추가 답안</label><p class="wr-followup">${esc(q.followUp)}</p><textarea class="answer-box" id="writtenAnswer" placeholder="출력값·해석 등 위에서 요구한 내용을 작성하세요.">${esc(state.codeNotes[q.id]||'')}</textarea>`:''}${legacy?`<details class="wr-legacy"><summary>이전 형식으로 작성한 답안 보관</summary><p>빈칸형으로 바꾸기 전의 답안입니다. 새 빈칸 답안과 채점은 별도로 저장합니다.</p><pre>${esc(legacy.answer)}</pre>${legacy.grade?`<p>이전 자기채점: ${esc({done:'완벽 이해',unsure:'애매함',again:'다시 풀기'}[legacy.grade]||legacy.grade)}</p>`:''}</details>`:''}`;
+      return `${renderRSetup(q)}${renderRTarget(q)}<p class="wr-code-instruction">${q.codeMode==='line'?'함수와 인자를 포함한 코드 한 줄 전체를 입력하세요.':'번호별 빈칸에 코드를 직접 입력하세요.'} <span>자동 저장</span></p>${renderRScript(q)}${q.followUp?`<label class="wr-answer-label" for="writtenAnswer">추가 답안</label><p class="wr-followup">${esc(q.followUp)}</p><textarea class="answer-box" id="writtenAnswer" placeholder="출력값·해석 등 위에서 요구한 내용을 작성하세요.">${esc(state.codeNotes[q.id]||'')}</textarea>`:''}${legacy?`<details class="wr-legacy"><summary>이전 형식으로 작성한 답안 보관</summary><p>빈칸형으로 바꾸기 전의 답안입니다. 새 빈칸 답안과 채점은 별도로 저장합니다.</p><pre>${esc(legacy.answer)}</pre>${legacy.grade?`<p>이전 자기채점: ${esc({done:'완벽 이해',unsure:'애매함',again:'다시 풀기'}[legacy.grade]||legacy.grade)}</p>`:''}</details>`:''}`;
     }
     const writtenNames={short:'단답형',essay:'서술형',code:'R 코드'};
     const writtenRoot=document.getElementById('problems');
     const writtenPoints=q=>(state.rubrics[q.id]||[]).reduce((s,v,i)=>s+(v?(q.rubric[i]?.points||0):0),0);
     function writtenVisible(q){
-      if(writtenType!=='all'&&q.type!==writtenType)return false;
+      if(writtenType==='code-line'&&!(q.type==='code'&&q.codeMode==='line'))return false;
+      if(writtenType!=='all'&&writtenType!=='code-line'&&q.type!==writtenType)return false;
       if(writtenChapter!=='all'&&q.chapter!==writtenChapter)return false;
       if(writtenQuery&&!`${q.id} ${q.promptPlain||q.prompt} ${q.chapter}`.toLowerCase().includes(writtenQuery))return false;
       if(currentFilter==='unanswered'&&state.grades[q.id])return false;
@@ -97,8 +100,8 @@
         ${q.type==='code'?renderCodeQuestion(q):q.recallBlanks?StudyRecall.render(q,state.answers[q.id]):`<label class="wr-answer-label" for="writtenAnswer">내 답안 <span>자동 저장</span></label><textarea class="answer-box" id="writtenAnswer" placeholder="답을 직접 작성한 뒤 정답과 채점 기준을 확인하세요.">${esc(state.answers[q.id]||'')}</textarea>`}
         <button class="wr-reveal" id="writtenReveal" type="button" aria-expanded="${open}">${open?'정답·해설 접기':'정답·해설·채점 기준 보기'}</button>
         <div class="solution ${open?'open':''}" id="writtenSolution" ${open?'':'hidden'}>
-          ${q.type==='code'?`<h4>빈칸별 정답·해설</h4><ol class="wr-blank-answers">${q.codeBlanks.map(b=>`<li><strong>(${b.id})</strong> <code>${esc(b.answer)}</code><p>${esc(b.explanation)}</p></li>`).join('')}</ol>`:''}
-          <h4>${q.type==='code'?'완성 코드·모범 답안':'모범 답안'}</h4>${q.modelCode?renderRScript(q,true):''}<p class="wr-model">${esc(q.answer)}</p>
+          ${q.type==='code'?`<h4>${q.codeMode==='line'?'한 줄 모범 코드·해설':'빈칸별 정답·해설'}</h4><ol class="wr-blank-answers">${q.codeBlanks.map(b=>`<li><strong>(${b.id})</strong> <code>${esc(b.answer)}</code><p>${esc(b.explanation)}</p></li>`).join('')}</ol>`:''}
+          <h4>${q.type==='code'?'완성 코드·모범 답안':'모범 답안'}</h4>${q.modelCode?renderRScript(q,true):''}${q.type==='code'?renderRLineExplanations(q):''}<p class="wr-model">${esc(q.answer)}</p>
           <h4>상세 해설</h4><ol>${q.explanation.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>
           <h4>채점 기준 · ${q.points}점</h4><p class="wr-small">충족한 항목을 직접 체크하면 부분점수를 합산합니다. 서술 의미·R 코드 실행 결과를 자동 판정하지 않습니다.</p>
           <div class="wr-rubrics">${q.rubric.map((r,i)=>`<label><input type="checkbox" data-rubric="${i}" ${(state.rubrics[q.id]||[])[i]?'checked':''}><span>${esc(r.criterion)}</span><b>${r.points}점</b></label>`).join('')}</div><p id="writtenScore" aria-live="polite">체크한 점수 ${writtenPoints(q)} / ${q.points}점</p>
@@ -117,7 +120,7 @@
       const textarea=document.getElementById('writtenAnswer');
       textarea?.addEventListener('input',()=>{if(q.type==='code')state.codeNotes[q.id]=textarea.value;else state.answers[q.id]=textarea.value;changedAnswer()});
       document.querySelectorAll('[data-recall-blank]').forEach(input=>input.addEventListener('input',()=>{state.answers[q.id]=StudyRecall.read(writtenRoot,q);changedAnswer()}));
-      document.querySelectorAll('[data-code-blank]').forEach(input=>input.addEventListener('input',()=>{state.codeAnswers[q.id]=state.codeAnswers[q.id]||{};state.codeAnswers[q.id][input.dataset.codeBlank]=input.value;input.style.width=blankWidth(input.value)+'ch';changedAnswer()}));
+      document.querySelectorAll('[data-code-blank]').forEach(input=>input.addEventListener('input',()=>{state.codeAnswers[q.id]=state.codeAnswers[q.id]||{};state.codeAnswers[q.id][input.dataset.codeBlank]=input.value;input.style.width=blankWidth(input.value,q.codeMode==='line')+'ch';changedAnswer()}));
       document.getElementById('writtenReveal').addEventListener('click',()=>{const top=document.querySelector('.wr-scroll').scrollTop;state.revealed[q.id]=!state.revealed[q.id];saveState();renderProblems();document.querySelector('.wr-scroll').scrollTop=top;});
       document.getElementById('writtenBookmark').addEventListener('click',()=>{const top=document.querySelector('.wr-scroll').scrollTop;state.bookmarks[q.id]=!state.bookmarks[q.id];saveState();renderProblems();document.querySelector('.wr-scroll').scrollTop=top;});
       document.querySelectorAll('[data-rubric]').forEach(c=>c.addEventListener('change',()=>{const checks=state.rubrics[q.id]||[];checks[Number(c.dataset.rubric)]=c.checked;state.rubrics[q.id]=checks;saveState();document.getElementById('writtenScore').textContent='체크한 점수 '+writtenPoints(q)+' / '+q.points+'점';}));

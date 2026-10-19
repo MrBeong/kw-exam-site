@@ -1,0 +1,379 @@
+{
+  "status": "passed",
+  "checks": 31,
+  "failures": [],
+  "results": [
+    {
+      "name": "six 60-minute blocks",
+      "pass": true,
+      "detail": {
+        "sections": 6,
+        "details": 36,
+        "open": 0,
+        "math": 62,
+        "mathErrors": [],
+        "invalid": 0
+      }
+    },
+    {
+      "name": "all 36 recall answers initially hidden",
+      "pass": true,
+      "detail": {
+        "sections": 6,
+        "details": 36,
+        "open": 0,
+        "math": 62,
+        "mathErrors": [],
+        "invalid": 0
+      }
+    },
+    {
+      "name": "all 62 TeX expressions rendered without errors",
+      "pass": true,
+      "detail": {
+        "sections": 6,
+        "details": 36,
+        "open": 0,
+        "math": 62,
+        "mathErrors": [],
+        "invalid": 0
+      }
+    },
+    {
+      "name": "show-all opens all answers",
+      "pass": true
+    },
+    {
+      "name": "all 23 console statements use blue input and separate prompt",
+      "pass": true,
+      "detail": [
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "sort(baseball$득점, decreasing=TRUE)[3]",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "shapiro.test(datat[datat$group == \"Deagu\", ]$height)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "t.test(datat[datat$group == \"Deagu\", ]$height, mu=150)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "library(lawstat)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "levene.test(datat$height, datat$group, location=\"mean\")",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "t.test(data=datat, height ~ group, var.equal=TRUE)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "datadiff = datat2$after - datat2$before",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "shapiro.test(datadiff)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "t.test(datadiff)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "plot(x, y)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "model <- lm(y ~ x)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "summary(model)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "abline(model, lty=1, col=\"blue\")",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "clean <- dat[dat$Correct & !dat$Timeout, ]",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "yes <- clean[clean$Present, ]",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "no <- clean[!clean$Present, ]",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "model_yes <- lm(Time ~ PSS, data=yes)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "model_no <- lm(Time ~ PSS, data=no)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "a <- baseball$득점",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "model2 <- lm(y ~ x1 + x2)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "model <- lm(Time ~ bit, data=dat)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "ID <- log2(D / W + 1)",
+          "promptSeparate": true
+        },
+        {
+          "color": "rgb(36, 85, 187)",
+          "whiteSpace": "pre",
+          "text": "MT <- 50 + 150 * ID",
+          "promptSeparate": true
+        }
+      ]
+    },
+    {
+      "name": "hide-all closes all",
+      "pass": true
+    },
+    {
+      "name": "keyboard Enter opens focused answer",
+      "pass": true
+    },
+    {
+      "name": "keyboard Enter closes it",
+      "pass": true
+    },
+    {
+      "name": "R anchor clears sticky header at 360",
+      "pass": true,
+      "detail": {
+        "top": 130.15625,
+        "bar": 84.25
+      }
+    },
+    {
+      "name": "no whole-page horizontal overflow at 360",
+      "pass": true,
+      "detail": {
+        "width": 360,
+        "scroll": 360,
+        "target": 15782.15625,
+        "header": 84.25,
+        "codeScroll": true,
+        "tables": 14
+      }
+    },
+    {
+      "name": "table/console content remains locally scrollable at 360",
+      "pass": true,
+      "detail": {
+        "width": 360,
+        "scroll": 360,
+        "target": 15782.15625,
+        "header": 84.25,
+        "codeScroll": true,
+        "tables": 14
+      }
+    },
+    {
+      "name": "R anchor clears sticky header at 390",
+      "pass": true,
+      "detail": {
+        "top": 129.71875,
+        "bar": 84.25
+      }
+    },
+    {
+      "name": "no whole-page horizontal overflow at 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "target": 1646.71875,
+        "header": 84.25,
+        "codeScroll": true,
+        "tables": 14
+      }
+    },
+    {
+      "name": "table/console content remains locally scrollable at 390",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "target": 1646.71875,
+        "header": 84.25,
+        "codeScroll": true,
+        "tables": 14
+      }
+    },
+    {
+      "name": "R anchor clears sticky header at 768",
+      "pass": true,
+      "detail": {
+        "top": 129.75,
+        "bar": 89
+      }
+    },
+    {
+      "name": "no whole-page horizontal overflow at 768",
+      "pass": true,
+      "detail": {
+        "width": 768,
+        "scroll": 768,
+        "target": -2885.25,
+        "header": 89,
+        "codeScroll": false,
+        "tables": 14
+      }
+    },
+    {
+      "name": "table/console content remains locally scrollable at 768",
+      "pass": true,
+      "detail": {
+        "width": 768,
+        "scroll": 768,
+        "target": -2885.25,
+        "header": 89,
+        "codeScroll": false,
+        "tables": 14
+      }
+    },
+    {
+      "name": "R anchor clears sticky header at 1280",
+      "pass": true,
+      "detail": {
+        "top": 129.84375,
+        "bar": 89
+      }
+    },
+    {
+      "name": "no whole-page horizontal overflow at 1280",
+      "pass": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "target": 1480.84375,
+        "header": 89,
+        "codeScroll": false,
+        "tables": 14
+      }
+    },
+    {
+      "name": "table/console content remains locally scrollable at 1280",
+      "pass": true,
+      "detail": {
+        "width": 1280,
+        "scroll": 1280,
+        "target": 1480.84375,
+        "header": 89,
+        "codeScroll": false,
+        "tables": 14
+      }
+    },
+    {
+      "name": "print opens all 36 answers",
+      "pass": true
+    },
+    {
+      "name": "print reveals code and output without scroll clipping",
+      "pass": true
+    },
+    {
+      "name": "after printing restores prior individual answer states",
+      "pass": true
+    },
+    {
+      "name": "print button invokes browser printing",
+      "pass": true
+    },
+    {
+      "name": "review interactions preserve existing storage",
+      "pass": true
+    },
+    {
+      "name": "main-page sidebar links to compressed review",
+      "pass": true
+    },
+    {
+      "name": "main-page now section links to compressed review",
+      "pass": true
+    },
+    {
+      "name": "main-page entry opens compressed review",
+      "pass": true
+    },
+    {
+      "name": "file:// offline math rendering",
+      "pass": true
+    },
+    {
+      "name": "file:// show-all",
+      "pass": true
+    },
+    {
+      "name": "no runtime exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "math": 62,
+  "codeStatements": 23,
+  "recalls": 36
+}

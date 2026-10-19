@@ -878,7 +878,7 @@
       "tolerance": 1e-06
     }
   ],
-  "workbook": "/Users/a0/Desktop/kw/3학년 2학기/단위조작이론및실험2/kw-exam-site/interactive-psychology-midterm/final-audit/fixtures/regression1.xlsx",
+  "workbook": "/Users/a0/Desktop/kw/3학년 2학기/인터랙티브심리학/07_시험대비/중간/final-audit/fixtures/regression1.xlsx",
   "regressionResult": {
     "n": 12,
     "b1": 0.8704761904761905,

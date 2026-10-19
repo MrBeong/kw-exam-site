@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "checksPassed": 1309,
+  "writtenEssaysReviewed": 70,
+  "existingEssaysRevised": 42,
+  "focusedSupplements": 28,
+  "mockEssaysRevised": 20,
+  "coverage": {
+    "written": 188,
+    "mockUnion": 188
+  },
+  "counts": {
+    "written": 191,
+    "total": 674
+  },
+  "scope": "One focus per essay, related demands, aligned answer/rubric, independent numeric checks, unchanged non-code/non-essay content, explicit prior R baseline, versioned exam preservation. No student-response difficulty statistics; no push."
+}

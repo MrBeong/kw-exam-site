@@ -1,0 +1,109 @@
+{
+  "scope": "local-only, no commit/push/publication",
+  "git_head": "cf88af8ff3c00a0638eb31431bb0d64d97555fa4",
+  "files": [
+    {
+      "path": "28_시험1시간전_압축정리.html",
+      "sha256": "ae6fb46b56c1e742984b933c22a2336a5465940d54f9c7d604e3f5665f9082a7"
+    },
+    {
+      "path": "29_제작기준인계와_압축본_검수.md",
+      "sha256": "adc50cc3402e246c0470dfcca49c4095d7b876e7183275e01df25e2fe426810d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "2733b6ee40c076f62870ab4dd5e3cfa083ada031966bf90534bbf03a9fe180ec"
+    },
+    {
+      "path": "06_시험직전_체크리스트.md",
+      "sha256": "7ed4765c20659a0175498ee944480e026363964196d4070fa549e9b2d9b22bda"
+    },
+    {
+      "path": "written/main-template.html",
+      "sha256": "0bf3a835b1da50885ed1ea64bf93a5f7e5e6db6c0dd38ec9522362d9301417d3"
+    },
+    {
+      "path": "index.html",
+      "sha256": "fd725d9b2609380649c72b93551d87ecc59e6f0b2dec9ba685c69ada85f477a5"
+    },
+    {
+      "path": "인터랙티브심리학_중간고사_Notion.html",
+      "sha256": "fd725d9b2609380649c72b93551d87ecc59e6f0b2dec9ba685c69ada85f477a5"
+    },
+    {
+      "path": "03_예상문제.md",
+      "sha256": "66f2c30700cb3ac95ea5bb57a609c764ace4b4ef04823bcea3892992722a1356"
+    },
+    {
+      "path": "04_정답과_해설.md",
+      "sha256": "03ec58d9f58f3f3b89f2ec884715194114aa2b9c1487a8141e07b653a9a9326f"
+    },
+    {
+      "path": "10_서술단답_R_개념대응표.md",
+      "sha256": "6ed5eea5e9ace3629d9d754d578260fadddf81bb3a56654c48b2926cdda7b5fb"
+    },
+    {
+      "path": "11_강의영문용어_작성기준.md",
+      "sha256": "686373d6309118af8384eef94f2b944d661650ffa2887bfa0d02e145c7afa7e6"
+    },
+    {
+      "path": "written/index.html",
+      "sha256": "079ee0a1973545112b8497e66c94d3c611df4552884a5f08a018df1229237be1"
+    },
+    {
+      "path": "written/questions.json",
+      "sha256": "fb8089709fa53e6a70123916adedff6344527caa0dcdf926375f72a7cb4bddba"
+    },
+    {
+      "path": "final-audit/cram-source-results.json",
+      "sha256": "8783510dafa799370d415b1b4e355deefad5396df2cba650f4d2144057d345c5"
+    },
+    {
+      "path": "final-audit/cram-code-plots.pdf",
+      "sha256": "82abd347ed2efda38e65dec5165898553d56e796ceb2baceb89569133427ff9f"
+    },
+    {
+      "path": "final-audit/cram-numeric-results.json",
+      "sha256": "6b922548d144de461898e0dff776445327ebb4400b751295c31b282a01928400"
+    },
+    {
+      "path": "final-audit/cram-r-results.json",
+      "sha256": "19864b94a9be994282b0ec9f4d2eb9e0ff3212cc4ee9e7be9c2ba17e7ea2585c"
+    },
+    {
+      "path": "final-audit/cram-code-examples.json",
+      "sha256": "9beab7b1c31d713fe4d6620e50c62036639338a507a65522e73d52278db52c8a"
+    },
+    {
+      "path": "final-audit/cram-ui-results.json",
+      "sha256": "0bf77490edee664ae14143cc64eb6b33ccaa052abffa8d1c9eae5a0b81235ea8"
+    },
+    {
+      "path": "final-audit/cram-ui.js",
+      "sha256": "7f95f80e93bd874c85f38cb60ca415a027e88dc39042cd839f1d2ffa155b2b9c"
+    },
+    {
+      "path": "final-audit/verify_cram.py",
+      "sha256": "9cbc447d2f60265a92cd91d4b6d6764c128654d5415209d0a0b2398cf5809023"
+    },
+    {
+      "path": "final-audit/verify_cram_R.R",
+      "sha256": "4a74d8e785d12582e167215e22d67c08c6544657019e6521af80394d42bb74de"
+    }
+  ],
+  "shared_standards": [
+    {
+      "file": "/Users/a0/Desktop/kw/3학년 2학기/02_시험대비_웹디자인_표준가이드.md",
+      "sha256": "663da5937720f9a22807d3ea2e154e49b23c4dbe991c65e9b1486b14e4766884"
+    },
+    {
+      "file": "/Users/a0/Desktop/kw/3학년 2학기/03_시험대비_개념정리_및_문제출제_표준가이드.md",
+      "sha256": "8d3d92d814fe3eb840ced9c322e608b6bbfe3bcb7ab1d7d59053fbe8e5966851"
+    }
+  ],
+  "ui_checks": 31,
+  "native_R_snippets": 24,
+  "native_R_assertions": 22,
+  "numeric_checks": 34,
+  "note": "Existing six history recall questions preserved; bank semantics unchanged in this request."
+}

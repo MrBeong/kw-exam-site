@@ -1,0 +1,51 @@
+{
+  "revision": "lecture-r-line-2026-10-18",
+  "date": "2026-10-18",
+  "published": false,
+  "pushPerformed": false,
+  "commitCreated": false,
+  "written": 191,
+  "totalQuestions": 674,
+  "newWholeLine": 26,
+  "mockWholeLine": 10,
+  "RExecuted": 66,
+  "RInputFields": 125,
+  "coverage": 188,
+  "checks": {
+    "r-line-source-results.json": {
+      "status": "pass",
+      "checks": 1353
+    },
+    "r-line-ui-results.json": {
+      "status": "pass",
+      "checks": 272
+    },
+    "r-line-answer-hint-ui-results.json": {
+      "status": "pass",
+      "checks": 2542
+    },
+    "r-line-wrong-retry-ui-results.json": {
+      "status": "pass",
+      "checks": 51
+    },
+    "r-line-wrong-retry-edges-results.json": {
+      "status": "pass",
+      "checks": 18
+    },
+    "r-line-retry-fold-ui-results.json": {
+      "status": "pass",
+      "checks": 87
+    },
+    "r-line-handcalc-revision-ui-results.json": {
+      "status": "pass",
+      "checks": 34
+    }
+  },
+  "sha256": {
+    "written/questions.json": "00db808785f6a7f37615bfd5511466573178f599501fa44ef644ee4450ed277c",
+    "mock-exam/questions.json": "491a1fb0aba43ff19ca99771c2e67d6fec16cd6588e161acf625873903a7d476",
+    "assets/study-revisions.js": "29d7aa8614972da5f96c6eb76dc0338688b72512049b17c339ee75fa2ac942f2",
+    "index.html": "143fccb127d1c7e5066ec93a46c8ec5f79387c25cb67036f61d24bd98caa0b6b",
+    "mock-exam/index.html": "0b33332d0b9f7e258a528e40dc90ea8496bca6a6daae0d0a6f7839d2a2f5a97e"
+  }
+}

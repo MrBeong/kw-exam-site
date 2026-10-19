@@ -1,63 +1,62 @@
 {
-  "revision": "midterm-review-2026-10-18",
-  "changedExisting": {
-    "multiple-choice": [
-      "MC028",
-      "MC037",
-      "MC039",
-      "MC040",
-      "MC056",
-      "MC064",
-      "MC065",
-      "MC066"
-    ],
+  "revision": "lecture-r-line-2026-10-18",
+  "previousRevision": "focused-essay-2026-10-18",
+  "changedExistingFromPrevious": {
     "written": [
-      "SA015",
-      "SA020",
-      "SA021",
-      "SA028",
-      "SA031",
-      "SA039",
-      "ES014",
-      "ES015",
-      "ES016",
-      "ES024",
-      "ES034",
-      "ES039",
-      "RC018"
+      "RC010",
+      "RC011",
+      "RC012"
     ],
     "mock-exam": [
-      "ME1-Q17",
-      "ME1-Q24",
-      "ME2-Q21",
-      "ME2-Q24",
-      "ME2-Q32",
-      "ME3-Q21",
-      "ME3-Q24",
-      "ME4-Q08",
-      "ME4-Q12",
-      "ME4-Q22",
-      "ME4-Q24",
-      "ME4-Q26",
-      "ME4-Q28",
-      "ME5-Q09",
-      "ME5-Q12",
-      "ME5-Q20",
-      "ME5-Q24"
+      "ME1-Q30",
+      "ME1-Q31",
+      "ME2-Q30",
+      "ME2-Q31",
+      "ME3-Q29",
+      "ME3-Q30",
+      "ME3-Q31",
+      "ME4-Q29",
+      "ME4-Q30",
+      "ME5-Q30",
+      "ME5-Q31"
     ],
-    "ox": [
-      "OX044",
-      "OX063",
-      "OX067",
-      "OX069",
-      "OX099",
-      "OX116",
-      "OX117"
-    ]
+    "multiple-choice": [],
+    "ox": []
   },
+  "formatOnlyPreserved": true,
+  "newQuestions": [
+    "RC021",
+    "RC022",
+    "RC023",
+    "RC024",
+    "RC025",
+    "RC026",
+    "RC027",
+    "RC028",
+    "RC029",
+    "RC030",
+    "RC031",
+    "RC032",
+    "RC033",
+    "RC034",
+    "RC035",
+    "RC036",
+    "RC037",
+    "RC038",
+    "RC039",
+    "RC040",
+    "RC041",
+    "RC042",
+    "RC043",
+    "RC044",
+    "RC045",
+    "RC046"
+  ],
   "previousExamVersions": [
     "unversioned",
-    "hand-calc-2026-10-18"
+    "hand-calc-2026-10-18",
+    "midterm-review-2026-10-18",
+    "focused-essay-2026-10-18"
   ],
-  "policy": "Preserve original running/submitted records; metadata outside exam; changed practice only refreshed after backup."
+  "policy": "Only changed answer structures reset after archive. Formatting-only R assessments remain compatible. Original running/submitted exams preserved. No commit/push."
 }

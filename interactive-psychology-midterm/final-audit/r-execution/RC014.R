@@ -11,8 +11,4 @@ y <- c(
 model <- lm(y ~ x)
 plot(x, y)
 
-abline(
-  model,
-  lty = 1,
-  col = "blue"
-)
+abline( model, lty = 1, col = "blue")

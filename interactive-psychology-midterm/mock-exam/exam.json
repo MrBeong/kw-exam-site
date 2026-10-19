@@ -1,13 +1,13 @@
 {
-  "title": "인터랙티브심리학 중간고사 · 기출형 예상시험",
-  "date": "2026-10-17",
+  "title": "인터랙티브심리학 중간고사 · 기출형 예상시험 (50문항×5세트)",
+  "date": "2026-10-18",
   "examDate": "2026-10-19",
   "start": "18:00",
   "end": "20:00",
   "location": "새빛관 102호",
   "durationSeconds": 7200,
   "setCount": 5,
-  "questionsPerSet": 32,
+  "questionsPerSet": 50,
   "pointsPerSet": 100,
   "reviewMinutes": 10,
   "chapterNames": [
@@ -30,45 +30,45 @@
   "blueprint": [
     {
       "type": "single",
-      "count": 12,
-      "points": 24,
-      "minutes": 15,
-      "label": "단일선택"
+      "count": 20,
+      "points": 30,
+      "minutes": 20,
+      "label": "단일선택 (문항당 1.5점)"
     },
     {
       "type": "multi",
-      "count": 4,
-      "points": 8,
-      "minutes": 8,
-      "label": "복수선택"
+      "count": 6,
+      "points": 12,
+      "minutes": 9,
+      "label": "복수선택 (문항당 2점)"
     },
     {
       "type": "tf",
-      "count": 2,
-      "points": 4,
-      "minutes": 2,
-      "label": "O/X 진술 묶음(각 2진술)"
+      "count": 4,
+      "points": 8,
+      "minutes": 6,
+      "label": "O/X 진술 묶음 (4문항·8진술, 진술당 1점)"
     },
     {
       "type": "short",
-      "count": 6,
-      "points": 12,
-      "minutes": 12,
-      "label": "단답형"
+      "count": 10,
+      "points": 15,
+      "minutes": 15,
+      "label": "단답형 (문항당 1.5점)"
     },
     {
       "type": "essay",
-      "count": 4,
-      "points": 36,
-      "minutes": 48,
-      "label": "서술·계산형"
+      "count": 5,
+      "points": 20,
+      "minutes": 35,
+      "label": "서술·계산형 (문항당 4점)"
     },
     {
       "type": "code",
-      "count": 4,
-      "points": 16,
+      "count": 5,
+      "points": 15,
       "minutes": 25,
-      "label": "R 코드 빈칸"
+      "label": "R 코드 빈칸 (문항당 3점)"
     }
   ]
 }

@@ -11,7 +11,7 @@ async page=>{
  ];
  try{
  for(const b of banks){
-  await page.evaluate(([k,v])=>localStorage.setItem(k,JSON.stringify(v)),[b.key,b.seed]);await page.goto(root+b.url);const tab=page.locator(b.tab),panel=page.locator('#wrongRetryPanel');
+  await page.evaluate(([k,v])=>{v.questionRevision=StudyRevisions.revision;localStorage.setItem(k,JSON.stringify(v))},[b.key,b.seed]);await page.goto(root+b.url);const tab=page.locator(b.tab),panel=page.locator('#wrongRetryPanel');
   check(await panel.isHidden(),b.name+' all tab: controls hidden');
   const before=await page.evaluate(k=>localStorage.getItem(k),b.key);await tab.click();
   check(await tab.getAttribute('aria-expanded')==='false'&&await panel.isHidden(),b.name+' first click: wrong list only');

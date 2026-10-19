@@ -1,0 +1,13 @@
+{
+  "id": "ME1-Q49",
+  "originId": "RC017",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "Hick information bits", "Hick intercept/slope match answer/rubric", "only anticipated perfect-fit warning"],
+  "metrics": {
+    "bit": [0, 1, 2],
+    "coefficients": [240.00000000000023, 119.99999999999993]
+  },
+  "warnings": "essentially perfect fit: summary may be unreliable",
+  "inputProvenance": "question_literal_vectors"
+}

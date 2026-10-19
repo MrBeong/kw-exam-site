@@ -1,0 +1,26 @@
+{
+  "revision": "lecture-r-line-2026-10-18",
+  "semanticChanges": {
+    "written": [
+      "RC010",
+      "RC011",
+      "RC012"
+    ],
+    "mock-exam": [
+      "ME1-Q30",
+      "ME1-Q31",
+      "ME2-Q30",
+      "ME2-Q31",
+      "ME3-Q29",
+      "ME3-Q30",
+      "ME3-Q31",
+      "ME4-Q29",
+      "ME4-Q30",
+      "ME5-Q30",
+      "ME5-Q31"
+    ],
+    "multiple-choice": [],
+    "ox": []
+  },
+  "formatOnlyPreserved": true
+}

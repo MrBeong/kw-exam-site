@@ -41,8 +41,8 @@
   "source": "회귀 교안 p.2, 7–8 · 회귀 교안 p.7 · 회귀 교안 p.9, 22 · 회귀 교안 p.23",
   "calc": false,
   "points": 4,
-  "modelCode": "plot(x, y)\n\nmodel <- lm(\n  y ~ x\n)\n\nsummary(model)",
-  "codeTemplate": "plot({{1}})\n\nmodel <- {{2}}(\n  {{3}}\n)\n\n{{4}}(model)",
+  "modelCode": "plot(x, y)\n\nmodel <- lm( y ~ x)\n\nsummary(model)",
+  "codeTemplate": "plot({{1}})\n\nmodel <- {{2}}( {{3}})\n\n{{4}}(model)",
   "codeBlanks": [
     {
       "id": "1",
@@ -69,6 +69,25 @@
   "codeSetup": "x <- c(\n  65, 50, 55, 65, 55, 70, 65, 70,\n  65, 70, 50, 55\n)\ny <- c(\n  85, 74, 76, 90, 85, 87, 94, 98,\n  81, 91, 76, 74\n)",
   "inputDescription": "regression1.xlsx의 실제 12행을 순서대로 옮겼다. x는 적성검사 점수, y는 업무만족도다.",
   "promptPlain": "같은 사람에게서 얻은 수치 벡터 x는 적성점수, y는 업무만족도다. 산점도를 그리고 y를 x로 예측하는 model을 적합한 뒤 요약을 확인하려 한다. 빈칸 (1)에는 두 인자를 쉼표로 구분하여 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "plot(x, y)",
+      "explanation": "첫 인자를 가로축, 두 번째 인자를 세로축에 두어 두 변수의 관측쌍을 산점도로 표시한다."
+    },
+    {
+      "line": 3,
+      "code": "model <- lm( y ~ x)",
+      "explanation": "물결표 ~의 왼쪽 반응변수를 오른쪽 설명변수로 설명하는 선형회귀를 적합하여 지정한 객체에 저장한다. +는 별도 주효과를 추가한다."
+    },
+    {
+      "line": 5,
+      "code": "summary(model)",
+      "explanation": "객체 종류에 맞는 요약을 출력한다. 데이터프레임은 열별 요약, 회귀모형은 계수·설명력·F 통계량 등의 요약이다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC013",
   "bank": "written",
   "inputProvenance": "provided_regression1.xlsx_actual_12_rows"

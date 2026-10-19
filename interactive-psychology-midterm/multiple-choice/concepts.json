@@ -2,1112 +2,1667 @@
   {
     "id": "OX001",
     "chapter": "개론·역사",
-    "kind": "UX 범위",
-    "source": "1-1 교안 p.2–3"
+    "statement": "사용자 경험(UX, User Experience)의 시간적 범위(UX Scope)는 제품을 현재 사용하는 도중(Present Experience)에만 국한되며, 사용 전(Previous Experience)이나 사용 후(Future Experience)의 경험은 포함하지 않는다.",
+    "answer": false,
+    "explanation": "교안 1-1 p.2에서 UX의 범위(UX Scope)는 사용 전(Previous Experience), 사용 중(Present Experience), 사용 후(Future Experience)의 세 시점을 모두 포괄하며 고객 생애주기(Customer Life Cycle) 전반에 걸쳐 형성된다.",
+    "source": "1-1 교안 p.2–3",
+    "kind": "UX 범위"
   },
   {
     "id": "OX002",
     "chapter": "개론·역사",
-    "kind": "UX 요소",
-    "source": "1-1 교안 p.2"
+    "statement": "교안의 UX 구성 요소(UX Elements) 다이어그램에서 브랜드 인지도(Brand Awareness), 브랜드 태도(Attitude to brand), 브랜드 윤리(Brand Ethics), 브랜드 충성도(Brand Loyalty)는 브랜드 경험(Brand Experience)의 하위 요소에 해당한다.",
+    "answer": true,
+    "explanation": "브랜드 경험(Brand Experience)은 주로 이전 경험(Previous Experience)과 연결되며 인지도·태도·윤리·충성도의 4가지 하위 요소를 포함한다.",
+    "source": "1-1 교안 p.2",
+    "kind": "UX 요소"
   },
   {
     "id": "OX003",
     "chapter": "개론·역사",
-    "kind": "UX 요소",
-    "source": "1-1 교안 p.2"
+    "statement": "교안의 UX 구성 요소에서 감성(Affect), 사용성(Usability), 사용자 가치(User Value)는 제품/서비스 경험(Product/Service Experience)을 구성하는 핵심 요소이다.",
+    "answer": true,
+    "explanation": "현재 제품을 사용할 때의 경험(Present Experience)은 제품/서비스 경험과 직결되며 Affect, Usability, User Value로 구성된다.",
+    "source": "1-1 교안 p.2",
+    "kind": "UX 요소"
   },
   {
     "id": "OX004",
     "chapter": "개론·역사",
-    "kind": "UX 요소",
-    "source": "1-1 교안 p.2"
+    "statement": "종교(Religion), 대인관계(Interpersonal relations), 운동(Exercise) 등 개인적·사회적 맥락은 사용자의 미래 경험 및 전반적인 UX 형성과 무관하므로 UX 요소에서 배제된다.",
+    "answer": false,
+    "explanation": "교안 1-1 p.2 다이어그램 우측 하단에는 Religion, Interpersonal relations, Exercise 등이 UX에 영향을 미치는 요소로 명시되어 있다.",
+    "source": "1-1 교안 p.2",
+    "kind": "UX 요소"
   },
   {
     "id": "OX005",
     "chapter": "개론·역사",
-    "kind": "정의",
-    "source": "1-1 교안 p.4–5"
+    "statement": "UX 심리학(UX Psychology)은 “심리학 지식과 방법론을 사용자 경험(UX)에 적용하는 학문(The application of Psychology knowledge and methods to User Experience)”으로 정의되며, 디자인과 과학(DESIGN AND SCIENCE)의 결합을 핵심으로 한다.",
+    "answer": true,
+    "explanation": "교안 1-1 p.4–5에서 UX 심리학은 예술적 감각만이 아니라 과학적 심리학 방법론과 디자인을 결합(Design & Science)하는 학문임을 강조한다.",
+    "source": "1-1 교안 p.4–5",
+    "kind": "정의"
   },
   {
     "id": "OX006",
     "chapter": "개론·역사",
-    "kind": "학문 영역",
-    "source": "1-1 교안 p.8"
+    "statement": "UX 디자인(UX Design)의 학문적 연구 영역(Research area of UX)은 인간공학(Ergonomics), 공학(Engineering), 심리학(Psychology), 사회학(Sociology) 4개 분야의 교집합 위에 놓여 있다.",
+    "answer": true,
+    "explanation": "교안 1-1 p.8 벤 다이어그램은 Ergonomics, Engineering, Psychology, Sociology 4개 학문이 만나는 중심에 UX Design을 배치한다.",
+    "source": "1-1 교안 p.8",
+    "kind": "학문 영역"
   },
   {
     "id": "OX007",
     "chapter": "개론·역사",
-    "kind": "선택적 주의",
-    "source": "1-1 교안 p.9–10"
+    "statement": "선택적 주의 실험(Selective Attention Test, The Monkey Business Illusion)은 인간이 특정 과업(흰 옷 팀의 패스 횟수 세기)에 주의 자원을 집중하더라도 시야 중앙을 지나가는 예상치 못한 자극(고릴라)은 항상 100% 인지할 수 있음을 보여준다.",
+    "answer": false,
+    "explanation": "특정 과업에 주의를 집중하면 눈앞을 지나가는 고릴라, 커튼 색상 변화, 선수 퇴장을 보지 못하는 무주의 맹시(Inattentional Blindness)가 발생하며, 이는 인간의 주의 자원이 제한되어 있음을 보여준다.",
+    "source": "1-1 교안 p.9–10",
+    "kind": "선택적 주의"
   },
   {
     "id": "OX008",
     "chapter": "개론·역사",
-    "kind": "UX 역사",
-    "source": "1-2 교안 p.2–4"
+    "statement": "UX의 역사적 진화 과정에서 1960~1980년대는 개발자(DEVELOPER) 중심의 ‘암흑기(The Dark Ages)’로 불리며, 이후 1990년대 ‘Proto UX’를 거쳐 2010년대 ‘The UX Gold Rush’로 발전하였다.",
+    "answer": true,
+    "explanation": "교안 1-2 p.2–4의 시대 구분: The Dark Ages(1960–1980s, Developer) → Proto UX(1990s) → The UX Gold Rush(2010s, UX/UI Design & User Research).",
+    "source": "1-2 교안 p.2–4",
+    "kind": "UX 역사"
   },
   {
     "id": "OX009",
     "chapter": "개론·역사",
-    "kind": "UX 역사",
-    "source": "1-2 교안 p.3"
+    "statement": "1990년대 ‘Proto UX’ 시기에는 인지인간공학(Cognitive Ergonomics), 정보 설계자(Information Architects), 인터페이스 디자인(Interface Design)이 주요 영역으로 등장하였다.",
+    "answer": true,
+    "explanation": "교안 1-2 p.3에서 Proto UX(1990s)의 3대 축으로 Cognitive Ergonomics, Information Architects, Interface Design을 제시한다.",
+    "source": "1-2 교안 p.3",
+    "kind": "UX 역사"
   },
   {
     "id": "OX010",
     "chapter": "개론·역사",
-    "kind": "어원·정의",
-    "source": "1-2 교안 p.7"
+    "statement": "인간공학(Ergonomics)이라는 용어는 그리스어로 ‘기계’를 뜻하는 Ergon과 ‘효율’을 뜻하는 Nomos의 합성어이다.",
+    "answer": false,
+    "explanation": "Ergonomics는 그리스어로 ‘일·노동(work)’을 뜻하는 Ergon과 ‘법칙(laws)’을 뜻하는 Nomos의 합성어(= 작업의 법칙)이다.",
+    "source": "1-2 교안 p.7",
+    "kind": "어원·정의"
   },
   {
     "id": "OX011",
     "chapter": "개론·역사",
-    "kind": "동의어",
-    "source": "1-2 교안 p.7"
+    "statement": "인간공학(Ergonomics)은 유럽에서 주로 쓰이는 명칭이며, 미국에서는 Human Factors(또는 HF Engineering), 미군(US military)에서는 Human Engineering, 미국 심리학계에서는 Engineering Psychology(공학심리학) 또는 Applied Psychology라는 동의어로 불린다.",
+    "answer": true,
+    "explanation": "교안 1-2 p.7 Synonyms에 명시된 지역·집단별 정확히 일치하는 동의어들이다.",
+    "source": "1-2 교안 p.7",
+    "kind": "동의어"
   },
   {
     "id": "OX012",
     "chapter": "개론·역사",
-    "kind": "정의",
-    "source": "1-2 교안 p.7"
+    "statement": "인간공학의 정의에서 최종 목표는 인간의 신체적·정신적·사회적 특성을 이해하여 설계에 적용함으로써 오직 ‘기계 시스템의 출력 속도 극대화’만을 달성하는 것이다.",
+    "answer": false,
+    "explanation": "교안 1-2 p.7에서 인간공학의 목표는 ‘인간의 안녕(human well-being)’과 ‘시스템 성능(system performance)’ 두 가지를 함께 최적화(optimize/improve)하는 것이다.",
+    "source": "1-2 교안 p.7",
+    "kind": "정의"
   },
   {
     "id": "OX013",
     "chapter": "개론·역사",
-    "kind": "설계 패러다임",
-    "source": "1-2 교안 p.8–9"
+    "statement": "설계 패러다임의 전환(Paradigm shift in Design)에서 전통적 설계 철학(Traditional design philosophy)은 선발(selection)과 훈련(training)을 통해 ‘사람을 시스템에 맞추는 것(Fitting the Human to the System)’이었다.",
+    "answer": true,
+    "explanation": "전통적 설계는 기계·시스템을 먼저 만들고 그에 맞는 사람을 선발·훈련해 시스템에 적응시키는 방식이었다.",
+    "source": "1-2 교안 p.8–9",
+    "kind": "설계 패러다임"
   },
   {
     "id": "OX014",
     "chapter": "개론·역사",
-    "kind": "설계 패러다임",
-    "source": "1-2 교안 p.8–11"
+    "statement": "인간공학적 설계 철학(HFE design philosophy)은 인간공학적 설계(ergonomic design)를 통해 ‘시스템을 사람에게 맞추는 것(Fitting the System to the Human)’이다.",
+    "answer": true,
+    "explanation": "사람을 기계에 맞추던 전통적 관점에서 벗어나 인간의 신체·인지 특성에 맞게 제품과 시스템을 설계하는 패러다임 전환이다.",
+    "source": "1-2 교안 p.8–11",
+    "kind": "설계 패러다임"
   },
   {
     "id": "OX015",
     "chapter": "개론·역사",
-    "kind": "therbligs · 기출",
-    "source": "1-2 교안 p.12"
+    "statement": "인간공학 역사 중 Old Age(1900~1945) 시기에 Frank & Lillian Gilbreth 부부는 시간 및 동작 연구(Time & Motion study, Methods Engineering)와 미세동작분석(Micro-motion analysis)을 통해 ‘therbligs(서블리그)’라는 기본 동작 단위를 고안하였다.",
+    "answer": true,
+    "explanation": "Gilbreth 부부는 작업자의 수작업을 미세동작 단위인 therbligs(Gilbreth 철자를 거꾸로 표기)로 분류하여 시간·동작 연구를 수행했다(교안 1-2 p.12, 기출 핵심!).",
+    "source": "1-2 교안 p.12",
+    "kind": "therbligs · 기출"
   },
   {
     "id": "OX016",
     "chapter": "개론·역사",
-    "kind": "therbligs · 기출",
-    "source": "1-2 교안 p.12"
+    "statement": "therblig(서블리그)는 1990년대 정보화 시대(Information Age)에 스마트폰 터치스크린의 화면 픽셀 해상도를 측정하기 위해 만들어진 디스플레이 단위이다.",
+    "answer": false,
+    "explanation": "therbligs는 1900~1945년 Old Age 시기에 Frank & Lillian Gilbreth 부부가 고안한 미세동작분석(Micro-motion analysis)의 18가지 기본 손동작 단위이다.",
+    "source": "1-2 교안 p.12",
+    "kind": "therbligs · 기출"
   },
   {
     "id": "OX017",
     "chapter": "개론·역사",
-    "kind": "역사",
-    "source": "1-2 교안 p.12"
+    "statement": "1900년부터 제2차 세계대전(1945)까지의 Old Age 시기는 이미 ‘시스템을 인간에게 맞추는’ 현대적 인지인간공학이 완성된 시기였다.",
+    "answer": false,
+    "explanation": "교안 1-2 p.12에 명시된 대로 1900~1945년(World War II 포함) Old Age 시기는 여전히 ‘사람을 직무와 장비에 맞추는(Fitting the human to the job/equipment)’ 관점이 중심이었다.",
+    "source": "1-2 교안 p.12",
+    "kind": "역사"
   },
   {
     "id": "OX018",
     "chapter": "개론·역사",
-    "kind": "역사",
-    "source": "1-2 교안 p.13"
+    "statement": "인간공학이 독립된 전문 학문으로 탄생한 시기(Birth of Profession)는 제2차 세계대전 직후인 1945~1960년으로, 이 시기에 Engineering Psychology Lab(1945), Ergonomics Society(1950), Human Factors Society(1957), 국제인간공학회(IEA, 1959) 등이 설립되었다.",
+    "answer": true,
+    "explanation": "교안 1-2 p.13의 Middle/Modern Age(1945~1980) 중 Birth of Profession(1945~1960) 연표와 정확히 일치한다.",
+    "source": "1-2 교안 p.13",
+    "kind": "역사"
   },
   {
     "id": "OX019",
     "chapter": "개론·역사",
-    "kind": "역사",
-    "source": "1-2 교안 p.13"
+    "statement": "1960~1980년의 급성장기(Rapid Growth)에는 1960년대 군사 및 항공(Military & Aviation) 응용에서 출발하여 1970~1980년대 자동차·소비재로 확대되었고, 정보처리이론과 인지작업부하를 다루는 인지인간공학(Cognitive ergonomics)이 등장하였다.",
+    "answer": true,
+    "explanation": "교안 1-2 p.13 Rapid Growth(1960~1980)의 핵심 발전 흐름이다.",
+    "source": "1-2 교안 p.13",
+    "kind": "역사"
   },
   {
     "id": "OX020",
     "chapter": "개론·역사",
-    "kind": "역사",
-    "source": "1-2 교안 p.14"
+    "statement": "1990~2010년 정보화 시대(Information Age) 초기에는 인간-컴퓨터 상호작용(HCI: Human Computer Interaction)을 중심으로 사용자 인터페이스(User Interface)와 사용성(Usability)의 설계·평가·구현이 핵심 주제가 되었다.",
+    "answer": true,
+    "explanation": "교안 1-2 p.14에서 1990~2010년은 HCI(User Interface/Usability), 2010~2020년은 스마트폰 시대의 UX(User Experience)로 구분한다.",
+    "source": "1-2 교안 p.14",
+    "kind": "역사"
   },
   {
     "id": "OX021",
     "chapter": "개론·역사",
-    "kind": "HFE 영역 구분",
-    "source": "1-2 교안 p.15"
+    "statement": "HFE의 3대 영역 중 신체 인간공학(Physical Ergonomics)은 지각(perception), 기억(memory), 추론(reasoning), 운동 반응(motor response)과 같은 인간의 정신 과정(mental process)을 전담하는 분야이다.",
+    "answer": false,
+    "explanation": "지각·기억·추론·운동 반응 등 정신 과정(Mental process)을 다루는 분야는 인지 인간공학(Cognitive Ergonomics)이며, 신체 인간공학(Physical Ergonomics)은 인체측정학(Anthropometric)·생리학(Physiological)·생체역학(Biomechanical) 특성을 다룬다.",
+    "source": "1-2 교안 p.15",
+    "kind": "HFE 영역 구분"
   },
   {
     "id": "OX022",
     "chapter": "개론·역사",
-    "kind": "HFE 영역 구분",
-    "source": "1-2 교안 p.15"
+    "statement": "인지 인간공학(Cognitive Ergonomics)은 지각, 기억, 추론, 운동 반응 등의 정신 과정을 다루며, UX는 제품을 사용하는 사용자의 전반적인 만족도(User’s overall satisfaction using a product)를 다룬다.",
+    "answer": true,
+    "explanation": "교안 1-2 p.15의 Physical Ergonomics, Cognitive Ergonomics, UX 3대 영역 정의와 일치한다.",
+    "source": "1-2 교안 p.15",
+    "kind": "HFE 영역 구분"
   },
   {
     "id": "OX023",
     "chapter": "개론·역사",
-    "kind": "설계 사례",
-    "source": "1-2 교안 p.10"
+    "statement": "교안에서 제시한 전기 플러그(Electric Plug) 사례에서, 플러그에 손가락 그립 홈과 당김 손잡이를 만들어 쉽게 뽑을 수 있게 한 것은 ‘사람을 시스템에 맞추는 전통적 설계’의 예시이다.",
+    "answer": false,
+    "explanation": "사용자의 신체적·인지적 특성에 맞춰 플러그 형태를 개선한 것은 ‘시스템을 사람에게 맞추는 인간공학적 설계(HFE design)’의 대표 사례이다.",
+    "source": "1-2 교안 p.10",
+    "kind": "설계 사례"
   },
   {
     "id": "OX024",
     "chapter": "개론·역사",
-    "kind": "최신 동향",
-    "source": "1-2 교안 p.14–17"
+    "statement": "최근 인간공학 및 인터랙티브심리학의 새로운 연구 주제(New research topic)로는 인공지능 시스템(AI system) 및 AI 기술과 인간의 상호작용이 대두되고 있다.",
+    "answer": true,
+    "explanation": "교안 1-2 p.14, 16–17에서 다가오는 핵심 연구 주제로 AI system / AI technology를 제시한다.",
+    "source": "1-2 교안 p.14–17",
+    "kind": "최신 동향"
   },
   {
     "id": "OX025",
     "chapter": "개론·역사",
-    "kind": "정의",
-    "source": "1-2 교안 p.7"
+    "statement": "인간공학의 학문적 기반에는 해부학(anatomy), 인체측정학(anthropometry), 생체역학(biomechanics), 생리학(physiology)만 포함되며 정신물리학(psychophysics)이나 사회학(sociology)은 포함되지 않는다.",
+    "answer": false,
+    "explanation": "교안 1-2 p.7 정의에서 anatomy, anthropometry, biomechanics, physiology뿐 아니라 psychophysics(정신물리학), psychology(심리학), sociology(사회학)를 모두 명시하고 있다.",
+    "source": "1-2 교안 p.7",
+    "kind": "정의"
   },
   {
     "id": "OX026",
     "chapter": "HFE 연구방법론",
-    "kind": "설계 프로세스",
-    "source": "2장 교안 p.3–4 · 연구방법론 전사1"
+    "statement": "사용자 친화적 제품 설계 프로세스(Design Process for User-friendly Products)에서 인간 특성에 대한 지식(Human Characteristics)은 요구 분석 단계에만 쓰일 뿐, 실험 방법론이나 최종 설계 적용 단계와는 무관하다.",
+    "answer": false,
+    "explanation": "인간 특성 파악(Descriptive) → 방법론·실험 검증(Experimental) → 제품 설계 적용 및 사용성 평가(Evaluation)가 전 과정에 걸쳐 순환적으로 연결된다.",
+    "source": "2장 교안 p.3–4 · 연구방법론 전사1",
+    "kind": "설계 프로세스"
   },
   {
     "id": "OX027",
     "chapter": "HFE 연구방법론",
-    "kind": "연구 유형",
-    "source": "2장 교안 p.4–7"
+    "statement": "HFE 연구의 3대 분류 중 기술 연구(Descriptive Research)는 인간의 신체 치수(body size)나 근력(force), BMI 등 인간의 속성(human attributes)을 측정하고 분포를 기술하는 연구이다.",
+    "answer": true,
+    "explanation": "교안 2 p.4: Descriptive Research = characterize human attributes (e.g., measuring body size and force).",
+    "source": "2장 교안 p.4–7",
+    "kind": "연구 유형"
   },
   {
     "id": "OX028",
     "chapter": "HFE 연구방법론",
-    "kind": "BMI 공식",
-    "source": "2장 교안 p.5"
+    "statement": "체질량지수(BMI, Body Mass Index)를 구하는 공식은 체중(kg)을 키(cm)로 단순 나눈 값(\\(\\text{weight(kg)} / \\text{stature(cm)}\\))이다.",
+    "answer": false,
+    "explanation": "교안 2 p.5에서 \\(\\mathrm{BMI} = \\text{weight (kg)} / \\text{stature}^2\\text{ (m}^2\\text{)}\\)로, 체중(kg)을 키(m 단위)의 제곱으로 나누어야 한다.",
+    "source": "2장 교안 p.5",
+    "kind": "BMI 공식"
   },
   {
     "id": "OX029",
     "chapter": "HFE 연구방법론",
-    "kind": "백분위수",
-    "source": "2장 교안 p.6 · 연구방법론 전사1"
+    "statement": "인체측정 자료의 백분위수(Percentile) 분포에서 상위 25%에 해당하는 경계값은 25백분위수(25th percentile)가 아니라 75백분위수(75th percentile)이다.",
+    "answer": true,
+    "explanation": "백분위수는 가장 작은 값(0%)부터 누적한 위치이므로 상위 25% 경계는 하위 75% 지점인 75th percentile이다.",
+    "source": "2장 교안 p.6 · 연구방법론 전사1",
+    "kind": "백분위수"
   },
   {
     "id": "OX030",
     "chapter": "HFE 연구방법론",
-    "kind": "연구 유형",
-    "source": "2장 교안 p.4, 8–9"
+    "statement": "실험 연구(Experimental Research)는 어떤 변수(독립변수)를 조작하여 인간의 행동 및 수행도(종속변수)에 미치는 효과를 검증하는 연구로, 전자책의 글꼴 종류나 화면 방향(Landscape vs Portrait)에 따른 가독성 분석이 이에 해당한다.",
+    "answer": true,
+    "explanation": "교안 2 p.4, 8–9에 제시된 Experimental Research의 정의 및 대표 사례이다.",
+    "source": "2장 교안 p.4, 8–9",
+    "kind": "연구 유형"
   },
   {
     "id": "OX031",
     "chapter": "HFE 연구방법론",
-    "kind": "연구 유형",
-    "source": "2장 교안 p.10"
+    "statement": "스마트글래스의 무게 중심 위치(Weight Location: Front, Middle, Ear, Rear)에 따른 코 압력(Pressure on the nose, N) 비교 연구는 완성된 상용 제품의 브랜드 충성도를 조사하는 기술 연구(Descriptive Research)이다.",
+    "answer": false,
+    "explanation": "무게 위치(독립변수)를 4가지 설계 대안으로 조작하여 코 압력(종속변수)에 미치는 효과를 검증한 실험 연구(Experimental Research)이다.",
+    "source": "2장 교안 p.10",
+    "kind": "연구 유형"
   },
   {
     "id": "OX032",
     "chapter": "HFE 연구방법론",
-    "kind": "실험 결과",
-    "source": "2장 교안 p.10"
+    "statement": "교안의 스마트글래스 무게 위치 실험 결과에서 코에 가해지는 압력(N)은 앞쪽(Front, 0.34 N)에 무게 중심이 있을 때 가장 크고, 뒤쪽(Rear, 0.16 N)으로 갈수록 낮아졌다.",
+    "answer": true,
+    "explanation": "Front(0.34 N) > Middle(0.22 N) > Ear(0.20 N) > Rear(0.16 N) 순으로 측정되었으며, 막대그래프의 오차막대는 표준오차(SE)를 나타낸다.",
+    "source": "2장 교안 p.10",
+    "kind": "실험 결과"
   },
   {
     "id": "OX033",
     "chapter": "HFE 연구방법론",
-    "kind": "연구 유형",
-    "source": "2장 교안 p.4, 11–13"
+    "statement": "평가 연구(Evaluation Research)는 제품이나 시스템의 효과성, 즉 사용성(usability)을 평가하는 연구로, 새로운 진공청소기 모델들의 브러시 장착 사용성을 비교 평가하는 사례가 이에 해당한다.",
+    "answer": true,
+    "explanation": "교안 2 p.4, 11: Evaluation Research = assess the effectiveness (called usability) of product or system.",
+    "source": "2장 교안 p.4, 11–13",
+    "kind": "연구 유형"
   },
   {
     "id": "OX034",
     "chapter": "HFE 연구방법론",
-    "kind": "평가 사례",
-    "source": "2장 교안 p.11"
+    "statement": "교안의 진공청소기 3종(모델 A, B, C) 브러시 장착 평가 연구에서 가장 높은 평가 점수를 받은 모델 A의 우수 특성은 연장관이 290g으로 가볍고, 브러시 체결 방향을 화살표(시각 정보)로 제시하며, 체결 완료 시 소리(청각 피드백, sound feedback)를 제공한 점이다.",
+    "answer": true,
+    "explanation": "교안 2 p.11 표에 정리된 모델 A(삼성 국내용)의 3가지 우수 특성(가벼운 무게 290g, 시각 화살표, 체결 완료 sound feedback)이다.",
+    "source": "2장 교안 p.11",
+    "kind": "평가 사례"
   },
   {
     "id": "OX035",
     "chapter": "HFE 연구방법론",
-    "kind": "연구 환경 비교",
-    "source": "2장 교안 p.14"
+    "statement": "연구 환경(Research Settings) 중 실험실 연구(Laboratory study)는 현장 연구(Field study)에 비해 현실 충실도(fidelity)가 높고 연구 결과를 실생활로 일반화(generalize)하기가 훨씬 쉽다는 장점이 있다.",
+    "answer": false,
+    "explanation": "높은 충실도(High fidelity)와 일반화 용이성(Easy to generalize)은 현장 연구(Field study)의 장점이다. 실험실 연구(Laboratory study)는 불필요한 외생변수 통제, 반복 용이성, 정확한 데이터 획득이 장점인 반면 낮은 충실도(Low fidelity)와 일반화의 어려움이 단점이다.",
+    "source": "2장 교안 p.14",
+    "kind": "연구 환경 비교"
   },
   {
     "id": "OX036",
     "chapter": "HFE 연구방법론",
-    "kind": "연구 환경 비교",
-    "source": "2장 교안 p.14"
+    "statement": "현장 연구(Field study)는 높은 현실 충실도와 일반화 가능성을 가지지만, 비용이 많이 들고(High cost) 원치 않는 외생변수를 통제하기 어려우며 참가자의 안전 문제(Safety issue of participants)가 발생할 수 있다는 단점이 있다.",
+    "answer": true,
+    "explanation": "교안 2 p.14 Field study의 장단점 표와 정확히 일치한다.",
+    "source": "2장 교안 p.14",
+    "kind": "연구 환경 비교"
   },
   {
     "id": "OX037",
     "chapter": "HFE 연구방법론",
-    "kind": "실험 변수",
-    "source": "2장 교안 p.15"
+    "statement": "실험에서 연구자가 관심을 가지고 의도적으로 조작·변경하는 요인(예: 마우스 종류)을 종속변수(Dependent variable)라 하고, 그에 따라 측정되는 결과값(예: 클릭 시간, 만족도 점수)을 독립변수(Independent variable)라 한다.",
+    "answer": false,
+    "explanation": "조작하는 요인(manipulated factor)이 독립변수(Independent variable, IV)이고, 측정되는 결과값(measured value)이 종속변수(Dependent variable, DV)이다.",
+    "source": "2장 교안 p.15",
+    "kind": "실험 변수"
   },
   {
     "id": "OX038",
     "chapter": "HFE 연구방법론",
-    "kind": "실험 변수",
-    "source": "2장 교안 p.15 · 연구방법론 전사1"
+    "statement": "독립변수와 종속변수 외의 기타 변수(Other variable)를 다루는 방법 중 ‘통제(Control)’는 변수의 조건을 하나로 고정하는 것이고, ‘층화(Stratification)’는 모집단의 계층(성별·연령 등) 비율에 맞춰 표본을 나누어 배정하는 것이다.",
+    "answer": true,
+    "explanation": "교안 2 p.15 및 전사에서 설명한 Control vs. Stratification의 핵심 차이이다.",
+    "source": "2장 교안 p.15 · 연구방법론 전사1",
+    "kind": "실험 변수"
   },
   {
     "id": "OX039",
     "chapter": "HFE 연구방법론",
-    "kind": "종속변수 선정",
-    "source": "2장 교안 p.16"
+    "statement": "종속변수(측정 지표, Metrics)를 선정할 때는 공정한 평가를 위해 1) 목표 수준의 적합성(level of target)과 2) 지표의 포괄성(metric comprehensiveness) 두 가지를 반드시 고려해야 한다.",
+    "answer": true,
+    "explanation": "교안 2 p.16: Dependent variables must be selected by considering 1) level of target and 2) metric comprehensiveness to fairly evaluate.",
+    "source": "2장 교안 p.16",
+    "kind": "종속변수 선정"
   },
   {
     "id": "OX040",
     "chapter": "HFE 연구방법론",
-    "kind": "종속변수 분류",
-    "source": "연구방법론 전사2"
+    "statement": "인간공학 실험에서 측정하는 종속변수는 크게 수행도 측면(Performance: 시간·오류율 등), 신체·생리적 측면(Physical/Biomechanical: 근전도·생체신호 등), 주관적 측면(Subjective: 리커트 설문 척도 등)의 세 가지로 나눌 수 있다.",
+    "answer": true,
+    "explanation": "연구방법론 전사 2 말미에서 교수님이 정리한 인간 측정치의 3대 영역이다.",
+    "source": "연구방법론 전사2",
+    "kind": "종속변수 분류"
   },
   {
     "id": "OX041",
     "chapter": "HFE 연구방법론",
-    "kind": "피험자 대표성",
-    "source": "2장 교안 p.17"
+    "statement": "피험자 선정에서 대표성(Representativity)이란 표본이 목표 모집단(target population)을 편향(Bias) 없이 대표해야 한다는 원칙으로, 이를 위해 무작위 표집(Random sampling) 등을 활용한다.",
+    "answer": true,
+    "explanation": "예컨대 왼손잡이가 10%, 오른손잡이가 90%인 모집단에서 오른손잡이만 뽑으면 편향(Bias)이 발생하므로 대표성을 확보해야 한다.",
+    "source": "2장 교안 p.17",
+    "kind": "피험자 대표성"
   },
   {
     "id": "OX042",
     "chapter": "HFE 연구방법론",
-    "kind": "표본 수 공식 · 함정",
-    "source": "2장 교안 p.18"
+    "statement": "적정 표본 수 산정 공식 \\(n = \\left(\\dfrac{z_{\\alpha/2} \\times s}{k \\times \\bar{x}}\\right)^2\\)에서 유의수준 \\(\\alpha\\)를 \\(0.05\\)에서 \\(0.01\\)로 낮추면(더 엄격하게 설정하면), \\(z_{\\alpha/2}\\) 값이 작아져서 필요한 표본 수 \\(n\\)이 줄어든다.",
+    "answer": false,
+    "explanation": "\\(\\alpha = 0.05\\)일 때 \\(z_{\\alpha/2} = 1.96\\)이고 \\(\\alpha = 0.01\\)일 때 \\(z_{\\alpha/2} = 2.576\\)이다. 즉 \\(\\alpha\\)가 낮아질수록 \\(z\\) 값이 커지므로 필요한 표본 수 \\(n\\)은 증가한다(Lower \\(\\alpha \\to\\) higher \\(z \\to\\) larger \\(n\\)).",
+    "source": "2장 교안 p.18",
+    "kind": "표본 수 공식 · 함정"
   },
   {
     "id": "OX043",
     "chapter": "HFE 연구방법론",
-    "kind": "표본 수 공식",
-    "source": "2장 교안 p.18"
+    "statement": "적정 표본 수 산정 공식에서 파일럿 연구 데이터의 표준편차(\\(s\\), 변동성)가 클수록, 그리고 허용 오차 비율인 정밀도 수치(\\(k\\), precision)를 더 작게(더 정밀하게) 설정할수록 필요한 표본 수 \\(n\\)은 커진다.",
+    "answer": true,
+    "explanation": "\\(s\\)는 분자에 있으므로 클수록 \\(n\\)이 커지고, \\(k\\)는 분모에 있으므로 작을수록(더 촘촘한 정밀도를 요구할수록) \\(n\\)이 커진다.",
+    "source": "2장 교안 p.18",
+    "kind": "표본 수 공식"
   },
   {
     "id": "OX044",
     "chapter": "HFE 연구방법론",
-    "kind": "표본 수 계산",
-    "source": "2장 교안 p.19"
+    "statement": "파일럿 연구(표본 크기 5명) 결과 평균 \\(\\bar{x}=100\\), 표준편차 \\(s=10\\)일 때, 유의수준 \\(\\alpha=0.05\\)(\\(z=1.96\\))와 정밀도 \\(k=0.05\\)를 만족하기 위한 총 적정 표본 수는 16명이며, 이미 진행한 5명을 제외하면 11명의 추가 표본이 필요하다.",
+    "answer": true,
+    "explanation": "\\(n = (1.96 \\times 10 / (0.05 \\times 100))^2 = (3.92)^2 = 15.366 \\approx 16\\)명이며, 파일럿 5명을 빼면 11명을 더 모집하면 된다(교안 2 p.19).",
+    "source": "2장 교안 p.19",
+    "kind": "표본 수 계산"
   },
   {
     "id": "OX045",
     "chapter": "HFE 연구방법론",
-    "kind": "실무 요건",
-    "source": "2장 교안 p.20"
+    "statement": "연구 측정 기준의 실무적 요건(Practical requirement) 중 ‘Unobtrusive’란 측정 도구나 절차가 피험자의 자연스러운 과업 수행을 방해하지 않아야 함을 뜻한다.",
+    "answer": true,
+    "explanation": "교안 2 p.20의 6대 실무 요건: Objective, Quantitative, Unobtrusive(방해하지 않음), Easy to collect, No special instrumentation, Cost as little as possible.",
+    "source": "2장 교안 p.20",
+    "kind": "실무 요건"
   },
   {
     "id": "OX046",
     "chapter": "HFE 연구방법론",
-    "kind": "신뢰도",
-    "source": "2장 교안 p.20"
+    "statement": "신뢰도(Reliability)는 시간이 지나거나 대표 표본들에 걸쳐 반복 측정했을 때 측정값이 일관되고 안정적으로 나오는 정도(consistency or stability)를 의미한다.",
+    "answer": true,
+    "explanation": "교안 2 p.20: Reliability = consistency or stability of the measures over time or across representative samples.",
+    "source": "2장 교안 p.20",
+    "kind": "신뢰도"
   },
   {
     "id": "OX047",
     "chapter": "HFE 연구방법론",
-    "kind": "신뢰도 vs 정확도",
-    "source": "2장 교안 p.21"
+    "statement": "교안의 과녁(다트판) 비교에서 탄착군이 과녁의 정중앙에서 벗어난 한쪽 구석에 아주 촘촘하게 모여 있는 경우(오른쪽 과녁 R)는 ‘정확도(Accuracy)는 높지만 신뢰도(Reliability)는 낮은’ 상태이다.",
+    "answer": false,
+    "explanation": "한곳에 촘촘히 모여 있으므로 일관성인 신뢰도(Reliability)는 높지만, 과녁 중심(참값)에서 벗어나 있으므로 정확도(Accuracy/타당도)가 낮은 상태이다.",
+    "source": "2장 교안 p.21",
+    "kind": "신뢰도 vs 정확도"
   },
   {
     "id": "OX048",
     "chapter": "HFE 연구방법론",
-    "kind": "내적 vs 외적 타당도",
-    "source": "2장 교안 p.20"
+    "statement": "내적 타당도(Internal Validity)는 연구 결과를 다른 집단이나 실제 환경으로 일반화(Generalizability)할 수 있는 정도를 뜻하고, 외적 타당도(External Validity)는 실험 내 혼동변수(Confounding)가 없는 정도를 뜻한다.",
+    "answer": false,
+    "explanation": "두 개념이 반대로 설명되었다. 혼동변수가 없는 정도(No confounding)가 내적 타당도(Internal validity)이고, 결과를 외부로 일반화할 수 있는 정도(Generalizability)가 외적 타당도(External validity)이다.",
+    "source": "2장 교안 p.20",
+    "kind": "내적 vs 외적 타당도"
   },
   {
     "id": "OX049",
     "chapter": "HFE 연구방법론",
-    "kind": "내적 타당도",
-    "source": "2장 교안 p.20"
+    "statement": "웹 검색(Web search) 인터페이스 실험에서 피험자들의 사전 웹 검색 숙련도(experience)를 고려하지 않아 결과가 왜곡되었다면 이는 내적 타당도(Internal validity)가 저하된 사례이다.",
+    "answer": true,
+    "explanation": "교안 2 p.20 Internal validity 예시에 명시된 혼동변수(confounding) 미통제 사례이다.",
+    "source": "2장 교안 p.20",
+    "kind": "내적 타당도"
   },
   {
     "id": "OX050",
     "chapter": "HFE 연구방법론",
-    "kind": "Deficiency vs Contamination",
-    "source": "2장 교안 p.22"
+    "statement": "구성타당도(Construct Validity) 다이어그램에서 이론적 구성개념(Construct)에는 속하지만 실제 측정치(Measure)가 평가하지 못하고 빠뜨린 부분을 ‘오염(Contamination)’이라 한다.",
+    "answer": false,
+    "explanation": "구성개념에 속하는데 측정에서 빠뜨린 부분은 ‘결핍(Deficiency)’이다. 반대로 구성개념과 무관한 요소가 측정치에 섞여 들어간 것이 ‘오염(Contamination)’이다.",
+    "source": "2장 교안 p.22",
+    "kind": "Deficiency vs Contamination"
   },
   {
     "id": "OX051",
     "chapter": "HFE 연구방법론",
-    "kind": "Deficiency vs Contamination",
-    "source": "2장 교안 p.22"
+    "statement": "구성타당도(Construct Validity)에서 실제 측정 도구(Measure)가 평가하고 있으나 원래 측정하려던 구성개념(Construct)의 일부가 아닌 무관한 부분이 포함된 것을 ‘Contamination(오염)’이라 한다.",
+    "answer": true,
+    "explanation": "교안 2 p.22: Contamination = things assessed by the measure that are not part of the construct.",
+    "source": "2장 교안 p.22",
+    "kind": "Deficiency vs Contamination"
   },
   {
     "id": "OX052",
     "chapter": "HFE 연구방법론",
-    "kind": "SE vs SD",
-    "source": "2장 교안 p.10 · 원문과 검증"
+    "statement": "스마트글래스 코 압력 그래프에 표시된 오차막대 ‘SE(Standard Error)’는 개별 관측값들의 퍼짐인 표준편차(SD)와 수학적으로 언제나 동일한 값이다.",
+    "answer": false,
+    "explanation": "SE(평균의 표준오차, \\(s/\\sqrt{n}\\))는 표본평균 추정의 불확실성을 나타내며, 개별 데이터의 산포인 표준편차(SD)와는 다른 개념이다.",
+    "source": "2장 교안 p.10 · 원문과 검증",
+    "kind": "SE vs SD"
   },
   {
     "id": "OX053",
     "chapter": "HFE 연구방법론",
-    "kind": "설계 절차",
-    "source": "2장 교안 p.13 · 2주차 논문"
+    "statement": "보충 논문인 손잡이 설계 연구에서 제시한 4단계 설계 절차는 ‘손 쥐기 특성 파악 → 설계변수와 인체변수 선택 → 설계식 수립 → 시제품 평가’ 순서이다.",
+    "answer": true,
+    "explanation": "2주차 손잡이 인체측정 설계 보충 논문 및 교안 p.13에 제시된 인간공학적 제품 설계 4단계 흐름이다.",
+    "source": "2장 교안 p.13 · 2주차 논문",
+    "kind": "설계 절차"
   },
   {
     "id": "OX054",
     "chapter": "정보량·중복도",
-    "kind": "정보처리 모형",
-    "source": "3장 교안 p.6"
+    "statement": "인간 정보처리 모형(Information Processing Model)에서 외부 자극(Stimuli)이 들어와 최종 반응(Responses)으로 나가기까지의 주 경로는 ‘단기감각기억(Short-term sensory store) → 지각(Perception) → 의사결정 및 반응 선택(Decision & response selection) → 반응 실행(Response execution)’ 순서이다.",
+    "answer": true,
+    "explanation": "교안 3 p.6 다이어그램의 중심 수평 정보처리 단계 순서와 정확히 일치한다.",
+    "source": "3장 교안 p.6",
+    "kind": "정보처리 모형"
   },
   {
     "id": "OX055",
     "chapter": "정보량·중복도",
-    "kind": "작업기억 지속시간",
-    "source": "3장 교안 p.6"
+    "statement": "교안의 인간 정보처리 모형에서 작업기억(Working memory / Short-term memory)의 기본 유지 시간(Memory duration)은 별도의 시연이 없을 때 약 20~30초(20~30 sec)로 제시된다.",
+    "answer": true,
+    "explanation": "교안 3 p.6 다이어그램 우측 하단에 Working memory (Short-term memory)의 Memory duration: 20~30 sec가 명시되어 있다.",
+    "source": "3장 교안 p.6",
+    "kind": "작업기억 지속시간"
   },
   {
     "id": "OX056",
     "chapter": "정보량·중복도",
-    "kind": "주의 자원",
-    "source": "3장 교안 p.6"
+    "statement": "인간 정보처리 모형에서 주의 자원(Attention resources)은 오직 초기 감각 수용(Short-term sensory store)에만 관여하며, 지각이나 의사결정, 반응 실행 단계에는 관여하지 않는다.",
+    "answer": false,
+    "explanation": "교안 3 p.6 다이어그램에서 Attention resources는 Perception, Working memory, Decision & response selection, Response execution 단계들에 자원을 공급한다.",
+    "source": "3장 교안 p.6",
+    "kind": "주의 자원"
   },
   {
     "id": "OX057",
     "chapter": "정보량·중복도",
-    "kind": "피드백 루프",
-    "source": "3장 교안 p.6"
+    "statement": "인간 정보처리 모형에서 반응 실행(Response execution)을 통해 나타난 결과(Responses)는 피드백(Feedback) 루프를 통해 다시 초기 감각 입력 쪽으로 되돌아간다.",
+    "answer": true,
+    "explanation": "교안 3 p.6 하단의 Feedback 화살표는 출력된 반응이 다시 환경 자극으로 피드백됨을 보여준다.",
+    "source": "3장 교안 p.6",
+    "kind": "피드백 루프"
   },
   {
     "id": "OX058",
     "chapter": "정보량·중복도",
-    "kind": "불확실성과 정보량",
-    "source": "3장 교안 p.7"
+    "statement": "정보이론(Information Theory)에서 사건의 불확실성(Uncertainty)이 낮아질수록 과업 완수에 필요한 정보량(Information amount)은 오히려 증가한다.",
+    "answer": false,
+    "explanation": "불확실성과 필요 정보량은 비례한다(Uncertainty ↓ ⇒ Requiring information ↓, Uncertainty ↑ ⇒ Requiring information ↑).",
+    "source": "3장 교안 p.7",
+    "kind": "불확실성과 정보량"
   },
   {
     "id": "OX059",
     "chapter": "정보량·중복도",
-    "kind": "bit 정의",
-    "source": "3장 교안 p.8"
+    "statement": "정보의 기본 단위인 1 bit(binary digit)는 발생 확률이 동일한 2개의 대안(\\(2^1\\)) 중 하나를 결정하는 과업을 처리할 때 필요한 정보량이다.",
+    "answer": true,
+    "explanation": "교안 3 p.8: 1 bit = amount of information required for processing a task with two equally likely alternatives.",
+    "source": "3장 교안 p.8",
+    "kind": "bit 정의"
   },
   {
     "id": "OX060",
     "chapter": "정보량·중복도",
-    "kind": "등확률 정보량",
-    "source": "3장 교안 p.8"
+    "statement": "발생 확률이 모두 같은 등확률 대안들을 처리할 때 필요한 정보량이 4 bits라면, 가능한 대안의 개수(\\(N\\))는 \\(4 \\times 2 = 8\\)개이다.",
+    "answer": false,
+    "explanation": "\\(k\\text{ bits}\\)는 \\(2^k\\)개의 등확률 대안에 대응하므로, \\(4\\text{ bits}\\)일 때 대안의 개수는 \\(2^4 = 16\\)개이다(교안 3 p.8 빈칸).",
+    "source": "3장 교안 p.8",
+    "kind": "등확률 정보량"
   },
   {
     "id": "OX061",
     "chapter": "정보량·중복도",
-    "kind": "Hartley 공식",
-    "source": "3장 교안 p.9"
+    "statement": "대안들이 동일한 확률(\\(P = 1/N\\))을 가질 때의 정보량 공식(Ralph Hartley)은 \\(H = \\log_2 N = \\log_2(1/P)\\)이다.",
+    "answer": true,
+    "explanation": "교안 3 p.9 Equation 1(Hartley 식)과 일치한다.",
+    "source": "3장 교안 p.9",
+    "kind": "Hartley 공식"
   },
   {
     "id": "OX062",
     "chapter": "정보량·중복도",
-    "kind": "Shannon 공식",
-    "source": "3장 교안 p.9"
+    "statement": "대안들의 발생 확률(\\(p_i\\))이 서로 다를 때의 정보량 공식(Claude Shannon)은 각 대안 정보량의 가중평균인 \\(H = \\sum_{i=1}^N p_i \\log_2(1/p_i) = -\\sum_{i=1}^N p_i \\log_2 p_i\\)이다.",
+    "answer": true,
+    "explanation": "교안 3 p.9 Equation 2(Shannon 엔트로피 식)와 일치한다.",
+    "source": "3장 교안 p.9",
+    "kind": "Shannon 공식"
   },
   {
     "id": "OX063",
     "chapter": "정보량·중복도",
-    "kind": "정보량 계산",
-    "source": "3장 교안 p.9"
+    "statement": "두 대안의 발생 확률이 각각 \\(P_1 = 0.2, P_2 = 0.8\\)일 때, Shannon 공식으로 계산한 평균 정보량(\\(H_{\\text{avg}}\\))은 정확히 \\(1.0\\text{ bit}\\)이다.",
+    "answer": false,
+    "explanation": "\\(H_1 = \\log_2(1/0.2) \\approx 2.322\\), \\(H_2 = \\log_2(1/0.8) \\approx 0.322\\)이므로 \\(H_{\\text{avg}} = 0.2(2.322) + 0.8(0.322) = 0.722\\text{ bits}\\)이다(등확률 0.5, 0.5일 때만 1.0 bit).",
+    "source": "3장 교안 p.9",
+    "kind": "정보량 계산"
   },
   {
     "id": "OX064",
     "chapter": "정보량·중복도",
-    "kind": "확률과 정보량",
-    "source": "3장 교안 p.10"
+    "statement": "동전 던지기에서 앞면과 뒷면의 확률이 각각 0.5로 같을 때(Fair coin) 정보량 \\(H\\)는 1 bit로 최대가 되며, 확률이 \\(P(\\text{head})=0.9, P(\\text{tail})=0.1\\)처럼 한쪽으로 치우친 휜 동전(Bent coin)에서는 정보량이 약 \\(0.468\\text{ bit}\\)로 줄어든다.",
+    "answer": true,
+    "explanation": "교안 3 p.10: 대안들의 확률이 균등할수록 불확실성과 정보량이 크고, 한쪽으로 치우칠수록 결과를 예측하기 쉬워져 정보량이 줄어든다.",
+    "source": "3장 교안 p.10",
+    "kind": "확률과 정보량"
   },
   {
     "id": "OX065",
     "chapter": "정보량·중복도",
-    "kind": "정보량 곡선",
-    "source": "3장 교안 p.10 · 정보처리 전사1"
+    "statement": "동전의 앞면이 나올 확률 \\(P\\)를 가로축(0~1), 정보량 \\(H(\\text{bit})\\)를 세로축으로 그래프를 그리면, \\(P=0.5\\)에서 최솟값 0을 갖고 양 끝(\\(P=0, 1\\))에서 최댓값 1을 갖는 아래로 볼록한 U자 곡선이 된다.",
+    "answer": false,
+    "explanation": "\\(P=0\\)이나 \\(P=1\\)이면 결과가 100% 확실하므로 정보량 \\(H=0\\text{ bit}\\)이고, \\(P=0.5\\)에서 \\(H=1\\text{ bit}\\)로 최대가 되는 위로 볼록한 ‘역 U자 곡선’ 형태다.",
+    "source": "3장 교안 p.10 · 정보처리 전사1",
+    "kind": "정보량 곡선"
   },
   {
     "id": "OX066",
     "chapter": "정보량·중복도",
-    "kind": "중복도 공식",
-    "source": "3장 교안 p.11"
+    "statement": "중복도(% Redundancy)는 최대 정보량(\\(H_{\\max}\\))으로부터 대상 조건의 정보량(\\(H_{\\text{target}}\\))이 몇 퍼센트 감소했는지를 나타내는 효과성 척도로, 공식은 \\(\\%\\text{Redundancy} = (1 - H_{\\text{target}} / H_{\\max}) \\times 100\\)이다.",
+    "answer": true,
+    "explanation": "교안 3 p.11의 % Redundancy 공식 및 정의와 정확히 일치한다.",
+    "source": "3장 교안 p.11",
+    "kind": "중복도 공식"
   },
   {
     "id": "OX067",
     "chapter": "정보량·중복도",
-    "kind": "중복도 계산 · 함정",
-    "source": "3장 교안 p.11"
+    "statement": "공정한 동전(\\(H_{\\max} = 1\\text{ bit}\\)) 대신 앞면 확률이 0.9인 휜 동전(\\(H_{\\text{target}} = 0.468\\text{ bit}\\))을 사용할 때의 중복도(% Redundancy)는 \\(46.8\\%\\)이다.",
+    "answer": false,
+    "explanation": "\\(\\%\\text{Redundancy} = (1 - 0.468 / 1) \\times 100 = 53.2\\%\\)이다(\\(46.8\\%\\)는 \\(1\\)에서 빼지 않은 \\(H_{\\text{target}}/H_{\\max}\\) 비율이므로 오답 함정!).",
+    "source": "3장 교안 p.11",
+    "kind": "중복도 계산 · 함정"
   },
   {
     "id": "OX068",
     "chapter": "정보량·중복도",
-    "kind": "경고등 예제",
-    "source": "3장 교안 p.12"
+    "statement": "8개의 경고등(Warning signals)이 켜질 확률에 대해 아무런 사전 정보가 없어 모두 동일한 확률(\\(1/8\\))이라고 가정하면, 정보량 \\(H_{\\max}\\)는 \\(\\log_2 8 = 3\\text{ bits}\\)이다.",
+    "answer": true,
+    "explanation": "교안 3 p.12 Example 1(1 of 2): \\(N=8\\) 등확률이므로 \\(H = \\log_2 8 = 3\\text{ bits}\\)이다.",
+    "source": "3장 교안 p.12",
+    "kind": "경고등 예제"
   },
   {
     "id": "OX069",
     "chapter": "정보량·중복도",
-    "kind": "경고등 예제",
-    "source": "3장 교안 p.13"
+    "statement": "8개의 경고등 중 자주 발생하는 1, 2번 신호의 확률이 각각 \\(0.35\\)이고 나머지 3~8번(6개) 신호의 확률이 각각 \\(0.05\\)일 때, 평균 정보량 \\(H\\)는 약 \\(2.3568\\text{ bits}\\)이며 중복도(% Redundancy)는 약 \\(21.44\\%\\)이다.",
+    "answer": true,
+    "explanation": "\\(H = 2(0.35\\log_2(1/0.35)) + 6(0.05\\log_2(1/0.05)) \\approx 2.3568\\text{ bits}\\), \\(\\%\\text{Redundancy} = (1 - 2.3568/3)\\times 100 \\approx 21.44\\%\\)이다(교안 3 p.13).",
+    "source": "3장 교안 p.13",
+    "kind": "경고등 예제"
   },
   {
     "id": "OX070",
     "chapter": "정보량·중복도",
-    "kind": "경고등 설계 원리",
-    "source": "3장 교안 p.13"
+    "statement": "경고등 설계에서 발생 빈도가 높은 중요 신호를 시각적으로 크고 두드러지게(salient) 배치하면 작업자가 처리해야 할 정보량이 줄어들어 감시 효율성이 높아진다.",
+    "answer": true,
+    "explanation": "확률 단서를 시각적 현저성으로 제공하면 불확실성이 감소하고 중복도가 높아져 정보처리 부담이 줄어든다.",
+    "source": "3장 교안 p.13",
+    "kind": "경고등 설계 원리"
   },
   {
     "id": "OX071",
     "chapter": "정보량·중복도",
-    "kind": "신호등 예제",
-    "source": "3장 교안 p.14"
+    "statement": "교안의 신호등 예제(Traffic Signal)에서 언제 바뀔지 모르는 기존 신호등(바뀜/안 바뀜 2대안 등확률 가정)의 정보량은 \\(H_{\\text{current}} = 1\\text{ bit}\\)이고, 4초 뒤 바뀜을 알려주는 카운트다운 신호등의 정보량은 \\(H_{\\text{new}} = 0\\text{ bit}\\)이므로 중복도는 \\(100\\%\\)이다.",
+    "answer": true,
+    "explanation": "카운트다운을 통해 바뀔 시점이 확정(\\(P=1\\))되면 불확실성이 완전히 제거되어 \\(H_{\\text{new}} = 0\\text{ bit}\\), \\(\\%\\text{Redundancy} = (1 - 0/1)\\times 100 = 100\\%\\)가 된다.",
+    "source": "3장 교안 p.14",
+    "kind": "신호등 예제"
   },
   {
     "id": "OX072",
     "chapter": "정보량·중복도",
-    "kind": "정보량 성질",
-    "source": "3장 교안 p.10, 14"
+    "statement": "어떤 사건의 발생 확률이 \\(p_i = 1.0\\) (100% 확실한 사건)이면 그 사건이 일어났을 때 얻는 정보량은 \\(\\log_2(1/1) = 0\\text{ bit}\\)이다.",
+    "answer": true,
+    "explanation": "이미 100% 일어날 줄 아는 사건에는 불확실성이 전혀 없으므로 정보량은 0 bit이다.",
+    "source": "3장 교안 p.10, 14",
+    "kind": "정보량 성질"
   },
   {
     "id": "OX073",
     "chapter": "정보량·중복도",
-    "kind": "정보량과 중복도 관계",
-    "source": "3장 교안 p.10–11"
+    "statement": "대안의 개수 \\(N\\)이 동일할 때, 대안들 간의 확률 불균형이 심해질수록 엔트로피 \\(H\\)는 커지고 중복도(% Redundancy)는 작아진다.",
+    "answer": false,
+    "explanation": "확률 불균형이 심해질수록 예측이 쉬워져 엔트로피 \\(H_{\\text{target}}\\)는 작아지고, 그 결과 중복도 \\((1 - H_{\\text{target}}/H_{\\max})\\times 100\\)는 커진다.",
+    "source": "3장 교안 p.10–11",
+    "kind": "정보량과 중복도 관계"
   },
   {
     "id": "OX074",
     "chapter": "정보량·중복도",
-    "kind": "로그 스케일 성질",
-    "source": "3장 교안 p.8–9"
+    "statement": "등확률 대안의 개수 \\(N\\)이 4개에서 8개로 2배 증가하면, Hartley 정보량 \\(H = \\log_2 N\\)도 2 bits에서 4 bits로 2배 증가한다.",
+    "answer": false,
+    "explanation": "\\(N=4\\)일 때 \\(\\log_2 4 = 2\\text{ bits}\\)이고, \\(N=8\\)일 때 \\(\\log_2 8 = 3\\text{ bits}\\)이다. 대안 수가 2배가 되면 정보량은 2배가 되는 것이 아니라 \\(1\\text{ bit}\\)만큼 더해진다.",
+    "source": "3장 교안 p.8–9",
+    "kind": "로그 스케일 성질"
   },
   {
     "id": "OX075",
     "chapter": "정보량·중복도",
-    "kind": "계산 규칙",
-    "source": "3장 교안 p.18"
+    "statement": "Shannon 정보량 계산에서 발생 확률이 \\(p_j = 0\\)인 사건의 항 \\(p_j \\log_2(1/p_j)\\)은 극한 정의에 따라 \\(0\\)으로 처리하여 합산에서 제외한다.",
+    "answer": true,
+    "explanation": "\\(0 \\log_2 0 = 0\\)으로 정의하므로 빈도가 0인 칸이나 사건은 정보량 합산에 기여하지 않는다.",
+    "source": "3장 교안 p.18",
+    "kind": "계산 규칙"
   },
   {
     "id": "OX076",
     "chapter": "정보량·중복도",
-    "kind": "핵심 취지",
-    "source": "3장 교안 p.7"
+    "statement": "정보이론은 과업을 완수하기 위해 처리해야 하는 정보의 양을 정량화(quantify)함으로써 인간공학적 인터페이스 설계의 과학적 근거를 제공한다.",
+    "answer": true,
+    "explanation": "교안 3 p.7: Information theory quantifies the amount of information required to complete a task.",
+    "source": "3장 교안 p.7",
+    "kind": "핵심 취지"
   },
   {
     "id": "OX077",
     "chapter": "정보량·중복도",
-    "kind": "장기기억 역할",
-    "source": "3장 교안 p.6"
+    "statement": "장기기억(Long-Term memory)에 저장된 지식은 인간 정보처리 모형에서 지각(Perception) 단계와는 연결되지 않고 오직 반응 실행(Response execution) 단계에만 영향을 준다.",
+    "answer": false,
+    "explanation": "교안 3 p.6 다이어그램에서 Long-Term memory는 Working memory와 상호작용하며 Perception 및 Decision & response selection 단계에 직접 연결된다.",
+    "source": "3장 교안 p.6",
+    "kind": "장기기억 역할"
   },
   {
     "id": "OX078",
     "chapter": "정보전달·기억·Hick",
-    "kind": "정보전달이론",
-    "source": "3장 교안 p.15"
+    "statement": "정보전달이론(Information Transmission Theory)은 인간을 자극(Input, \\(X\\))과 반응(Output, \\(Y\\)) 사이의 통신 채널(Channel)로 보고 개인의 정보처리 수행도를 정량화한다.",
+    "answer": true,
+    "explanation": "교안 3 p.15: Information transmission theory quantifies the performance of information processing for a person (Input → Human channel → Output).",
+    "source": "3장 교안 p.15",
+    "kind": "정보전달이론"
   },
   {
     "id": "OX079",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Equivocation vs Noise · 기출",
-    "source": "3장 교안 p.15–16"
+    "statement": "정보전달 모델에서 입력 자극 \\(X\\)의 정보 중 출력 반응 \\(Y\\)로 전달되지 못하고 손실된 불확실성(\\(H(X|Y) = H(X) - H(X\\cap Y)\\))을 ‘잡음(Noise, false)’이라 하고, 입력과 무관하게 출력에 끼어든 불확실성(\\(H(Y|X) = H(Y) - H(X\\cap Y)\\))을 ‘모호도(Equivocation, miss)’라 한다.",
+    "answer": false,
+    "explanation": "두 용어가 반대로 바뀌었다! 입력 기준 손실정보 \\(H(X|Y) = H(X) - H(X\\cap Y)\\)가 ‘모호도(Equivocation, miss)’이고, 출력 기준 거짓정보 \\(H(Y|X) = H(Y) - H(X\\cap Y)\\)가 ‘잡음(Noise, false)’이다.",
+    "source": "3장 교안 p.15–16",
+    "kind": "Equivocation vs Noise · 기출"
   },
   {
     "id": "OX080",
     "chapter": "정보전달·기억·Hick",
-    "kind": "전달정보량 공식",
-    "source": "3장 교안 p.16"
+    "statement": "전달정보량(Transmitted information, \\(H(X\\cap Y)\\) 또는 \\(T(X,Y)\\))을 구하는 공식은 \\(H(X) + H(Y) - H(X\\cup Y)\\)이며, 이 값은 클수록 정보처리 수행도가 우수함을 뜻한다(larger the better).",
+    "answer": true,
+    "explanation": "교안 3 p.16: Transmitted information \\(H(X\\cap Y) = H(X) + H(Y) - H(X\\cup Y) \\Rightarrow\\) larger the better.",
+    "source": "3장 교안 p.16",
+    "kind": "전달정보량 공식"
   },
   {
     "id": "OX081",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Equivocation & Noise",
-    "source": "3장 교안 p.16"
+    "statement": "모호도(Equivocation, \\(H(X|Y)\\))와 잡음(Noise, \\(H(Y|X)\\))은 둘 다 값이 작을수록 정보전달 수행도가 우수하다(smaller the better).",
+    "answer": true,
+    "explanation": "교안 3 p.16에서 Equivocation과 Noise는 정보 손실과 오류 성분이므로 smaller the better로 명시되어 있다.",
+    "source": "3장 교안 p.16",
+    "kind": "Equivocation & Noise"
   },
   {
     "id": "OX082",
     "chapter": "정보전달·기억·Hick",
-    "kind": "혼동행렬 계산 · 기출",
-    "source": "3장 교안 p.17–18"
+    "statement": "교안의 16문항 4지선다 시험 예제에서 자극 \\(X \\in \\{1,2,3,4\\}\\)가 각 4회씩 출제되었고 학생의 반응 \\(Y\\) 합계 빈도가 \\((8, 0, 4, 4)\\)일 때, 입력 정보량 \\(H(X) = 2\\text{ bits}\\)이고 출력 정보량 \\(H(Y) = 1.5\\text{ bits}\\)이다.",
+    "answer": true,
+    "explanation": "\\(P(X)=(1/4,1/4,1/4,1/4) \\Rightarrow H(X)=\\log_2 4=2\\text{ bits}\\); \\(P(Y)=(1/2,0,1/4,1/4) \\Rightarrow H(Y)=0.5\\log_2 2 + 2(0.25\\log_2 4)=1.5\\text{ bits}\\)이다.",
+    "source": "3장 교안 p.17–18",
+    "kind": "혼동행렬 계산 · 기출"
   },
   {
     "id": "OX083",
     "chapter": "정보전달·기억·Hick",
-    "kind": "혼동행렬 계산 · 기출",
-    "source": "3장 교안 p.18"
+    "statement": "위 16문항 시험 예제에서 결합확률 \\(p_{ij}\\)가 \\((1,1)=1/4, (2,1)=1/4, (3,3)=1/4, (4,4)=1/4\\)일 때 결합 정보량 \\(H(X\\cup Y) = 2.0\\text{ bits}\\)이며, 따라서 전달정보량 \\(H(X\\cap Y) = 1.5\\text{ bits}\\), 모호도 \\(H(X|Y) = 0.5\\text{ bits}\\), 잡음 \\(H(Y|X) = 0\\text{ bits}\\)이다.",
+    "answer": true,
+    "explanation": "\\(H(X\\cap Y) = 2.0 + 1.5 - 2.0 = 1.5\\text{ bits}\\), \\(H(X|Y) = 2.0 - 1.5 = 0.5\\text{ bits}\\), \\(H(Y|X) = 1.5 - 1.5 = 0\\text{ bits}\\)로 교안 p.18 계산과 정확히 일치한다.",
+    "source": "3장 교안 p.18",
+    "kind": "혼동행렬 계산 · 기출"
   },
   {
     "id": "OX084",
     "chapter": "정보전달·기억·Hick",
-    "kind": "정보전달이론 함정",
-    "source": "3장 교안 p.19"
+    "statement": "정보전달이론의 함정(A Trap)에 따르면, 자극 1에 대해 모두 반응 2를 하고 자극 2에 대해 모두 반응 1을 하여 실제 정답률이 0%인 경우(Imperfect transmission)에는 전달정보량이 0%로 계산된다.",
+    "answer": false,
+    "explanation": "정답을 정반대로 일대일 대응시켜 모두 틀리더라도 확률 분포상 \\(H(X|Y)=0, H(Y|X)=0\\)이 되어 계산된 전달정보량은 완벽히 맞힌 경우와 똑같이 100%로 나오는 함정(Trap)이 존재한다.",
+    "source": "3장 교안 p.19",
+    "kind": "정보전달이론 함정"
   },
   {
     "id": "OX085",
     "chapter": "정보전달·기억·Hick",
-    "kind": "채널 용량",
-    "source": "3장 교안 p.20"
+    "statement": "채널 용량(Channel Capacity)의 단위는 \\(\\text{bits/sec}\\)이며, 입력 정보량 \\(H(X)\\)를 계속 증가시키면 전달정보량 \\(H(X\\cap Y)\\)도 끝없이 선형적으로 증가한다.",
+    "answer": false,
+    "explanation": "입력 정보량이 일정 수준을 넘으면 전달정보량은 더 이상 증가하지 않고 점근값(asymptotic value, 교안 예: 2.8 bits/sec)에서 평평하게 수렴(levels off)한다.",
+    "source": "3장 교안 p.20",
+    "kind": "채널 용량"
   },
   {
     "id": "OX086",
     "chapter": "정보전달·기억·Hick",
-    "kind": "마법의 숫자 7±2",
-    "source": "3장 교안 p.21"
+    "statement": "G. A. Miller가 제시한 마법의 숫자(The Magical Number)는 \\(7 \\pm 2\\) (즉 5~9개)로, 인간이 한 번에 구별·처리할 수 있는 단일 차원 자극의 대략적인 한계를 나타낸다.",
+    "answer": true,
+    "explanation": "교안 3 p.21: The magical number \\(7 \\pm 2\\) (G. A. Miller) — 인간은 한 번에 약 7개의 서로 다른 자극을 처리할 수 있다.",
+    "source": "3장 교안 p.21",
+    "kind": "마법의 숫자 7±2"
   },
   {
     "id": "OX087",
     "chapter": "정보전달·기억·Hick",
-    "kind": "자극 차원 식별",
-    "source": "3장 교안 p.21"
+    "statement": "교안의 단일 차원 자극 식별 표에서 순음(Pure tone), 음량(Loudness), 물체 크기(Size of viewed objects), 밝기(Brightness)는 모두 한 번에 평균 15개 이상(4 bits 이상) 정확히 식별할 수 있다.",
+    "answer": false,
+    "explanation": "교안 p.21 표에서 단일 차원 식별 개수는 순음 5개(2.3 bits), 음량 4~5개(2~2.3 bits), 크기 5~7개(2.3~2.8 bits), 밝기 3~5개(1.7~2.3 bits)로 모두 \\(7\\pm 2\\) 이하이다.",
+    "source": "3장 교안 p.21",
+    "kind": "자극 차원 식별"
   },
   {
     "id": "OX088",
     "chapter": "정보전달·기억·Hick",
-    "kind": "시연(Rehearsal)",
-    "source": "3장 교안 p.25"
+    "statement": "작업기억 지속시간 실험(Experiment on memory duration)에서 숫자를 거꾸로 세게 하여 시연(rehearsal)을 못 하게 막으면(w/o rehearsal), 기억 회상률(% Recall)은 약 15초 만에 급격히 떨어진다.",
+    "answer": true,
+    "explanation": "교안 3 p.25 하단 그래프에서 rehearsal을 하면 기억이 유지되지만 w/o rehearsal 조건에서는 5~15초 사이에 회상률이 급감한다.",
+    "source": "3장 교안 p.25",
+    "kind": "시연(Rehearsal)"
   },
   {
     "id": "OX089",
     "chapter": "정보전달·기억·Hick",
-    "kind": "절대 vs 상대 판단 · 함정",
-    "source": "3장 교안 p.26–28"
+    "statement": "채널 용량(정보처리 성능)을 높이기 위한 설계 전략으로는 상대 판단(Relative judgment)보다 기억 속 기준과 단독 비교하는 절대 판단(Absolute judgment)을 사용하는 것이 훨씬 효과적이다.",
+    "answer": false,
+    "explanation": "반대이다! 기억 속 기준과 단독 비교하는 절대 판단(Absolute judgment) 대신 두 자극을 나란히 두고 비교하는 상대 판단(Relative judgment)을 사용해야 채널 용량이 향상된다(교안 3 p.26).",
+    "source": "3장 교안 p.26–28",
+    "kind": "절대 vs 상대 판단 · 함정"
   },
   {
     "id": "OX090",
     "chapter": "정보전달·기억·Hick",
-    "kind": "다차원 자극",
-    "source": "3장 교안 p.26"
+    "statement": "자극을 제시할 때 위치(Location)라는 1차원만 사용하는 것보다 위치와 색상(Location + Color)처럼 자극의 차원 수(number of stimulus dimensions)를 늘려 다차원으로 부호화하면 채널 용량을 향상시킬 수 있다.",
+    "answer": true,
+    "explanation": "교안 3 p.26의 두 번째 채널 용량 향상 전략: Increase the number of stimulus dimensions (One dimension vs. Two dimensions).",
+    "source": "3장 교안 p.26",
+    "kind": "다차원 자극"
   },
   {
     "id": "OX091",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Chunking",
-    "source": "3장 교안 p.29"
+    "statement": "청킹(Chunking)은 개별 정보들을 의미 있는 단위로 묶고(grouping or parsing) 뇌 속의 기존 장기기억 지식과 연결하여 작업기억을 효율적으로 사용하는 전략이다.",
+    "answer": true,
+    "explanation": "교안 3 p.29: Chunking = grouping(or parsing) information and linking with the knowledge that we knew (예: +82-10-3032-9381).",
+    "source": "3장 교안 p.29",
+    "kind": "Chunking"
   },
   {
     "id": "OX092",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Sternberg · 기출",
-    "source": "3장 교안 p.30–31"
+    "statement": "Sternberg의 고전 기억탐색 실험(Sternberg’s Classical Test)에서 기억집합의 크기(PSS: Positive Set Size)가 커져도 YES/NO 판단 반응시간(RT)은 전혀 변하지 않으므로, 인간은 모든 항목을 동시에 처리하는 병렬 처리자(Parallel processor)이다.",
+    "answer": false,
+    "explanation": "교안 3 p.31: 기억집합 크기(PSS)가 증가할수록 반응시간(RT)이 선형적으로 증가하므로 인간은 직렬 처리자(Serial processor)이다!",
+    "source": "3장 교안 p.30–31",
+    "kind": "Sternberg · 기출"
   },
   {
     "id": "OX093",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Sternberg 탐색 방식",
-    "source": "3장 교안 p.31"
+    "statement": "Sternberg 기억탐색 과제에서 목표 항목을 찾는 즉시 탐색을 멈추는 방식을 ‘자기종료 탐색(Self-terminating search)’이라 하고, 목표를 찾더라도 기억집합의 끝까지 모두 비교한 뒤 응답하는 방식을 ‘전수 탐색(Exhaustive search)’이라 한다.",
+    "answer": true,
+    "explanation": "교안 3 p.31에서 Search 방식으로 self-terminating과 exhaustive 두 가지를 구분한다.",
+    "source": "3장 교안 p.31",
+    "kind": "Sternberg 탐색 방식"
   },
   {
     "id": "OX094",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Sternberg 그래프",
-    "source": "3장 교안 p.31"
+    "statement": "교안의 Sternberg 실험 결과 그래프에서 검사 숫자(Probe)가 기억집합에 없었을 때의 반응(NO, exhaustive)은 집합에 있었을 때의 반응(YES, self-terminating)보다 망설임과 전수 탐색으로 인해 반응시간이 더 길다(NO > YES).",
+    "answer": true,
+    "explanation": "교안 3 p.31: NO > YES (hesitation and exhaustive search), 그리고 Probe 부호화 및 결정 실행에 일정한 상수 시간(constant time)이 소요된다.",
+    "source": "3장 교안 p.31",
+    "kind": "Sternberg 그래프"
   },
   {
     "id": "OX095",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Donders A/B/C",
-    "source": "3장 교안 p.32"
+    "statement": "Donders의 반응시간 분류에서 ‘Donders’ A(단순반응시간, SRT)’는 1개의 자극에 1개의 반응(1S, 1R)을 하는 과업으로, 자극 식별(Stimulus Identification)과 반응 선택(Response Selection) 과정이 둘 다 포함되지 않는다(N, N).",
+    "answer": true,
+    "explanation": "교안 3 p.32 표: Donders’ A(1S, 1R, 육상 출발)는 신경 전달(Nerve Conduction)만 포함하며 Stimulus Identification = N, Response Selection = N이다.",
+    "source": "3장 교안 p.32",
+    "kind": "Donders A/B/C"
   },
   {
     "id": "OX096",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Donders A/B/C",
-    "source": "3장 교안 p.32"
+    "statement": "Donders의 반응시간 분류에서 ‘Donders’ B(선택반응시간, CRT)’는 여러 자극에 각각 다른 반응(MS-MR)을 하는 과업으로 자극 식별(Y)과 반응 선택(Y)이 모두 포함되며, ‘Donders’ C(변별반응시간)’는 여러 자극 중 하나에만 반응(MS-1R)하여 자극 식별(Y)만 포함되고 반응 선택(N)은 포함되지 않는다.",
+    "answer": true,
+    "explanation": "교안 3 p.32 표와 다이어그램(A=SRT, C=A+식별, B=C+선택)의 핵심 구분이다.",
+    "source": "3장 교안 p.32",
+    "kind": "Donders A/B/C"
   },
   {
     "id": "OX097",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Donders 차감법 · 함정",
-    "source": "3장 교안 p.32"
+    "statement": "Donders의 차감법에서 선택반응시간(B)에서 변별반응시간(C)을 뺀 값(\\(B - C\\))은 ‘자극 식별(Mental Identification)’에 걸리는 순수 시간을 의미한다.",
+    "answer": false,
+    "explanation": "자극 식별 시간은 \\(C - A\\)이고, \\(B - C\\)는 ‘반응 선택(Mental Selection / Response Selection)’에 걸리는 시간이다.",
+    "source": "3장 교안 p.32",
+    "kind": "Donders 차감법 · 함정"
   },
   {
     "id": "OX098",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Hick's Law · 기출",
-    "source": "3장 교안 p.34–35"
+    "statement": "힉의 법칙(Hick’s Law)은 선택반응시간(CRT)이 자극의 정보량(또는 전달정보량 \\(H_T\\))에 선형적으로 비례한다는 법칙으로, 수식은 \\(\\mathrm{RT} = a + bH\\)이다.",
+    "answer": true,
+    "explanation": "교안 3 p.34–35: Amount of information \\(\\propto\\) RT, \\(\\mathrm{RT} = a + bH_T\\).",
+    "source": "3장 교안 p.34–35",
+    "kind": "Hick's Law · 기출"
   },
   {
     "id": "OX099",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Hick 기울기와 채널용량",
-    "source": "3장 교안 p.36"
+    "statement": "Hick의 법칙 \\(\\mathrm{RT} = a + bH\\)에서 기울기 \\(b\\)의 단위는 \\(\\text{ms/bit}\\)이며, 만약 \\(b = 150\\text{ ms/bit}\\)라면 눈-손 협응 과업(E-H task)의 채널 용량인 \\(1/b\\)는 약 \\(6.67\\text{ bits/sec}\\)이다.",
+    "answer": true,
+    "explanation": "\\(b = 150\\text{ ms/bit} = 0.15\\text{ sec/bit}\\)이므로 역수 \\(1/b = 1 / 0.15 \\approx 6.67\\text{ bits/sec}\\)이다(교안 3 p.36).",
+    "source": "3장 교안 p.36",
+    "kind": "Hick 기울기와 채널용량"
   },
   {
     "id": "OX100",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Hick 수치 예시",
-    "source": "3장 교안 p.36"
+    "statement": "교안에서 제시된 언어 처리의 초당 정보량 예시에서 말하기(spoken language, 약 10 bits/sec)가 글 읽기(written language, 약 50 bits/sec)보다 정보 처리 속도가 5배 더 빠르다.",
+    "answer": false,
+    "explanation": "교안 3 p.36에서 spoken language는 약 10 bits/sec, written language는 약 50 bits/sec로 글 읽기가 더 높은 수치를 보인다.",
+    "source": "3장 교안 p.36",
+    "kind": "Hick 수치 예시"
   },
   {
     "id": "OX101",
     "chapter": "정보전달·기억·Hick",
-    "kind": "생리적 반응시간",
-    "source": "3장 교안 p.36"
+    "statement": "교안에서 단순반응시간(약 150~180 ms)의 생리적 단계별 소요 시간 중 가장 큰 비중을 차지하는 단계는 약 90 ms가 소요되는 중앙 처리(central processing) 단계이다.",
+    "answer": true,
+    "explanation": "눈→뇌(10~30 ms) + 중앙처리(90 ms) + 뇌→근육(20 ms) + 근수축(30 ms) = 150~180 ms로 중앙처리가 가장 길다.",
+    "source": "3장 교안 p.36",
+    "kind": "생리적 반응시간"
   },
   {
     "id": "OX102",
     "chapter": "정보전달·기억·Hick",
-    "kind": "RT 증감 요인",
-    "source": "3장 교안 p.36"
+    "statement": "반응시간(RT)은 나이가 많을수록(↑age), 자극의 식별성이 낮을수록(↓discriminability) 증가하며, 반대로 연습량이 많을수록(↑practice), 사전 경고 신호(↑warning)가 주어질수록 약 20% 감소한다.",
+    "answer": true,
+    "explanation": "교안 3 p.36 하단 요약 식과 정확히 일치한다.",
+    "source": "3장 교안 p.36",
+    "kind": "RT 증감 요인"
   },
   {
     "id": "OX103",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Hick 절편 요인 · 기출",
-    "source": "3장 교안 p.37"
+    "statement": "Hick의 법칙 \\(\\mathrm{RT} = a + bH\\)에서 감각 자극 양식(S Modality)에 따른 절편 \\(a\\)의 반응 속도는 시각(Vision)이 가장 빠르고, 그다음이 청각(Hearing), 촉각/진동(Touch) 순서이다.",
+    "answer": false,
+    "explanation": "교안 3 p.37에서 자극 양식(S)의 빠른 순서는 ‘촉각/진동(Touch/vib) > 청각(Hearing) > 시각(Vision) > 온각(Thermal) > 화학감각(Chemical)’으로 촉각과 청각이 시각보다 빠르다!",
+    "source": "3장 교안 p.37",
+    "kind": "Hick 절편 요인 · 기출"
   },
   {
     "id": "OX104",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Hick 절편 요인",
-    "source": "3장 교안 p.37"
+    "statement": "Hick의 법칙에서 반응 기관 양식(R Modality)에 따른 반응 속도는 눈(Eye)이 가장 빠르고, 손(Hand), 발(Foot) 순서로 느려진다.",
+    "answer": true,
+    "explanation": "교안 3 p.37 R Modality: Eye(가장 빠름) > Hand > Foot(가장 느림).",
+    "source": "3장 교안 p.37",
+    "kind": "Hick 절편 요인"
   },
   {
     "id": "OX105",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Hick 절편 요인",
-    "source": "3장 교안 p.37"
+    "statement": "Hick의 법칙에서 시간적 불확실성(Temporal uncertainty)이 커서 전혀 예상하지 못한 사건(Completely unexpected event)이 발생하면 절편 \\(a\\)는 약 \\(750\\text{ ms}\\)까지 크게 증가한다.",
+    "answer": true,
+    "explanation": "교안 3 p.37 Expectancy 항목에 Completely unexpected event: \\(a = 750\\text{ ms}\\)로 명시되어 있다.",
+    "source": "3장 교안 p.37",
+    "kind": "Hick 절편 요인"
   },
   {
     "id": "OX106",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Hick 기울기 요인 · 기출",
-    "source": "3장 교안 p.37"
+    "statement": "Hick의 법칙 \\(\\mathrm{RT} = a + bH\\)에서 기울기 \\(b\\)에 영향을 미치는 3가지 주요 요인은 자극-반응 양립성(S-R Compatibility), 학습(Learning), 연령(Age)이다.",
+    "answer": true,
+    "explanation": "교안 3 p.37 하단에 기울기 \\(b\\) 결정 요인으로 1) S-R Compatibility, 2) Learning, 3) Age가 명시되어 있다.",
+    "source": "3장 교안 p.37",
+    "kind": "Hick 기울기 요인 · 기출"
   },
   {
     "id": "OX107",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Hick 기울기 해석",
-    "source": "3장 교안 p.37 · 정보처리 전사3"
+    "statement": "자극-반응 양립성(S-R Compatibility)이 매우 높고 충분히 학습(Learning)된 과업일수록 Hick 법칙의 기울기 \\(b\\)가 가팔라져서 선택지 수가 늘어날 때 반응시간이 급격히 증가한다.",
+    "answer": false,
+    "explanation": "양립성이 높고 숙련될수록 정보 1 bit당 추가 처리 시간인 기울기 \\(b\\)가 작아져(완만해져), 선택지가 늘어나도 반응시간 증가 폭이 작다.",
+    "source": "3장 교안 p.37 · 정보처리 전사3",
+    "kind": "Hick 기울기 해석"
   },
   {
     "id": "OX108",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Hick 계산",
-    "source": "3장 교안 p.34–36"
+    "statement": "Hick의 법칙에서 등확률 선택지가 2개(\\(N=2\\))에서 8개(\\(N=8\\))로 늘어나면 정보량 \\(H\\)는 \\(1\\text{ bit}\\)에서 \\(3\\text{ bits}\\)로 \\(2\\text{ bits}\\) 증가하므로, \\(b=150\\text{ ms/bit}\\)일 때 반응시간(RT)은 \\(300\\text{ ms}\\) 증가한다.",
+    "answer": true,
+    "explanation": "\\(\\Delta H = \\log_2 8 - \\log_2 2 = 3 - 1 = 2\\text{ bits}\\)이므로 \\(\\Delta\\mathrm{RT} = 150 \\times 2 = 300\\text{ ms}\\)이다.",
+    "source": "3장 교안 p.34–36",
+    "kind": "Hick 계산"
   },
   {
     "id": "OX109",
     "chapter": "정보전달·기억·Hick",
-    "kind": "Hick UI 사례",
-    "source": "3장 교안 p.39–41 · 정보처리 전사3"
+    "statement": "1998년 초기 Google 홈페이지에 비해 현대 Google 검색 화면이 불필요한 링크와 버튼들을 대폭 줄이고 단순한 검색창 위주로 바뀐 것은 선택지 수(\\(N\\))를 줄여 사용자의 반응·선택 시간을 단축하려는 Hick의 법칙 적용 사례이다.",
+    "answer": true,
+    "explanation": "교안 3 p.39–41 및 전사 3에서 설명한 대표적인 Hick’s Law UI 디자인 적용 사례이다.",
+    "source": "3장 교안 p.39–41 · 정보처리 전사3",
+    "kind": "Hick UI 사례"
   },
   {
     "id": "OX110",
     "chapter": "정보전달·기억·Hick",
-    "kind": "전달정보량 성질",
-    "source": "3장 교안 p.16–18"
+    "statement": "혼동행렬에서 모든 자극 \\(X\\)에 대해 출력 반응 \\(Y\\)가 오직 한 가지 값으로만 고정되어 나타난다면, 출력 정보량 \\(H(Y)=0\\)이 되어 전달정보량 \\(H(X\\cap Y)\\)도 \\(0\\text{ bit}\\)가 된다.",
+    "answer": true,
+    "explanation": "반응이 하나로만 고정되면 \\(P(Y_1)=1 \\Rightarrow H(Y)=0\\text{ bit}\\)이고, \\(H(X\\cup Y)=H(X)\\)가 되어 전달정보량 \\(H(X\\cap Y) = H(X)+0-H(X) = 0\\text{ bit}\\)이다.",
+    "source": "3장 교안 p.16–18",
+    "kind": "전달정보량 성질"
   },
   {
     "id": "OX111",
     "chapter": "정보전달·기억·Hick",
-    "kind": "엔트로피 부등식",
-    "source": "3장 교안 p.16"
+    "statement": "결합 엔트로피 \\(H(X\\cup Y)\\)는 언제나 개별 엔트로피의 합 \\(H(X) + H(Y)\\)보다 크다.",
+    "answer": false,
+    "explanation": "\\(H(X\\cap Y) = H(X) + H(Y) - H(X\\cup Y) \\ge 0\\)이므로, 결합 엔트로피 \\(H(X\\cup Y)\\)는 항상 \\(H(X) + H(Y)\\) 이하(\\(\\le\\))이다(두 변수가 독립일 때만 등호 성립).",
+    "source": "3장 교안 p.16",
+    "kind": "엔트로피 부등식"
   },
   {
     "id": "OX112",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Fitts' Law · 기출",
-    "source": "3장 교안 p.42–44"
+    "statement": "피츠의 법칙(Fitts’ Law, 1954)은 스타일러스(stylus)를 이용한 연속 탭핑 과업(Serial tapping task)에서 출발하여, 목표까지의 거리(\\(A\\) 또는 \\(D\\))와 목표의 너비(\\(W\\))가 운동시간(MT: Movement Time)에 미치는 속도-정확성 교환 관계를 설명한다.",
+    "answer": true,
+    "explanation": "교안 3 p.42–44: Paul Fitts(1954)의 포인팅/탭핑 연구로 거리가 멀수록, 너비가 좁을수록 MT가 증가함을 정보량(ID) 관점에서 정식화했다.",
+    "source": "3장 교안 p.42–44",
+    "kind": "Fitts' Law · 기출"
   },
   {
     "id": "OX113",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Fitts' Law · 기출",
-    "source": "3장 교안 p.42, 44"
+    "statement": "Fitts의 법칙에 따르면 표적의 크기가 작고 멀리 떨어져 있을수록 난이도 지수(ID: Index of Difficulty)가 낮아져서 더 빠르게 클릭할 수 있다.",
+    "answer": false,
+    "explanation": "표적이 크고 가까울수록(larger and closer) 맞히기 쉽고(ID 감소, MT 단축), 작고 멀수록(smaller and further away) ID와 MT가 증가한다(교안 p.44).",
+    "source": "3장 교안 p.42, 44",
+    "kind": "Fitts' Law · 기출"
   },
   {
     "id": "OX114",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Fitts 원형 공식",
-    "source": "3장 교안 p.43"
+    "statement": "1954년 Fitts가 제안한 원래의 난이도 지수(ID) 공식은 이동 진폭 \\(A\\)와 표적 너비 \\(W\\)에 대해 \\(\\mathrm{ID} = \\log_2\\left(\\dfrac{2A}{W}\\right)\\)이다.",
+    "answer": true,
+    "explanation": "교안 3 p.43: \\(\\mathrm{ID} = \\log_2\\left(\\dfrac{A}{W/2}\\right) = \\log_2\\left(\\dfrac{2A}{W}\\right)\\).",
+    "source": "3장 교안 p.43",
+    "kind": "Fitts 원형 공식"
   },
   {
     "id": "OX115",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Fitts ISO 공식 · 함정",
-    "source": "3장 교안 p.46–47"
+    "statement": "국제표준(ISO 9241-9)으로 채택된 Fitts 법칙의 난이도 지수(Shannon 형태) 공식은 거리 \\(D\\)와 너비 \\(W\\)에 대해 \\(\\mathrm{ID} = \\log_2\\left(\\dfrac{W}{D} + 1\\right)\\)이다.",
+    "answer": false,
+    "explanation": "분자와 분모가 바뀌었다! 올바른 ISO 9241-9 공식은 거리 \\(D\\)를 너비 \\(W\\)로 나눈 \\(\\mathrm{ID} = \\log_2\\left(\\dfrac{D}{W} + 1\\right)\\)이다.",
+    "source": "3장 교안 p.46–47",
+    "kind": "Fitts ISO 공식 · 함정"
   },
   {
     "id": "OX116",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Fitts 계산",
-    "source": "3장 교안 p.47"
+    "statement": "Fitts 법칙 \\(\\mathrm{MT} = a + b\\cdot\\mathrm{ID}\\) (단, \\(\\mathrm{ID} = \\log_2(D/W + 1)\\), \\(a=50\\text{ ms}, b=150\\text{ ms/bit}\\))에서 거리 \\(D=80\\), 너비 \\(W=20\\)인 표적의 난이도 지수 \\(\\mathrm{ID}\\)는 \\(\\log_2 5 \\approx 2.3219\\text{ bits}\\)이고 예측 운동시간 \\(\\mathrm{MT}\\)는 약 \\(398.29\\text{ ms}\\)이다.",
+    "answer": true,
+    "explanation": "\\(D/W + 1 = 80/20 + 1 = 5 \\Rightarrow \\mathrm{ID} = \\log_2 5 \\approx 2.3219\\text{ bits} \\Rightarrow \\mathrm{MT} = 50 + 150(2.3219) \\approx 398.29\\text{ ms}\\) (교안 3 p.47 예제 1).",
+    "source": "3장 교안 p.47",
+    "kind": "Fitts 계산"
   },
   {
     "id": "OX117",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Fitts 계산",
-    "source": "3장 교안 p.47"
+    "statement": "위와 동일한 조건(\\(a=50\\text{ ms}, b=150\\text{ ms/bit}\\), ISO 공식)에서 거리 \\(D=100\\), 너비 \\(W=10\\)인 표적의 난이도 지수 \\(\\mathrm{ID}\\)는 \\(\\log_2 11 \\approx 3.4594\\text{ bits}\\)이고 예측 운동시간 \\(\\mathrm{MT}\\)는 약 \\(568.91\\text{ ms}\\)이다.",
+    "answer": true,
+    "explanation": "\\(D/W + 1 = 100/10 + 1 = 11 \\Rightarrow \\mathrm{ID} = \\log_2 11 \\approx 3.4594\\text{ bits} \\Rightarrow \\mathrm{MT} = 50 + 150(3.4594) \\approx 568.91\\text{ ms}\\) (교안 3 p.47 예제 2).",
+    "source": "3장 교안 p.47",
+    "kind": "Fitts 계산"
   },
   {
     "id": "OX118",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Fitts 비율 불변성",
-    "source": "3장 교안 p.46–47"
+    "statement": "Fitts의 ISO 공식 \\(\\mathrm{ID} = \\log_2(D/W + 1)\\)에서 표적까지의 거리 \\(D\\)와 표적의 너비 \\(W\\)를 둘 다 똑같이 2배로 늘리면, 비율 \\(D/W\\)가 그대로 유지되므로 난이도 지수 \\(\\mathrm{ID}\\)와 운동시간 \\(\\mathrm{MT}\\)는 변하지 않는다.",
+    "answer": true,
+    "explanation": "\\(\\dfrac{2D}{2W} = \\dfrac{D}{W}\\)이므로 \\(\\mathrm{ID} = \\log_2(D/W + 1)\\)은 동일하게 유지된다.",
+    "source": "3장 교안 p.46–47",
+    "kind": "Fitts 비율 불변성"
   },
   {
     "id": "OX119",
     "chapter": "Fitts·운동·양립성",
-    "kind": "신체 부위별 기울기 · 기출",
-    "source": "3장 교안 p.48"
+    "statement": "교안의 신체 부위별 Fitts 법칙 기울기 비교에서 팔뚝(forearm, \\(105\\text{ ms/bit}\\))이 손목(wrist, \\(43\\text{ ms/bit}\\))이나 손가락(finger, \\(26\\text{ ms/bit}\\))보다 기울기가 크므로 팔뚝을 쓰는 움직임이 가장 빠르다.",
+    "answer": false,
+    "explanation": "기울기(\\(\\text{ms/bit}\\))는 1 bit당 소요되는 시간이므로 값이 작을수록 빠르다! 관절(joints)이 많이 관여할수록 감각 정보 처리가 많아져 느려지므로 손가락(26 ms/bit)이 가장 빠르고 팔뚝(105 ms/bit)이 가장 느리다.",
+    "source": "3장 교안 p.48",
+    "kind": "신체 부위별 기울기 · 기출"
   },
   {
     "id": "OX120",
     "chapter": "Fitts·운동·양립성",
-    "kind": "관절 수와 MT",
-    "source": "3장 교안 p.48"
+    "statement": "신체 운동에서 관여하는 관절 수가 많을수록 더 많은 감각 정보(sensory information)와 정보 처리가 필요하므로 운동시간(MT)이 증가한다.",
+    "answer": true,
+    "explanation": "교안 3 p.48: More joints need more sensory information → More processing ⇒ increase RT(MT).",
+    "source": "3장 교안 p.48",
+    "kind": "관절 수와 MT"
   },
   {
     "id": "OX121",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Positioning vs Ballistic",
-    "source": "3장 교안 p.50"
+    "statement": "운동 제어(Motor Control)에서 위치 조정 운동(Positioning movement)은 시각 등 감각 피드백을 실시간으로 받아 오차를 교정하는 폐회로 제어(Closed loop with feedback)에 해당한다.",
+    "answer": true,
+    "explanation": "교안 3 p.50: Positioning movement = Closed loop with feedback (accurate controlled movements as a person reaches for something).",
+    "source": "3장 교안 p.50",
+    "kind": "Positioning vs Ballistic"
   },
   {
     "id": "OX122",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Positioning vs Ballistic",
-    "source": "3장 교안 p.50"
+    "statement": "탄도 운동(Ballistic movement)은 움직이는 도중에 감각 피드백을 받지 않고 미리 계획된 대로 빠르게 실행되는 개회로 제어(Open loop) 운동이다.",
+    "answer": true,
+    "explanation": "교안 3 p.50: Ballistic movement = Open Loop (예: 공 던지기, 포인팅 초반의 빠른 이동 구간 Primary travel).",
+    "source": "3장 교안 p.50",
+    "kind": "Positioning vs Ballistic"
   },
   {
     "id": "OX123",
     "chapter": "Fitts·운동·양립성",
-    "kind": "2단계 운동 제어",
-    "source": "3장 교안 p.50 · 정보처리 전사4"
+    "statement": "마우스로 멀리 있는 작은 아이콘을 클릭할 때, 처음 목표 근처까지 빠르게 이동하는 구간(Primary travel)은 주로 개회로 탄도 운동(Ballistic)으로 이루어지고, 목표 바로 앞에서 정밀하게 위치를 맞추는 구간(Secondary travel)은 피드백을 쓰는 폐회로 위치 조정 운동(Positioning)으로 이루어진다.",
+    "answer": true,
+    "explanation": "정보처리 전사 4 및 교안 p.50 그래프에서 설명한 실제 포인팅 동작의 2단계 제어 구조이다.",
+    "source": "3장 교안 p.50 · 정보처리 전사4",
+    "kind": "2단계 운동 제어"
   },
   {
     "id": "OX124",
     "chapter": "Fitts·운동·양립성",
-    "kind": "연습 효과 · 함정",
-    "source": "3장 교안 p.51"
+    "statement": "어떤 동작을 반복 연습(Practice)하여 학습이 많이 이루어질수록(More learning), 운동 제어 방식은 점차 개회로(Open loop)에서 폐회로(Closed loop)로 바뀐다.",
+    "answer": false,
+    "explanation": "반대이다! 처음 서툴 때는 피드백을 확인하는 Closed loop에 의존하다가, 반복 연습으로 숙련되면 피드백 없이도 빠르게 수행하는 Open loop 비중이 커진다(Closed → Open loop, 교안 p.51).",
+    "source": "3장 교안 p.51",
+    "kind": "연습 효과 · 함정"
   },
   {
     "id": "OX125",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Range Effect · 기출",
-    "source": "3장 교안 p.51"
+    "statement": "운동 제어의 범위 효과(Range Effect)에 따르면, 짧은 거리(short distance)를 이동할 때는 목표에 못 미치는 미달(Undershoot)이 발생하고, 긴 거리(long distance)를 이동할 때는 목표를 지나치는 과도 도달(Overshoot)이 발생한다.",
+    "answer": false,
+    "explanation": "정반대로 바뀌었다! 교안 3 p.51에서 Range Effect는 ‘짧은 거리는 지나침(Overshoot short distance)’, ‘긴 거리는 못 미침(Undershoot long distance)’이다(시험 T/F 최빈출 함정!).",
+    "source": "3장 교안 p.51",
+    "kind": "Range Effect · 기출"
   },
   {
     "id": "OX126",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Range Effect · 기출",
-    "source": "3장 교안 p.51"
+    "statement": "운동 제어의 범위 효과(Range Effect)에서 짧은 거리는 과도 도달(Overshoot short distance)하는 경향이 있고, 긴 거리는 미달(Undershoot long distance)하는 경향이 있다.",
+    "answer": true,
+    "explanation": "교안 3 p.51 원문: Range Effect = Overshoot short distance / Undershoot long distance.",
+    "source": "3장 교안 p.51",
+    "kind": "Range Effect · 기출"
   },
   {
     "id": "OX127",
     "chapter": "Fitts·운동·양립성",
-    "kind": "VR 운동제어 사례",
-    "source": "3장 교안 p.53–56"
+    "statement": "교안의 VR 손가락 선택 실험에서 시각적 현저성에 기반해 빨간 버튼을 바로 누르는 과업(Task 1: Stimulus-based selection)보다 중국어 지시문을 읽고 기능 버튼을 찾아 누르는 과업(Task 2: Goal-based selection)에서 속도 곡선의 두 번째 정점(second peak, 위치 재조정)이 더 늦고 뚜렷하게 나타난다.",
+    "answer": true,
+    "explanation": "교안 3 p.53–56 및 전사 4에서 설명한 Task 1(자극 기반) vs Task 2(목표 기반) 속도 프로파일 비교 결과이다.",
+    "source": "3장 교안 p.53–56",
+    "kind": "VR 운동제어 사례"
   },
   {
     "id": "OX128",
     "chapter": "Fitts·운동·양립성",
-    "kind": "양립성 정의",
-    "source": "3장 교안 p.57"
+    "statement": "양립성(Compatibility)이란 제어장치(Control)와 표시장치(Display)의 관계가 사용자의 기대(user expectations)와 일치하는 정도를 말한다.",
+    "answer": true,
+    "explanation": "교안 3 p.57: Compatibility is the extent of consistent with user expectations (called population stereotype or affordance).",
+    "source": "3장 교안 p.57",
+    "kind": "양립성 정의"
   },
   {
     "id": "OX129",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Population stereotype & Affordance",
-    "source": "3장 교안 p.57"
+    "statement": "제어-표시 관계에 대해 특정 인구 집단의 사람들이 공통적으로 가지고 있는 기대를 ‘집단 고정관념(Population stereotype)’이라 하고, 사물이 사용자로 하여금 직관적으로 특정 행동을 하도록 유도하는 성질을 ‘행동유도성(Affordance)’이라 한다.",
+    "answer": true,
+    "explanation": "교안 3 p.57의 Population stereotype과 Affordance 영문 정의와 정확히 일치한다(주관식 단답형 핵심!).",
+    "source": "3장 교안 p.57",
+    "kind": "Population stereotype & Affordance"
   },
   {
     "id": "OX130",
     "chapter": "Fitts·운동·양립성",
-    "kind": "양립성 이점",
-    "source": "3장 교안 p.57"
+    "statement": "양립성이 높은 설계(Compatible design)의 4가지 이점은 더 빠른 학습(Faster learning), 더 적은 오류(Fewer errors), 더 빠른 반응시간(Faster reaction time), 더 높은 사용자 만족도(Higher user satisfaction)이다.",
+    "answer": true,
+    "explanation": "교안 3 p.57 Benefits of compatible design 4가지 항목이다.",
+    "source": "3장 교안 p.57",
+    "kind": "양립성 이점"
   },
   {
     "id": "OX131",
     "chapter": "Fitts·운동·양립성",
-    "kind": "양립성 4분류 · 함정",
-    "source": "3장 교안 p.58"
+    "statement": "가스레인지의 4개 화구 배치(2×2 격자)와 4개 조절 노브(손잡이)의 물리적 공간 배치를 일치시키는 것은 ‘개념 양립성(Conceptual compatibility)’을 개선한 사례이다.",
+    "answer": false,
+    "explanation": "물리적 제어장치와 표시장치의 공간적 배열(physical control-display arrangement)을 일치시키는 것은 ‘공간 양립성(Spatial compatibility)’이다(교안 3 p.58).",
+    "source": "3장 교안 p.58",
+    "kind": "양립성 4분류 · 함정"
   },
   {
     "id": "OX132",
     "chapter": "Fitts·운동·양립성",
-    "kind": "운동 양립성",
-    "source": "3장 교안 p.59"
+    "statement": "조절 다이얼(control)을 오른쪽으로 돌릴 때 표시창(display)의 눈금 바늘도 오른쪽으로 움직이도록 일치시키는 것은 ‘운동 양립성(Movement compatibility)’에 해당한다.",
+    "answer": true,
+    "explanation": "교안 3 p.59: Movement compatibility is degree to which control movement corresponds with display movement.",
+    "source": "3장 교안 p.59",
+    "kind": "운동 양립성"
   },
   {
     "id": "OX133",
     "chapter": "Fitts·운동·양립성",
-    "kind": "개념 양립성",
-    "source": "3장 교안 p.60"
+    "statement": "온수 수도꼭지에 빨간색(hot, danger), 냉수 수도꼭지에 파란색(cold, normal) 코드를 부여하여 사람들의 개념적 연상과 일치시키는 것은 ‘개념 양립성(Conceptual compatibility)’이다.",
+    "answer": true,
+    "explanation": "교안 3 p.60: Conceptual compatibility is degree to which codes and symbols correspond with conceptual associations.",
+    "source": "3장 교안 p.60",
+    "kind": "개념 양립성"
   },
   {
     "id": "OX134",
     "chapter": "Fitts·운동·양립성",
-    "kind": "양식 양립성 · 기출",
-    "source": "3장 교안 p.61"
+    "statement": "양식 양립성(Modality compatibility) 예제에서 누군가 음성으로 “왼손(a left hand)”이라고 말할 때, 피험자가 입으로 “왼손”이라고 따라 말하는 것보다 실제로 왼손을 드는 반응이 양식이 일치하여 반응 속도가 더 빠르다.",
+    "answer": false,
+    "explanation": "음성 지시(verbal display)에 대해 실제로 왼손을 드는 것(spatial control)은 감각·반응 양식이 불일치(Modality incompatibility)하여 반응이 느리고(slow response), 똑같이 음성으로 “왼손”이라고 말하는 것(verbal control = verbal display)이 양식이 일치(Modality compatibility)하여 반응이 빠르다(fast response, 교안 p.61).",
+    "source": "3장 교안 p.61",
+    "kind": "양식 양립성 · 기출"
   },
   {
     "id": "OX135",
     "chapter": "Fitts·운동·양립성",
-    "kind": "양립성 문화 차이",
-    "source": "3장 교안 p.62"
+    "statement": "색상에 대한 개념 양립성은 전 세계 모든 문화권에서 절대적으로 동일하므로, 빨간색은 한국과 중국 모두에서 이름이나 간판을 쓸 때 불길한 색으로 기피된다.",
+    "answer": false,
+    "explanation": "교안 3 p.62 문화적 차이(Cultural difference): 한국에서는 죽은 사람 이름에 빨간색을 써서 기피하지만, 중국에서는 빨간색이 행운(good fortune)을 가져온다고 믿어 이름과 간판에 선호한다.",
+    "source": "3장 교안 p.62",
+    "kind": "양립성 문화 차이"
   },
   {
     "id": "OX136",
     "chapter": "Fitts·운동·양립성",
-    "kind": "양립성 경험 차이",
-    "source": "3장 교안 p.62"
+    "statement": "양립성의 경험적 차이(Empirical difference) 사례로, 일반인들은 빨간색을 위험·나쁨으로 여겨 초록색보다 싫어하지만 주식 투자자(stockholder)들은 빨간색이 주가 상승을 의미하므로 초록색보다 빨간색을 더 선호한다.",
+    "answer": true,
+    "explanation": "교안 3 p.62 Empirical difference에 제시된 일반인 vs. 주식 투자자(stockholder) 비교 사례이다.",
+    "source": "3장 교안 p.62",
+    "kind": "양립성 경험 차이"
   },
   {
     "id": "OX137",
     "chapter": "Fitts·운동·양립성",
-    "kind": "공간 양립성 실험",
-    "source": "3장 교안 p.63–66 · 정보처리 전사4"
+    "statement": "교안의 VR 틸트(Tilt) 로봇 원격조작 실험에서 사용자의 신체 기울임 방향과 레버 조작 방향의 공간 양립성(Spatial compatibility)이 지켜진 조건은 불일치 조건에 비해 조작 정확도(Accuracy)와 주관적 자신감(Confidence)이 높고 반응시간(RT)은 더 짧았다.",
+    "answer": true,
+    "explanation": "교안 3 p.63–66 및 정보처리 전사 4에서 설명한 VR 로봇 공간 양립성 실험 결과이다.",
+    "source": "3장 교안 p.63–66 · 정보처리 전사4",
+    "kind": "공간 양립성 실험"
   },
   {
     "id": "OX138",
     "chapter": "Fitts·운동·양립성",
-    "kind": "3D VR Fitts 논문",
-    "source": "4주차 논문 · 피츠 전사"
+    "statement": "3차원 가상환경(3D VR)에서 Fitts 법칙을 검증한 보충 논문에서 실험 참가자는 총 23명이었으며, 깊이와 경사를 반영한 경험적 확장 모델의 결정계수는 \\(R^2 = 0.645\\)로 기존 2D 모델보다 설명력이 높았다.",
+    "answer": true,
+    "explanation": "4주차 3D VR Fitts 논문(참가자 23명, \\(R^2 = 0.645\\)) 및 피츠 전사 말미에서 소개된 핵심 수치이다.",
+    "source": "4주차 논문 · 피츠 전사",
+    "kind": "3D VR Fitts 논문"
   },
   {
     "id": "OX139",
     "chapter": "Fitts·운동·양립성",
-    "kind": "단위 일치",
-    "source": "3장 교안 p.46–47"
+    "statement": "Fitts 법칙에서 거리 \\(D\\)는 cm 단위로 넣고 목표 너비 \\(W\\)는 mm 단위로 넣어도 비율 계산이므로 결과값 \\(\\mathrm{ID}\\)에는 아무런 영향을 주지 않는다.",
+    "answer": false,
+    "explanation": "거리 \\(D\\)와 너비 \\(W\\)는 반드시 동일한 길이 단위(예: 둘 다 mm 또는 둘 다 cm)로 맞춘 뒤 나누어야 무차원 비율이 올바르게 계산된다.",
+    "source": "3장 교안 p.46–47",
+    "kind": "단위 일치"
   },
   {
     "id": "OX140",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Fitts UI 설계",
-    "source": "3장 교안 p.49"
+    "statement": "화면 가장자리나 네 모서리(코너)에 자주 쓰는 메뉴나 버튼을 배치하면 마우스 포인터가 화면 밖으로 더 이상 나가지 않아 실질적인 표적 너비(\\(W\\))가 커지는 효과가 있어 Fitts 법칙에 의해 클릭 시간을 줄일 수 있다.",
+    "answer": true,
+    "explanation": "교안 3 p.49 UI Examples of Fitts’ Law의 핵심 인터페이스 설계 응용 원리이다.",
+    "source": "3장 교안 p.49",
+    "kind": "Fitts UI 설계"
   },
   {
     "id": "OX141",
     "chapter": "Fitts·운동·양립성",
-    "kind": "Hick vs Fitts 비교",
-    "source": "3장 교안 p.34, 42"
+    "statement": "Hick의 법칙은 주로 여러 대안 중 어떤 반응을 할지 결정하는 ‘선택 반응시간(CRT)’을 설명하고, Fitts의 법칙은 목표 지점까지 포인터나 손을 이동시켜 가리키는 ‘운동시간(MT)’을 설명한다.",
+    "answer": true,
+    "explanation": "두 법칙 모두 정보량(\\(\\text{bits}\\))에 선형 비례하는 형태(\\(a + b\\cdot\\text{bits}\\))를 갖지만, Hick은 의사결정·반응선택 단계(CRT), Fitts는 운동 실행·포인팅 단계(MT)를 다룬다.",
+    "source": "3장 교안 p.34, 42",
+    "kind": "Hick vs Fitts 비교"
   },
   {
     "id": "OX142",
     "chapter": "기초통계·T검정",
-    "kind": "RStudio 구조",
-    "source": "R설치 교안 p.2, 12–14"
+    "statement": "R은 데이터 분석과 통계·시각화를 목적으로 개발된 언어이며, RStudio는 Script 창, Console 창, Environment 창, Files/Plots/Packages/Help 창의 4개 영역으로 구성된다.",
+    "answer": true,
+    "explanation": "R통계_설치 교안 p.2, 12–14에 제시된 R의 특징 및 RStudio 4대 창 구성이다.",
+    "source": "R설치 교안 p.2, 12–14",
+    "kind": "RStudio 구조"
   },
   {
     "id": "OX143",
     "chapter": "기초통계·T검정",
-    "kind": "R 실행·저장",
-    "source": "R설치 교안 p.16, 20"
+    "statement": "RStudio의 Script 창에서 작성한 R 명령문을 드래그하여 실행하는 단축키는 ‘Ctrl + Enter’이며, 저장할 때 R 스크립트 파일의 기본 확장자는 ‘.R’이다.",
+    "answer": true,
+    "explanation": "R설치 교안 p.16, 20에 명시된 실행 단축키(Ctrl + Enter)와 파일 확장자(.R)이다.",
+    "source": "R설치 교안 p.16, 20",
+    "kind": "R 실행·저장"
   },
   {
     "id": "OX144",
     "chapter": "기초통계·T검정",
-    "kind": "R 정렬 코드 · 기출",
-    "source": "t-test 교안 p.3–4"
+    "statement": "R에서 ‘baseball’ 데이터프레임의 ‘득점’ 열을 작은 값부터 큰 값 순(오름차순)으로 정렬하는 코드는 ‘sort(baseball$득점)’이며, 큰 값부터 작은 값 순(내림차순)으로 정렬하는 코드는 ‘sort(baseball$득점, decreasing=TRUE)’이다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.3–4의 정렬 함수 코드이다(R은 대소문자를 구분하므로 소문자 sort를 사용해야 함).",
+    "source": "t-test 교안 p.3–4",
+    "kind": "R 정렬 코드 · 기출"
   },
   {
     "id": "OX145",
     "chapter": "기초통계·T검정",
-    "kind": "R 인덱싱 · 함정",
-    "source": "t-test 교안 p.3–4"
+    "statement": "R에서 ‘sort(baseball$득점, decreasing=TRUE)[1]’을 실행하면 득점 데이터 중 가장 작은 값(최솟값)이 출력된다.",
+    "answer": false,
+    "explanation": "‘decreasing=TRUE’로 내림차순(큰 값 → 작은 값) 정렬한 벡터의 첫 번째 원소 ‘[1]’이므로 가장 큰 값인 최댓값(128)이 출력된다!",
+    "source": "t-test 교안 p.3–4",
+    "kind": "R 인덱싱 · 함정"
   },
   {
     "id": "OX146",
     "chapter": "기초통계·T검정",
-    "kind": "R 기초통계 함수",
-    "source": "t-test 교안 p.3–6"
+    "statement": "R에서 벡터 a의 최솟값은 ‘min(a)’, 최댓값은 ‘max(a)’, 평균(무게중심)은 ‘mean(a)’, 중앙값(순서상 50% 중간 위치)은 ‘median(a)’ 함수로 구한다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.3–6에 제시된 기초통계 필수 함수들이다.",
+    "source": "t-test 교안 p.3–6",
+    "kind": "R 기초통계 함수"
   },
   {
     "id": "OX147",
     "chapter": "기초통계·T검정",
-    "kind": "분산 vs 표준편차",
-    "source": "t-test 교안 p.7"
+    "statement": "분산(variance)은 편차 제곱의 평균이므로 원래 자료의 평균과 단위가 제곱으로 달라 함께 사용할 수 없으며, 평균과 같은 단위로 함께 사용하는 산포 지표는 분산의 제곱근인 표준편차(standard deviation)이다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.7: 분산(var(a))은 평균과 단위가 달라 함께 사용할 수 없고, 평균과 함께 사용하는 것은 표준편차(sd(a))이다.",
+    "source": "t-test 교안 p.7",
+    "kind": "분산 vs 표준편차"
   },
   {
     "id": "OX148",
     "chapter": "기초통계·T검정",
-    "kind": "표본분산·표준편차",
-    "source": "t-test 교안 p.7"
+    "statement": "R에서 ‘var(a)’와 ‘sd(a)’ 함수로 계산된 값은 모집단 전체의 모분산·모표준편차가 아니라 표본의 분산과 표본의 표준편차(분모 \\(n-1\\))이다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.7 하단 강조 문구: “해당 코드로 구한 분산/표준편차는 표본의 분산/표준편차임!”",
+    "source": "t-test 교안 p.7",
+    "kind": "표본분산·표준편차"
   },
   {
     "id": "OX149",
     "chapter": "기초통계·T검정",
-    "kind": "사분위수와 중앙값",
-    "source": "t-test 교안 p.8"
+    "statement": "전체 자료를 크기순으로 나열한 후 4등분한 위치(25%, 50%, 75%, 100%)의 값을 사분위수라 하며, 그중 50%가 되는 값은 항상 산술평균(mean)과 일치한다.",
+    "answer": false,
+    "explanation": "사분위수(quantile(a))에서 50%가 되는 값(제2사분위수)은 평균이 아니라 ‘중앙값(median)’이다(t-test 교안 p.8).",
+    "source": "t-test 교안 p.8",
+    "kind": "사분위수와 중앙값"
   },
   {
     "id": "OX150",
     "chapter": "기초통계·T검정",
-    "kind": "R 요약·시각화",
-    "source": "t-test 교안 p.8–9"
+    "statement": "R에서 사분위수를 구하는 함수는 ‘quantile(a)’, 상자그림을 그리는 함수는 ‘boxplot(a)’, 데이터프레임 전체 열의 요약 통계량을 보는 함수는 ‘summary(baseball)’이다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.8–9의 R 명령어와 정확히 일치한다.",
+    "source": "t-test 교안 p.8–9",
+    "kind": "R 요약·시각화"
   },
   {
     "id": "OX151",
     "chapter": "기초통계·T검정",
-    "kind": "t-검정 3유형 구분",
-    "source": "t-test 교안 p.10–11"
+    "statement": "T-검정(T-test)의 세 가지 종류 중 특정 한 집단의 평균이 어떤 기준 숫자와 같은지 다른지를 검정하는 방법(예: 음료수 용량이 350ml인지, 대구 초1 평균 키가 150cm인지)은 ‘독립표본(Independent sample) t-test’이다.",
+    "answer": false,
+    "explanation": "한 집단의 평균을 특정 기준값(\\(\\mu_0\\))과 비교하는 검정은 ‘단일표본(One-sample) t-test’이다.",
+    "source": "t-test 교안 p.10–11",
+    "kind": "t-검정 3유형 구분"
   },
   {
     "id": "OX152",
     "chapter": "기초통계·T검정",
-    "kind": "t-검정 3유형 구분",
-    "source": "t-test 교안 p.10, 15"
+    "statement": "서로 관계없는 별개의 두 모집단에서 독립적으로 추출된 두 그룹 간의 평균 차이를 비교하는 검정(예: 남녀 소득 차이, A·B사 타이어 수명 비교, 대구 vs 서울 초1 키 비교)은 ‘독립표본(Independent sample) t-test’이다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.10, 15–16의 독립표본 t-검정 정의 및 사례이다.",
+    "source": "t-test 교안 p.10, 15",
+    "kind": "t-검정 3유형 구분"
   },
   {
     "id": "OX153",
     "chapter": "기초통계·T검정",
-    "kind": "t-검정 3유형 구분",
-    "source": "t-test 교안 p.10, 21"
+    "statement": "동일한 대상(집단)에게서 처치 전/후로 두 번 측정한 값들의 차이 평균을 비교하는 검정(예: 과외 전후 성적 변화, 고혈압 환자 A약 복용 전후 혈압 비교)은 ‘대응표본(Paired sample) t-test’이다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.10, 21–22의 대응표본 t-검정 정의 및 사례이다.",
+    "source": "t-test 교안 p.10, 21",
+    "kind": "t-검정 3유형 구분"
   },
   {
     "id": "OX154",
     "chapter": "기초통계·T검정",
-    "kind": "shapiro.test 판정 · 기출",
-    "source": "t-test 교안 p.13, 18, 23"
+    "statement": "교안 기준 정규성 검정(shapiro.test)에서 귀무가설(\\(H_0\\))은 ‘관측된 자료는 정규성을 따른다’이며, 결과의 \\(p\\text{-value}\\)가 \\(0.05\\)보다 작을 때(\\(p < 0.05\\)) 정규성 가정을 만족하는 것으로 판단한다.",
+    "answer": false,
+    "explanation": "정규성 검정(shapiro.test)에서는 \\(H_0\\)가 ‘정규성을 따른다’이므로, \\(p\\text{-value} > 0.05\\)일 때 \\(H_0\\)를 채택(유지)하여 정규성 가정을 만족하는 것으로 판단한다(\\(p < 0.05\\)이면 정규성 기각!).",
+    "source": "t-test 교안 p.13, 18, 23",
+    "kind": "shapiro.test 판정 · 기출"
   },
   {
     "id": "OX155",
     "chapter": "기초통계·T검정",
-    "kind": "정규성 경험칙",
-    "source": "t-test 교안 p.13, 17"
+    "statement": "교안에서는 정규성 가정의 경우 관측된 자료의 개수가 20개 이상일 때 정규성을 만족한다고 가정할 수 있다고 설명한다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.13, 17 원문: “정규성의 경우, 관측된 자료의 개수가 20개 이상일 때 만족한다고 가정할 수 있음.”",
+    "source": "t-test 교안 p.13, 17",
+    "kind": "정규성 경험칙"
   },
   {
     "id": "OX156",
     "chapter": "기초통계·T검정",
-    "kind": "단일표본 t-test 코드",
-    "source": "t-test 교안 p.14"
+    "statement": "대구 지역 초1의 키가 150cm인지 검정하는 단일표본 t-test의 R 코드는 ‘t.test(datat[datat$group==\"Deagu\", ]$height, mu=150)’이며, 결과에서 \\(p\\text{-value} = 0.001169 < 0.05\\)가 나왔다면 귀무가설(\\(H_0: \\text{평균 키는 150이다}\\))을 기각한다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.14의 코드 및 결과 해석(\\(p < 0.05 \\to H_0\\) 기각 → 대구 초1 평균 키는 150cm가 아니다)과 일치한다.",
+    "source": "t-test 교안 p.14",
+    "kind": "단일표본 t-test 코드"
   },
   {
     "id": "OX157",
     "chapter": "기초통계·T검정",
-    "kind": "독립표본 가정",
-    "source": "t-test 교안 p.15, 17–19"
+    "statement": "독립표본 t-test를 수행하기 전에는 두 표본 집단 각각의 정규성뿐만 아니라 두 집단의 분산이 같은지 확인하는 ‘등분산성 검정’을 수행해야 한다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.15, 17–19: 독립표본 t-검정의 사전 조건은 두 표본 집단의 정규성 및 등분산성이다.",
+    "source": "t-test 교안 p.15, 17–19",
+    "kind": "독립표본 가정"
   },
   {
     "id": "OX158",
     "chapter": "기초통계·T검정",
-    "kind": "levene.test 코드 · 기출",
-    "source": "t-test 교안 p.19"
+    "statement": "교안에서 등분산성을 확인하기 위해 설치·로드한 패키지는 ‘lawstat’이며, 사용한 함수는 ‘levene.test(datat$height, datat$group, location='mean')’이다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.19의 등분산 검정 R 코드와 정확히 일치한다.",
+    "source": "t-test 교안 p.19",
+    "kind": "levene.test 코드 · 기출"
   },
   {
     "id": "OX159",
     "chapter": "기초통계·T검정",
-    "kind": "등분산과 var.equal",
-    "source": "t-test 교안 p.19–20"
+    "statement": "Levene 등분산 검정의 귀무가설(\\(H_0\\))은 ‘두 집단의 분산은 같다’이므로, 검정 결과 \\(p\\text{-value} = 0.1742 > 0.05\\)가 나오면 두 그룹의 분산이 동일한 것으로 판단하여 독립표본 t-test에서 ‘var.equal=TRUE’ 옵션을 사용한다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.19–20: \\(p = 0.1742 > 0.05 \\to H_0\\) 채택(등분산 만족) \\(\\to\\) ‘t.test(data=datat, height ~ group, var.equal=TRUE)’를 실행한다.",
+    "source": "t-test 교안 p.19–20",
+    "kind": "등분산과 var.equal"
   },
   {
     "id": "OX160",
     "chapter": "기초통계·T검정",
-    "kind": "R 포뮬러 순서 · 함정",
-    "source": "t-test 교안 p.20"
+    "statement": "대구와 서울 초1의 키를 비교하는 독립표본 t-test 코드 ‘t.test(data=datat, height ~ group, var.equal=TRUE)’에서 물결표(~) 왼쪽에는 그룹 변수(group)를 쓰고 오른쪽에는 수치형 종속변수(height)를 써야 한다.",
+    "answer": false,
+    "explanation": "R 포뮬러에서는 항상 왼쪽에 측정 결과인 종속변수(height), 오른쪽에 집단/독립변수(group)를 써서 ‘height ~ group’으로 작성해야 한다.",
+    "source": "t-test 교안 p.20",
+    "kind": "R 포뮬러 순서 · 함정"
   },
   {
     "id": "OX161",
     "chapter": "기초통계·T검정",
-    "kind": "대응표본 정규성",
-    "source": "t-test 교안 p.21, 23"
+    "statement": "대응표본 t-test(고혈압 A약 복용 전/후 비교)에서 정규성을 확인할 때는 복용 전후의 차이 변수 ‘datadiff = datat2$after - datat2$before’를 만든 뒤 ‘shapiro.test(datadiff)’로 차이값의 정규성을 검정한다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.21, 23: 대응표본 t-검정의 조건은 ‘비교할 값의 차이(datadiff)가 정규성을 따르는 것’이다.",
+    "source": "t-test 교안 p.21, 23",
+    "kind": "대응표본 정규성"
   },
   {
     "id": "OX162",
     "chapter": "기초통계·T검정",
-    "kind": "대응표본 결과 해석",
-    "source": "t-test 교안 p.24"
+    "statement": "대응표본 t-test에서 ‘t.test(datadiff)’ 실행 결과 \\(t = -7.6951, p\\text{-value} = 2.97 \\times 10^{-7} < 0.05\\), 표본 평균 차이(mean of x)가 \\(-33.65\\)로 나왔다면, 귀무가설(\\(H_0: \\text{차이의 평균은 0이다}\\))을 기각하고 약 복용 전후 혈압에 유의미한 차이가 있다고 결론 내린다.",
+    "answer": true,
+    "explanation": "t-test 교안 p.24 결과 화면 및 결론과 정확히 일치한다.",
+    "source": "t-test 교안 p.24",
+    "kind": "대응표본 결과 해석"
   },
   {
     "id": "OX163",
     "chapter": "기초통계·T검정",
-    "kind": "평균과 산포",
-    "source": "T검정 전사 · 원문과 검증"
+    "statement": "두 집단 A(50, 50, 50, 50)와 B(0, 100, 25, 75)는 표본평균이 둘 다 50으로 같으므로 표준편차와 분산도 완전히 동일하다.",
+    "answer": false,
+    "explanation": "두 집단의 평균은 50으로 같지만, A 집단은 편차가 전혀 없어 표준편차가 0인 반면 B 집단은 값들이 넓게 퍼져 있어 표준편차(약 45.64)가 매우 크다.",
+    "source": "T검정 전사 · 원문과 검증",
+    "kind": "평균과 산포"
   },
   {
     "id": "OX164",
     "chapter": "회귀·실험실습",
-    "kind": "상관 vs 회귀",
-    "source": "회귀 교안 p.2, 7–8"
+    "statement": "상관분석(Correlation analysis)은 두 변수 사이의 선형 관계 유무와 강도를 대칭적으로 분석하는 방법이고, 회귀분석(Regression analysis)은 독립변수(\\(X\\))와 종속변수(\\(Y\\)) 사이의 함수관계를 추정하여 \\(Y\\)를 설명·예측하는 방법이다.",
+    "answer": true,
+    "explanation": "회귀 교안 p.2, 7–8의 상관분석 vs. 회귀분석 정의와 일치한다.",
+    "source": "회귀 교안 p.2, 7–8",
+    "kind": "상관 vs 회귀"
   },
   {
     "id": "OX165",
     "chapter": "회귀·실험실습",
-    "kind": "독립 vs 종속변수",
-    "source": "회귀 교안 p.7"
+    "statement": "회귀분석에서 다른 변수에 영향을 주는(설명하는) 변수를 종속변수(dependent variable)라 하고, 영향을 받는(예측 대상이 되는) 변수를 독립변수(independent variable)라 한다.",
+    "answer": false,
+    "explanation": "영향을 주는 설명변수가 독립변수(independent variable, \\(X\\))이고, 영향을 받는 반응변수가 종속변수(dependent/response variable, \\(Y\\))이다(회귀 교안 p.7).",
+    "source": "회귀 교안 p.7",
+    "kind": "독립 vs 종속변수"
   },
   {
     "id": "OX166",
     "chapter": "회귀·실험실습",
-    "kind": "공분산과 상관계수",
-    "source": "회귀 교안 p.3–6"
+    "statement": "두 확률변수 \\(X, Y\\)가 같은 방향으로 함께 증가하면 공분산 \\(\\mathrm{Cov}(X,Y)\\)와 상관계수 \\(r\\)은 양수(\\(>0\\))이고, 반대 방향으로 변하면 음수(\\(<0\\))이며, 어떠한 선형 관계도 없으면 \\(0\\)이다.",
+    "answer": true,
+    "explanation": "회귀 교안 p.3–6 및 전사에서 설명한 공분산과 상관계수의 부호 성질이다.",
+    "source": "회귀 교안 p.3–6",
+    "kind": "공분산과 상관계수"
   },
   {
     "id": "OX167",
     "chapter": "회귀·실험실습",
-    "kind": "상관계수 한계",
-    "source": "회귀 교안 p.5–6, 9, 11"
+    "statement": "표본상관계수 \\(r\\)은 공분산을 두 변수의 표준편차의 곱(\\(s_X s_Y\\))으로 나눈 값으로 항상 \\(-1 \\le r \\le 1\\) 범위에 있으며, \\(r = 0\\)이면 두 변수 사이에 2차 곡선 같은 비선형 관계조차 전혀 존재하지 않음을 보장한다.",
+    "answer": false,
+    "explanation": "피어슨 상관계수 \\(r\\)은 ‘선형(직선) 관계’의 강도만 측정하므로, \\(r=0\\)이더라도 대칭적인 곡선(비선형) 관계는 존재할 수 있다.",
+    "source": "회귀 교안 p.5–6, 9, 11",
+    "kind": "상관계수 한계"
   },
   {
     "id": "OX168",
     "chapter": "회귀·실험실습",
-    "kind": "단순회귀와 산점도",
-    "source": "회귀 교안 p.9, 22"
+    "statement": "하나의 종속변수와 하나의 독립변수 간의 관계를 분석하는 것을 단순회귀분석(Simple regression analysis)이라 하며, 두 변수 간의 관계가 선형인지 비선형인지 알아보기 위해 먼저 산포도/산점도(scatter plot)를 그려본다.",
+    "answer": true,
+    "explanation": "회귀 교안 p.9, 11, 22에서 강조한 단순회귀분석 절차이다.",
+    "source": "회귀 교안 p.9, 22",
+    "kind": "단순회귀와 산점도"
   },
   {
     "id": "OX169",
     "chapter": "회귀·실험실습",
-    "kind": "최소제곱법(OLS)",
-    "source": "회귀 교안 p.15"
+    "statement": "단순선형회귀모형에서 최소제곱추정법(OLS: Ordinary Least Squares)은 관측값 \\(y_i\\)와 회귀직선의 예측값 \\(\\hat{y}_i\\) 차이인 오차(잔차) 제곱의 합(\\(\\mathrm{SSE} = \\sum(y_i - \\hat{y}_i)^2\\))이 최소가 되도록 절편 \\(b_0\\)와 기울기 \\(b_1\\)을 추정하는 방법이다.",
+    "answer": true,
+    "explanation": "회귀 교안 p.15: 오차의 제곱의 합이 최소가 되는 직선식을 추정 = 최소제곱추정법.",
+    "source": "회귀 교안 p.15",
+    "kind": "최소제곱법(OLS)"
   },
   {
     "id": "OX170",
     "chapter": "회귀·실험실습",
-    "kind": "OLS 공식",
-    "source": "회귀 교안 p.14–16"
+    "statement": "최소제곱법으로 구한 단순선형회귀의 기울기 공식은 \\(b_1 = \\dfrac{S_{xy}}{S_{xx}} = \\dfrac{\\sum(x_i-\\bar{x})(y_i-\\bar{y})}{\\sum(x_i-\\bar{x})^2}\\)이고, 절편 공식은 \\(b_0 = \\bar{y} - b_1\\bar{x}\\)이다.",
+    "answer": true,
+    "explanation": "회귀 교안 p.14–16의 OLS 추정 공식과 정확히 일치한다.",
+    "source": "회귀 교안 p.14–16",
+    "kind": "OLS 공식"
   },
   {
     "id": "OX171",
     "chapter": "회귀·실험실습",
-    "kind": "SST=SSR+SSE · 기출",
-    "source": "회귀 교안 p.17–18"
+    "statement": "단순선형회귀의 분산분석(ANOVA)에서 총제곱합(\\(\\mathrm{SST}\\))은 회귀제곱합(\\(\\mathrm{SSR}\\), 설명되는 편차 제곱합)과 잔차제곱합(\\(\\mathrm{SSE}\\), 설명되지 않는 편차 제곱합)의 합(\\(\\mathrm{SST} = \\mathrm{SSR} + \\mathrm{SSE}\\))이며, \\(\\mathrm{SSE}\\)가 클수록 그리고 \\(\\mathrm{SSR}\\)이 작을수록 회귀식의 정도가 좋다.",
+    "answer": false,
+    "explanation": "반대이다! 잔차제곱합 \\(\\mathrm{SSE}\\)가 작을수록, 그리고 회귀식으로 설명되는 변동인 \\(\\mathrm{SSR}\\)이 클수록 회귀식의 적합도(정도)가 좋다(회귀 교안 p.18 하단 강조 문구!).",
+    "source": "회귀 교안 p.17–18",
+    "kind": "SST=SSR+SSE · 기출"
   },
   {
     "id": "OX172",
     "chapter": "회귀·실험실습",
-    "kind": "회귀 분산분석표",
-    "source": "회귀 교안 p.19"
+    "statement": "단순선형회귀의 분산분석표(교안 p.19)에서 회귀(SSR)의 자유도는 \\(1\\), 잔차(SSE)의 자유도는 \\(n-2\\), 합계(SST)의 자유도는 \\(n-1\\)이며, 검정통계량 \\(F\\)는 \\(\\mathrm{MSR} / \\mathrm{MSE}\\)로 계산된다.",
+    "answer": true,
+    "explanation": "회귀 교안 p.19 분산분석표의 자유도 및 \\(F = \\mathrm{MSR}/\\mathrm{MSE}\\) 구조와 정확히 일치한다.",
+    "source": "회귀 교안 p.19",
+    "kind": "회귀 분산분석표"
   },
   {
     "id": "OX173",
     "chapter": "회귀·실험실습",
-    "kind": "결정계수 R²",
-    "source": "회귀 교안 p.20"
+    "statement": "결정계수(\\(R^2 = \\mathrm{SSR}/\\mathrm{SST} = 1 - \\mathrm{SSE}/\\mathrm{SST}\\))는 독립변수가 종속변수의 변동을 얼마나 잘 설명하는지 측정하는 지표로, 값이 \\(1\\)에 가까울수록 회귀식의 설명력이 높다.",
+    "answer": true,
+    "explanation": "회귀 교안 p.20: 결정계수 \\(r^2\\)(\\(R^2\\))의 값이 1에 가까울수록 회귀식은 설명력이 높다.",
+    "source": "회귀 교안 p.20",
+    "kind": "결정계수 R²"
   },
   {
     "id": "OX174",
     "chapter": "회귀·실험실습",
-    "kind": "R lm(y~x) 코드 · 기출",
-    "source": "회귀 교안 p.23"
+    "statement": "적성검사점수(\\(x\\), 독립변수)로 업무만족도(\\(y\\), 종속변수)를 예측하는 R 단순선형회귀 모델을 만들 때 올바른 함수 코드는 ‘model <- lm(x ~ y)’이다.",
+    "answer": false,
+    "explanation": "‘lm()’ 함수에서는 물결표(~) 왼쪽에 예측 대상인 종속변수(\\(y\\)), 오른쪽에 독립변수(\\(x\\))를 적어야 하므로 ‘model <- lm(y ~ x)’가 올바른 코드이다!",
+    "source": "회귀 교안 p.23",
+    "kind": "R lm(y~x) 코드 · 기출"
   },
   {
     "id": "OX175",
     "chapter": "회귀·실험실습",
-    "kind": "R abline 코드 · 기출",
-    "source": "회귀 교안 p.23–24"
+    "statement": "R에서 산점도 ‘plot(x, y)’ 위에 추정된 회귀직선을 파란색 실선으로 덧그리는 코드는 ‘abline(lm(y ~ x), lty=1, col=\"blue\")’이며, 여기서 ‘lty’는 직선의 모양을 결정하는 인자이다.",
+    "answer": true,
+    "explanation": "회귀 교안 p.23–24의 회귀선 추가 코드 및 ‘lty: 직선모양 결정’ 설명과 정확히 일치한다.",
+    "source": "회귀 교안 p.23–24",
+    "kind": "R abline 코드 · 기출"
   },
   {
     "id": "OX176",
     "chapter": "회귀·실험실습",
-    "kind": "summary 해석 · 기출",
-    "source": "회귀 교안 p.25"
+    "statement": "교안 p.25의 R ‘summary(model)’ 결과에서 ‘Coefficients’ 표의 ‘Estimate’ 열에 나온 ‘(Intercept) 30.9333’과 ‘x 0.8705’를 통해 추정된 회귀식을 \\(\\hat{y}(\\text{업무만족}) = 30.93 + 0.87x(\\text{적성검사})\\)로 적을 수 있다.",
+    "answer": true,
+    "explanation": "‘(Intercept)’가 절편 \\(b_0 = 30.93\\), ‘x’가 기울기 \\(b_1 = 0.87\\)이므로 추정 회귀식은 \\(\\hat{y} = 30.93 + 0.87x\\)이다.",
+    "source": "회귀 교안 p.25",
+    "kind": "summary 해석 · 기출"
   },
   {
     "id": "OX177",
     "chapter": "회귀·실험실습",
-    "kind": "summary 해석 · 기출",
-    "source": "회귀 교안 p.25 · 회귀 전사"
+    "statement": "교안 p.25의 R ‘summary(model)’ 결과에서 ‘Coefficients’ 표 우측 끝의 ‘Pr(>|t|)’ 값들은 추정된 각 회귀계수(절편과 기울기)를 통계적으로 신뢰할 수 있는지 ‘회귀계수의 유의성’을 검정하는 값으로, \\(0.05\\) 이하이면 해당 계수가 유의하다고 판단한다.",
+    "answer": true,
+    "explanation": "회귀 교안 p.25 및 회귀 전사 말미에서 교수님이 강조한 첫 번째 해석 포인트(회귀계수의 유의성 검정)이다.",
+    "source": "회귀 교안 p.25 · 회귀 전사",
+    "kind": "summary 해석 · 기출"
   },
   {
     "id": "OX178",
     "chapter": "회귀·실험실습",
-    "kind": "summary 해석 · 기출",
-    "source": "회귀 교안 p.25 · 회귀 전사"
+    "statement": "교안 p.25의 R ‘summary(model)’ 결과에서 ‘Multiple R-squared: 0.6828’과 ‘Adjusted R-squared: 0.6511’은 ‘추정된 회귀식의 타당성(설명력)’을 나타내며, 적성검사 점수가 업무만족도 변화의 약 68.3%를 설명함을 의미한다.",
+    "answer": true,
+    "explanation": "교안 p.25 좌측 하단 상자: “추정된 회귀식의 타당성 — 업무만족도 변화에 대한 68.3%를 설명, 현실적 중요성.”",
+    "source": "회귀 교안 p.25 · 회귀 전사",
+    "kind": "summary 해석 · 기출"
   },
   {
     "id": "OX179",
     "chapter": "회귀·실험실습",
-    "kind": "summary 해석 · 기출",
-    "source": "회귀 교안 p.25 · 회귀 전사"
+    "statement": "교안 p.25의 R ‘summary(model)’ 결과 맨 아랫줄의 ‘F-statistic: 21.53, p-value: 0.0009218’은 ‘회귀모형(회귀식 자체)의 통계적 유의성’을 검정하는 값으로, \\(p < 0.05\\)이므로 이 선형 회귀식 자체가 통계적으로 유의함을 나타낸다.",
+    "answer": true,
+    "explanation": "교안 p.25 우측 하단 상자: “회귀모형의 유의성 검정 — 회귀식 자체가 유의한지 여부 판단, 통계적 유의성.”",
+    "source": "회귀 교안 p.25 · 회귀 전사",
+    "kind": "summary 해석 · 기출"
   },
   {
     "id": "OX180",
     "chapter": "회귀·실험실습",
-    "kind": "다중회귀 R 포뮬러",
-    "source": "회귀 전사 말미"
+    "statement": "독립변수가 \\(x_1, x_2\\) 두 개인 다중선형회귀모형을 R에서 적합할 때는 포뮬러를 ‘lm(y ~ x1 + x2)’ 형태로 작성한다.",
+    "answer": true,
+    "explanation": "회귀 전사 말미에서 교수님이 언급한 다중선형회귀 R 포뮬러 작성법이다.",
+    "source": "회귀 전사 말미",
+    "kind": "다중회귀 R 포뮬러"
   },
   {
     "id": "OX181",
     "chapter": "회귀·실험실습",
-    "kind": "SRT/CRT bit 변환 · 기출",
-    "source": "SRT/CRT 교안 p.1–3 · 실습 전사"
+    "statement": "SRT·CRT 실습 프로그램에서 자극이 1개(SRT), 2개(2-choice CRT), 4개(4-choice CRT)일 때 이를 Hick 법칙 회귀분석의 독립변수 \\(X\\)(정보량 bit)로 변환하면 각각 \\(1\\text{ bit}, 2\\text{ bits}, 4\\text{ bits}\\)가 된다.",
+    "answer": false,
+    "explanation": "등확률 대안 수 \\(N = 1, 2, 4\\)에 대해 \\(H = \\log_2 N\\)을 취해야 하므로 각각 \\(\\log_2 1 = 0\\text{ bit}\\), \\(\\log_2 2 = 1\\text{ bit}\\), \\(\\log_2 4 = 2\\text{ bits}\\)가 된다!",
+    "source": "SRT/CRT 교안 p.1–3 · 실습 전사",
+    "kind": "SRT/CRT bit 변환 · 기출"
   },
   {
     "id": "OX182",
     "chapter": "회귀·실험실습",
-    "kind": "비유의 회귀 출력 해석",
-    "source": "SRT/CRT 실습 전사"
+    "statement": "SRT·CRT 실험 데이터를 모아 \\(X = \\text{bit}(0, 1, 2)\\), \\(Y = \\text{Time(ms)}\\)로 단순선형회귀를 돌렸을 때, 만약 ‘summary’ 결과에서 모형 \\(p\\text{-value} = 0.16\\)(\\(> 0.05\\))이고 \\(R^2 \\approx 0.03\\)(3%)으로 나왔다면 이 데이터는 선형 회귀식으로 설명하기에 매우 적합한 우수한 데이터이다.",
+    "answer": false,
+    "explanation": "실습 전사에서 교수님이 직접 보여준 사례로, \\(p = 0.16 > 0.05\\)이고 설명력이 3%에 불과하며 기울기 계수도 유의하지 않으므로 선형 회귀식으로 설명하기 부적합한(유의하지 않은) 데이터이다.",
+    "source": "SRT/CRT 실습 전사",
+    "kind": "비유의 회귀 출력 해석"
   },
   {
     "id": "OX183",
     "chapter": "회귀·실험실습",
-    "kind": "실습 로그 규칙",
-    "source": "Sternberg README · 로그"
+    "statement": "Sternberg 실습 프로그램과 SRT·CRT 실습 프로그램에서 피험자가 제한시간 내에 응답하지 못해 ‘TimeOut’(또는 입력값 ‘-1’)이 발생하면, 로그 파일의 걸린 시간(Time) 열에는 항상 ‘5000’(즉 5,000 ms = 5초)이 기록된다.",
+    "answer": true,
+    "explanation": "Sternberg README.docx 및 실제 로그 파일(Index 0: TimeOut, False, 5000)에 명시된 규칙이다.",
+    "source": "Sternberg README · 로그",
+    "kind": "실습 로그 규칙"
   },
   {
     "id": "OX184",
     "chapter": "회귀·실험실습",
-    "kind": "Sternberg 로그 해석",
-    "source": "Sternberg 로그 · 원문과 검증"
+    "statement": "Sternberg 기억탐색 실습 로그의 ‘T/F’ 열에 ‘True’라고 기록된 행은 모두 검사 숫자(Number)가 기억집합(Number Set) 안에 실제로 포함되어 있던(YES) 시행만을 의미한다.",
+    "answer": false,
+    "explanation": "로그의 ‘User Input’ 열이 사용자가 누른 값(집합 포함 여부 응답)이고, ‘T/F’ 열은 사용자의 응답이 정답이었는지(정오 여부)를 뜻한다. 따라서 집합에 없는 숫자를 없다고(False) 정확히 맞힌 시행도 ‘T/F’ 열은 ‘True’가 된다.",
+    "source": "Sternberg 로그 · 원문과 검증",
+    "kind": "Sternberg 로그 해석"
   },
   {
     "id": "OX185",
     "chapter": "회귀·실험실습",
-    "kind": "Sternberg 회귀 분리",
-    "source": "SRT/CRT/Sternberg 실습 전사"
+    "statement": "Sternberg 기억탐색 실험 데이터를 회귀분석할 때는 검사 숫자가 기억집합 안에 있었던 경우(YES / True)와 없었던 경우(NO / False)를 구분하지 않고 무조건 하나로 합쳐서 단일 회귀선만 구해야 한다.",
+    "answer": false,
+    "explanation": "실습 전사에서 교수님이 강조했듯이, Sternberg 과제는 집합에 숫자가 있었을 때(YES, self-terminating)와 없었을 때(NO, exhaustive)의 반응시간 특성이 다르므로 두 경우의 데이터를 따로 분리하여 각각 회귀분석을 돌려 비교해야 한다.",
+    "source": "SRT/CRT/Sternberg 실습 전사",
+    "kind": "Sternberg 회귀 분리"
   },
   {
     "id": "OX186",

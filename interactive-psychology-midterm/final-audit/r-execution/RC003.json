@@ -54,6 +54,25 @@
     }
   ],
   "followUp": "v와 s의 값·단위를 적고, v를 구할 때 사용한 분모가 무엇인지 설명하시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "a <- c(2, 4, 6)",
+      "explanation": "오른쪽 값을 계산하여 왼쪽 객체에 저장한다. 벡터 연산은 대응하는 원소끼리 수행한다."
+    },
+    {
+      "line": 3,
+      "code": "v <- var(a)",
+      "explanation": "표본분산 var(a)는 편차제곱합을 n−1로 나눈 값이다. 결과를 v에 저장하며 단위는 원 단위의 제곱이다."
+    },
+    {
+      "line": 4,
+      "code": "s <- sd(a)",
+      "explanation": "표본표준편차 sd(a)는 표본분산의 제곱근이다. 결과를 s에 저장하며 원 자료와 단위가 같다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC003",
   "bank": "written",
   "inputProvenance": "question_literal_vectors"

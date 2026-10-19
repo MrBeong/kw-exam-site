@@ -43,8 +43,8 @@
   "source": "t-test 교안 p.19 · t-test 교안 p.19–20",
   "calc": false,
   "points": 4,
-  "modelCode": "library(lawstat)\n\nlevene.test(\n  datat$height,\n  datat$group,\n  location = \"mean\"\n)",
-  "codeTemplate": "library({{1}})\n\nlevene.test(\n  {{2}},\n  {{3}},\n  location = {{4}}\n)",
+  "modelCode": "library(lawstat)\n\nlevene.test( datat$height, datat$group, location = \"mean\")",
+  "codeTemplate": "library({{1}})\n\nlevene.test( {{2}}, {{3}}, location = {{4}})",
   "codeBlanks": [
     {
       "id": "1",
@@ -71,6 +71,20 @@
   "codeSetup": "datat <- data.frame(\n  group = rep(c(\"Deagu\", \"Seoul\"), each = 20),\n  height = c(\n    141.977269, 145.731682, 147.81785, 149.374348, 150.666916, 151.804243, 152.843048, 153.817827,\n    154.752195, 155.664132, 156.568868, 157.480805, 158.415173, 159.389952, 160.428757, 161.566084,\n    162.858652, 164.41515, 166.501318, 170.255731, 144.316825, 149.543331, 152.447477, 154.614274,\n    156.413653, 157.996922, 159.443038, 160.800026, 162.100755, 163.37026, 164.62974, 165.899245,\n    167.199974, 168.556962, 170.003078, 171.586347, 173.385726, 175.552523, 178.456669, 183.683175\n  )\n)",
   "inputDescription": "집단별 키(cm)의 문항용 구성자료 전체다. lawstat가 설치되어 있다고 가정하며 패키지 불러오기는 아래 빈칸에서 작성한다.",
   "promptPlain": "lawstat는 이미 설치되어 있다. 패키지를 불러온 뒤 datat의 height를 group별로 비교하는 평균 중심 Levene 검정을 수행하려 한다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "library(lawstat)",
+      "explanation": "설치된 패키지를 현재 R 세션에 불러와 그 안의 함수를 사용할 수 있게 한다."
+    },
+    {
+      "line": 3,
+      "code": "levene.test( datat$height, datat$group, location = \"mean\")",
+      "explanation": "첫 인자의 수치값을 두 번째 인자의 집단으로 나누고, location = \"mean\"으로 집단 평균 중심의 Levene 등분산 검정을 수행한다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC009",
   "bank": "written",
   "inputProvenance": "question_visible_constructed_practice_data"

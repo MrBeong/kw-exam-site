@@ -1,4 +1,1 @@
-t.test(
-  datat[datat$group == "Deagu", ]$height,
-  mu = 150
-)
+t.test( datat[datat$group == "Deagu", ]$height, mu = 150)

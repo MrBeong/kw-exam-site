@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "id": "sternberg",
+      "status": "passed",
+      "statements": 5,
+      "assert": "nrow(clean)==6 && nrow(yes)==3 && nrow(no)==3 && abs(coef(model_yes)[2]-30)<1e-8 && abs(coef(model_no)[2]-40)<1e-8"
+    },
+    {
+      "id": "multiple",
+      "status": "passed",
+      "statements": 1,
+      "assert": "length(coef(model2))==3"
+    },
+    {
+      "id": "hick",
+      "status": "passed",
+      "statements": 1,
+      "assert": "inherits(model,\"lm\") && identical(names(model$model),c(\"Time\",\"bit\"))"
+    },
+    {
+      "id": "fitts",
+      "status": "passed",
+      "statements": 2,
+      "assert": "all(ID==c(2,3)) && all(MT==c(350,500))"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ async page=>{
  const root=new URL(/\/(ox|multiple-choice|mock-exam)\//.test(new URL(page.url()).pathname)?'../':'./',page.url()).href,r={checks:[],errors:[]};page.removeAllListeners('dialog');page.on('dialog',d=>d.accept());page.on('pageerror',e=>r.errors.push(e.message));const check=(v,s)=>{if(!v)throw Error(s);r.checks.push(s)};
  const wrongTab=()=>page.locator(page.url().includes('/ox/')||page.url().includes('/multiple-choice/')?'#stateTabs [data-state=wrong]':page.url().includes('/mock-exam/')?'[data-filter=wrong]':'#againFilterBtn');
  const ensureControls=async()=>{if(await page.locator('#wrongRetryPanel').isHidden())await wrongTab().click()};
- const get=k=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),k),put=(k,v)=>page.evaluate(([k,v])=>localStorage.setItem(k,JSON.stringify(v)),[k,v]);
+ const get=k=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)),k),put=(k,v)=>page.evaluate(([k,v])=>{v.questionRevision=StudyRevisions.revision;localStorage.setItem(k,JSON.stringify(v))},[k,v]);
  try{
  const w='psych-midterm-notion-v1',m='psych-midterm-mock-v1';
  await put(w,{answers:{SA001:'old'},grades:{SA001:'again'},codeSchemaVersion:1});

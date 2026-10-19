@@ -1,0 +1,96 @@
+{
+  "id": "ME1-Q50",
+  "type": "code",
+  "chapter": "Fitts·운동·양립성",
+  "conceptIds": [
+    "OX115",
+    "OX116",
+    "OX117",
+    "OX118",
+    "OX139"
+  ],
+  "prompt": "[실전 코드 변형] 거리 `D <- c(90, 210)`과 목표 너비 `W <- c(30, 30)`이 주어져 있다. `log2()`로 ISO형 \\(\\mathrm{ID} = \\log_2(D/W + 1)\\)을 계산하고 \\(a = 60, b = 110\\)인 \\(\\mathrm{MT} = a + b\\cdot\\mathrm{ID}\\)(ms) 벡터를 구하려 한다. 각 빈칸에는 대입문 오른쪽 식 전체를 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "answer": "\\(\\mathrm{ID} = (2, 3)\\text{ bits}\\)이고, \\(\\mathrm{MT} = (280, 390)\\text{ ms}\\)이다.",
+  "explanation": [
+    "`D/W + 1`은 각각 `90/30 + 1 = 4`, `210/30 + 1 = 8`이므로 `ID`는 `c(2, 3)` bits다.",
+    "`MT = 60 + 110 * ID`에 대입하면 `60 + 220 = 280` ms, `60 + 330 = 390` ms가 된다."
+  ],
+  "rubric": [
+    {
+      "points": 1.0,
+      "criterion": "빈칸 (1): ISO형은 거리/너비에 1을 더한 뒤 밑 2 로그를 취한다."
+    },
+    {
+      "points": 1.0,
+      "criterion": "빈칸 (2): MT=a+b·ID를 R의 곱셈 기호 *로 작성한다."
+    },
+    {
+      "points": 1,
+      "criterion": "추가 답안: 계산된 두 표적의 난이도 지수(ID)와 운동시간(MT, ms)을 순서대로 적으시오."
+    }
+  ],
+  "commonMistakes": [
+    "\\(\\frac{W}{D}\\)를 쓰거나 +1을 로그 밖에 두지 않는다."
+  ],
+  "englishTerms": [],
+  "language": "각 빈칸에 실제 R 문법으로 작성. 문자열은 필요한 따옴표까지 포함한다. 추가 답안은 한글·수식·단위를 사용한다.",
+  "accepted": "제시된 코드 틀에 넣었을 때 요구한 동작을 하는 R 코드를 인정한다. 공백·일반 작은따옴표/큰따옴표 차이와 동등한 식은 허용한다. 함수·객체의 철자·대소문자 및 문자열 값은 정확해야 한다. 밑 2 로그의 동등한 표현인 log(D / W + 1, base = 2)도 인정한다.",
+  "source": "3장 교안 p.46–47 · 3장 교안 p.47 · 손계산용 수치/표기 변형",
+  "calc": false,
+  "points": 3.0,
+  "modelCode": "D <- c(90, 210)\nW <- c(30, 30)\n\nID <- log2(D / W + 1)\nMT <- 60 + 110 * ID\n\nMT",
+  "codeTemplate": "D <- c(90, 210)\nW <- c(30, 30)\n\nID <- {{1}}\nMT <- {{2}}\n\nMT",
+  "codeBlanks": [
+    {
+      "id": "1",
+      "answer": "log2(D / W + 1)",
+      "explanation": "ISO형은 거리/너비에 1을 더한 뒤 밑 2 로그를 취한다."
+    },
+    {
+      "id": "2",
+      "answer": "60 + 110 * ID",
+      "explanation": "MT=a+b·ID를 R의 곱셈 기호 *로 작성한다."
+    }
+  ],
+  "followUp": "계산된 두 표적의 난이도 지수(ID)와 운동시간(MT, ms)을 순서대로 적으시오.",
+  "promptPlain": "같은 길이 단위의 거리 D <- c(60, 140), 너비 W <- c(20, 20)가 주어져 있다. ISO형 난이도 ID와 절편 a=50 ms·기울기 b=150 ms/bit인 모형의 MT 벡터를 구하려 한다. 각 빈칸에는 오른쪽 식 전체를 쓰시오. 다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "questionRevision": "hand-calc-2026-10-18",
+  "variant": true,
+  "originId": "RC018",
+  "set": 1,
+  "number": 50,
+  "minutes": 5.0,
+  "codeSetup": "D <- c(90, 210)\nW <- c(30, 30)",
+  "inputDescription": "문항 실행을 위해 사전 로드된 R 데이터 객체이다.",
+  "codeMode": "blank",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "D <- c(90, 210)",
+      "explanation": "아래 분석에 사용할 문제의 수치 벡터를 생성한다."
+    },
+    {
+      "line": 2,
+      "code": "W <- c(30, 30)",
+      "explanation": "아래 분석에 사용할 문제의 수치 벡터를 생성한다."
+    },
+    {
+      "line": 4,
+      "code": "ID <- log2(D / W + 1)",
+      "explanation": "ISO형은 거리/너비에 1을 더한 뒤 밑 2 로그를 취한다."
+    },
+    {
+      "line": 5,
+      "code": "MT <- 60 + 110 * ID",
+      "explanation": "MT=a+b·ID를 R의 곱셈 기호 *로 작성한다."
+    },
+    {
+      "line": 7,
+      "code": "MT",
+      "explanation": "앞에서 저장한 계산 결과를 콘솔에 출력한다."
+    }
+  ],
+  "revision": "final-midterm-2026-10-19",
+  "bank": "mock-exam",
+  "inputProvenance": "question_literal_vectors"
+}

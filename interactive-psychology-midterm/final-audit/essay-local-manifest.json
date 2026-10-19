@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-18",
+  "revision": "focused-essay-2026-10-18",
+  "published": false,
+  "commitCreated": false,
+  "pushPerformed": false,
+  "writtenQuestions": 165,
+  "writtenEssays": 70,
+  "existingEssaysRevised": 42,
+  "focusedSupplements": 28,
+  "mockEssaysRevised": 20,
+  "totalQuestions": 648,
+  "coverage": {
+    "written": 188,
+    "mockUnion": 188
+  },
+  "results": {
+    "essay-source-results.json": {
+      "status": "pass",
+      "checks": 1309
+    },
+    "essay-all-ui-results.json": {
+      "status": "pass",
+      "checks": 2359
+    },
+    "essay-revision-ui-results.json": {
+      "status": "pass",
+      "checks": 53
+    },
+    "essay-wrong-retry-ui-results.json": {
+      "status": "pass",
+      "checks": 51
+    },
+    "essay-wrong-retry-edges-results.json": {
+      "status": "pass",
+      "checks": 18
+    },
+    "essay-retry-fold-ui-results.json": {
+      "status": "pass",
+      "checks": 87
+    },
+    "essay-handcalc-revision-ui-results.json": {
+      "status": "pass",
+      "checks": 34
+    },
+    "essay-final-delta-ui-results.json": {
+      "status": "pass",
+      "checks": 4
+    }
+  },
+  "sourceSha256": {
+    "written/questions.json": "607cfd177df80700d80dd9eb5e434244b643a0421e18c1523289e8ce86e227ae",
+    "mock-exam/questions.json": "c6303b246c9dbd38d2c64a474793bf5cca006022f099a9c07486ca9f9fa64f54",
+    "assets/study-revisions.js": "6d9cfdfde222cf80e2b9055a575dba8327fdc7343c9cab130415fb51d1f306f9",
+    "index.html": "81430a5b6c6013d0942d63ec73638f8a9940228251b4693d3387d897e4410878",
+    "mock-exam/index.html": "28af12bb9eecc9e86872d1a3f4141fad7d92ba802807882487bd99721d70105e"
+  }
+}

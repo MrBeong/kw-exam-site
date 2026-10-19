@@ -34,8 +34,8 @@
   "source": "회귀 교안 p.23–24",
   "calc": false,
   "points": 3,
-  "modelCode": "abline(\n  model,\n  lty = 1,\n  col = \"blue\"\n)",
-  "codeTemplate": "{{1}}(\n  model,\n  lty = {{2}},\n  col = {{3}}\n)",
+  "modelCode": "abline( model, lty = 1, col = \"blue\")",
+  "codeTemplate": "{{1}}( model, lty = {{2}}, col = {{3}})",
   "codeBlanks": [
     {
       "id": "1",
@@ -57,6 +57,15 @@
   "codeSetup": "x <- c(\n  65, 50, 55, 65, 55, 70, 65, 70,\n  65, 70, 50, 55\n)\ny <- c(\n  85, 74, 76, 90, 85, 87, 94, 98,\n  81, 91, 76, 74\n)\n\nmodel <- lm(y ~ x)\nplot(x, y)",
   "inputDescription": "regression1.xlsx의 실제 12행이다. 이 준비 코드를 실행해 model을 적합하고 산점도를 연 상태에서 빈칸 코드를 이어서 실행한다.",
   "promptPlain": "plot(x,y) 산점도가 열려 있고 model <- lm(y~x)가 적합되어 있다. lty·col 인자로 파란 실선 회귀선을 추가하려 한다. 색은 이름 문자열로 쓰시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "abline( model, lty = 1, col = \"blue\")",
+      "explanation": "이미 열린 산점도에 적합된 회귀직선을 추가한다. lty=1은 실선이고 col=\"blue\"는 파란 선이다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC014",
   "bank": "written",
   "inputProvenance": "provided_regression1.xlsx_actual_12_rows"

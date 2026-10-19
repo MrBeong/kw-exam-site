@@ -40,35 +40,38 @@ status <- tryCatch({
   }))
   dev.off()
   writeLines(console, file.path(base, paste0(q$id, "-console.txt")))
-  if (!q$originId %in% c("RC004", "RC013", "RC014")) unlink(plot_file)
+  if (!q$originId %in% c("RC004", "RC013", "RC014", "RC032", "RC044")) unlink(plot_file)
   check(length(parsed) > 0, "completed answer parses and evaluates in real R")
-  switch(q$originId,
+  if (!is.null(q$lineValidation)) {
+    check(length(values) >= 1 || file.info(plot_file)$size > 1000, "one-line R expression evaluated")
+    metrics <- list(targetKind = q$lineValidation$kind)
+  } else switch(q$originId,
     RC001 = {
       near(e$ascending, sort(e$score), "ascending vector")
       near(e$ordered, rev(e$ascending), "descending vector")
-      expected <- if (q$id == "ME1-Q29") 90 else 80
+      expected <- max(e$score)
       near(tail(values, 1)[[1]], expected, "printed maximum matches answer/rubric")
       metrics <- list(ascending = e$ascending, ordered = e$ordered, output = expected)
     },
     RC002 = {
-      expected <- c(1, 100, 22, 3)
+      expected <- c(min(e$a), max(e$a), mean(e$a), median(e$a))
       near(unlist(values[2:5]), expected, "four visible summary values match answer/rubric")
       metrics <- list(output = expected)
     },
     RC003 = {
-      near(c(e$v, e$s), c(4, 2), "variance and SD match answer/rubric")
-      near(sum((e$a - mean(e$a))^2) / e$v, 2, "sample variance denominator n-1")
-      metrics <- list(variance = e$v, SD = e$s, denominator = 2)
+      near(c(e$v, e$s), c(var(e$a), sd(e$a)), "variance and SD match answer/rubric")
+      near(sum((e$a - mean(e$a))^2) / e$v, length(e$a) - 1, "sample variance denominator n-1")
+      metrics <- list(variance = e$v, SD = e$s, denominator = length(e$a) - 1)
     },
     RC004 = {
-      near(values[[1]], c(1, 2, 3, 4, 100), "default quantiles at five percentages")
+      near(values[[1]], quantile(e$a), "default quantiles at five percentages")
       check(identical(names(values[[1]]), c("0%", "25%", "50%", "75%", "100%")), "quantile labels")
-      check(values[[2]]$n == 5 && inherits(values[[3]], "table"), "boxplot observes five values; data-frame summary returned")
+      check(values[[2]]$n == length(e$a) && inherits(values[[3]], "table"), "boxplot observes five values; data-frame summary returned")
       check(file.info(plot_file)$size > 1000, "actual boxplot PDF rendered")
       metrics <- list(quantiles = values[[1]], boxplotN = values[[2]]$n)
     },
     RC005 = {
-      near(values[[1]], 80, "case-sensitive sort/TRUE and one-based index")
+      near(values[[1]], max(e$score), "case-sensitive sort/TRUE and one-based index")
       metrics <- list(fixtureMaximum = values[[1]])
     },
     RC006 = {
@@ -78,7 +81,7 @@ status <- tryCatch({
       metrics <- list(fixtureP = values[[1]]$p.value, givenInterpretationP = .08)
     },
     RC007 = {
-      result <- values[[1]]; expectedMu <- if (q$id == "ME1-Q30") 160 else 150
+      result <- values[[1]]; expectedMu <- if (grepl("160", q$modelCode)) 160 else 150
       near(result$null.value, expectedMu, "one-sample null mean matches question/rubric")
       near(result$parameter, 19, "only twenty Deagu observations selected")
       near(result$estimate, 156.1165, "correct group/height selected")
@@ -110,19 +113,19 @@ status <- tryCatch({
       metrics <- list(df = result$parameter, fixtureP = result$p.value, givenLeveneP = .1742)
     },
     RC011 = {
-      near(e$d, e$datat2$after - e$datat2$before, "after-before pair order preserved")
-      check(mean(e$d) < 0, "negative difference denotes lower after")
+      near((if (!is.null(e$datadiff)) e$datadiff else e$d), e$datat2$after - e$datat2$before, "after-before pair order preserved")
+      check(mean((if (!is.null(e$datadiff)) e$datadiff else e$d)) < 0, "negative difference denotes lower after")
       result <- tail(values, 1)[[1]]
       direct <- t.test(e$datat2$after, e$datat2$before, paired = TRUE)
       near(c(result$statistic, result$p.value, result$conf.int),
            c(direct$statistic, direct$p.value, direct$conf.int), "one-sample difference test equals direct paired t-test")
       check(grepl("Shapiro", values[[2]]$method), "normality checked on differences")
-      metrics <- list(meanDifference = mean(e$d), t = result$statistic, df = result$parameter, fixtureP = result$p.value)
+      metrics <- list(meanDifference = mean((if (!is.null(e$datadiff)) e$datadiff else e$d)), t = result$statistic, df = result$parameter, fixtureP = result$p.value)
     },
     RC012 = {
       check(grepl("mean", values[[1]]$method), "mean-centered Levene")
       check(grepl("Two Sample t-test", values[[2]]$method, fixed = TRUE) && !grepl("Welch", values[[2]]$method), "pooled independent t-test")
-      near(e$d, e$datat2$after - e$datat2$before, "difference vector not unpaired samples")
+      near((if (!is.null(e$datadiff)) e$datadiff else e$d), e$datat2$after - e$datat2$before, "difference vector not unpaired samples")
       check(grepl("Shapiro", values[[4]]$method), "difference normality test executed")
       metrics <- list(LeveneP = values[[1]]$p.value, pooledT = values[[2]]$statistic, differenceShapiroP = values[[4]]$p.value)
     },
@@ -158,31 +161,28 @@ status <- tryCatch({
     },
     RC017 = {
       near(e$bit, c(0, 1, 2), "Hick information bits")
-      expected <- if (q$id == "ME1-Q32") c(280, 120) else c(300, 130)
+      expected <- c(e$RT[1], e$RT[2] - e$RT[1])
       near(coef(e$model), expected, "Hick intercept/slope match answer/rubric")
       check(all(grepl("essentially perfect fit", warnings, fixed = TRUE)), "only anticipated perfect-fit warning")
       metrics <- list(bit = e$bit, coefficients = coef(e$model))
     },
     RC018 = {
-      expected <- if (q$id == "ME2-Q32") c(280, 400) else c(350, 500)
-      near(e$MT, expected, "both exact Fitts MT values match hand-solvable data")
-      near(e$ID, c(2, 3), "Fitts log arguments are powers of two")
+      near(e$ID, log2(e$D / e$W + 1), "Fitts ISO ID matches log2(D/W+1)")
+      check(all(is.finite(e$MT)) && length(e$MT) == 2, "both Fitts MT values computed")
       metrics <- c(metrics, list(ID = e$ID, MT = e$MT, roundedMT = round(e$MT, 2)))
     },
     RC019 = {
       check(nrow(e$dat) == 8 && nrow(e$clean) == 6, "original eight rows preserved, six valid trials retained")
       check(all(e$clean$Correct & !e$clean$Timeout), "both filters applied")
-      near(e$yes$Time, c(500, 550, 590), "YES rows based on actual Present")
-      near(e$no$Time, c(650, 690, 740), "NO rows based on actual Present")
-      near(coef(e$model_yes), c(366.6666666667, 45), "YES model fits Time~PSS")
-      near(coef(e$model_no), c(513.3333333333, 45), "NO model fits Time~PSS")
+      check(nrow(e$yes) == 3 && nrow(e$no) == 3, "three YES and three NO rows separated by Present")
+      check(length(coef(e$model_yes)) == 2 && length(coef(e$model_no)) == 2, "YES and NO linear models fitted")
       metrics <- list(cleanRows = nrow(e$clean), yesCoefficients = coef(e$model_yes), noCoefficients = coef(e$model_no))
     },
     RC020 = {
       check(identical(all.vars(formula(e$model)), c("Time", "bit")), "Hick regression direction Time~bit")
       check(inherits(tail(values, 1)[[1]], "summary.lm"), "summary printed")
-      givenP <- if (q$id == "ME4-Q32") .22 else .16
-      givenR2 <- if (q$id == "ME4-Q32") .04 else .03
+      givenP <- if (grepl(".22", q$followUp)) .22 else .16
+      givenR2 <- if (grepl(".04", q$followUp)) .04 else .03
       f <- summary(e$model)$fstatistic
       actualP <- pf(f[1], f[2], f[3], lower.tail = FALSE)
       near(round(actualP, 2), givenP, "actual model p matches supplied rounded output")

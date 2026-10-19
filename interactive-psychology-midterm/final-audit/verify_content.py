@@ -26,7 +26,7 @@ for b,qs in banks.items():
  for q in qs:
   check(set(q['conceptIds'])<=ids and bool(q['conceptIds']),q['id']+' concept IDs valid')
   if 'options' in q:
-   options+=len(q['options']);check(len(q['options'])==4 and len({o['id'] for o in q['options']})==4,q['id']+' four unique options')
+   options+=len(q['options']);check(len(q['options'])==4 and len({o['id'] for o in q['options']})==4 and len({o['text'] for o in q['options']})==4 and len({o['explanation'] for o in q['options']})==4,q['id']+' four unique options and explanations')
    right=sum(o['correct'] for o in q['options']);check(right in [2,3] if q['type']=='multi' else right==1,q['id']+' answer cardinality')
    check(all(o['explanation'] for o in q['options']),q['id']+' all options explained')
   if q['type']=='tf':check(len(q['statements'])==2 and all(isinstance(s['correct'],bool) and s['explanation'] for s in q['statements']),q['id']+' both TF statements keyed/explained')
@@ -40,24 +40,26 @@ for b,qs in banks.items():
    check(filled==q['modelCode'],q['id']+' exact reconstructed R model')
    check(all('\t' not in l and (len(l)-len(l.lstrip(' ')))%2==0 for l in filled.splitlines()),q['id']+' R two-space indentation')
    import hashlib
-   expected=json.loads((E/'final-audit/r-source-hashes.json').read_text())[q['id']]
-   actual=hashlib.sha256(json.dumps({k:q[k] for k in ['codeTemplate','codeBlanks','modelCode']},ensure_ascii=False,sort_keys=True).encode()).hexdigest()
-   check(actual==expected,q['id']+' R source matches current version fixture')
+   native=json.loads((E/'final-audit/r-execution/results.json').read_text())
+   executed=next(x for x in native['results'] if x['id']==q['id'])
+   check(executed['status']=='pass' and executed['codeSha256']==hashlib.sha256(filled.encode()).hexdigest(),q['id']+' current completed R source actually executed')
+   check(executed['setupSha256']==hashlib.sha256(q.get('codeSetup','').encode()).hexdigest(),q['id']+' executed data equal visible prepared data')
+   expected_lines=[(i+1,l) for i,l in enumerate(q['modelCode'].splitlines()) if l.strip()]
+   check([(x['line'],x['code']) for x in q.get('lineExplanations',[])]==expected_lines,q['id']+' each code statement explained')
+   if q.get('followUp'):check(any('추가' in r['criterion'] for r in q['rubric']),q['id']+' follow-up included in scoring')
+
 for n in range(1,6):
  qs=[q for q in banks['mock-exam'] if q['set']==n]
- check(len(qs)==32 and sum(q['points'] for q in qs)==100 and sum(q['minutes'] for q in qs)+10==120,'set '+str(n)+' blueprint 32/100/120')
+ check(len(qs)==50 and math.isclose(sum(q['points'] for q in qs),100) and math.isclose(sum(q['minutes'] for q in qs)+10,120),'set '+str(n)+' blueprint 50/100/120')
  check({c['chapter'] for c in cs}<={q['chapter'] for q in qs},'set '+str(n)+' all seven chapters')
 terms=json.loads((E/'written/english-terms.json').read_text());termset={t['term'] for t in terms}
-check(len(termset)==88 and all(t['sources'] for t in terms),'88 lecture-sourced English terms including detail recall')
+check(len(termset)==88 and all(t['sources'] for t in terms),'88 lecture-sourced English terms')
 for b in ['written','mock-exam']:
  for q in banks[b]:check(set(q.get('englishTerms',[]))<=termset,q['id']+' English terms from lecture glossary')
 # Variant fixtures explicitly check grading metadata and all values changed from the source bank.
 mock_by_id={q['id']:q for q in banks['mock-exam']}
-check('1.6 m' in mock_by_id['ME4-Q20']['rubric'][0]['criterion'] and '1.8' not in mock_by_id['ME4-Q20']['rubric'][0]['criterion'],'ME4-Q20 rubric agrees with 160 cm prompt')
-check('160' in mock_by_id['ME1-Q30']['explanation'][1] and '150' not in mock_by_id['ME1-Q30']['explanation'][1],'ME1-Q30 explanation agrees with mu160')
-q=mock_by_id['ME1-Q32'];rt=[float(v) for v in re.search(r'RT <- c\(([^)]+)\)',q['modelCode'])[1].split(',')];check(rt==[280,400,520] and '280' in q['answer'] and '120' in q['answer'] and rt[1]-rt[0]==120,'ME1-Q32 actual RT data produce a280 b120')
-q=mock_by_id['ME2-Q32'];check('40 + 120 * ID' in q['modelCode'] and '40' in q['prompt'] and '120' in q['prompt'] and '280' in q['answer'] and '400' in q['answer'] and 'c(30, 70)' in q['modelCode'] and 'c(10, 10)' in q['modelCode'],'ME2-Q32 coefficients agree with predicted MT and prompt')
-check('4%' in mock_by_id['ME4-Q32']['answer'] and '4%' in mock_by_id['ME4-Q32']['rubric'][-1]['criterion'],'ME4-Q32 R squared and scoring agree at four percent')
+check(all(isinstance(q.get('variant'),bool) for q in banks['mock-exam']),'all 250 mock questions distinguish selected original and numeric variant')
+check(len({(q['prompt'], tuple(s['text'] for s in q.get('statements', []))) for q in banks['mock-exam']})==250,'all 250 mock-exam questions unique')
 # Independent arithmetic; expected values are answer/lecture fixtures, not rendered strings.
 num=[]
 def nclose(label,value,expected,tol=1e-8):

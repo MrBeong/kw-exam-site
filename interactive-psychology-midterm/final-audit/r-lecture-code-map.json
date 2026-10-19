@@ -1,0 +1,73 @@
+{
+  "file": "data_분석_t_test.pdf",
+  "inputColor": "파란색 콘솔 입력; > 프롬프트는 코드 바깥에 표시",
+  "lectureForms": [
+    {
+      "page": 14,
+      "code": "t.test(datat[datat$group==\"Deagu\", ]$height, mu=150)"
+    },
+    {
+      "page": 19,
+      "code": "levene.test(datat$height, datat$group, location=\"mean\")"
+    },
+    {
+      "page": 20,
+      "code": "t.test(data=datat, height ~ group, var.equal=TRUE)"
+    },
+    {
+      "page": 23,
+      "code": "datadiff = datat2$after - datat2$before"
+    },
+    {
+      "page": 23,
+      "code": "shapiro.test(datadiff)"
+    },
+    {
+      "page": 24,
+      "code": "t.test(datadiff)"
+    }
+  ],
+  "typographicCorrections": [
+    "본문의 Sort·True 같은 대소문자나 휘어진 따옴표는 파란 실제 입력과 실행 가능한 sort·TRUE·일반 따옴표로 맞춘다."
+  ],
+  "writtenWholeLineIds": [
+    "RC021",
+    "RC022",
+    "RC023",
+    "RC024",
+    "RC025",
+    "RC026",
+    "RC027",
+    "RC028",
+    "RC029",
+    "RC030",
+    "RC031",
+    "RC032",
+    "RC033",
+    "RC034",
+    "RC035",
+    "RC036",
+    "RC037",
+    "RC038",
+    "RC039",
+    "RC040",
+    "RC041",
+    "RC042",
+    "RC043",
+    "RC044",
+    "RC045",
+    "RC046"
+  ],
+  "mockWholeLineIds": [
+    "ME1-Q30",
+    "ME1-Q31",
+    "ME2-Q30",
+    "ME2-Q31",
+    "ME3-Q29",
+    "ME3-Q30",
+    "ME3-Q31",
+    "ME4-Q29",
+    "ME4-Q30",
+    "ME5-Q30"
+  ]
+}

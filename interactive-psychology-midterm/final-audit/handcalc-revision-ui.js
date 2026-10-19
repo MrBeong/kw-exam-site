@@ -18,23 +18,23 @@ async page=>{
  check(a.answers.SA016==='2'&&a.grades.SA016==='done'&&a.bookmarks.SA015&&a.checks.keep,'unaffected written records preserved');check(!a.codeAnswers.RC018&&a.codeAnswers.RC001['1']==='sort','only changed R exercise cleared');check((await get(a.revisionArchiveKey)).state.answers.SA015.includes('16'),'old written answer archived');
  await seed(ox,{answers:{OX044:{value:true,correct:true},OX001:{value:true,correct:true}},bookmarks:{OX044:true}});await page.goto(root+'ox/index.html');a=await get(ox);check(!a.answers.OX044&&a.answers.OX001.correct&&a.bookmarks.OX044,'OX changed record only reset');
  const submitted={status:'submitted',selected:{},texts:{'ME4-Q26':'53.2%'},codeAnswers:{},codeNotes:{},rubrics:{'ME4-Q26':[true,true,true]},graded:{'ME4-Q26':true},checked:{'ME4-Q26':true},review:{},assessedAt:{'ME4-Q26':1},deadline:12345};
- await seed(me,{activeSet:4,mode:'exam',exams:{4:submitted},practice:{4:{status:'practice',texts:{'ME4-Q26':'old','ME4-Q27':'keep'},graded:{'ME4-Q26':true},rubrics:{'ME4-Q26':[true,true,true]}}},bookmarks:{'ME4-Q26':true}});
+ await seed(me,{activeSet:4,mode:'exam',exams:{4:submitted},practice:{4:{status:'practice',texts:{'ME4-Q26':'old','ME4-Q23':'keep'},graded:{'ME4-Q26':true},rubrics:{'ME4-Q26':[true,true,true]}}},bookmarks:{'ME4-Q26':true}});
  await page.goto(root+'mock-exam/index.html?mode=exam&set=4&question=ME4-Q26');a=await get(me);
  check(a.exams[4].texts['ME4-Q26']==='53.2%'&&a.exams[4].graded['ME4-Q26']&&a.exams[4].deadline===12345,'submitted exam answers/grades/deadline preserved');
  check((await page.evaluate(()=>bank().find(q=>q.id==='ME4-Q26').prompt)).includes('0.468'),'submitted exam uses original question snapshot');check((await page.locator('#examTitle').innerText()).includes('이전 문항'),'old exam version visibly labelled');
- check(!a.practice[4].texts['ME4-Q26']&&a.practice[4].texts['ME4-Q27']==='keep','mock practice changed item only reset');
+ check(!a.practice[4].texts['ME4-Q26']&&a.practice[4].texts['ME4-Q23']==='keep','mock practice changed item only reset');
  await page.locator('#mockJump').selectOption('ME4-Q26');check((await page.locator('#mockSolution').innerText()).includes('53.2'),'old submitted solution matches original data');
- await page.locator('#resetBtn').click();check((await page.evaluate(()=>bank().find(q=>q.id==='ME4-Q26').prompt)).includes('0.4'),'new exam retake uses new hand calculation data');a=await get(me);check((await get(a.revisionArchiveKey)).state.exams[4].texts['ME4-Q26']==='53.2%','retake retains old archive');
+ await page.locator('#resetBtn').click();check((await page.evaluate(()=>bank().find(q=>q.id==='ME4-Q26').prompt)).includes('앞면이 나올 확률'),'new exam retake uses new hand calculation data');a=await get(me);check((await get(a.revisionArchiveKey)).state.exams[4].texts['ME4-Q26']==='53.2%','retake retains old archive');
  const deadline=Date.now()+300000;const running={...submitted,status:'running',deadline,texts:{},graded:{},checked:{}};
  await seed(me,{activeSet:2,mode:'exam',exams:{2:running},practice:{},bookmarks:{}});await page.goto(root+'mock-exam/index.html?mode=exam&set=2&question=ME2-Q32');a=await get(me);
  check(a.exams[2].deadline===deadline&&a.exams[2].status==='running','running exam deadline/status unchanged');check((await page.evaluate(()=>bank().find(q=>q.id==='ME2-Q32').modelCode)).includes('c(100, 200)'),'running exam retains old R inputs');await page.reload();a=await get(me);check(a.exams[2].deadline===deadline,'legacy running exam survives reload');
  for(const currentMarker of [false,true]){
   const incoming={activeSet:2,mode:'exam',exams:{2:running},practice:{},bookmarks:{}};
-  if(currentMarker)incoming.questionRevision='midterm-review-2026-10-18';
+  if(currentMarker)incoming.questionRevision='lecture-r-line-2026-10-18';
   await page.evaluate(([key,obj])=>window.dispatchEvent(new StorageEvent('storage',{key,newValue:JSON.stringify(obj)})),[me,incoming]);
   a=await get(me);check(JSON.stringify(a.exams[2])===JSON.stringify(running),'storage event preserves raw exam record '+currentMarker);
   check((await page.evaluate(()=>bank().find(q=>q.id==='ME2-Q32').modelCode)).includes('c(100, 200)'),'storage event retains old R data '+currentMarker);
-  check(a.exams[2].deadline===deadline&&a.previousExamVersions[2]==='midterm-review-2026-10-18','storage event normalizes version outside exam '+currentMarker);
+  check(a.exams[2].deadline===deadline&&a.previousExamVersions[2]==='lecture-r-line-2026-10-18','storage event normalizes version outside exam '+currentMarker);
  }
  const quota=await page.context().newPage();await quota.addInitScript(()=>{window.blockArchive=true;const original=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(window.blockArchive&&k.includes(':archive:'))throw new DOMException('quota','QuotaExceededError');return original.call(this,k,v)}});
  await seed(mc,{answers:{MC028:{selected:['o2'],correct:false}},bookmarks:{}});await quota.goto(root+'multiple-choice/index.html?question=MC028');

@@ -30,8 +30,8 @@
   "source": "회귀 전사 말미",
   "calc": false,
   "points": 3,
-  "modelCode": "model2 <- lm(\n  y ~ x1 + x2\n)",
-  "codeTemplate": "model2 <- {{1}}(\n  {{2}}\n)",
+  "modelCode": "model2 <- lm( y ~ x1 + x2)",
+  "codeTemplate": "model2 <- {{1}}( {{2}})",
   "codeBlanks": [
     {
       "id": "1",
@@ -48,6 +48,15 @@
   "codeSetup": "x1 <- c(\n  65, 50, 55, 65, 55, 70, 65, 70,\n  65, 70, 50, 55\n)\nx2 <- c(\n  3, 7, 5, 1, 3, 3, 1, 2,\n  4, 2, 3, 4\n)\ny <- c(\n  85, 74, 76, 90, 85, 87, 94, 98,\n  81, 91, 76, 74\n)",
   "inputDescription": "regression1.xlsx의 실제 12행이다. x1은 적성검사 점수, x2는 결근횟수, y는 업무만족도다.",
   "promptPlain": "아래 준비 코드에 수치 벡터 y, x1, x2 전체를 제시했다. y를 두 설명변수 x1·x2의 주효과로 설명하는 다중선형회귀를 적합해 model2에 저장하려 한다. 상호작용은 포함하지 않는다.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "model2 <- lm( y ~ x1 + x2)",
+      "explanation": "물결표 ~의 왼쪽 반응변수를 오른쪽 설명변수로 설명하는 선형회귀를 적합하여 지정한 객체에 저장한다. +는 별도 주효과를 추가한다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC016",
   "bank": "written",
   "inputProvenance": "provided_regression1.xlsx_actual_12_rows"

@@ -45,8 +45,8 @@
   "source": "R설치 교안 p.2, 12–14 · R설치 교안 p.16, 20 · t-test 교안 p.3–4",
   "calc": false,
   "points": 5,
-  "modelCode": "sort(\n  score,\n  decreasing = TRUE\n)[1]",
-  "codeTemplate": "{{1}}(\n  score,\n  decreasing = {{2}}\n)[{{3}}]",
+  "modelCode": "sort( score, decreasing = TRUE )[1]",
+  "codeTemplate": "{{1}}( score, decreasing = {{2}} )[{{3}}]",
   "codeBlanks": [
     {
       "id": "1",
@@ -68,6 +68,15 @@
   "codeSetup": "score <- c(20, 80, 40)",
   "inputDescription": "정렬 대상 score의 전체 값이다.",
   "promptPlain": "아래 준비 코드에 정렬할 score 전체를 제시했다. 잘못 쓴 Sort(score, decreasing=True)[0]을 고쳐 최댓값을 출력하려 한다. 함수명·논리 상수·인덱스 표기를 사용하시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "sort( score, decreasing = TRUE )[1]",
+      "explanation": "decreasing=TRUE이면 큰 값부터 작은 값 순서로 정렬한다. [1]은 정렬 결과의 첫 원소, 즉 내림차순에서는 최댓값을 선택한다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "codeMode": "blank",
   "originId": "RC005",
   "bank": "written",
   "inputProvenance": "question_visible_constructed_practice_data"

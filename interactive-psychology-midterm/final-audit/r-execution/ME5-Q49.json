@@ -1,0 +1,122 @@
+{
+  "id": "ME5-Q49",
+  "type": "code",
+  "chapter": "기초통계·T검정",
+  "conceptIds": [
+    "OX156",
+    "OX158",
+    "OX160",
+    "OX161"
+  ],
+  "prompt": "[실전 코드 변형] 아래 스크립트는 (가) 평균 중심 Levene 등분산 검정, (나) 등분산형 독립표본 t-검정, (다) 대응표본 차이 벡터 `d`의 정규성 검정을 차례로 수행한다. 따옴표·포뮬러 방향·검정 대상을 정확히 채우시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "answer": "대응표본 t-검정은 개체별 짝지은 차이값(`d = after - before`)에 대한 단일표본 t-검정과 같으므로 차이 분포의 정규성이 직접적인 가정이기 때문이다.",
+  "explanation": [
+    "문법적으로 실행 가능한지와 분석 목적에 맞는지를 모두 확인한다.",
+    "(다)는 after의 정규성 자체가 쓸모없다는 뜻이 아니라 대응 t-검정의 가정 점검 대상이 다르다는 뜻이다."
+  ],
+  "rubric": [
+    {
+      "points": 0.5,
+      "criterion": "빈칸 (1): 곡선 따옴표가 아닌 일반 따옴표로 mean을 감싼다."
+    },
+    {
+      "points": 0.5,
+      "criterion": "빈칸 (2): 수치 결과변수 ~ 집단 구분 순서다."
+    },
+    {
+      "points": 0.5,
+      "criterion": "빈칸 (3): 같은 사람의 두 시점 차이를 만든다."
+    },
+    {
+      "points": 0.5,
+      "criterion": "빈칸 (4): 대응검정의 정규성 가정 점검 대상은 차이 벡터다."
+    },
+    {
+      "points": 1,
+      "criterion": "추가 답안: (다)에서 `before`와 `after` 각각의 정규성 대신 차이 벡터 `d`의 정규성을 검정하는 이유를 쓰시오."
+    }
+  ],
+  "commonMistakes": [
+    "실행된다는 이유만으로 분석상 오류가 없다고 판단하지 않는다."
+  ],
+  "englishTerms": [],
+  "language": "각 빈칸에 실제 R 문법으로 작성. 문자열은 필요한 따옴표까지 포함한다.",
+  "accepted": "제시된 코드 틀에 넣었을 때 요구한 동작을 하는 R 코드를 인정한다. 공백·일반 작은따옴표/큰따옴표 차이와 동등한 식은 허용한다. 함수·객체의 철자·대소문자 및 문자열 값은 정확해야 한다.",
+  "source": "t-test 교안 p.14 · t-test 교안 p.19 · t-test 교안 p.20 · t-test 교안 p.21, 23",
+  "calc": false,
+  "points": 3.0,
+  "modelCode": "# (가) 평균 중심 Levene 검정\nlevene.test( datat$height, datat$group, location = \"mean\" )\n\n# (나) 등분산형 독립표본 t-검정\nt.test( height ~ group, data = datat, var.equal = TRUE )\n\n# (다) 같은 사람의 전후 차이 정규성 점검\nd <- datat2$after - datat2$before\nshapiro.test(d)",
+  "codeTemplate": "# (가) 평균 중심 Levene 검정\nlevene.test( datat$height, datat$group, location = {{1}} )\n\n# (나) 등분산형 독립표본 t-검정\nt.test( {{2}}, data = datat, var.equal = TRUE )\n\n# (다) 같은 사람의 전후 차이 정규성 점검\nd <- {{3}}\nshapiro.test({{4}})",
+  "codeBlanks": [
+    {
+      "id": "1",
+      "answer": "\"mean\"",
+      "explanation": "곡선 따옴표가 아닌 일반 따옴표로 mean을 감싼다."
+    },
+    {
+      "id": "2",
+      "answer": "height ~ group",
+      "explanation": "수치 결과변수 ~ 집단 구분 순서다."
+    },
+    {
+      "id": "3",
+      "answer": "datat2$after - datat2$before",
+      "explanation": "같은 사람의 두 시점 차이를 만든다."
+    },
+    {
+      "id": "4",
+      "answer": "d",
+      "explanation": "대응검정의 정규성 가정 점검 대상은 차이 벡터다."
+    }
+  ],
+  "followUp": "(다)에서 `before`와 `after` 각각의 정규성 대신 차이 벡터 `d`의 정규성을 검정하는 이유를 쓰시오.",
+  "codeSetup": "library(lawstat)\n\ndatat <- data.frame(\n  group = rep(c(\"Deagu\", \"Seoul\"), each = 20),\n  height = c(\n    141.977269, 145.731682, 147.81785, 149.374348, 150.666916, 151.804243, 152.843048, 153.817827,\n    154.752195, 155.664132, 156.568868, 157.480805, 158.415173, 159.389952, 160.428757, 161.566084,\n    162.858652, 164.41515, 166.501318, 170.255731, 144.316825, 149.543331, 152.447477, 154.614274,\n    156.413653, 157.996922, 159.443038, 160.800026, 162.100755, 163.37026, 164.62974, 165.899245,\n    167.199974, 168.556962, 170.003078, 171.586347, 173.385726, 175.552523, 178.456669, 183.683175\n  )\n)\n\ndatat2 <- data.frame(\n  before = c(\n    181, 182, 183, 184, 185, 186, 187, 188,\n    189, 190, 191, 192, 193, 194, 195, 196,\n    197, 198, 199, 200\n  ),\n  after = c(\n    108.787481, 120.027051, 126.716742, 131.961847, 136.487122, 140.589, 144.422176, 148.080733,\n    151.629073, 155.116237, 158.583763, 162.070927, 165.619267, 169.277824, 173.111, 177.212878,\n    181.738153, 186.983258, 193.672949, 204.912519\n  )\n)",
+  "inputDescription": "(가)·(나)는 독립된 두 집단의 키(cm), (다)는 같은 사람의 전후 수행시간(ms)이다. 각 자료는 서로 다른 연구의 문항용 구성자료이며 전체 관측을 제시했다.",
+  "promptPlain": "아래 코드는 (가) 평균 중심 Levene 검정, (나) 등분산형 독립표본 t-검정, (다) 대응검정용 차이의 정규성 점검을 수행하려 한다. 모든 객체와 필요한 패키지는 준비되어 있다. 문자열 따옴표·포뮬러 방향·정규성 검정 대상을 올바르게 작성하시오.\n다음 R 코드의 번호가 붙은 빈칸에 들어갈 코드를 적으시오.",
+  "variant": true,
+  "originId": "RC012",
+  "set": 5,
+  "number": 49,
+  "minutes": 5.0,
+  "codeMode": "blank",
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "# (가) 평균 중심 Levene 검정",
+      "explanation": "주어진 분석 단계의 구분 주석이며 실행되는 R 명령은 아니다."
+    },
+    {
+      "line": 2,
+      "code": "levene.test( datat$height, datat$group, location = \"mean\" )",
+      "explanation": "곡선 따옴표가 아닌 일반 따옴표로 mean을 감싼다."
+    },
+    {
+      "line": 4,
+      "code": "# (나) 등분산형 독립표본 t-검정",
+      "explanation": "주어진 분석 단계의 구분 주석이며 실행되는 R 명령은 아니다."
+    },
+    {
+      "line": 5,
+      "code": "t.test( height ~ group, data = datat, var.equal = TRUE )",
+      "explanation": "수치 결과변수 ~ 집단 구분 순서다."
+    },
+    {
+      "line": 7,
+      "code": "# (다) 같은 사람의 전후 차이 정규성 점검",
+      "explanation": "주어진 분석 단계의 구분 주석이며 실행되는 R 명령은 아니다."
+    },
+    {
+      "line": 8,
+      "code": "d <- datat2$after - datat2$before",
+      "explanation": "같은 사람의 두 시점 차이를 만든다."
+    },
+    {
+      "line": 9,
+      "code": "shapiro.test(d)",
+      "explanation": "대응검정의 정규성 가정 점검 대상은 차이 벡터다."
+    }
+  ],
+  "revision": "final-midterm-2026-10-19",
+  "bank": "mock-exam",
+  "inputProvenance": "question_visible_constructed_practice_data"
+}

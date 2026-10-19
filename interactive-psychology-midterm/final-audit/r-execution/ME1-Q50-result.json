@@ -1,0 +1,14 @@
+{
+  "id": "ME1-Q50",
+  "originId": "RC018",
+  "runtime": "R version 4.6.0 (2026-04-24)",
+  "status": "pass",
+  "checks": ["completed answer parses and evaluates in real R", "Fitts ISO ID matches log2(D/W+1)", "both Fitts MT values computed", "no unexpected warnings"],
+  "metrics": {
+    "ID": [2, 3],
+    "MT": [280, 390],
+    "roundedMT": [280, 390]
+  },
+  "warnings": [],
+  "inputProvenance": "question_literal_vectors"
+}

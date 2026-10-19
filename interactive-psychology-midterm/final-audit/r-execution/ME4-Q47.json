@@ -1,0 +1,68 @@
+{
+  "id": "ME4-Q47",
+  "type": "code",
+  "chapter": "기초통계·T검정",
+  "conceptIds": [
+    "OX152",
+    "OX157",
+    "OX158"
+  ],
+  "prompt": "datat의 두 집단에 대해 정규성과 등분산 조건을 점검했다. 강의의 등분산 가정형 양측 t-검정으로 height의 집단 평균을 비교하려 한다. R 코드 한 줄 전체를 작성하시오.",
+  "codeMode": "line",
+  "codeTemplate": "{{1}}",
+  "modelCode": "t.test(data = datat, height ~ group, var.equal = TRUE)",
+  "codeBlanks": [
+    {
+      "id": "1",
+      "answer": "t.test(data = datat, height ~ group, var.equal = TRUE)",
+      "explanation": "강의의 파란 입력줄처럼 data 인자를 먼저 쓴다. height ~ group은 반응값을 집단별로 비교한다. var.equal=TRUE가 없으면 R 기본값은 Welch다."
+    }
+  ],
+  "codeSetup": "datat <- data.frame(\n  group = rep(c(\"Deagu\", \"Seoul\"), each = 20),\n  height = c(\n    141.977269, 145.731682, 147.81785, 149.374348, 150.666916, 151.804243, 152.843048, 153.817827,\n    154.752195, 155.664132, 156.568868, 157.480805, 158.415173, 159.389952, 160.428757, 161.566084,\n    162.858652, 164.41515, 166.501318, 170.255731, 144.316825, 149.543331, 152.447477, 154.614274,\n    156.413653, 157.996922, 159.443038, 160.800026, 162.100755, 163.37026, 164.62974, 165.899245,\n    167.199974, 168.556962, 170.003078, 171.586347, 173.385726, 175.552523, 178.456669, 183.683175\n  )\n)",
+  "inputDescription": "아래 준비 코드는 실행된 상태다. 아래 객체와 열 이름을 사용하여 답안을 작성한다.",
+  "inputProvenance": "question_visible_constructed_practice_data",
+  "targetResult": "Two Sample t-test 결과표",
+  "answer": "Two Sample t-test 결과표",
+  "followUp": "",
+  "explanation": [
+    "강의의 파란 입력줄처럼 data 인자를 먼저 쓴다. height ~ group은 반응값을 집단별로 비교한다. var.equal=TRUE가 없으면 R 기본값은 Welch다.",
+    "강의의 입력 문장 형식을 우선 연습한다. 공백·일반 따옴표·동등한 대입/인자 순서는 같은 동작이면 인정한다. >는 콘솔 프롬프트이므로 답안에 포함하지 않는다."
+  ],
+  "rubric": [
+    {
+      "points": 1.5,
+      "criterion": "데이터와 height ~ group 지정"
+    },
+    {
+      "points": 1.5,
+      "criterion": "var.equal=TRUE를 포함한 독립표본 검정"
+    }
+  ],
+  "points": 3.0,
+  "accepted": "제시된 객체와 조건으로 같은 결과를 내는 실제 R 한 문장을 인정한다. 일반 따옴표·공백 차이, <-와 =의 유효한 대입, 이름 붙은 인자의 동등한 순서는 허용한다. 함수·객체·문자열 대소문자는 정확해야 한다.",
+  "language": "실제 R 코드 한 줄로 작성. 문자열은 일반 따옴표로 묶고 > 프롬프트는 쓰지 않는다.",
+  "englishTerms": [],
+  "commonMistakes": [
+    "출력 숫자나 함수 이름만 쓰지 말고 필요한 객체·조건·인자까지 포함한 코드 한 문장 전체를 쓴다."
+  ],
+  "source": "t-test 교안 p.20 · 파란색 콘솔 입력 확인",
+  "calc": false,
+  "lineValidation": {
+    "kind": "pooled"
+  },
+  "lineExplanations": [
+    {
+      "line": 1,
+      "code": "t.test(data = datat, height ~ group, var.equal = TRUE)",
+      "explanation": "강의의 파란 입력줄처럼 data 인자를 먼저 쓴다. height ~ group은 반응값을 집단별로 비교한다. var.equal=TRUE가 없으면 R 기본값은 Welch다."
+    }
+  ],
+  "codeRevision": "lecture-r-line-2026-10-18",
+  "set": 4,
+  "number": 47,
+  "minutes": 5.0,
+  "originId": "RC039",
+  "variant": false,
+  "revision": "final-midterm-2026-10-19",
+  "bank": "mock-exam"
+}

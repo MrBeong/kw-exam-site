@@ -1,0 +1,5 @@
+Warning messages:
+1: In grepl("0.000 0.000 1.000 SCN", strokes, fixed = TRUE) :
+  input string 2 is invalid in this locale
+2: In grepl("[] 0 d", strokes, fixed = TRUE) :
+  input string 2 is invalid in this locale

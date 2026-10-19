@@ -1,0 +1,19 @@
+
+Call:
+lm(formula = Time ~ bit, data = dat)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-242.290  -91.336   -1.088   81.034  245.181 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   500.00      26.33  18.990   <2e-16 ***
+bit            20.00      14.07   1.421     0.16    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 129.8 on 66 degrees of freedom
+Multiple R-squared:  0.02969,	Adjusted R-squared:  0.01499 
+F-statistic: 2.019 on 1 and 66 DF,  p-value: 0.16
+
