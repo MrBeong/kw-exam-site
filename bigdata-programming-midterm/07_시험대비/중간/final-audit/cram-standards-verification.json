@@ -3,19 +3,19 @@
   "passed": true,
   "checks": [
     {
-      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md new section unique",
+      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md new section unique",
       "passed": true
     },
     {
-      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md full new criteria present",
+      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md full new criteria present",
       "passed": true
     },
     {
-      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md previous content and local links preserved",
+      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md previous content and local links preserved",
       "passed": true
     },
     {
-      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md top entry points to new criteria",
+      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md top entry points to new criteria",
       "passed": true
     },
     {
@@ -39,19 +39,19 @@
       "passed": true
     },
     {
-      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md new section unique",
+      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md new section unique",
       "passed": true
     },
     {
-      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md full new criteria present",
+      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md full new criteria present",
       "passed": true
     },
     {
-      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md previous content and local links preserved",
+      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md previous content and local links preserved",
       "passed": true
     },
     {
-      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md top entry points to new criteria",
+      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md top entry points to new criteria",
       "passed": true
     },
     {
@@ -111,11 +111,11 @@
       "passed": true
     },
     {
-      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md new cross-reference valid",
+      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md new cross-reference valid",
       "passed": true
     },
     {
-      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md new cross-reference valid",
+      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md new cross-reference valid",
       "passed": true
     },
     {
