@@ -1,0 +1,471 @@
+{
+  "date": "2026-10-25",
+  "passed": true,
+  "checks": 111,
+  "failures": [],
+  "results": [
+    {
+      "name": "same 6 timed sections and 22 cards",
+      "passed": true
+    },
+    {
+      "name": "all solutions initially hidden",
+      "passed": true
+    },
+    {
+      "name": "only three core recalls initially visible",
+      "passed": true
+    },
+    {
+      "name": "6 recalls total",
+      "passed": true
+    },
+    {
+      "name": "same five final checks",
+      "passed": true
+    },
+    {
+      "name": "four/five choice lists actually rendered",
+      "passed": true
+    },
+    {
+      "name": "one direct term recall",
+      "passed": true
+    },
+    {
+      "name": "37 displayed code/template strings exact",
+      "passed": true
+    },
+    {
+      "name": "bulk reveal opens all answers and required ancestors",
+      "passed": true
+    },
+    {
+      "name": "all 20 code output explanations accessible",
+      "passed": true
+    },
+    {
+      "name": "s:state-trace actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "q:BM52 actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "s:accumulate actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "q:BC04 actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "q:BC06 actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "q:BS09 actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "s:return-position actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "s:defaults actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "q:BO05 nonfixed random outcome",
+      "passed": true
+    },
+    {
+      "name": "q:BO06 actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "q:BO07 actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "s:delete actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "q:BO09 actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "q:BO11 actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "q:BOP07 actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "s:read actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "s:write actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "s:write file contents shown joined.txt",
+      "passed": true
+    },
+    {
+      "name": "q:BO19 actual stdout shown exactly",
+      "passed": true
+    },
+    {
+      "name": "q:BO19 file contents shown summary.txt",
+      "passed": true
+    },
+    {
+      "name": "q:BC26 explicit no-screen-output",
+      "passed": true
+    },
+    {
+      "name": "q:BC27 explicit no-screen-output",
+      "passed": true
+    },
+    {
+      "name": "BM51 all choices in original order",
+      "passed": true
+    },
+    {
+      "name": "BM51 all choices have reasons",
+      "passed": true
+    },
+    {
+      "name": "BM51 reason 1",
+      "passed": true
+    },
+    {
+      "name": "BM51 reason 2",
+      "passed": true
+    },
+    {
+      "name": "BM51 reason 3",
+      "passed": true
+    },
+    {
+      "name": "BM51 reason 4",
+      "passed": true
+    },
+    {
+      "name": "BM18 all choices in original order",
+      "passed": true
+    },
+    {
+      "name": "BM18 all choices have reasons",
+      "passed": true
+    },
+    {
+      "name": "BM18 reason 1",
+      "passed": true
+    },
+    {
+      "name": "BM18 reason 2",
+      "passed": true
+    },
+    {
+      "name": "BM18 reason 3",
+      "passed": true
+    },
+    {
+      "name": "BM18 reason 4",
+      "passed": true
+    },
+    {
+      "name": "BM18 reason 5",
+      "passed": true
+    },
+    {
+      "name": "MC slash notation explained",
+      "passed": true
+    },
+    {
+      "name": "term exact English answer",
+      "passed": true
+    },
+    {
+      "name": "q:BO01 blank-answer count",
+      "passed": true
+    },
+    {
+      "name": "q:BO01 completed source exact",
+      "passed": true
+    },
+    {
+      "name": "q:BO01 faithful original/practice label",
+      "passed": true
+    },
+    {
+      "name": "q:BO03 blank-answer count",
+      "passed": true
+    },
+    {
+      "name": "q:BO03 completed source exact",
+      "passed": true
+    },
+    {
+      "name": "q:BO03 faithful original/practice label",
+      "passed": true
+    },
+    {
+      "name": "q:BO04 blank-answer count",
+      "passed": true
+    },
+    {
+      "name": "q:BO04 completed source exact",
+      "passed": true
+    },
+    {
+      "name": "q:BO04 faithful original/practice label",
+      "passed": true
+    },
+    {
+      "name": "q:BC32 blank-answer count",
+      "passed": true
+    },
+    {
+      "name": "q:BC32 completed source exact",
+      "passed": true
+    },
+    {
+      "name": "q:BC32 faithful original/practice label",
+      "passed": true
+    },
+    {
+      "name": "q:BO17 blank-answer count",
+      "passed": true
+    },
+    {
+      "name": "q:BO17 completed source exact",
+      "passed": true
+    },
+    {
+      "name": "q:BO17 faithful original/practice label",
+      "passed": true
+    },
+    {
+      "name": "q:BC24 blank-answer count",
+      "passed": true
+    },
+    {
+      "name": "q:BC24 completed source exact",
+      "passed": true
+    },
+    {
+      "name": "q:BC24 faithful original/practice label",
+      "passed": true
+    },
+    {
+      "name": "1440 no outer horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 pointer reaches #check-logic .quiz-options",
+      "passed": true
+    },
+    {
+      "name": "1440 native vertical wheel #check-logic .quiz-options",
+      "passed": true
+    },
+    {
+      "name": "1440 pointer reaches #check-file .fixture pre",
+      "passed": true
+    },
+    {
+      "name": "1440 native vertical wheel #check-file .fixture pre",
+      "passed": true
+    },
+    {
+      "name": "1440 pointer reaches .recall[data-ref=\"q:BC24\"] .goal",
+      "passed": true
+    },
+    {
+      "name": "1440 native vertical wheel .recall[data-ref=\"q:BC24\"] .goal",
+      "passed": true
+    },
+    {
+      "name": "1440 pointer reaches .code-result[data-code-ref=\"s:delete\"] .actual-output",
+      "passed": true
+    },
+    {
+      "name": "1440 native vertical wheel .code-result[data-code-ref=\"s:delete\"] .actual-output",
+      "passed": true
+    },
+    {
+      "name": "1440 horizontal code reading",
+      "passed": true,
+      "detail": {
+        "left": 0,
+        "max": 0
+      }
+    },
+    {
+      "name": "1440 horizontal does not move main",
+      "passed": true
+    },
+    {
+      "name": "1440 existing practice records unchanged",
+      "passed": true
+    },
+    {
+      "name": "390 no outer horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 pointer reaches #check-logic .quiz-options",
+      "passed": true
+    },
+    {
+      "name": "390 native vertical wheel #check-logic .quiz-options",
+      "passed": true
+    },
+    {
+      "name": "390 pointer reaches #check-file .fixture pre",
+      "passed": true
+    },
+    {
+      "name": "390 native vertical wheel #check-file .fixture pre",
+      "passed": true
+    },
+    {
+      "name": "390 pointer reaches .recall[data-ref=\"q:BC24\"] .goal",
+      "passed": true
+    },
+    {
+      "name": "390 native vertical wheel .recall[data-ref=\"q:BC24\"] .goal",
+      "passed": true
+    },
+    {
+      "name": "390 pointer reaches .code-result[data-code-ref=\"s:delete\"] .actual-output",
+      "passed": true
+    },
+    {
+      "name": "390 native vertical wheel .code-result[data-code-ref=\"s:delete\"] .actual-output",
+      "passed": true
+    },
+    {
+      "name": "390 horizontal code reading",
+      "passed": true,
+      "detail": {
+        "left": 146,
+        "max": 146
+      }
+    },
+    {
+      "name": "390 horizontal does not move main",
+      "passed": true
+    },
+    {
+      "name": "390 existing practice records unchanged",
+      "passed": true
+    },
+    {
+      "name": "320 no outer horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 pointer reaches #check-logic .quiz-options",
+      "passed": true
+    },
+    {
+      "name": "320 native vertical wheel #check-logic .quiz-options",
+      "passed": true
+    },
+    {
+      "name": "320 pointer reaches #check-file .fixture pre",
+      "passed": true
+    },
+    {
+      "name": "320 native vertical wheel #check-file .fixture pre",
+      "passed": true
+    },
+    {
+      "name": "320 pointer reaches .recall[data-ref=\"q:BC24\"] .goal",
+      "passed": true
+    },
+    {
+      "name": "320 native vertical wheel .recall[data-ref=\"q:BC24\"] .goal",
+      "passed": true
+    },
+    {
+      "name": "320 pointer reaches .code-result[data-code-ref=\"s:delete\"] .actual-output",
+      "passed": true
+    },
+    {
+      "name": "320 native vertical wheel .code-result[data-code-ref=\"s:delete\"] .actual-output",
+      "passed": true
+    },
+    {
+      "name": "320 horizontal code reading",
+      "passed": true,
+      "detail": {
+        "left": 216,
+        "max": 216
+      }
+    },
+    {
+      "name": "320 horizontal does not move main",
+      "passed": true
+    },
+    {
+      "name": "320 existing practice records unchanged",
+      "passed": true
+    },
+    {
+      "name": "bulk closes all solutions",
+      "passed": true
+    },
+    {
+      "name": "keyboard reveals a code outcome",
+      "passed": true
+    },
+    {
+      "name": "printing opens every code and solution",
+      "passed": true
+    },
+    {
+      "name": "print code wraps",
+      "passed": true
+    },
+    {
+      "name": "all solutions visible in print",
+      "passed": true
+    },
+    {
+      "name": "print restores disclosure state",
+      "passed": true
+    },
+    {
+      "name": "print preserves practice storage",
+      "passed": true
+    },
+    {
+      "name": "offline file entry works",
+      "passed": true
+    },
+    {
+      "name": "offline reveal includes optional parents",
+      "passed": true
+    },
+    {
+      "name": "no JS errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "browser": "Chromium",
+  "widths": [
+    1440,
+    390,
+    320
+  ]
+}

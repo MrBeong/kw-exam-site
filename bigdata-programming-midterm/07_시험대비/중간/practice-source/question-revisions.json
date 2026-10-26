@@ -1,0 +1,394 @@
+{
+  "id": "2026-10-20-quality-1",
+  "changes": [
+    {
+      "id": "BM01",
+      "resetAnswer": false,
+      "before": {
+        "id": "BM01",
+        "type": "mc",
+        "keys": [
+          "runtime",
+          "kernel",
+          "display",
+          "execution-order"
+        ],
+        "conceptIds": [
+          "BD-001",
+          "BD-002",
+          "BD-003",
+          "BD-004"
+        ],
+        "section": "environment",
+        "prompt": "같은 커널에서 A → C → B 순으로 실행했다. B의 출력은?",
+        "source": "BIG-004",
+        "pages": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "priority": true,
+        "scope": "slides",
+        "level": "적용",
+        "options": [
+          "20",
+          "30",
+          "NameError",
+          "10"
+        ],
+        "correct": 0,
+        "reasons": [
+          "C가 x를 20으로 바꾼 뒤 B가 현재 x를 읽는다.",
+          "대입은 기존 값과 새 값을 더하지 않는다.",
+          "A와 C에서 x를 정의했으므로 이름 오류가 아니다.",
+          "A 직후 B를 실행했을 때의 값이다."
+        ],
+        "code": "A 셀: x = 10\nB 셀: print(x)\nC 셀: x = 20",
+        "optionIds": [
+          "BM01-O2",
+          "BM01-O3",
+          "BM01-O4",
+          "BM01-O1"
+        ],
+        "files": []
+      },
+      "reason": "셀 이름을 Python 주석으로 표기"
+    },
+    {
+      "id": "BM05",
+      "resetAnswer": true,
+      "before": {
+        "id": "BM05",
+        "type": "mc",
+        "keys": [
+          "names"
+        ],
+        "conceptIds": [
+          "BD-017"
+        ],
+        "section": "basics",
+        "prompt": "이름 자체는 만들 수 있지만, 사용 후 내장 함수 호출을 가려 오류를 일으키는 대입은?",
+        "source": "BIG-003",
+        "pages": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "priority": false,
+        "scope": "slides",
+        "level": "적용",
+        "options": [
+          "class = 3",
+          "sum = 100",
+          "total-score = 3",
+          "2nd = 3"
+        ],
+        "correct": 1,
+        "reasons": [
+          "class는 예약어라 변수 이름으로 쓸 수 없다.",
+          "sum은 유효한 이름이다. 그러나 정수를 대입한 뒤 sum([1,2])를 호출하면 TypeError다.",
+          "하이픈은 이름 문자가 아니라 뺄셈 기호다.",
+          "숫자로 시작하는 이름은 문법 오류다."
+        ],
+        "optionIds": [
+          "BM05-O2",
+          "BM05-O3",
+          "BM05-O4",
+          "BM05-O1"
+        ],
+        "files": []
+      },
+      "reason": "실행 결과와 인접 개념을 구별하는 보기로 보완"
+    },
+    {
+      "id": "BM31",
+      "resetAnswer": true,
+      "before": {
+        "id": "BM31",
+        "type": "mc",
+        "keys": [
+          "write"
+        ],
+        "conceptIds": [
+          "BD-093"
+        ],
+        "section": "files",
+        "prompt": "같은 텍스트 파일에 write(\"Hello\"), write(\"Python\")을 연속 실행한 내용은?",
+        "source": "BIG-019",
+        "pages": [
+          30,
+          31
+        ],
+        "priority": false,
+        "scope": "slides",
+        "level": "적용",
+        "options": [
+          "Hello Python",
+          "HelloPython",
+          "Python",
+          "Hello\\nPython\\n"
+        ],
+        "correct": 1,
+        "reasons": [
+          "write는 공백을 자동 추가하지 않는다.",
+          "두 문자열을 현재 쓰기 위치에 연속 기록한다.",
+          "같은 열린 파일에서 두 번째 write를 해도 첫 내용을 지우지 않는다.",
+          "write는 개행을 자동 추가하지 않는다."
+        ],
+        "optionIds": [
+          "BM31-O2",
+          "BM31-O3",
+          "BM31-O4",
+          "BM31-O1"
+        ],
+        "files": []
+      },
+      "reason": "파일 열기 모드와 호출 순서 명시"
+    },
+    {
+      "id": "BM34",
+      "resetAnswer": true,
+      "before": {
+        "id": "BM34",
+        "type": "mc",
+        "keys": [
+          "path"
+        ],
+        "conceptIds": [
+          "BD-085"
+        ],
+        "section": "files",
+        "prompt": "현재 작업 폴더와 스크립트 폴더가 다를 때 상대경로 open(\"phones.txt\")가 기본으로 찾는 위치는?",
+        "source": "BIG-019",
+        "pages": [
+          7,
+          8,
+          9
+        ],
+        "priority": false,
+        "scope": "slides",
+        "level": "적용",
+        "options": [
+          "항상 스크립트 폴더",
+          "항상 Downloads",
+          "이전 실행에서 연 폴더",
+          "현재 작업 폴더"
+        ],
+        "correct": 3,
+        "reasons": [
+          "스크립트 폴더와 현재 작업 폴더는 다를 수 있다.",
+          "Downloads는 특별한 기본 경로가 아니다.",
+          "이전에 파일을 연 위치가 기준이 되지 않는다.",
+          "상대경로는 프로세스의 현재 작업 폴더를 기준으로 한다."
+        ],
+        "optionIds": [
+          "BM34-O2",
+          "BM34-O3",
+          "BM34-O4",
+          "BM34-O1"
+        ],
+        "files": []
+      },
+      "reason": "실행 결과와 인접 개념을 구별하는 보기로 보완"
+    },
+    {
+      "id": "BM36",
+      "resetAnswer": true,
+      "before": {
+        "id": "BM36",
+        "type": "mc",
+        "keys": [
+          "traceback",
+          "syntax-error",
+          "type-error",
+          "zero-division",
+          "name-error"
+        ],
+        "conceptIds": [
+          "BD-011",
+          "BD-007",
+          "BD-008",
+          "BD-009",
+          "BD-010"
+        ],
+        "section": "basics",
+        "prompt": "실행 중 오류가 발생했을 때 Traceback에서 예외 종류·오류 메시지를 우선 확인하는 위치는?",
+        "source": "BIG-003",
+        "pages": [
+          17,
+          18
+        ],
+        "priority": false,
+        "scope": "slides",
+        "level": "적용",
+        "options": [
+          "첫 줄의 파일 경로만",
+          "마지막 줄",
+          "모든 print 출력의 첫 줄",
+          "변수 대입문의 왼쪽"
+        ],
+        "correct": 1,
+        "reasons": [
+          "파일 경로는 위치 근거이며 예외 종류와 메시지는 마지막 줄에서 확인한다.",
+          "마지막 줄의 예외 종류·메시지와 위쪽 파일·줄 정보를 연결한다.",
+          "일반 출력과 오류 추적 정보는 다르다.",
+          "대입문의 왼쪽만으로 실행 중 오류를 판단할 수 없다."
+        ],
+        "optionIds": [
+          "BM36-O1",
+          "BM36-O2",
+          "BM36-O3",
+          "BM36-O4"
+        ],
+        "files": []
+      },
+      "reason": "실행 결과와 인접 개념을 구별하는 보기로 보완"
+    },
+    {
+      "id": "BM37",
+      "resetAnswer": true,
+      "before": {
+        "id": "BM37",
+        "type": "mc",
+        "keys": [
+          "runtime",
+          "kernel"
+        ],
+        "conceptIds": [
+          "BD-001",
+          "BD-002"
+        ],
+        "section": "environment",
+        "prompt": "Python 코드의 실행과 VS Code의 역할을 바르게 연결한 것은?",
+        "source": "BIG-004",
+        "pages": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "priority": false,
+        "scope": "slides",
+        "level": "적용",
+        "options": [
+          "Python: 편집기 / VS Code: 인터프리터",
+          "Python: 인터프리터 / VS Code: 편집기",
+          "Python: 파일 탐색기 / VS Code: 커널",
+          "Python: 출력 파일 / VS Code: 자료형"
+        ],
+        "correct": 1,
+        "reasons": [
+          "편집기와 실행기의 역할을 반대로 연결했다.",
+          "Python 실행기가 코드를 해석하고 VS Code는 작성·관리 환경을 제공한다.",
+          "파일 관리 영역과 코드 실행기를 혼동했다.",
+          "둘 다 이 설명의 자료형이나 출력 파일이 아니다."
+        ],
+        "optionIds": [
+          "BM37-O1",
+          "BM37-O2",
+          "BM37-O3",
+          "BM37-O4"
+        ],
+        "files": []
+      },
+      "reason": "실행 결과와 인접 개념을 구별하는 보기로 보완"
+    },
+    {
+      "id": "BM45",
+      "resetAnswer": true,
+      "before": {
+        "id": "BM45",
+        "type": "mc",
+        "keys": [
+          "while"
+        ],
+        "conceptIds": [
+          "BD-034"
+        ],
+        "section": "control",
+        "prompt": "다음 반복이 스스로 끝나지 않는 원인은?",
+        "source": "BIG-005",
+        "pages": [
+          20
+        ],
+        "priority": false,
+        "scope": "slides",
+        "level": "적용",
+        "options": [
+          "<=가 유효하지 않은 연산자임",
+          "while은 항상 한 번 이상 반복함",
+          "print가 product를 증가시킴",
+          "product가 갱신되지 않음"
+        ],
+        "correct": 3,
+        "reasons": [
+          "<=는 유효한 비교 연산자다.",
+          "while은 처음 조건이 거짓이면 한 번도 실행하지 않는다.",
+          "print가 product를 증가시키지는 않는다.",
+          "조건에 쓰는 product가 본문에서 갱신되지 않아 조건이 계속 참이다."
+        ],
+        "code": "product = 2\nwhile product <= 1000:\n    print(product)",
+        "original": "교안의 의도적 무한 반복 예제. 실행하지 않고 원인을 판단한다.",
+        "optionIds": [
+          "BM45-O2",
+          "BM45-O3",
+          "BM45-O4",
+          "BM45-O1"
+        ],
+        "files": []
+      },
+      "reason": "실행 결과와 인접 개념을 구별하는 보기로 보완"
+    },
+    {
+      "id": "BM42",
+      "resetAnswer": true,
+      "before": {
+        "id": "BM42",
+        "type": "mc",
+        "keys": [
+          "dict",
+          "views"
+        ],
+        "conceptIds": [
+          "BD-074",
+          "BD-077"
+        ],
+        "section": "collections",
+        "prompt": "d={\"foo\":1,\"bar\":2}에서 list(d.items())의 결과는?",
+        "source": "BIG-008",
+        "pages": [
+          19,
+          20,
+          21,
+          22
+        ],
+        "priority": false,
+        "scope": "slides",
+        "level": "적용",
+        "options": [
+          "[1, 2]",
+          "[(\"foo\", 1), (\"bar\", 2)]",
+          "{\"foo\", \"bar\", 1, 2}",
+          "[\"foo\", \"bar\"]"
+        ],
+        "correct": 1,
+        "reasons": [
+          "values를 리스트로 바꾼 결과다.",
+          "items는 키-값 쌍의 뷰이며 각 쌍은 튜플이다.",
+          "키-값 대응을 하나의 집합으로 합치지 않는다.",
+          "keys를 리스트로 바꾼 결과다."
+        ],
+        "optionIds": [
+          "BM42-O2",
+          "BM42-O3",
+          "BM42-O4",
+          "BM42-O1"
+        ],
+        "files": []
+      },
+      "reason": "모든 보기를 두 튜플의 리스트로 맞춰 길이·자료형 단서 제거"
+    }
+  ]
+}

@@ -1,0 +1,1301 @@
+{
+  "date": "2026-10-25",
+  "passed": true,
+  "checks": 191,
+  "codeExecutions": 31,
+  "conceptGroups": 98,
+  "questionsUnchanged": 389,
+  "results": [
+    {
+      "name": "independent oracle for every included code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:state-trace exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:state-trace all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:state-trace actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "11\n3\n3\nTrue\n",
+        "expected": "11\n3\n3\nTrue\n"
+      }
+    },
+    {
+      "name": "s:state-trace final x",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:state-trace final y",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:state-trace final z",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO01 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO01 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO01 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "합계: 25.0\n평균: 12.5\n",
+        "expected": "합계: 25.0\n평균: 12.5\n"
+      }
+    },
+    {
+      "name": "q:BO01 final total",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO01 final average",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO03 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO03 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO03 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "2000 년은 윤년입니다.\n",
+        "expected": "2000 년은 윤년입니다.\n"
+      }
+    },
+    {
+      "name": "q:BM52 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BM52 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BM52 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "A\nB\nA\n",
+        "expected": "A\nB\nA\n"
+      }
+    },
+    {
+      "name": "q:BO04 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO04 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO04 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "4 !은 24 이다.\n",
+        "expected": "4 !은 24 이다.\n"
+      }
+    },
+    {
+      "name": "q:BO04 final fact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:accumulate exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:accumulate all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:accumulate actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "6 4\n",
+        "expected": "6 4\n"
+      }
+    },
+    {
+      "name": "s:accumulate final total",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:accumulate final i",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC04 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC04 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC04 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "최대 공약수는 6입니다\n",
+        "expected": "최대 공약수는 6입니다\n"
+      }
+    },
+    {
+      "name": "q:BC04 final x",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC04 final y",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC06 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC06 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC06 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "12 6\n",
+        "expected": "12 6\n"
+      }
+    },
+    {
+      "name": "q:BC06 final total",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC06 final i",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BS09 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BS09 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BS09 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "10\n",
+        "expected": "10\n"
+      }
+    },
+    {
+      "name": "q:BS09 final result",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:return-position exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:return-position all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:return-position actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "100\n",
+        "expected": "100\n"
+      }
+    },
+    {
+      "name": "q:BC32 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC32 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC32 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "1 2 3\n(1, 2, 3)\n<class 'tuple'>\n",
+        "expected": "1 2 3\n(1, 2, 3)\n<class 'tuple'>\n"
+      }
+    },
+    {
+      "name": "s:defaults exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:defaults all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:defaults actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "6\n30\n50\n10\n",
+        "expected": "6\n30\n50\n10\n"
+      }
+    },
+    {
+      "name": "q:BO05 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO05 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO05 random output invariants",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO06 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO06 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO06 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "넓이: 314.00\n",
+        "expected": "넓이: 314.00\n"
+      }
+    },
+    {
+      "name": "q:BO06 final r",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO06 final area",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO07 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO07 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO07 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "['B', 'D']\n['E', 'F']\n['F', 'E', 'D', 'C', 'B', 'A']\n['A', 'B', 'C', 'D', 'E', 'F']\n",
+        "expected": "['B', 'D']\n['E', 'F']\n['F', 'E', 'D', 'C', 'B', 'A']\n['A', 'B', 'C', 'D', 'E', 'F']\n"
+      }
+    },
+    {
+      "name": "s:delete exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:delete all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:delete actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "[10, 20, 30]\n20 [10, 30]\n[30]\n",
+        "expected": "[10, 20, 30]\n20 [10, 30]\n[30]\n"
+      }
+    },
+    {
+      "name": "s:delete final taken",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:delete final data",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO09 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO09 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO09 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "[70, 95, 80, 95, 60]\n[95, 95, 80, 70, 60]\n[95, 95, 80]\n90.0\n",
+        "expected": "[70, 95, 80, 95, 60]\n[95, 95, 80, 70, 60]\n[95, 95, 80]\n90.0\n"
+      }
+    },
+    {
+      "name": "q:BO11 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO11 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO11 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "15\n40\n65\n[3, 8, 13]\n8.0\n",
+        "expected": "15\n40\n65\n[3, 8, 13]\n8.0\n"
+      }
+    },
+    {
+      "name": "q:BO11 final math_scores",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO17 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO17 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO17 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "{'red': 3, 'blue': 2, 'green': 1}\n6\n3\n",
+        "expected": "{'red': 3, 'blue': 2, 'green': 1}\n6\n3\n"
+      }
+    },
+    {
+      "name": "q:BO17 final counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BOP07 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BOP07 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BOP07 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "{'name': 'Mina', 'scores': [80, 90, 100]}\n{'name': 'Jun', 'scores': [80, 90, 100]}\n[80, 90, 100]\n[60]\n",
+        "expected": "{'name': 'Mina', 'scores': [80, 90, 100]}\n{'name': 'Jun', 'scores': [80, 90, 100]}\n[80, 90, 100]\n[60]\n"
+      }
+    },
+    {
+      "name": "s:read exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:read all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:read actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "1 'A\\n'\n2 '\\n'\n3 'B\\n'\n4 ''\n",
+        "expected": "1 'A\\n'\n2 '\\n'\n3 'B\\n'\n4 ''\n"
+      }
+    },
+    {
+      "name": "q:BC24 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC24 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC24 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "Susan 31.4\nBrad 36.8\nJenn 39.5\n",
+        "expected": "Susan 31.4\nBrad 36.8\nJenn 39.5\n"
+      }
+    },
+    {
+      "name": "s:write exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:write all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "s:write actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "첫 write의 반환값: 5\n'HelloPython'\n",
+        "expected": "첫 write의 반환값: 5\n'HelloPython'\n"
+      }
+    },
+    {
+      "name": "s:write file joined.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO19 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO19 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BO19 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "3 90.0\n",
+        "expected": "3 90.0\n"
+      }
+    },
+    {
+      "name": "q:BO19 file summary.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC26 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC26 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC26 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "",
+        "expected": ""
+      }
+    },
+    {
+      "name": "q:BC26 copied exact bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC26 unchanged input file",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC27 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC27 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC27 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "",
+        "expected": ""
+      }
+    },
+    {
+      "name": "q:BC27 copied exact bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC27 unchanged input file",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BC27 read chunks including EOF",
+      "passed": true,
+      "detail": [
+        1024,
+        1024,
+        452,
+        0
+      ]
+    },
+    {
+      "name": "q:BM40 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BM40 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BM40 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "A-B C\n",
+        "expected": "A-B C\n"
+      }
+    },
+    {
+      "name": "q:BM51 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BM51 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BM51 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "5\n3\n",
+        "expected": "5\n3\n"
+      }
+    },
+    {
+      "name": "q:BM18 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BM18 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BM18 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "",
+        "expected": ""
+      }
+    },
+    {
+      "name": "q:BM18 final stops",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BSA027 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BSA027 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BSA027 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "",
+        "expected": ""
+      }
+    },
+    {
+      "name": "q:BSA027 final x",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BOP09 exact original code",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BOP09 all initial file data provided",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BOP09 actual stdout == independent expectation",
+      "passed": true,
+      "detail": {
+        "actual": "'홍길동 010-1234-5678\\n'\n['김철수 010-1234-5679\\n', '김영희 010-1234-5680\\n']\n''\n",
+        "expected": "'홍길동 010-1234-5678\\n'\n['김철수 010-1234-5679\\n', '김영희 010-1234-5680\\n']\n''\n"
+      }
+    },
+    {
+      "name": "q:BOP09 type first",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BOP09 type remaining",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "q:BOP09 type end",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "leap century exception 2012",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "leap century exception 1900",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "leap century exception 2000",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "leap century exception 2023",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "factorial boundary 0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "factorial boundary 1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "factorial boundary 4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fractional inputs remain float",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value -7 / 4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value -7 // 4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value -7 % 4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value int(-1.75)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value 2 ** 3 ** 2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value (2 ** 3) ** 2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value 2 ^ 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value 0 or 5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value \"Python\" and 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value 0 != 0 and 10 / 0 > 2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value list(range(5,0,-2))",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value list(range(5,0))",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value list(range(5))",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value list(range(1,5))",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value list(range(10))[10:2:-2]",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value max(\"Hello world\")",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value min(\"Hello world\")",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value len(\"가\")",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table value len(\"가\".encode(\"utf-8\"))",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table exception int(\"20.5\")",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table exception \"Hi\"+3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table exception range(1,5,0)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table exception [1][6]",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table exception {}[\"missing\"]",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table exception [].pop()",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table exception [1].remove(9)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "table exception 10/0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all 98 current concept groups mapped",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "each coverage target has actual card",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recommended path totals 60 minutes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "five final mixed retrieval items",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "output MC and term types actually represented",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "actual four and five choice formats",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "output checks match independent stdout",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "term answer is exact lecture spelling",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "MC four choice independent correct index",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "MC five choice independent correct index",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "only index6 fails with actual lookup",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "core plus optional recall questions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "BO01 original blank locations and answers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "BO03 original blank locations and answers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "BO04 original blank locations and answers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "BC32 original blank locations and answers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "BO17 original blank locations and answers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "BC24 original blank locations and answers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reviewed example 65-53",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reviewed example 65-65",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reviewed example 65-70",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reviewed example sorted([-4,1,-2,3],key=abs,reverse=True)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reviewed example sorted([-4,1,-2,3],key=abs)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "mixed MD uses real newlines",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "optional recalls labeled faithfully",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "existing bank/state/wheel behavior unchanged practice-source/questions.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "existing bank/state/wheel behavior unchanged practice-source/app.js",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "existing bank/state/wheel behavior unchanged practice-source/style.css",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "concept main aliases remain identical",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "compression JS does not write learning storage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no external asset dependency",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "runs": [
+    {
+      "ref": "s:state-trace",
+      "stdout": "11\n3\n3\nTrue\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BO01",
+      "stdout": "합계: 25.0\n평균: 12.5\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BO03",
+      "stdout": "2000 년은 윤년입니다.\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BM52",
+      "stdout": "A\nB\nA\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BO04",
+      "stdout": "4 !은 24 이다.\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "s:accumulate",
+      "stdout": "6 4\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BC04",
+      "stdout": "최대 공약수는 6입니다\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BC06",
+      "stdout": "12 6\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BS09",
+      "stdout": "10\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "s:return-position",
+      "stdout": "100\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BC32",
+      "stdout": "1 2 3\n(1, 2, 3)\n<class 'tuple'>\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "s:defaults",
+      "stdout": "6\n30\n50\n10\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BO05",
+      "stdout": "mlibyj\nrrltla\npu8wc0\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BO06",
+      "stdout": "넓이: 314.00\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BO07",
+      "stdout": "['B', 'D']\n['E', 'F']\n['F', 'E', 'D', 'C', 'B', 'A']\n['A', 'B', 'C', 'D', 'E', 'F']\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "s:delete",
+      "stdout": "[10, 20, 30]\n20 [10, 30]\n[30]\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BO09",
+      "stdout": "[70, 95, 80, 95, 60]\n[95, 95, 80, 70, 60]\n[95, 95, 80]\n90.0\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BO11",
+      "stdout": "15\n40\n65\n[3, 8, 13]\n8.0\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BO17",
+      "stdout": "{'red': 3, 'blue': 2, 'green': 1}\n6\n3\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BOP07",
+      "stdout": "{'name': 'Mina', 'scores': [80, 90, 100]}\n{'name': 'Jun', 'scores': [80, 90, 100]}\n[80, 90, 100]\n[60]\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "s:read",
+      "stdout": "1 'A\\n'\n2 '\\n'\n3 'B\\n'\n4 ''\n",
+      "blockLengths": [],
+      "files": {
+        "blank.txt": {
+          "bytes": 5,
+          "sha256": "c410bfd99c846b9dc84431c34ca7044a1e3e4e33146a8fa105b25577e6188768"
+        }
+      }
+    },
+    {
+      "ref": "q:BC24",
+      "stdout": "Susan 31.4\nBrad 36.8\nJenn 39.5\n",
+      "blockLengths": [],
+      "files": {
+        "hours.txt": {
+          "bytes": 85,
+          "sha256": "f53db144c60f45f7279dc50b125bc824a06d95a00026ddf46263eeb7d7a55ac4"
+        }
+      }
+    },
+    {
+      "ref": "s:write",
+      "stdout": "첫 write의 반환값: 5\n'HelloPython'\n",
+      "blockLengths": [],
+      "files": {
+        "joined.txt": {
+          "bytes": 11,
+          "sha256": "91080d8e4efeed098ebca001abb7efc596e20eaf518391b76700a1b059efc83a"
+        }
+      }
+    },
+    {
+      "ref": "q:BO19",
+      "stdout": "3 90.0\n",
+      "blockLengths": [],
+      "files": {
+        "scores.txt": {
+          "bytes": 10,
+          "sha256": "33456ce116a3b03f46139b3eb2ad033e80361cc1c5b417cf824e9cba71575fe7"
+        },
+        "summary.txt": {
+          "bytes": 21,
+          "sha256": "d8ef31f42b3bc8cdb3d986a75da3c27810b4bacae821bb48a7da61dd59d59295"
+        }
+      }
+    },
+    {
+      "ref": "q:BC26",
+      "stdout": "",
+      "blockLengths": [],
+      "files": {
+        "phones.txt": {
+          "bytes": 72,
+          "sha256": "d080c661293a12a411e9da8f5528749bec6d3e51786869bc3ac9798ea8c627ae"
+        },
+        "phones_copy.txt": {
+          "bytes": 72,
+          "sha256": "d080c661293a12a411e9da8f5528749bec6d3e51786869bc3ac9798ea8c627ae"
+        }
+      }
+    },
+    {
+      "ref": "q:BC27",
+      "stdout": "",
+      "blockLengths": [
+        1024,
+        1024,
+        452,
+        0
+      ],
+      "files": {
+        "bridge.png": {
+          "bytes": 2500,
+          "sha256": "1912c8f5c053dc58247c3e7bf4703b1e7211c45097bca44693a8906fb023e66b"
+        },
+        "bridge_copy.png": {
+          "bytes": 2500,
+          "sha256": "1912c8f5c053dc58247c3e7bf4703b1e7211c45097bca44693a8906fb023e66b"
+        }
+      }
+    },
+    {
+      "ref": "q:BM40",
+      "stdout": "A-B C\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BM51",
+      "stdout": "5\n3\n",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BM18",
+      "stdout": "",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BSA027",
+      "stdout": "",
+      "blockLengths": [],
+      "files": {}
+    },
+    {
+      "ref": "q:BOP09",
+      "stdout": "'홍길동 010-1234-5678\\n'\n['김철수 010-1234-5679\\n', '김영희 010-1234-5680\\n']\n''\n",
+      "blockLengths": [],
+      "files": {
+        "phones.txt": {
+          "bytes": 72,
+          "sha256": "d080c661293a12a411e9da8f5528749bec6d3e51786869bc3ac9798ea8c627ae"
+        }
+      }
+    }
+  ],
+  "limits": "코드/수치와 현재 개념군 대응의 검산이다. 미공개 시험 출제와60분 학습 시간의 실측 검증을 뜻하지 않는다."
+}

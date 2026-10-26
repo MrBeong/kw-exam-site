@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-25",
+  "passed": 12,
+  "errors": [],
+  "checks": [
+    "surviving average original selected",
+    "transferred lesson explanation hidden before solving",
+    "original average canonical answers accepted",
+    "retired BC28 lecture/slides versus py distinction shown inside BO19 solution",
+    "round consisting only of retired duplicates safely ends",
+    "retired draft not credited to original survivor",
+    "old draft and graded prior both archived",
+    "retired-only round migration idempotent",
+    "surviving write-mode direct short question selected",
+    "existing w-mode key still correct",
+    "surviving direct short has detailed in-page explanation",
+    "no page errors"
+  ]
+}

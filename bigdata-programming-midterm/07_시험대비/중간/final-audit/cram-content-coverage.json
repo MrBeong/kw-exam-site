@@ -1,0 +1,1437 @@
+{
+  "date": "2026-10-25",
+  "passed": true,
+  "conceptGroups": 98,
+  "exampleGroups": 111,
+  "transcriptEmphasis": [
+    {
+      "transcript": "변수와_개발환경_제공전사.txt",
+      "emphasis": "이름 연결·재대입·교환과 내장 이름 가리기",
+      "card": "state",
+      "location": "35_시험1시간전_압축정리.html#state",
+      "evidence": "재계산"
+    },
+    {
+      "transcript": "변수와_개발환경_제공전사.txt",
+      "emphasis": "실행 순서와 커널 상태",
+      "card": "state",
+      "location": "35_시험1시간전_압축정리.html#state",
+      "evidence": "커널"
+    },
+    {
+      "transcript": "입력과_자료형_제공전사.txt",
+      "emphasis": "표현식 자동 표시와 저장값/print 구별",
+      "card": "state",
+      "location": "35_시험1시간전_압축정리.html#state",
+      "evidence": "자동 표시"
+    },
+    {
+      "transcript": "입력과_자료형_제공전사.txt",
+      "emphasis": "input의 str·명시적 변환·잘못된 문자열",
+      "card": "input",
+      "location": "35_시험1시간전_압축정리.html#input",
+      "evidence": "input"
+    },
+    {
+      "transcript": "입력과_자료형_제공전사.txt",
+      "emphasis": "음수 나눗셈·나머지·int와 우선순위",
+      "card": "operators",
+      "location": "35_시험1시간전_압축정리.html#operators",
+      "evidence": "내림"
+    },
+    {
+      "transcript": "조건과_반복_제공전사.txt",
+      "emphasis": "if 묶음·elif 순서·독립 if·경계",
+      "card": "branch",
+      "location": "35_시험1시간전_압축정리.html#branch",
+      "evidence": "독립 if"
+    },
+    {
+      "transcript": "조건과_반복_제공전사.txt",
+      "emphasis": "윤년 4/100/400 예외",
+      "card": "branch",
+      "location": "35_시험1시간전_압축정리.html#branch",
+      "evidence": "400"
+    },
+    {
+      "transcript": "조건과_반복_제공전사.txt",
+      "emphasis": "누적·range 끝값·팩토리얼",
+      "card": "factorial",
+      "location": "35_시험1시간전_압축정리.html#factorial",
+      "evidence": "팩토리얼"
+    },
+    {
+      "transcript": "조건과_반복_제공전사.txt",
+      "emphasis": "반복만 중단하는 break와 현재 회차를 건너뛰는 continue",
+      "card": "loop-flow",
+      "location": "35_시험1시간전_압축정리.html#loop-flow",
+      "evidence": "continue"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "정의/호출·인수/매개변수와 print/return/None",
+      "card": "return",
+      "location": "35_시험1시간전_압축정리.html#return",
+      "evidence": "result에는None"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "반환 위치와 반복 전체 수행",
+      "card": "return",
+      "location": "35_시험1시간전_압축정리.html#return",
+      "evidence": "return"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "난수 범위·6문자·함수 3회 호출",
+      "card": "default-random",
+      "location": "35_시험1시간전_압축정리.html#default-random",
+      "evidence": "후보36개"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "지역 재연결·공유 리스트 변경",
+      "card": "scope",
+      "location": "35_시험1시간전_압축정리.html#scope",
+      "evidence": "지역"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "기본값·키워드 인수·전역 읽기/대입",
+      "card": "default-random",
+      "location": "35_시험1시간전_압축정리.html#default-random",
+      "evidence": "기본값"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "튜플 반환과 세 변수 해체",
+      "card": "return",
+      "location": "35_시험1시간전_압축정리.html#return",
+      "evidence": "튜플 하나"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "형식 표시와 실제 값의 구분",
+      "card": "format",
+      "location": "35_시험1시간전_압축정리.html#format",
+      "evidence": "314.0"
+    },
+    {
+      "transcript": "리스트와_자료구조_제공전사.txt",
+      "emphasis": "append/extend와 remove/pop/del의 차이",
+      "card": "methods",
+      "location": "35_시험1시간전_압축정리.html#methods",
+      "evidence": "append([3,4])"
+    },
+    {
+      "transcript": "리스트와_자료구조_제공전사.txt",
+      "emphasis": "역순 변경·방문 기록·sort/sorted 원본과 새 결과",
+      "card": "methods",
+      "location": "35_시험1시간전_압축정리.html#methods",
+      "evidence": "sort()"
+    },
+    {
+      "transcript": "리스트와_자료구조_제공전사.txt",
+      "emphasis": "문자열 불변성과 인덱스/슬라이스·단어 분리",
+      "card": "slice",
+      "location": "35_시험1시간전_압축정리.html#slice",
+      "evidence": "word[0]"
+    },
+    {
+      "transcript": "리스트와_자료구조_제공전사.txt",
+      "emphasis": "행과 열·같은 과목 열 평균",
+      "card": "nested",
+      "location": "35_시험1시간전_압축정리.html#nested",
+      "evidence": "len(s)"
+    },
+    {
+      "transcript": "수업운영과_코드_제공전사.txt",
+      "emphasis": "한 원소 튜플의 쉼표와 해체",
+      "card": "structure",
+      "location": "35_시험1시간전_압축정리.html#structure",
+      "evidence": "(80,)"
+    },
+    {
+      "transcript": "수업운영과_코드_제공전사.txt",
+      "emphasis": "집합의 중복/순서와 방향 있는 차집합",
+      "card": "structure",
+      "location": "35_시험1시간전_압축정리.html#structure",
+      "evidence": "차집합"
+    },
+    {
+      "transcript": "수업운영과_코드_제공전사.txt",
+      "emphasis": "사전 키/값·items쌍과 get의 기본값/비삽입",
+      "card": "dictionary",
+      "location": "35_시험1시간전_압축정리.html#dictionary",
+      "evidence": "items()"
+    },
+    {
+      "transcript": "수업운영과_코드_제공전사.txt",
+      "emphasis": "얕은 복사의 내부 공유와 통째 재대입",
+      "card": "copy",
+      "location": "35_시험1시간전_압축정리.html#copy",
+      "evidence": "공유 리스트"
+    },
+    {
+      "transcript": "수업운영과_코드_제공전사.txt",
+      "emphasis": "직접 조회와 단어별 횟수 누적",
+      "card": "dictionary",
+      "location": "35_시험1시간전_압축정리.html#dictionary",
+      "evidence": "counts.get"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "문자/바이트와 UTF-8·현재 폴더/스크립트 폴더",
+      "card": "open",
+      "location": "35_시험1시간전_압축정리.html#open",
+      "evidence": "UTF-8"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "r/w/a/x·w는 열 때 비움·x의 기존 파일 오류",
+      "card": "open",
+      "location": "35_시험1시간전_압축정리.html#open",
+      "evidence": "여는 순간"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "현재 읽기 위치·EOF·seek·한 줄/남은 줄 목록",
+      "card": "read",
+      "location": "35_시험1시간전_압축정리.html#read",
+      "evidence": "seek(0)"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "repr와 strip/rstrip·중복 개행 방지",
+      "card": "read",
+      "location": "35_시험1시간전_압축정리.html#read",
+      "evidence": "repr"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "with의 닫힌 객체와 남는 문자열",
+      "card": "parse",
+      "location": "35_시험1시간전_압축정리.html#parse",
+      "evidence": "f.closed"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "사람별 시간 float·ID 제외·합계 초기화 위치",
+      "card": "parse",
+      "location": "35_시험1시간전_압축정리.html#parse",
+      "evidence": "fields[2:]"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "write 반환 문자 수·자동 개행 없음·화면 출력과 구별",
+      "card": "write-copy",
+      "location": "35_시험1시간전_압축정리.html#write-copy",
+      "evidence": "쓴 문자 수"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "복사·1024 블록/마지막 452/EOF·길이와 내용 동등성",
+      "card": "write-copy",
+      "location": "35_시험1시간전_압축정리.html#write-copy",
+      "evidence": "1024·1024·452"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "정수 점수 평균/요약 파일과 실습의 실수/빈 파일 조건 구별",
+      "card": "write-copy",
+      "location": "35_시험1시간전_압축정리.html#write-copy",
+      "evidence": "int(line)"
+    }
+  ],
+  "concepts": [
+    {
+      "concept": "BD-001",
+      "title": "Python · 편집기 · 터미널의 역할",
+      "card": "state",
+      "anchor": "35_시험1시간전_압축정리.html#state",
+      "assessment": "화면의 코드보다 마지막으로 실행한 대입을 먼저 본다",
+      "evidence": [
+        "Interpreter",
+        "python hello.py"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-002",
+      "title": "Notebook · 셀 · 커널",
+      "card": "state",
+      "anchor": "35_시험1시간전_압축정리.html#state",
+      "assessment": "화면의 코드보다 마지막으로 실행한 대입을 먼저 본다",
+      "evidence": [
+        "커널",
+        "Shift+Enter"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-003",
+      "title": "자동 표시 · print · 대입 · 저장",
+      "card": "state",
+      "anchor": "35_시험1시간전_압축정리.html#state",
+      "assessment": "화면의 코드보다 마지막으로 실행한 대입을 먼저 본다",
+      "evidence": [
+        "자동 표시",
+        "일반 .py"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-004",
+      "title": "실행 번호와 재시작",
+      "card": "state",
+      "anchor": "35_시험1시간전_압축정리.html#state",
+      "assessment": "화면의 코드보다 마지막으로 실행한 대입을 먼저 본다",
+      "evidence": [
+        "커널 재시작",
+        "NameError"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-012",
+      "title": "변수는 이름, 대입은 연결",
+      "card": "state",
+      "anchor": "35_시험1시간전_압축정리.html#state",
+      "assessment": "화면의 코드보다 마지막으로 실행한 대입을 먼저 본다",
+      "evidence": [
+        "오른쪽",
+        "연결"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-013",
+      "title": "재대입은 다른 이름을 자동 갱신하지 않는다",
+      "card": "state",
+      "anchor": "35_시험1시간전_압축정리.html#state",
+      "assessment": "화면의 코드보다 마지막으로 실행한 대입을 먼저 본다",
+      "evidence": [
+        "자동 재계산되지"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-015",
+      "title": "동적 타이핑",
+      "card": "state",
+      "anchor": "35_시험1시간전_압축정리.html#state",
+      "assessment": "화면의 코드보다 마지막으로 실행한 대입을 먼저 본다",
+      "evidence": [
+        "Dynamic Typing",
+        "자동 형변환"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-016",
+      "title": "다중 대입과 값 교환",
+      "card": "state",
+      "anchor": "35_시험1시간전_압축정리.html#state",
+      "assessment": "화면의 코드보다 마지막으로 실행한 대입을 먼저 본다",
+      "evidence": [
+        "변경 전",
+        "3,3"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-020",
+      "title": "실행 시점의 값 추적",
+      "card": "state",
+      "anchor": "35_시험1시간전_압축정리.html#state",
+      "assessment": "화면의 코드보다 마지막으로 실행한 대입을 먼저 본다",
+      "evidence": [
+        "계산 당시"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-005",
+      "title": "print와 문자열의 해석",
+      "card": "input",
+      "anchor": "35_시험1시간전_압축정리.html#input",
+      "assessment": "숫자처럼 보여도 input의 반환값은 문자열이다",
+      "evidence": [
+        "sep",
+        "end"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-008",
+      "title": "자료형이 맞지 않는 연산",
+      "card": "input",
+      "anchor": "35_시험1시간전_압축정리.html#input",
+      "assessment": "숫자처럼 보여도 input의 반환값은 문자열이다",
+      "evidence": [
+        "TypeError",
+        "Hi3"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-014",
+      "title": "int · float · str · bool",
+      "card": "input",
+      "anchor": "35_시험1시간전_압축정리.html#input",
+      "assessment": "숫자처럼 보여도 input의 반환값은 문자열이다",
+      "evidence": [
+        "int",
+        "str",
+        "bool"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-021",
+      "title": "input의 반환값과 안내 문구",
+      "card": "input",
+      "anchor": "35_시험1시간전_압축정리.html#input",
+      "assessment": "숫자처럼 보여도 input의 반환값은 문자열이다",
+      "evidence": [
+        "input 자체의 반환은 str",
+        "안내 문구"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-022",
+      "title": "int · float 변환과 ValueError",
+      "card": "input",
+      "anchor": "35_시험1시간전_압축정리.html#input",
+      "assessment": "숫자처럼 보여도 input의 반환값은 문자열이다",
+      "evidence": [
+        "int(\"20.5\")",
+        "ValueError"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-023",
+      "title": "입력 → 계산 → 출력",
+      "card": "input",
+      "anchor": "35_시험1시간전_압축정리.html#input",
+      "assessment": "숫자처럼 보여도 input의 반환값은 문자열이다",
+      "evidence": [
+        "total / 2",
+        "평균이 아니다"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-027",
+      "title": "화씨 → 섭씨 변환",
+      "card": "input",
+      "anchor": "35_시험1시간전_압축정리.html#input",
+      "assessment": "숫자처럼 보여도 input의 반환값은 문자열이다",
+      "evidence": [
+        "ftemp - 32.0",
+        "212"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-018",
+      "title": "표현식 · 대입 · 비교",
+      "card": "operators",
+      "anchor": "35_시험1시간전_압축정리.html#operators",
+      "assessment": "연산 이름보다 실제 평가 방향을 점검한다",
+      "evidence": [
+        "=는 대입",
+        "==는 비교"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-019",
+      "title": "복합 조건과 단축 평가",
+      "card": "operators",
+      "anchor": "35_시험1시간전_압축정리.html#operators",
+      "assessment": "연산 이름보다 실제 평가 방향을 점검한다",
+      "evidence": [
+        "0 or 5",
+        "단축 평가"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-024",
+      "title": "산술 연산자의 의미",
+      "card": "operators",
+      "anchor": "35_시험1시간전_압축정리.html#operators",
+      "assessment": "연산 이름보다 실제 평가 방향을 점검한다",
+      "evidence": [
+        "몫·나머지",
+        "검산"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-025",
+      "title": "음수의 내림과 int의 차이",
+      "card": "operators",
+      "anchor": "35_시험1시간전_압축정리.html#operators",
+      "assessment": "연산 이름보다 실제 평가 방향을 점검한다",
+      "evidence": [
+        "int(-1.75)",
+        "내림"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-026",
+      "title": "연산 우선순위와 괄호",
+      "card": "operators",
+      "anchor": "35_시험1시간전_압축정리.html#operators",
+      "assessment": "연산 이름보다 실제 평가 방향을 점검한다",
+      "evidence": [
+        "512",
+        "오른쪽부터"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-028",
+      "title": "비교 · 논리 · 문자열 포함 검사",
+      "card": "operators",
+      "anchor": "35_시험1시간전_압축정리.html#operators",
+      "assessment": "연산 이름보다 실제 평가 방향을 점검한다",
+      "evidence": [
+        "\"Py\" in \"Python\"",
+        "경계"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-029",
+      "title": "진법 표기와 ^의 의미",
+      "card": "operators",
+      "anchor": "35_시험1시간전_압축정리.html#operators",
+      "assessment": "연산 이름보다 실제 평가 방향을 점검한다",
+      "evidence": [
+        "0b1101",
+        "XOR"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-030",
+      "title": "순차·선택·반복과 들여쓰기",
+      "card": "branch",
+      "anchor": "35_시험1시간전_압축정리.html#branch",
+      "assessment": "같은 조건 두 개라도 if 두 개와 if/elif는 다르다",
+      "evidence": [
+        "들여쓰기",
+        "범위"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-031",
+      "title": "if와 if/else",
+      "card": "branch",
+      "anchor": "35_시험1시간전_압축정리.html#branch",
+      "assessment": "같은 조건 두 개라도 if 두 개와 if/elif는 다르다",
+      "evidence": [
+        "59·60·61",
+        "else"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-032",
+      "title": "여러 if · elif · 조건 순서",
+      "card": "branch",
+      "anchor": "35_시험1시간전_압축정리.html#branch",
+      "assessment": "같은 조건 두 개라도 if 두 개와 if/elif는 다르다",
+      "evidence": [
+        "독립 if",
+        "경로 하나"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-033",
+      "title": "윤년 조건식",
+      "card": "branch",
+      "anchor": "35_시험1시간전_압축정리.html#branch",
+      "assessment": "같은 조건 두 개라도 if 두 개와 if/elif는 다르다",
+      "evidence": [
+        "1900",
+        "2000",
+        "400"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-037",
+      "title": "for는 다음 원소를 하나씩 받는다",
+      "card": "factorial",
+      "anchor": "35_시험1시간전_압축정리.html#factorial",
+      "assessment": "합계는0, 곱은1 — 초기값·끝값·갱신을 한 묶음으로 쓴다",
+      "evidence": [
+        "for letter",
+        "반복 변수를"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-038",
+      "title": "range의 시작·끝·간격",
+      "card": "factorial",
+      "anchor": "35_시험1시간전_압축정리.html#factorial",
+      "assessment": "합계는0, 곱은1 — 초기값·끝값·갱신을 한 묶음으로 쓴다",
+      "evidence": [
+        "끝 제외",
+        "빈 범위"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-039",
+      "title": "팩토리얼의 초기값·끝값·갱신",
+      "card": "factorial",
+      "anchor": "35_시험1시간전_압축정리.html#factorial",
+      "assessment": "합계는0, 곱은1 — 초기값·끝값·갱신을 한 묶음으로 쓴다",
+      "evidence": [
+        "fact * i",
+        "초기값1"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-034",
+      "title": "while의 실행·종료 조건",
+      "card": "while",
+      "anchor": "35_시험1시간전_압축정리.html#while",
+      "assessment": "반복이 끝난 제어 변수는 마지막으로 더한 수와 다를 수 있다",
+      "evidence": [
+        "진입 전 검사",
+        "1024"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-035",
+      "title": "누적 합계와 마지막 제어 변수",
+      "card": "while",
+      "anchor": "35_시험1시간전_압축정리.html#while",
+      "assessment": "반복이 끝난 제어 변수는 마지막으로 더한 수와 다를 수 있다",
+      "evidence": [
+        "total=6",
+        "i를4"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-036",
+      "title": "최대공약수: 나머지와 다중 대입",
+      "card": "while",
+      "anchor": "35_시험1시간전_압축정리.html#while",
+      "assessment": "반복이 끝난 제어 변수는 마지막으로 더한 수와 다를 수 있다",
+      "evidence": [
+        "(48,18)",
+        "답은x=6"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-040",
+      "title": "break가 끝내는 범위",
+      "card": "loop-flow",
+      "anchor": "35_시험1시간전_압축정리.html#loop-flow",
+      "assessment": "break와 continue 뒤에 실제로 실행한 문장만 계산한다",
+      "evidence": [
+        "가장 가까운 반복",
+        "프로그램 전체"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-041",
+      "title": "continue와 혼합 흐름",
+      "card": "loop-flow",
+      "anchor": "35_시험1시간전_압축정리.html#loop-flow",
+      "assessment": "break와 continue 뒤에 실제로 실행한 문장만 계산한다",
+      "evidence": [
+        "12 6",
+        "continue"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-042",
+      "title": "내장·사용자 정의·모듈 함수",
+      "card": "return",
+      "anchor": "35_시험1시간전_압축정리.html#return",
+      "assessment": "print한 값과 호출 결과를 같은 것으로 쓰지 않는다",
+      "evidence": [
+        "Built-in Functions",
+        "모듈 함수"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-045",
+      "title": "def와 호출은 다르다",
+      "card": "return",
+      "anchor": "35_시험1시간전_압축정리.html#return",
+      "assessment": "print한 값과 호출 결과를 같은 것으로 쓰지 않는다",
+      "evidence": [
+        "정의만 실행",
+        "호출 때"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-046",
+      "title": "인수와 매개변수",
+      "card": "return",
+      "anchor": "35_시험1시간전_압축정리.html#return",
+      "assessment": "print한 값과 호출 결과를 같은 것으로 쓰지 않는다",
+      "evidence": [
+        "매개변수(parameter)",
+        "인수(argument)"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-047",
+      "title": "print와 return · None",
+      "card": "return",
+      "anchor": "35_시험1시간전_압축정리.html#return",
+      "assessment": "print한 값과 호출 결과를 같은 것으로 쓰지 않는다",
+      "evidence": [
+        "result에는None",
+        "화면에는10"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-048",
+      "title": "정의 순서와 return의 들여쓰기",
+      "card": "return",
+      "anchor": "35_시험1시간전_압축정리.html#return",
+      "assessment": "print한 값과 호출 결과를 같은 것으로 쓰지 않는다",
+      "evidence": [
+        "100",
+        "첫 반복 안",
+        "y=0"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-054",
+      "title": "여러 반환값과 튜플",
+      "card": "return",
+      "anchor": "35_시험1시간전_압축정리.html#return",
+      "assessment": "print한 값과 호출 결과를 같은 것으로 쓰지 않는다",
+      "evidence": [
+        "튜플 하나",
+        "해체"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-050",
+      "title": "이름 재대입과 공유 객체 변경",
+      "card": "scope",
+      "anchor": "35_시험1시간전_압축정리.html#scope",
+      "assessment": "이름을 다시 연결했나, 공유 객체를 바꿨나?",
+      "evidence": [
+        "새 리스트",
+        "바깥 리스트"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-052",
+      "title": "지역 이름과 반환값을 받은 이름",
+      "card": "scope",
+      "anchor": "35_시험1시간전_압축정리.html#scope",
+      "assessment": "이름을 다시 연결했나, 공유 객체를 바꿨나?",
+      "evidence": [
+        "지역",
+        "result",
+        "NameError"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-053",
+      "title": "전역 읽기 · 지역 대입 · global",
+      "card": "scope",
+      "anchor": "35_시험1시간전_압축정리.html#scope",
+      "assessment": "이름을 다시 연결했나, 공유 객체를 바꿨나?",
+      "evidence": [
+        "전역 읽기",
+        "global area"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-044",
+      "title": "randrange의 범위와 반복 횟수",
+      "card": "default-random",
+      "anchor": "35_시험1시간전_압축정리.html#default-random",
+      "assessment": "생략한 인수·난수의 범위·호출 횟수를 따로 센다",
+      "evidence": [
+        "random.randrange(1,7)",
+        "1~6"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-049",
+      "title": "여섯 글자 문자열 생성",
+      "card": "default-random",
+      "anchor": "35_시험1시간전_압축정리.html#default-random",
+      "assessment": "생략한 인수·난수의 범위·호출 횟수를 따로 센다",
+      "evidence": [
+        "후보36개",
+        "호출마다"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-051",
+      "title": "기본값과 키워드 인수",
+      "card": "default-random",
+      "anchor": "35_시험1시간전_압축정리.html#default-random",
+      "assessment": "생략한 인수·난수의 범위·호출 횟수를 따로 센다",
+      "evidence": [
+        "(width=5)=10",
+        "중복 전달"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-055",
+      "title": "format과 f-string",
+      "card": "format",
+      "anchor": "35_시험1시간전_압축정리.html#format",
+      "assessment": "314.0이라는 값과314.00이라는 표시를 분리한다",
+      "evidence": [
+        "format(company_name,price=50000)",
+        "자동 갱신"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-056",
+      "title": "숫자 표시 형식과 원래 값",
+      "card": "format",
+      "anchor": "35_시험1시간전_압축정리.html#format",
+      "assessment": "314.0이라는 값과314.00이라는 표시를 분리한다",
+      "evidence": [
+        ":.2f",
+        "314.0",
+        "최소 너비"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-057",
+      "title": "리스트 생성과 길이",
+      "card": "slice",
+      "anchor": "35_시험1시간전_압축정리.html#slice",
+      "assessment": "인덱스는 원소 하나, 슬라이스는 새 구간이다",
+      "evidence": [
+        "len([1,[2,3]])",
+        "바깥 원소2개"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-058",
+      "title": "인덱싱과 범위 오류",
+      "card": "slice",
+      "anchor": "35_시험1시간전_압축정리.html#slice",
+      "assessment": "인덱스는 원소 하나, 슬라이스는 새 구간이다",
+      "evidence": [
+        "[6]은IndexError",
+        "[0:1]"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-059",
+      "title": "슬라이싱의 시작·끝·간격",
+      "card": "slice",
+      "anchor": "35_시험1시간전_압축정리.html#slice",
+      "assessment": "인덱스는 원소 하나, 슬라이스는 새 구간이다",
+      "evidence": [
+        "끝 제외",
+        "원본은 유지"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-060",
+      "title": "연결 · 반복 · 포함 검사",
+      "card": "slice",
+      "anchor": "35_시험1시간전_압축정리.html#slice",
+      "assessment": "인덱스는 원소 하나, 슬라이스는 새 구간이다",
+      "evidence": [
+        "원소별 산술이 아니다",
+        "포함 검사"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-067",
+      "title": "문자열의 인덱싱과 불변성",
+      "card": "slice",
+      "anchor": "35_시험1시간전_압축정리.html#slice",
+      "assessment": "인덱스는 원소 하나, 슬라이스는 새 구간이다",
+      "evidence": [
+        "word[0]=\"J\"",
+        "새 문자열"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-068",
+      "title": "split과 단어 목록",
+      "card": "slice",
+      "anchor": "35_시험1시간전_압축정리.html#slice",
+      "assessment": "인덱스는 원소 하나, 슬라이스는 새 구간이다",
+      "evidence": [
+        "공백류",
+        "구두점",
+        "단어 리스트 역순"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-061",
+      "title": "append · insert · 원소 대입",
+      "card": "methods",
+      "anchor": "35_시험1시간전_압축정리.html#methods",
+      "assessment": "원본을 바꾸는 메서드의 반환값을 원본에 덮어쓰지 않는다",
+      "evidence": [
+        "insert 반환값은 None",
+        "원소 교체"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-062",
+      "title": "append와 extend",
+      "card": "methods",
+      "anchor": "35_시험1시간전_압축정리.html#methods",
+      "assessment": "원본을 바꾸는 메서드의 반환값을 원본에 덮어쓰지 않는다",
+      "evidence": [
+        "append([3,4])",
+        "길이4"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-063",
+      "title": "remove · pop · del",
+      "card": "methods",
+      "anchor": "35_시험1시간전_압축정리.html#methods",
+      "assessment": "원본을 바꾸는 메서드의 반환값을 원본에 덮어쓰지 않는다",
+      "evidence": [
+        "첫 일치 값",
+        "제거값 반환"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-064",
+      "title": "reverse와 방문 기록",
+      "card": "methods",
+      "anchor": "35_시험1시간전_압축정리.html#methods",
+      "assessment": "원본을 바꾸는 메서드의 반환값을 원본에 덮어쓰지 않는다",
+      "evidence": [
+        "원본 역순",
+        "그 이전 방문"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-065",
+      "title": "sort · sorted · 정렬 기준",
+      "card": "methods",
+      "anchor": "35_시험1시간전_압축정리.html#methods",
+      "assessment": "원본을 바꾸는 메서드의 반환값을 원본에 덮어쓰지 않는다",
+      "evidence": [
+        "key=abs",
+        "부호"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-066",
+      "title": "연속 변경의 현재 상태",
+      "card": "methods",
+      "anchor": "35_시험1시간전_압축정리.html#methods",
+      "assessment": "원본을 바꾸는 메서드의 반환값을 원본에 덮어쓰지 않는다",
+      "evidence": [
+        "바뀐 목록",
+        "None"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-069",
+      "title": "행·열과 두 번의 인덱싱",
+      "card": "nested",
+      "anchor": "35_시험1시간전_압축정리.html#nested",
+      "assessment": "행을 바꾸며 같은 열을 고르는지 확인한다",
+      "evidence": [
+        "len(s)=3행",
+        "s[1][2]"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-070",
+      "title": "행 합계와 열 평균",
+      "card": "nested",
+      "anchor": "35_시험1시간전_압축정리.html#nested",
+      "assessment": "행을 바꾸며 같은 열을 고르는지 확인한다",
+      "evidence": [
+        "[3,8,13]",
+        "평균8.0"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-071",
+      "title": "튜플 생성 · 해체 · 불변성",
+      "card": "structure",
+      "anchor": "35_시험1시간전_압축정리.html#structure",
+      "assessment": "순서·중복·변경·조회 기준으로 자료구조를 선택한다",
+      "evidence": [
+        "(80,)",
+        "원소 대입",
+        "안쪽에 리스트"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-072",
+      "title": "집합 생성 · 중복 · 순서",
+      "card": "structure",
+      "anchor": "35_시험1시간전_압축정리.html#structure",
+      "assessment": "순서·중복·변경·조회 기준으로 자료구조를 선택한다",
+      "evidence": [
+        "빈 집합 set()",
+        "순서"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-073",
+      "title": "합집합 · 교집합 · 차집합",
+      "card": "structure",
+      "anchor": "35_시험1시간전_압축정리.html#structure",
+      "assessment": "순서·중복·변경·조회 기준으로 자료구조를 선택한다",
+      "evidence": [
+        "미참석 신청자",
+        "합집합",
+        "차집합"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-083",
+      "title": "자료구조 선택과 변환",
+      "card": "structure",
+      "anchor": "35_시험1시간전_압축정리.html#structure",
+      "assessment": "순서·중복·변경·조회 기준으로 자료구조를 선택한다",
+      "evidence": [
+        "자동 정렬",
+        "키→값"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-074",
+      "title": "키·값 대응과 정수 키",
+      "card": "dictionary",
+      "anchor": "35_시험1시간전_압축정리.html#dictionary",
+      "assessment": "키 조회·기본값·등록을 한 동작으로 생각하지 않는다",
+      "evidence": [
+        "정수1",
+        "문자열\"1\""
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-075",
+      "title": "삽입 순서와 포함 검사",
+      "card": "dictionary",
+      "anchor": "35_시험1시간전_압축정리.html#dictionary",
+      "assessment": "키 조회·기본값·등록을 한 동작으로 생각하지 않는다",
+      "evidence": [
+        "삽입 순서",
+        "삭제 후 새로 추가"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-076",
+      "title": "수정 · 추가 · 삭제 · 직접 조회",
+      "card": "dictionary",
+      "anchor": "35_시험1시간전_압축정리.html#dictionary",
+      "assessment": "키 조회·기본값·등록을 한 동작으로 생각하지 않는다",
+      "evidence": [
+        "d[k]=v",
+        "del d[k]"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-077",
+      "title": "keys · values · items와 뷰",
+      "card": "dictionary",
+      "anchor": "35_시험1시간전_압축정리.html#dictionary",
+      "assessment": "키 조회·기본값·등록을 한 동작으로 생각하지 않는다",
+      "evidence": [
+        "뷰",
+        "그 시점의 별도 목록"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-078",
+      "title": "전화번호부: 키를 정렬하고 값 조회",
+      "card": "dictionary",
+      "anchor": "35_시험1시간전_압축정리.html#dictionary",
+      "assessment": "키 조회·기본값·등록을 한 동작으로 생각하지 않는다",
+      "evidence": [
+        "이름·번호를 따로 정렬",
+        "phone_book[key]"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-080",
+      "title": "영한사전 직접 조회",
+      "card": "dictionary",
+      "anchor": "35_시험1시간전_압축정리.html#dictionary",
+      "assessment": "키 조회·기본값·등록을 한 동작으로 생각하지 않는다",
+      "evidence": [
+        "english_dict[word]",
+        "리터럴 키"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-081",
+      "title": "get의 기본값과 저장된 0",
+      "card": "dictionary",
+      "anchor": "35_시험1시간전_압축정리.html#dictionary",
+      "assessment": "키 조회·기본값·등록을 한 동작으로 생각하지 않는다",
+      "evidence": [
+        "get은 추가하지 않는다",
+        "저장값0"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-082",
+      "title": "단어별 횟수 누적",
+      "card": "dictionary",
+      "anchor": "35_시험1시간전_압축정리.html#dictionary",
+      "assessment": "키 조회·기본값·등록을 한 동작으로 생각하지 않는다",
+      "evidence": [
+        "counts.get(word, 0) + 1",
+        "종류3"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-079",
+      "title": "별칭과 얕은 복사",
+      "card": "copy",
+      "anchor": "35_시험1시간전_압축정리.html#copy",
+      "assessment": "얕은 복사는 바깥만 분리한다",
+      "evidence": [
+        "[80,90,100]",
+        "재연결"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-084",
+      "title": "메모리와 파일 · 문자와 바이트",
+      "card": "open",
+      "anchor": "35_시험1시간전_압축정리.html#open",
+      "assessment": "쓰기 전에 열기만 해도 바뀌는 것이 있다",
+      "evidence": [
+        "UTF-8 바이트 길이3",
+        "화면 print와 파일 저장"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-085",
+      "title": "현재 작업 폴더와 파일 존재",
+      "card": "open",
+      "anchor": "35_시험1시간전_압축정리.html#open",
+      "assessment": "쓰기 전에 열기만 해도 바뀌는 것이 있다",
+      "evidence": [
+        "현재 작업 폴더",
+        "Path.cwd()"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-086",
+      "title": "파일 객체와 열기 모드",
+      "card": "open",
+      "anchor": "35_시험1시간전_압축정리.html#open",
+      "assessment": "쓰기 전에 열기만 해도 바뀌는 것이 있다",
+      "evidence": [
+        "여는 순간 기존 내용",
+        "FileExistsError",
+        "파일 객체"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-098",
+      "title": "이 자료에서 다루는 오류와 범위 경계",
+      "card": "open",
+      "anchor": "35_시험1시간전_압축정리.html#open",
+      "assessment": "쓰기 전에 열기만 해도 바뀌는 것이 있다",
+      "evidence": [
+        "FileNotFoundError",
+        "ValueError",
+        "try/except"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-087",
+      "title": "읽기 위치 · EOF · seek",
+      "card": "read",
+      "anchor": "35_시험1시간전_압축정리.html#read",
+      "assessment": "다음 read는 처음이 아니라 지금 읽기 위치에서 시작한다",
+      "evidence": [
+        "파일 위치를 되돌리지",
+        "seek(0)"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-088",
+      "title": "read · readline · readlines · 반복",
+      "card": "read",
+      "anchor": "35_시험1시간전_압축정리.html#read",
+      "assessment": "다음 read는 처음이 아니라 지금 읽기 위치에서 시작한다",
+      "evidence": [
+        "남은 줄들의 list",
+        "여러 줄이어도 str"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-089",
+      "title": "줄바꿈 · repr · strip",
+      "card": "read",
+      "anchor": "35_시험1시간전_압축정리.html#read",
+      "assessment": "다음 read는 처음이 아니라 지금 읽기 위치에서 시작한다",
+      "evidence": [
+        "rstrip",
+        "repr",
+        "새 문자열"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-090",
+      "title": "close와 with의 범위",
+      "card": "parse",
+      "anchor": "35_시험1시간전_압축정리.html#parse",
+      "assessment": "사람마다 합계를0으로 되돌릴 위치부터 정한다",
+      "evidence": [
+        "f.closed=True",
+        "text는 출력"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-091",
+      "title": "줄 번호와 인원수",
+      "card": "parse",
+      "anchor": "35_시험1시간전_압축정리.html#parse",
+      "assessment": "사람마다 합계를0으로 되돌릴 위치부터 정한다",
+      "evidence": [
+        "줄 번호 count",
+        "반복 전에"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-092",
+      "title": "split · 슬라이스 · 중첩 누적",
+      "card": "parse",
+      "anchor": "35_시험1시간전_압축정리.html#parse",
+      "assessment": "사람마다 합계를0으로 되돌릴 위치부터 정한다",
+      "evidence": [
+        "fields[2:]",
+        "사람 반복 안",
+        "float"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-094",
+      "title": "전화번호 텍스트 생성",
+      "card": "parse",
+      "anchor": "35_시험1시간전_압축정리.html#parse",
+      "assessment": "사람마다 합계를0으로 되돌릴 위치부터 정한다",
+      "evidence": [
+        "phones1.txt",
+        "세 줄"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-093",
+      "title": "write의 인수 · 반환값 · 줄바꿈",
+      "card": "write-copy",
+      "anchor": "35_시험1시간전_압축정리.html#write-copy",
+      "assessment": "화면 출력·write 반환값·파일에 남는 내용을 따로 답한다",
+      "evidence": [
+        "반환5",
+        "쓴 문자 수"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-095",
+      "title": "텍스트 파일 복사와 비교",
+      "card": "write-copy",
+      "anchor": "35_시험1시간전_압축정리.html#write-copy",
+      "assessment": "화면 출력·write 반환값·파일에 남는 내용을 따로 답한다",
+      "evidence": [
+        "텍스트 복사",
+        "인코딩/개행"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-096",
+      "title": "이진 복사와 종료 조건",
+      "card": "write-copy",
+      "anchor": "35_시험1시간전_압축정리.html#write-copy",
+      "assessment": "화면 출력·write 반환값·파일에 남는 내용을 따로 답한다",
+      "evidence": [
+        "1024·1024·452",
+        "read 횟수4"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-097",
+      "title": "점수 파일 평균과 결과 저장",
+      "card": "write-copy",
+      "anchor": "35_시험1시간전_압축정리.html#write-copy",
+      "assessment": "화면 출력·write 반환값·파일에 남는 내용을 따로 답한다",
+      "evidence": [
+        "최소1줄",
+        "int(line)",
+        "입력 파일"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-006",
+      "title": "주석과 설명 문자열",
+      "card": "terms",
+      "anchor": "35_시험1시간전_압축정리.html#terms",
+      "assessment": "개념 단답은 같은 뜻의 말보다 강의의 표기를 쓴다",
+      "evidence": [
+        "docstring",
+        "문자열 안#"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-007",
+      "title": "문법 오류",
+      "card": "terms",
+      "anchor": "35_시험1시간전_압축정리.html#terms",
+      "assessment": "개념 단답은 같은 뜻의 말보다 강의의 표기를 쓴다",
+      "evidence": [
+        "SyntaxError",
+        "문법 분석"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-009",
+      "title": "0으로 나누기",
+      "card": "terms",
+      "anchor": "35_시험1시간전_압축정리.html#terms",
+      "assessment": "개념 단답은 같은 뜻의 말보다 강의의 표기를 쓴다",
+      "evidence": [
+        "ZeroDivisionError",
+        "분모0"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-010",
+      "title": "정의되지 않은 이름",
+      "card": "terms",
+      "anchor": "35_시험1시간전_압축정리.html#terms",
+      "assessment": "개념 단답은 같은 뜻의 말보다 강의의 표기를 쓴다",
+      "evidence": [
+        "NameError",
+        "정의하지 않은"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-011",
+      "title": "오류 전후의 실행",
+      "card": "terms",
+      "anchor": "35_시험1시간전_압축정리.html#terms",
+      "assessment": "개념 단답은 같은 뜻의 말보다 강의의 표기를 쓴다",
+      "evidence": [
+        "Traceback",
+        "중단 뒤"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-017",
+      "title": "이름 규칙과 내장 함수 가리기",
+      "card": "terms",
+      "anchor": "35_시험1시간전_압축정리.html#terms",
+      "assessment": "개념 단답은 같은 뜻의 말보다 강의의 표기를 쓴다",
+      "evidence": [
+        "Keywords",
+        "keyword.iskeyword"
+      ],
+      "missing": []
+    },
+    {
+      "concept": "BD-043",
+      "title": "max와 min의 비교 대상",
+      "card": "terms",
+      "anchor": "35_시험1시간전_압축정리.html#terms",
+      "assessment": "개념 단답은 같은 뜻의 말보다 강의의 표기를 쓴다",
+      "evidence": [
+        "공백32",
+        "최대w"
+      ],
+      "missing": []
+    }
+  ],
+  "failures": [],
+  "reviewNote": "강의/전사 내용을 실제 본문·코드와 읽어 대조한 위치와 근거 문구다. 이름·태그 검사를 의미 검수의 대체로 삼지 않았다. 전사의 출제 형태 언급과 현재 공지를 구별한다."
+}

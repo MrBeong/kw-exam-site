@@ -1,0 +1,767 @@
+{
+  "date": "2026-10-21",
+  "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "checks": 90,
+  "passed": 90,
+  "notebook_cells": 22,
+  "notebook_method": "Sequential exec of original cell source, not a live Jupyter kernel; automatic last-expression rendering not simulated.",
+  "original_pdf_hashes_unchanged": 11,
+  "original_notebook_unchanged": true,
+  "source_examples": [
+    {
+      "id": "E01",
+      "passed": true,
+      "output": "합계: 25.0\n평균: 12.5\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E01-input-1",
+      "passed": true,
+      "output": "합계: 8.0\n평균: 4.0\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E02",
+      "passed": true,
+      "output": "섭씨온도: 37.77777777777778\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E02-input-1",
+      "passed": true,
+      "output": "섭씨온도: 0.0\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E02-input-2",
+      "passed": true,
+      "output": "섭씨온도: 100.0\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E02-input-3",
+      "passed": true,
+      "output": "",
+      "expected_error": "ValueError",
+      "files_checked": []
+    },
+    {
+      "id": "E03",
+      "passed": true,
+      "output": "2000 년은 윤년입니다.\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E03-input-1",
+      "passed": true,
+      "output": "1900 년은 윤년이 아닙니다.\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E03-input-2",
+      "passed": true,
+      "output": "2012 년은 윤년입니다.\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E03-input-3",
+      "passed": true,
+      "output": "2023 년은 윤년이 아닙니다.\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E04",
+      "passed": true,
+      "output": "최대 공약수는 6입니다\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E04-input-1",
+      "passed": true,
+      "output": "최대 공약수는 5입니다\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E04-input-2",
+      "passed": true,
+      "output": "최대 공약수는 1입니다\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E04-input-3",
+      "passed": true,
+      "output": "최대 공약수는 6입니다\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E05",
+      "passed": true,
+      "output": "4 !은 24 이다.\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E05-input-1",
+      "passed": true,
+      "output": "0 !은 1 이다.\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E05-input-2",
+      "passed": true,
+      "output": "10 !은 3628800 이다.\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E06",
+      "passed": true,
+      "output": "12 6\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E07",
+      "passed": true,
+      "output": "8\nNone 8\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E08",
+      "passed": true,
+      "output": "0vs7nm\nfjciq0\npum7mn\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E09",
+      "passed": true,
+      "output": "msg= Happy Birthday\nmsg= Happy Birthday\n[1, 2, 3, 4, 5]\n[1, 2, 3, 4, 5, 100, 200]\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E10",
+      "passed": true,
+      "output": "넓이: 314.00\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E10-input-1",
+      "passed": true,
+      "output": "넓이: 12.56\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E11",
+      "passed": true,
+      "output": "['B', 'D']\n['E', 'F']\n['F', 'E', 'D', 'C', 'B', 'A']\n['A', 'B', 'C', 'D', 'E', 'F']\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E12",
+      "passed": true,
+      "output": "[5000, 200000, 15000, 10000, 20000]\n5\n250000\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E13",
+      "passed": true,
+      "output": "[70, 95, 80, 95, 60]\n[95, 95, 80, 70, 60]\n[95, 95, 80]\n90.0\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E14",
+      "passed": true,
+      "output": "['red', 'blue', 'red', 'green']\n4\n['red', 'blue']\n['green', 'red', 'blue', 'red']\nred blue red green\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E15",
+      "passed": true,
+      "output": "15\n40\n65\n[3, 8, 13]\n8.0\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E16",
+      "passed": true,
+      "output": "Mina 85.0\n('Mina', 80, 90)\n('Mina', 80, 95)\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E17",
+      "passed": true,
+      "output": "['Jun', 'Sora']\n['Jin', 'Mina']\n['Ara']\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E18",
+      "passed": true,
+      "output": "{'pen': 8, 'eraser': 5}\n2\nFalse\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E19",
+      "passed": true,
+      "output": "{'name': 'Mina', 'scores': [80, 90, 100]}\n{'name': 'Jun', 'scores': [80, 90, 100]}\n[80, 90, 100]\n[60]\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E20",
+      "passed": true,
+      "output": "하나\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E20-input-1",
+      "passed": true,
+      "output": "둘\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E20-input-2",
+      "passed": true,
+      "output": "",
+      "expected_error": "KeyError",
+      "files_checked": []
+    },
+    {
+      "id": "E21",
+      "passed": true,
+      "output": "one 하나\nfour 등록되지 않은 단어\ntwo 둘\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E22",
+      "passed": true,
+      "output": "{'red': 3, 'blue': 2, 'green': 1}\n6\n3\n0\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E23",
+      "passed": true,
+      "output": "1 홍길동 010-1234-5678\n2 김철수 010-1234-5679\n3 김영희 010-1234-5680\n인원: 3\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E24",
+      "passed": true,
+      "output": "Susan 31.4\nBrad 36.8\nJenn 39.5\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E25",
+      "passed": true,
+      "output": "",
+      "expected_error": null,
+      "files_checked": [
+        "phones1.txt"
+      ]
+    },
+    {
+      "id": "E26",
+      "passed": true,
+      "output": "",
+      "expected_error": null,
+      "files_checked": [
+        "phones_copy.txt"
+      ]
+    },
+    {
+      "id": "E27",
+      "passed": true,
+      "output": "",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "E28",
+      "passed": true,
+      "output": "3 90.0\n",
+      "expected_error": null,
+      "files_checked": [
+        "summary.txt"
+      ]
+    },
+    {
+      "id": "snippet-assignment",
+      "passed": true,
+      "output": "5\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-types",
+      "passed": true,
+      "output": "<class 'int'>\n<class 'float'>\n<class 'str'>\n<class 'bool'>\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-dynamic",
+      "passed": true,
+      "output": "10 <class 'int'>\n3.14 <class 'float'>\nHello <class 'str'>\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-unpack",
+      "passed": true,
+      "output": "3 2\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-state-trace",
+      "passed": true,
+      "output": "11\n3\n3\nTrue\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-short-circuit",
+      "passed": true,
+      "output": "False\n5\n3\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-floor",
+      "passed": true,
+      "output": "-1.75\n-2\n1\n-1\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-precedence",
+      "passed": true,
+      "output": "14\n20\n512\n64\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-binary",
+      "passed": true,
+      "output": "13\n0b1101\n0o15\n0xd\n1 8\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-if",
+      "passed": true,
+      "output": "Failed\nDone\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-elif",
+      "passed": true,
+      "output": "B\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-while",
+      "passed": true,
+      "output": "1024\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-accumulate",
+      "passed": true,
+      "output": "6 4\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-for",
+      "passed": true,
+      "output": "0\n1\n2\nDone\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-break",
+      "passed": true,
+      "output": "1\n2\n3\n4\n반복 종료 시 x = 5\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-reuse",
+      "passed": true,
+      "output": "55\n210\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-max-min",
+      "passed": true,
+      "output": "w\n' '\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-return-position",
+      "passed": true,
+      "output": "100\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-defaults",
+      "passed": true,
+      "output": "6\n30\n50\n10\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-global",
+      "passed": true,
+      "output": "314.0\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-multiple-return",
+      "passed": true,
+      "output": "1 2 3\n(1, 2, 3)\n<class 'tuple'>\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-delete",
+      "passed": true,
+      "output": "[10, 20, 30]\n20 [10, 30]\n[30]\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-reverse",
+      "passed": true,
+      "output": "['home', 'search', 'detail']\ndetail\nsearch\n['home', 'search']\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-views",
+      "passed": true,
+      "output": "['foo', 'bar', 'baz']\n['foo', 'bar']\n[('foo', 1), ('bar', 2), ('baz', 3)]\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-phonebook",
+      "passed": true,
+      "output": "강감찬 010-1234-5679\n이순신 010-1234-5680\n홍길동 010-1234-5678\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-choose-structure",
+      "passed": true,
+      "output": "[3, 1, 3, 2]\n[1, 3, 3]\n3\n0\nFalse\n4\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-persist",
+      "passed": true,
+      "output": "1\n3\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-file-position",
+      "passed": true,
+      "output": "'A\\n'\n''\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-read",
+      "passed": true,
+      "output": "1 'A\\n'\n2 '\\n'\n3 'B\\n'\n4 ''\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-newline",
+      "passed": true,
+      "output": "'  Alice  \\n'\n'Alice'\n'  Alice'\n'  Alice  '\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "snippet-write",
+      "passed": true,
+      "output": "첫 write의 반환값: 5\n'HelloPython'\n",
+      "expected_error": null,
+      "files_checked": [
+        "joined.txt"
+      ]
+    },
+    {
+      "id": "supplement-BD-088",
+      "passed": true,
+      "output": "'홍길동 010-1234-5678\\n김철'\n''\n<class 'str'>\nTrue\n",
+      "expected_error": null,
+      "files_checked": []
+    },
+    {
+      "id": "syntax-close",
+      "passed": true,
+      "output": "",
+      "expected_error": "SyntaxError",
+      "files_checked": []
+    },
+    {
+      "id": "syntax-colon",
+      "passed": true,
+      "output": "",
+      "expected_error": "SyntaxError",
+      "files_checked": []
+    },
+    {
+      "id": "type-add",
+      "passed": true,
+      "output": "",
+      "expected_error": "TypeError",
+      "files_checked": []
+    },
+    {
+      "id": "zero-divide",
+      "passed": true,
+      "output": "",
+      "expected_error": "ZeroDivisionError",
+      "files_checked": []
+    },
+    {
+      "id": "name-missing",
+      "passed": true,
+      "output": "",
+      "expected_error": "NameError",
+      "files_checked": []
+    },
+    {
+      "id": "value-int",
+      "passed": true,
+      "output": "",
+      "expected_error": "ValueError",
+      "files_checked": []
+    },
+    {
+      "id": "value-range-step",
+      "passed": true,
+      "output": "",
+      "expected_error": "ValueError",
+      "files_checked": []
+    },
+    {
+      "id": "index-list",
+      "passed": true,
+      "output": "",
+      "expected_error": "IndexError",
+      "files_checked": []
+    },
+    {
+      "id": "type-string-change",
+      "passed": true,
+      "output": "",
+      "expected_error": "TypeError",
+      "files_checked": []
+    },
+    {
+      "id": "tuple-change",
+      "passed": true,
+      "output": "",
+      "expected_error": "TypeError",
+      "files_checked": []
+    },
+    {
+      "id": "key-missing",
+      "passed": true,
+      "output": "",
+      "expected_error": "KeyError",
+      "files_checked": []
+    },
+    {
+      "id": "closed-read",
+      "passed": true,
+      "output": "",
+      "expected_error": "ValueError",
+      "files_checked": []
+    },
+    {
+      "id": "exclusive-existing",
+      "passed": true,
+      "output": "",
+      "expected_error": "FileExistsError",
+      "files_checked": []
+    },
+    {
+      "id": "read-missing",
+      "passed": true,
+      "output": "",
+      "expected_error": "FileNotFoundError",
+      "files_checked": []
+    },
+    {
+      "id": "shadow-builtin",
+      "passed": true,
+      "output": "",
+      "expected_error": "TypeError",
+      "files_checked": []
+    }
+  ],
+  "notebook": [
+    {
+      "cell": 1,
+      "passed": true,
+      "output": ""
+    },
+    {
+      "cell": 2,
+      "passed": true,
+      "output": "3\n7\n"
+    },
+    {
+      "cell": 3,
+      "passed": true,
+      "output": ""
+    },
+    {
+      "cell": 4,
+      "passed": true,
+      "output": "10\n"
+    },
+    {
+      "cell": 5,
+      "passed": true,
+      "output": ""
+    },
+    {
+      "cell": 6,
+      "passed": true,
+      "output": ""
+    },
+    {
+      "cell": 7,
+      "passed": true,
+      "output": "95\n"
+    },
+    {
+      "cell": 8,
+      "passed": true,
+      "output": "Hi Mina\n"
+    },
+    {
+      "cell": 9,
+      "passed": true,
+      "output": "20 <class 'str'>\n201\n"
+    },
+    {
+      "cell": 10,
+      "passed": true,
+      "output": "21\n"
+    },
+    {
+      "cell": 11,
+      "passed": true,
+      "output": "23.5 <class 'float'>\n"
+    },
+    {
+      "cell": 12,
+      "passed": true,
+      "output": "섭씨온도: 37.77777777777778\n"
+    },
+    {
+      "cell": 13,
+      "passed": true,
+      "output": "2000 년은 윤년입니다.\n"
+    },
+    {
+      "cell": 14,
+      "passed": true,
+      "output": "최대 공약수는 6입니다\n"
+    },
+    {
+      "cell": 15,
+      "passed": true,
+      "output": "4 !은 24 이다.\n"
+    },
+    {
+      "cell": 16,
+      "passed": true,
+      "output": "fu03p5\nuyb4t5\nt4orrl\n"
+    },
+    {
+      "cell": 17,
+      "passed": true,
+      "output": "넓이: 314.00\n"
+    },
+    {
+      "cell": 18,
+      "passed": true,
+      "output": "['B', 'D']\n['E', 'F']\n['F', 'E', 'D', 'C', 'B', 'A']\n['A', 'B', 'C', 'D', 'E', 'F']\n"
+    },
+    {
+      "cell": 19,
+      "passed": true,
+      "output": "[70, 95, 80, 95, 60]\n[95, 95, 80, 70, 60]\n[95, 95, 80]\n90.0\n"
+    },
+    {
+      "cell": 20,
+      "passed": true,
+      "output": "15\n40\n65\n[3, 8, 13]\n8.0\n"
+    },
+    {
+      "cell": 21,
+      "passed": true,
+      "output": "{'pen': 8, 'eraser': 5}\n2\nFalse\n"
+    },
+    {
+      "cell": 22,
+      "passed": true,
+      "output": "{'red': 3, 'blue': 2, 'green': 1}\n6\n3\n0\n"
+    }
+  ],
+  "limitations": [
+    "No original lecture video/audio or prosody available.",
+    "Final exam page cutoff not confirmed.",
+    "Environment installation and live notebook UI not tested."
+  ]
+}

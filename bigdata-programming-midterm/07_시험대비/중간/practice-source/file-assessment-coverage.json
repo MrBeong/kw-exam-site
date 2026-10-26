@@ -1,0 +1,594 @@
+{
+  "date": "2026-10-22",
+  "transcript": "BIG-023",
+  "slideSource": "BIG-019",
+  "method": "개념 ID 연결만으로 충분하다고 판단하지 않고, 빈칸·물음·출력/보기에서 학생이 실제로 도출할 내용을 대조했다.",
+  "emphasisPoints": [
+    {
+      "id": "FI01",
+      "topic": "문자 수와 바이트 수",
+      "transcriptLines": [
+        1,
+        3
+      ],
+      "slidePages": [
+        4,
+        5,
+        6
+      ],
+      "previousQuestionIds": [
+        "BE16",
+        "BP46",
+        "BM30"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "기존 문자/UTF-8 bytes 길이 문항 유지"
+    },
+    {
+      "id": "FI02",
+      "topic": "현재 작업 폴더와 파일 경로",
+      "transcriptLines": [
+        5,
+        7,
+        9
+      ],
+      "slidePages": [
+        7,
+        8,
+        9
+      ],
+      "previousQuestionIds": [
+        "BP48",
+        "BM34"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "기존 경로 기준·존재 확인 문항 유지"
+    },
+    {
+      "id": "FI03",
+      "topic": "열기 모드와 읽기/쓰기 메서드",
+      "transcriptLines": [
+        11,
+        13,
+        19
+      ],
+      "slidePages": [
+        10,
+        13,
+        30
+      ],
+      "previousQuestionIds": [
+        "BC25",
+        "BE20"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "모드 인수와 메서드 빈칸이 이미 분리되어 있음"
+    },
+    {
+      "id": "FI04",
+      "topic": "기본 읽기·파일 객체의 변수 이름",
+      "transcriptLines": [
+        13,
+        15
+      ],
+      "slidePages": [
+        10,
+        11,
+        14
+      ],
+      "previousQuestionIds": [
+        "BE17",
+        "BP29"
+      ],
+      "previousStatus": "코드의 전제",
+      "addedQuestionIds": [
+        "BFC01",
+        "BFC02",
+        "BFC05"
+      ],
+      "action": "f/infile 같은 이름과 생략한 r 모드는 제시 코드의 의미를 이해하는 전제로 적용. 같은 이름 암기 문제를 따로 늘리지 않음"
+    },
+    {
+      "id": "FI05",
+      "topic": "현재 읽기 위치와 EOF",
+      "transcriptLines": [
+        15,
+        17,
+        19,
+        89
+      ],
+      "slidePages": [
+        11,
+        12
+      ],
+      "previousQuestionIds": [
+        "BE17",
+        "BM27"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "전체 읽기 뒤 빈 문자열 반환을 기존 코드/객관식에서 평가"
+    },
+    {
+      "id": "FI06",
+      "topic": "빈 줄과 파일 끝",
+      "transcriptLines": [
+        15,
+        25,
+        89
+      ],
+      "slidePages": [
+        11,
+        12,
+        15
+      ],
+      "previousQuestionIds": [
+        "BE18"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [
+        "BFS02"
+      ],
+      "action": "기존 줄별 출력에 EOF 약어 단답 유형 보강"
+    },
+    {
+      "id": "FI07",
+      "topic": "메모리 문자열 슬라이스와 파일 위치",
+      "transcriptLines": [
+        17,
+        23,
+        25
+      ],
+      "slidePages": [
+        11,
+        14
+      ],
+      "previousQuestionIds": [],
+      "previousStatus": "개념/해설만",
+      "addedQuestionIds": [
+        "BFC01"
+      ],
+      "action": "text[:20]을 구해도 EOF가 되돌아가지 않는 흐름을 직접 빈칸으로 평가"
+    },
+    {
+      "id": "FI08",
+      "topic": "세 읽기 메서드의 반환형",
+      "transcriptLines": [
+        19,
+        21,
+        27,
+        89
+      ],
+      "slidePages": [
+        13,
+        14,
+        16
+      ],
+      "previousQuestionIds": [
+        "BS21",
+        "BS22",
+        "BP45"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [
+        "BFC02"
+      ],
+      "action": "단독 호출은 기존 평가, 혼합 순서 문항으로 보강"
+    },
+    {
+      "id": "FI09",
+      "topic": "readline 뒤 남은 줄만 readlines",
+      "transcriptLines": [
+        19,
+        21,
+        27,
+        89
+      ],
+      "slidePages": [
+        13,
+        15,
+        16
+      ],
+      "previousQuestionIds": [],
+      "previousStatus": "개념/해설만",
+      "addedQuestionIds": [
+        "BFC02"
+      ],
+      "action": "처음부터 다시 읽는다고 보는 혼동을 평가"
+    },
+    {
+      "id": "FI10",
+      "topic": "같은 객체를 처음으로 이동시키기",
+      "transcriptLines": [
+        17,
+        89,
+        91
+      ],
+      "slidePages": [
+        11,
+        48,
+        49
+      ],
+      "previousQuestionIds": [],
+      "previousStatus": "개념/해설만",
+      "addedQuestionIds": [
+        "BFC03"
+      ],
+      "action": "seek(0)의 메서드와 위치를 직접 빈칸으로 평가"
+    },
+    {
+      "id": "FI11",
+      "topic": "repr의 표시와 원본 불변",
+      "transcriptLines": [
+        23,
+        25
+      ],
+      "slidePages": [
+        14,
+        18
+      ],
+      "previousQuestionIds": [
+        "BE19"
+      ],
+      "previousStatus": "표시 예시만",
+      "addedQuestionIds": [
+        "BFM02"
+      ],
+      "action": "repr/strip 결과를 새 이름에 저장해도 line은 그대로임을 출력으로 평가"
+    },
+    {
+      "id": "FI12",
+      "topic": "strip 범위·공백 보존·쉼표",
+      "transcriptLines": [
+        31,
+        33,
+        45
+      ],
+      "slidePages": [
+        17,
+        18
+      ],
+      "previousQuestionIds": [
+        "BE19",
+        "BM28"
+      ],
+      "previousStatus": "공백 범위 평가",
+      "addedQuestionIds": [
+        "BFM02"
+      ],
+      "action": "기본 strip이 쉼표를 지운다는 혼동을 추가 평가"
+    },
+    {
+      "id": "FI13",
+      "topic": "with 종료와 닫힌 파일 읽기",
+      "transcriptLines": [
+        35,
+        37,
+        39
+      ],
+      "slidePages": [
+        19,
+        20
+      ],
+      "previousQuestionIds": [
+        "BM29",
+        "BP29"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [
+        "BFS01"
+      ],
+      "action": "기존 closed/ValueError와 새 저장값 사용 문항을 연결"
+    },
+    {
+      "id": "FI14",
+      "topic": "with 밖에 남은 text의 자료형",
+      "transcriptLines": [
+        23,
+        37,
+        39
+      ],
+      "slidePages": [
+        14,
+        19,
+        20
+      ],
+      "previousQuestionIds": [],
+      "previousStatus": "개념/해설만",
+      "addedQuestionIds": [
+        "BFS01"
+      ],
+      "action": "파일 닫힘과 문자열 변수의 수명을 구분"
+    },
+    {
+      "id": "FI15",
+      "topic": "줄 번호·개행 중복·최종 인원수",
+      "transcriptLines": [
+        41,
+        43,
+        45
+      ],
+      "slidePages": [
+        21,
+        22,
+        23
+      ],
+      "previousQuestionIds": [
+        "BC23",
+        "BP28",
+        "BL3"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "기존 줄 번호 빈칸·end/rstrip·최종 인원수 코드 유지"
+    },
+    {
+      "id": "FI16",
+      "topic": "공백 split·소수 시간·fields 선택",
+      "transcriptLines": [
+        47,
+        49,
+        51
+      ],
+      "slidePages": [
+        24,
+        25,
+        26
+      ],
+      "previousQuestionIds": [
+        "BC24",
+        "BL1"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "기존 split/float/시간 슬라이스 빈칸 유지"
+    },
+    {
+      "id": "FI17",
+      "topic": "사람마다 total 초기화",
+      "transcriptLines": [
+        59,
+        61
+      ],
+      "slidePages": [
+        26
+      ],
+      "previousQuestionIds": [
+        "BC24",
+        "BL1"
+      ],
+      "previousStatus": "코드에 보이지만 직접 물음 없음",
+      "addedQuestionIds": [
+        "BFC04",
+        "BFM03"
+      ],
+      "action": "초기값 빈칸과 위치를 바꾼 실행 결과 판단으로 평가"
+    },
+    {
+      "id": "FI18",
+      "topic": "w는 열 때 비우며 r은 보존",
+      "transcriptLines": [
+        61,
+        63,
+        65,
+        67,
+        91
+      ],
+      "slidePages": [
+        10,
+        27,
+        28,
+        29
+      ],
+      "previousQuestionIds": [
+        "BP30",
+        "BM26"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "write 없이 pass만 하는 기존 빈칸이 이미 직접 평가"
+    },
+    {
+      "id": "FI19",
+      "topic": "a의 반복 실행 시 누적",
+      "transcriptLines": [
+        67,
+        91
+      ],
+      "slidePages": [
+        29
+      ],
+      "previousQuestionIds": [
+        "BM50"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "기존 RUN 두 줄 문제 유지"
+    },
+    {
+      "id": "FI20",
+      "topic": "x의 기존 파일 보호와 오류 이름",
+      "transcriptLines": [
+        11,
+        67
+      ],
+      "slidePages": [
+        10,
+        29
+      ],
+      "previousQuestionIds": [
+        "BC26",
+        "BC27"
+      ],
+      "previousStatus": "모드 선택만",
+      "addedQuestionIds": [
+        "BFS03"
+      ],
+      "action": "FileExistsError가 open 단계에서 발생하고 기존 파일은 보존됨을 평가"
+    },
+    {
+      "id": "FI21",
+      "topic": "화면 print와 파일 write·개행",
+      "transcriptLines": [
+        63,
+        69,
+        71,
+        91
+      ],
+      "slidePages": [
+        30,
+        31,
+        32,
+        33
+      ],
+      "previousQuestionIds": [
+        "BE20",
+        "BC25",
+        "BP31",
+        "BM31",
+        "BP53"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "기존 파일 기록/반환값/연속 쓰기·화면 계산 문항 유지"
+    },
+    {
+      "id": "FI22",
+      "topic": "str을 다른 파일에 복사",
+      "transcriptLines": [
+        73,
+        75
+      ],
+      "slidePages": [
+        34,
+        35,
+        36
+      ],
+      "previousQuestionIds": [
+        "BC26"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "기존 읽기→메모리 str→새 파일 기록 흐름 유지"
+    },
+    {
+      "id": "FI23",
+      "topic": "1024블록·마지막 조각·EOF 읽기",
+      "transcriptLines": [
+        75,
+        77,
+        79
+      ],
+      "slidePages": [
+        38,
+        39,
+        40,
+        41
+      ],
+      "previousQuestionIds": [
+        "BC27",
+        "BP47"
+      ],
+      "previousStatus": "크기·종료 조건 평가",
+      "addedQuestionIds": [
+        "BFM01"
+      ],
+      "action": "읽기4회/쓰기3회가 다르다는 호출 횟수 판단 추가"
+    },
+    {
+      "id": "FI24",
+      "topic": "모양/크기와 전체 bytes 내용 비교",
+      "transcriptLines": [
+        79,
+        81
+      ],
+      "slidePages": [
+        42,
+        43
+      ],
+      "previousQuestionIds": [],
+      "previousStatus": "개념/해설만",
+      "addedQuestionIds": [
+        "BFC05",
+        "BFM04"
+      ],
+      "action": "bytes 내용 비교 구현과 크기가 같아도 내용은 다름을 직접 평가"
+    },
+    {
+      "id": "FI25",
+      "topic": "점수 파일 평균·결과 재확인",
+      "transcriptLines": [
+        83,
+        85,
+        87,
+        89,
+        91
+      ],
+      "slidePages": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "previousQuestionIds": [
+        "BC28",
+        "BL2"
+      ],
+      "previousStatus": "직접 평가",
+      "addedQuestionIds": [],
+      "action": "슬라이드 int/최소1줄과 실습 float/빈 파일 규칙 분리 유지"
+    },
+    {
+      "id": "FI26",
+      "topic": "lstrip 구두 보충",
+      "transcriptLines": [
+        31
+      ],
+      "slidePages": [
+        18
+      ],
+      "previousQuestionIds": [],
+      "previousStatus": "슬라이드 미기재",
+      "addedQuestionIds": [],
+      "action": "문제 제외: 구두 설명은 개념 보충 라벨로만 유지"
+    },
+    {
+      "id": "FI27",
+      "topic": "다음 차시 try/except·모듈",
+      "transcriptLines": [
+        89,
+        91
+      ],
+      "slidePages": [
+        48,
+        49
+      ],
+      "previousQuestionIds": [],
+      "previousStatus": "다음 차시 예고",
+      "addedQuestionIds": [],
+      "action": "문제 제외: 이 파일 강의의 구현 문법 범위로 임의 확장하지 않음"
+    }
+  ],
+  "addedIds": [
+    "BFC01",
+    "BFC02",
+    "BFC03",
+    "BFC04",
+    "BFC05",
+    "BFS01",
+    "BFS02",
+    "BFS03",
+    "BFM01",
+    "BFM02",
+    "BFM03",
+    "BFM04"
+  ],
+  "counts": {
+    "code": 123,
+    "short": 27,
+    "mc": 54
+  }
+}

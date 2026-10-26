@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-25",
+  "passed": 1449,
+  "reviewedQuestions": 437,
+  "retired": 18,
+  "current": {
+    "code": 115,
+    "short": 242,
+    "mc": 62
+  },
+  "codeQuestionsChecked": 115,
+  "blanksChecked": 269,
+  "errors": [],
+  "script": "browser-duplicates.js",
+  "scriptSha256": "96fd0047d9acbfdbbcae3d286f46b39e85fb2209b54d8b512cc8b1b582a8e70f",
+  "verified": [
+    "419 existing survivor answer/grade/draft records unchanged;18 retired question snapshots and records archived once",
+    "Survivor answers are not overwritten by retired duplicate grades",
+    "Mixed retry IDs and priors filtered; cancel does not resurrect duplicates",
+    "Settings show replacement ID and stored old answer; reload idempotent",
+    "Actual DOM positions and canonical grading for all115code questions/269blanks",
+    "Every blank answer/reason, statement explanation and verified runtime output displayed",
+    "First wrong tab click lists; second click opens retry; retry and reload work",
+    "19 original exercises still available",
+    "1440/390/320px representative surviving originals and clarified BP20 fit viewport"
+  ],
+  "screenshots": [
+    "output/playwright/duplicates-BO10-390.png",
+    "output/playwright/duplicates-BO13-390.png",
+    "output/playwright/duplicates-BO13-1440.png",
+    "output/playwright/duplicates-BP20-1440.png",
+    "output/playwright/duplicates-BP20-390.png",
+    "output/playwright/duplicates-BO10-1440.png"
+  ]
+}

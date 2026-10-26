@@ -1,0 +1,137 @@
+{
+  "date": "2026-10-25",
+  "passed": true,
+  "checks": [
+    {
+      "name": "unchanged practice-source/questions.json",
+      "ok": true
+    },
+    {
+      "name": "unchanged practice-source/app.js",
+      "ok": true
+    },
+    {
+      "name": "unchanged practice-source/build.mjs",
+      "ok": true
+    },
+    {
+      "name": "only axis-specific CSS changed practice-source/style.css",
+      "ok": true
+    },
+    {
+      "name": "only axis-specific CSS changed practice/index.html",
+      "ok": true
+    },
+    {
+      "name": "root existing MD content preserved 03_",
+      "ok": true
+    },
+    {
+      "name": "root latest entry link 03_",
+      "ok": true
+    },
+    {
+      "name": "mirror existing MD content preserved 03_",
+      "ok": true
+    },
+    {
+      "name": "mirror latest entry link 03_",
+      "ok": true
+    },
+    {
+      "name": "new standards identical in root/mirror 03_",
+      "ok": true
+    },
+    {
+      "name": "new anchor unique 03_",
+      "ok": true
+    },
+    {
+      "name": "root existing MD content preserved 02_",
+      "ok": true
+    },
+    {
+      "name": "root latest entry link 02_",
+      "ok": true
+    },
+    {
+      "name": "mirror existing MD content preserved 02_",
+      "ok": true
+    },
+    {
+      "name": "mirror latest entry link 02_",
+      "ok": true
+    },
+    {
+      "name": "new standards identical in root/mirror 02_",
+      "ok": true
+    },
+    {
+      "name": "new anchor unique 02_",
+      "ok": true
+    },
+    {
+      "name": "UI standard pointer-independent-wheel-scroll",
+      "ok": true
+    },
+    {
+      "name": "UI standard overscroll-behavior-y: auto",
+      "ok": true
+    },
+    {
+      "name": "UI standard 실제 포인터",
+      "ok": true
+    },
+    {
+      "name": "UI standard 가로 시작·중간·끝",
+      "ok": true
+    },
+    {
+      "name": "UI standard 저장 키/문항 리비전",
+      "ok": true
+    },
+    {
+      "name": "production standard 22.1",
+      "ok": true
+    },
+    {
+      "name": "production standard 22.2",
+      "ok": true
+    },
+    {
+      "name": "production standard 22.3",
+      "ok": true
+    },
+    {
+      "name": "production standard 22.4",
+      "ok": true
+    },
+    {
+      "name": "production standard 22.5",
+      "ok": true
+    },
+    {
+      "name": "production standard 전사의 오인식",
+      "ok": true
+    },
+    {
+      "name": "production standard 모든 보기",
+      "ok": true
+    },
+    {
+      "name": "production standard 현재 변수",
+      "ok": true
+    },
+    {
+      "name": "production standard 자동 이식",
+      "ok": true
+    },
+    {
+      "name": "production standard 과거 보관본",
+      "ok": true
+    }
+  ],
+  "unchangedQuestions": 389,
+  "questionSha256": "1e68973825178c8adbc62b34f42c2fb137f27ac28ad965148571e13c35d3c9d4",
+  "scope": "CSS 축별 수정과 기존 공통MD에 최신 안내/새 기준 추가. 문항·정답·채점·저장 로직은 그대로. 빌드 시 실행 기록의 딕셔너리 키 순서만 달라져 데이터 동일성 확인 후 기존 직렬화 순서도 보존했다."
+}

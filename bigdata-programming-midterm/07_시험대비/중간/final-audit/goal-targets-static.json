@@ -1,0 +1,268 @@
+{
+  "date": "2026-10-25",
+  "passed": 139,
+  "reviewedCodeQuestions": 131,
+  "clarifiedQuestions": [
+    "BP20",
+    "BP34"
+  ],
+  "historicalUnchangedQuestionRecords": 437,
+  "activeQuestionRecords": 389,
+  "cases": [
+    {
+      "id": "BP20",
+      "beforeGoal": "문자열의 주어진 위치와 구간을 읽는다. 마지막에는 원본의 첫 글자만 J로 바꾼 새 문자열을 만들어 출력한다.",
+      "afterGoal": "1. 2행은 첫 문자열의 첫 글자와 마지막 글자를 한 줄에 출력한다.\n2. word를 Python으로 바꾼 뒤, 4행은 앞의 두 글자, 5행은 세 번째부터 다섯 번째 글자까지를 출력한다.\n3. 6행은 첫 글자만 J로 바꾼 새 문자열을 출력한다.",
+      "targets": [
+        {
+          "blanks": [
+            1
+          ],
+          "line": 4,
+          "requirement": "4행은 앞의 두 글자",
+          "observed": "Py"
+        },
+        {
+          "blanks": [
+            2
+          ],
+          "line": 5,
+          "requirement": "5행은 세 번째부터 다섯 번째 글자까지",
+          "observed": "tho"
+        },
+        {
+          "blanks": [
+            3
+          ],
+          "line": 6,
+          "requirement": "6행은 첫 글자만 J로 바꾼 새 문자열",
+          "observed": "Jython"
+        }
+      ],
+      "observedPrints": [
+        {
+          "line": 2,
+          "output": "a f\n"
+        },
+        {
+          "line": 4,
+          "output": "Py\n"
+        },
+        {
+          "line": 5,
+          "output": "tho\n"
+        },
+        {
+          "line": 6,
+          "output": "Jython\n"
+        }
+      ]
+    },
+    {
+      "id": "BP34",
+      "beforeGoal": "주어진 숫자와 문자열에 대해 수의 계산, 글자 연결, 반복, 숫자로 바꾼 뒤의 계산을 차례로 수행하여 출력한다.",
+      "afterGoal": "1. 정수 10과 정수 3의 합을 출력한다.\n2. 2행은 문자열 \"10\" 뒤에 문자열 \"3\"을 이어 붙이고, 3행은 문자열 \"10\"을 세 번 반복하여 출력한다.\n3. 4행은 문자열 \"10\"을 정수로 바꾸어 정수 3을 더한다. 5행은 정수 10을 문자열로 바꾸어 문자열 \"3\"을 뒤에 이어 붙인다.",
+      "targets": [
+        {
+          "blanks": [
+            1
+          ],
+          "line": 2,
+          "requirement": "2행은 두 문자열을 차례로 이어 붙이고",
+          "observed": "103"
+        },
+        {
+          "blanks": [
+            2
+          ],
+          "line": 3,
+          "requirement": "3행은 첫 문자열을 세 번 반복해 출력한다",
+          "observed": "101010"
+        },
+        {
+          "blanks": [
+            3
+          ],
+          "line": 4,
+          "requirement": "4행은 문자열을 정수로 바꾼 뒤 더하고",
+          "observed": "13"
+        },
+        {
+          "blanks": [
+            4
+          ],
+          "line": 5,
+          "requirement": "5행은 정수를 문자열로 바꿔 뒤의 문자열과 이어 붙여 출력한다",
+          "observed": "103"
+        }
+      ],
+      "observedPrints": [
+        {
+          "line": 1,
+          "output": "13\n"
+        },
+        {
+          "line": 2,
+          "output": "103\n"
+        },
+        {
+          "line": 3,
+          "output": "101010\n"
+        },
+        {
+          "line": 4,
+          "output": "13\n"
+        },
+        {
+          "line": 5,
+          "output": "103\n"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "all437 complete question records including corrected blank locations unchanged",
+    "all actual execution traces,answers and detailed explanations unchanged",
+    "only public display changed;counts/storage/version/revisions/fixtures unchanged",
+    "exactly the two declared public goals changed",
+    "raw author display matches exact reviewed changes,including archived items",
+    "all131 public code goals reviewed against hidden operations",
+    "BC04 public goal and per-slot target rationale available",
+    "BC06 public goal and per-slot target rationale available",
+    "BC07 public goal and per-slot target rationale available",
+    "BC09 public goal and per-slot target rationale available",
+    "BC19 public goal and per-slot target rationale available",
+    "BC24 public goal and per-slot target rationale available",
+    "BC25 public goal and per-slot target rationale available",
+    "BC26 public goal and per-slot target rationale available",
+    "BC27 public goal and per-slot target rationale available",
+    "BC29 public goal and per-slot target rationale available",
+    "BC30 public goal and per-slot target rationale available",
+    "BC31 public goal and per-slot target rationale available",
+    "BC32 public goal and per-slot target rationale available",
+    "BC33 public goal and per-slot target rationale available",
+    "BC34 public goal and per-slot target rationale available",
+    "BN9 public goal and per-slot target rationale available",
+    "BN11 public goal and per-slot target rationale available",
+    "BL1 public goal and per-slot target rationale available",
+    "BL2 public goal and per-slot target rationale available",
+    "BL3 public goal and per-slot target rationale available",
+    "BE03 public goal and per-slot target rationale available",
+    "BE04 public goal and per-slot target rationale available",
+    "BE05 public goal and per-slot target rationale available",
+    "BE06 public goal and per-slot target rationale available",
+    "BE08 public goal and per-slot target rationale available",
+    "BE10 public goal and per-slot target rationale available",
+    "BE11 public goal and per-slot target rationale available",
+    "BE12 public goal and per-slot target rationale available",
+    "BE13 public goal and per-slot target rationale available",
+    "BE15 public goal and per-slot target rationale available",
+    "BE16 public goal and per-slot target rationale available",
+    "BE18 public goal and per-slot target rationale available",
+    "BE19 public goal and per-slot target rationale available",
+    "BE20 public goal and per-slot target rationale available",
+    "BP01 public goal and per-slot target rationale available",
+    "BP02 public goal and per-slot target rationale available",
+    "BP04 public goal and per-slot target rationale available",
+    "BP06 public goal and per-slot target rationale available",
+    "BP08 public goal and per-slot target rationale available",
+    "BP09 public goal and per-slot target rationale available",
+    "BP10 public goal and per-slot target rationale available",
+    "BP11 public goal and per-slot target rationale available",
+    "BP12 public goal and per-slot target rationale available",
+    "BP13 public goal and per-slot target rationale available",
+    "BP14 public goal and per-slot target rationale available",
+    "BP16 public goal and per-slot target rationale available",
+    "BP17 public goal and per-slot target rationale available",
+    "BP18 public goal and per-slot target rationale available",
+    "BP19 public goal and per-slot target rationale available",
+    "BP20 public goal and per-slot target rationale available",
+    "BP21 public goal and per-slot target rationale available",
+    "BP22 public goal and per-slot target rationale available",
+    "BP24 public goal and per-slot target rationale available",
+    "BP25 public goal and per-slot target rationale available",
+    "BP26 public goal and per-slot target rationale available",
+    "BP29 public goal and per-slot target rationale available",
+    "BP31 public goal and per-slot target rationale available",
+    "BP34 public goal and per-slot target rationale available",
+    "BP37 public goal and per-slot target rationale available",
+    "BP38 public goal and per-slot target rationale available",
+    "BP41 public goal and per-slot target rationale available",
+    "BP42 public goal and per-slot target rationale available",
+    "BP43 public goal and per-slot target rationale available",
+    "BP44 public goal and per-slot target rationale available",
+    "BP45 public goal and per-slot target rationale available",
+    "BP46 public goal and per-slot target rationale available",
+    "BP47 public goal and per-slot target rationale available",
+    "BP48 public goal and per-slot target rationale available",
+    "BP49 public goal and per-slot target rationale available",
+    "BP50 public goal and per-slot target rationale available",
+    "BP53 public goal and per-slot target rationale available",
+    "BFC01 public goal and per-slot target rationale available",
+    "BFC02 public goal and per-slot target rationale available",
+    "BFC03 public goal and per-slot target rationale available",
+    "BFC05 public goal and per-slot target rationale available",
+    "BO01 public goal and per-slot target rationale available",
+    "BO02 public goal and per-slot target rationale available",
+    "BO03 public goal and per-slot target rationale available",
+    "BO04 public goal and per-slot target rationale available",
+    "BO05 public goal and per-slot target rationale available",
+    "BO06 public goal and per-slot target rationale available",
+    "BO07 public goal and per-slot target rationale available",
+    "BO08 public goal and per-slot target rationale available",
+    "BO09 public goal and per-slot target rationale available",
+    "BO10 public goal and per-slot target rationale available",
+    "BO11 public goal and per-slot target rationale available",
+    "BO12 public goal and per-slot target rationale available",
+    "BO13 public goal and per-slot target rationale available",
+    "BO14 public goal and per-slot target rationale available",
+    "BO15 public goal and per-slot target rationale available",
+    "BO16 public goal and per-slot target rationale available",
+    "BO17 public goal and per-slot target rationale available",
+    "BO18 public goal and per-slot target rationale available",
+    "BO19 public goal and per-slot target rationale available",
+    "BP20 independent unchanged program output",
+    "BP20 line4 historical requirement retained before exact reviewed integration wording",
+    "BP20 line4 required behavior matches real execution",
+    "BP20 slot1 maps to stated line",
+    "BP20 line5 historical requirement retained before exact reviewed integration wording",
+    "BP20 line5 required behavior matches real execution",
+    "BP20 slot2 maps to stated line",
+    "BP20 line6 historical requirement retained before exact reviewed integration wording",
+    "BP20 line6 required behavior matches real execution",
+    "BP20 slot3 maps to stated line",
+    "BP20 every hidden operation covered,not just last print",
+    "BP20 no literal solution code inserted in prose",
+    "BP20 clarified goal present in 11_공지반영_예상문제.md",
+    "BP20 code unchanged in 11_공지반영_예상문제.md",
+    "BP20 clarified goal present in 12_공지반영_정답과해설.md",
+    "BP20 code unchanged in 12_공지반영_정답과해설.md",
+    "BP34 independent unchanged program output",
+    "BP34 line2 historical requirement retained before exact reviewed integration wording",
+    "BP34 line2 required behavior matches real execution",
+    "BP34 slot1 maps to stated line",
+    "BP34 line3 historical requirement retained before exact reviewed integration wording",
+    "BP34 line3 required behavior matches real execution",
+    "BP34 slot2 maps to stated line",
+    "BP34 line4 historical requirement retained before exact reviewed integration wording",
+    "BP34 line4 required behavior matches real execution",
+    "BP34 slot3 maps to stated line",
+    "BP34 line5 historical requirement retained before exact reviewed integration wording",
+    "BP34 line5 required behavior matches real execution",
+    "BP34 slot4 maps to stated line",
+    "BP34 every hidden operation covered,not just last print",
+    "BP34 no literal solution code inserted in prose",
+    "BP34 clarified goal present in 11_공지반영_예상문제.md",
+    "BP34 code unchanged in 11_공지반영_예상문제.md",
+    "BP34 clarified goal present in 12_공지반영_정답과해설.md",
+    "BP34 code unchanged in 12_공지반영_정답과해설.md",
+    "BP20 old prompt demonstrably omitted both selection targets",
+    "counterexample retains final requested behavior but produces different first two hidden outputs",
+    "new declared requirements exclude the previously unconstrained selections",
+    "BP20/BP34 goal corrections retain their active IDs and exact answer keys after duplicate consolidation"
+  ],
+  "limits": [
+    "Semantic goal completeness is a content review;string checks alone do not prove that a new question is well specified.",
+    "Desired selection/behavior is necessary task data. Literal answer code and computed-result panels remain hidden."
+  ]
+}

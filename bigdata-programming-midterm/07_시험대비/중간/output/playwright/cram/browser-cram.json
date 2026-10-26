@@ -1,0 +1,339 @@
+{
+  "date": "2026-10-25",
+  "passed": true,
+  "checks": 65,
+  "failures": [],
+  "details": [
+    {
+      "name": "six timed sections",
+      "passed": true
+    },
+    {
+      "name": "22 decision and mistake cards",
+      "passed": true
+    },
+    {
+      "name": "three original-blank recalls",
+      "passed": true
+    },
+    {
+      "name": "five final full-code checks",
+      "passed": true
+    },
+    {
+      "name": "all recall/check answers start hidden",
+      "passed": true
+    },
+    {
+      "name": "all displayed source/template strings match",
+      "passed": true,
+      "detail": {
+        "actualCount": 31,
+        "expectedCount": 31
+      }
+    },
+    {
+      "name": "individual answer opens",
+      "passed": true
+    },
+    {
+      "name": "original blank answers in same window",
+      "passed": true
+    },
+    {
+      "name": "keyboard toggles answer",
+      "passed": true
+    },
+    {
+      "name": "all eight answers open",
+      "passed": true
+    },
+    {
+      "name": "toggle announces expanded",
+      "passed": true
+    },
+    {
+      "name": "all answers close",
+      "passed": true
+    },
+    {
+      "name": "in-page timed nav reaches section",
+      "passed": true
+    },
+    {
+      "name": "1440 no document horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 wheel target #state .table-scroll",
+      "passed": true
+    },
+    {
+      "name": "1440 native vertical wheel #state .table-scroll",
+      "passed": true,
+      "detail": {
+        "before": 528,
+        "after": 708
+      }
+    },
+    {
+      "name": "1440 wheel target #input .goal",
+      "passed": true
+    },
+    {
+      "name": "1440 native vertical wheel #input .goal",
+      "passed": true,
+      "detail": {
+        "before": 1088,
+        "after": 1268
+      }
+    },
+    {
+      "name": "1440 wheel target #input .recall>.codebox pre",
+      "passed": true
+    },
+    {
+      "name": "1440 native vertical wheel #input .recall>.codebox pre",
+      "passed": true,
+      "detail": {
+        "before": 1289,
+        "after": 1469
+      }
+    },
+    {
+      "name": "1440 wheel target #check-file .fixture pre",
+      "passed": true
+    },
+    {
+      "name": "1440 native vertical wheel #check-file .fixture pre",
+      "passed": true,
+      "detail": {
+        "before": 17822,
+        "after": 18002
+      }
+    },
+    {
+      "name": "1440 expanded content no outer overflow",
+      "passed": true
+    },
+    {
+      "name": "1440 internal horizontal code reading",
+      "passed": true,
+      "detail": {
+        "left": 0,
+        "max": 0
+      }
+    },
+    {
+      "name": "1440 horizontal gesture keeps vertical place",
+      "passed": true
+    },
+    {
+      "name": "1440 learning records unchanged",
+      "passed": true
+    },
+    {
+      "name": "390 no document horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390 wheel target #state .table-scroll",
+      "passed": true
+    },
+    {
+      "name": "390 native vertical wheel #state .table-scroll",
+      "passed": true,
+      "detail": {
+        "before": 923,
+        "after": 1103
+      }
+    },
+    {
+      "name": "390 wheel target #input .goal",
+      "passed": true
+    },
+    {
+      "name": "390 native vertical wheel #input .goal",
+      "passed": true,
+      "detail": {
+        "before": 1626,
+        "after": 1806
+      }
+    },
+    {
+      "name": "390 wheel target #input .recall>.codebox pre",
+      "passed": true
+    },
+    {
+      "name": "390 native vertical wheel #input .recall>.codebox pre",
+      "passed": true,
+      "detail": {
+        "before": 1830,
+        "after": 2010
+      }
+    },
+    {
+      "name": "390 wheel target #check-file .fixture pre",
+      "passed": true
+    },
+    {
+      "name": "390 native vertical wheel #check-file .fixture pre",
+      "passed": true,
+      "detail": {
+        "before": 21772,
+        "after": 21952
+      }
+    },
+    {
+      "name": "390 expanded content no outer overflow",
+      "passed": true
+    },
+    {
+      "name": "390 internal horizontal code reading",
+      "passed": true,
+      "detail": {
+        "left": 0,
+        "max": 0
+      }
+    },
+    {
+      "name": "390 horizontal gesture keeps vertical place",
+      "passed": true
+    },
+    {
+      "name": "390 learning records unchanged",
+      "passed": true
+    },
+    {
+      "name": "320 no document horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320 wheel target #state .table-scroll",
+      "passed": true
+    },
+    {
+      "name": "320 native vertical wheel #state .table-scroll",
+      "passed": true,
+      "detail": {
+        "before": 1090,
+        "after": 1270
+      }
+    },
+    {
+      "name": "320 wheel target #input .goal",
+      "passed": true
+    },
+    {
+      "name": "320 native vertical wheel #input .goal",
+      "passed": true,
+      "detail": {
+        "before": 1892,
+        "after": 2072
+      }
+    },
+    {
+      "name": "320 wheel target #input .recall>.codebox pre",
+      "passed": true
+    },
+    {
+      "name": "320 native vertical wheel #input .recall>.codebox pre",
+      "passed": true,
+      "detail": {
+        "before": 2096,
+        "after": 2276
+      }
+    },
+    {
+      "name": "320 wheel target #check-file .fixture pre",
+      "passed": true
+    },
+    {
+      "name": "320 native vertical wheel #check-file .fixture pre",
+      "passed": true,
+      "detail": {
+        "before": 24599,
+        "after": 24779
+      }
+    },
+    {
+      "name": "320 expanded content no outer overflow",
+      "passed": true
+    },
+    {
+      "name": "320 internal horizontal code reading",
+      "passed": true,
+      "detail": {
+        "left": 2,
+        "max": 2
+      }
+    },
+    {
+      "name": "320 horizontal gesture keeps vertical place",
+      "passed": true
+    },
+    {
+      "name": "320 learning records unchanged",
+      "passed": true
+    },
+    {
+      "name": "print expands optional codes and all solutions",
+      "passed": true
+    },
+    {
+      "name": "print hides fixed navigation",
+      "passed": true
+    },
+    {
+      "name": "print code wraps without clipping",
+      "passed": true
+    },
+    {
+      "name": "all original/complete/check code visible in print",
+      "passed": true
+    },
+    {
+      "name": "print restores every prior disclosure state",
+      "passed": true
+    },
+    {
+      "name": "print leaves learning records unchanged",
+      "passed": true
+    },
+    {
+      "name": "concept note entry opens cram",
+      "passed": true
+    },
+    {
+      "name": "practice header fits small display",
+      "passed": true
+    },
+    {
+      "name": "practice entry opens cram",
+      "passed": true
+    },
+    {
+      "name": "navigation preserves draft/star/current",
+      "passed": true
+    },
+    {
+      "name": "file URL works fully offline",
+      "passed": true
+    },
+    {
+      "name": "offline answers work",
+      "passed": true
+    },
+    {
+      "name": "no JavaScript page errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "browser": "Chromium",
+  "widths": [
+    1440,
+    390,
+    320
+  ]
+}

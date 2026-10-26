@@ -1,0 +1,907 @@
+{
+  "date": "2026-10-26",
+  "counts": {
+    "code": 94,
+    "short": 232,
+    "mc": 63
+  },
+  "questions": 389,
+  "path": "bigdata-programming-midterm/07_시험대비/중간/",
+  "notes": [
+    "No question/answer/storage-key changes.",
+    "Public provenance paths are relative.",
+    "Source PDF filenames match manifest casing and Unicode exactly."
+  ],
+  "files": {
+    "bigdata-programming-midterm/07_시험대비/중간/index.html": {
+      "source": "07_시험대비/중간/index.html",
+      "source_sha256": "f03b8ff98a7c8b88c6e06ffd731b6bd5440e2d5a1e1f18893b9529fa06d6389e",
+      "published_sha256": "f03b8ff98a7c8b88c6e06ffd731b6bd5440e2d5a1e1f18893b9529fa06d6389e"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice/index.html": {
+      "source": "07_시험대비/중간/practice/index.html",
+      "source_sha256": "6c269383a43d0b036580fd4cd2f125ef8f836a260febe08b5fc00d276019e642",
+      "published_sha256": "38a0e335081f0aabd82021e94e50370727985ac75ef367af5ad9337a9739995f"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/35_시험1시간전_압축정리.html": {
+      "source": "07_시험대비/중간/35_시험1시간전_압축정리.html",
+      "source_sha256": "9f6b38290c79108d36c683c82b3bee12ed230a9ac42d8ee630abfa8baf138f27",
+      "published_sha256": "9f6b38290c79108d36c683c82b3bee12ed230a9ac42d8ee630abfa8baf138f27"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/00_범위와_출제정보.md": {
+      "source": "07_시험대비/중간/00_범위와_출제정보.md",
+      "source_sha256": "08e61f3036c1d5da898c46ce906bb26fe07a624d0903fa83828103b7fcf3096e",
+      "published_sha256": "c4d3b070a36285aa0825dbd764e8d362d40789e9fcb8b7bcd689f51b7ae6265e"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/33_객관식과_개념단답_재검수.md": {
+      "source": "07_시험대비/중간/33_객관식과_개념단답_재검수.md",
+      "source_sha256": "8231c1c9a70cfaeb34063f5ad53367c4a136ce37f9c3d20255ca0851aa98572f",
+      "published_sha256": "8231c1c9a70cfaeb34063f5ad53367c4a136ce37f9c3d20255ca0851aa98572f"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/noncode-static.json": {
+      "source": "07_시험대비/중간/final-audit/noncode-static.json",
+      "source_sha256": "927ca89d9381fd5ce52551a37733199ddd5e3ab753c1ed2f531e51f2b87fa01f",
+      "published_sha256": "927ca89d9381fd5ce52551a37733199ddd5e3ab753c1ed2f531e51f2b87fa01f"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-noncode.json": {
+      "source": "07_시험대비/중간/final-audit/browser-noncode.json",
+      "source_sha256": "09f04ca3caeb659becfa87463646ae39355ce8c2366cb8f21d7bbd8fe3dc4427",
+      "published_sha256": "09f04ca3caeb659becfa87463646ae39355ce8c2366cb8f21d7bbd8fe3dc4427"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-noncode-followup.json": {
+      "source": "07_시험대비/중간/final-audit/browser-noncode-followup.json",
+      "source_sha256": "4e78d3d45b5605132151a5b6d2cd3b9ca5c537a5070179114e848cad1c42ed0d",
+      "published_sha256": "4e78d3d45b5605132151a5b6d2cd3b9ca5c537a5070179114e848cad1c42ed0d"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/noncode-regressions.json": {
+      "source": "07_시험대비/중간/final-audit/noncode-regressions.json",
+      "source_sha256": "854bdcf87626f594a46bef1fb12eba99f4ea67bafcd9c7c980d8ebb9dc7e6629",
+      "published_sha256": "854bdcf87626f594a46bef1fb12eba99f4ea67bafcd9c7c980d8ebb9dc7e6629"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/noncode-review.json": {
+      "source": "07_시험대비/중간/practice-source/noncode-review.json",
+      "source_sha256": "6cacaefccd8358d33db20bfce4d71b66673c0c71f1084ea9644181a5edae3ec9",
+      "published_sha256": "6cacaefccd8358d33db20bfce4d71b66673c0c71f1084ea9644181a5edae3ec9"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/noncode_invariants.py": {
+      "source": "07_시험대비/중간/practice-source/noncode_invariants.py",
+      "source_sha256": "81f67d4d57f024e22caaea6e8009ac67aad1734ff1d1ac84e277aa3de451578e",
+      "published_sha256": "81f67d4d57f024e22caaea6e8009ac67aad1734ff1d1ac84e277aa3de451578e"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/32_통합후_예제와_빈칸_재검수.md": {
+      "source": "07_시험대비/중간/32_통합후_예제와_빈칸_재검수.md",
+      "source_sha256": "b502f5fd2548a9161ac8db46da9468681bc6cf8f5c6b77b14ee702d61b6db26a",
+      "published_sha256": "b502f5fd2548a9161ac8db46da9468681bc6cf8f5c6b77b14ee702d61b6db26a"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/integration-static.json": {
+      "source": "07_시험대비/중간/final-audit/integration-static.json",
+      "source_sha256": "3163b2bc13c1e265fa890395e4bdd6272c53c500466d4072b62f8d10069eeccc",
+      "published_sha256": "3163b2bc13c1e265fa890395e4bdd6272c53c500466d4072b62f8d10069eeccc"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-integration.json": {
+      "source": "07_시험대비/중간/final-audit/browser-integration.json",
+      "source_sha256": "fbcc76348dfd5c0d60fd0c54c57048579bfd413bc886f34a4c8ba35a31a87300",
+      "published_sha256": "fbcc76348dfd5c0d60fd0c54c57048579bfd413bc886f34a4c8ba35a31a87300"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/integration-review.json": {
+      "source": "07_시험대비/중간/practice-source/integration-review.json",
+      "source_sha256": "7fe6707f1f334ab7b1a133eac0bd7aac5e61a8b904ee7b725849749f17897317",
+      "published_sha256": "7fe6707f1f334ab7b1a133eac0bd7aac5e61a8b904ee7b725849749f17897317"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/integration_invariants.py": {
+      "source": "07_시험대비/중간/practice-source/integration_invariants.py",
+      "source_sha256": "dc390bae9ce88560d3062e4332d5e605f582aace97700fe1ad21f96524c4c1f9",
+      "published_sha256": "dc390bae9ce88560d3062e4332d5e605f582aace97700fe1ad21f96524c4c1f9"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/integration-regressions.json": {
+      "source": "07_시험대비/중간/final-audit/integration-regressions.json",
+      "source_sha256": "e1b19ff7addfe523f43dcd945620076363c2a2efb9caaf1a194dd50e236c1f88",
+      "published_sha256": "e1b19ff7addfe523f43dcd945620076363c2a2efb9caaf1a194dd50e236c1f88"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/31_교안예제형_코드완성_문항보완.md": {
+      "source": "07_시험대비/중간/31_교안예제형_코드완성_문항보완.md",
+      "source_sha256": "229a87b55e8b2a20da87ed10dbc4382cffdedc55333e1f2081e6389d31eb3929",
+      "published_sha256": "229a87b55e8b2a20da87ed10dbc4382cffdedc55333e1f2081e6389d31eb3929"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/whole-examples-static.json": {
+      "source": "07_시험대비/중간/final-audit/whole-examples-static.json",
+      "source_sha256": "f81b212360e550e37c9ff42c149fd0579d765133bf353a070bd0ebb80ffa015e",
+      "published_sha256": "f81b212360e550e37c9ff42c149fd0579d765133bf353a070bd0ebb80ffa015e"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-whole-examples.json": {
+      "source": "07_시험대비/중간/final-audit/browser-whole-examples.json",
+      "source_sha256": "f4b245e1a46986b4e29c09f2094b647e163ff73a7d2b239da432833fe88207d3",
+      "published_sha256": "f4b245e1a46986b4e29c09f2094b647e163ff73a7d2b239da432833fe88207d3"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-whole-examples-followup.json": {
+      "source": "07_시험대비/중간/final-audit/browser-whole-examples-followup.json",
+      "source_sha256": "991b137a4f2c6f7828368500cf9ef516d73d0730765e4f59beb9ab54d0be8b6c",
+      "published_sha256": "991b137a4f2c6f7828368500cf9ef516d73d0730765e4f59beb9ab54d0be8b6c"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/whole-example-regressions.json": {
+      "source": "07_시험대비/중간/final-audit/whole-example-regressions.json",
+      "source_sha256": "504099d51c2b524f87ce3103ef2a371478acb13c069672a4ad6b107abf3ceb1e",
+      "published_sha256": "504099d51c2b524f87ce3103ef2a371478acb13c069672a4ad6b107abf3ceb1e"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/30_중복문항_검수와_정리.md": {
+      "source": "07_시험대비/중간/30_중복문항_검수와_정리.md",
+      "source_sha256": "28e4b5c9fb73528f67cbe907e4353ee8ffdb0cf490f211b7ed1bb292e054a912",
+      "published_sha256": "28e4b5c9fb73528f67cbe907e4353ee8ffdb0cf490f211b7ed1bb292e054a912"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/duplicates-static.json": {
+      "source": "07_시험대비/중간/final-audit/duplicates-static.json",
+      "source_sha256": "eec0344faaf49d96373ee09061316d4048fd2e74c719ce14d037e7fc102347da",
+      "published_sha256": "eec0344faaf49d96373ee09061316d4048fd2e74c719ce14d037e7fc102347da"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-duplicates.json": {
+      "source": "07_시험대비/중간/final-audit/browser-duplicates.json",
+      "source_sha256": "c279b6321756ee9feebe19fc85353a7ebdeeaefd69727389825c895ff30866ed",
+      "published_sha256": "c279b6321756ee9feebe19fc85353a7ebdeeaefd69727389825c895ff30866ed"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-duplicates-followup.json": {
+      "source": "07_시험대비/중간/final-audit/browser-duplicates-followup.json",
+      "source_sha256": "c665a3a4121858ab836bdd7c67bf9a26c6d37d534b4e0a2a9bf25fbff1bf8f58",
+      "published_sha256": "c665a3a4121858ab836bdd7c67bf9a26c6d37d534b4e0a2a9bf25fbff1bf8f58"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/duplicate-regression-run.json": {
+      "source": "07_시험대비/중간/final-audit/duplicate-regression-run.json",
+      "source_sha256": "f3f03444c95eb74c514be221ef2875505bdb9290f7526b909b323949add94979",
+      "published_sha256": "f3f03444c95eb74c514be221ef2875505bdb9290f7526b909b323949add94979"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/29_빈칸별_목표동작_보완.md": {
+      "source": "07_시험대비/중간/29_빈칸별_목표동작_보완.md",
+      "source_sha256": "e99d10990454d457116465a9f7ea61815d39e81696c39c6d209722756979d9d4",
+      "published_sha256": "e99d10990454d457116465a9f7ea61815d39e81696c39c6d209722756979d9d4"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/goal-targets-static.json": {
+      "source": "07_시험대비/중간/final-audit/goal-targets-static.json",
+      "source_sha256": "caaa60d82a152a33ed6134c4fefa2fef7233bc27146e950c638fff1a84c1004c",
+      "published_sha256": "caaa60d82a152a33ed6134c4fefa2fef7233bc27146e950c638fff1a84c1004c"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-goal-targets.json": {
+      "source": "07_시험대비/중간/final-audit/browser-goal-targets.json",
+      "source_sha256": "6e5494452f23de8ff02656ee0fb2bd501914175f2088a166e6fabcc0f3b4424f",
+      "published_sha256": "6e5494452f23de8ff02656ee0fb2bd501914175f2088a166e6fabcc0f3b4424f"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/28_빈칸위치_토큰과_화면검수.md": {
+      "source": "07_시험대비/중간/28_빈칸위치_토큰과_화면검수.md",
+      "source_sha256": "cfc61a9b1e9b676d3c04efad964676bb787b1e2b6f7921330cb710e55952f9b8",
+      "published_sha256": "cfc61a9b1e9b676d3c04efad964676bb787b1e2b6f7921330cb710e55952f9b8"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/blank-span-static.json": {
+      "source": "07_시험대비/중간/final-audit/blank-span-static.json",
+      "source_sha256": "e4c6bdde296045d63410770dd20c34f7b27e8bf2c70632f7ea14a84f3a86f7fd",
+      "published_sha256": "e4c6bdde296045d63410770dd20c34f7b27e8bf2c70632f7ea14a84f3a86f7fd"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-blank-spans.json": {
+      "source": "07_시험대비/중간/final-audit/browser-blank-spans.json",
+      "source_sha256": "c785ee81decef81b366b89dee2fd671f9e0f1e47ef69712ecf85b4d1d98d71c8",
+      "published_sha256": "c785ee81decef81b366b89dee2fd671f9e0f1e47ef69712ecf85b4d1d98d71c8"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/27_완성코드_실행결과_유형검수.md": {
+      "source": "07_시험대비/중간/27_완성코드_실행결과_유형검수.md",
+      "source_sha256": "6750fbbcb5ffca84edc6e34934de6d2633cd4d1170c79a4d97e92fc45e3b8015",
+      "published_sha256": "6750fbbcb5ffca84edc6e34934de6d2633cd4d1170c79a4d97e92fc45e3b8015"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/output-prediction-static.json": {
+      "source": "07_시험대비/중간/final-audit/output-prediction-static.json",
+      "source_sha256": "243983fff3a265f5a85811ee35547a101572a43eac88975499da36af52e4cfd5",
+      "published_sha256": "243983fff3a265f5a85811ee35547a101572a43eac88975499da36af52e4cfd5"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-output-coverage.json": {
+      "source": "07_시험대비/중간/final-audit/browser-output-coverage.json",
+      "source_sha256": "8148ac9b07136aaf76a3f1261cdfd04c9774ae1916403279d8f12abbae6ec7f7",
+      "published_sha256": "8148ac9b07136aaf76a3f1261cdfd04c9774ae1916403279d8f12abbae6ec7f7"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/26_코드빈칸_출제적합성_검수.md": {
+      "source": "07_시험대비/중간/26_코드빈칸_출제적합성_검수.md",
+      "source_sha256": "9e584041960574a4d29640fd3698078b318ed1aade94716c2fd050c3f7eea411",
+      "published_sha256": "9e584041960574a4d29640fd3698078b318ed1aade94716c2fd050c3f7eea411"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/blank-quality-static.json": {
+      "source": "07_시험대비/중간/final-audit/blank-quality-static.json",
+      "source_sha256": "09081387ea9a3984cf9537b6238e9b12e3ef68fb9a04209d157b62670de83fd3",
+      "published_sha256": "09081387ea9a3984cf9537b6238e9b12e3ef68fb9a04209d157b62670de83fd3"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-active-blank-quality.json": {
+      "source": "07_시험대비/중간/final-audit/browser-active-blank-quality.json",
+      "source_sha256": "d42aea14249545eb04583c3c3c20702fbba8e8980be08b959eb13664775204b6",
+      "published_sha256": "d42aea14249545eb04583c3c3c20702fbba8e8980be08b959eb13664775204b6"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-blank-quality.json": {
+      "source": "07_시험대비/중간/final-audit/browser-blank-quality.json",
+      "source_sha256": "2e15a8d40510140aa2600680dc653eedecc67fd97bac8c3bb401910aac3db9bb",
+      "published_sha256": "2e15a8d40510140aa2600680dc653eedecc67fd97bac8c3bb401910aac3db9bb"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/25_문제지문_정답단서_제거.md": {
+      "source": "07_시험대비/중간/25_문제지문_정답단서_제거.md",
+      "source_sha256": "f872b223c5ba537cd10e3ffa20e3787b8b5186ca297e53a2c59f2fb774d1674a",
+      "published_sha256": "f872b223c5ba537cd10e3ffa20e3787b8b5186ca297e53a2c59f2fb774d1674a"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/question-display.json": {
+      "source": "07_시험대비/중간/practice-source/question-display.json",
+      "source_sha256": "ddffb654f580223f0392f154f8462633db6c9257d4fd89ca410abbca60983afa",
+      "published_sha256": "ddffb654f580223f0392f154f8462633db6c9257d4fd89ca410abbca60983afa"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/answer-hint-static.json": {
+      "source": "07_시험대비/중간/final-audit/answer-hint-static.json",
+      "source_sha256": "6882d92914d8e07ab213f66fec6da33afa97a8785f6467b09adde1a848135a6c",
+      "published_sha256": "6882d92914d8e07ab213f66fec6da33afa97a8785f6467b09adde1a848135a6c"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-answer-hints.json": {
+      "source": "07_시험대비/중간/final-audit/browser-answer-hints.json",
+      "source_sha256": "4c5b033b5eb9d1d9e80497596cc8b81353e4c1ba428022fb2349a6a8df1728ad",
+      "published_sha256": "4c5b033b5eb9d1d9e80497596cc8b81353e4c1ba428022fb2349a6a8df1728ad"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/24_교안원문_빈칸과_예제일치_검수.md": {
+      "source": "07_시험대비/중간/24_교안원문_빈칸과_예제일치_검수.md",
+      "source_sha256": "e399100d3f8c39ba50decb942691d95e0161564624989ffc961947ce7f1797b9",
+      "published_sha256": "e399100d3f8c39ba50decb942691d95e0161564624989ffc961947ce7f1797b9"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/lecture-original-blanks.json": {
+      "source": "07_시험대비/중간/final-audit/lecture-original-blanks.json",
+      "source_sha256": "709466763ca8f8b9ce51584dd7e87ff89bca1897c2a71eddbd29c2b64e1dc349",
+      "published_sha256": "a70dcd7e2082aa030e28dacfe6a196e6ed805ce127cc10ab9b3ca7ba0ad058f1"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-lecture-original-blanks.json": {
+      "source": "07_시험대비/중간/final-audit/browser-lecture-original-blanks.json",
+      "source_sha256": "b3bee67ad507245aaca4951bd91e977ee558db88c25a9197f5174f86e9329b00",
+      "published_sha256": "b3bee67ad507245aaca4951bd91e977ee558db88c25a9197f5174f86e9329b00"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/lecture-code-text-comparison.json": {
+      "source": "07_시험대비/중간/final-audit/lecture-code-text-comparison.json",
+      "source_sha256": "a649eb68433fe37ab46bfae003271af50de291fdd1ab087c28cacad03eb00d8c",
+      "published_sha256": "a649eb68433fe37ab46bfae003271af50de291fdd1ab087c28cacad03eb00d8c"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/23_개념단답_전수대조와_상세해설_기준반영.md": {
+      "source": "07_시험대비/중간/23_개념단답_전수대조와_상세해설_기준반영.md",
+      "source_sha256": "7b1496f23b594480fba56a689f9908b7767bc05d6958fad9418d69107e91edfe",
+      "published_sha256": "d3c8cee25b9d8535a68be8be34c955145dd7147a8986b0dd47294354a0918a13"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/short-answer-coverage.md": {
+      "source": "07_시험대비/중간/final-audit/short-answer-coverage.md",
+      "source_sha256": "597cf985ef22bd26025ef8a19a4d41ce41ad654e02212c9c683f9f9dca59c3f3",
+      "published_sha256": "597cf985ef22bd26025ef8a19a4d41ce41ad654e02212c9c683f9f9dca59c3f3"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/short-answer-coverage.json": {
+      "source": "07_시험대비/중간/final-audit/short-answer-coverage.json",
+      "source_sha256": "0dd1683a4cdd21918381ab54ff03e4102afa270e8d4144e055711ba9d0a71bb8",
+      "published_sha256": "d477edcb71edd7f57c21a339234e7b54527030fdbb8831030b60219b168b8093"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-short-answer-coverage.json": {
+      "source": "07_시험대비/중간/final-audit/browser-short-answer-coverage.json",
+      "source_sha256": "801a9e46104e06915e63ae0eee060fa2ebe65a7aebae2069b77d92c01eb5d41c",
+      "published_sha256": "801a9e46104e06915e63ae0eee060fa2ebe65a7aebae2069b77d92c01eb5d41c"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-short-answer-reset.json": {
+      "source": "07_시험대비/중간/final-audit/browser-short-answer-reset.json",
+      "source_sha256": "17e7b73cb10b5917714f9893735b98a756808cd9d7d93f88b7e0e59385cc3afe",
+      "published_sha256": "17e7b73cb10b5917714f9893735b98a756808cd9d7d93f88b7e0e59385cc3afe"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/detailed-solutions-execution.json": {
+      "source": "07_시험대비/중간/final-audit/detailed-solutions-execution.json",
+      "source_sha256": "0302dbec3102be7794b591d9d437daebc38ff504be9ac7e2b65eda1a1e2f4615",
+      "published_sha256": "0302dbec3102be7794b591d9d437daebc38ff504be9ac7e2b65eda1a1e2f4615"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/19_파일입출력_강조점별_문항보완.md": {
+      "source": "07_시험대비/중간/19_파일입출력_강조점별_문항보완.md",
+      "source_sha256": "8d3befe257cac4112056018759a2986b03bf20c3e1691ba2cd25bf56b27514b5",
+      "published_sha256": "789dbfc0fb5be8c613a50b430648c3205351cbb7f0018499cb4e2b54ab6c65e0"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/11_공지반영_예상문제.md": {
+      "source": "07_시험대비/중간/11_공지반영_예상문제.md",
+      "source_sha256": "9da5e638a933c2b1a1fb37aaf4429107cc0ff1cdfa3152a645dd43546438ce60",
+      "published_sha256": "9da5e638a933c2b1a1fb37aaf4429107cc0ff1cdfa3152a645dd43546438ce60"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/12_공지반영_정답과해설.md": {
+      "source": "07_시험대비/중간/12_공지반영_정답과해설.md",
+      "source_sha256": "a6f610f03e329ab0bcafad40491ff0457bf8a049037f9a6905b316591d0a1d27",
+      "published_sha256": "a6f610f03e329ab0bcafad40491ff0457bf8a049037f9a6905b316591d0a1d27"
+    },
+    "bigdata-programming-midterm/03_주차별정리/파일입출력_전사대조.md": {
+      "source": "03_주차별정리/파일입출력_전사대조.md",
+      "source_sha256": "ee28bf836b4dfaf4195d690ff7544faaf5883e6e8efec6233796f36efe205629",
+      "published_sha256": "ee28bf836b4dfaf4195d690ff7544faaf5883e6e8efec6233796f36efe205629"
+    },
+    "bigdata-programming-midterm/02_녹화와_전사/파일입출력_제공전사.txt": {
+      "source": "02_녹화와_전사/파일입출력_제공전사.txt",
+      "source_sha256": "c6419fd88fbcec54e3160a658572fbfeb897a85646c0e002a843121c236394e4",
+      "published_sha256": "c6419fd88fbcec54e3160a658572fbfeb897a85646c0e002a843121c236394e4"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/18_파일입출력_전사보완과_공통기준.md": {
+      "source": "07_시험대비/중간/18_파일입출력_전사보완과_공통기준.md",
+      "source_sha256": "eb849b7c07a4c4fadc8f20b14077ec37965265e5a13b5ee69f4e9074117f0805",
+      "published_sha256": "5d9904655bebfccf7a4784df378d489985c020f1ad583cbba7470008cfaf44cf"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/bigdata-transcript-concept-1440.png": {
+      "source": "07_시험대비/중간/output/playwright/bigdata-transcript-concept-1440.png",
+      "source_sha256": "be4809b9217c5e277a23cf12989bdf55d8497e1b36a59683f3956bdd686e1262",
+      "published_sha256": "be4809b9217c5e277a23cf12989bdf55d8497e1b36a59683f3956bdd686e1262"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/bigdata-transcript-concept-390.png": {
+      "source": "07_시험대비/중간/output/playwright/bigdata-transcript-concept-390.png",
+      "source_sha256": "cfe574e074aee1111e2ac8c09af4102252c3d2fc5ceacf3e66db0de7db44e8ef",
+      "published_sha256": "cfe574e074aee1111e2ac8c09af4102252c3d2fc5ceacf3e66db0de7db44e8ef"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/bigdata-transcript-question-1440.png": {
+      "source": "07_시험대비/중간/output/playwright/bigdata-transcript-question-1440.png",
+      "source_sha256": "f9cc4a5c41ae8f1c3861cb55cd7b7cb77d0d9a561d00bc3b3c001a896797b861",
+      "published_sha256": "f9cc4a5c41ae8f1c3861cb55cd7b7cb77d0d9a561d00bc3b3c001a896797b861"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/concept-source/file-transcript.json": {
+      "source": "07_시험대비/중간/concept-source/file-transcript.json",
+      "source_sha256": "14ee907045647840d7cf16ebcf5619695438eff99bbcd432902b687518b68eaf",
+      "published_sha256": "d7009464dd5daec846f3e5476a16d01e873b834c05abe168373715cc3c8ea10d"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/verify-file-transcript.py": {
+      "source": "07_시험대비/중간/practice-source/verify-file-transcript.py",
+      "source_sha256": "76b4037ffa2a6e4a645e2e21a1143b11996f5a62fe3172df7be8b64c5e3e5e5a",
+      "published_sha256": "76b4037ffa2a6e4a645e2e21a1143b11996f5a62fe3172df7be8b64c5e3e5e5a"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/file-transcript-execution.json": {
+      "source": "07_시험대비/중간/final-audit/file-transcript-execution.json",
+      "source_sha256": "f2037498a4345bc6f9cbda3f7326273ca2232297c0ca66fbe0df2b89f981fe5f",
+      "published_sha256": "f2037498a4345bc6f9cbda3f7326273ca2232297c0ca66fbe0df2b89f981fe5f"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-file-transcript-practice.js": {
+      "source": "07_시험대비/중간/final-audit/browser-file-transcript-practice.js",
+      "source_sha256": "8b0d53c8e3671ac887baa0c9513ce8045bc5ff1e86eb01534dc7593b6de071f4",
+      "published_sha256": "8b0d53c8e3671ac887baa0c9513ce8045bc5ff1e86eb01534dc7593b6de071f4"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-file-transcript-concepts.js": {
+      "source": "07_시험대비/중간/final-audit/browser-file-transcript-concepts.js",
+      "source_sha256": "422f518953908d6696540646bce46b4814be2dd45a745527992f5a15753021fa",
+      "published_sha256": "422f518953908d6696540646bce46b4814be2dd45a745527992f5a15753021fa"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/file-transcript-browser.json": {
+      "source": "07_시험대비/중간/final-audit/file-transcript-browser.json",
+      "source_sha256": "bcb9e139e36d020d530b67534f53a1052ff52cb3ea4faa610067e70751087ed5",
+      "published_sha256": "bcb9e139e36d020d530b67534f53a1052ff52cb3ea4faa610067e70751087ed5"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/concept-source/실행검증.json": {
+      "source": "07_시험대비/중간/concept-source/실행검증.json",
+      "source_sha256": "21c5a2f17358394555e7b70e932f20dad19207d407270e4463913c866cb5df17",
+      "published_sha256": "21c5a2f17358394555e7b70e932f20dad19207d407270e4463913c866cb5df17"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/concept-source/정적검수.json": {
+      "source": "07_시험대비/중간/concept-source/정적검수.json",
+      "source_sha256": "3e595688dfdb386129dc23518975d44f8963e9daa4fc6868f32456d4e80d2349",
+      "published_sha256": "3e595688dfdb386129dc23518975d44f8963e9daa4fc6868f32456d4e80d2349"
+    },
+    "bigdata-programming-midterm/01_강의자료/261012_빅데이터프로그래밍_공지.pdf": {
+      "source": "01_강의자료/261012_빅데이터프로그래밍_공지.pdf",
+      "source_sha256": "9a791f283669c9bb75cd2234eb915cb4a67dfd328c3ba40d210e48938e900eae",
+      "published_sha256": "9a791f283669c9bb75cd2234eb915cb4a67dfd328c3ba40d210e48938e900eae"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/bigdata-file-assessment-1440.png": {
+      "source": "07_시험대비/중간/output/playwright/bigdata-file-assessment-1440.png",
+      "source_sha256": "4728bcb12e995903ff49fcac36d0532b2c1c0e62bd33c2db151f0b8da5fba16e",
+      "published_sha256": "4728bcb12e995903ff49fcac36d0532b2c1c0e62bd33c2db151f0b8da5fba16e"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/bigdata-file-assessment-390.png": {
+      "source": "07_시험대비/중간/output/playwright/bigdata-file-assessment-390.png",
+      "source_sha256": "4494179b9d51d4f71b34a7ed7bed4745b7b9b7dcbf9178175c4b63ed444c5d5e",
+      "published_sha256": "4494179b9d51d4f71b34a7ed7bed4745b7b9b7dcbf9178175c4b63ed444c5d5e"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/file-transcript-questions.mjs": {
+      "source": "07_시험대비/중간/practice-source/file-transcript-questions.mjs",
+      "source_sha256": "e4addba0edd5aacd2c0670fb8a24449e1c4a9f7ec958398dd10b558371f7f50b",
+      "published_sha256": "e4addba0edd5aacd2c0670fb8a24449e1c4a9f7ec958398dd10b558371f7f50b"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/file-assessment-coverage.json": {
+      "source": "07_시험대비/중간/practice-source/file-assessment-coverage.json",
+      "source_sha256": "26b7ee8e9c121fb462d01f912aec2c76cac9fcf11d6c77bd8e69201e27120296",
+      "published_sha256": "26b7ee8e9c121fb462d01f912aec2c76cac9fcf11d6c77bd8e69201e27120296"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/verify-file-assessment.py": {
+      "source": "07_시험대비/중간/practice-source/verify-file-assessment.py",
+      "source_sha256": "4862f3d614c40dc151bc1cc00d8f8eb7d97a98afc6a7241a73a5e32954d1ef37",
+      "published_sha256": "4862f3d614c40dc151bc1cc00d8f8eb7d97a98afc6a7241a73a5e32954d1ef37"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/file-assessment-execution.json": {
+      "source": "07_시험대비/중간/final-audit/file-assessment-execution.json",
+      "source_sha256": "1243ddf289cd9092b223d6b9ec886d0f7f35f1bc2c8da5f16d76f7c99726087c",
+      "published_sha256": "1243ddf289cd9092b223d6b9ec886d0f7f35f1bc2c8da5f16d76f7c99726087c"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-file-assessment.js": {
+      "source": "07_시험대비/중간/final-audit/browser-file-assessment.js",
+      "source_sha256": "9f83e8579c5739cef23fca87ccbc7d7ba3853574b9dd370e6288366e4295bcc8",
+      "published_sha256": "9f83e8579c5739cef23fca87ccbc7d7ba3853574b9dd370e6288366e4295bcc8"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/file-assessment-browser.json": {
+      "source": "07_시험대비/중간/final-audit/file-assessment-browser.json",
+      "source_sha256": "ee6ab8058d37ed007fc47b2525472b6391e82074ec4e53309f29eaf6a059cecf",
+      "published_sha256": "ee6ab8058d37ed007fc47b2525472b6391e82074ec4e53309f29eaf6a059cecf"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/file-assessment-before-bank.json": {
+      "source": "07_시험대비/중간/final-audit/file-assessment-before-bank.json",
+      "source_sha256": "4a7ae57f5073c011def3a902c12a52c11c7d36a1f3904b69e92518b89e56fc16",
+      "published_sha256": "3fd2b8279e093b6929f7f28a5a4a5feade650e561900c09be0441873ed8ee6b4"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/14_예제전수대조와_보완.md": {
+      "source": "07_시험대비/중간/14_예제전수대조와_보완.md",
+      "source_sha256": "aa802621bab84f0be8226b8d9c8ad502c421e3a5e08692a47ad1effbb6584d02",
+      "published_sha256": "aa802621bab84f0be8226b8d9c8ad502c421e3a5e08692a47ad1effbb6584d02"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/16_디자인_기능_내용_종합검수.md": {
+      "source": "07_시험대비/중간/16_디자인_기능_내용_종합검수.md",
+      "source_sha256": "9a9b8adc50f18a9ef3bac755baa9d8f9666a5fe205878c1f76344fc3c6831762",
+      "published_sha256": "9a9b8adc50f18a9ef3bac755baa9d8f9666a5fe205878c1f76344fc3c6831762"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/17_코드예시_제시와_검수.md": {
+      "source": "07_시험대비/중간/17_코드예시_제시와_검수.md",
+      "source_sha256": "c14e5adb3253871402f66326f3103206c0f1bb744b6157318acbe526c648ed30",
+      "published_sha256": "c14e5adb3253871402f66326f3103206c0f1bb744b6157318acbe526c648ed30"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/bigdata-BM02-code-desktop.png": {
+      "source": "07_시험대비/중간/output/playwright/bigdata-BM02-code-desktop.png",
+      "source_sha256": "7c5947ac36aa202883fe5a09e47b7330617dddd3cc2917159f35ea86c56dcc11",
+      "published_sha256": "7c5947ac36aa202883fe5a09e47b7330617dddd3cc2917159f35ea86c56dcc11"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/bigdata-BM02-code-mobile.png": {
+      "source": "07_시험대비/중간/output/playwright/bigdata-BM02-code-mobile.png",
+      "source_sha256": "06d9761f73bc18fdd0814f4d11b2e22c92ec2fb057467327058f9e0e95e50dea",
+      "published_sha256": "06d9761f73bc18fdd0814f4d11b2e22c92ec2fb057467327058f9e0e95e50dea"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/code-examples.mjs": {
+      "source": "07_시험대비/중간/practice-source/code-examples.mjs",
+      "source_sha256": "a528a7ff276d962bbe291ec12a061e399b56165757194e11d8863c7be0239e26",
+      "published_sha256": "a528a7ff276d962bbe291ec12a061e399b56165757194e11d8863c7be0239e26"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/code-presentation-revision.json": {
+      "source": "07_시험대비/중간/practice-source/code-presentation-revision.json",
+      "source_sha256": "f792be8bcf912ea3b7b7b86865440bfcdbf82c683456caaabc9c415c3ce005fa",
+      "published_sha256": "f792be8bcf912ea3b7b7b86865440bfcdbf82c683456caaabc9c415c3ce005fa"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/verify-code-examples.py": {
+      "source": "07_시험대비/중간/practice-source/verify-code-examples.py",
+      "source_sha256": "cb5ab32e0d8c9972340fa880d8cc1aaefa7377b1391e6c0dd2e0217f655308c5",
+      "published_sha256": "cb5ab32e0d8c9972340fa880d8cc1aaefa7377b1391e6c0dd2e0217f655308c5"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/code-examples-execution.json": {
+      "source": "07_시험대비/중간/final-audit/code-examples-execution.json",
+      "source_sha256": "f53809bfddb7a9e0961cbb36562b06903c8e2890128cbde18d87eb98f1e31589",
+      "published_sha256": "f53809bfddb7a9e0961cbb36562b06903c8e2890128cbde18d87eb98f1e31589"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-code-examples.js": {
+      "source": "07_시험대비/중간/final-audit/browser-code-examples.js",
+      "source_sha256": "b48b0754bbd93ebfcdc48301890690cad3f9086cf1aacfe358e230554d5f8a40",
+      "published_sha256": "b48b0754bbd93ebfcdc48301890690cad3f9086cf1aacfe358e230554d5f8a40"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/code-examples-browser.json": {
+      "source": "07_시험대비/중간/final-audit/code-examples-browser.json",
+      "source_sha256": "a61ee617659ea8788caa2ce9b8c08b07bcef07ddbb5df4b7f45710a4c3cb079a",
+      "published_sha256": "a61ee617659ea8788caa2ce9b8c08b07bcef07ddbb5df4b7f45710a4c3cb079a"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/README.md": {
+      "source": "07_시험대비/중간/final-audit/README.md",
+      "source_sha256": "354c13e30c1ce505bfe66c48dbf2293f072ef0e8e0636e36042c54a471b2469d",
+      "published_sha256": "4647e5681e9c8e4501bf38680be3cbdfc033cc6cd39251023bb07497fd2fef4d"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/37_압축본_강조점과_유형_재검수.md": {
+      "source": "07_시험대비/중간/37_압축본_강조점과_유형_재검수.md",
+      "source_sha256": "422b0085e8d83df6717da5f0eeecf8ce3e0fb07f08512319af7b865c108bb7cd",
+      "published_sha256": "422b0085e8d83df6717da5f0eeecf8ce3e0fb07f08512319af7b865c108bb7cd"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/35_시험1시간전_압축정리.md": {
+      "source": "07_시험대비/중간/35_시험1시간전_압축정리.md",
+      "source_sha256": "64b90961d7b0e4c0d62419091050cc86cb825bde7edfbe341087a5b93e28ecbb",
+      "published_sha256": "7285723decfe1d6a754332a65b99c2e62d786049cb691930bc092212fdc9f3ca"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/cram-content-coverage.json": {
+      "source": "07_시험대비/중간/final-audit/cram-content-coverage.json",
+      "source_sha256": "7fcd48a40309536023b3dd8f9fe53169c1d33783e9500968faf0938499d2e9e8",
+      "published_sha256": "7fcd48a40309536023b3dd8f9fe53169c1d33783e9500968faf0938499d2e9e8"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/cram-source/example-review.json": {
+      "source": "07_시험대비/중간/cram-source/example-review.json",
+      "source_sha256": "c104d0b5e419f2e2e6498e6926a484d35f1e131aa1849725c0ffb481df9334c1",
+      "published_sha256": "c104d0b5e419f2e2e6498e6926a484d35f1e131aa1849725c0ffb481df9334c1"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/cram-execution.json": {
+      "source": "07_시험대비/중간/final-audit/cram-execution.json",
+      "source_sha256": "8e93a9a357564f6c3d32e288f2f6229f30634a214aa7b4d983f6ea934a4f8d8b",
+      "published_sha256": "8e93a9a357564f6c3d32e288f2f6229f30634a214aa7b4d983f6ea934a4f8d8b"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/cram-source/oracles.json": {
+      "source": "07_시험대비/중간/cram-source/oracles.json",
+      "source_sha256": "a6e45b224a11842b382aa2ae1abcac1d7e90bd096c67b8bc82d791b1aecfe76a",
+      "published_sha256": "a6e45b224a11842b382aa2ae1abcac1d7e90bd096c67b8bc82d791b1aecfe76a"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/cram-source/code-outcomes.json": {
+      "source": "07_시험대비/중간/cram-source/code-outcomes.json",
+      "source_sha256": "9340ae6be1fd17257df7da38eed932c453684afb53be7237e70565d3d8254cf0",
+      "published_sha256": "9340ae6be1fd17257df7da38eed932c453684afb53be7237e70565d3d8254cf0"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/cram-review/browser-review.json": {
+      "source": "07_시험대비/중간/output/playwright/cram-review/browser-review.json",
+      "source_sha256": "1c5662e72c175d736df563057c83d8871c757373bcc31d0cf7d969767f3a1d25",
+      "published_sha256": "1c5662e72c175d736df563057c83d8871c757373bcc31d0cf7d969767f3a1d25"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/36_압축본_범위와_실행_검수.md": {
+      "source": "07_시험대비/중간/36_압축본_범위와_실행_검수.md",
+      "source_sha256": "91d30f366cba0646d6c4787cb3d36311e42f7dcd075aa6cf5923b23831f5289e",
+      "published_sha256": "91d30f366cba0646d6c4787cb3d36311e42f7dcd075aa6cf5923b23831f5289e"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/cram-source/coverage-witnesses.json": {
+      "source": "07_시험대비/중간/cram-source/coverage-witnesses.json",
+      "source_sha256": "be7d33aabb400bfe9537fa378770b7af7d9d154fe61ec976ebaf2dddea523b87",
+      "published_sha256": "be7d33aabb400bfe9537fa378770b7af7d9d154fe61ec976ebaf2dddea523b87"
+    },
+    "bigdata-programming-midterm/03_주차별정리/시험공지_제공본.md": {
+      "source": "03_주차별정리/시험공지_제공본.md",
+      "source_sha256": "9b945d00af1ab9280cc4d5f8473522e07b97a2abcb8f01f05e646ac7260e5659",
+      "published_sha256": "9b945d00af1ab9280cc4d5f8473522e07b97a2abcb8f01f05e646ac7260e5659"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/cram-source/verify.py": {
+      "source": "07_시험대비/중간/cram-source/verify.py",
+      "source_sha256": "1c26a43a57e6c35752fddcdb8cd0723d21f25eea4772e7416ebc3f09eab8a524",
+      "published_sha256": "1c26a43a57e6c35752fddcdb8cd0723d21f25eea4772e7416ebc3f09eab8a524"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/cram/browser-cram.json": {
+      "source": "07_시험대비/중간/output/playwright/cram/browser-cram.json",
+      "source_sha256": "7818d21d94b39facdf00edbeb020386bd93968901e35899a21133db69bbd4700",
+      "published_sha256": "7818d21d94b39facdf00edbeb020386bd93968901e35899a21133db69bbd4700"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/cram/desktop.png": {
+      "source": "07_시험대비/중간/output/playwright/cram/desktop.png",
+      "source_sha256": "fb1d144853da15b60787198b47939f7a799ed39ddb39b1f895c984d58a60be50",
+      "published_sha256": "fb1d144853da15b60787198b47939f7a799ed39ddb39b1f895c984d58a60be50"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/cram/mobile-390.png": {
+      "source": "07_시험대비/중간/output/playwright/cram/mobile-390.png",
+      "source_sha256": "18e3e69d30225af3982d3019728860798a0094020540d612241ea0f4b20b838c",
+      "published_sha256": "18e3e69d30225af3982d3019728860798a0094020540d612241ea0f4b20b838c"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/34_제작기준_반영과_휠스크롤_검수.md": {
+      "source": "07_시험대비/중간/34_제작기준_반영과_휠스크롤_검수.md",
+      "source_sha256": "0f59a9a0a30b1e20ccc7962d238a0f0ed5d4e3e379334e476c73c11bd857e8dc",
+      "published_sha256": "24a76c1a28e9d487dd10fe9d9493e6971cdd0c99760923592051267f79b23ed1"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/style.css": {
+      "source": "07_시험대비/중간/practice-source/style.css",
+      "source_sha256": "379178bbef927f90ad6356e9514f656f57b52d988f7b395c0359d084722859b9",
+      "published_sha256": "379178bbef927f90ad6356e9514f656f57b52d988f7b395c0359d084722859b9"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/wheel/audit-wheel.js": {
+      "source": "07_시험대비/중간/output/playwright/wheel/audit-wheel.js",
+      "source_sha256": "d92325d1fb00102af0fcfb2a969693790ca2e9ad2d1a063c41166beac0c6cfd0",
+      "published_sha256": "d92325d1fb00102af0fcfb2a969693790ca2e9ad2d1a063c41166beac0c6cfd0"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/wheel/browser-wheel.json": {
+      "source": "07_시험대비/중간/output/playwright/wheel/browser-wheel.json",
+      "source_sha256": "30d0eb02e188da8295ef9aff66c53d3d050c4df6075e40118cbc09006528e1ff",
+      "published_sha256": "30d0eb02e188da8295ef9aff66c53d3d050c4df6075e40118cbc09006528e1ff"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/wheel/fixed-desktop.png": {
+      "source": "07_시험대비/중간/output/playwright/wheel/fixed-desktop.png",
+      "source_sha256": "238d726d7b3296df16e873c7873028203eaf6523cf595e439fe23ba4497d24b7",
+      "published_sha256": "238d726d7b3296df16e873c7873028203eaf6523cf595e439fe23ba4497d24b7"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/wheel-standards-static.json": {
+      "source": "07_시험대비/중간/final-audit/wheel-standards-static.json",
+      "source_sha256": "85398da94e4e4ec6bcb81817aecc3b0e37d08d52df10b12e32ca11198d8d7b2f",
+      "published_sha256": "85398da94e4e4ec6bcb81817aecc3b0e37d08d52df10b12e32ca11198d8d7b2f"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/wheel-regressions.json": {
+      "source": "07_시험대비/중간/final-audit/wheel-regressions.json",
+      "source_sha256": "f4ecce4bef156d3e63082df3354378fe45e28d061308d3aaf86f949da3c20af9",
+      "published_sha256": "f4ecce4bef156d3e63082df3354378fe45e28d061308d3aaf86f949da3c20af9"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/22_시험대비창_상세해설_보완.md": {
+      "source": "07_시험대비/중간/22_시험대비창_상세해설_보완.md",
+      "source_sha256": "add048639a348fa12d96e1a60d88b1e9e8ada596acb8eaa18e95af5bd906f92b",
+      "published_sha256": "50295547b876f6b74f9784c7822ae269cc1f5e6c40dbc2ab430c7b975e0ff96f"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/detailed-solutions-BM41-1440.png": {
+      "source": "07_시험대비/중간/output/playwright/detailed-solutions-BM41-1440.png",
+      "source_sha256": "4920c94c8632b5107e8a3b5c4ff1f69e7d1caeb387133a91db88c9faf3d6f62d",
+      "published_sha256": "4920c94c8632b5107e8a3b5c4ff1f69e7d1caeb387133a91db88c9faf3d6f62d"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/detailed-solutions-BM41-390.png": {
+      "source": "07_시험대비/중간/output/playwright/detailed-solutions-BM41-390.png",
+      "source_sha256": "b91a32483123c7198634cb51dac2d5b96ff571cc569f51854fa7c0b8b28e2024",
+      "published_sha256": "b91a32483123c7198634cb51dac2d5b96ff571cc569f51854fa7c0b8b28e2024"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/output/playwright/detailed-solutions-BC24-1440.png": {
+      "source": "07_시험대비/중간/output/playwright/detailed-solutions-BC24-1440.png",
+      "source_sha256": "e3919ff03011c2ad88b5fce5a7c8045bc83564307eb6cac420b7b5f03d0f61f0",
+      "published_sha256": "e3919ff03011c2ad88b5fce5a7c8045bc83564307eb6cac420b7b5f03d0f61f0"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/solution-guides.json": {
+      "source": "07_시험대비/중간/practice-source/solution-guides.json",
+      "source_sha256": "3a760ba182d7ffd8b5944162a1e2fdda7d251cde72f71636e648aa71cba67d74",
+      "published_sha256": "3a760ba182d7ffd8b5944162a1e2fdda7d251cde72f71636e648aa71cba67d74"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/code-solution-guides.json": {
+      "source": "07_시험대비/중간/practice-source/code-solution-guides.json",
+      "source_sha256": "0a44528b322d6019542224d220bf8e08a4fc9337512809ce1c3dc75a66983e1e",
+      "published_sha256": "0a44528b322d6019542224d220bf8e08a4fc9337512809ce1c3dc75a66983e1e"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/build-detailed-solutions.py": {
+      "source": "07_시험대비/중간/practice-source/build-detailed-solutions.py",
+      "source_sha256": "fad66d921185fb796556a67cdb1189efd260636614a8e52961daf28e38e2a679",
+      "published_sha256": "fad66d921185fb796556a67cdb1189efd260636614a8e52961daf28e38e2a679"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/detailed-solutions.json": {
+      "source": "07_시험대비/중간/practice-source/detailed-solutions.json",
+      "source_sha256": "8b8b0e321f30d88826d674379248cd4af313de1ad245e1385c292ad1c1bfdc85",
+      "published_sha256": "8b8b0e321f30d88826d674379248cd4af313de1ad245e1385c292ad1c1bfdc85"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/build.mjs": {
+      "source": "07_시험대비/중간/practice-source/build.mjs",
+      "source_sha256": "f47f5bd59380330e578453f51f2736854883d95696d2cd39f81f2fab89e48959",
+      "published_sha256": "f47f5bd59380330e578453f51f2736854883d95696d2cd39f81f2fab89e48959"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/verify-detailed-solutions.py": {
+      "source": "07_시험대비/중간/practice-source/verify-detailed-solutions.py",
+      "source_sha256": "afd694290659009b73e7d3c31c361ddb7e2b13d4996acbd77a9b9ede98b16e02",
+      "published_sha256": "afd694290659009b73e7d3c31c361ddb7e2b13d4996acbd77a9b9ede98b16e02"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/detailed-solutions-static.json": {
+      "source": "07_시험대비/중간/final-audit/detailed-solutions-static.json",
+      "source_sha256": "59fb2aba8aaeda648729496504f974c89526e12f6654bad6a352377340801038",
+      "published_sha256": "59fb2aba8aaeda648729496504f974c89526e12f6654bad6a352377340801038"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-detailed-solutions.js": {
+      "source": "07_시험대비/중간/final-audit/browser-detailed-solutions.js",
+      "source_sha256": "69ce221d83a401116256f071dc69ec20e03f79a1a5fb39b729337d152fa2dddb",
+      "published_sha256": "69ce221d83a401116256f071dc69ec20e03f79a1a5fb39b729337d152fa2dddb"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-detailed-solutions.json": {
+      "source": "07_시험대비/중간/final-audit/browser-detailed-solutions.json",
+      "source_sha256": "34dc614c22972ea1247f1a4265724774d694e62780b49e8dfa6d15a9f07598bf",
+      "published_sha256": "34dc614c22972ea1247f1a4265724774d694e62780b49e8dfa6d15a9f07598bf"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/option-review.json": {
+      "source": "07_시험대비/중간/final-audit/option-review.json",
+      "source_sha256": "27ad026f7b3c34c4c9c8cef7dd5b41d47a2127ffe2448e4e66315893a6e8fc0e",
+      "published_sha256": "27ad026f7b3c34c4c9c8cef7dd5b41d47a2127ffe2448e4e66315893a6e8fc0e"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/question-revisions.json": {
+      "source": "07_시험대비/중간/practice-source/question-revisions.json",
+      "source_sha256": "3d67c28b24faeb374500492cd1d1d23ce014ec5fb3bc0b4905030f36afcf20ea",
+      "published_sha256": "3d67c28b24faeb374500492cd1d1d23ce014ec5fb3bc0b4905030f36afcf20ea"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-regressions.json": {
+      "source": "07_시험대비/중간/final-audit/browser-regressions.json",
+      "source_sha256": "bd2f01a52b60ce0b510bc0af0d575bf9bb9c61d0de063b19d0372cb440fc4485",
+      "published_sha256": "bd2f01a52b60ce0b510bc0af0d575bf9bb9c61d0de063b19d0372cb440fc4485"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/content-results.json": {
+      "source": "07_시험대비/중간/final-audit/content-results.json",
+      "source_sha256": "e1780815f20f269b8d8a8e585b64134fddafe3c8d1c45d633e1122ae9ac29fe3",
+      "published_sha256": "e1780815f20f269b8d8a8e585b64134fddafe3c8d1c45d633e1122ae9ac29fe3"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/browser-all.json": {
+      "source": "07_시험대비/중간/final-audit/browser-all.json",
+      "source_sha256": "ddcea29e65635d50c8b05f58fe2d72308d378d529034c4d966b77f80cf85c828",
+      "published_sha256": "ddcea29e65635d50c8b05f58fe2d72308d378d529034c4d966b77f80cf85c828"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/execution-results.json": {
+      "source": "07_시험대비/중간/final-audit/execution-results.json",
+      "source_sha256": "25803f4fc7ed8ff3ed58d44818ac7e3bbb7252945ecc6c8477823ef6fc7475bf",
+      "published_sha256": "25803f4fc7ed8ff3ed58d44818ac7e3bbb7252945ecc6c8477823ef6fc7475bf"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/manifest.json": {
+      "source": "07_시험대비/중간/final-audit/manifest.json",
+      "source_sha256": "72ec594c6102dcfb3fd8fbade78415f8fc184ce126c9394a3e827372c0d7e4b7",
+      "published_sha256": "72ec594c6102dcfb3fd8fbade78415f8fc184ce126c9394a3e827372c0d7e4b7"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/statement-explanations.json": {
+      "source": "07_시험대비/중간/practice-source/statement-explanations.json",
+      "source_sha256": "14c8631a1d2d739cd7289707043cb4c859aad7544b4063e9b1f6f8435fc882bc",
+      "published_sha256": "14c8631a1d2d739cd7289707043cb4c859aad7544b4063e9b1f6f8435fc882bc"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/13_공지반영_문항검수.md": {
+      "source": "07_시험대비/중간/13_공지반영_문항검수.md",
+      "source_sha256": "0db59ffdcefb6825a1e13fd1d676584a19de38873e7e61b8a4aff968a75c97e0",
+      "published_sha256": "0db59ffdcefb6825a1e13fd1d676584a19de38873e7e61b8a4aff968a75c97e0"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/coverage.json": {
+      "source": "07_시험대비/중간/practice-source/coverage.json",
+      "source_sha256": "fcfb0d95de122f6f850a072db416424d9c46b69f17eed66da46ef6281ac1ff4c",
+      "published_sha256": "fcfb0d95de122f6f850a072db416424d9c46b69f17eed66da46ef6281ac1ff4c"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/verify.py": {
+      "source": "07_시험대비/중간/practice-source/verify.py",
+      "source_sha256": "3305b40136f553afb15685bf3741f0f4ed33d8c68b1b9f83843455e14bd1234b",
+      "published_sha256": "3305b40136f553afb15685bf3741f0f4ed33d8c68b1b9f83843455e14bd1234b"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/execution-audit.json": {
+      "source": "07_시험대비/중간/practice-source/execution-audit.json",
+      "source_sha256": "7b28c19ec481223b1a25d2362ce848b337f70fb374bf6f82cc722161101b4e05",
+      "published_sha256": "5b7e75282507cd95158bcb8f9b87cd2de72bce85fb5ad2291dbc3ba381af0f11"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/browser-audit.js": {
+      "source": "07_시험대비/중간/practice-source/browser-audit.js",
+      "source_sha256": "ad6a1ec2f2be1452f6a5d55b41c39b964c3b3c4fca053d3e8ad337e2c0ea53b2",
+      "published_sha256": "ad6a1ec2f2be1452f6a5d55b41c39b964c3b3c4fca053d3e8ad337e2c0ea53b2"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/browser-edge-audit.js": {
+      "source": "07_시험대비/중간/practice-source/browser-edge-audit.js",
+      "source_sha256": "e4efc53191b960522ddd3cbf2270cfd360e7e8cd64d36ee15cfdb1cecc3da3e6",
+      "published_sha256": "e4efc53191b960522ddd3cbf2270cfd360e7e8cd64d36ee15cfdb1cecc3da3e6"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/browser-audit-output.txt": {
+      "source": "07_시험대비/중간/practice-source/browser-audit-output.txt",
+      "source_sha256": "518ff2114f92e259723cf69576ca176127563e280b57fcbbfee8a38f56ed7140",
+      "published_sha256": "518ff2114f92e259723cf69576ca176127563e280b57fcbbfee8a38f56ed7140"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/practice-source/browser-edge-result.json": {
+      "source": "07_시험대비/중간/practice-source/browser-edge-result.json",
+      "source_sha256": "1d2384b48cded8bd27f32a8f876d9d7086b9fe9faaa4ab46bd005a198d7746f0",
+      "published_sha256": "1d2384b48cded8bd27f32a8f876d9d7086b9fe9faaa4ab46bd005a198d7746f0"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/01_핵심개념과_문법.md": {
+      "source": "07_시험대비/중간/01_핵심개념과_문법.md",
+      "source_sha256": "991693171662ed0c4cffdb8f586887549f93c8bb0e742c797cf286fe3b522790",
+      "published_sha256": "991693171662ed0c4cffdb8f586887549f93c8bb0e742c797cf286fe3b522790"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/08_교안코드_완성본과_해설.md": {
+      "source": "07_시험대비/중간/08_교안코드_완성본과_해설.md",
+      "source_sha256": "13d4c3f89cdcef4006eea3f464d4467dc69dfab42ae89e81c56253f746f471a5",
+      "published_sha256": "13d4c3f89cdcef4006eea3f464d4467dc69dfab42ae89e81c56253f746f471a5"
+    },
+    "bigdata-programming-midterm/01_강의자료/260914_빅데이터프로그래밍.pdf": {
+      "source": "01_강의자료/260914_빅데이터프로그래밍.pdf",
+      "source_sha256": "1390e0a292b77818fa49aa4d738b465af9210640190e763b28f9db24feeeed93",
+      "published_sha256": "1390e0a292b77818fa49aa4d738b465af9210640190e763b28f9db24feeeed93"
+    },
+    "bigdata-programming-midterm/01_강의자료/260916_빅데이터프로그래밍.pdf": {
+      "source": "01_강의자료/260916_빅데이터프로그래밍.pdf",
+      "source_sha256": "a31491519223d3da81ec24fdfda69dae8726edbe32c8002b44b47355d0aa74e7",
+      "published_sha256": "a31491519223d3da81ec24fdfda69dae8726edbe32c8002b44b47355d0aa74e7"
+    },
+    "bigdata-programming-midterm/01_강의자료/260921_빅데이터프로그래밍.pdf": {
+      "source": "01_강의자료/260921_빅데이터프로그래밍.pdf",
+      "source_sha256": "444bd025597cf6139815f4eddc0d8c21db63db789ed79ffb7f0da186a8d2fc20",
+      "published_sha256": "444bd025597cf6139815f4eddc0d8c21db63db789ed79ffb7f0da186a8d2fc20"
+    },
+    "bigdata-programming-midterm/01_강의자료/260923_빅데이터프로그래밍.pdf": {
+      "source": "01_강의자료/260923_빅데이터프로그래밍.pdf",
+      "source_sha256": "fcff648be745ad749b7b645e140457d944f3867ae83b4c0d51a99c72561d354f",
+      "published_sha256": "fcff648be745ad749b7b645e140457d944f3867ae83b4c0d51a99c72561d354f"
+    },
+    "bigdata-programming-midterm/01_강의자료/260928_빅데이터프로그래밍.pdf": {
+      "source": "01_강의자료/260928_빅데이터프로그래밍.pdf",
+      "source_sha256": "0ea58b009d95f781446edfdb07c8cbe2c2715d0642dfff6694b9a5997f1b9a07",
+      "published_sha256": "0ea58b009d95f781446edfdb07c8cbe2c2715d0642dfff6694b9a5997f1b9a07"
+    },
+    "bigdata-programming-midterm/01_강의자료/261012_빅데이터프로그래밍.pdf": {
+      "source": "01_강의자료/261012_빅데이터프로그래밍.pdf",
+      "source_sha256": "b3e751f3dec253b80e1d4ed8fd539c28cbd2d04c34cb4bcb2c9f7f69c2b80500",
+      "published_sha256": "b3e751f3dec253b80e1d4ed8fd539c28cbd2d04c34cb4bcb2c9f7f69c2b80500"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/09_원문대응과_검수.md": {
+      "source": "07_시험대비/중간/09_원문대응과_검수.md",
+      "source_sha256": "10cd5bb04253e517719c997bf54d7abf01312740e77dcdef37d04710e45273b5",
+      "published_sha256": "10cd5bb04253e517719c997bf54d7abf01312740e77dcdef37d04710e45273b5"
+    },
+    "bigdata-programming-midterm/01_강의자료/260907_Python&DevelopmentEnvironment_01.pdf": {
+      "source": "01_강의자료/260907_Python&DevelopmentEnvironment_01.pdf",
+      "source_sha256": "035dc0bbd25d5e11714dc6c2545f7b7dfdfe4b2e6623601c1b769581ad0e3f71",
+      "published_sha256": "035dc0bbd25d5e11714dc6c2545f7b7dfdfe4b2e6623601c1b769581ad0e3f71"
+    },
+    "bigdata-programming-midterm/01_강의자료/260909_Python&DevelopmentEnvironment_02.pdf": {
+      "source": "01_강의자료/260909_Python&DevelopmentEnvironment_02.pdf",
+      "source_sha256": "248ab65cd1fdba5f0f748eabf400905151921e24b917d2d0ec18769d3ecacf92",
+      "published_sha256": "248ab65cd1fdba5f0f748eabf400905151921e24b917d2d0ec18769d3ecacf92"
+    },
+    "bigdata-programming-midterm/01_강의자료/260902_Intro.pdf": {
+      "source": "01_강의자료/260902_Intro.pdf",
+      "source_sha256": "dc61cdc28a761ddeafd9d5f039e690f73b0c6ca912c0e9e31796993d679f7453",
+      "published_sha256": "dc61cdc28a761ddeafd9d5f039e690f73b0c6ca912c0e9e31796993d679f7453"
+    },
+    "bigdata-programming-midterm/02_녹화와_전사/조건과_반복_제공전사.txt": {
+      "source": "02_녹화와_전사/조건과_반복_제공전사.txt",
+      "source_sha256": "9c52421db8dd8d08be930d01a90a14dc3e68b6c5936b2826a55a26965908e187",
+      "published_sha256": "9c52421db8dd8d08be930d01a90a14dc3e68b6c5936b2826a55a26965908e187"
+    },
+    "bigdata-programming-midterm/03_주차별정리/2026-09-02_과목소개.md": {
+      "source": "03_주차별정리/2026-09-02_과목소개.md",
+      "source_sha256": "80bf61ee94c4b138324209885236e7f8b679fc6a9b56bc0aa44f38c1d852c772",
+      "published_sha256": "8c4968ff723b7bc89f236bf71cd36012fe61078624c31cea2f59916f37135720"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/02_빈칸과_출력_풀이전략.md": {
+      "source": "07_시험대비/중간/02_빈칸과_출력_풀이전략.md",
+      "source_sha256": "92200002fb0118c160bfaebce046da4f57cd3c723461a6f6e1aecbbd6ecc4e93",
+      "published_sha256": "92200002fb0118c160bfaebce046da4f57cd3c723461a6f6e1aecbbd6ecc4e93"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/03_예상문제.md": {
+      "source": "07_시험대비/중간/03_예상문제.md",
+      "source_sha256": "49292b639fb15c1fa709ee15f459af72ae6facaf0fad665f53770833fede3bb2",
+      "published_sha256": "49292b639fb15c1fa709ee15f459af72ae6facaf0fad665f53770833fede3bb2"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/04_정답과_해설.md": {
+      "source": "07_시험대비/중간/04_정답과_해설.md",
+      "source_sha256": "6e7c9065b717f328ba12a3dc8d57d6f14142294e6f9cadf51f9487462818b251",
+      "published_sha256": "6e7c9065b717f328ba12a3dc8d57d6f14142294e6f9cadf51f9487462818b251"
+    },
+    "bigdata-programming-midterm/04_실습과_코드/교안_예제_색인.md": {
+      "source": "04_실습과_코드/교안_예제_색인.md",
+      "source_sha256": "a71b8cb2f31e77d511a28ce06bd7bafe56ce16547275981833444f1fe2f51dbc",
+      "published_sha256": "cb09c4e3e0ab1427e3824563b4f5f9399f750f5e52e8d428325b7e57946154b1"
+    },
+    "bigdata-programming-midterm/01_강의자료/week01/Untitled.ipynb": {
+      "source": "01_강의자료/week01/Untitled.ipynb",
+      "source_sha256": "c2738a5e0dd244f8c6dd4ff64830481dcb006eaa4cc408dda206cbc83446fb89",
+      "published_sha256": "c2738a5e0dd244f8c6dd4ff64830481dcb006eaa4cc408dda206cbc83446fb89"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/06_시험직전_체크리스트.md": {
+      "source": "07_시험대비/중간/06_시험직전_체크리스트.md",
+      "source_sha256": "074fe92dc160c0da45a0d99803f4bcd0365fce010b100e03426d6bbed20991ad",
+      "published_sha256": "074fe92dc160c0da45a0d99803f4bcd0365fce010b100e03426d6bbed20991ad"
+    },
+    "bigdata-programming-midterm/04_실습과_코드/수업노트북_셀별해설.md": {
+      "source": "04_실습과_코드/수업노트북_셀별해설.md",
+      "source_sha256": "62ec3d5e6ee7ec93891f75863aa15c0e5d9d34abc1ec4f8ff1ade5819eae90b7",
+      "published_sha256": "62ec3d5e6ee7ec93891f75863aa15c0e5d9d34abc1ec4f8ff1ade5819eae90b7"
+    },
+    "bigdata-programming-midterm/01_강의자료/week01/첫수업.py": {
+      "source": "01_강의자료/week01/첫수업.py",
+      "source_sha256": "87a0d664fcf796ea48ba2c5e5a67b99d706d10373529f13fe3b105f8718fa2c9",
+      "published_sha256": "87a0d664fcf796ea48ba2c5e5a67b99d706d10373529f13fe3b105f8718fa2c9"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/38_압축본_제작검수기준_공통MD_인계.md": {
+      "source": "07_시험대비/중간/38_압축본_제작검수기준_공통MD_인계.md",
+      "source_sha256": "4b50e7c40412471912197ea7d28818cf395d4dc12ad165c8ad857be97180ad4c",
+      "published_sha256": "8f77469a6cdb04a2ff5299a21dc28c6d1c653e850833dd4e3e8ba17ed2e7706b"
+    },
+    "bigdata-programming-midterm/07_시험대비/중간/final-audit/cram-standards-verification.json": {
+      "source": "07_시험대비/중간/final-audit/cram-standards-verification.json",
+      "source_sha256": "acae456c45b226e290e8909b4fc75856aa51ab274341cad41eb1e6730050ad2b",
+      "published_sha256": "cf525560e5a16aff134db79f73a5d4fd3c6e65144d754099bc8bf1d12b7f1187"
+    },
+    "bigdata-programming-midterm/01_강의자료/260930_빅데이터프로그래밍.pdf": {
+      "source": "260930_빅데이터프로그래밍.pdf",
+      "source_sha256": "62c8b2b22fadc8ca11e4bf88793456cb51662978e8fa900f009d1c3bc9610519",
+      "published_sha256": "62c8b2b22fadc8ca11e4bf88793456cb51662978e8fa900f009d1c3bc9610519"
+    },
+    "bigdata-programming-midterm/01_강의자료/강의계획서.pdf": {
+      "source": "강의계획서.pdf",
+      "source_sha256": "1efeee41579039f64be8b239e8c570ea8e232de450632dc4bf1c0ef627d82a35",
+      "published_sha256": "1efeee41579039f64be8b239e8c570ea8e232de450632dc4bf1c0ef627d82a35"
+    },
+    "bigdata-programming-midterm/01_강의자료/ch5_lab/bridge.png": {
+      "source": "01_강의자료/ch5_lab/bridge.png",
+      "source_sha256": "28d2543a9f1c2cf60f7cb78ff35c7096660458d6df44d4e8fe9455f834ddb8ca",
+      "published_sha256": "28d2543a9f1c2cf60f7cb78ff35c7096660458d6df44d4e8fe9455f834ddb8ca"
+    },
+    "bigdata-programming-midterm/01_강의자료/ch5_lab/10-07-01.py": {
+      "source": "01_강의자료/ch5_lab/10-07-01.py",
+      "source_sha256": "69b84ca65f13b82ebefd191b5e3fae448ed52d88478d71fa379724032b87fdec",
+      "published_sha256": "69b84ca65f13b82ebefd191b5e3fae448ed52d88478d71fa379724032b87fdec"
+    },
+    "bigdata-programming-midterm/01_강의자료/ch5_lab/verify_files.py": {
+      "source": "01_강의자료/ch5_lab/verify_files.py",
+      "source_sha256": "1af01489b33564594a80358b98ba094ada26fc7483101e22afb7cde954a5f9a6",
+      "published_sha256": "1af01489b33564594a80358b98ba094ada26fc7483101e22afb7cde954a5f9a6"
+    },
+    "bigdata-programming-midterm/01_강의자료/ch5_lab/10:07.py": {
+      "source": "01_강의자료/ch5_lab/10:07.py",
+      "source_sha256": "e9334b04fd82b0fe6f9dc7f14fdf26105defbe952836eb2cdebd33dab7a19418",
+      "published_sha256": "e9334b04fd82b0fe6f9dc7f14fdf26105defbe952836eb2cdebd33dab7a19418"
+    },
+    "bigdata-programming-midterm/01_강의자료/ch5_lab/10-07-02.py": {
+      "source": "01_강의자료/ch5_lab/10-07-02.py",
+      "source_sha256": "0b712b15bef69ece06ee998a20b61062a85d44c41ba98c5bd0ca1f1999a60646",
+      "published_sha256": "0b712b15bef69ece06ee998a20b61062a85d44c41ba98c5bd0ca1f1999a60646"
+    },
+    "study-standards/02_시험대비_웹디자인_표준가이드.md": {
+      "source": "02_시험대비_웹디자인_표준가이드.md",
+      "source_sha256": "c0d5b908a8fc7e5e412e0794808ad703ccd1bafdc9de2b4bacf0cd76695a836b",
+      "published_sha256": "c0d5b908a8fc7e5e412e0794808ad703ccd1bafdc9de2b4bacf0cd76695a836b"
+    },
+    "study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md": {
+      "source": "03_시험대비_개념정리_및_문제출제_표준가이드.md",
+      "source_sha256": "eb1bdcf01c8a092c427a3b32d278b8bbee52785d64441f18e3c160afaa607f7b",
+      "published_sha256": "899db2192c98a04738ddb8e99dcbb6853a5b5df46c26c2bee835c2b69556d807"
+    },
+    "study-standards/README.md": {
+      "source": "README.md",
+      "source_sha256": "669c5a08eea88597501cdc1eb258da57975f133ef6cdefb923af48884ad0a865",
+      "published_sha256": "669c5a08eea88597501cdc1eb258da57975f133ef6cdefb923af48884ad0a865"
+    }
+  }
+}

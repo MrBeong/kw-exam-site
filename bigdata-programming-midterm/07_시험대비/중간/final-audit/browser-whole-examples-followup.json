@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-25",
+  "passed": 16,
+  "checks": [
+    "BN9 selected",
+    "BN9 combined source labelled before solving",
+    "BP26 selected",
+    "BP26 combined source labelled before solving",
+    "BO18 selected",
+    "BO18 all retained/transferred lecture emphasis shown inside solution",
+    "BO18 detailed emphasis hidden when solution closes",
+    "BO19 selected",
+    "BO19 all retained/transferred lecture emphasis shown inside solution",
+    "BO19 detailed emphasis hidden when solution closes",
+    "BC25 selected",
+    "BC25 all retained/transferred lecture emphasis shown inside solution",
+    "BC25 detailed emphasis hidden when solution closes",
+    "BFC03 selected",
+    "BFC03 all retained/transferred lecture emphasis shown inside solution",
+    "BFC03 detailed emphasis hidden when solution closes"
+  ]
+}

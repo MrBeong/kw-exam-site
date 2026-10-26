@@ -1,0 +1,87 @@
+[
+  {
+    "file": "practice-source/verify-answer-hints.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-24\", \"passed\": 1723, \"questionsReviewed\": 419, \"codeQuestionsCleaned\": 115, \"codeBlanksRetained\": 269, \"sourceCatalogRecordsPreserved\": 437}\n"
+  },
+  {
+    "file": "practice-source/verify-blank-quality.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-24\", \"passed\": 572, \"reviewedCodeQuestions\": 142, \"retiredQuestions\": 11, \"retiredSlots\": 24, \"trimmedQuestions\": 23, \"fixedSlots\": 30, \"questions\": 419, \"codeQuestions\": 115, \"activeBlanks\": 269, \"protectedOriginalQuestions\": 19, \"protectedOriginalBlanks\": 52}\n"
+  },
+  {
+    "file": "practice-source/verify-blank-spans.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-25\", \"passed\": 1658, \"questions\": 419, \"codeQuestions\": 115, \"blanks\": 269, \"fixedQuestions\": [\"BC20\", \"BE05\", \"BP12\", \"BP22\", \"BP34\"], \"afterProblems\": [], \"intentionalStringFragments\": 5, \"reviewedRepeatedTokens\": 7}\n"
+  },
+  {
+    "file": "practice-source/verify-character-reference.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-24\", \"passed\": true, \"checks\": 44, \"questionsUnchanged\": 202, \"documentedScopeCorrections\": [\"BM33\", \"BM39\"], \"tableQuestions\": [\"BM41\"], \"codeEntries\": {\"H\": 72, \" \": 32, \"e\": 101, \"w\": 119, \"l\": 108, \"r\": 114, \"o\": 111, \"d\": 100}, \"actualStdout\": \"'w'\\n' '\\n\"}\n"
+  },
+  {
+    "file": "practice-source/verify-choice-whitespace.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-24\", \"passed\": true, \"checks\": 15, \"questionsUnchanged\": 202, \"documentedScopeCorrections\": [\"BM33\", \"BM39\"], \"mcQuestionsAudited\": 62, \"whitespaceSensitiveIds\": [\"BM40\", \"BOP04\", \"BOP05\", \"BOP06\", \"BOP07\", \"BOP09\", \"BOP11\"], \"actualStdout\": \"A-B C\\n\"}\n"
+  },
+  {
+    "file": "practice-source/verify-code-examples.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-22\", \"python\": \"3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]\", \"examples\": 38, \"checks\": 608, \"passed\": true}\n"
+  },
+  {
+    "file": "practice-source/verify-detailed-solutions.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-24\", \"passed\": 7167, \"questions\": 419, \"executions\": 225, \"traceSteps\": 1954}\n"
+  },
+  {
+    "file": "practice-source/verify-duplicates.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-25\", \"passed\": 1579, \"reviewedQuestions\": 437, \"current\": {\"questions\": 419, \"code\": 115, \"short\": 242, \"mc\": 62, \"blanks\": 269, \"conceptGroups\": 98, \"originalQuestions\": 19, \"originalBlanks\": 52}}\n"
+  },
+  {
+    "file": "practice-source/verify-file-assessment.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-22\", \"passed\": true, \"historicalAdditionCount\": 12, \"activeAddedQuestions\": 11, \"retiredAddedQuestions\": [\"BFC04\"], \"counts\": {\"code\": 115, \"short\": 242, \"mc\": 62}, \"codeBlanks\": 269, \"checks\": 296, \"unchangedOldQuestions\": 190, \"documentedScopeCorrections\": [\"BM33\", \"BM39\"]}\n"
+  },
+  {
+    "file": "practice-source/verify-file-transcript.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-22\", \"passed\": true, \"checks\": 558, \"conceptNotes\": 14, \"answerAnnotations\": 16, \"newConceptCodeExamples\": 1, \"unchangedQuestions\": 190, \"documentedScopeCorrections\": [\"BM33\", \"BM39\"], \"sharedGuides\": 4, \"rawSourceSha256\": \"c6419fd88fbcec54e3160a658572fbfeb897a85646c0e002a843121c236394e4\"}\n"
+  },
+  {
+    "file": "practice-source/verify-goal-targets.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-25\", \"passed\": 160, \"reviewedCodeQuestions\": 131, \"clarifiedQuestions\": [\"BP20\", \"BP34\"], \"historicalUnchangedQuestionRecords\": 437, \"activeQuestionRecords\": 419}\n"
+  },
+  {
+    "file": "practice-source/verify-lecture-original-blanks.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-24\", \"passed\": 237, \"beforeQuestions\": 418, \"currentQuestions\": 419, \"originalQuestions\": 19, \"originalBlanks\": 52, \"totalCodeQuestions\": 115, \"totalCodeBlanks\": 269, \"previousSameTemplates\": 2, \"codeKinds\": {\"notebook\": 8, \"example-practice\": 70, \"classroom-file\": 3, \"reconstructed\": 15, \"original-blank\": 19}}\n"
+  },
+  {
+    "file": "practice-source/verify-output-predictions.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-24\", \"passed\": 264, \"baselineQuestions\": 426, \"questions\": 419, \"counts\": {\"code\": 115, \"short\": 242, \"mc\": 62}, \"activeCodeBlanks\": 269, \"newQuestions\": 11, \"newExecutions\": 11, \"completeCodeJudgmentQuestions\": 110, \"semanticFamilies\": 25}\n"
+  },
+  {
+    "file": "practice-source/verify-short-answer-coverage.py",
+    "exit": 0,
+    "output": "{\"date\": \"2026-10-24\", \"passed\": 2198, \"baseline\": {\"questions\": 204, \"shorts\": 27, \"conceptGroupsWithShort\": 24}, \"current\": {\"questions\": 419, \"shorts\": 242, \"addedShorts\": 214, \"conceptGroupsWithShort\": 98, \"newCodeExecutions\": 41, \"newStatementNotes\": 127}}\n"
+  },
+  {
+    "file": "practice-source/verify.py",
+    "exit": 0,
+    "output": "{\"questions\": 419, \"codeBlanks\": 269, \"executionCases\": 130, \"passed\": true}\n"
+  },
+  {
+    "file": "final-audit/content-audit.py",
+    "exit": 0,
+    "output": "{'checks': 1700, 'passed': True, 'types': {'code': 115, 'short': 242, 'mc': 62}, 'statementExplainedQuestions': 115, 'correctPositions': {1: 16, 4: 16, 3: 15, 2: 14, 5: 1}, 'lengthFlags': [{'id': 'BM43', 'lengths': [10, 2, 4, 6]}, {'id': 'BM46', 'lengths': [4, 5, 9, 6]}], 'limits': ['기존98개 개념군과111예제군 대응 재검증이다. 이번에381쪽 전부를 새로 시각 검수한 것은 아니다.', '길이 자동 지표는 선별용이며 실제 난이도·변별도 측정값이 아니다.']}\nchanged questions 383\n"
+  },
+  {
+    "file": "practice-source/audit-examples.py",
+    "exit": 0,
+    "output": "{\"notebook\": 22, \"py\": 3, \"pdfGroups\": 111, \"pages\": 340, \"newQuestions\": 328, \"changedQuestionFields\": 74}\n"
+  }
+]

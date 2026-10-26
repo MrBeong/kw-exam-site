@@ -1,0 +1,1268 @@
+{
+  "missing": [],
+  "coverage": [
+    {
+      "id": "BD-001",
+      "key": "runtime",
+      "title": "Python · 편집기 · 터미널의 역할",
+      "questions": [
+        "BM01",
+        "BM37",
+        "BSA001",
+        "BSA002",
+        "BSA003",
+        "BSA004",
+        "BSA005",
+        "BSA006",
+        "BSA007",
+        "BSA008",
+        "BSA009",
+        "BSA017",
+        "BSA172",
+        "BSA173",
+        "BSA174",
+        "BSA186",
+        "BSA187"
+      ]
+    },
+    {
+      "id": "BD-002",
+      "key": "kernel",
+      "title": "Notebook · 셀 · 커널",
+      "questions": [
+        "BM01",
+        "BM37",
+        "BS04",
+        "BSA010",
+        "BSA011",
+        "BSA012",
+        "BSA013",
+        "BSA014",
+        "BSA015",
+        "BSA016",
+        "BSA200"
+      ]
+    },
+    {
+      "id": "BD-003",
+      "key": "display",
+      "title": "자동 표시 · print · 대입 · 저장",
+      "questions": [
+        "BM01",
+        "BM02",
+        "BSA152"
+      ]
+    },
+    {
+      "id": "BD-004",
+      "key": "execution-order",
+      "title": "실행 번호와 재시작",
+      "questions": [
+        "BM01",
+        "BS04",
+        "BSA153"
+      ]
+    },
+    {
+      "id": "BD-005",
+      "key": "print",
+      "title": "print와 문자열의 해석",
+      "questions": [
+        "BM03",
+        "BM40",
+        "BSA018",
+        "BSA038",
+        "BSA039"
+      ]
+    },
+    {
+      "id": "BD-006",
+      "key": "comment",
+      "title": "주석과 설명 문자열",
+      "questions": [
+        "BM03",
+        "BSA019"
+      ]
+    },
+    {
+      "id": "BD-007",
+      "key": "syntax-error",
+      "title": "문법 오류",
+      "questions": [
+        "BM36",
+        "BS01"
+      ]
+    },
+    {
+      "id": "BD-008",
+      "key": "type-error",
+      "title": "자료형이 맞지 않는 연산",
+      "questions": [
+        "BM36",
+        "BS02"
+      ]
+    },
+    {
+      "id": "BD-009",
+      "key": "zero-division",
+      "title": "0으로 나누기",
+      "questions": [
+        "BM36",
+        "BS03"
+      ]
+    },
+    {
+      "id": "BD-010",
+      "key": "name-error",
+      "title": "정의되지 않은 이름",
+      "questions": [
+        "BM36",
+        "BS04"
+      ]
+    },
+    {
+      "id": "BD-011",
+      "key": "traceback",
+      "title": "오류 전후의 실행",
+      "questions": [
+        "BM36",
+        "BSA020"
+      ]
+    },
+    {
+      "id": "BD-012",
+      "key": "assignment",
+      "title": "변수는 이름, 대입은 연결",
+      "questions": [
+        "BM02",
+        "BSA021",
+        "BSA022"
+      ]
+    },
+    {
+      "id": "BD-013",
+      "key": "reassignment",
+      "title": "재대입은 다른 이름을 자동 갱신하지 않는다",
+      "questions": [
+        "BM02",
+        "BSA023"
+      ]
+    },
+    {
+      "id": "BD-014",
+      "key": "types",
+      "title": "int · float · str · bool",
+      "questions": [
+        "BN9",
+        "BP34",
+        "BM04",
+        "BS08",
+        "BSA024",
+        "BSA025",
+        "BSA026",
+        "BSA035",
+        "BSA193"
+      ]
+    },
+    {
+      "id": "BD-015",
+      "key": "dynamic",
+      "title": "동적 타이핑",
+      "questions": [
+        "BM04",
+        "BSA027"
+      ]
+    },
+    {
+      "id": "BD-016",
+      "key": "unpack",
+      "title": "다중 대입과 값 교환",
+      "questions": [
+        "BC04",
+        "BE03",
+        "BP44",
+        "BSA028",
+        "BSA154",
+        "BSA188",
+        "BO12",
+        "BOP01"
+      ]
+    },
+    {
+      "id": "BD-017",
+      "key": "names",
+      "title": "이름 규칙과 내장 함수 가리기",
+      "questions": [
+        "BM05",
+        "BSA029",
+        "BSA030"
+      ]
+    },
+    {
+      "id": "BD-018",
+      "key": "expression",
+      "title": "표현식 · 대입 · 비교",
+      "questions": [
+        "BM02",
+        "BSA022",
+        "BSA031",
+        "BSA032",
+        "BSA044",
+        "BSA192"
+      ]
+    },
+    {
+      "id": "BD-019",
+      "key": "short-circuit",
+      "title": "복합 조건과 단축 평가",
+      "questions": [
+        "BE04",
+        "BP50",
+        "BM06",
+        "BSA033",
+        "BSA048",
+        "BSA049",
+        "BM51"
+      ]
+    },
+    {
+      "id": "BD-020",
+      "key": "state-trace",
+      "title": "실행 시점의 값 추적",
+      "questions": [
+        "BM35",
+        "BSA154"
+      ]
+    },
+    {
+      "id": "BD-021",
+      "key": "input",
+      "title": "input의 반환값과 안내 문구",
+      "questions": [
+        "BS05",
+        "BSA034",
+        "BO01"
+      ]
+    },
+    {
+      "id": "BD-022",
+      "key": "cast",
+      "title": "int · float 변환과 ValueError",
+      "questions": [
+        "BC24",
+        "BN9",
+        "BN11",
+        "BP01",
+        "BP34",
+        "BM43",
+        "BS06",
+        "BS07",
+        "BSA035",
+        "BSA036",
+        "BO01"
+      ]
+    },
+    {
+      "id": "BD-023",
+      "key": "retirement",
+      "title": "입력 → 계산 → 출력",
+      "questions": [
+        "BP01",
+        "BSA176",
+        "BO01"
+      ]
+    },
+    {
+      "id": "BD-024",
+      "key": "arithmetic",
+      "title": "산술 연산자의 의미",
+      "questions": [
+        "BP02",
+        "BM07",
+        "BSA032",
+        "BSA040",
+        "BSA041",
+        "BSA042",
+        "BSA043",
+        "BO02"
+      ]
+    },
+    {
+      "id": "BD-025",
+      "key": "floor",
+      "title": "음수의 내림과 int의 차이",
+      "questions": [
+        "BE05",
+        "BP02",
+        "BM07",
+        "BSA041"
+      ]
+    },
+    {
+      "id": "BD-026",
+      "key": "precedence",
+      "title": "연산 우선순위와 괄호",
+      "questions": [
+        "BE06",
+        "BM08",
+        "BSA155",
+        "BO02"
+      ]
+    },
+    {
+      "id": "BD-027",
+      "key": "fahrenheit",
+      "title": "화씨 → 섭씨 변환",
+      "questions": [
+        "BSA177",
+        "BO02"
+      ]
+    },
+    {
+      "id": "BD-028",
+      "key": "membership",
+      "title": "비교 · 논리 · 문자열 포함 검사",
+      "questions": [
+        "BM09",
+        "BM23",
+        "BSA044",
+        "BSA045",
+        "BSA046",
+        "BSA047",
+        "BSA048",
+        "BSA049",
+        "BSA050",
+        "BSA051",
+        "BSA205",
+        "BO14"
+      ]
+    },
+    {
+      "id": "BD-029",
+      "key": "binary",
+      "title": "진법 표기와 ^의 의미",
+      "questions": [
+        "BM08",
+        "BSA052",
+        "BSA053",
+        "BSA054",
+        "BSA055"
+      ]
+    },
+    {
+      "id": "BD-030",
+      "key": "block",
+      "title": "순차·선택·반복과 들여쓰기",
+      "questions": [
+        "BP37",
+        "BM10",
+        "BSA056",
+        "BSA057",
+        "BSA058",
+        "BSA059",
+        "BSA060",
+        "BO03"
+      ]
+    },
+    {
+      "id": "BD-031",
+      "key": "if",
+      "title": "if와 if/else",
+      "questions": [
+        "BE08",
+        "BP04",
+        "BP37",
+        "BM10",
+        "BSA046",
+        "BSA057",
+        "BSA061",
+        "BSA063",
+        "BO03",
+        "BM52"
+      ]
+    },
+    {
+      "id": "BD-032",
+      "key": "elif",
+      "title": "여러 if · elif · 조건 순서",
+      "questions": [
+        "BP04",
+        "BP09",
+        "BM10",
+        "BSA062",
+        "BSA063",
+        "BM52"
+      ]
+    },
+    {
+      "id": "BD-033",
+      "key": "leap",
+      "title": "윤년 조건식",
+      "questions": [
+        "BSA070",
+        "BO03"
+      ]
+    },
+    {
+      "id": "BD-034",
+      "key": "while",
+      "title": "while의 실행·종료 조건",
+      "questions": [
+        "BC04",
+        "BM11",
+        "BM45",
+        "BFM01",
+        "BSA058",
+        "BSA064",
+        "BSA210",
+        "BOP01"
+      ]
+    },
+    {
+      "id": "BD-035",
+      "key": "accumulate",
+      "title": "누적 합계와 마지막 제어 변수",
+      "questions": [
+        "BC33",
+        "BM11",
+        "BFM03",
+        "BSA068",
+        "BSA069",
+        "BSA202",
+        "BO04",
+        "BOP10"
+      ]
+    },
+    {
+      "id": "BD-036",
+      "key": "gcd",
+      "title": "최대공약수: 나머지와 다중 대입",
+      "questions": [
+        "BC04",
+        "BSA042",
+        "BSA071",
+        "BOP01"
+      ]
+    },
+    {
+      "id": "BD-037",
+      "key": "for",
+      "title": "for는 다음 원소를 하나씩 받는다",
+      "questions": [
+        "BC24",
+        "BP06",
+        "BM12",
+        "BFM03",
+        "BSA058",
+        "BSA065"
+      ]
+    },
+    {
+      "id": "BD-038",
+      "key": "range",
+      "title": "range의 시작·끝·간격",
+      "questions": [
+        "BM12",
+        "BM44",
+        "BSA066",
+        "BSA067",
+        "BSA209",
+        "BO04",
+        "BOP10"
+      ]
+    },
+    {
+      "id": "BD-039",
+      "key": "factorial",
+      "title": "팩토리얼의 초기값·끝값·갱신",
+      "questions": [
+        "BSA068",
+        "BO04",
+        "BOP10"
+      ]
+    },
+    {
+      "id": "BD-040",
+      "key": "break",
+      "title": "break가 끝내는 범위",
+      "questions": [
+        "BC06",
+        "BE10",
+        "BS13",
+        "BOP02"
+      ]
+    },
+    {
+      "id": "BD-041",
+      "key": "continue",
+      "title": "continue와 혼합 흐름",
+      "questions": [
+        "BC06",
+        "BP38",
+        "BS14",
+        "BOP02"
+      ]
+    },
+    {
+      "id": "BD-042",
+      "key": "reuse",
+      "title": "내장·사용자 정의·모듈 함수",
+      "questions": [
+        "BC29",
+        "BP08",
+        "BM14",
+        "BSA073",
+        "BSA074",
+        "BSA076",
+        "BSA157",
+        "BSA171",
+        "BSA194"
+      ]
+    },
+    {
+      "id": "BD-043",
+      "key": "max-min",
+      "title": "max와 min의 비교 대상",
+      "questions": [
+        "BM13",
+        "BM41",
+        "BS24",
+        "BSA072"
+      ]
+    },
+    {
+      "id": "BD-044",
+      "key": "random",
+      "title": "randrange의 범위와 반복 횟수",
+      "questions": [
+        "BP06",
+        "BM13",
+        "BSA075",
+        "BSA076",
+        "BO05"
+      ]
+    },
+    {
+      "id": "BD-045",
+      "key": "define-call",
+      "title": "def와 호출은 다르다",
+      "questions": [
+        "BC07",
+        "BP08",
+        "BM14",
+        "BS10"
+      ]
+    },
+    {
+      "id": "BD-046",
+      "key": "arguments",
+      "title": "인수와 매개변수",
+      "questions": [
+        "BC07",
+        "BP08",
+        "BP09",
+        "BP11",
+        "BM14",
+        "BSA077",
+        "BSA078",
+        "BSA080",
+        "BSA156"
+      ]
+    },
+    {
+      "id": "BD-047",
+      "key": "return",
+      "title": "print와 return · None",
+      "questions": [
+        "BC07",
+        "BP08",
+        "BP10",
+        "BM46",
+        "BS09",
+        "BS11",
+        "BO06"
+      ]
+    },
+    {
+      "id": "BD-048",
+      "key": "return-position",
+      "title": "정의 순서와 return의 들여쓰기",
+      "questions": [
+        "BC30",
+        "BSA178",
+        "BO05"
+      ]
+    },
+    {
+      "id": "BD-049",
+      "key": "password",
+      "title": "여섯 글자 문자열 생성",
+      "questions": [
+        "BSA179",
+        "BO05"
+      ]
+    },
+    {
+      "id": "BD-050",
+      "key": "passing",
+      "title": "이름 재대입과 공유 객체 변경",
+      "questions": [
+        "BC09",
+        "BM17",
+        "BSA180"
+      ]
+    },
+    {
+      "id": "BD-051",
+      "key": "defaults",
+      "title": "기본값과 키워드 인수",
+      "questions": [
+        "BE11",
+        "BP11",
+        "BM14",
+        "BM15",
+        "BSA079",
+        "BSA080",
+        "BOP03"
+      ]
+    },
+    {
+      "id": "BD-052",
+      "key": "local",
+      "title": "지역 이름과 반환값을 받은 이름",
+      "questions": [
+        "BP12",
+        "BM16",
+        "BM46",
+        "BSA081",
+        "BO06"
+      ]
+    },
+    {
+      "id": "BD-053",
+      "key": "global",
+      "title": "전역 읽기 · 지역 대입 · global",
+      "questions": [
+        "BC31",
+        "BP12",
+        "BM16",
+        "BS12",
+        "BSA082"
+      ]
+    },
+    {
+      "id": "BD-054",
+      "key": "multiple-return",
+      "title": "여러 반환값과 튜플",
+      "questions": [
+        "BC32",
+        "BSA083",
+        "BSA106"
+      ]
+    },
+    {
+      "id": "BD-055",
+      "key": "format",
+      "title": "format과 f-string",
+      "questions": [
+        "BP13",
+        "BP49",
+        "BM33",
+        "BSA084",
+        "BSA085",
+        "BO06"
+      ]
+    },
+    {
+      "id": "BD-056",
+      "key": "number-format",
+      "title": "숫자 표시 형식과 원래 값",
+      "questions": [
+        "BP14",
+        "BM33",
+        "BSA086",
+        "BSA087",
+        "BSA149",
+        "BSA158",
+        "BSA159",
+        "BSA160",
+        "BSA211"
+      ]
+    },
+    {
+      "id": "BD-057",
+      "key": "list-create",
+      "title": "리스트 생성과 길이",
+      "questions": [
+        "BM18",
+        "BSA074",
+        "BSA088"
+      ]
+    },
+    {
+      "id": "BD-058",
+      "key": "index",
+      "title": "인덱싱과 범위 오류",
+      "questions": [
+        "BP43",
+        "BM18",
+        "BSA089",
+        "BSA090",
+        "BSA091",
+        "BSA195",
+        "BO07"
+      ]
+    },
+    {
+      "id": "BD-059",
+      "key": "slice",
+      "title": "슬라이싱의 시작·끝·간격",
+      "questions": [
+        "BP20",
+        "BP41",
+        "BFC01",
+        "BSA092",
+        "BSA093",
+        "BSA167",
+        "BO07",
+        "BO09",
+        "BOP04",
+        "BOP05"
+      ]
+    },
+    {
+      "id": "BD-060",
+      "key": "list-ops",
+      "title": "연결 · 반복 · 포함 검사",
+      "questions": [
+        "BC09",
+        "BP42",
+        "BM32",
+        "BSA051",
+        "BSA204"
+      ]
+    },
+    {
+      "id": "BD-061",
+      "key": "append-insert",
+      "title": "append · insert · 원소 대입",
+      "questions": [
+        "BP16",
+        "BP19",
+        "BM19",
+        "BSA094",
+        "BSA095",
+        "BO08",
+        "BOP11"
+      ]
+    },
+    {
+      "id": "BD-062",
+      "key": "extend",
+      "title": "append와 extend",
+      "questions": [
+        "BP16",
+        "BM19",
+        "BSA096",
+        "BO08"
+      ]
+    },
+    {
+      "id": "BD-063",
+      "key": "delete",
+      "title": "remove · pop · del",
+      "questions": [
+        "BE12",
+        "BP17",
+        "BP19",
+        "BM20",
+        "BSA097",
+        "BSA098",
+        "BSA099",
+        "BSA161",
+        "BSA162",
+        "BO08",
+        "BOP11"
+      ]
+    },
+    {
+      "id": "BD-064",
+      "key": "reverse",
+      "title": "reverse와 방문 기록",
+      "questions": [
+        "BE13",
+        "BP17",
+        "BM21",
+        "BSA100",
+        "BO07",
+        "BOP05"
+      ]
+    },
+    {
+      "id": "BD-065",
+      "key": "sort",
+      "title": "sort · sorted · 정렬 기준",
+      "questions": [
+        "BP18",
+        "BM21",
+        "BS15",
+        "BSA101",
+        "BSA102",
+        "BSA103",
+        "BSA208",
+        "BO09",
+        "BOP04"
+      ]
+    },
+    {
+      "id": "BD-066",
+      "key": "list-state",
+      "title": "연속 변경의 현재 상태",
+      "questions": [
+        "BP19",
+        "BSA181",
+        "BO08",
+        "BO09",
+        "BOP04",
+        "BOP11"
+      ]
+    },
+    {
+      "id": "BD-067",
+      "key": "string",
+      "title": "문자열의 인덱싱과 불변성",
+      "questions": [
+        "BP20",
+        "BP21",
+        "BP34",
+        "BM09",
+        "BM32",
+        "BFM02",
+        "BSA104",
+        "BO10"
+      ]
+    },
+    {
+      "id": "BD-068",
+      "key": "split",
+      "title": "split과 단어 목록",
+      "questions": [
+        "BP21",
+        "BS19",
+        "BO10",
+        "BO17",
+        "BOP08"
+      ]
+    },
+    {
+      "id": "BD-069",
+      "key": "nested",
+      "title": "행·열과 두 번의 인덱싱",
+      "questions": [
+        "BP43",
+        "BSA105",
+        "BO11",
+        "BOP06"
+      ]
+    },
+    {
+      "id": "BD-070",
+      "key": "row-column",
+      "title": "행 합계와 열 평균",
+      "questions": [
+        "BP43",
+        "BSA073",
+        "BSA170",
+        "BO11",
+        "BOP06"
+      ]
+    },
+    {
+      "id": "BD-071",
+      "key": "tuple",
+      "title": "튜플 생성 · 해체 · 불변성",
+      "questions": [
+        "BP44",
+        "BM22",
+        "BM47",
+        "BS16",
+        "BSA083",
+        "BSA106",
+        "BO12"
+      ]
+    },
+    {
+      "id": "BD-072",
+      "key": "set",
+      "title": "집합 생성 · 중복 · 순서",
+      "questions": [
+        "BP22",
+        "BM22",
+        "BS17",
+        "BSA107",
+        "BSA109",
+        "BO13"
+      ]
+    },
+    {
+      "id": "BD-073",
+      "key": "set-ops",
+      "title": "합집합 · 교집합 · 차집합",
+      "questions": [
+        "BM39",
+        "BSA110",
+        "BSA111",
+        "BSA112",
+        "BSA113",
+        "BO13"
+      ]
+    },
+    {
+      "id": "BD-074",
+      "key": "dict",
+      "title": "키·값 대응과 정수 키",
+      "questions": [
+        "BM23",
+        "BM42",
+        "BM48",
+        "BS18",
+        "BSA108",
+        "BSA114",
+        "BSA115",
+        "BSA166",
+        "BO14",
+        "BSA215"
+      ]
+    },
+    {
+      "id": "BD-075",
+      "key": "dict-order",
+      "title": "삽입 순서와 포함 검사",
+      "questions": [
+        "BM23",
+        "BSA168",
+        "BSA205"
+      ]
+    },
+    {
+      "id": "BD-076",
+      "key": "dict-crud",
+      "title": "수정 · 추가 · 삭제 · 직접 조회",
+      "questions": [
+        "BSA099",
+        "BSA122",
+        "BSA189",
+        "BO14",
+        "BO15",
+        "BSA215"
+      ]
+    },
+    {
+      "id": "BD-077",
+      "key": "views",
+      "title": "keys · values · items와 뷰",
+      "questions": [
+        "BP24",
+        "BP26",
+        "BM24",
+        "BM42",
+        "BSA116",
+        "BSA117",
+        "BSA118",
+        "BSA119"
+      ]
+    },
+    {
+      "id": "BD-078",
+      "key": "phonebook",
+      "title": "전화번호부: 키를 정렬하고 값 조회",
+      "questions": [
+        "BC34",
+        "BSA182"
+      ]
+    },
+    {
+      "id": "BD-079",
+      "key": "copy",
+      "title": "별칭과 얕은 복사",
+      "questions": [
+        "BC19",
+        "BP25",
+        "BSA120",
+        "BSA121",
+        "BOP07"
+      ]
+    },
+    {
+      "id": "BD-080",
+      "key": "dictionary",
+      "title": "영한사전 직접 조회",
+      "questions": [
+        "BM25",
+        "BSA122",
+        "BO15"
+      ]
+    },
+    {
+      "id": "BD-081",
+      "key": "get",
+      "title": "get의 기본값과 저장된 0",
+      "questions": [
+        "BP26",
+        "BM25",
+        "BM49",
+        "BS20",
+        "BSA191",
+        "BO16",
+        "BO17",
+        "BOP08"
+      ]
+    },
+    {
+      "id": "BD-082",
+      "key": "word-count",
+      "title": "단어별 횟수 누적",
+      "questions": [
+        "BSA169",
+        "BO17",
+        "BOP08"
+      ]
+    },
+    {
+      "id": "BD-083",
+      "key": "choose-structure",
+      "title": "자료구조 선택과 변환",
+      "questions": [
+        "BE15",
+        "BM22",
+        "BSA183"
+      ]
+    },
+    {
+      "id": "BD-084",
+      "key": "persist",
+      "title": "메모리와 파일 · 문자와 바이트",
+      "questions": [
+        "BC27",
+        "BE16",
+        "BP46",
+        "BP53",
+        "BM30",
+        "BFC05",
+        "BFM04",
+        "BSA123",
+        "BSA124",
+        "BSA125",
+        "BSA126"
+      ]
+    },
+    {
+      "id": "BD-085",
+      "key": "path",
+      "title": "현재 작업 폴더와 파일 존재",
+      "questions": [
+        "BL3",
+        "BP48",
+        "BM34",
+        "BSA127",
+        "BSA128",
+        "BSA129",
+        "BSA130",
+        "BSA201"
+      ]
+    },
+    {
+      "id": "BD-086",
+      "key": "open",
+      "title": "파일 객체와 열기 모드",
+      "questions": [
+        "BC26",
+        "BM26",
+        "BM50",
+        "BFS03",
+        "BSA131",
+        "BSA132",
+        "BSA133",
+        "BSA134",
+        "BSA135",
+        "BSA136",
+        "BSA137",
+        "BSA197",
+        "BSA198"
+      ]
+    },
+    {
+      "id": "BD-087",
+      "key": "file-position",
+      "title": "읽기 위치 · EOF · seek",
+      "questions": [
+        "BM27",
+        "BFC01",
+        "BFC02",
+        "BFC03",
+        "BFS02",
+        "BSA138",
+        "BSA199",
+        "BOP09"
+      ]
+    },
+    {
+      "id": "BD-088",
+      "key": "read",
+      "title": "read · readline · readlines · 반복",
+      "questions": [
+        "BC27",
+        "BE18",
+        "BP45",
+        "BP46",
+        "BP47",
+        "BP48",
+        "BM27",
+        "BS21",
+        "BS22",
+        "BFC01",
+        "BFC02",
+        "BFC03",
+        "BFC05",
+        "BFS01",
+        "BFS02",
+        "BFM01",
+        "BSA139",
+        "BSA196",
+        "BOP09"
+      ]
+    },
+    {
+      "id": "BD-089",
+      "key": "newline",
+      "title": "줄바꿈 · repr · strip",
+      "questions": [
+        "BE19",
+        "BM28",
+        "BFC01",
+        "BFM02",
+        "BSA039",
+        "BSA140",
+        "BSA141",
+        "BSA142",
+        "BSA146",
+        "BSA207",
+        "BO18"
+      ]
+    },
+    {
+      "id": "BD-090",
+      "key": "close",
+      "title": "close와 with의 범위",
+      "questions": [
+        "BP29",
+        "BM29",
+        "BS23",
+        "BFS01",
+        "BSA143",
+        "BSA144",
+        "BO18"
+      ]
+    },
+    {
+      "id": "BD-091",
+      "key": "line-number",
+      "title": "줄 번호와 인원수",
+      "questions": [
+        "BL3",
+        "BSA069",
+        "BSA207",
+        "BO18"
+      ]
+    },
+    {
+      "id": "BD-092",
+      "key": "hours",
+      "title": "split · 슬라이스 · 중첩 누적",
+      "questions": [
+        "BC24",
+        "BL1",
+        "BFM03",
+        "BSA148",
+        "BSA149"
+      ]
+    },
+    {
+      "id": "BD-093",
+      "key": "write",
+      "title": "write의 인수 · 반환값 · 줄바꿈",
+      "questions": [
+        "BC25",
+        "BE20",
+        "BP31",
+        "BM31",
+        "BM50",
+        "BSA145",
+        "BSA146",
+        "BSA147",
+        "BO19"
+      ]
+    },
+    {
+      "id": "BD-094",
+      "key": "phones-write",
+      "title": "전화번호 텍스트 생성",
+      "questions": [
+        "BC25"
+      ]
+    },
+    {
+      "id": "BD-095",
+      "key": "text-copy",
+      "title": "텍스트 파일 복사와 비교",
+      "questions": [
+        "BC26"
+      ]
+    },
+    {
+      "id": "BD-096",
+      "key": "binary-copy",
+      "title": "이진 복사와 종료 조건",
+      "questions": [
+        "BC27",
+        "BP47",
+        "BM30",
+        "BFC05",
+        "BFM01",
+        "BFM04",
+        "BSA136",
+        "BSA137",
+        "BSA150",
+        "BSA196"
+      ]
+    },
+    {
+      "id": "BD-097",
+      "key": "file-average",
+      "title": "점수 파일 평균과 결과 저장",
+      "questions": [
+        "BL2",
+        "BP53",
+        "BSA175",
+        "BO19"
+      ]
+    },
+    {
+      "id": "BD-098",
+      "key": "file-errors",
+      "title": "이 자료에서 다루는 오류와 범위 경계",
+      "questions": [
+        "BM26",
+        "BM29",
+        "BFS03",
+        "BO19"
+      ]
+    }
+  ],
+  "counts": {
+    "code": 94,
+    "short": 232,
+    "mc": 63
+  },
+  "noticeSha256": "9a791f283669c9bb75cd2234eb915cb4a67dfd328c3ba40d210e48938e900eae"
+}

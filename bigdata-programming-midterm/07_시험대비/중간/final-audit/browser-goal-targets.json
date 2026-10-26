@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-25",
+  "passed": 26,
+  "clarified": [
+    "BP20",
+    "BP34"
+  ],
+  "unchangedRecords": 437,
+  "errors": [],
+  "checks": [
+    "all437 saved grades and draft values unchanged",
+    "bookmarks retained and no migration/reset triggered",
+    "BP20 new per-line target shown",
+    "first two masked output targets supplied",
+    "no answer/result panel before solving",
+    "user draft remains visible in same positions",
+    "BP20 selected",
+    "BP20 exact clarified behavior displayed",
+    "BP20 clear goal and code fit 1440",
+    "BP20 clear goal and code fit 390",
+    "BP20 clear goal and code fit 320",
+    "alternative selections that violate required first/second targets rejected",
+    "BP20 original canonical answers still accepted",
+    "BP20 all detailed blank explanations present",
+    "BP20 actual execution output retained",
+    "BP34 selected",
+    "BP34 exact clarified behavior displayed",
+    "BP34 clear goal and code fit 1440",
+    "BP34 clear goal and code fit 390",
+    "BP34 clear goal and code fit 320",
+    "BP34 original canonical answers still accepted",
+    "BP34 all detailed blank explanations present",
+    "BP34 actual execution output retained",
+    "all435 unrelated records unchanged",
+    "clarified goals and answers survive reload",
+    "no page errors"
+  ]
+}

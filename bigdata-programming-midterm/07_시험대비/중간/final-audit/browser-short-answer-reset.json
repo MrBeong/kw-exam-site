@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-24",
+  "passed": 5,
+  "checks": [
+    "cancel keeps all answers",
+    "short-type reset clears every saved short answer",
+    "other question types and drafts remain",
+    "bookmarks remain",
+    "reset remains after reload"
+  ]
+}

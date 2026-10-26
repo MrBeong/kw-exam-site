@@ -1,0 +1,188 @@
+{
+  "s:state-trace": {
+    "stdout": "11\n3\n3\nTrue\n",
+    "values": {
+      "x": 11,
+      "y": 3,
+      "z": 3
+    }
+  },
+  "q:BO01": {
+    "stdout": "합계: 25.0\n평균: 12.5\n",
+    "values": {
+      "total": 25,
+      "average": 12.5
+    }
+  },
+  "q:BO03": {
+    "stdout": "2000 년은 윤년입니다.\n"
+  },
+  "q:BO04": {
+    "stdout": "4 !은 24 이다.\n",
+    "values": {
+      "fact": 24
+    }
+  },
+  "s:accumulate": {
+    "stdout": "6 4\n",
+    "values": {
+      "total": 6,
+      "i": 4
+    }
+  },
+  "q:BC04": {
+    "stdout": "최대 공약수는 6입니다\n",
+    "values": {
+      "x": 6,
+      "y": 0
+    }
+  },
+  "q:BC06": {
+    "stdout": "12 6\n",
+    "values": {
+      "total": 12,
+      "i": 6
+    }
+  },
+  "q:BS09": {
+    "stdout": "10\n",
+    "values": {
+      "result": null
+    }
+  },
+  "s:return-position": {
+    "stdout": "100\n"
+  },
+  "q:BO05": {
+    "random": {
+      "lines": 3,
+      "length": 6,
+      "alphabet": "abcdefghijklmnopqrstuvwxyz0123456789"
+    }
+  },
+  "q:BO06": {
+    "stdout": "넓이: 314.00\n",
+    "values": {
+      "r": 10,
+      "area": 314
+    }
+  },
+  "q:BO07": {
+    "stdout": "['B', 'D']\n['E', 'F']\n['F', 'E', 'D', 'C', 'B', 'A']\n['A', 'B', 'C', 'D', 'E', 'F']\n"
+  },
+  "s:delete": {
+    "stdout": "[10, 20, 30]\n20 [10, 30]\n[30]\n",
+    "values": {
+      "taken": 20,
+      "data": [
+        30
+      ]
+    }
+  },
+  "q:BO09": {
+    "stdout": "[70, 95, 80, 95, 60]\n[95, 95, 80, 70, 60]\n[95, 95, 80]\n90.0\n"
+  },
+  "q:BO11": {
+    "stdout": "15\n40\n65\n[3, 8, 13]\n8.0\n",
+    "values": {
+      "math_scores": [
+        3,
+        8,
+        13
+      ]
+    }
+  },
+  "q:BO17": {
+    "stdout": "{'red': 3, 'blue': 2, 'green': 1}\n6\n3\n",
+    "values": {
+      "counts": {
+        "red": 3,
+        "blue": 2,
+        "green": 1
+      }
+    }
+  },
+  "q:BOP07": {
+    "stdout": "{'name': 'Mina', 'scores': [80, 90, 100]}\n{'name': 'Jun', 'scores': [80, 90, 100]}\n[80, 90, 100]\n[60]\n"
+  },
+  "s:read": {
+    "stdout": "1 'A\\n'\n2 '\\n'\n3 'B\\n'\n4 ''\n"
+  },
+  "q:BC24": {
+    "stdout": "Susan 31.4\nBrad 36.8\nJenn 39.5\n"
+  },
+  "s:write": {
+    "stdout": "첫 write의 반환값: 5\n'HelloPython'\n",
+    "written": {
+      "joined.txt": "HelloPython"
+    }
+  },
+  "q:BO19": {
+    "stdout": "3 90.0\n",
+    "written": {
+      "summary.txt": "count=3\naverage=90.0\n"
+    }
+  },
+  "q:BC26": {
+    "stdout": "",
+    "copy": [
+      "phones.txt",
+      "phones_copy.txt"
+    ]
+  },
+  "q:BC27": {
+    "stdout": "",
+    "copy": [
+      "bridge.png",
+      "bridge_copy.png"
+    ],
+    "blocks": [
+      1024,
+      1024,
+      452,
+      0
+    ]
+  },
+  "q:BM40": {
+    "stdout": "A-B C\n"
+  },
+  "q:BM51": {
+    "stdout": "5\n3\n"
+  },
+  "q:BM52": {
+    "stdout": "A\nB\nA\n"
+  },
+  "q:BOP09": {
+    "stdout": "'홍길동 010-1234-5678\\n'\n['김철수 010-1234-5679\\n', '김영희 010-1234-5680\\n']\n''\n",
+    "types": {
+      "first": "str",
+      "remaining": "list",
+      "end": "str"
+    }
+  },
+  "s:defaults": {
+    "stdout": "6\n30\n50\n10\n"
+  },
+  "q:BM18": {
+    "stdout": "",
+    "values": {
+      "stops": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    }
+  },
+  "q:BSA027": {
+    "stdout": "",
+    "values": {
+      "x": "Hello"
+    }
+  },
+  "q:BC32": {
+    "stdout": "1 2 3\n(1, 2, 3)\n<class 'tuple'>\n"
+  }
+}

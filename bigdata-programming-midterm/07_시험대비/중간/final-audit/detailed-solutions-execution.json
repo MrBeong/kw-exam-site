@@ -1,0 +1,3194 @@
+{
+  "date": "2026-10-24",
+  "questions": 389,
+  "manuallyAuthoredConceptGuides": 295,
+  "manuallyAuthoredCodeGuides": 94,
+  "manuallyAuthoredTotal": 389,
+  "executionCases": 196,
+  "traceSteps": 1819,
+  "passed": true,
+  "cases": [
+    {
+      "id": "BC04",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 13,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC06",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 25,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC07",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 9,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC09",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 14,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC19",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 9,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC24",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 49,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC25",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC26",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC27",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 284,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC29",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 71,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC30",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 10,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC31",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC32",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 10,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC33",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 13,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BC34",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 10,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BN9",
+      "reasoningSteps": 4,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BN11",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BL1",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 49,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BL2",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 19,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BL3",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 13,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE03",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE04",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE05",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE06",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE08",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE10",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 16,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE11",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 13,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE12",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE13",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE15",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 11,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE16",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE18",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 11,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE19",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BE20",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP01",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP02",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP04",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP06",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 21,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP08",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP09",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 15,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP10",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP11",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 10,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP12",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP13",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP14",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP16",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP17",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP18",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP19",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP20",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP21",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP22",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP24",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP25",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP26",
+      "reasoningSteps": 4,
+      "hasRuntime": true,
+      "traceSteps": 16,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP29",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP31",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP34",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP37",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP38",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 32,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP41",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP42",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP43",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 11,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP44",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP45",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 12,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP46",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP47",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 22,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP48",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP49",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP50",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BP53",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM01",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM02",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM03",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM04",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM05",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": {
+        "name": "TypeError",
+        "message": "'int' object is not callable",
+        "line": 3
+      },
+      "passed": true
+    },
+    {
+      "id": "BM06",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM07",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM08",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM09",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM10",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM11",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 21,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM12",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM13",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM14",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM15",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM16",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM17",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM18",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM19",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM20",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM21",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM22",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BM23",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM24",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM25",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM26",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BM27",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM28",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM29",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": {
+        "name": "ValueError",
+        "message": "I/O operation on closed file.",
+        "line": 8
+      },
+      "passed": true
+    },
+    {
+      "id": "BM30",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM31",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM32",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": {
+        "name": "TypeError",
+        "message": "'str' object does not support item assignment",
+        "line": 5
+      },
+      "passed": true
+    },
+    {
+      "id": "BM33",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM34",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM35",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM36",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BM37",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BM39",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM40",
+      "reasoningSteps": 4,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM41",
+      "reasoningSteps": 5,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM42",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM43",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 0,
+      "exception": {
+        "name": "ValueError",
+        "message": "invalid literal for int() with base 10: '20.5'",
+        "line": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "BM44",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": {
+        "name": "ValueError",
+        "message": "range() arg 3 must not be zero",
+        "line": 2
+      },
+      "passed": true
+    },
+    {
+      "id": "BM45",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 28,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM46",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": {
+        "name": "NameError",
+        "message": "name 'result' is not defined",
+        "line": 6
+      },
+      "passed": true
+    },
+    {
+      "id": "BM47",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": {
+        "name": "TypeError",
+        "message": "'tuple' object does not support item assignment",
+        "line": 2
+      },
+      "passed": true
+    },
+    {
+      "id": "BM48",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BM49",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM50",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BS01",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS02",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 0,
+      "exception": {
+        "name": "TypeError",
+        "message": "can only concatenate str (not \"int\") to str",
+        "line": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "BS03",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 0,
+      "exception": {
+        "name": "ZeroDivisionError",
+        "message": "division by zero",
+        "line": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "BS04",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 0,
+      "exception": {
+        "name": "NameError",
+        "message": "name 'score' is not defined",
+        "line": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "BS05",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BS06",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS07",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS08",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS09",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BS10",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS11",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS12",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS13",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS14",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS15",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS16",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BS17",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS18",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS19",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS20",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS21",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS22",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS23",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BS24",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BFC01",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BFC02",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BFC03",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BFC05",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 9,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BFS01",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BFS02",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BFS03",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 0,
+      "exception": {
+        "name": "FileExistsError",
+        "message": "[Errno 17] File exists: 'phones.txt'",
+        "line": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "BFM01",
+      "reasoningSteps": 4,
+      "hasRuntime": true,
+      "traceSteps": 20,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BFM02",
+      "reasoningSteps": 4,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BFM03",
+      "reasoningSteps": 4,
+      "hasRuntime": true,
+      "traceSteps": 22,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BFM04",
+      "reasoningSteps": 4,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA001",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA002",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA003",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA004",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA005",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA006",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA007",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA008",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA009",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA010",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA011",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA012",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA013",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA014",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA015",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA016",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA017",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA018",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA019",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA020",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA021",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA022",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA023",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA024",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA025",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA026",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA027",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA028",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA029",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA030",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA031",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA032",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA033",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA034",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA035",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA036",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA038",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA039",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA040",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA041",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA042",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA043",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA044",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA045",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA046",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA047",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA048",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA049",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA050",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA051",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA052",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA053",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA054",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA055",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA056",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA057",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA058",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA059",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA060",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA061",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA062",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA063",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA064",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA065",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA066",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA067",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA068",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA069",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA070",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA071",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA072",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA073",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA074",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA075",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA076",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA077",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA078",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA079",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA080",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA081",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA082",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA083",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA084",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA085",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA086",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA087",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA088",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA089",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA090",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA091",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": {
+        "name": "IndexError",
+        "message": "list index out of range",
+        "line": 2
+      },
+      "passed": true
+    },
+    {
+      "id": "BSA092",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA093",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA094",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA095",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA096",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA097",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA098",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA099",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA100",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA101",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA102",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA103",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA104",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA105",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA106",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA107",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA108",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA109",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA110",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA111",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA112",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA113",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA114",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA115",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA116",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA117",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA118",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA119",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA120",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA121",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA122",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": {
+        "name": "KeyError",
+        "message": "'four'",
+        "line": 2
+      },
+      "passed": true
+    },
+    {
+      "id": "BSA123",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA124",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA125",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA126",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA127",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA128",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA129",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA130",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA131",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA132",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA133",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA134",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA135",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA136",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA137",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA138",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA139",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA140",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA141",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA142",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA143",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA144",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA145",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA146",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA147",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA148",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA149",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA150",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA152",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA153",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA154",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA155",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA156",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA157",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA158",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA159",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA160",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA161",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": {
+        "name": "ValueError",
+        "message": "list.remove(x): x not in list",
+        "line": 2
+      },
+      "passed": true
+    },
+    {
+      "id": "BSA162",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 1,
+      "exception": {
+        "name": "IndexError",
+        "message": "pop from empty list",
+        "line": 2
+      },
+      "passed": true
+    },
+    {
+      "id": "BSA166",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA167",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA168",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA169",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 16,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA170",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA171",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA172",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA173",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA174",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA175",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 15,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA176",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA177",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA178",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA179",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA180",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA181",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA182",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA183",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA186",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA187",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA188",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 0,
+      "exception": {
+        "name": "ValueError",
+        "message": "too many values to unpack (expected 2, got 3)",
+        "line": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "BSA189",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA191",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA192",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA193",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA194",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA195",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA196",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA197",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA198",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA199",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA200",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA201",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA202",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA204",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA205",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA207",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 11,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA208",
+      "reasoningSteps": 3,
+      "hasRuntime": false,
+      "traceSteps": 0,
+      "exception": {},
+      "passed": true
+    },
+    {
+      "id": "BSA209",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 13,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA210",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA211",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO01",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO02",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO03",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 3,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO04",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 12,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO05",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 74,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO06",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO07",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO08",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO09",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO10",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO11",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 11,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO12",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO13",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO14",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO15",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 6,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO16",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 11,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO17",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 18,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO18",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 14,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BO19",
+      "reasoningSteps": 2,
+      "hasRuntime": true,
+      "traceSteps": 19,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP01",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 13,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP02",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 25,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP03",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 13,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP04",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP05",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 5,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP06",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 11,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP07",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 9,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP08",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 19,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP09",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP10",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BOP11",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 8,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM51",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 2,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BM52",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 7,
+      "exception": null,
+      "passed": true
+    },
+    {
+      "id": "BSA215",
+      "reasoningSteps": 3,
+      "hasRuntime": true,
+      "traceSteps": 4,
+      "exception": null,
+      "passed": true
+    }
+  ],
+  "limits": [
+    "Independent execution of author-written code, never student input.",
+    "BM01 follows specified cell order; BM05/BM45 include the correct option.",
+    "Random values are an explicitly labeled sample.",
+    "Active keys retain the source code; retired questions and removed blanks are archived by the explicit quality policy."
+  ]
+}
