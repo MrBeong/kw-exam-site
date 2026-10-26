@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-20",
+  "files": {
+    "index.html": "9d0689539c51862145b175cedebf273451c67b17e8eb654822bef9d676d542f4",
+    "빅데이터프로그래밍_중간고사_Notion.html": "9d0689539c51862145b175cedebf273451c67b17e8eb654822bef9d676d542f4",
+    "practice/index.html": "66921a026adb2779e24c436545ac99a053c15b6431192488112b56606f7615e7",
+    "practice-source/questions.json": "1b248ec57a1a431d7ba9b2bb469ee74d3eb8e197e375bb3db0cacccafc543408",
+    "11_공지반영_예상문제.md": "8f8f0dfa5a74596f834fd50d94fb7923dcd5a906a011749f21115f20d37b2720",
+    "12_공지반영_정답과해설.md": "9795af6fd7bb728f83c7b12dcd4aa6ce62a51ab9ac1903c26de5beb31b38e17b"
+  },
+  "browserResults": {
+    "browser-preview.json": 64,
+    "browser-regressions.json": 46,
+    "browser-edge.json": 24,
+    "browser-print.json": 7,
+    "browser-all-before.json": 1792,
+    "browser-concepts.json": 34,
+    "browser-all.json": 1910
+  },
+  "pushPerformed": false,
+  "markdownFencesChecked": 4
+}

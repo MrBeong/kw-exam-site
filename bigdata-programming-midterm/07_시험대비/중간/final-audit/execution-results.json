@@ -1,0 +1,22 @@
+{
+  "concept-source/verify.py": {
+    "exit": 0,
+    "stdout": "{\"checks\": 89, \"passed\": 89, \"notebook_cells\": 22, \"original_pdf_hashes_unchanged\": 11, \"original_notebook_unchanged\": true}\n",
+    "stderr": ""
+  },
+  "concept-source/audit_static.py": {
+    "exit": 0,
+    "stdout": "{\"date\": \"2026-10-20\", \"unique_html_ids\": 151, \"html_links\": 269, \"broken_html_links\": 0, \"code_blocks_exact_match\": 66, \"concepts\": 98, \"examples\": 28, \"blank_pages_mapped\": 19, \"pdf_pages_recorded\": 381, \"selected_visual_pages\": 100, \"html_alias_identical\": true, \"html_sha256\": \"9d0689539c51862145b175cedebf273451c67b17e8eb654822bef9d676d542f4\"}\n",
+    "stderr": ""
+  },
+  "practice-source/verify.py": {
+    "exit": 0,
+    "stdout": "{\"questions\": 192, \"codeBlanks\": 307, \"executionCases\": 125, \"passed\": true}\n",
+    "stderr": ""
+  },
+  "practice-source/audit-examples.py": {
+    "exit": 0,
+    "stdout": "{\"notebook\": 22, \"py\": 3, \"pdfGroups\": 111, \"pages\": 340, \"newQuestions\": 85, \"changedQuestionFields\": 8}\n",
+    "stderr": ""
+  }
+}

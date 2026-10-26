@@ -1,0 +1,769 @@
+{
+  "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "questions": 389,
+  "types": {
+    "code": 94,
+    "short": 232,
+    "mc": 63
+  },
+  "codeBlanks": 231,
+  "execution": [
+    {
+      "id": "BC04",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "최대 공약수는 6입니다\n",
+      "blanks": 4
+    },
+    {
+      "id": "BC06",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "12 6\n",
+      "blanks": 4
+    },
+    {
+      "id": "BC07",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "8\nNone 8\n",
+      "blanks": 3
+    },
+    {
+      "id": "BC09",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "msg= Happy Birthday\nmsg= Happy Birthday\n[1, 2, 3, 4, 5]\n[1, 2, 3, 4, 5, 100, 200]\n",
+      "blanks": 2
+    },
+    {
+      "id": "BC19",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "{'name': 'Mina', 'scores': [80, 90, 100]}\n{'name': 'Jun', 'scores': [80, 90, 100]}\n[80, 90, 100]\n[60]\n",
+      "blanks": 2
+    },
+    {
+      "id": "BC24",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "Susan 31.4\nBrad 36.8\nJenn 39.5\n",
+      "blanks": 5
+    },
+    {
+      "id": "BC25",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "",
+      "blanks": 3
+    },
+    {
+      "id": "BC26",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "",
+      "blanks": 3
+    },
+    {
+      "id": "BC27",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "",
+      "blanks": 4
+    },
+    {
+      "id": "BC29",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "55\n210\n",
+      "blanks": 3
+    },
+    {
+      "id": "BC30",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "100\n",
+      "blanks": 3
+    },
+    {
+      "id": "BC31",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "314.0\n",
+      "blanks": 2
+    },
+    {
+      "id": "BC32",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "1 2 3\n(1, 2, 3)\n<class 'tuple'>\n",
+      "blanks": 2
+    },
+    {
+      "id": "BC33",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "6 4\n",
+      "blanks": 2
+    },
+    {
+      "id": "BC34",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "강감찬 010-1234-5679\n이순신 010-1234-5680\n홍길동 010-1234-5678\n",
+      "blanks": 2
+    },
+    {
+      "id": "BN9",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "20 <class 'str'>\n201\n21\n",
+      "blanks": 3
+    },
+    {
+      "id": "BN11",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "23.5 <class 'float'>\n",
+      "blanks": 1
+    },
+    {
+      "id": "BL1",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "Susan 31.4\nBrad 36.8\nJenn 39.5\n",
+      "blanks": 3
+    },
+    {
+      "id": "BL2",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "3 90.0\n",
+      "blanks": 2
+    },
+    {
+      "id": "BL3",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "3 명\n인원: 3\n",
+      "blanks": 2
+    },
+    {
+      "id": "BE03",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "3 2\n",
+      "blanks": 1
+    },
+    {
+      "id": "BE04",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "False\n5\n3\n",
+      "blanks": 3
+    },
+    {
+      "id": "BE05",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "-1.75\n-2\n1\n-1\n",
+      "blanks": 3
+    },
+    {
+      "id": "BE06",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "14\n20\n512\n64\n",
+      "blanks": 2
+    },
+    {
+      "id": "BE08",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "Failed\nDone\n",
+      "blanks": 2
+    },
+    {
+      "id": "BE10",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "1\n2\n3\n4\n반복 종료 시 x = 5\n",
+      "blanks": 2
+    },
+    {
+      "id": "BE11",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "6\n30\n50\n10\n",
+      "blanks": 1
+    },
+    {
+      "id": "BE12",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[10, 20, 30]\n20 [10, 30]\n[30]\n",
+      "blanks": 3
+    },
+    {
+      "id": "BE13",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "['home', 'search', 'detail']\ndetail\nsearch\n['home', 'search']\n",
+      "blanks": 3
+    },
+    {
+      "id": "BE15",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[3, 1, 3, 2]\n[1, 3, 3]\n3\n0\nFalse\n4\n",
+      "blanks": 2
+    },
+    {
+      "id": "BE16",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "1\n3\n",
+      "blanks": 1
+    },
+    {
+      "id": "BE18",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "1 'A\\n'\n2 '\\n'\n3 'B\\n'\n4 ''\n",
+      "blanks": 2
+    },
+    {
+      "id": "BE19",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "'  Alice  \\n'\n'Alice'\n'  Alice'\n'  Alice  '\n",
+      "blanks": 3
+    },
+    {
+      "id": "BE20",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "첫 write의 반환값: 5\n'HelloPython'\n",
+      "blanks": 1
+    },
+    {
+      "id": "BP01",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "Your age is 53\n12 years to retirement\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP02",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "몫 = 1\n나머지 = 3\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP04",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "A\n",
+      "blanks": 1
+    },
+    {
+      "id": "BP06",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "1 6 2 4 5 6 4 3 5 2 ",
+      "blanks": 1
+    },
+    {
+      "id": "BP08",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "8\n",
+      "blanks": 4
+    },
+    {
+      "id": "BP09",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "Hello\nHola\nBonjour\n",
+      "blanks": 3
+    },
+    {
+      "id": "BP10",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "Hello Glenn\nHello Sally\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP11",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "60\n60\n60\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP12",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "314.0\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP13",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "Samsung 85,000\nSamsung 50000\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP14",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "e = 7\n243, 1.41\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP16",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[1, 2, [3, 4]]\n[1, 2, 3, 4]\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP17",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[4, 3, 2, 1]\n1\n[4, 3, 2]\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP18",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[-4, 3, -2, 1]\n",
+      "blanks": 1
+    },
+    {
+      "id": "BP19",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "G\n['A', 'A-1', 'B', 'D']\n4\n",
+      "blanks": 4
+    },
+    {
+      "id": "BP20",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "a f\nPy\ntho\nJython\n",
+      "blanks": 3
+    },
+    {
+      "id": "BP21",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "True\n10\nNever today.\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP22",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "6\n3\n4\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP24",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "['foo', 'bar']\n[1, 2]\n[('foo', 1), ('bar', 2)]\nfoo 1\nbar 2\n",
+      "blanks": 4
+    },
+    {
+      "id": "BP25",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[22] [1]\n{1: 22} {1: 10}\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP26",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[('ss', 10), ('lg', 5), ('sk', 5), ('naver', 20)]\n('ss', 10)\n('lg', 5)\n('sk', 5)\n('naver', 20)\n10\n100\nNone\n4\n",
+      "blanks": 3
+    },
+    {
+      "id": "BP29",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "",
+      "blanks": 2
+    },
+    {
+      "id": "BP31",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "",
+      "blanks": 2
+    },
+    {
+      "id": "BP34",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "13\n103\n101010\n13\n103\n",
+      "blanks": 4
+    },
+    {
+      "id": "BP37",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "Passed\n조건을 만족합니다.\n검사를 마쳤습니다.\n",
+      "blanks": 1
+    },
+    {
+      "id": "BP38",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "1\n2\n3\n4\n6\n7\n8\n9\n10\n반복 종료\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP41",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "['A', 'B', 'C']\n['D', 'E', 'F']\n['A']\n['E', 'F']\n",
+      "blanks": 3
+    },
+    {
+      "id": "BP42",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[1, 2, 3, 4, 5, 6]\n[1, 2, 3, 1, 2, 3, 1, 2, 3]\n[1, 2, 3]\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP43",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[6, 7, 8, 9, 10]\n8\n3 5\n[1, 2, 3, 4, 5]\n[6, 7, 80, 9, 10]\n[11, 12, 13, 14, 15]\n",
+      "blanks": 3
+    },
+    {
+      "id": "BP44",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "2\n<class 'int'>\n<class 'tuple'>\n1 2 3\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP45",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "<class 'list'>\n3\n'홍길동 010-1234-5678\\n'\n홍길동 010-1234-5678\n김철수 010-1234-5679\n김영희 010-1234-5680\n",
+      "blanks": 3
+    },
+    {
+      "id": "BP46",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "가 <class 'str'> 1\nb'\\xea\\xb0\\x80' <class 'bytes'> 3\n",
+      "blanks": 3
+    },
+    {
+      "id": "BP47",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[1024, 1024, 452, 0]\n2500\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP48",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "ch5_lab\nTrue\n홍길동 010-1234-5678\n김철수 010-1234-5679\n김영희 010-1234-5680\n\n",
+      "blanks": 3
+    },
+    {
+      "id": "BP49",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "Samsung 85,000\nSamsung\n85,000\n100,000\n",
+      "blanks": 2
+    },
+    {
+      "id": "BP50",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "True\nTrue\nFalse\n",
+      "blanks": 3
+    },
+    {
+      "id": "BP53",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "90.0\n",
+      "blanks": 1
+    },
+    {
+      "id": "BM10",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BM11",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BM14",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BM16",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BM17",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BM35",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BM40",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BFC01",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "'홍길동 010-1234-5678\\n김철'\n''\n",
+      "blanks": 2
+    },
+    {
+      "id": "BFC02",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "'홍길동 010-1234-5678\\n'\n['김철수 010-1234-5679\\n', '김영희 010-1234-5680\\n']\n''\n",
+      "blanks": 3
+    },
+    {
+      "id": "BFC03",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "'A\\n'\n",
+      "blanks": 1
+    },
+    {
+      "id": "BFC05",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "바이트 일치: True\n원본 크기: 3\n복사본 크기: 3\n",
+      "blanks": 3
+    },
+    {
+      "id": "BO01",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "합계: 25.0\n평균: 12.5\n",
+      "blanks": 4
+    },
+    {
+      "id": "BO02",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "섭씨온도: 37.77777777777778\n",
+      "blanks": 1
+    },
+    {
+      "id": "BO03",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "2000 년은 윤년입니다.\n",
+      "blanks": 1
+    },
+    {
+      "id": "BO04",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "4 !은 24 이다.\n",
+      "blanks": 4
+    },
+    {
+      "id": "BO05",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "o84oe7\nuhp10l\nj7uek1\n",
+      "blanks": 2
+    },
+    {
+      "id": "BO06",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "넓이: 314.00\n",
+      "blanks": 3
+    },
+    {
+      "id": "BO07",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "['B', 'D']\n['E', 'F']\n['F', 'E', 'D', 'C', 'B', 'A']\n['A', 'B', 'C', 'D', 'E', 'F']\n",
+      "blanks": 5
+    },
+    {
+      "id": "BO08",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[5000, 200000, 15000, 10000, 20000]\n5\n250000\n",
+      "blanks": 4
+    },
+    {
+      "id": "BO09",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "[70, 95, 80, 95, 60]\n[95, 95, 80, 70, 60]\n[95, 95, 80]\n90.0\n",
+      "blanks": 2
+    },
+    {
+      "id": "BO10",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "['red', 'blue', 'red', 'green']\n4\n['red', 'blue']\n['green', 'red', 'blue', 'red']\nred blue red green\n",
+      "blanks": 3
+    },
+    {
+      "id": "BO11",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "15\n40\n65\n[3, 8, 13]\n8.0\n",
+      "blanks": 4
+    },
+    {
+      "id": "BO12",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "Mina 85.0\n('Mina', 80, 90)\n('Mina', 80, 95)\n",
+      "blanks": 2
+    },
+    {
+      "id": "BO13",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "['Jun', 'Sora']\n['Jin', 'Mina']\n['Ara']\n",
+      "blanks": 3
+    },
+    {
+      "id": "BO14",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "{'pen': 8, 'eraser': 5}\n2\nFalse\n",
+      "blanks": 3
+    },
+    {
+      "id": "BO15",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "하나\n",
+      "blanks": 4
+    },
+    {
+      "id": "BO16",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "one 하나\nfour 등록되지 않은 단어\ntwo 둘\n",
+      "blanks": 1
+    },
+    {
+      "id": "BO17",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "{'red': 3, 'blue': 2, 'green': 1}\n6\n3\n",
+      "blanks": 2
+    },
+    {
+      "id": "BO18",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "1 홍길동 010-1234-5678\n2 김철수 010-1234-5679\n3 김영희 010-1234-5680\n인원: 3\n",
+      "blanks": 2
+    },
+    {
+      "id": "BO19",
+      "kind": "filled-code-execution",
+      "pass": true,
+      "output": "3 90.0\n",
+      "blanks": 2
+    },
+    {
+      "id": "BOP02",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BOP04",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BOP05",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BOP06",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BOP07",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BOP08",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BOP09",
+      "kind": "mc-code-output",
+      "pass": true
+    },
+    {
+      "id": "BOP11",
+      "kind": "mc-code-output",
+      "pass": true
+    }
+  ],
+  "sourceHashes": {
+    "../../../01_강의자료/week01/Untitled.ipynb": "c2738a5e0dd244f8c6dd4ff64830481dcb006eaa4cc408dda206cbc83446fb89",
+    "../../../01_강의자료/ch5_lab/10-07-01.py": "69b84ca65f13b82ebefd191b5e3fae448ed52d88478d71fa379724032b87fdec",
+    "../../../01_강의자료/ch5_lab/verify_files.py": "1af01489b33564594a80358b98ba094ada26fc7483101e22afb7cde954a5f9a6",
+    "../../../01_강의자료/ch5_lab/10:07.py": "e9334b04fd82b0fe6f9dc7f14fdf26105defbe952836eb2cdebd33dab7a19418",
+    "../../../01_강의자료/ch5_lab/10-07-02.py": "0b712b15bef69ece06ee998a20b61062a85d44c41ba98c5bd0ca1f1999a60646",
+    "../../../01_강의자료/260902_Intro.pdf": "dc61cdc28a761ddeafd9d5f039e690f73b0c6ca912c0e9e31796993d679f7453",
+    "../../../01_강의자료/260907_Python&DevelopmentEnvironment_01.pdf": "035dc0bbd25d5e11714dc6c2545f7b7dfdfe4b2e6623601c1b769581ad0e3f71",
+    "../../../01_강의자료/260909_Python&DevelopmentEnvironment_02.pdf": "248ab65cd1fdba5f0f748eabf400905151921e24b917d2d0ec18769d3ecacf92",
+    "../../../01_강의자료/260914_빅데이터프로그래밍.pdf": "1390e0a292b77818fa49aa4d738b465af9210640190e763b28f9db24feeeed93",
+    "../../../01_강의자료/260916_빅데이터프로그래밍.pdf": "a31491519223d3da81ec24fdfda69dae8726edbe32c8002b44b47355d0aa74e7",
+    "../../../01_강의자료/260921_빅데이터프로그래밍.pdf": "444bd025597cf6139815f4eddc0d8c21db63db789ed79ffb7f0da186a8d2fc20",
+    "../../../01_강의자료/260923_빅데이터프로그래밍.pdf": "fcff648be745ad749b7b645e140457d944f3867ae83b4c0d51a99c72561d354f",
+    "../../../01_강의자료/260928_빅데이터프로그래밍.pdf": "0ea58b009d95f781446edfdb07c8cbe2c2715d0642dfff6694b9a5997f1b9a07",
+    "../../../01_강의자료/260930_빅데이터프로그래밍.pdf": "62c8b2b22fadc8ca11e4bf88793456cb51662978e8fa900f009d1c3bc9610519",
+    "../../../01_강의자료/261012_빅데이터프로그래밍.pdf": "b3e751f3dec253b80e1d4ed8fd539c28cbd2d04c34cb4bcb2c9f7f69c2b80500",
+    "../../../01_강의자료/강의계획서.pdf": "1efeee41579039f64be8b239e8c570ea8e232de450632dc4bf1c0ef627d82a35",
+    "../../../01_강의자료/261012_빅데이터프로그래밍_공지.pdf": "9a791f283669c9bb75cd2234eb915cb4a67dfd328c3ba40d210e48938e900eae"
+  },
+  "limits": [
+    "빈칸 복원 코드의 독립 Python 실행. 사용자 Jupyter UI/커널 검증 아님.",
+    "표기 일치 연습이며 실제 교수 정답표/문항 수/단원 비중은 미확보.",
+    "98개 개념군의 대응은 모든 하위 항목의 실제 출제 보장을 뜻하지 않음."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "passed": 10,
+  "checks": [
+    "updated stale-editor task selected",
+    "1440 both old/edited values visible as wrapped conditions",
+    "1440 no page horizontal overflow",
+    "390 both old/edited values visible as wrapped conditions",
+    "390 no page horizontal overflow",
+    "320 both old/edited values visible as wrapped conditions",
+    "320 no page horizontal overflow",
+    "updated clear conditions keep correct85 key",
+    "actual execution still85",
+    "clarified condition and answer survive reload"
+  ]
+}

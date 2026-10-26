@@ -1,0 +1,1595 @@
+[
+  {
+    "id": "BC01",
+    "source": "BIG-004",
+    "pages": [
+      34,
+      35,
+      36
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BC02",
+    "source": "BIG-004",
+    "pages": [
+      43,
+      44,
+      45
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BC03",
+    "source": "BIG-005",
+    "pages": [
+      14,
+      15,
+      16
+    ],
+    "lineCount": 5,
+    "matched": 4,
+    "missing": [
+      "if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):"
+    ]
+  },
+  {
+    "id": "BC04",
+    "source": "BIG-005",
+    "pages": [
+      22,
+      23,
+      24,
+      25
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BC05",
+    "source": "BIG-005",
+    "pages": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BC06",
+    "source": "BIG-005",
+    "pages": [
+      36,
+      37
+    ],
+    "lineCount": 8,
+    "matched": 8,
+    "missing": []
+  },
+  {
+    "id": "BC07",
+    "source": "BIG-006",
+    "pages": [
+      15,
+      16
+    ],
+    "lineCount": 7,
+    "matched": 7,
+    "missing": []
+  },
+  {
+    "id": "BC08",
+    "source": "BIG-006",
+    "pages": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "lineCount": 11,
+    "matched": 11,
+    "missing": []
+  },
+  {
+    "id": "BC09",
+    "source": "BIG-006",
+    "pages": [
+      25,
+      26,
+      27
+    ],
+    "lineCount": 12,
+    "matched": 12,
+    "missing": []
+  },
+  {
+    "id": "BC10",
+    "source": "BIG-006",
+    "pages": [
+      46,
+      47
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BC11",
+    "source": "BIG-007",
+    "pages": [
+      14,
+      15
+    ],
+    "lineCount": 5,
+    "matched": 2,
+    "missing": [
+      "print(stops[1:5:2])",
+      "print(stops[-2:])",
+      "print(stops[::-1])"
+    ]
+  },
+  {
+    "id": "BC12",
+    "source": "BIG-007",
+    "pages": [
+      31,
+      32
+    ],
+    "lineCount": 8,
+    "matched": 4,
+    "missing": [
+      "prices[0] = 5000",
+      "prices.append(15000)",
+      "prices.extend([10000, 20000])",
+      "prices.remove(140000)"
+    ]
+  },
+  {
+    "id": "BC13",
+    "source": "BIG-007",
+    "pages": [
+      33,
+      34
+    ],
+    "lineCount": 7,
+    "matched": 5,
+    "missing": [
+      "ranked = sorted(scores, reverse=True)",
+      "top3 = ranked[:3]"
+    ]
+  },
+  {
+    "id": "BC14",
+    "source": "BIG-007",
+    "pages": [
+      39,
+      40
+    ],
+    "lineCount": 7,
+    "matched": 4,
+    "missing": [
+      "words = sentence.split()",
+      "print(words[:2])",
+      "print(words[::-1])"
+    ]
+  },
+  {
+    "id": "BC15",
+    "source": "BIG-007",
+    "pages": [
+      44,
+      45
+    ],
+    "lineCount": 8,
+    "matched": 6,
+    "missing": [
+      "    print(sum(row))",
+      "math_scores = [s[0][2], s[1][2], s[2][2]]"
+    ]
+  },
+  {
+    "id": "BC16",
+    "source": "BIG-008",
+    "pages": [
+      8,
+      9
+    ],
+    "lineCount": 7,
+    "matched": 5,
+    "missing": [
+      "name, midterm, final = record",
+      "updated = (name, midterm, 95)"
+    ]
+  },
+  {
+    "id": "BC17",
+    "source": "BIG-008",
+    "pages": [
+      17,
+      18
+    ],
+    "lineCount": 5,
+    "matched": 2,
+    "missing": [
+      "print(sorted(registered & attended))",
+      "print(sorted(registered - attended))",
+      "print(sorted(attended - registered))"
+    ]
+  },
+  {
+    "id": "BC18",
+    "source": "BIG-008",
+    "pages": [
+      26,
+      27
+    ],
+    "lineCount": 7,
+    "matched": 4,
+    "missing": [
+      "stock[\"pen\"] = stock[\"pen\"] - 2",
+      "stock[\"eraser\"] = 5",
+      "del stock[\"book\"]"
+    ]
+  },
+  {
+    "id": "BC19",
+    "source": "BIG-008",
+    "pages": [
+      35,
+      36
+    ],
+    "lineCount": 9,
+    "matched": 7,
+    "missing": [
+      "print(original[\"scores\"])",
+      "print(copied[\"scores\"])"
+    ]
+  },
+  {
+    "id": "BC20",
+    "source": "BIG-008",
+    "pages": [
+      37,
+      39,
+      40
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BC21",
+    "source": "BIG-008",
+    "pages": [
+      47,
+      48
+    ],
+    "lineCount": 5,
+    "matched": 4,
+    "missing": [
+      "    meaning = english_dict.get(word, \"등록되지 않은 단어\")"
+    ]
+  },
+  {
+    "id": "BC22",
+    "source": "BIG-008",
+    "pages": [
+      49,
+      50,
+      51
+    ],
+    "lineCount": 8,
+    "matched": 6,
+    "missing": [
+      "    counts[word] = counts.get(word, 0) + 1",
+      "print(counts.get(\"yellow\", 0))"
+    ]
+  },
+  {
+    "id": "BC23",
+    "source": "BIG-019",
+    "pages": [
+      21,
+      22,
+      23
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BC24",
+    "source": "BIG-019",
+    "pages": [
+      24,
+      25,
+      26
+    ],
+    "lineCount": 8,
+    "matched": 1,
+    "missing": [
+      "with open(\"hours.txt\", encoding=\"utf-8\") as infile:",
+      "    for line in infile:",
+      "        name = fields[1]",
+      "        total = 0.0",
+      "        for text in fields[2:]:",
+      "            total += float(text)",
+      "        print(name, f\"{total:.1f}\")"
+    ]
+  },
+  {
+    "id": "BC25",
+    "source": "BIG-019",
+    "pages": [
+      32,
+      33
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BC26",
+    "source": "BIG-019",
+    "pages": [
+      34,
+      35,
+      36
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BC27",
+    "source": "BIG-019",
+    "pages": [
+      38,
+      39,
+      40,
+      41,
+      43
+    ],
+    "lineCount": 7,
+    "matched": 7,
+    "missing": []
+  },
+  {
+    "id": "BC28",
+    "source": "BIG-019",
+    "pages": [
+      44,
+      45,
+      46,
+      47
+    ],
+    "lineCount": 10,
+    "matched": 10,
+    "missing": []
+  },
+  {
+    "id": "BC29",
+    "source": "BIG-006",
+    "pages": [
+      2,
+      3,
+      4
+    ],
+    "lineCount": 7,
+    "matched": 7,
+    "missing": []
+  },
+  {
+    "id": "BC30",
+    "source": "BIG-006",
+    "pages": [
+      18,
+      19
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BC31",
+    "source": "BIG-006",
+    "pages": [
+      35,
+      36,
+      37,
+      38
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BC32",
+    "source": "BIG-006",
+    "pages": [
+      39,
+      40
+    ],
+    "lineCount": 7,
+    "matched": 7,
+    "missing": []
+  },
+  {
+    "id": "BC33",
+    "source": "BIG-005",
+    "pages": [
+      21
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BC34",
+    "source": "BIG-008",
+    "pages": [
+      30,
+      31
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BN8",
+    "source": "BIG-004",
+    "pages": [
+      7,
+      24,
+      25,
+      26,
+      27
+    ],
+    "lineCount": 2,
+    "matched": 2,
+    "missing": []
+  },
+  {
+    "id": "BN9",
+    "source": "BIG-003",
+    "pages": [
+      28,
+      29,
+      30
+    ],
+    "lineCount": 3,
+    "matched": 0,
+    "missing": [
+      "age = input(\"나이: \")",
+      "print(age, type(age))",
+      "print(age + \"1\")"
+    ]
+  },
+  {
+    "id": "BN10",
+    "source": "BIG-004",
+    "pages": [
+      28,
+      29,
+      30,
+      31
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BN11",
+    "source": "BIG-004",
+    "pages": [
+      28,
+      29,
+      30,
+      31
+    ],
+    "lineCount": 2,
+    "matched": 2,
+    "missing": []
+  },
+  {
+    "id": "BL1",
+    "source": "BIG-019",
+    "pages": [
+      24,
+      25,
+      26
+    ],
+    "lineCount": 8,
+    "matched": 1,
+    "missing": [
+      "with open(\"hours.txt\", encoding=\"utf-8\") as f:",
+      "    for line in f:",
+      "        name = fields[1]",
+      "        total = 0.0",
+      "        for text in fields[2:]:",
+      "            total += float(text)",
+      "        print(name, f\"{total:.1f}\")"
+    ]
+  },
+  {
+    "id": "BL2",
+    "source": "BIG-019",
+    "pages": [
+      44,
+      45,
+      46,
+      47
+    ],
+    "lineCount": 11,
+    "matched": 9,
+    "missing": [
+      "        total += float(line)",
+      "average = total / count if count > 0 else 0"
+    ]
+  },
+  {
+    "id": "BL3",
+    "source": "BIG-019",
+    "pages": [
+      21,
+      22,
+      23
+    ],
+    "lineCount": 8,
+    "matched": 5,
+    "missing": [
+      "from pathlib import Path",
+      "with open(Path(__file__).with_name(\"phones.txt\"),",
+      "print(count, \"명\")"
+    ]
+  },
+  {
+    "id": "BN01",
+    "source": "BIG-004",
+    "pages": [
+      17,
+      18
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BN03",
+    "source": "BIG-004",
+    "pages": [
+      19,
+      20,
+      21
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BN06",
+    "source": "BIG-004",
+    "pages": [
+      22,
+      23
+    ],
+    "lineCount": 2,
+    "matched": 1,
+    "missing": [
+      "score = 90"
+    ]
+  },
+  {
+    "id": "BN12",
+    "source": "BIG-004",
+    "pages": [
+      43,
+      44,
+      45
+    ],
+    "lineCount": 3,
+    "matched": 2,
+    "missing": [
+      "ctemp = (ftemp-32)*5/9"
+    ]
+  },
+  {
+    "id": "BN18",
+    "source": "BIG-007",
+    "pages": [
+      14,
+      15
+    ],
+    "lineCount": 5,
+    "matched": 2,
+    "missing": [
+      "print(stops[1:4:2])",
+      "print(stops[-2:])",
+      "print(stops[::-1])"
+    ]
+  },
+  {
+    "id": "BE01",
+    "source": "BIG-003",
+    "pages": [
+      28,
+      29,
+      30
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BE02",
+    "source": "BIG-003",
+    "pages": [
+      31,
+      32
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BE03",
+    "source": "BIG-003",
+    "pages": [
+      33,
+      34,
+      35
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BE04",
+    "source": "BIG-003",
+    "pages": [
+      46,
+      47,
+      48,
+      49
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BE05",
+    "source": "BIG-004",
+    "pages": [
+      41
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BE06",
+    "source": "BIG-004",
+    "pages": [
+      42
+    ],
+    "lineCount": 4,
+    "matched": 2,
+    "missing": [
+      "print(2 + 3 * 4)",
+      "print((2 + 3) * 4)"
+    ]
+  },
+  {
+    "id": "BE07",
+    "source": "BIG-004",
+    "pages": [
+      50,
+      51
+    ],
+    "lineCount": 5,
+    "matched": 4,
+    "missing": [
+      "print(2 ^ 3, 2 ** 3)"
+    ]
+  },
+  {
+    "id": "BE08",
+    "source": "BIG-005",
+    "pages": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BE09",
+    "source": "BIG-005",
+    "pages": [
+      26
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BE10",
+    "source": "BIG-005",
+    "pages": [
+      33,
+      35
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BE11",
+    "source": "BIG-006",
+    "pages": [
+      29,
+      30,
+      31
+    ],
+    "lineCount": 6,
+    "matched": 2,
+    "missing": [
+      "print(rectangle_area())",
+      "print(rectangle_area(10))",
+      "print(rectangle_area(10, 5))",
+      "print(rectangle_area(width=5))"
+    ]
+  },
+  {
+    "id": "BE12",
+    "source": "BIG-007",
+    "pages": [
+      22,
+      23,
+      29,
+      30
+    ],
+    "lineCount": 7,
+    "matched": 1,
+    "missing": [
+      "data = [10, 20, 20, 30]",
+      "data.remove(20)",
+      "print(data)",
+      "taken = data.pop(1)",
+      "print(taken, data)",
+      "print(data)"
+    ]
+  },
+  {
+    "id": "BE13",
+    "source": "BIG-007",
+    "pages": [
+      24,
+      25
+    ],
+    "lineCount": 7,
+    "matched": 0,
+    "missing": [
+      "history = [\"home\", \"search\"]",
+      "history.append(\"detail\")",
+      "print(history)",
+      "last_page = history.pop()",
+      "print(last_page)",
+      "print(history[-1])",
+      "print(history)"
+    ]
+  },
+  {
+    "id": "BE14",
+    "source": "BIG-008",
+    "pages": [
+      28,
+      29,
+      44,
+      46
+    ],
+    "lineCount": 7,
+    "matched": 2,
+    "missing": [
+      "keys_view = d.keys()",
+      "keys_list = list(d.keys())",
+      "d[\"baz\"] = 3",
+      "print(list(keys_view))",
+      "print(keys_list)"
+    ]
+  },
+  {
+    "id": "BE15",
+    "source": "BIG-008",
+    "pages": [
+      2,
+      3,
+      52,
+      53,
+      54
+    ],
+    "lineCount": 11,
+    "matched": 11,
+    "missing": []
+  },
+  {
+    "id": "BE16",
+    "source": "BIG-019",
+    "pages": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BE17",
+    "source": "BIG-019",
+    "pages": [
+      11,
+      12,
+      13,
+      48,
+      49
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BE18",
+    "source": "BIG-019",
+    "pages": [
+      13,
+      14,
+      15,
+      16
+    ],
+    "lineCount": 3,
+    "matched": 0,
+    "missing": [
+      "with open(\"blank.txt\", encoding=\"utf-8\") as f:",
+      "    for i in range(4):",
+      "        print(i + 1, repr(f.readline()))"
+    ]
+  },
+  {
+    "id": "BE19",
+    "source": "BIG-019",
+    "pages": [
+      17,
+      18
+    ],
+    "lineCount": 5,
+    "matched": 0,
+    "missing": [
+      "line = \"  Alice  \\n\"",
+      "print(repr(line))",
+      "print(repr(line.strip()))",
+      "print(repr(line.rstrip()))",
+      "print(repr(line.rstrip(\"\\n\")))"
+    ]
+  },
+  {
+    "id": "BE20",
+    "source": "BIG-019",
+    "pages": [
+      30,
+      31
+    ],
+    "lineCount": 6,
+    "matched": 1,
+    "missing": [
+      "with open(\"joined.txt\", \"w\", encoding=\"utf-8\") as f:",
+      "    n = f.write(\"Hello\")",
+      "print(\"첫 write의 반환값:\", n)",
+      "with open(\"joined.txt\", encoding=\"utf-8\") as f:",
+      "    print(repr(f.read()))"
+    ]
+  },
+  {
+    "id": "BP01",
+    "source": "BIG-004",
+    "pages": [
+      32
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BP02",
+    "source": "BIG-004",
+    "pages": [
+      39,
+      40
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BP04",
+    "source": "BIG-005",
+    "pages": [
+      11,
+      12
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP05",
+    "source": "BIG-005",
+    "pages": [
+      14,
+      15,
+      16
+    ],
+    "lineCount": 6,
+    "matched": 5,
+    "missing": [
+      "is_leap = (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)"
+    ]
+  },
+  {
+    "id": "BP06",
+    "source": "BIG-006",
+    "pages": [
+      7,
+      8
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BP07",
+    "source": "BIG-006",
+    "pages": [
+      10,
+      11
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BP08",
+    "source": "BIG-006",
+    "pages": [
+      9,
+      12,
+      17
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP09",
+    "source": "BIG-006",
+    "pages": [
+      13
+    ],
+    "lineCount": 10,
+    "matched": 10,
+    "missing": []
+  },
+  {
+    "id": "BP10",
+    "source": "BIG-006",
+    "pages": [
+      14
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BP11",
+    "source": "BIG-006",
+    "pages": [
+      30,
+      31
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP12",
+    "source": "BIG-006",
+    "pages": [
+      35
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BP13",
+    "source": "BIG-006",
+    "pages": [
+      41
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP14",
+    "source": "BIG-006",
+    "pages": [
+      44,
+      45
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BP15",
+    "source": "BIG-007",
+    "pages": [
+      18,
+      19
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BP16",
+    "source": "BIG-007",
+    "pages": [
+      20,
+      21
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BP17",
+    "source": "BIG-007",
+    "pages": [
+      24
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP18",
+    "source": "BIG-007",
+    "pages": [
+      26,
+      27,
+      28
+    ],
+    "lineCount": 2,
+    "matched": 2,
+    "missing": []
+  },
+  {
+    "id": "BP19",
+    "source": "BIG-007",
+    "pages": [
+      29,
+      30
+    ],
+    "lineCount": 8,
+    "matched": 8,
+    "missing": []
+  },
+  {
+    "id": "BP20",
+    "source": "BIG-007",
+    "pages": [
+      35,
+      36
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BP21",
+    "source": "BIG-007",
+    "pages": [
+      37,
+      38
+    ],
+    "lineCount": 8,
+    "matched": 8,
+    "missing": []
+  },
+  {
+    "id": "BP22",
+    "source": "BIG-008",
+    "pages": [
+      12,
+      13
+    ],
+    "lineCount": 8,
+    "matched": 8,
+    "missing": []
+  },
+  {
+    "id": "BP23",
+    "source": "BIG-008",
+    "pages": [
+      19,
+      23,
+      24,
+      25
+    ],
+    "lineCount": 7,
+    "matched": 7,
+    "missing": []
+  },
+  {
+    "id": "BP24",
+    "source": "BIG-008",
+    "pages": [
+      28,
+      29
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BP25",
+    "source": "BIG-008",
+    "pages": [
+      32
+    ],
+    "lineCount": 8,
+    "matched": 8,
+    "missing": []
+  },
+  {
+    "id": "BP26",
+    "source": "BIG-008",
+    "pages": [
+      44,
+      46
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BP27",
+    "source": "BIG-008",
+    "pages": [
+      45,
+      46
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BP28",
+    "source": "BIG-019",
+    "pages": [
+      17
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BP29",
+    "source": "BIG-019",
+    "pages": [
+      19
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BP30",
+    "source": "BIG-019",
+    "pages": [
+      27,
+      28
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BP31",
+    "source": "BIG-019",
+    "pages": [
+      30,
+      31
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BP32",
+    "source": "BIG-003",
+    "pages": [
+      24,
+      26
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BP33",
+    "source": "BIG-003",
+    "pages": [
+      27
+    ],
+    "lineCount": 8,
+    "matched": 8,
+    "missing": []
+  },
+  {
+    "id": "BP34",
+    "source": "BIG-003",
+    "pages": [
+      30
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP35",
+    "source": "BIG-003",
+    "pages": [
+      39
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BP36",
+    "source": "BIG-003",
+    "pages": [
+      45,
+      46
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BP37",
+    "source": "BIG-005",
+    "pages": [
+      5,
+      6
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP38",
+    "source": "BIG-005",
+    "pages": [
+      34,
+      35
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP39",
+    "source": "BIG-007",
+    "pages": [
+      5,
+      6
+    ],
+    "lineCount": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "id": "BP40",
+    "source": "BIG-007",
+    "pages": [
+      7,
+      8,
+      9
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BP41",
+    "source": "BIG-007",
+    "pages": [
+      10,
+      11
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP42",
+    "source": "BIG-007",
+    "pages": [
+      16,
+      17
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP43",
+    "source": "BIG-007",
+    "pages": [
+      41,
+      42,
+      43
+    ],
+    "lineCount": 9,
+    "matched": 7,
+    "missing": [
+      "for row in s:",
+      "    print(row)"
+    ]
+  },
+  {
+    "id": "BP44",
+    "source": "BIG-008",
+    "pages": [
+      4,
+      5
+    ],
+    "lineCount": 8,
+    "matched": 8,
+    "missing": []
+  },
+  {
+    "id": "BP45",
+    "source": "BIG-019",
+    "pages": [
+      16
+    ],
+    "lineCount": 7,
+    "matched": 0,
+    "missing": [
+      "with open(\"phones.txt\", encoding=\"utf-8\") as infile:",
+      "    lines = infile.readlines()",
+      "print(type(lines))",
+      "print(len(lines))",
+      "print(repr(lines[0]))",
+      "for line in lines:",
+      "    print(line, end=\"\")"
+    ]
+  },
+  {
+    "id": "BP46",
+    "source": "BIG-019",
+    "pages": [
+      37
+    ],
+    "lineCount": 6,
+    "matched": 0,
+    "missing": [
+      "with open(\"korean.txt\", encoding=\"utf-8\") as f:",
+      "    text = f.read()",
+      "with open(\"korean.txt\", \"rb\") as f:",
+      "    data = f.read()",
+      "print(text, type(text), len(text))",
+      "print(data, type(data), len(data))"
+    ]
+  },
+  {
+    "id": "BP47",
+    "source": "BIG-019",
+    "pages": [
+      40,
+      41
+    ],
+    "lineCount": 9,
+    "matched": 0,
+    "missing": [
+      "sizes = []",
+      "with open(\"sample.bin\", \"rb\") as f:",
+      "    while True:",
+      "        block = f.read(1024)",
+      "        sizes.append(len(block))",
+      "        if not block:",
+      "            break",
+      "print(sizes)",
+      "print(sum(sizes))"
+    ]
+  },
+  {
+    "id": "BP48",
+    "source": "BIG-019",
+    "pages": [
+      9
+    ],
+    "lineCount": 4,
+    "matched": 0,
+    "missing": [
+      "from pathlib import Path",
+      "print(Path.cwd().name)",
+      "print(Path(\"phones.txt\").exists())",
+      "print(Path(\"phones.txt\").read_text(encoding=\"utf-8\"))"
+    ]
+  },
+  {
+    "id": "BP49",
+    "source": "BIG-006",
+    "pages": [
+      42,
+      43
+    ],
+    "lineCount": 7,
+    "matched": 7,
+    "missing": []
+  },
+  {
+    "id": "BP50",
+    "source": "BIG-003",
+    "pages": [
+      48,
+      49
+    ],
+    "lineCount": 5,
+    "matched": 5,
+    "missing": []
+  },
+  {
+    "id": "BP51",
+    "source": "BIG-005",
+    "pages": [
+      26
+    ],
+    "lineCount": 2,
+    "matched": 2,
+    "missing": []
+  },
+  {
+    "id": "BP52",
+    "source": "BIG-008",
+    "pages": [
+      19,
+      20
+    ],
+    "lineCount": 4,
+    "matched": 4,
+    "missing": []
+  },
+  {
+    "id": "BP53",
+    "source": "BIG-019",
+    "pages": [
+      3,
+      4
+    ],
+    "lineCount": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "id": "BFC01",
+    "source": "BIG-019",
+    "pages": [
+      11,
+      13,
+      14
+    ],
+    "lineCount": 4,
+    "matched": 0,
+    "missing": [
+      "with open(\"phones.txt\", encoding=\"utf-8\") as infile:",
+      "    text = infile.read()",
+      "    print(repr(text[:20]))",
+      "    print(repr(infile.read()))"
+    ]
+  },
+  {
+    "id": "BFC02",
+    "source": "BIG-019",
+    "pages": [
+      13,
+      15,
+      16
+    ],
+    "lineCount": 7,
+    "matched": 0,
+    "missing": [
+      "with open(\"phones.txt\", encoding=\"utf-8\") as infile:",
+      "    first = infile.readline()",
+      "    remaining = infile.readlines()",
+      "    end = infile.read()",
+      "print(repr(first))",
+      "print(remaining)",
+      "print(repr(end))"
+    ]
+  },
+  {
+    "id": "BFC03",
+    "source": "BIG-019",
+    "pages": [
+      11,
+      12,
+      48,
+      49
+    ],
+    "lineCount": 5,
+    "matched": 3,
+    "missing": [
+      "    text = f.read()",
+      "    f.seek(0)"
+    ]
+  },
+  {
+    "id": "BFC04",
+    "source": "BIG-019",
+    "pages": [
+      24,
+      25,
+      26
+    ],
+    "lineCount": 8,
+    "matched": 1,
+    "missing": [
+      "with open(\"hours.txt\", encoding=\"utf-8\") as infile:",
+      "    for line in infile:",
+      "        name = fields[1]",
+      "        total = 0.0",
+      "        for text in fields[2:]:",
+      "            total += float(text)",
+      "        print(name, f\"{total:.1f}\")"
+    ]
+  },
+  {
+    "id": "BFC05",
+    "source": "BIG-019",
+    "pages": [
+      42,
+      43
+    ],
+    "lineCount": 7,
+    "matched": 0,
+    "missing": [
+      "with open(\"bytes_left.txt\", \"rb\") as f:",
+      "    original = f.read()",
+      "with open(\"bytes_same.txt\", \"rb\") as f:",
+      "    copied = f.read()",
+      "print(\"바이트 일치:\", original == copied)",
+      "print(\"원본 크기:\", len(original))",
+      "print(\"복사본 크기:\", len(copied))"
+    ]
+  }
+]

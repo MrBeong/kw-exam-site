@@ -1,0 +1,175 @@
+{
+  "date": "2026-10-25",
+  "passed": true,
+  "checks": [
+    {
+      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md new section unique",
+      "passed": true
+    },
+    {
+      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md full new criteria present",
+      "passed": true
+    },
+    {
+      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md previous content and local links preserved",
+      "passed": true
+    },
+    {
+      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md top entry points to new criteria",
+      "passed": true
+    },
+    {
+      "check": "로컬 자료 경로",
+      "passed": true
+    },
+    {
+      "check": "로컬 자료 경로",
+      "passed": true
+    },
+    {
+      "check": "로컬 자료 경로",
+      "passed": true
+    },
+    {
+      "check": "로컬 자료 경로",
+      "passed": true
+    },
+    {
+      "check": "03_ new criteria identical in root/mirror",
+      "passed": true
+    },
+    {
+      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md new section unique",
+      "passed": true
+    },
+    {
+      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md full new criteria present",
+      "passed": true
+    },
+    {
+      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md previous content and local links preserved",
+      "passed": true
+    },
+    {
+      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md top entry points to new criteria",
+      "passed": true
+    },
+    {
+      "check": "로컬 자료 경로",
+      "passed": true
+    },
+    {
+      "check": "로컬 자료 경로",
+      "passed": true
+    },
+    {
+      "check": "로컬 자료 경로",
+      "passed": true
+    },
+    {
+      "check": "로컬 자료 경로",
+      "passed": true
+    },
+    {
+      "check": "02_ new criteria identical in root/mirror",
+      "passed": true
+    },
+    {
+      "check": "18.1–18.6 inserted inside existing18 before19",
+      "passed": true
+    },
+    {
+      "check": "필수/선택 시간 경로",
+      "passed": true
+    },
+    {
+      "check": "하위 예제/강조 의미 대조",
+      "passed": true
+    },
+    {
+      "check": "실제 유형과 원문 빈칸 구분",
+      "passed": true
+    },
+    {
+      "check": "완결된 코드/필수 조건",
+      "passed": true
+    },
+    {
+      "check": "독립 실행과 오류/파일/난수",
+      "passed": true
+    },
+    {
+      "check": "실제 출력/동일창 해설",
+      "passed": true
+    },
+    {
+      "check": "선택 상위 접힘/인쇄/보존",
+      "passed": true
+    },
+    {
+      "check": "다음 과목 적용/미확인 구분",
+      "passed": true
+    },
+    {
+      "check": "../../../../study-standards/03_시험대비_개념정리_및_문제출제_표준가이드.md new cross-reference valid",
+      "passed": true
+    },
+    {
+      "check": "../../../../study-standards/02_시험대비_웹디자인_표준가이드.md new cross-reference valid",
+      "passed": true
+    },
+    {
+      "check": "로컬 자료 경로",
+      "passed": true
+    },
+    {
+      "check": "로컬 자료 경로",
+      "passed": true
+    }
+  ],
+  "criteria": {
+    "필수/선택 시간 경로": [
+      "필수 경로",
+      "선택 영역",
+      "권장 복습 경로"
+    ],
+    "하위 예제/강조 의미 대조": [
+      "하위 예제",
+      "독립적으로 물을 수 있는 판단",
+      "태그·개념 수"
+    ],
+    "실제 유형과 원문 빈칸 구분": [
+      "보기를 빼면 출력 단답",
+      "원문 빈칸과 예제 기반",
+      "해당 과목의 공지"
+    ],
+    "완결된 코드/필수 조건": [
+      "문법·들여쓰기",
+      "정답 열람 전에",
+      "필요한 import/호출"
+    ],
+    "독립 실행과 오류/파일/난수": [
+      "독립 기대값",
+      "최초 오류",
+      "읽기 횟수/기록 횟수",
+      "난수는 허용 후보"
+    ],
+    "실제 출력/동일창 해설": [
+      "학생 화면에 결과·설명이 없으면 미완료",
+      "출력 없음",
+      "같은 창"
+    ],
+    "선택 상위 접힘/인쇄/보존": [
+      "상위 접힘",
+      "인쇄 후",
+      "별도 검수 프로필",
+      "답안·초안"
+    ],
+    "다음 과목 적용/미확인 구분": [
+      "할당량이 아니다",
+      "확인하지 못한 범위",
+      "GitHub 게시 완료로 보고하지 않는다"
+    ]
+  },
+  "scope": "기존 제작/디자인MD와 로컬 사본의 새 압축본 기준 및 이전 내용 보존·링크 검수. 앱/문제 실행을 새로 검증한 작업은 아니다."
+}

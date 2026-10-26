@@ -1,0 +1,878 @@
+{
+  "date": "2026-10-25",
+  "browser": "Chromium",
+  "passed": true,
+  "checks": 256,
+  "nativeWheelCases": 72,
+  "finalCss": {
+    "x": "contain",
+    "y": "auto"
+  },
+  "failures": [],
+  "motions": [
+    {
+      "label": "1440px BP43 .goal",
+      "selector": ".goal",
+      "before": 34,
+      "after": 214,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": "task-output"
+      }
+    },
+    {
+      "label": "1440px BP43 .task-requirements",
+      "selector": ".task-requirements",
+      "before": 0,
+      "after": 180,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "P",
+        "cls": "task-requirements"
+      }
+    },
+    {
+      "label": "1440px BP43 .task-output",
+      "selector": ".task-output",
+      "before": 85,
+      "after": 265,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": "task-output"
+      }
+    },
+    {
+      "label": "1440px BP43 .code-head",
+      "selector": ".code-head",
+      "before": 237.5,
+      "after": 412.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "DIV",
+        "cls": "code-head"
+      }
+    },
+    {
+      "label": "1440px BP43 .code-scroll",
+      "selector": ".code-scroll",
+      "before": 407,
+      "after": 227,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "line-no"
+      }
+    },
+    {
+      "label": "1440px BP43 .blank",
+      "selector": ".blank",
+      "before": 373.5,
+      "after": 412.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "INPUT",
+        "cls": "blank"
+      }
+    },
+    {
+      "label": "1440px BP43 #card",
+      "selector": "#card",
+      "before": 412.5,
+      "after": 232.5,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "MAIN",
+        "cls": ""
+      }
+    },
+    {
+      "label": "1440px focused draft input",
+      "selector": ".blank",
+      "before": 141,
+      "after": 321,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "INPUT",
+        "cls": "blank"
+      }
+    },
+    {
+      "label": "1440px horizontal start vertical",
+      "selector": ".code-scroll",
+      "before": 407,
+      "after": 227,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "line-no"
+      }
+    },
+    {
+      "label": "1440px horizontal end vertical",
+      "selector": ".code-scroll",
+      "before": 407,
+      "after": 227,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "line-no"
+      }
+    },
+    {
+      "label": "1440px BP43 explanation .answer-row",
+      "selector": ".answer-row",
+      "before": 902.5,
+      "after": 1082.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "1440px BP43 explanation .solution",
+      "selector": ".solution",
+      "before": 2641.5,
+      "after": 2821.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "CODE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "1440px BP43 explanation .statement-list li",
+      "selector": ".statement-list li",
+      "before": 2013.5,
+      "after": 2193.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "LI",
+        "cls": ""
+      }
+    },
+    {
+      "label": "1440px BP43 explanation .verified-output",
+      "selector": ".verified-output",
+      "before": 4292.5,
+      "after": 4359.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": "verified-output"
+      }
+    },
+    {
+      "label": "1440px file .file summary",
+      "selector": ".file summary",
+      "before": 166,
+      "after": 346,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SUMMARY",
+        "cls": ""
+      }
+    },
+    {
+      "label": "1440px file .file pre",
+      "selector": ".file pre",
+      "before": 219,
+      "after": 399,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "1440px reference .reference-scroll",
+      "selector": ".reference-scroll",
+      "before": 105.5,
+      "after": 285.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "TD",
+        "cls": ""
+      }
+    },
+    {
+      "label": "1440px reference .reference-table td",
+      "selector": ".reference-table td",
+      "before": 76.5,
+      "after": 256.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "TD",
+        "cls": ""
+      }
+    },
+    {
+      "label": "1440px MC .choice",
+      "selector": ".choice",
+      "before": 319.5,
+      "after": 499.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "opt-exp"
+      }
+    },
+    {
+      "label": "1440px MC .opt-exp",
+      "selector": ".opt-exp",
+      "before": 336.5,
+      "after": 516.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "opt-exp"
+      }
+    },
+    {
+      "label": "1440px MC .option-detail",
+      "selector": ".option-detail",
+      "before": 355.5,
+      "after": 535.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "option-detail"
+      }
+    },
+    {
+      "label": "1440px MC .reasoning li",
+      "selector": ".reasoning li",
+      "before": 1113.5,
+      "after": 1293.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "LI",
+        "cls": ""
+      }
+    },
+    {
+      "label": "1440px short #short",
+      "selector": "#short",
+      "before": 0,
+      "after": 153.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "INPUT",
+        "cls": "short"
+      }
+    },
+    {
+      "label": "1440px short .solution",
+      "selector": ".solution",
+      "before": 153.5,
+      "after": 0,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "SECTION",
+        "cls": "solution"
+      }
+    },
+    {
+      "label": "390px BP43 .goal",
+      "selector": ".goal",
+      "before": 8,
+      "after": 188,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": "task-output"
+      }
+    },
+    {
+      "label": "390px BP43 .task-requirements",
+      "selector": ".task-requirements",
+      "before": 0,
+      "after": 180,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "P",
+        "cls": "task-requirements"
+      }
+    },
+    {
+      "label": "390px BP43 .task-output",
+      "selector": ".task-output",
+      "before": 62,
+      "after": 242,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": "task-output"
+      }
+    },
+    {
+      "label": "390px BP43 .code-head",
+      "selector": ".code-head",
+      "before": 233.5,
+      "after": 380.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "DIV",
+        "cls": "code-head"
+      }
+    },
+    {
+      "label": "390px BP43 .code-scroll",
+      "selector": ".code-scroll",
+      "before": 380.5,
+      "after": 200.5,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "code-line"
+      }
+    },
+    {
+      "label": "390px BP43 .blank",
+      "selector": ".blank",
+      "before": 366,
+      "after": 186,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "INPUT",
+        "cls": "blank"
+      }
+    },
+    {
+      "label": "390px BP43 #card",
+      "selector": "#card",
+      "before": 186,
+      "after": 366,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "MAIN",
+        "cls": ""
+      }
+    },
+    {
+      "label": "390px focused draft input",
+      "selector": ".blank",
+      "before": 0,
+      "after": 180,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "INPUT",
+        "cls": "blank"
+      }
+    },
+    {
+      "label": "390px horizontal start vertical",
+      "selector": ".code-scroll",
+      "before": 380.5,
+      "after": 200.5,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "code-line"
+      }
+    },
+    {
+      "label": "390px horizontal end vertical",
+      "selector": ".code-scroll",
+      "before": 380.5,
+      "after": 200.5,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "code-line"
+      }
+    },
+    {
+      "label": "390px BP43 explanation .answer-row",
+      "selector": ".answer-row",
+      "before": 931,
+      "after": 1111,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "390px BP43 explanation .solution",
+      "selector": ".solution",
+      "before": 2918,
+      "after": 3098,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "390px BP43 explanation .statement-list li",
+      "selector": ".statement-list li",
+      "before": 2228,
+      "after": 2408,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "LI",
+        "cls": ""
+      }
+    },
+    {
+      "label": "390px BP43 explanation .verified-output",
+      "selector": ".verified-output",
+      "before": 4758.5,
+      "after": 4845,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": "verified-output"
+      }
+    },
+    {
+      "label": "390px file .file summary",
+      "selector": ".file summary",
+      "before": 136,
+      "after": 316,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SUMMARY",
+        "cls": ""
+      }
+    },
+    {
+      "label": "390px file .file pre",
+      "selector": ".file pre",
+      "before": 189.5,
+      "after": 369.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "390px reference .reference-scroll",
+      "selector": ".reference-scroll",
+      "before": 124.5,
+      "after": 290.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "CODE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "390px reference .reference-table td",
+      "selector": ".reference-table td",
+      "before": 95.5,
+      "after": 275.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "CODE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "390px MC .choice",
+      "selector": ".choice",
+      "before": 391,
+      "after": 571,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "option-detail"
+      }
+    },
+    {
+      "label": "390px MC .opt-exp",
+      "selector": ".opt-exp",
+      "before": 407,
+      "after": 587,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "option-detail"
+      }
+    },
+    {
+      "label": "390px MC .option-detail",
+      "selector": ".option-detail",
+      "before": 426,
+      "after": 606,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "option-detail"
+      }
+    },
+    {
+      "label": "390px MC .reasoning li",
+      "selector": ".reasoning li",
+      "before": 1436,
+      "after": 1616,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "LI",
+        "cls": ""
+      }
+    },
+    {
+      "label": "390px short #short",
+      "selector": "#short",
+      "before": 0,
+      "after": 180,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "INPUT",
+        "cls": "short"
+      }
+    },
+    {
+      "label": "390px short .solution",
+      "selector": ".solution",
+      "before": 261.5,
+      "after": 81.5,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "H3",
+        "cls": ""
+      }
+    },
+    {
+      "label": "320px BP43 .goal",
+      "selector": ".goal",
+      "before": 82,
+      "after": 262,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": "task-output"
+      }
+    },
+    {
+      "label": "320px BP43 .task-requirements",
+      "selector": ".task-requirements",
+      "before": 0,
+      "after": 180,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "P",
+        "cls": "task-requirements"
+      }
+    },
+    {
+      "label": "320px BP43 .task-output",
+      "selector": ".task-output",
+      "before": 139.5,
+      "after": 319.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": "task-output"
+      }
+    },
+    {
+      "label": "320px BP43 .code-head",
+      "selector": ".code-head",
+      "before": 329.5,
+      "after": 509.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "DIV",
+        "cls": "code-head"
+      }
+    },
+    {
+      "label": "320px BP43 .code-scroll",
+      "selector": ".code-scroll",
+      "before": 503.5,
+      "after": 562,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "code-line"
+      }
+    },
+    {
+      "label": "320px BP43 .blank",
+      "selector": ".blank",
+      "before": 462,
+      "after": 562,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "INPUT",
+        "cls": "blank"
+      }
+    },
+    {
+      "label": "320px BP43 #card",
+      "selector": "#card",
+      "before": 562,
+      "after": 382,
+      "direction": "up",
+      "pointer": {
+        "match": true,
+        "tag": "MAIN",
+        "cls": ""
+      }
+    },
+    {
+      "label": "320px focused draft input",
+      "selector": ".blank",
+      "before": 80,
+      "after": 260,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "INPUT",
+        "cls": "blank"
+      }
+    },
+    {
+      "label": "320px horizontal start vertical",
+      "selector": ".code-scroll",
+      "before": 503.5,
+      "after": 562,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "code-line"
+      }
+    },
+    {
+      "label": "320px horizontal end vertical",
+      "selector": ".code-scroll",
+      "before": 503.5,
+      "after": 562,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "INPUT",
+        "cls": "blank"
+      }
+    },
+    {
+      "label": "320px BP43 explanation .answer-row",
+      "selector": ".answer-row",
+      "before": 1071.5,
+      "after": 1251.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "CODE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "320px BP43 explanation .solution",
+      "selector": ".solution",
+      "before": 3232.5,
+      "after": 3412.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "320px BP43 explanation .statement-list li",
+      "selector": ".statement-list li",
+      "before": 2416,
+      "after": 2596,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "LI",
+        "cls": ""
+      }
+    },
+    {
+      "label": "320px BP43 explanation .verified-output",
+      "selector": ".verified-output",
+      "before": 5241,
+      "after": 5396,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": "verified-output"
+      }
+    },
+    {
+      "label": "320px file .file summary",
+      "selector": ".file summary",
+      "before": 257.5,
+      "after": 437.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SUMMARY",
+        "cls": ""
+      }
+    },
+    {
+      "label": "320px file .file pre",
+      "selector": ".file pre",
+      "before": 311,
+      "after": 491,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "PRE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "320px reference .reference-scroll",
+      "selector": ".reference-scroll",
+      "before": 211.5,
+      "after": 391.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "TD",
+        "cls": ""
+      }
+    },
+    {
+      "label": "320px reference .reference-table td",
+      "selector": ".reference-table td",
+      "before": 182.5,
+      "after": 362.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "CODE",
+        "cls": ""
+      }
+    },
+    {
+      "label": "320px MC .choice",
+      "selector": ".choice",
+      "before": 500.5,
+      "after": 680.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "option-detail"
+      }
+    },
+    {
+      "label": "320px MC .opt-exp",
+      "selector": ".opt-exp",
+      "before": 517,
+      "after": 697,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "option-detail"
+      }
+    },
+    {
+      "label": "320px MC .option-detail",
+      "selector": ".option-detail",
+      "before": 547,
+      "after": 727,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SPAN",
+        "cls": "option-detail"
+      }
+    },
+    {
+      "label": "320px MC .reasoning li",
+      "selector": ".reasoning li",
+      "before": 1629.5,
+      "after": 1809.5,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "LI",
+        "cls": ""
+      }
+    },
+    {
+      "label": "320px short #short",
+      "selector": "#short",
+      "before": 0,
+      "after": 180,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "INPUT",
+        "cls": "short"
+      }
+    },
+    {
+      "label": "320px short .solution",
+      "selector": ".solution",
+      "before": 390.5,
+      "after": 437,
+      "direction": "down",
+      "pointer": {
+        "match": true,
+        "tag": "SECTION",
+        "cls": "reasoning"
+      }
+    }
+  ]
+}

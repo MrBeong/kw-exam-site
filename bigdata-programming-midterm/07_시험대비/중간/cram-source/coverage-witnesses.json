@@ -1,0 +1,647 @@
+{
+  "conceptWitnesses": {
+    "BD-001": [
+      "Interpreter",
+      "python hello.py"
+    ],
+    "BD-002": [
+      "커널",
+      "Shift+Enter"
+    ],
+    "BD-003": [
+      "자동 표시",
+      "일반 .py"
+    ],
+    "BD-004": [
+      "커널 재시작",
+      "NameError"
+    ],
+    "BD-005": [
+      "sep",
+      "end"
+    ],
+    "BD-006": [
+      "docstring",
+      "문자열 안#"
+    ],
+    "BD-007": [
+      "SyntaxError",
+      "문법 분석"
+    ],
+    "BD-008": [
+      "TypeError",
+      "Hi3"
+    ],
+    "BD-009": [
+      "ZeroDivisionError",
+      "분모0"
+    ],
+    "BD-010": [
+      "NameError",
+      "정의하지 않은"
+    ],
+    "BD-011": [
+      "Traceback",
+      "중단 뒤"
+    ],
+    "BD-012": [
+      "오른쪽",
+      "연결"
+    ],
+    "BD-013": [
+      "자동 재계산되지"
+    ],
+    "BD-014": [
+      "int",
+      "str",
+      "bool"
+    ],
+    "BD-015": [
+      "Dynamic Typing",
+      "자동 형변환"
+    ],
+    "BD-016": [
+      "변경 전",
+      "3,3"
+    ],
+    "BD-017": [
+      "Keywords",
+      "keyword.iskeyword"
+    ],
+    "BD-018": [
+      "=는 대입",
+      "==는 비교"
+    ],
+    "BD-019": [
+      "0 or 5",
+      "단축 평가"
+    ],
+    "BD-020": [
+      "계산 당시"
+    ],
+    "BD-021": [
+      "input 자체의 반환은 str",
+      "안내 문구"
+    ],
+    "BD-022": [
+      "int(\"20.5\")",
+      "ValueError"
+    ],
+    "BD-023": [
+      "total / 2",
+      "평균이 아니다"
+    ],
+    "BD-024": [
+      "몫·나머지",
+      "검산"
+    ],
+    "BD-025": [
+      "int(-1.75)",
+      "내림"
+    ],
+    "BD-026": [
+      "512",
+      "오른쪽부터"
+    ],
+    "BD-027": [
+      "ftemp - 32.0",
+      "212"
+    ],
+    "BD-028": [
+      "\"Py\" in \"Python\"",
+      "경계"
+    ],
+    "BD-029": [
+      "0b1101",
+      "XOR"
+    ],
+    "BD-030": [
+      "들여쓰기",
+      "범위"
+    ],
+    "BD-031": [
+      "59·60·61",
+      "else"
+    ],
+    "BD-032": [
+      "독립 if",
+      "경로 하나"
+    ],
+    "BD-033": [
+      "1900",
+      "2000",
+      "400"
+    ],
+    "BD-034": [
+      "진입 전 검사",
+      "1024"
+    ],
+    "BD-035": [
+      "total=6",
+      "i를4"
+    ],
+    "BD-036": [
+      "(48,18)",
+      "답은x=6"
+    ],
+    "BD-037": [
+      "for letter",
+      "반복 변수를"
+    ],
+    "BD-038": [
+      "끝 제외",
+      "빈 범위"
+    ],
+    "BD-039": [
+      "fact * i",
+      "초기값1"
+    ],
+    "BD-040": [
+      "가장 가까운 반복",
+      "프로그램 전체"
+    ],
+    "BD-041": [
+      "12 6",
+      "continue"
+    ],
+    "BD-042": [
+      "Built-in Functions",
+      "모듈 함수"
+    ],
+    "BD-043": [
+      "공백32",
+      "최대w"
+    ],
+    "BD-044": [
+      "random.randrange(1,7)",
+      "1~6"
+    ],
+    "BD-045": [
+      "정의만 실행",
+      "호출 때"
+    ],
+    "BD-046": [
+      "매개변수(parameter)",
+      "인수(argument)"
+    ],
+    "BD-047": [
+      "result에는None",
+      "화면에는10"
+    ],
+    "BD-048": [
+      "100",
+      "첫 반복 안",
+      "y=0"
+    ],
+    "BD-049": [
+      "후보36개",
+      "호출마다"
+    ],
+    "BD-050": [
+      "새 리스트",
+      "바깥 리스트"
+    ],
+    "BD-051": [
+      "(width=5)=10",
+      "중복 전달"
+    ],
+    "BD-052": [
+      "지역",
+      "result",
+      "NameError"
+    ],
+    "BD-053": [
+      "전역 읽기",
+      "global area"
+    ],
+    "BD-054": [
+      "튜플 하나",
+      "해체"
+    ],
+    "BD-055": [
+      "format(company_name,price=50000)",
+      "자동 갱신"
+    ],
+    "BD-056": [
+      ":.2f",
+      "314.0",
+      "최소 너비"
+    ],
+    "BD-057": [
+      "len([1,[2,3]])",
+      "바깥 원소2개"
+    ],
+    "BD-058": [
+      "[6]은IndexError",
+      "[0:1]"
+    ],
+    "BD-059": [
+      "끝 제외",
+      "원본은 유지"
+    ],
+    "BD-060": [
+      "원소별 산술이 아니다",
+      "포함 검사"
+    ],
+    "BD-061": [
+      "insert 반환값은 None",
+      "원소 교체"
+    ],
+    "BD-062": [
+      "append([3,4])",
+      "길이4"
+    ],
+    "BD-063": [
+      "첫 일치 값",
+      "제거값 반환"
+    ],
+    "BD-064": [
+      "원본 역순",
+      "그 이전 방문"
+    ],
+    "BD-065": [
+      "key=abs",
+      "부호"
+    ],
+    "BD-066": [
+      "바뀐 목록",
+      "None"
+    ],
+    "BD-067": [
+      "word[0]=\"J\"",
+      "새 문자열"
+    ],
+    "BD-068": [
+      "공백류",
+      "구두점",
+      "단어 리스트 역순"
+    ],
+    "BD-069": [
+      "len(s)=3행",
+      "s[1][2]"
+    ],
+    "BD-070": [
+      "[3,8,13]",
+      "평균8.0"
+    ],
+    "BD-071": [
+      "(80,)",
+      "원소 대입",
+      "안쪽에 리스트"
+    ],
+    "BD-072": [
+      "빈 집합 set()",
+      "순서"
+    ],
+    "BD-073": [
+      "미참석 신청자",
+      "합집합",
+      "차집합"
+    ],
+    "BD-074": [
+      "정수1",
+      "문자열\"1\""
+    ],
+    "BD-075": [
+      "삽입 순서",
+      "삭제 후 새로 추가"
+    ],
+    "BD-076": [
+      "d[k]=v",
+      "del d[k]"
+    ],
+    "BD-077": [
+      "뷰",
+      "그 시점의 별도 목록"
+    ],
+    "BD-078": [
+      "이름·번호를 따로 정렬",
+      "phone_book[key]"
+    ],
+    "BD-079": [
+      "[80,90,100]",
+      "재연결"
+    ],
+    "BD-080": [
+      "english_dict[word]",
+      "리터럴 키"
+    ],
+    "BD-081": [
+      "get은 추가하지 않는다",
+      "저장값0"
+    ],
+    "BD-082": [
+      "counts.get(word, 0) + 1",
+      "종류3"
+    ],
+    "BD-083": [
+      "자동 정렬",
+      "키→값"
+    ],
+    "BD-084": [
+      "UTF-8 바이트 길이3",
+      "화면 print와 파일 저장"
+    ],
+    "BD-085": [
+      "현재 작업 폴더",
+      "Path.cwd()"
+    ],
+    "BD-086": [
+      "여는 순간 기존 내용",
+      "FileExistsError",
+      "파일 객체"
+    ],
+    "BD-087": [
+      "파일 위치를 되돌리지",
+      "seek(0)"
+    ],
+    "BD-088": [
+      "남은 줄들의 list",
+      "여러 줄이어도 str"
+    ],
+    "BD-089": [
+      "rstrip",
+      "repr",
+      "새 문자열"
+    ],
+    "BD-090": [
+      "f.closed=True",
+      "text는 출력"
+    ],
+    "BD-091": [
+      "줄 번호 count",
+      "반복 전에"
+    ],
+    "BD-092": [
+      "fields[2:]",
+      "사람 반복 안",
+      "float"
+    ],
+    "BD-093": [
+      "반환5",
+      "쓴 문자 수"
+    ],
+    "BD-094": [
+      "phones1.txt",
+      "세 줄"
+    ],
+    "BD-095": [
+      "텍스트 복사",
+      "인코딩/개행"
+    ],
+    "BD-096": [
+      "1024·1024·452",
+      "read 횟수4"
+    ],
+    "BD-097": [
+      "최소1줄",
+      "int(line)",
+      "입력 파일"
+    ],
+    "BD-098": [
+      "FileNotFoundError",
+      "ValueError",
+      "try/except"
+    ]
+  },
+  "transcriptEmphasis": [
+    {
+      "transcript": "변수와_개발환경_제공전사.txt",
+      "emphasis": "이름 연결·재대입·교환과 내장 이름 가리기",
+      "card": "state",
+      "location": "35_시험1시간전_압축정리.html#state",
+      "evidence": "재계산"
+    },
+    {
+      "transcript": "변수와_개발환경_제공전사.txt",
+      "emphasis": "실행 순서와 커널 상태",
+      "card": "state",
+      "location": "35_시험1시간전_압축정리.html#state",
+      "evidence": "커널"
+    },
+    {
+      "transcript": "입력과_자료형_제공전사.txt",
+      "emphasis": "표현식 자동 표시와 저장값/print 구별",
+      "card": "state",
+      "location": "35_시험1시간전_압축정리.html#state",
+      "evidence": "자동 표시"
+    },
+    {
+      "transcript": "입력과_자료형_제공전사.txt",
+      "emphasis": "input의 str·명시적 변환·잘못된 문자열",
+      "card": "input",
+      "location": "35_시험1시간전_압축정리.html#input",
+      "evidence": "input"
+    },
+    {
+      "transcript": "입력과_자료형_제공전사.txt",
+      "emphasis": "음수 나눗셈·나머지·int와 우선순위",
+      "card": "operators",
+      "location": "35_시험1시간전_압축정리.html#operators",
+      "evidence": "내림"
+    },
+    {
+      "transcript": "조건과_반복_제공전사.txt",
+      "emphasis": "if 묶음·elif 순서·독립 if·경계",
+      "card": "branch",
+      "location": "35_시험1시간전_압축정리.html#branch",
+      "evidence": "독립 if"
+    },
+    {
+      "transcript": "조건과_반복_제공전사.txt",
+      "emphasis": "윤년 4/100/400 예외",
+      "card": "branch",
+      "location": "35_시험1시간전_압축정리.html#branch",
+      "evidence": "400"
+    },
+    {
+      "transcript": "조건과_반복_제공전사.txt",
+      "emphasis": "누적·range 끝값·팩토리얼",
+      "card": "factorial",
+      "location": "35_시험1시간전_압축정리.html#factorial",
+      "evidence": "팩토리얼"
+    },
+    {
+      "transcript": "조건과_반복_제공전사.txt",
+      "emphasis": "반복만 중단하는 break와 현재 회차를 건너뛰는 continue",
+      "card": "loop-flow",
+      "location": "35_시험1시간전_압축정리.html#loop-flow",
+      "evidence": "continue"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "정의/호출·인수/매개변수와 print/return/None",
+      "card": "return",
+      "location": "35_시험1시간전_압축정리.html#return",
+      "evidence": "result에는None"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "반환 위치와 반복 전체 수행",
+      "card": "return",
+      "location": "35_시험1시간전_압축정리.html#return",
+      "evidence": "return"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "난수 범위·6문자·함수 3회 호출",
+      "card": "default-random",
+      "location": "35_시험1시간전_압축정리.html#default-random",
+      "evidence": "후보36개"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "지역 재연결·공유 리스트 변경",
+      "card": "scope",
+      "location": "35_시험1시간전_압축정리.html#scope",
+      "evidence": "지역"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "기본값·키워드 인수·전역 읽기/대입",
+      "card": "default-random",
+      "location": "35_시험1시간전_압축정리.html#default-random",
+      "evidence": "기본값"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "튜플 반환과 세 변수 해체",
+      "card": "return",
+      "location": "35_시험1시간전_압축정리.html#return",
+      "evidence": "튜플 하나"
+    },
+    {
+      "transcript": "함수_제공전사.txt",
+      "emphasis": "형식 표시와 실제 값의 구분",
+      "card": "format",
+      "location": "35_시험1시간전_압축정리.html#format",
+      "evidence": "314.0"
+    },
+    {
+      "transcript": "리스트와_자료구조_제공전사.txt",
+      "emphasis": "append/extend와 remove/pop/del의 차이",
+      "card": "methods",
+      "location": "35_시험1시간전_압축정리.html#methods",
+      "evidence": "append([3,4])"
+    },
+    {
+      "transcript": "리스트와_자료구조_제공전사.txt",
+      "emphasis": "역순 변경·방문 기록·sort/sorted 원본과 새 결과",
+      "card": "methods",
+      "location": "35_시험1시간전_압축정리.html#methods",
+      "evidence": "sort()"
+    },
+    {
+      "transcript": "리스트와_자료구조_제공전사.txt",
+      "emphasis": "문자열 불변성과 인덱스/슬라이스·단어 분리",
+      "card": "slice",
+      "location": "35_시험1시간전_압축정리.html#slice",
+      "evidence": "word[0]"
+    },
+    {
+      "transcript": "리스트와_자료구조_제공전사.txt",
+      "emphasis": "행과 열·같은 과목 열 평균",
+      "card": "nested",
+      "location": "35_시험1시간전_압축정리.html#nested",
+      "evidence": "len(s)"
+    },
+    {
+      "transcript": "수업운영과_코드_제공전사.txt",
+      "emphasis": "한 원소 튜플의 쉼표와 해체",
+      "card": "structure",
+      "location": "35_시험1시간전_압축정리.html#structure",
+      "evidence": "(80,)"
+    },
+    {
+      "transcript": "수업운영과_코드_제공전사.txt",
+      "emphasis": "집합의 중복/순서와 방향 있는 차집합",
+      "card": "structure",
+      "location": "35_시험1시간전_압축정리.html#structure",
+      "evidence": "차집합"
+    },
+    {
+      "transcript": "수업운영과_코드_제공전사.txt",
+      "emphasis": "사전 키/값·items쌍과 get의 기본값/비삽입",
+      "card": "dictionary",
+      "location": "35_시험1시간전_압축정리.html#dictionary",
+      "evidence": "items()"
+    },
+    {
+      "transcript": "수업운영과_코드_제공전사.txt",
+      "emphasis": "얕은 복사의 내부 공유와 통째 재대입",
+      "card": "copy",
+      "location": "35_시험1시간전_압축정리.html#copy",
+      "evidence": "공유 리스트"
+    },
+    {
+      "transcript": "수업운영과_코드_제공전사.txt",
+      "emphasis": "직접 조회와 단어별 횟수 누적",
+      "card": "dictionary",
+      "location": "35_시험1시간전_압축정리.html#dictionary",
+      "evidence": "counts.get"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "문자/바이트와 UTF-8·현재 폴더/스크립트 폴더",
+      "card": "open",
+      "location": "35_시험1시간전_압축정리.html#open",
+      "evidence": "UTF-8"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "r/w/a/x·w는 열 때 비움·x의 기존 파일 오류",
+      "card": "open",
+      "location": "35_시험1시간전_압축정리.html#open",
+      "evidence": "여는 순간"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "현재 읽기 위치·EOF·seek·한 줄/남은 줄 목록",
+      "card": "read",
+      "location": "35_시험1시간전_압축정리.html#read",
+      "evidence": "seek(0)"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "repr와 strip/rstrip·중복 개행 방지",
+      "card": "read",
+      "location": "35_시험1시간전_압축정리.html#read",
+      "evidence": "repr"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "with의 닫힌 객체와 남는 문자열",
+      "card": "parse",
+      "location": "35_시험1시간전_압축정리.html#parse",
+      "evidence": "f.closed"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "사람별 시간 float·ID 제외·합계 초기화 위치",
+      "card": "parse",
+      "location": "35_시험1시간전_압축정리.html#parse",
+      "evidence": "fields[2:]"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "write 반환 문자 수·자동 개행 없음·화면 출력과 구별",
+      "card": "write-copy",
+      "location": "35_시험1시간전_압축정리.html#write-copy",
+      "evidence": "쓴 문자 수"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "복사·1024 블록/마지막 452/EOF·길이와 내용 동등성",
+      "card": "write-copy",
+      "location": "35_시험1시간전_압축정리.html#write-copy",
+      "evidence": "1024·1024·452"
+    },
+    {
+      "transcript": "파일입출력_제공전사.txt",
+      "emphasis": "정수 점수 평균/요약 파일과 실습의 실수/빈 파일 조건 구별",
+      "card": "write-copy",
+      "location": "35_시험1시간전_압축정리.html#write-copy",
+      "evidence": "int(line)"
+    }
+  ]
+}
